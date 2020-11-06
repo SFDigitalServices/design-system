@@ -9,20 +9,35 @@
     "build-clean": "run-s clean build",
     "watch": "run-p watch-css",
     "watch-css": "npm run build-css -- --watch",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/react": "^6.0.28",
     "autoprefixer": "^9.8.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.1",
     "cssnano": "^4.1.10",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.1.6",
     "postcss-cli": "^7.1.1",
     "postcss-custom-properties": "^10.0.0",
     "postcss-import": "^12.0.1",
+    "postcss-loader": "^4.0.4",
     "postcss-nested": "^4.2.2",
     "postcss-normalize-charset": "^4.0.1",
     "postcss-scss": "^2.1.1",
     "postcss-strip-inline-comments": "^0.1.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "style-loader": "^2.0.0",
     "tailwindcss": "^1.9.6"
-  }
+  },
+  "dependencies": {}
 }
