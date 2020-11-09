@@ -11,7 +11,7 @@
     "watch-css": "npm run build-css -- --watch",
     "clean": "rm -rf dist",
     "storybook": "start-storybook -p 6006 --no-dll",
-    "build-storybook": "build-storybook --no-dll -o public"
+    "build-storybook": "build-storybook --quiet --no-dll -o public"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
