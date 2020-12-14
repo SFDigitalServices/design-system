@@ -1,0 +1,4 @@
+title: Button
+variants:
+  - name: Primary
+  - name: Secondary
