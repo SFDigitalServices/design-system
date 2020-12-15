@@ -9,6 +9,19 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/theme>
    */
   theme: {
+    colors: {
+      blue: {
+        1: '#edf4f7',
+        2: '#a9d6ea',
+        bright: '#4f66ee',
+        dark: '#0c1464'
+      },
+      slate: {
+        default: '#1c3e57',
+        light: '#607889'
+      }
+    },
+    borderRadius: {}
   },
 
   /*
@@ -20,6 +33,17 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuration#core-plugins>
    */
   corePlugins: [
+    'backgroundColor',
+    'borderColor',
+    'borderRadius',
+    'borderStyle',
+    'flex',
+    'flexShrink',
+    'fontFamily',
+    'fontSize',
+    'fontSmoothing',
+    'fontWeight',
+    'textColor',
   ],
 
   /*
@@ -34,7 +58,8 @@ module.exports = {
   variants: {
     accessibility: ['responsive', 'focus'],
     appearance: [],
-    backgroundColor: [],
+    backgroundColor: ['focus'],
+    borderColor: ['focus'],
     cursor: [],
     fill: [],
     fontWeight: ['responsive'],
