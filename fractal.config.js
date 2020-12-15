@@ -39,6 +39,7 @@ const theme = mandelbrot({
 
 fractal.web.theme(theme)
 fractal.web.set('builder.dest', join(__dirname, 'public'))
+fractal.web.set('static.path', join(__dirname,'dist'))
 
 fractal.set('project.title', pkg.project.title)
 fractal.set('project.package', pkg)
@@ -52,7 +53,7 @@ const nunjucks = require('@frctl/nunjucks')({
 })
 
 fractal.components.engine(nunjucks)
-fractal.components.set('ext', '.njk')
+fractal.components.set('ext', '.html')
 fractal.components.set('path', join(__dirname, 'src/components'))
 fractal.components.set('default.status', 'prototype')
 fractal.components.set('default.context', defaultContext)
