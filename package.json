@@ -1,11 +1,11 @@
 {
-  "name": "@sfgov/design-system",
+  "name": "sfgov-design-system",
   "version": "0.0.0",
+  "author": "City & County of San Francisco, California",
+  "license": "MIT",
   "project": {
     "title": "SF.gov design system"
   },
-  "author": "City & County of San Francisco, California",
-  "license": "MIT",
   "scripts": {
     "build": "run-p build-fractal build-css",
     "build-fractal": "fractal build",
