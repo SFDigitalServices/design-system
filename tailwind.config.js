@@ -1,3 +1,5 @@
+const colors = require('./src/tokens/colors')
+
 module.exports = {
   purge: [],
   important: true,
@@ -9,18 +11,7 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/theme>
    */
   theme: {
-    colors: {
-      blue: {
-        1: '#edf4f7',
-        2: '#a9d6ea',
-        bright: '#4f66ee',
-        dark: '#0c1464'
-      },
-      slate: {
-        default: '#1c3e57',
-        light: '#607889'
-      }
-    },
+    colors,
     borderRadius: {}
   },
 
