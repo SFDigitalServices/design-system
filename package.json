@@ -15,6 +15,7 @@
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
     "watch-css": "npm run build-css -- --watch",
+    "start": "fractal start",
     "vercel-build": "npm run build",
     "vercel-dev": "fractal start --port $PORT"
   },
