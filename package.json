@@ -8,14 +8,16 @@
     "title": "SF.gov design system"
   },
   "scripts": {
-    "lint": "eslint '*.js' 'src/**/*.js'",
-    "build": "run-p build-fractal build-css build-js",
-    "build-fractal": "fractal build",
+    "build": "run-p build-docs build-css build-js",
+    "build-docs": "fractal build",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "babel -d dist/js src/js/*.js",
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
+    "lint": "run-p lint-js",
+    "lint-js": "eslint '*.js' 'src/**/*.js'",
     "watch-css": "watchy -w '*.config.js' -w src/css -- npm run build-css",
+    "watch-js": "npm run build-js -- --watch",
     "start": "watchy -w '*.config.js' -- fractal start --sync",
     "vercel-build": "npm run build",
     "vercel-dev": "watchy -w '*.config.js' -- fractal start --port $PORT"
