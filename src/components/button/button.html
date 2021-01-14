@@ -1,1 +1,33 @@
-<button>I am a button.</button>
+<div class="p-lg {{ wrapper.class }}">
+  <div class="pb-lg">
+    <button class="{{ class }}">{{ text }}</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        {% for orient in matrix.orient %}
+          <th scope="col" class="text-center">
+            {{ orient.label }}
+            {% if orient.class %}
+              (<code>{{ orient.class }}</code>)
+            {% endif %}
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+    {% for state in matrix.state %}
+      <tr>
+        <th scope="row" class="text-left">
+          {{ state.label }}
+        </th>
+        {% for orient in matrix.orient %}
+          <td class="pl-md pt-md {{ state.cell.class }} {{ orient.cell.class }}">
+            <button class="{{ class }} {{ state.class }} {{ orient.class }}">{{ text }}</button>
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+</div>

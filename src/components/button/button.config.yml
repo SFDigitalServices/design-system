@@ -1,4 +1,36 @@
 title: Button
+
+context:
+  class: btn
+  text: Do something
+
+  matrix:
+    state:
+      - label: Rest
+      - label: Hover
+        class: hover
+      - label: Focus
+        class: focus
+
+    orient:
+      - label: Default
+      - label: Centered
+        class: btn-block
+        cell:
+          class: w-1/2
+
 variants:
-  - name: Primary
-  - name: Secondary
+  - name: default
+    label: Primary
+
+  - name: secondary
+    label: Secondary
+    context:
+      class: btn btn-secondary
+
+  - name: inverse
+    label: Inverse
+    context:
+      class: btn btn-inverse
+      wrapper:
+        class: bg-yellow-3
