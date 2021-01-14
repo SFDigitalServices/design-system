@@ -1,4 +1,3 @@
-const { join } = require('path')
 const exec = require('execa').sync
 const mandelbrot = require('@frctl/mandelbrot')
 
@@ -7,14 +6,14 @@ const fractal = require('@frctl/fractal').create()
 
 const {
   VERCEL_ENV,
+  GITHUB_SHA,
+  GITHUB_REF,
   VERCEL_GIT_COMMIT_SHA,
-  VERCEL_GIT_COMMIT_REF,
-  // VERCEL_GIT_REPO_OWNER,
-  // VERCEL_GIT_REPO_SLUG,
+  VERCEL_GIT_COMMIT_REF
 } = process.env
 
-const gitSHA = VERCEL_GIT_COMMIT_SHA || getGitSHA()
-const gitRef = VERCEL_GIT_COMMIT_REF || getGitRef()
+const gitSHA = GITHUB_SHA || VERCEL_GIT_COMMIT_SHA || getGitSHA()
+const gitRef = GITHUB_REF || VERCEL_GIT_COMMIT_REF || getGitRef()
 
 const theme = mandelbrot({
   skin: 'white',
@@ -62,7 +61,7 @@ const theme = mandelbrot({
     VERCEL_ENV && {
       label: 'Environment',
       value: VERCEL_ENV
-    },
+    }
   ].filter(Boolean)
 })
 
