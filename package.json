@@ -8,7 +8,7 @@
     "title": "SF.gov design system"
   },
   "scripts": {
-    "build": "run-p build-docs build-css build-js",
+    "build": "run-s build-css build-js build-docs",
     "build-docs": "fractal build",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "babel -d dist/js src/js/*.js",
