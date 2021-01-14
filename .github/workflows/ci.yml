@@ -4,8 +4,6 @@ on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -14,6 +12,12 @@ jobs:
 
       - run: npm ci
       - run: npm run lint
+
+      # this sets NODE_ENV=production for all of the build scripts
+      # (`npm ci` doesn't install anything if it's set earlier)
+      - run: |
+          echo NODE_ENV=production >> $GITHUB_ENV
+
       # run these separately so that it's easier to see what failed
       - run: npm run build-css
       - run: npm run build-js
