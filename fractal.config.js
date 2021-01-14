@@ -53,8 +53,8 @@ const theme = mandelbrot({
 theme.addLoadPath(path('src/templates'))
 
 fractal.web.theme(theme)
-fractal.web.set('builder.dest', path('public'))
-fractal.web.set('static.path', path('dist'))
+fractal.web.set('builder.dest', 'public')
+fractal.web.set('static.path', '.')
 
 fractal.set('project.title', pkg.project.title)
 fractal.set('project.package', pkg)
