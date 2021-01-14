@@ -12,7 +12,7 @@ jobs:
 
       - run: npm ci
       - run: npm run lint
-      - run: npm run build-css
+      - run: npm run build
         env:
           NODE_ENV: production
 
