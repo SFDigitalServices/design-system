@@ -5,8 +5,6 @@ const mandelbrot = require('@frctl/mandelbrot')
 const pkg = require('./package.json')
 const fractal = require('@frctl/fractal').create()
 
-const path = (...parts) => join(__dirname, ...parts)
-
 const {
   VERCEL_ENV,
   VERCEL_GIT_COMMIT_REF = getGitRef(),
@@ -50,11 +48,10 @@ const theme = mandelbrot({
   information
 })
 
-theme.addLoadPath(path('src/templates'))
+theme.addLoadPath('src/templates')
 
 fractal.web.theme(theme)
-fractal.web.set('builder.dest', 'public')
-fractal.web.set('static.path', '.')
+fractal.web.set('builder.dest', 'dist')
 
 fractal.set('project.title', pkg.project.title)
 fractal.set('project.package', pkg)
@@ -64,16 +61,16 @@ const defaultContext = {
 }
 
 const nunjucks = require('@frctl/nunjucks')({
-  paths: [path('src/templates')]
+  paths: ['src/templates']
 })
 
 fractal.components.engine(nunjucks)
 fractal.components.set('ext', '.html')
-fractal.components.set('path', path('src/components'))
+fractal.components.set('path', 'src/components')
 fractal.components.set('default.status', 'prototype')
 fractal.components.set('default.context', defaultContext)
 
-fractal.docs.set('path', path('src/docs'))
+fractal.docs.set('path', 'src/docs')
 fractal.docs.set('default.status', 'draft')
 fractal.docs.set('default.context', defaultContext)
 
