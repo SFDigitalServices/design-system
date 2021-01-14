@@ -69,7 +69,6 @@ theme.addLoadPath('src/templates')
 
 fractal.web.theme(theme)
 fractal.web.set('builder.dest', 'dist')
-fractal.web.set('static.path', 'dist')
 
 fractal.set('project.title', pkg.project.title)
 fractal.set('project.package', pkg)
