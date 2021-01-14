@@ -4,6 +4,8 @@ on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -12,12 +14,13 @@ jobs:
 
       - run: npm ci
       - run: npm run lint
-      - run: npm run build
-        env:
-          NODE_ENV: production
+      # run these separately so that it's easier to see what failed
+      - run: npm run build-css
+      - run: npm run build-js
+      - run: npm run build-docs
 
-      - # disabling this for now :\
-        if: true == false
+      # disabling this for now :\
+      - if: true == false
         uses: primer/publish@v2.0.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
