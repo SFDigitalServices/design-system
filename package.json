@@ -17,7 +17,7 @@
     "watch-css": "watchy -w '*.config.js' -w src/css -- npm run build-css",
     "start": "watchy -w '*.config.js' -- fractal start --sync",
     "vercel-build": "npm run build",
-    "vercel-dev": "fractal start --port $PORT"
+    "vercel-dev": "watchy -w '*.config.js' -- fractal start --port $PORT"
   },
   "devDependencies": {
     "@frctl/fractal": "^1.5.1",
