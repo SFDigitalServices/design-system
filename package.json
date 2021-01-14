@@ -14,8 +14,8 @@
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
-    "watch-css": "npm run build-css -- --watch",
-    "start": "fractal start",
+    "watch-css": "watchy -w '*.config.js' -w src/css -- npm run build-css",
+    "start": "fractal start --sync",
     "vercel-build": "npm run build",
     "vercel-dev": "fractal start --port $PORT"
   },
@@ -42,6 +42,7 @@
     "postcss-normalize-charset": "^4.0.1",
     "postcss-scss": "^2.1.1",
     "postcss-strip-inline-comments": "^0.1.5",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "watchy": "^0.9.9"
   }
 }
