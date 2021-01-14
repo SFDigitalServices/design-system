@@ -7,10 +7,14 @@ const fractal = require('@frctl/fractal').create()
 
 const {
   VERCEL_ENV,
-  VERCEL_GIT_COMMIT_REF = getGitRef(),
+  VERCEL_GIT_COMMIT_SHA,
+  VERCEL_GIT_COMMIT_REF,
   // VERCEL_GIT_REPO_OWNER,
   // VERCEL_GIT_REPO_SLUG,
 } = process.env
+
+const gitSHA = VERCEL_GIT_COMMIT_SHA || getGitSHA()
+const gitRef = VERCEL_GIT_COMMIT_REF || getGitRef()
 
 const information = [
   {
@@ -28,11 +32,19 @@ const information = [
       return `<a href="https://unpkg.com/${pkg.name}@${value}/">${value}</a>`
     }
   },
-  {
-    label: 'Commit',
-    value: VERCEL_GIT_COMMIT_REF,
+  gitRef && {
+    label: 'Branch',
+    value: gitRef,
     format (value) {
-      return `<a href="https://github.com/${pkg.repository}/commit/${value}">${value}</a>`
+      return `<a href="https://github.com/${pkg.repository}/compare/${value}">${value}</a>`
+    }
+  },
+  gitSHA && {
+    label: 'Commit',
+    value: gitSHA,
+    format (value) {
+      const short = value.substr(0, 7)
+      return `<a href="https://github.com/${pkg.repository}/commit/${value}">${short}</a>`
     }
   },
   VERCEL_ENV && {
@@ -76,11 +88,20 @@ fractal.docs.set('default.context', defaultContext)
 
 module.exports = fractal
 
+function getGitSHA () {
+  try {
+    return exec('git', ['rev-parse', 'HEAD']).stdout
+  } catch (error) {
+    console.warn('unable to get git SHA:', error)
+    return ''
+  }
+}
+
 function getGitRef () {
   try {
-    return exec('git', ['rev-parse', '--short', 'HEAD']).stdout
+    return exec('git', ['symbolic-ref', '--short', 'HEAD']).stdout
   } catch (error) {
-    console.warn('unable to get git ref:', error)
+    console.warn('unable to get git SHA:', error)
     return ''
   }
 }
