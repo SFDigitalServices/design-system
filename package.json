@@ -9,9 +9,10 @@
   },
   "scripts": {
     "lint": "eslint",
-    "build": "run-p build-fractal build-css",
+    "build": "run-p build-fractal build-css build-js",
     "build-fractal": "fractal build",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
+    "build-js": "babel -d dist/js src/js/*.js",
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
     "watch-css": "watchy -w '*.config.js' -w src/css -- npm run build-css",
@@ -20,6 +21,9 @@
     "vercel-dev": "watchy -w '*.config.js' -- fractal start --port $PORT"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@frctl/fractal": "^1.5.1",
     "@frctl/mandelbrot": "^1.6.0",
     "@frctl/nunjucks": "^2.0.5",
