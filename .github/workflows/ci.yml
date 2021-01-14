@@ -1,0 +1,22 @@
+name: CI
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build-css
+        env:
+          NODE_ENV: production
+
+      - uses: primer/publish@v2.0.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
