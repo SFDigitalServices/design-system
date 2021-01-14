@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const colors = require('./src/tokens/colors')
 
 module.exports = {
-  purge: [],
+  purge: false,
   important: true,
 
   /*
