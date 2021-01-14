@@ -8,7 +8,7 @@
     "title": "SF.gov design system"
   },
   "scripts": {
-    "lint": "eslint",
+    "lint": "eslint '*.js' 'src/**/*.js'",
     "build": "run-p build-fractal build-css build-js",
     "build-fractal": "fractal build",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
