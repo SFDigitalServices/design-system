@@ -1,5 +1,5 @@
 const plugin = require('tailwindcss/plugin')
-const colors = require('./src/tokens/colors')
+const theme = require('./src/theme')
 
 module.exports = {
   purge: false,
@@ -11,32 +11,7 @@ module.exports = {
    *
    * See: <https://tailwindcss.com/docs/theme>
    */
-  theme: {
-    colors,
-    spacing: {
-      0: '0',
-      nudge: '5px',
-      sm: '10px',
-      md: '20px',
-      lg: '30px',
-      xl: '40px',
-      xxl: '60px',
-      gutter: '96px'
-    },
-    borderColor: theme => ({
-      current: 'currentColor',
-      ...theme('colors')
-    }),
-    borderRadius: {
-      DEFAULT: '8px',
-      0: '0'
-    },
-    borderWidth: {
-      DEFAULT: '4px',
-      0: '0',
-      1: '1px'
-    }
-  },
+  theme,
 
   /*
    * This is where we disable Tailwind's "core plugins", most of
@@ -63,12 +38,14 @@ module.exports = {
     'fontSize',
     'fontSmoothing',
     'fontWeight',
+    'height',
     'justifyContent',
     'justifyItems',
     'padding',
     'margin',
     'textAlign',
     'textColor',
+    'verticalAlign',
     'width'
   ],
 
@@ -93,6 +70,7 @@ module.exports = {
     fontSize: ['responsive'],
     fontSmoothing: [],
     fontStyle: [],
+    height: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
     listStyleType: [],
@@ -103,6 +81,7 @@ module.exports = {
     strokeWidth: [],
     textColor: ['focus', 'hover', 'hocus'],
     userSelect: [],
+    verticalAlign: ['responsive'],
     width: ['responsive']
   },
 
