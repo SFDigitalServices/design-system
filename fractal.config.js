@@ -4,7 +4,13 @@ const mandelbrot = require('@frctl/mandelbrot')
 const pkg = require('./package.json')
 const fractal = require('@frctl/fractal').create()
 
-const defaultContext = {}
+const scripts = [
+  'https://unpkg.com/@sfgov/icons@0.0.1/dist/sfgov-icons.umd.js'
+]
+
+const defaultContext = {
+  scripts
+}
 
 fractal.web.set('builder.dest', 'public')
 fractal.web.set('static.path', 'dist')
@@ -13,7 +19,16 @@ fractal.set('project.title', pkg.project.title)
 fractal.set('project.package', pkg)
 
 const nunjucks = require('@frctl/nunjucks')({
-  paths: ['src/templates']
+  paths: ['src/templates'],
+  filters: {
+    iconify (content) {
+      if (content && content.icon) {
+        return `<sfgov-icon symbol="${content.icon}"></sfgov-icon>`
+      } else {
+        return content || ''
+      }
+    }
+  }
 })
 
 fractal.components.engine(nunjucks)
@@ -47,7 +62,8 @@ const theme = mandelbrot({
   ],
   scripts: [
     'default',
-    '/js/fractal.js'
+    '/js/fractal.js',
+    ...scripts
   ],
   information: [
     {
