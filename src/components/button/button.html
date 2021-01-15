@@ -1,33 +1,49 @@
-<div class="p-lg {{ wrapper.class }}">
-  <div class="pb-lg">
-    <button class="{{ class }}">{{ text }}</button>
-  </div>
+{% macro button(label, prefix, suffix, class) %}
+  <button class="btn {{ class }}">
+    {% if prefix %}
+      <span class="mr-1">{{ prefix | iconify | safe }}</span>
+    {% endif %}
+    <span>{{ label }}</span>
+    {% if suffix %}
+      <span class="ml-1">{{ suffix | iconify | safe }}</span>
+    {% endif %}
+  </button>
+{% endmacro %}
 
+<div class="p-4 h-screen {{ wrapper.class }}">
   <table>
     <thead>
       <tr>
-        <td></td>
-        {% for orient in matrix.orient %}
-          <th scope="col" class="text-center">
-            {{ orient.label }}
-            {% if orient.class %}
-              (<code>{{ orient.class }}</code>)
-            {% endif %}
+        <td class="text-right">
+          State
+        </td>
+        {% for state in matrix.state %}
+          <th class="text-left pl-2" scope="col">
+            {{ state.label }}
           </th>
         {% endfor %}
       </tr>
     </thead>
-    {% for state in matrix.state %}
-      <tr>
-        <th scope="row" class="text-left">
-          {{ state.label }}
-        </th>
+    {% for content in matrix.content %}
+      <tbody>
+        <tr>
+          <th class="pt-2 text-right">{{ content.label }}</th>
+        </tr>
         {% for orient in matrix.orient %}
-          <td class="pl-md pt-md {{ state.cell.class }} {{ orient.cell.class }}">
-            <button class="{{ class }} {{ state.class }} {{ orient.class }}">{{ text }}</button>
-          </td>
+          <tr>
+            <td class="text-right align-middle w-1/5">
+              {{ orient.label }}
+            </td>
+            {% for state in matrix.state %}
+              <td class="pl-2 py-1 {{ content.cell.class }} {{ orient.cell.class }} {{ state.cell.class }}">
+                {% set label = context.text | default(text) %}
+                {% set modifiers = [class, orient.class, state.class] | join(' ') %}
+                {{ button(label, content.prefix, content.suffix, modifiers) }}
+              </td>
+            {% endfor %}
+          </tr>
         {% endfor %}
-      </tr>
+      </tbody>
     {% endfor %}
   </table>
 </div>

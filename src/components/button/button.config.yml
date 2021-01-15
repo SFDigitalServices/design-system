@@ -14,10 +14,21 @@ context:
 
     orient:
       - label: Default
-      - label: Centered
+      - label: Full-width
         class: btn-block
         cell:
-          class: w-1/2
+          class: w-1/4
+
+    content:
+      - label: Text
+      - label: Icon left
+        text: Previous
+        prefix:
+          icon: arrow-left
+      - label: Icon right
+        text: Next
+        suffix:
+          icon: arrow-right
 
 variants:
   - name: default
