@@ -23,7 +23,8 @@ jobs:
       - run: npm run build-js
       - run: npm run build-docs
 
-      - uses: primer/publish@v3.0.0
+      - if: true == false
+        uses: primer/publish@v3.0.0
         with:
           default-branch: main
         env:
