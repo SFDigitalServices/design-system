@@ -1,11 +1,11 @@
 {% macro button(label, prefix, suffix, class) %}
-  <button class="btn {{ class }}">
-    {% if prefix %}
-      <span class="mr-1">{{ prefix | iconify | safe }}</span>
+  <button class="{{ class }}">
+    {% if prefix.icon %}
+      <sfgov-icon symbol="{{ prefix.icon }}" class="mr-1"></sfgov-icon>
     {% endif %}
     <span>{{ label }}</span>
-    {% if suffix %}
-      <span class="ml-1">{{ suffix | iconify | safe }}</span>
+    {% if suffix.icon %}
+      <sfgov-icon symbol="{{ suffix.icon }}" class="ml-1"></sfgov-icon>
     {% endif %}
   </button>
 {% endmacro %}

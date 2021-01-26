@@ -9,8 +9,7 @@
     @apply bg-blue-bright;
     @apply text-white;
     @apply border-0 border-solid border-current;
-    @apply text-center content-center;
-    @apply text-center justify-center;
+    @apply text-center justify-center items-center;
 
     @apply hocus:bg-blue-dark;
   }
