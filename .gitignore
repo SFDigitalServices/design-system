@@ -1,3 +1,4 @@
+.*.sw?
 .env
 .vercel/
 dist/
