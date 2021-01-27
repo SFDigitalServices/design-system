@@ -1,30 +1,46 @@
 {
-  "name": "@sfgov/design-system",
-  "version": "0.0.0",
+  "name": "sfgov-design-system",
+  "version": "0.0.1",
+  "repository": "SFDigitalServices/design-system",
+  "author": "City & County of San Francisco, California",
+  "license": "MIT",
   "project": {
     "title": "SF.gov design system"
   },
-  "author": "City & County of San Francisco, California",
-  "license": "MIT",
   "scripts": {
-    "build": "run-p build-fractal build-css",
-    "build-fractal": "fractal build",
+    "build": "run-s build-css build-js build-docs",
+    "build-docs": "fractal build",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
+    "build-js": "babel -d dist/js src/js/*.js",
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
-    "watch-css": "npm run build-css -- --watch",
+    "lint": "run-p lint-js",
+    "lint-js": "eslint '*.js' 'src/**/*.js'",
+    "watch-css": "watchy -w '*.config.js' -w src/css -- npm run build-css",
+    "watch-js": "npm run build-js -- --watch",
+    "start": "watchy -w '*.config.js' -- fractal start --sync",
     "vercel-build": "npm run build",
-    "vercel-dev": "fractal start --port $PORT"
+    "vercel-dev": "watchy -w '*.config.js' -- fractal start --port $PORT"
   },
   "devDependencies": {
-    "@frctl/fractal": "^1.5.1",
-    "@frctl/mandelbrot": "^1.6.0",
-    "@frctl/nunjucks": "^2.0.5",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@frctl/fractal": "^1.5.2",
+    "@frctl/mandelbrot": "^1.7.0",
+    "@frctl/nunjucks": "^2.0.6",
     "autoprefixer": "^9.8.4",
     "cssnano": "^4.1.10",
+    "eslint": "^7.17.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "execa": "^5.0.0",
+    "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.1.6",
-    "postcss-cli": "^7.1.1",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
     "postcss-custom-properties": "^10.0.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^4.0.4",
@@ -32,6 +48,7 @@
     "postcss-normalize-charset": "^4.0.1",
     "postcss-scss": "^2.1.1",
     "postcss-strip-inline-comments": "^0.1.5",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^2.0.2",
+    "watchy": "^0.9.9"
   }
 }
