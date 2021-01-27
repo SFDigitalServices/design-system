@@ -1,5 +1,5 @@
 name: CI
-on: [pull_request]
+on: [push]
 
 jobs:
   build:
@@ -23,8 +23,7 @@ jobs:
       - run: npm run build-js
       - run: npm run build-docs
 
-      - if: true == false
-        uses: primer/publish@v3.0.0
+      - uses: primer/publish@v2.0.0
         with:
           default-branch: main
         env:
