@@ -7,6 +7,12 @@
   "project": {
     "title": "SF.gov design system"
   },
+  "files": [
+    "dist",
+    "docs",
+    "src",
+    "tailwind.config.js"
+  ],
   "scripts": {
     "build": "run-s build-css build-js build-docs",
     "build-docs": "fractal build",
