@@ -1,1 +1,49 @@
-<button>I am a button.</button>
+{% macro button(label, prefix, suffix, class) %}
+  <button class="{{ class }}">
+    {% if prefix.icon %}
+      <sfgov-icon symbol="{{ prefix.icon }}" class="mr-1"></sfgov-icon>
+    {% endif %}
+    <span>{{ label }}</span>
+    {% if suffix.icon %}
+      <sfgov-icon symbol="{{ suffix.icon }}" class="ml-1"></sfgov-icon>
+    {% endif %}
+  </button>
+{% endmacro %}
+
+<div class="p-4 h-screen {{ wrapper.class }}">
+  <table>
+    <thead>
+      <tr>
+        <td class="text-right">
+          State
+        </td>
+        {% for state in matrix.state %}
+          <th class="text-left pl-2" scope="col">
+            {{ state.label }}
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+    {% for content in matrix.content %}
+      <tbody>
+        <tr>
+          <th class="pt-2 text-right">{{ content.label }}</th>
+        </tr>
+        {% for orient in matrix.orient %}
+          <tr>
+            <td class="text-right align-middle w-1/5">
+              {{ orient.label }}
+            </td>
+            {% for state in matrix.state %}
+              <td class="pl-2 py-1 {{ content.cell.class }} {{ orient.cell.class }} {{ state.cell.class }}">
+                {% set label = context.text | default(text) %}
+                {% set modifiers = [class, orient.class, state.class] | join(' ') %}
+                {{ button(label, content.prefix, content.suffix, modifiers) }}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    {% endfor %}
+  </table>
+</div>

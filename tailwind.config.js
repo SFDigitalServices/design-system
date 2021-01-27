@@ -1,5 +1,8 @@
+const plugin = require('tailwindcss/plugin')
+const theme = require('./src/theme')
+
 module.exports = {
-  purge: [],
+  purge: false,
   important: true,
 
   /*
@@ -8,21 +11,7 @@ module.exports = {
    *
    * See: <https://tailwindcss.com/docs/theme>
    */
-  theme: {
-    colors: {
-      blue: {
-        1: '#edf4f7',
-        2: '#a9d6ea',
-        bright: '#4f66ee',
-        dark: '#0c1464'
-      },
-      slate: {
-        default: '#1c3e57',
-        light: '#607889'
-      }
-    },
-    borderRadius: {}
-  },
+  theme,
 
   /*
    * This is where we disable Tailwind's "core plugins", most of
@@ -33,17 +22,31 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuration#core-plugins>
    */
   corePlugins: [
+    'appearance',
+    'alignContent',
+    'alignItems',
     'backgroundColor',
     'borderColor',
     'borderRadius',
     'borderStyle',
+    'borderWidth',
+    'cursor',
+    'display',
     'flex',
     'flexShrink',
     'fontFamily',
     'fontSize',
     'fontSmoothing',
     'fontWeight',
+    'height',
+    'justifyContent',
+    'justifyItems',
+    'padding',
+    'margin',
+    'textAlign',
     'textColor',
+    'verticalAlign',
+    'width'
   ],
 
   /*
@@ -56,23 +59,44 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuring-variants>
    */
   variants: {
-    accessibility: ['responsive', 'focus'],
+    accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
-    backgroundColor: ['focus'],
-    borderColor: ['focus'],
+    backgroundColor: ['focus', 'hover', 'hocus'],
+    borderColor: ['focus', 'hover', 'hocus'],
     cursor: [],
+    display: ['responsive'],
     fill: [],
     fontWeight: ['responsive'],
     fontSize: ['responsive'],
     fontSmoothing: [],
     fontStyle: [],
+    height: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
     listStyleType: [],
     listStylePosition: [],
+    padding: ['responsive'],
+    margin: ['responsive'],
     stroke: [],
     strokeWidth: [],
-    textColor: [],
-    userSelect: []
-  }
+    textColor: ['focus', 'hover', 'hocus'],
+    userSelect: [],
+    verticalAlign: ['responsive'],
+    width: ['responsive']
+  },
+
+  plugins: [
+    plugin(({ addVariant, e }) => {
+      console.warn('adding variant: "hocus"')
+      const suffixes = ['.hocus', ':hover', '.hover', ':focus', '.focus']
+      addVariant('hocus', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          const prefix = '.' + e(`hocus${separator}${className}`)
+          return suffixes
+            .map(suffix => `${prefix}${suffix}`)
+            .join(',\n')
+        })
+      })
+    })
+  ]
 }

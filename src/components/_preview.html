@@ -12,5 +12,9 @@
     <div>
       {{ yield | safe }}
     </div>
+
+    {% for script in _target.context.scripts %}
+      <script src="{{ script }}"></script>
+    {% endfor %}
   </body>
 </html>
