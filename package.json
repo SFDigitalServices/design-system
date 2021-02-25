@@ -55,6 +55,7 @@
     "postcss-scss": "^2.1.1",
     "postcss-strip-inline-comments": "^0.1.5",
     "tailwindcss": "^2.0.2",
+    "tailwindcss-interaction-variants": "^5.0.0",
     "watchy": "^0.9.9"
   }
 }
