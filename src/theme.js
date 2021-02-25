@@ -8,6 +8,11 @@ module.exports = {
   fontSize: {
     body: ['17px', '24px']
   },
+  fontWeight: {
+    normal: 300,
+    semibold: 500,
+    bold: 700
+  },
   spacing: {
     0: '0',
     '1/2': '5px',
