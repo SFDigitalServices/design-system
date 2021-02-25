@@ -3,7 +3,7 @@
     @apply flex;
     @apply appearance-none;
     @apply cursor-pointer;
-    @apply font-bold;
+    @apply font-semibold;
     @apply rounded;
     @apply px-2 py-1;
     @apply bg-blue-bright;
