@@ -12,14 +12,23 @@
     @apply text-center justify-center items-center;
 
     @apply hocus:bg-blue-dark;
+
+    &.hover,
+    &.focus {
+      @apply bg-blue-dark;
+    }
   }
 
   .btn-inverse {
     @apply bg-white;
     @apply text-blue-bright;
 
-    @apply hocus:bg-white;
-    @apply hocus:text-blue-dark;
+    @apply hocus:bg-white hocus:text-blue-dark;
+
+    &.hover,
+    &.focus {
+      @apply bg-white text-blue-dark;
+    }
   }
 
   .btn-secondary {
@@ -27,8 +36,12 @@
     @apply text-blue-bright;
     @apply border;
 
-    @apply hocus:bg-white;
-    @apply hocus:text-blue-dark;
+    @apply hocus:bg-white hocus:text-blue-dark;
+
+    &.hover,
+    &.focus {
+      @apply bg-white text-blue-dark;
+    }
   }
 
   .btn-inline {
