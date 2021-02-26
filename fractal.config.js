@@ -12,6 +12,7 @@ const defaultContext = {
   scripts
 }
 
+fractal.web.set('server.port', process.env.PORT || 4444)
 fractal.web.set('builder.dest', 'public')
 fractal.web.set('static.path', 'dist')
 
