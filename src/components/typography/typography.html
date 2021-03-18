@@ -2,7 +2,7 @@
   <table>
     {% for specimen in specimens %}
       <tr>
-        <th class="font-normal text-left align-top pr-2">
+        <th class="font-normal text-left align-top pb-3 pr-3">
           <span class="title5 whitespace-nowrap">
             {{ specimen.title }}
           </span>
@@ -11,8 +11,12 @@
             {{ specimen.class or '(none)' }}
           </code>
         </th>
-        <td>
-          <{{ specimen.tag }} class="{{ specimen.class }} mt-0">
+        <td class="align-top pb-3">
+          <{{ specimen.tag }}
+            class="{{ specimen.class }} mt-0"
+            {% for attr, value in specimen.attrs %}
+              {{ attr }}="{{ value | e }}"
+            {%- endfor %}>
             {{ specimen.content | safe }}
           </{{ specimen.tag }}>
         </td>
