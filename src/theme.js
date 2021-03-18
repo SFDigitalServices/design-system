@@ -9,8 +9,9 @@ module.exports = {
     body: ['17px', '24px']
   },
   fontWeight: {
+    light: 100,
     normal: 300,
-    semibold: 500,
+    medium: 500,
     bold: 700
   },
   spacing: {
