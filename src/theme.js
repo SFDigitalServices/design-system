@@ -1,3 +1,4 @@
+/* eslint-disable key-spacing */
 const colors = require('./tokens/colors')
 
 module.exports = {
@@ -6,7 +7,18 @@ module.exports = {
     rubik: ['Rubik', 'ui-sans-serif', 'sans-serif']
   },
   fontSize: {
-    body: ['17px', '24px']
+    body:     ['16px', '24px'],
+    title5:   ['20px', '32px'],
+    title4:   ['24px', '32px'],
+    title3:   ['30px', '40px'],
+    title2:   ['40px', '48px'],
+    title1:   ['62px', '72px'],
+    display2: ['50px', '64px'],
+    display1: ['72px', '80px']
+  },
+  letterSpacing: {
+    0: '0',
+    display1: '-2px'
   },
   fontWeight: {
     light: 100,
