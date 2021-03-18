@@ -21,7 +21,7 @@ module.exports = {
     display1: '-2px'
   },
   fontWeight: {
-    light: 100,
+    light: 300,
     normal: 300,
     medium: 500,
     bold: 700
