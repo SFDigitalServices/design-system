@@ -1,0 +1,63 @@
+context:
+  specimens:
+    - title: Display 1
+      tag: h1
+      class: display1
+      content: |
+        Second Line
+        <br>Light (-2) 72/80
+
+    - title: Display 2
+      tag: h2
+      class: display2
+      content: |
+        Page title lockup thing
+        <br>Light 48/56
+
+    - title: Title 1
+      tag: h1
+      class: title1
+      content: |
+        First time homebuyer work
+        <br>Medium 60/72
+
+    - title: Title 2
+      tag: h2
+      class: title2
+      content: |
+        Second line of Title 2 so we can see it
+        <br>Medium 48/56
+
+    - title: Title 3
+      tag: h3
+      class: title3
+      content: |
+        This is a new website for the City of San Francisco
+        <br>Medium 36/48
+
+    - title: Title 4
+      tag: h4
+      class: title4
+      content: |
+        Lorem ipsum dolor sit amet is one of two renting
+        <br>Medium 24/32
+
+    - title: Title 5
+      tag: h5
+      class: title5
+      content: |
+        Your first home is one of the most
+        <br>Medium 16/24
+
+    - title: Big description
+      tag: p
+      class: title4 font-normal
+      content: |
+        Your first home is one of the most important investments you will make. Learn everything you need to know about buying and owning your own home. Regular 24/32
+
+    - title: Body text
+      tag: div
+      class: ''
+      content: |
+        <p>Use this style for body text that is longer, such as multiple paragraphs, texts that are more than four lines, or with a wider width. It is good for long-form reading, like news articles or informational pages.</p>
+        <p>The 88 Broadway project is a 125-unit family building serving very low-, low-, and middle-income families and the 735 Davis project is a 53-unit building serving formerly homeless, low-income and middle-income seniors. Regular 16/24, paragraph break 24px</p>

@@ -1,0 +1,22 @@
+<div class="p-4">
+  <table>
+    {% for specimen in specimens %}
+      <tr>
+        <th class="font-normal text-left align-top pr-2">
+          <span class="title5 whitespace-nowrap">
+            {{ specimen.title }}
+          </span>
+          <br>
+          <code class="whitespace-nowrap">
+            {{ specimen.class or '(none)' }}
+          </code>
+        </th>
+        <td>
+          <{{ specimen.tag }} class="{{ specimen.class }} mt-0">
+            {{ specimen.content | safe }}
+          </{{ specimen.tag }}>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
