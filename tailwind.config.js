@@ -40,11 +40,13 @@ module.exports = {
     'height',
     'justifyContent',
     'justifyItems',
+    'letterSpacing',
     'padding',
     'margin',
     'textAlign',
     'textColor',
     'verticalAlign',
+    'whitespace',
     'width'
   ],
 
