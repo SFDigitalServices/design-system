@@ -51,7 +51,7 @@ context:
 
     - title: Big description
       tag: p
-      class: title4 font-normal
+      class: big-desc
       content: |
         Your first home is one of the most important investments you will make. Learn everything you need to know about buying and owning your own home. Regular 24/32
 

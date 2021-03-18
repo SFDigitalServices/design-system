@@ -4,6 +4,10 @@
     @apply text-body;
   }
 
+  .big-desc {
+    @apply title4 font-normal;
+  }
+
   .title5 {
     @apply text-title5;
     @apply font-medium;
