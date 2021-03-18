@@ -1,0 +1,42 @@
+@layer base {
+  * {
+    @apply font-rubik;
+    @apply text-body;
+  }
+
+  .title5 {
+    @apply text-title5;
+    @apply font-medium;
+  }
+
+  .title4 {
+    @apply text-title4;
+    @apply font-medium;
+  }
+
+  .title3 {
+    @apply text-title3;
+    @apply font-medium;
+  }
+
+  .title2 {
+    @apply text-title2;
+    @apply font-medium;
+  }
+
+  .title1 {
+    @apply text-title1;
+    @apply font-medium;
+  }
+
+  .display2 {
+    @apply text-display2;
+    @apply font-light;
+  }
+
+  .display1 {
+    @apply text-display1;
+    @apply font-light;
+    @apply tracking-display1;
+  }
+}
