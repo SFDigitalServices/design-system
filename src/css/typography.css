@@ -12,6 +12,10 @@
     @apply text-body;
   }
 
+  .small {
+    @apply text-small;
+  }
+
   .big-desc {
     @apply title4 font-normal;
   }

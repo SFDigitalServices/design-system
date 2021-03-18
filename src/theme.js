@@ -7,6 +7,7 @@ module.exports = {
     rubik: ['Rubik', 'ui-sans-serif', 'sans-serif']
   },
   fontSize: {
+    small:    ['14px', '16px'],
     body:     ['16px', '24px'],
     title5:   ['20px', '32px'],
     title4:   ['24px', '32px'],
