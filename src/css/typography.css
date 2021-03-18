@@ -20,6 +20,10 @@
     @apply title4 font-normal;
   }
 
+  .big-link {
+    @apply title4 block;
+  }
+
   .title5 {
     @apply text-title5;
     @apply font-medium;
