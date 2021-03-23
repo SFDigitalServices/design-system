@@ -1,4 +1,3 @@
-const plugin = require('tailwindcss/plugin')
 const theme = require('./src/theme')
 
 module.exports = {
@@ -41,11 +40,13 @@ module.exports = {
     'height',
     'justifyContent',
     'justifyItems',
+    'letterSpacing',
     'padding',
     'margin',
     'textAlign',
     'textColor',
     'verticalAlign',
+    'whitespace',
     'width'
   ],
 
@@ -86,17 +87,6 @@ module.exports = {
   },
 
   plugins: [
-    plugin(({ addVariant, e }) => {
-      console.warn('adding variant: "hocus"')
-      const suffixes = ['.hocus', ':hover', '.hover', ':focus', '.focus']
-      addVariant('hocus', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          const prefix = '.' + e(`hocus${separator}${className}`)
-          return suffixes
-            .map(suffix => `${prefix}${suffix}`)
-            .join(',\n')
-        })
-      })
-    })
+    require('tailwindcss-interaction-variants')
   ]
 }

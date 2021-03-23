@@ -12,6 +12,7 @@ const defaultContext = {
   scripts
 }
 
+fractal.web.set('server.port', process.env.PORT || 4444)
 fractal.web.set('builder.dest', 'public')
 fractal.web.set('static.path', 'dist')
 
@@ -37,7 +38,7 @@ fractal.components.set('path', 'src/components')
 fractal.components.set('default.status', 'prototype')
 fractal.components.set('default.context', defaultContext)
 
-fractal.docs.set('path', 'src/docs')
+fractal.docs.set('path', 'docs')
 fractal.docs.set('default.status', 'draft')
 fractal.docs.set('default.context', defaultContext)
 

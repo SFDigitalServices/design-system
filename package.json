@@ -1,12 +1,18 @@
 {
   "name": "sfgov-design-system",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "SFDigitalServices/design-system",
   "author": "City & County of San Francisco, California",
   "license": "MIT",
   "project": {
     "title": "SF.gov design system"
   },
+  "files": [
+    "dist",
+    "docs",
+    "src",
+    "tailwind.config.js"
+  ],
   "scripts": {
     "build": "run-s build-css build-js build-docs",
     "build-docs": "fractal build",
@@ -49,6 +55,7 @@
     "postcss-scss": "^2.1.1",
     "postcss-strip-inline-comments": "^0.1.5",
     "tailwindcss": "^2.0.2",
+    "tailwindcss-interaction-variants": "^5.0.0",
     "watchy": "^0.9.9"
   }
 }

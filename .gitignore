@@ -1,3 +1,5 @@
+*.tgz
+.*.sw?
 .env
 .vercel/
 dist/
