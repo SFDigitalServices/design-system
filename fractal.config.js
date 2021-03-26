@@ -20,7 +20,7 @@ fractal.set('project.title', pkg.project.title)
 fractal.set('project.package', pkg)
 
 const nunjucks = require('@frctl/nunjucks')({
-  paths: ['src/templates'],
+  paths: ['src/components'],
   filters: {
     iconify (content) {
       if (content && content.icon) {

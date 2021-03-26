@@ -1,13 +1,5 @@
-{% macro button(label, prefix, suffix, class) %}
-  <button class="{{ class }}">
-    {% if prefix.icon %}
-      <sfgov-icon symbol="{{ prefix.icon }}" class="mr-1"></sfgov-icon>
-    {% endif %}
-    <span>{{ label }}</span>
-    {% if suffix.icon %}
-      <sfgov-icon symbol="{{ suffix.icon }}" class="ml-1"></sfgov-icon>
-    {% endif %}
-  </button>
+{% macro button(properties) %}
+  {% include "./button/markup.html" %}
 {% endmacro %}
 
 <div class="p-4 h-screen {{ wrapper.class }}">
@@ -38,7 +30,9 @@
               <td class="pl-2 py-1 {{ content.cell.class }} {{ orient.cell.class }} {{ state.cell.class }}">
                 {% set label = context.text | default(text) %}
                 {% set modifiers = [class, orient.class, state.class] | join(' ') %}
-                {{ button(label, content.prefix, content.suffix, modifiers) }}
+                {% set properties = {label: label, prefix: prefix, suffix: content.suffix, modifiers: modifiers} %}
+                
+                {{ button(properties) }}
               </td>
             {% endfor %}
           </tr>

@@ -1,0 +1,9 @@
+<button class="{{ properties.modifiers }}">
+  {% if properties.prefix.icon %}
+    <sfgov-icon symbol="{{ properties.prefix.icon }}" class="mr-1"></sfgov-icon>
+  {% endif %}
+  <span>{{ properties.label }}</span>
+  {% if properties.suffix.icon %}
+    <sfgov-icon symbol="{{ properties.suffix.icon }}" class="ml-1"></sfgov-icon>
+  {% endif %}
+</button>
