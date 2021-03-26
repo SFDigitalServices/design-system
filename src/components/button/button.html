@@ -30,7 +30,6 @@
               <td class="pl-2 py-1 {{ content.cell.class }} {{ orient.cell.class }} {{ state.cell.class }}">
                 {% set label = context.text | default(text) %}
                 {% set modifiers = [class, orient.class, state.class] | join(' ') %}
-                
                 {{ button(label, content.prefix, content.suffix, modifiers) }}
               </td>
             {% endfor %}
