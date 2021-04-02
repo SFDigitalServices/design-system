@@ -1,6 +1,6 @@
 const exec = require('execa').sync
 const mandelbrot = require('@frctl/mandelbrot')
-
+const tokens = require('./src/tokens')
 const pkg = require('./package.json')
 const fractal = require('@frctl/fractal').create()
 
@@ -9,7 +9,8 @@ const scripts = [
 ]
 
 const defaultContext = {
-  scripts
+  scripts,
+  tokens
 }
 
 fractal.web.set('server.port', process.env.PORT || 4444)
