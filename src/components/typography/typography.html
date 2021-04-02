@@ -7,9 +7,11 @@
             {{ specimen.title }}
           </span>
           <br>
-          <code class="whitespace-nowrap">
-            {{ specimen.class or '(none)' }}
-          </code>
+          {% if specimen.class %}
+            <code class="whitespace-nowrap">
+              .{{ specimen.class }}
+            </code>
+          {% endif %}
         </th>
         <td class="align-top pb-3">
           <{{ specimen.tag }}
