@@ -10,6 +10,7 @@
     @apply text-white;
     @apply border-0 border-solid border-current;
     @apply text-center justify-center items-center;
+    @apply whitespace-nowrap;
 
     @apply hocus:bg-blue-dark;
 

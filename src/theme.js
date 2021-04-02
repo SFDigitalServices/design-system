@@ -27,6 +27,11 @@ module.exports = {
     medium: 500,
     bold: 700
   },
+  fontWeight: {
+    normal: 300,
+    semibold: 500,
+    bold: 700
+  },
   spacing: {
     0: '0',
     '1/2': '5px',
