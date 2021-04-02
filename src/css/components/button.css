@@ -5,7 +5,7 @@
     @apply cursor-pointer;
     @apply font-semibold;
     @apply rounded;
-    @apply px-2 py-1;
+    @apply px-20 py-8;
     @apply bg-blue-bright;
     @apply text-white;
     @apply no-underline;
