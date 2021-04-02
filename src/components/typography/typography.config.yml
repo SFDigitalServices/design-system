@@ -57,7 +57,7 @@ context:
 
     - title: Body text
       tag: div
-      class: ''
+      class: text-body
       content: |
         <p>Use this style for body text that is longer, such as multiple paragraphs, texts that are more than four lines, or with a wider width. It is good for long-form reading, like news articles or informational pages.</p>
         <p>The 88 Broadway project is a 125-unit family building serving very low-, low-, and middle-income families and the 735 Davis project is a 53-unit building serving formerly homeless, low-income and middle-income seniors. Regular 16/24, paragraph break 24px</p>
