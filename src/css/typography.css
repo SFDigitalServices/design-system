@@ -1,5 +1,4 @@
 @layer base {
-
   /* Don't make people add class="font-medium"
    * to elements that should be bold. */
   b,
