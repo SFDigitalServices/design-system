@@ -15,6 +15,9 @@
 
     @apply hocus:bg-blue-dark;
 
+    /* FIXME: this should be applied by base */
+    box-sizing: border-box;
+
     &.hover,
     &.focus {
       @apply bg-blue-dark;
