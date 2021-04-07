@@ -11,6 +11,21 @@
 {% endmacro %}
 
 <div class="p-4 h-screen {{ wrapper.class }}">
+  <div class="mb-2">
+    <h2>Links</h2>
+    <a href="javascript:void(0)" class="{{ class }}">This is a link</a>
+    <br>
+    <a href="javascript:void(0)" class="{{ class }} btn-block">This is a block link</a>
+  </div>
+
+  <div class="mb-2">
+    <h2>Buttons</h2>
+    <button class="{{ class }}">This is a button</button>
+    <br>
+    <button class="{{ class }} btn-block">This is a block button</button>
+  </div>
+
+  <h2>States</h2>
   <table>
     <thead>
       <tr>
