@@ -8,6 +8,7 @@
     @apply px-2 py-1;
     @apply bg-blue-bright;
     @apply text-white;
+    @apply no-underline;
     @apply border-0 border-solid border-current;
     @apply text-center justify-center items-center;
     @apply whitespace-nowrap;
