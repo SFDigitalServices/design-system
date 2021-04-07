@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    @apply flex;
+    @apply inline-flex;
     @apply appearance-none;
     @apply cursor-pointer;
     @apply font-semibold;
@@ -45,11 +45,7 @@
     }
   }
 
-  .btn-inline {
-    @apply inline-flex;
-  }
-
   .btn-block {
-    @apply w-full;
+    @apply flex w-full;
   }
 }
