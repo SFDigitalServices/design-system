@@ -45,6 +45,7 @@ module.exports = {
     'margin',
     'textAlign',
     'textColor',
+    'textDecoration',
     'verticalAlign',
     'whitespace',
     'width'
@@ -81,6 +82,7 @@ module.exports = {
     stroke: [],
     strokeWidth: [],
     textColor: ['focus', 'hover', 'hocus'],
+    textDecoration: ['focus', 'hover', 'hocus'],
     userSelect: [],
     verticalAlign: ['responsive'],
     width: ['responsive']

@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    @apply flex;
+    @apply inline-flex;
     @apply appearance-none;
     @apply cursor-pointer;
     @apply font-medium;
@@ -8,11 +8,15 @@
     @apply px-2 py-1;
     @apply bg-blue-bright;
     @apply text-white;
+    @apply no-underline;
     @apply border-0 border-solid border-current;
     @apply text-center justify-center items-center;
     @apply whitespace-nowrap;
 
     @apply hocus:bg-blue-dark;
+
+    /* FIXME: this should be applied by base */
+    box-sizing: border-box;
 
     &.hover,
     &.focus {
@@ -45,11 +49,7 @@
     }
   }
 
-  .btn-inline {
-    @apply inline-flex;
-  }
-
   .btn-block {
-    @apply w-full;
+    @apply flex w-full;
   }
 }
