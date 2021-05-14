@@ -1,8 +1,9 @@
-/* eslint-disable key-spacing */
+const breakpoints = require('./tokens/breakpoints')
 const colors = require('./tokens/colors')
 const typography = require('./tokens/typography')
 
 module.exports = {
+  breakpoints,
   colors,
   ...typography,
   spacing: {
