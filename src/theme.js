@@ -1,20 +1,13 @@
 const breakpoints = require('./tokens/breakpoints')
 const colors = require('./tokens/colors')
 const typography = require('./tokens/typography')
+const spacing = require('./tokens/spacing')
 
 module.exports = {
   ...typography,
   colors,
   screens: breakpoints,
-  spacing: {
-    0: '0',
-    '1/2': '5px',
-    1: '10px',
-    2: '20px',
-    3: '30px',
-    4: '40px',
-    gutter: '96px'
-  },
+  spacing,
   borderColor: {
     current: 'currentColor',
     ...colors
