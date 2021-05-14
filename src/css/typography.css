@@ -1,61 +1,110 @@
 @layer base {
-  /* Don't make people add class="font-medium"
-   * to elements that should be bold. */
-  b,
-  strong {
-    @apply font-medium;
-  }
-
   * {
     @apply font-rubik;
     @apply text-body;
   }
 
-  .small {
-    @apply text-small;
+  /* Don't make people add class="font-semibold"
+   * to elements that should be bold. */
+  b,
+  strong {
+    @apply font-semibold;
+  }
+
+  .display-lg {
+    font-size: 44px;
+    line-height: 48px;
+    letter-spacing: -1px;
+    @apply font-light tracking-n1;
+  }
+
+  .display-sm {
+    font-size: 36px;
+    line-height: 40px;
+    @apply font-light tracking-n1;
+  }
+
+  .title-xl {
+    font-size: 32px;
+    line-height: 36px;
+    @apply font-semibold tracking-n1;
+  }
+
+  .title-lg {
+    font-size: 28px;
+    line-height: 32px;
+    @apply font-semibold tracking-n1;
+  }
+
+  .title-md {
+    font-size: 24px;
+    line-height: 28px;
+    @apply font-semibold;
   }
 
   .big-desc {
-    @apply title4 font-normal;
+    font-size: 20px;
+    line-height: 28px;
+    @apply font-regular;
   }
 
-  .big-link {
-    @apply title4 block;
-  }
+  @screen lg {
+    .display-lg {
+      font-size: 72px;
+      line-height: 76px;
+      @apply font-light tracking-n2;
+    }
 
-  .title5 {
-    @apply text-title5;
-    @apply font-medium;
-  }
+    .display-sm {
+      font-size: 48px;
+      line-height: 52px;
+      @apply font-light tracking-n1;
+    }
 
-  .title4 {
-    @apply text-title4;
-    @apply font-medium;
-  }
+    .title-xl {
+      font-size: 60px;
+      line-height: 64px;
+      @apply tracking-n1;
+    }
 
-  .title3 {
-    @apply text-title3;
-    @apply font-medium;
-  }
+    .title-lg {
+      font-size: 44px;
+      line-height: 52px;
+      @apply tracking-n1;
+    }
 
-  .title2 {
-    @apply text-title2;
-    @apply font-medium;
-  }
+    .title-md {
+      font-size: 32px;
+      line-height: 36px;
+      @apply font-semibold;
+    }
 
-  .title1 {
-    @apply text-title1;
-    @apply font-medium;
-  }
+    .title-sm {
+      font-size: 24px;
+      line-height: 28px;
+      @apply font-semibold;
+    }
 
-  .display2 {
-    @apply text-display2;
-    @apply font-light;
-  }
+    .title-xs {
+      font-size: 20px;
+      line-height: 24px;
+      @apply font-semibold;
+    }
 
-  .display1 {
-    @apply text-display1;
-    @apply font-light;
-    @apply tracking-display1;
+    .big-desc {
+      font-size: 24px;
+      line-height: 32px;
+      @apply font-regular;
+    }
+
+    .body {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .small {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }

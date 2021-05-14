@@ -1,77 +1,54 @@
 context:
   specimens:
-    - title: Display 1
+    - title: Display large
       tag: h1
-      class: display1
-      content: |
-        Second Line
-        <br>Light (-2) 72/80
+      class: display-lg
+      content: The quick brown fox jumps over the lazy dog.
 
-    - title: Display 2
+    - title: Display small
       tag: h2
-      class: display2
-      content: |
-        Page title lockup thing
-        <br>Light 48/56
+      class: display-sm
+      content: The quick brown fox jumps over the lazy dog.
 
-    - title: Title 1
+    - title: Title x-large
       tag: h1
-      class: title1
-      content: |
-        First time homebuyer work
-        <br>Medium 60/72
+      class: title-xl
+      content: The quick brown fox jumps over the lazy dog.
 
-    - title: Title 2
+    - title: Title large
       tag: h2
-      class: title2
-      content: |
-        Second line of Title 2 so we can see it
-        <br>Medium 48/56
+      class: title-lg
+      content: The quick brown fox jumps over the lazy dog.
 
-    - title: Title 3
+    - title: Title medium
       tag: h3
-      class: title3
-      content: |
-        This is a new website for the City of San Francisco
-        <br>Medium 36/48
+      class: title-md
+      content: The quick brown fox jumps over the lazy dog.
 
-    - title: Title 4
+    - title: Title small
       tag: h4
-      class: title4
-      content: |
-        Lorem ipsum dolor sit amet is one of two renting
-        <br>Medium 24/32
+      class: title-sm
+      content: The quick brown fox jumps over the lazy dog.
 
-    - title: Title 5
+    - title: Title x-small
       tag: h5
-      class: title5
-      content: |
-        Your first home is one of the most
-        <br>Medium 16/24
+      class: title-xs
+      content: The quick brown fox jumps over the lazy dog.
 
     - title: Big description
       tag: p
       class: big-desc
-      content: |
-        Your first home is one of the most important investments you will make. Learn everything you need to know about buying and owning your own home. Regular 24/32
+      content: Euismod in pellentesque massa placerat duis ultricies. Mauris vitae ultricies leo integer malesuada nunc vel. Sed odio morbi quis commodo odio.
 
     - title: Body text
       tag: div
       class: text-body
       content: |
-        <p>Use this style for body text that is longer, such as multiple paragraphs, texts that are more than four lines, or with a wider width. It is good for long-form reading, like news articles or informational pages.</p>
-        <p>The 88 Broadway project is a 125-unit family building serving very low-, low-, and middle-income families and the 735 Davis project is a 53-unit building serving formerly homeless, low-income and middle-income seniors. Regular 16/24, paragraph break 24px</p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod in pellentesque massa placerat duis ultricies. Mauris vitae ultricies leo integer malesuada nunc vel. Sed odio morbi quis commodo odio. 
+        <br><br>
+        Sagittis aliquam malesuada bibendum arcu vitae. Eros in cursus turpis massa tincidunt dui ut. Urna nunc id cursus metus aliquam eleifend mi. Ac turpis egestas sed tempus. Diam quis enim lobortis scelerisque fermentum. Rutrum quisque non tellus orci ac auctor augue mauris.
 
     - title: Small
       tag: p
       class: small
-      content: |
-        Privacy Policy Regular 14/16
-
-    - title: Big link
-      tag: a
-      class: big-link
-      content: |
-        Link title thing Medium 24/32
-      attrs:
-        href: 'javascript:void(0)'
+      content: Sagittis aliquam malesuada bibendum arcu vitae (regular)
