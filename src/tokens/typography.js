@@ -11,7 +11,8 @@ const fontWeight = {
 module.exports = {
   fontFamily,
   fontSize: {
-    body: ['16px', '24px']
+    body: ['16px', '24px'],
+    small: ['14px', '18px']
   },
   fontWeight,
   letterSpacing: {
