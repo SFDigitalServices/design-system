@@ -1,20 +1,28 @@
-<div class="p-4">
+<div class="p-40">
   <table>
     {% for specimen in specimens %}
+      {% set id = specimen.class %}
       <tr>
-        <th class="font-regular text-left align-top pb-3 pr-3">
-          <span class="title-xs whitespace-nowrap">
+        <th class="font-regular text-left align-top pb-20 pr-40">
+          <div class="big-desc whitespace-nowrap mb-4">
             {{ specimen.title }}
-          </span>
-          <br>
+          </div>
+          <computed-style data-target="#{{ id }}" class="block small">
+            <span data-css-property="font-size" data-units="false"></span>
+            /
+            <span data-css-property="line-height" data-units="false"></span>
+            /
+            <span data-css-property="letter-spacing"></span>
+          </computed-style>
           {% if specimen.class %}
-            <code class="whitespace-nowrap">
+            <code class="block whitespace-nowrap small">
               .{{ specimen.class }}
             </code>
           {% endif %}
         </th>
-        <td class="align-top pb-3">
+        <td class="align-top pb-20">
           <{{ specimen.tag }}
+            id="{{ id }}"
             class="{{ specimen.class }} mt-0"
             {% for attr, value in specimen.attrs %}
               {{ attr }}="{{ value | e }}"
