@@ -1,4 +1,8 @@
+const typography = require('./typography')
+
 module.exports = {
+  breakpoints: require('./breakpoints'),
+  colors: require('./colors'),
   spacing: require('./spacing'),
-  colors: require('./colors')
+  ...typography
 }
