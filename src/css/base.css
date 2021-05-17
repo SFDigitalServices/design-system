@@ -3,8 +3,6 @@
 
 @layer base {
   * {
-    @apply font-rubik;
-    @apply text-body;
     box-sizing: border-box;
   }
 
