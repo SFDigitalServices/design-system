@@ -5,7 +5,8 @@ const pkg = require('./package.json')
 const fractal = require('@frctl/fractal').create()
 
 const scripts = [
-  'https://unpkg.com/@sfgov/icons@0.0.1/dist/sfgov-icons.umd.js'
+  'https://unpkg.com/@sfgov/icons@0.0.1/dist/sfgov-icons.umd.js',
+  '/js/preview.js'
 ]
 
 const defaultContext = {
