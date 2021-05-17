@@ -4,18 +4,26 @@
       {% set id = specimen.class %}
       <tr>
         <th class="font-regular text-left align-top pb-20 pr-40">
-          <div class="big-desc whitespace-nowrap mb-4">
+          <div class="font-semibold whitespace-nowrap mb-4">
             {{ specimen.title }}
           </div>
-          <computed-style data-target="#{{ id }}" class="block small">
-            <span data-css-property="font-size" data-units="false"></span>
-            /
-            <span data-css-property="line-height" data-units="false"></span>
-            /
-            <span data-css-property="letter-spacing"></span>
+          <computed-style class="block font-semibold" data-target="#{{ id }}">
+            <span
+              data-css-property="font-weight"
+              data-units="false"></span>
+            <span
+              data-css-property="font-size"
+              data-units="false">
+            </span>/<span
+              data-css-property="line-height"
+              data-units="false"></span>
+            <span class="block whitespace-nowrap"
+              data-css-property="letter-spacing"
+              data-ignore="normal"
+              data-format="Letter spacing %s"></span>
           </computed-style>
           {% if specimen.class %}
-            <code class="block whitespace-nowrap small">
+            <code class="block whitespace-nowrap text-small mt-4">
               .{{ specimen.class }}
             </code>
           {% endif %}

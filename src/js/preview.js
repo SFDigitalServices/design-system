@@ -1,3 +1,9 @@
+const fontWeightLookup = {
+  300: 'Light',
+  400: 'Regular',
+  600: 'Semi-bold'
+}
+
 window.customElements.define('computed-style', class extends HTMLElement {
   connectedCallback () {
     this.style.display = 'block'
@@ -13,16 +19,31 @@ window.customElements.define('computed-style', class extends HTMLElement {
     for (const target of targets) {
       const prop = target.getAttribute('data-css-property')
       const rawValue = style.getPropertyValue(prop)
-      const { value, units } = this.parseValue(rawValue)
+      const { value, units } = this.parseValue(rawValue, prop)
       target.setAttribute('data-css-value', value)
       target.setAttribute('data-css-units', units)
-      target.textContent = target.getAttribute('data-units') === 'false'
+      const text = target.getAttribute('data-units') === 'false'
         ? value
         : rawValue
+      const ignore = target.getAttribute('data-ignore')
+      if (text && text !== ignore) {
+        const format = target.getAttribute('data-format')
+        target.textContent = format
+          ? format.replace('%s', text)
+          : text
+      } else {
+        target.textContent = target.getAttribute('data-empty') || ''
+      }
     }
   }
 
-  parseValue (value) {
+  parseValue (value, prop) {
+    if (prop === 'font-weight') {
+      return {
+        value: fontWeightLookup[value] || value,
+        units: undefined
+      }
+    }
     const match = value.match(/^(?<value>.+)(?<units>px|%|r?em)$/)
     if (match) {
       return match.groups
