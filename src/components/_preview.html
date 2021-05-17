@@ -18,7 +18,21 @@
     {% for script in _target.context.scripts %}
       <script src="{{ script }}"></script>
     {% endfor %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
+    <script>
+      HTMLInspector.inspect({
+        excludeRules: ['validate-attributes'],
+        excludeElements: [
+          // ignore our own <style-descriptor> element
+          'style-descriptor',
+          // ignore BrowserSync script tag
+          '#__bs_script__',
+          // ignore styles added by browser extensions like Stylish
+          '[id^=stylish]',
+        ],
+        excludeSubTrees: ['svg']
+      })
+    </script>
+
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
-  <script>HTMLInspector.inspect({})</script>
 </html>
