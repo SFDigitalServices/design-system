@@ -57,5 +57,10 @@
     "tailwindcss": "^2.0.2",
     "tailwindcss-interaction-variants": "^5.0.0",
     "watchy": "^0.9.9"
+  },
+  "dependencies": {
+    "@fontsource/noto-sans-tc": "^4.3.0",
+    "@fontsource/roboto-mono": "^4.3.0",
+    "@fontsource/rubik": "^4.3.0"
   }
 }
