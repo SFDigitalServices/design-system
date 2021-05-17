@@ -1,7 +1,7 @@
 const fontWeightLookup = {
   300: 'Light',
   400: 'Regular',
-  600: 'Semi-bold'
+  500: 'Semi-bold'
 }
 
 window.customElements.define('computed-style', class extends HTMLElement {

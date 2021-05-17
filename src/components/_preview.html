@@ -20,15 +20,29 @@
     {% endfor %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
     <script>
+      /*
+       * html-inspectors doesn't like classnames with "/" in
+       * them, so we ignore them :shrug:
+       */
+      HTMLInspector.rules.extend('unused-classes', {
+        whitelist: /\//
+      })
+
       HTMLInspector.inspect({
-        excludeRules: ['validate-attributes'],
+        excludeRules: [
+          'unnecessary-elements',
+          'validate-attributes'
+        ],
         excludeElements: [
           // ignore our own style display element
           'computed-style',
+          'sfgov-icon',
           // ignore BrowserSync script tag
           '#__bs_script__',
           // ignore styles added by browser extensions like Stylish
           '[id^=stylish]',
+          // just ignore SVG altogether
+          'svg'
         ],
         excludeSubTrees: ['svg']
       })
