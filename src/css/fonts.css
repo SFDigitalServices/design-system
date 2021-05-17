@@ -1,2 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap');
+@import '@fontsource/rubik/latin-300.css';
+@import '@fontsource/rubik/latin-400.css';
+@import '@fontsource/rubik/latin-500.css';
+@import '@fontsource/noto-sans-tc/chinese-traditional-300.css';
+@import '@fontsource/noto-sans-tc/chinese-traditional-400.css';
+@import '@fontsource/noto-sans-tc/chinese-traditional-500.css';
