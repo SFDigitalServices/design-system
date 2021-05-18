@@ -7,11 +7,11 @@
     @apply text-body;
   }
 
-  /* Don't make people add class="font-semibold"
+  /* Don't make people add class="font-medium"
    * to elements that should be bold. */
   b,
   strong {
-    @apply font-semibold;
+    @apply font-medium;
   }
 
   .display-lg {
@@ -29,19 +29,19 @@
   .title-xl {
     font-size: 32px;
     line-height: 36px;
-    @apply font-semibold tracking-n1;
+    @apply font-medium tracking-n1;
   }
 
   .title-lg {
     font-size: 28px;
     line-height: 32px;
-    @apply font-semibold tracking-n1;
+    @apply font-medium tracking-n1;
   }
 
   .title-md {
     font-size: 24px;
     line-height: 28px;
-    @apply font-semibold;
+    @apply font-medium;
   }
 
   .big-desc {
@@ -82,19 +82,19 @@
     .title-md {
       font-size: 32px;
       line-height: 36px;
-      @apply font-semibold;
+      @apply font-medium;
     }
 
     .title-sm {
       font-size: 24px;
       line-height: 28px;
-      @apply font-semibold;
+      @apply font-medium;
     }
 
     .title-xs {
       font-size: 20px;
       line-height: 24px;
-      @apply font-semibold;
+      @apply font-medium;
     }
 
     .big-desc {

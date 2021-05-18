@@ -3,7 +3,7 @@
     @apply inline-flex;
     @apply appearance-none;
     @apply cursor-pointer;
-    @apply text-body font-semibold;
+    @apply text-body font-medium;
     @apply rounded;
     @apply px-20 py-8;
     @apply bg-blue-bright;
