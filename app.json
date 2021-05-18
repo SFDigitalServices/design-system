@@ -1,4 +1,7 @@
 {
+  "labs": [
+    "runtime-dyno-metadata"
+  ],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
