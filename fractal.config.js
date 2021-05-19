@@ -1,6 +1,4 @@
-const exec = require('execa').sync
 const mandelbrot = require('@frctl/mandelbrot')
-
 const pkg = require('./package.json')
 const fractal = require('@frctl/fractal').create()
 
