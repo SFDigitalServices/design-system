@@ -91,21 +91,3 @@ theme.addLoadPath('src/templates')
 fractal.web.theme(theme)
 
 module.exports = fractal
-
-function getGitSHA () {
-  try {
-    return exec('git', ['rev-parse', 'HEAD']).stdout
-  } catch (error) {
-    console.warn('unable to get git SHA:', error)
-    return ''
-  }
-}
-
-function getGitRef () {
-  try {
-    return exec('git', ['symbolic-ref', '--short', 'HEAD']).stdout
-  } catch (error) {
-    console.warn('unable to get git SHA:', error)
-    return ''
-  }
-}
