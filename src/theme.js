@@ -12,6 +12,10 @@ module.exports = {
     current: 'currentColor',
     ...colors
   },
+  textColor: {
+    inherit: 'inherit',
+    ...colors
+  },
   borderRadius: {
     DEFAULT: '8px',
     2: '2px',
