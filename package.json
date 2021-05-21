@@ -25,9 +25,7 @@
     "watch": "run-p watch-css watch-js",
     "watch-css": "watchy -w '*.config.js' -w src/css -w src/tokens -- npm run build-css",
     "watch-js": "npm run build-js -- --watch",
-    "start": "watchy -w '*.config.js' -- fractal start --sync",
-    "vercel-build": "npm run build",
-    "vercel-dev": "watchy -w '*.config.js' -- fractal start --port $PORT"
+    "start": "watchy -w '*.config.js' -- fractal start --sync"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
