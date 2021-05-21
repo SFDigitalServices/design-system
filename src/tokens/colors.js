@@ -1,10 +1,13 @@
+const brightBlue = '#4f66ee'
+
 module.exports = {
   white: '#FFF',
   black: '#212123',
+  action: brightBlue,
   blue: {
     1: '#edf4f7',
     2: '#a9d6ea',
-    bright: '#4f66ee',
+    bright: brightBlue,
     dark: '#0c1464'
   },
   slate: {
