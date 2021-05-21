@@ -1,3 +1,4 @@
 module.exports = {
-  lg: '768px'
+  lg: '768px',
+  xl: '1090px'
 }
