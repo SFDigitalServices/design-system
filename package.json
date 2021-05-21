@@ -23,7 +23,7 @@
     "lint": "run-p lint-js",
     "lint-js": "eslint '*.js' 'src/**/*.js'",
     "watch": "run-p watch-css watch-js",
-    "watch-css": "watchy -w '*.config.js' -w src/css -w src/tokens -- npm run build-css",
+    "watch-css": "watchy -w '*.config.js' -w src -- npm run build-css",
     "watch-js": "npm run build-js -- --watch",
     "start": "watchy -w '*.config.js' -- fractal start --sync"
   },
