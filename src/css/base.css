@@ -6,6 +6,15 @@
     box-sizing: border-box;
   }
 
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    @apply text-action;
+  }
+
   :focus,
   .focus {
     outline: 2px dotted #aeb0b5;
