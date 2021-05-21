@@ -1,0 +1,241 @@
+{% macro official(person) %}
+  <div class="w-1/3 pr-20 mb-40 flex">
+    <div class="rounded bg-blue-2 flex-shrink-0"
+         style="width: 80px; height: 80px;">
+      <!-- todo: photo -->
+    </div>
+    <div class="ml-20">
+      <h3 class="title-xs mt-0 mb-4">
+        <a class="text-slate">
+          {{ person.name }}
+        </a>
+      </h3>
+      <div class="title-xs text-slate-light mb-4">
+        {{ person.title }}
+      </div>
+      <div>
+        {{ person.description }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+<!-- languages -->
+<div class="bg-grey-1">
+  <div class="max-w-xl mx-auto">
+    <div class="py-16 flex justify-end text-small">
+      <a class="pl-28 no-underline text-slate font-medium" aria-current="link" href="javascript:void(0)">English</a>
+      <a class="pl-28 no-underline text-slate" href="javascript:void(0)">Español</a>
+      <a class="pl-28 no-underline text-slate" href="javascript:void(0)">中文</a>
+      <a class="pl-28 no-underline text-slate" href="javascript:void(0)">Filipino</a>
+    </div>
+  </div>
+</div>
+<!-- /languages -->
+
+<header>
+  <div class="max-w-xl mx-auto py-48">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center" href="javascript:void(0)">
+        <img class="block" src="https://sf.gov/themes/custom/sfgovpl/logo.svg">
+        <img class="block pl-16" src="https://sf.gov/themes/custom/sfgovpl/src/img/sfgov.svg">
+      </a>
+      <nav class="flex items-center">
+        <a class="font-medium no-underline pr-28" href="javascript:void(0)">Services</a>
+        <a class="font-medium no-underline pr-28" href="javascript:void(0)">Departments</a>
+        <!-- search -->
+        <form class="flex items-stretch" onsubmit="javascript:void(0)">
+          <input class="text-body px-16 py-8 rounded-l border border-solid border-action"
+            type="text" size="16" placeholder="Search">
+          <button class="btn rounded-l-0 px-16" type="submit" aria-label="Submit">
+            <sfgov-icon symbol="search"></sfgov-icon>
+          </button>
+        </form>
+        <!-- /search -->
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="max-w-xl mx-auto">
+  <!-- banner -->
+  <div class="flex bg-yellow-3 rounded" style="overflow: hidden;">
+    <div class="w-1/2 p-40 text-slate">
+      <div>Latest</div>
+      <h1 class="title-lg my-40">
+        Get updates about the COVID-19 vaccine
+      </h1>
+      <a class="btn btn-inverse mb-20" href="javascript:void(0)">Learn more</a>
+    </div>
+    <div class="w-1/2" style="position: relative;">
+      <img style="position: absolute; width: auto; height: 100%; object-fit: cover;"
+           src="https://sf.gov/sites/default/files/styles/836x484/public/2021-02/Geraldine%20McCowanLHHWeb.jpg?itok=ijhjZjoJ"
+           aria-describedby="campaign-image-caption">
+    </div>
+  </div>
+  <div class="text-slate-light text-small text-right mt-4">
+    “Mama G gets her COVID-19 vaccine at Laguna Honda, so she can resume her art” by Laguna Honda Hospital
+  </div>
+  <!-- /banner -->
+
+  <!-- services -->
+  <div class="my-60 text-slate">
+    <h1 class="title-xl mb-20">
+      Services
+    </h1>
+    <div class="flex flex-wrap">
+      {% for service in services %}
+        <div class="mb-40 lg:w-1/3
+                    {% if loop.index % 3 === 0 %}
+                      lg:pr-20
+                    {% else %}
+                      lg:pr-40
+                    {% endif %}">
+          <a class="title-xs block no-underline mb-4" href="javascript:void(0)">
+            {{ service.title }}
+          </a>
+          <div>
+            {{ service.description }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- /services -->
+</div>
+
+<!-- news -->
+<section id="news">
+  <div class="pt-40 pb-100 bg-yellow-1 text-slate">
+    <div class="max-w-xl mx-auto">
+      <h1 class="title-xl mb-40">News</h1>
+      <div class="flex items-stretch">
+        <div class="w-1/2 pr-20">
+          {% for item in news %}
+            <a class="bg-yellow-3 text-slate block rounded p-20
+                      {% if not loop.last %}mb-20{% endif %}">
+              <div class="title-xs mb-40">
+                {{ item.title }}
+              </div>
+              <time>{{ item.date }}</time>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="w-1/2 rounded bg-white p-20">
+          <h2 class="title-md m-0">
+            Official Agencies
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /news -->
+
+<!-- elected officials -->
+<section id="officials">
+  <div class="pt-40 pb-60 mb-60 bg-blue-dark text-white">
+    <div class="max-w-xl mx-auto">
+      <h1 class="title-xl mb-40">
+        Elected Officials
+      </h1>
+      <div class="flex items-center max-w-2/3">
+        {% set mayor = officials.mayor %}
+        <div class="rounded flex-shrink-0"
+             style="width: 200px; height: 200px; position: relative; overflow: hidden;">
+          <img class="block"
+               style="position: absolute; width: 100%; height: auto; object-fit: cover;"
+               src="{{ mayor.photo.url }}">
+        </div>
+        <div class="ml-40">
+          <a class="title-md text-white block mb-20"
+             href="javascript:void(0)">
+            {{ mayor.name }}
+          </a>
+          <div class="title-sm text-grey-4 mb-20">
+            {{ mayor.title }}
+          </div>
+          <div>
+            {{ mayor.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-xl mx-auto">
+    <div class="bg-blue-1 text-slate rounded p-40 pb-0">
+      <h2 class="title-md mt-0 mb-40">
+        Board of Supervisors
+      </h2>
+      <div class="flex flex-wrap">
+        {% for person in officials.supervisors %}
+          {{ official(person) }}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="bg-blue-1 text-slate rounded p-40 pb-0 mt-40">
+      <h2 class="title-md mt-0 mb-40">
+        Elected Officers
+      </h2>
+      <div class="flex flex-wrap">
+        {% for person in officials.officers %}
+          {{ official(person) }}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /elected officials -->
+
+<!-- feedback -->
+<div class="mt-80 py-20 bg-grey-dark text-white">
+  <form class="max-w-xl mx-auto flex justify-between items-center">
+    <div>
+      <span>Was this page helpful?</span>
+      <button class="btn btn-inverse ml-16">Yes</button>
+      <button class="btn btn-inverse ml-16">No</button>
+    </div>
+    <a class="text-white block" href="javascript:void(0)">
+      Report something wrong with this page
+    </a>
+  </form>
+</div>
+<!-- /feedback -->
+
+<footer class="py-60 bg-black text-white">
+  <div class="max-w-xl mx-auto">
+    <div class="flex items-start">
+      <div class="w-1/2 flex items-center">
+        <img src="https://sf.gov/themes/custom/sfgovpl/logo-white.svg"
+             width="90" height="90"
+             alt="Seal of the City &amp; County of San Francisco"
+             class="block">
+        <div class="title-md font-light ml-20">
+          City and County<br>
+          of San Francisco
+        </div>
+      </div>
+      <div class="w-1/2 pt-16">
+        <div class="flex">
+          <div class="w-1/2 pl-20 flex-shrink-0">
+            {% for link in footer.links.left %}
+              <a class="block font-medium text-white no-underline mb-16" href="javascript:void(0)">
+                {{ link.text }}
+              </a>
+            {% endfor %}
+          </div>
+          <div class="w-1/2 pl-20">
+            {% for link in footer.links.right %}
+              <a class="block text-grey-2 no-underline mb-16" href="javascript:void(0)">
+                {{ link.text }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

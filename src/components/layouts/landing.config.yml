@@ -1,0 +1,106 @@
+context:
+  services:
+    - title: Activities
+      description: Things to do in San Francisco.
+
+    - title: Building
+      description: Construction resources and property information.
+
+    - title: Business
+      description: Starting, owning, and closing a business.
+
+    - title: Coronavirus (COVID-19)
+      description: Get vaccinated. Wear face coverings. Choose outdoor activities. Get tested if you're exposed or have symptoms.
+
+    - title: Government
+      description: Personal records, pay taxes or fines, and the census.
+
+    - title: Housing
+      description: Finding and staying in housing.
+
+    - title: Immigrants
+      description: Resources and programs helpful to immigrants.
+
+    - title: Report a problem
+      description: Tell us about issues.
+
+    - title: Safety
+      description: Personal safety and preparedness.
+
+    - title: Transportation
+      description: Driving, parking, buses, Muni, and paratransit.
+
+  news:
+    - title: SF allows more flexibility for open activities within the Yellow Tier
+      date: May 20, 2021
+
+    - title: City announces groundbreaking of affordable housing in Diamond Heights
+      date: May 19, 2021
+
+    - title: People 12 and older are now eligible for the COVID-19 vaccine in SF
+      date: May 13, 2021
+
+  officials:
+    mayor:
+      name: London Breed
+      title: Mayor
+      description: London Nicole Breed is the 45th mayor of the City and County of San Francisco. Mayor Breed is the first African-American woman Mayor in San Francisco’s history.
+      photo:
+        url: 'https://sf.gov/sites/default/files/2019-01/MLB%20Official%20Photo.jpg'
+
+    supervisors:
+      - name: Shamann Walton
+        title: President of the Board, Supervisor
+        description: District 10
+      - name: Connie Chan
+        title: Supervisor
+        description: District 1
+      - name: Catherine Stefani
+        title: Supervisor
+        description: District 2
+      - name: Aaron Peskin
+        title: Supervisor
+        description: District 3
+      - name: Gordon Mar
+        title: Supervisor
+        description: District 4
+      - name: Dean Preston
+        title: Supervisor
+        description: District 5
+      - name: Matt Haney
+        title: Supervisor
+        description: District 6
+      - name: Myrna Melgar
+        title: Supervisor
+        description: District 7
+      - name: Rafael Mandelman
+        title: Supervisor
+        description: District 8
+      - name: Hillary Ronen
+        title: Supervisor
+        description: District 9
+      - name: Ahsha Safai
+        title: Supervisor
+        description: District 11
+
+    officers:
+      - name: Manohar Raju
+        title: Public Defender
+      - name: Dennis Herrera
+        title: City Attorney
+      - name: Chesa Boudin
+        title: District Attorney
+      - name: Paul Miyamoto
+        title: Sheriff
+      - name: José Cisneros
+        title: Treasurer
+
+  footer:
+    links:
+      left:
+        - text: Jobs with the City
+        - text: Contact us
+        - text: About this website
+      right:
+        - text: Disclaimer
+        - text: Privacy policy
