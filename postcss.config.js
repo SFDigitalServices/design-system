@@ -14,7 +14,6 @@ module.exports = {
     require('postcss-normalize-charset'),
     require('postcss-copy')({
       basePath: ['src', 'node_modules'],
-      preservePath: true,
       dest: 'dist/css/files',
       template: '[name].[ext]'
     })
