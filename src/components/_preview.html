@@ -1,20 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ '/css/sfds.css' | path }}" media="all" />
+    <link rel="stylesheet" href="{{ '/css/fractal.css' | path }}" media="all" />
     <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Rubik:300,400,500,700" />
     <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700&amp;display=swap&amp;subset=chinese-traditional" />
+    <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Roboto+Mono:300" />
     <title>Preview Layout</title>
   </head>
   <body>
-    <div>
+    <main>
       {{ yield | safe }}
-    </div>
+    </main>
 
     {% for script in _target.context.scripts %}
       <script src="{{ script }}"></script>
     {% endfor %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
+    <script>
+      /*
+       * html-inspectors doesn't like classnames with "/" in
+       * them, so we ignore them :shrug:
+       */
+      HTMLInspector.rules.extend('unused-classes', {
+        whitelist: /\//
+      })
+
+      HTMLInspector.inspect({
+        excludeRules: [
+          'unnecessary-elements',
+          'validate-attributes'
+        ],
+        excludeElements: [
+          // ignore our own style display element
+          'computed-style',
+          'sfgov-icon',
+          // ignore BrowserSync script tag
+          '#__bs_script__',
+          // ignore styles added by browser extensions like Stylish
+          '[id^=stylish]',
+          // just ignore SVG altogether
+          'svg'
+        ],
+        excludeSubTrees: ['svg']
+      })
+    </script>
+
   </body>
 </html>

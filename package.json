@@ -1,6 +1,6 @@
 {
   "name": "sfgov-design-system",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "repository": "SFDigitalServices/design-system",
   "author": "City & County of San Francisco, California",
   "license": "MIT",
@@ -22,7 +22,8 @@
     "clean": "rm -rf dist",
     "lint": "run-p lint-js",
     "lint-js": "eslint '*.js' 'src/**/*.js'",
-    "watch-css": "watchy -w '*.config.js' -w src/css -- npm run build-css",
+    "watch": "run-p watch-css watch-js",
+    "watch-css": "watchy -w '*.config.js' -w src/css -w src/tokens -- npm run build-css",
     "watch-js": "npm run build-js -- --watch",
     "start": "watchy -w '*.config.js' -- fractal start --sync"
   },
@@ -43,7 +44,7 @@
     "execa": "^5.0.0",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.1",
+    "postcss": "^8.2.10",
     "postcss-cli": "^8.3.1",
     "postcss-custom-properties": "^10.0.0",
     "postcss-import": "^12.0.1",
