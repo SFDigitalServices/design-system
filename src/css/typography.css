@@ -1,0 +1,111 @@
+@layer base {
+  * {
+    @apply font-rubik;
+  }
+
+  body {
+    @apply text-body;
+  }
+
+  /* Don't make people add class="font-medium"
+   * to elements that should be bold. */
+  b,
+  strong {
+    @apply font-medium;
+  }
+
+  .display-lg {
+    font-size: 44px;
+    line-height: 48px;
+    @apply font-light tracking-n1;
+  }
+
+  .display-sm {
+    font-size: 36px;
+    line-height: 40px;
+    @apply font-light tracking-n1;
+  }
+
+  .title-xl {
+    font-size: 32px;
+    line-height: 36px;
+    @apply font-medium tracking-n1;
+  }
+
+  .title-lg {
+    font-size: 28px;
+    line-height: 32px;
+    @apply font-medium tracking-n1;
+  }
+
+  .title-md {
+    font-size: 24px;
+    line-height: 28px;
+    @apply font-medium;
+  }
+
+  .big-desc {
+    font-size: 20px;
+    line-height: 28px;
+    @apply font-regular;
+  }
+
+  .small {
+    @apply text-small !important;
+  }
+
+  @screen lg {
+    .display-lg {
+      font-size: 72px;
+      line-height: 76px;
+      @apply font-light tracking-n2;
+    }
+
+    .display-sm {
+      font-size: 48px;
+      line-height: 52px;
+      @apply font-light tracking-n1;
+    }
+
+    .title-xl {
+      font-size: 60px;
+      line-height: 64px;
+      @apply tracking-n1;
+    }
+
+    .title-lg {
+      font-size: 44px;
+      line-height: 52px;
+      @apply tracking-n1;
+    }
+
+    .title-md {
+      font-size: 32px;
+      line-height: 36px;
+      @apply font-medium;
+    }
+
+    .title-sm {
+      font-size: 24px;
+      line-height: 28px;
+      @apply font-medium;
+    }
+
+    .title-xs {
+      font-size: 20px;
+      line-height: 24px;
+      @apply font-medium;
+    }
+
+    .big-desc {
+      font-size: 24px;
+      line-height: 32px;
+      @apply font-regular;
+    }
+
+    .body {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

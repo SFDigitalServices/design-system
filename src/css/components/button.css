@@ -3,9 +3,9 @@
     @apply inline-flex;
     @apply appearance-none;
     @apply cursor-pointer;
-    @apply font-semibold;
+    @apply text-body font-medium;
     @apply rounded;
-    @apply px-2 py-1;
+    @apply px-20 py-8;
     @apply bg-blue-bright;
     @apply text-white;
     @apply no-underline;
@@ -14,9 +14,6 @@
     @apply whitespace-nowrap;
 
     @apply hocus:bg-blue-dark;
-
-    /* FIXME: this should be applied by base */
-    box-sizing: border-box;
 
     &.hover,
     &.focus {

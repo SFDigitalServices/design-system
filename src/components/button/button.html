@@ -1,24 +1,24 @@
 {% macro button(label, prefix, suffix, class) %}
   <button class="{{ class }}">
     {% if prefix.icon %}
-      <sfgov-icon symbol="{{ prefix.icon }}" class="mr-1"></sfgov-icon>
+      <sfgov-icon symbol="{{ prefix.icon }}" class="mr-8"></sfgov-icon>
     {% endif %}
     <span>{{ label }}</span>
     {% if suffix.icon %}
-      <sfgov-icon symbol="{{ suffix.icon }}" class="ml-1"></sfgov-icon>
+      <sfgov-icon symbol="{{ suffix.icon }}" class="ml-8"></sfgov-icon>
     {% endif %}
   </button>
 {% endmacro %}
 
-<div class="p-4 h-screen {{ wrapper.class }}">
-  <div class="mb-2">
+<div class="p-20 h-screen {{ wrapper.class }}">
+  <div class="mb-20">
     <h2>Links</h2>
     <a href="javascript:void(0)" class="{{ class }}">This is a link</a>
     <br>
     <a href="javascript:void(0)" class="{{ class }} btn-block">This is a block link</a>
   </div>
 
-  <div class="mb-2">
+  <div class="mb-20">
     <h2>Buttons</h2>
     <button class="{{ class }}">This is a button</button>
     <br>
@@ -33,7 +33,7 @@
           State
         </td>
         {% for state in matrix.state %}
-          <th class="text-left pl-2" scope="col">
+          <th class="text-left pl-20" scope="col">
             {{ state.label }}
           </th>
         {% endfor %}
@@ -42,15 +42,15 @@
     {% for content in matrix.content %}
       <tbody>
         <tr>
-          <th class="pt-2 text-right">{{ content.label }}</th>
+          <th class="pt-16 text-right">{{ content.label }}</th>
         </tr>
         {% for orient in matrix.orient %}
           <tr>
-            <td class="text-right align-middle w-1/5">
+            <td class="text-right align-middle w-1/4">
               {{ orient.label }}
             </td>
             {% for state in matrix.state %}
-              <td class="pl-2 py-1 {{ content.cell.class }} {{ orient.cell.class }} {{ state.cell.class }}">
+              <td class="pl-20 py-8 {{ content.cell.class }} {{ orient.cell.class }} {{ state.cell.class }}">
                 {% set label = context.text | default(text) %}
                 {% set modifiers = [class, orient.class, state.class] | join(' ') %}
                 {{ button(label, content.prefix, content.suffix, modifiers) }}

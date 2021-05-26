@@ -1,17 +1,14 @@
 @import 'tailwindcss/base';
+@import './typography.css';
 
 @layer base {
   * {
-    @apply font-rubik;
-    @apply text-body;
     box-sizing: border-box;
   }
 
-  @layer base {
-    :focus,
-    .focus {
-      outline: 2px dotted #aeb0b5;
-      outline-offset: 3px;
-    }
+  :focus,
+  .focus {
+    outline: 2px dotted #aeb0b5;
+    outline-offset: 3px;
   }
 }

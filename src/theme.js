@@ -1,27 +1,13 @@
+const breakpoints = require('./tokens/breakpoints')
 const colors = require('./tokens/colors')
+const typography = require('./tokens/typography')
+const spacing = require('./tokens/spacing')
 
 module.exports = {
+  ...typography,
   colors,
-  fontFamily: {
-    rubik: ['Rubik', 'ui-sans-serif', 'sans-serif']
-  },
-  fontSize: {
-    body: ['17px', '24px']
-  },
-  fontWeight: {
-    normal: 300,
-    semibold: 500,
-    bold: 700
-  },
-  spacing: {
-    0: '0',
-    '1/2': '5px',
-    1: '10px',
-    2: '20px',
-    3: '30px',
-    4: '40px',
-    gutter: '96px'
-  },
+  screens: breakpoints,
+  spacing,
   borderColor: {
     current: 'currentColor',
     ...colors
@@ -34,5 +20,17 @@ module.exports = {
     DEFAULT: '4px',
     0: '0',
     1: '1px'
+  },
+  width: {
+    '1/2': '50%',
+    '2/2': '100%',
+    '1/3': '33.3333333%',
+    '2/3': '66.6666666%',
+    '3/3': '100%',
+    '1/4': '25%',
+    '2/4': '50%',
+    '3/4': '75%',
+    '4/4': '100%',
+    full: '100%'
   }
 }
