@@ -52,8 +52,11 @@ const theme = mandelbrot({
   nav: ['search', 'docs', 'components', 'information'],
   panels: ['html', 'view', 'context', 'resources', 'info', 'notes'],
   styles: [
-    'default',
-    '/css/fractal.css'
+    // 'default',
+    '/css/fractal.css',
+    'https://fonts.googleapis.com/css?family=Rubik:300,400,500',
+    'https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500&amp;display=swap&amp;subset=chinese-traditional',
+    'https://fonts.googleapis.com/css?family=Roboto+Mono:300'
   ],
   scripts: [
     'default',
