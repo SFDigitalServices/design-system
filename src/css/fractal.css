@@ -1,6 +1,19 @@
+@import './sfds.css';
+
 code,
 .Code {
-  font-family: 'Roboto Mono', monospace !important;
-  font-weight: 300;
+  @apply font-mono font-light !important;
   white-space: pre;
 }
+
+[class*="hljs-"] {
+  font-family: inherit !important;
+}
+
+.hljs-tag,
+.hljs-name {
+  @apply text-slate !important;
+}
+
+.hljs-attr { @apply text-green-3 !important; }
+.hljs-string { @apply text-red-3 !important; }
