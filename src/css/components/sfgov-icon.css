@@ -1,0 +1,8 @@
+sfgov-icon {
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    fill: currentColor;
+  }
+}
