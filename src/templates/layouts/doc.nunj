@@ -1,0 +1,22 @@
+{% extends "layouts/pjax.nunj" if request.isPjax else "layouts/frame.nunj" %}
+
+{% block content %}
+
+  {% block docHeader %}
+    <div class="mb-40">
+      <h2 class="title-xl m-0">
+        {{ page.title }}
+      </h2>
+      {% if page.status %}
+        <div class="font-mono">
+          status: {{ page.status }}
+        </div>
+      {% endif %}
+    </div>
+  {% endblock %}
+
+  <div class="prose">
+    {% block docContent %}{% endblock %}
+  </div>
+
+{% endblock %}

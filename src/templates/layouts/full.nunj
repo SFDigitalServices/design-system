@@ -1,0 +1,11 @@
+{% extends "layouts/skeleton.nunj" %}
+
+{% block page %}
+
+<div class="Frame Frame--full bg-yellow-2" id="frame">
+
+{% block content %}{% endblock %}
+
+</div>
+
+{% endblock %}

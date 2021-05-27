@@ -1,0 +1,49 @@
+{% extends "layouts/pjax.nunj" if request.isPjax else "layouts/frame.nunj" %}
+
+{% import "macros/errors.nunj" as errors %}
+{% import "macros/image.nunj" as img %}
+{% import "macros/render.nunj" as render %}
+{% import "macros/status.nunj" as status %}
+
+{% set page = { title: entity.title } %}
+
+{% set previewUrl = path(frctl.theme.urlFromRoute('preview', {handle: entity.handle})) %}
+
+{% block content %}
+
+{% if frctl.env.server and frctl.env.sync %}
+    {% set rendered = false %}
+{% else %}
+    {% set rendered = entity.render(null, renderEnv, { preview: true, collate: true }) | async(true) %}
+    {% if rendered | isError %}
+        {% set error = rendered %}
+        {% set renderError %}{{ errors.renderError('component', error.message) }}{% endset %}
+        {% set rendered = false %}
+    {% endif %}
+{%- endif %}
+
+<div class="flex justify-between mb-40">
+  <h2 class="title-xl m-0">
+    {{ entity.title }}
+  </h2>
+  <div class="align-right">
+    {{ status.tag(entity.status) }}
+  </div>
+</div>
+
+<div class="p-20 rounded border border-solid border-grey-1">
+  {{ entity.render(null, renderEnv, { preview: true, collate: true }) | async(true) }}
+</div>
+
+<div class="my-40">
+  <details class="details">
+    <summary class="title-sm">
+      HTML
+    </summary>
+    <div class="overflow-x-auto">
+      <pre class="font-mono m-0"><code class="hljs p-0 bg-transparent">{{ render.entity(entity.render(null, renderEnv, {preview: false, collate: false}) | async(true)) | trim }}</code></pre>
+    </div>
+  </details>
+</div>
+
+{% endblock %}

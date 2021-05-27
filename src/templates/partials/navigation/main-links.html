@@ -1,0 +1,8 @@
+{% for link in [
+  { title: 'Color', href: 'javascript:void(0)' },
+  { title: 'Spacing', href: 'javascript:void(0)' },
+  { title: 'Typography', href: '/components/detail/typography' },
+  { title: 'Components', href: '/components' }
+] %}
+  <a class="font-medium no-underline pr-28" href="{{ link.href }}">{{ link.title }}</a>
+{% endfor %}

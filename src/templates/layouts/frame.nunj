@@ -1,0 +1,24 @@
+{% extends "layouts/skeleton.nunj" %}
+{% import "macros/navigation.nunj" as nav %}
+
+{% block page %}
+
+  {% if frctl.theme.get('languages') %}
+    <div class="bg-grey-1">
+      <div class="max-w-xl mx-auto py-8">
+        This is the navigation
+      </div>
+    </div>
+  {% endif %}
+
+  <header>
+    {% include 'partials/header.html' %}
+  </header>
+
+  <main class="text-slate">
+    <div class="max-w-xl mx-auto">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+{% endblock %}
