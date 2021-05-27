@@ -1,5 +1,6 @@
 const fontFamily = {
-  rubik: ['Rubik', 'ui-sans-serif', 'sans-serif']
+  rubik: ['Rubik', 'ui-sans-serif', 'sans-serif'],
+  mono: ['Roboto Mono', 'monospace']
 }
 
 const fontWeight = {
