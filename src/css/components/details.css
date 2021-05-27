@@ -1,0 +1,12 @@
+.details {
+  @apply bg-white rounded border border-solid border-action;
+
+  summary {
+    @apply block cursor-pointer text-action px-16 py-8 m-0;
+    list-style: none;
+  }
+
+  > summary + * {
+    @apply p-16;
+  }
+}
