@@ -8,6 +8,10 @@ module.exports = {
   colors,
   screens: breakpoints,
   spacing,
+  backgroundColor: {
+    transparent: 'transparent',
+    ...colors
+  },
   borderColor: {
     current: 'currentColor',
     ...colors
