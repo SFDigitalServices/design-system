@@ -7,6 +7,8 @@
   "project": {
     "title": "SF.gov design system"
   },
+  "main": "dist/index.js",
+  "browser": "dist/js/sfds.js",
   "files": [
     "dist",
     "docs",
@@ -17,7 +19,7 @@
     "build": "run-s build-css build-js build-docs",
     "build-docs": "fractal build",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
-    "build-js": "babel -d dist/js src/js/*.js",
+    "build-js": "rollup -c",
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
     "lint": "run-p lint-js",
@@ -34,6 +36,8 @@
     "@frctl/fractal": "^1.5.2",
     "@frctl/mandelbrot": "^1.7.0",
     "@frctl/nunjucks": "^2.0.6",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "autoprefixer": "^9.8.4",
     "cssnano": "^4.1.10",
     "eslint": "^7.17.0",
@@ -53,6 +57,9 @@
     "postcss-normalize-charset": "^4.0.1",
     "postcss-scss": "^2.1.1",
     "postcss-strip-inline-comments": "^0.1.5",
+    "rollup": "^2.50.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.2",
     "tailwindcss": "^2.0.2",
     "tailwindcss-interaction-variants": "^5.0.0",
     "watchy": "^0.9.9"
