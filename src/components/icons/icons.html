@@ -1,0 +1,30 @@
+<div class="p-16">
+  <p><b>TODO:</b> usage guidelines</p>
+
+  <table class="mt-16">
+    <head>
+      <tr class="text-left">
+        <th class="p-8 pl-0">Name</th>
+        <th class="p-8">Icon</th>
+        <th class="p-8">HTML</th>
+        <th class="p-8">Tags</th>
+      </tr>
+    </head>
+    <tbody>
+      {% for symbol, icon in system.icons %}
+        <tr>
+          <td class="p-8 pl-0">{{ icon.name }}</td>
+          <td class="p-8 text-center">
+            <sfgov-icon symbol="{{ symbol }}"></sfgov-icon>
+          </td>
+          <td class="p-8">
+            <code>&lt;sfgov-icon symbol="{{ symbol }}"&gt;&lt;/sfgov-icon&gt;</code>
+          </td>
+          <td class="p-8">
+            {{ icon.tags | join(', ') }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
