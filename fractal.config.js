@@ -1,5 +1,6 @@
 const mandelbrot = require('@frctl/mandelbrot')
 const tokens = require('./src/tokens')
+const { icons } = require('./src/icons/data')
 const pkg = require('./package.json')
 const fractal = require('@frctl/fractal').create()
 
@@ -10,7 +11,10 @@ const scripts = [
 
 const defaultContext = {
   scripts,
-  tokens
+  system: {
+    tokens,
+    icons
+  }
 }
 
 fractal.web.set('server.port', process.env.PORT || 4444)
