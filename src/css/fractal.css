@@ -1,6 +1,5 @@
 code,
 .Code {
-  font-family: 'Roboto Mono', monospace !important;
-  font-weight: 300;
+  @apply font-mono font-light;
   white-space: pre;
 }
