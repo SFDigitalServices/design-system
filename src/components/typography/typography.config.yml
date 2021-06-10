@@ -52,3 +52,8 @@ context:
       tag: p
       class: small
       content: Sagittis aliquam malesuada bibendum arcu vitae (regular)
+
+    - title: Monospace body
+      tag: p
+      class: font-mono
+      content: The quick brown fox jumps over the lazy dog.
