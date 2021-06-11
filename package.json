@@ -14,8 +14,8 @@
     "tailwind.config.js"
   ],
   "scripts": {
-    "build": "run-s build-css build-js build-site",
-    "build-site": "eleventy",
+    "build": "run-s build-css build-js build-docs",
+    "build-docs": "eleventy",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "babel -d dist/js src/js/*.js",
     "build-clean": "run-s clean build",
