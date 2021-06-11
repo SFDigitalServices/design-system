@@ -9,7 +9,6 @@ module.exports = {
     require('postcss-nested'),
     require('tailwindcss'),
     require('autoprefixer'),
-    require('postcss-custom-properties'),
     prod && require('cssnano'),
     require('postcss-normalize-charset')
   ].filter(Boolean),
