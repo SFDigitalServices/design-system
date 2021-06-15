@@ -54,6 +54,10 @@
     @apply text-small !important;
   }
 
+  .font-mono {
+    @apply text-small;
+  }
+
   @screen lg {
     .display-lg {
       font-size: 72px;
