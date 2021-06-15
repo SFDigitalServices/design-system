@@ -1,5 +1,4 @@
 @import 'tailwindcss/base';
-@import './typography.css';
 
 @layer base {
   * {

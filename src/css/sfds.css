@@ -1,3 +1,4 @@
 @import './base';
-@import './utilities';
+@import './typography';
 @import './components';
+@import './utilities';
