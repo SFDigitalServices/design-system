@@ -106,10 +106,5 @@
       line-height: 32px;
       @apply font-regular;
     }
-
-    .body {
-      font-size: 16px;
-      line-height: 24px;
-    }
   }
 }
