@@ -46,7 +46,6 @@
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.5",
     "postcss-normalize-charset": "^5.0.1",
-    "postcss-scss": "^3.0.5",
     "postcss-strip-inline-comments": "^0.1.5",
     "tailwindcss": "^2.0.2",
     "tailwindcss-interaction-variants": "^5.0.0",
