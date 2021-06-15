@@ -50,7 +50,7 @@ context:
 
     - title: Small
       tag: p
-      class: small
+      class: text-small
       content: Sagittis aliquam malesuada bibendum arcu vitae (regular)
 
     - title: Monospace body
