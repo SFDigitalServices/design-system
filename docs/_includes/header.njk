@@ -1,16 +1,32 @@
 <header>
   <div class="max-w-xl mx-auto py-48">
     <div class="flex items-center justify-between">
-      <a class="flex items-center" href="javascript:void(0)">
-        <img class="block" src="https://sf.gov/themes/custom/sfgovpl/logo.svg">
-        <img class="block pl-16" src="https://sf.gov/themes/custom/sfgovpl/src/img/sfgov.svg">
+      <a class="flex items-center no-underline" href="javascript:void(0)">
+        <img
+          alt="City &amp; County of San Francisco"
+          class="block"
+          height="60"
+          src="https://sf.gov/themes/custom/sfgovpl/logo.svg">
+        <div class="pl-16">
+          <img
+            alt="SF.gov"
+            class="block mt-2"
+            height="20"
+            src="https://sf.gov/themes/custom/sfgovpl/src/img/sfgov.svg">
+          <div class="title-sm font-light text-black mt-2">design system</div>
+        </div>
       </a>
       <nav class="flex items-center">
-        {% for link in nav.primary %}
-          <a class="font-medium no-underline pr-28" href="{{ link.href | e }}">{{ link.text }}</a>
+        {% set items = collections.all | eleventyNavigation('primary') %}
+        {% for item in items %}
+          <a
+            class="font-medium no-underline pr-28"
+            href="{{ item.url }}">
+              {{- item.title }}
+          </a>
         {% endfor %}
         <!-- search -->
-        <form class="flex items-stretch" onsubmit="javascript:void(0)">
+        <form class="flex items-stretch" onsubmit="javascript:void(0)" hidden>
           <input class="text-body px-16 py-8 rounded-l border border-solid border-action"
             type="text" size="16" placeholder="Search">
           <button class="btn rounded-l-0 px-16" type="submit" aria-label="Submit">
