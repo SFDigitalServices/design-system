@@ -14,6 +14,15 @@
     @apply font-medium;
   }
 
+  pre,
+  code {
+    @apply font-mono whitespace-pre-wrap;
+
+    * {
+      @apply font-inherit;
+    }
+  }
+
   .display-lg {
     font-size: 44px;
     line-height: 48px;
