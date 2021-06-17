@@ -30,6 +30,6 @@ module.exports = {
       })
   ],
   scripts: [
-    { src: '/dist/js/sfds.js' }
+    { src: '/dist/js/docs.js' }
   ]
 }
