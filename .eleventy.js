@@ -6,8 +6,9 @@ module.exports = config => {
 
   config.addDataExtension('yml', contents => yaml.safeLoad(contents))
 
+  config.setUseGitIgnore(false)
+  config.addWatchTarget('./dist')
   config.addPassthroughCopy('dist')
-  config.addWatchTarget('dist')
 
   return {
     dir: {
