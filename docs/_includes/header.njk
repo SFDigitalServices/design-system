@@ -1,7 +1,7 @@
 <header>
   <div class="max-w-xl mx-auto py-48">
     <div class="flex items-center justify-between">
-      <a class="flex items-center no-underline" href="javascript:void(0)">
+      <a class="flex items-center no-underline" href="/">
         <img
           alt="City &amp; County of San Francisco"
           class="block"
@@ -20,7 +20,7 @@
         {% set items = collections.all | eleventyNavigation('primary') %}
         {% for item in items %}
           <a
-            class="font-medium no-underline pr-28"
+            class="inline-block font-medium no-underline mr-28"
             href="{{ item.url }}">
               {{- item.title }}
           </a>
