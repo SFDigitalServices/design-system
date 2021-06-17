@@ -1,13 +1,17 @@
 const breakpoints = require('./tokens/breakpoints')
 const colors = require('./tokens/colors')
-const typography = require('./tokens/typography')
+const { fontFamily, ...typography } = require('./tokens/typography')
 const spacing = require('./tokens/spacing')
 
 module.exports = {
-  ...typography,
   colors,
   screens: breakpoints,
   spacing,
+  fontFamily: {
+    ...fontFamily,
+    inherit: 'inherit'
+  },
+  ...typography,
   borderColor: {
     current: 'currentColor',
     ...colors
