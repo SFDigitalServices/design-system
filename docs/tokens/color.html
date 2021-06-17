@@ -26,9 +26,9 @@ eleventyComputed:
     text:
       - label: Slate blue
         swatches:
-          - label: L4
+          - label: Default
             value: '{{ tokens.colors.slate.DEFAULT }}'
-          - label: L2
+          - label: Light
             value: '{{ tokens.colors.slate.light }}'
 
     action:
@@ -39,11 +39,11 @@ eleventyComputed:
       - label: Slate blue
         swatches:
           - label: L4
-            value: '{{ tokens.colors.slate.DEFAULT }}' # fixme
+            value: '{{ tokens.colors.slate[4] }}'
           - label: L3
             value: '{{ tokens.colors.slate[3] }}'
           - label: L2
-            value: '{{ tokens.colors.slate.light }}' # fixme
+            value: '{{ tokens.colors.slate[2] }}'
           - label: L1
             value: '{{ tokens.colors.slate[1] }}'
       - label: Green
