@@ -12,7 +12,11 @@ module.exports = {
   },
   slate: {
     DEFAULT: '#1c3e57',
-    light: '#607889'
+    light: '#607889',
+    4: '#002B48',
+    3: '#1D4D70',
+    2: '#5b7c94',
+    1: '#CEDAE4'
   },
   green: {
     4: '#1B674D',
