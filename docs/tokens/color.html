@@ -1,0 +1,153 @@
+---
+tags: ['token']
+eleventyComputed:
+  colors:
+    primary:
+      - label: Dark blue
+        value: '{{ tokens.colors.blue.dark }}'
+      - label: Blue L2
+        value: '{{ tokens.colors.blue[2] }}'
+      - label: Blue L1
+        value: '{{ tokens.colors.blue[1] }}'
+      - label: Black
+        value: '{{ tokens.colors.black }}'
+      - label: Dark grey
+        value: '{{ tokens.colors.grey.dark }}'
+      - label: White
+        value: '{{ tokens.colors.white }}'
+        class: border-1 border-solid border-black
+
+    text:
+      - label: Slate blue
+        swatches:
+          - label: L4
+            value: '{{ tokens.colors.slate.DEFAULT }}'
+          - label: L2
+            value: '{{ tokens.colors.slate.light }}'
+
+    action:
+      - label: Bright blue
+        value: '{{ tokens.colors.blue.bright }}'
+
+    secondary:
+      - label: Slate blue
+        swatches:
+          - label: L4
+            value: '{{ tokens.colors.slate.DEFAULT }}' # fixme
+          - label: L3
+            value: '{{ tokens.colors.slate[3] }}'
+          - label: L2
+            value: '{{ tokens.colors.slate.light }}' # fixme
+          - label: L1
+            value: '{{ tokens.colors.slate[1] }}'
+      - label: Green
+        swatches:
+          - label: L4
+            value: '{{ tokens.colors.green[4] }}'
+          - label: L3
+            value: '{{ tokens.colors.green[3] }}'
+          - label: L2
+            value: '{{ tokens.colors.green[2] }}'
+          - label: L1
+            value: '{{ tokens.colors.green[1] }}'
+      - label: Red
+        swatches:
+          - label: L4
+            value: '{{ tokens.colors.red[4] }}'
+          - label: L3
+            value: '{{ tokens.colors.red[3] }}'
+          - label: L2
+            value: '{{ tokens.colors.red[2] }}'
+          - label: L1
+            value: '{{ tokens.colors.red[1] }}'
+      - label: Purple
+        swatches:
+          - label: L4
+            value: '{{ tokens.colors.purple[4] }}'
+          - label: L3
+            value: '{{ tokens.colors.purple[3] }}'
+          - label: L2
+            value: '{{ tokens.colors.purple[2] }}'
+          - label: L1
+            value: '{{ tokens.colors.purple[1] }}'
+      - label: Yellow
+        swatches:
+          - label: L4
+            value: '{{ tokens.colors.yellow[4] }}'
+          - label: L3
+            value: '{{ tokens.colors.yellow[3] }}'
+          - label: L2
+            value: '{{ tokens.colors.yellow[2] }}'
+          - label: L1
+            value: '{{ tokens.colors.yellow[1] }}'
+      - label: Grey
+        swatches:
+          - label: L4
+            value: '{{ tokens.colors.grey[4] }}'
+          - label: L3
+            value: '{{ tokens.colors.grey[3] }}'
+          - label: L2
+            value: '{{ tokens.colors.grey[2] }}'
+          - label: L1
+            value: '{{ tokens.colors.grey[1] }}'
+---
+{% from '../_includes/macros.njk' import swatch %}
+
+<h1>Color</h1>
+
+<div class="flex mb-60">
+  <div class="w-1/4 mr-40">
+    <h2 id="primary-colors" class="m-0">Primary colors</h2>
+    <p>These are the primary brand colors, often used for backgrounds or for general content. Blue does not have an L3 because there are a variety of different blues in use. Black is a very dark gray to subtly soften the extreme contrast.</p>
+  </div>
+  <div class="w-3/4 flex flex-wrap">
+    {% for color in colors.primary %}
+      {{ swatch(color) }}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="flex mb-60">
+  <div class="w-1/4 mr-40">
+    <h2 id="text-colors" class="m-0">Text colors</h2>
+    <p>Text is typically White or Slate.</p>
+  </div>
+  <div class="w-3/4 flex flex-wrap">
+    {% for color in colors.text %}
+      {{ swatch(color) }}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="flex mb-60">
+  <div class="w-1/4 mr-40">
+    <h2 id="action-color" class="m-0">Action color</h2>
+    <p>Use Bright blue for most links, buttons, and other actionable UI (such as accordions and form elements).</p>
+  </div>
+  <div class="w-3/4 flex flex-wrap">
+    {% for color in colors.action %}
+      {{ swatch(color) }}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="flex mb-60">
+  <div class="w-1/4 mr-40">
+    <h2 id="secondary-colors" class="m-0">Secondary colors</h2>
+    <p>The broader secondary palette is used for highlighting and differentiating content.
+
+    <h3>L1 and L2</h3>
+    <p>Use for blocking separating content areas.
+
+    <h3>L3</h3>
+    <p>The L3 color is the base shade of each color. Use it for focusing attention, such as on a header.
+
+    <h3>L4</h3>
+    <p>Use sparingly for hover states or when a darker color must contrast with the L3 color.</p>
+  </div>
+  <div class="w-3/4 flex flex-wrap">
+    {% for color in colors.secondary %}
+      {{ swatch(color) }}
+    {% endfor %}
+  </div>
+</div>
