@@ -9,7 +9,10 @@ eleventyNavigation:
 
 ## Link buttons
 
-```html id="link-buttons"
+This is some text about link buttons. We should explain why we want links to
+look like buttons.
+
+```html
 <div class="m-20">
   <a class="btn" href="javascript:void(0)">This is a link</a>
 </div>
@@ -20,7 +23,9 @@ eleventyNavigation:
 
 ## HTML buttons
 
-```html id="button-buttons"
+This is some text about actual styling actual `<button>` elements.
+
+```html
 <div class="m-20">
   <button class="btn">This is a button</button>
 </div>
