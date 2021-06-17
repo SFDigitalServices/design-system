@@ -1,5 +1,8 @@
 ---
 tags: ['token']
+section_class: 'flex flex-wrap mb-60'
+left_class: 'w-full lg:w-1/4 lg:pr-40'
+right_class: 'w-full lg:w-3/4 flex flex-wrap'
 eleventyComputed:
   colors:
     primary:
@@ -93,46 +96,46 @@ eleventyComputed:
 ---
 {% from '../_includes/macros.njk' import swatch %}
 
+{% macro swatches(colors) %}
+  {% for color in colors %}
+    {{ swatch(color) }}
+  {% endfor %}
+{% endmacro %}
+
 <h1>Color</h1>
 
-<div class="flex mb-60">
-  <div class="w-1/4 mr-40">
+<div class="{{ section_class }}">
+  <div class="{{ left_class }}">
     <h2 id="primary-colors" class="m-0">Primary colors</h2>
     <p>These are the primary brand colors, often used for backgrounds or for general content. Blue does not have an L3 because there are a variety of different blues in use. Black is a very dark gray to subtly soften the extreme contrast.</p>
   </div>
-  <div class="w-3/4 flex flex-wrap">
-    {% for color in colors.primary %}
-      {{ swatch(color) }}
-    {% endfor %}
+  <div class="{{ right_class }}">
+    {{ swatches(colors.primary) }}
   </div>
 </div>
 
-<div class="flex mb-60">
-  <div class="w-1/4 mr-40">
+<div class="{{ section_class }}">
+  <div class="{{ left_class }}">
     <h2 id="text-colors" class="m-0">Text colors</h2>
     <p>Text is typically White or Slate.</p>
   </div>
-  <div class="w-3/4 flex flex-wrap">
-    {% for color in colors.text %}
-      {{ swatch(color) }}
-    {% endfor %}
+  <div class="{{ right_class }}">
+    {{ swatches(colors.text) }}
   </div>
 </div>
 
-<div class="flex mb-60">
-  <div class="w-1/4 mr-40">
+<div class="{{ section_class }}">
+  <div class="{{ left_class }}">
     <h2 id="action-color" class="m-0">Action color</h2>
     <p>Use Bright blue for most links, buttons, and other actionable UI (such as accordions and form elements).</p>
   </div>
-  <div class="w-3/4 flex flex-wrap">
-    {% for color in colors.action %}
-      {{ swatch(color) }}
-    {% endfor %}
+  <div class="{{ right_class }}">
+    {{ swatches(colors.action) }}
   </div>
 </div>
 
-<div class="flex mb-60">
-  <div class="w-1/4 mr-40">
+<div class="{{ section_class }}">
+  <div class="{{ left_class }}">
     <h2 id="secondary-colors" class="m-0">Secondary colors</h2>
     <p>The broader secondary palette is used for highlighting and differentiating content.
 
@@ -145,9 +148,7 @@ eleventyComputed:
     <h3>L4</h3>
     <p>Use sparingly for hover states or when a darker color must contrast with the L3 color.</p>
   </div>
-  <div class="w-3/4 flex flex-wrap">
-    {% for color in colors.secondary %}
-      {{ swatch(color) }}
-    {% endfor %}
+  <div class="{{ right_class }}">
+    {{ swatches(colors.secondary) }}
   </div>
 </div>
