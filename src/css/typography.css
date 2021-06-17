@@ -14,9 +14,13 @@
     @apply font-medium;
   }
 
+  pre {
+    @apply whitespace-pre-wrap;
+  }
+
   pre,
   code {
-    @apply font-mono whitespace-pre-wrap;
+    @apply font-mono;
 
     * {
       @apply font-inherit;
