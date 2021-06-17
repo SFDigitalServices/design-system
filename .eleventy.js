@@ -18,6 +18,7 @@ module.exports = config => {
       input: 'docs',
       output: 'public'
     },
+    htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk'
   }
 }
