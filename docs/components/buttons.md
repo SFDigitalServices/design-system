@@ -11,12 +11,21 @@ eleventyNavigation:
 This is some text about link buttons. We should explain why we want links to
 look like buttons.
 
+### Link button (inline)
 ```html
 <div class="m-20">
-  <a class="btn" href="javascript:void(0)">This is a link</a>
+  <a class="btn" href="#">
+    This is a link
+  </a>
 </div>
+```
+
+### Link button (block)
+```html
 <div class="m-20">
-  <a class="btn btn-block" href="#">This is a block link</a>
+  <a class="btn btn-block" href="#">
+    This is a block link
+  </a>
 </div>
 ```
 
@@ -24,11 +33,20 @@ look like buttons.
 
 This is some text about actual styling actual `<button>` elements.
 
+### HTML button (inline)
 ```html
 <div class="m-20">
-  <button class="btn">This is a button</button>
+  <button class="btn">
+    This is a button
+  </button>
 </div>
+```
+
+### HTML button (block)
+```html
 <div class="m-20">
-  <button class="btn btn-block">This is a block button</button>
+  <button class="btn btn-block">
+    This is a block button
+  </button>
 </div>
 ```
