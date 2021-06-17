@@ -1,3 +1,1 @@
-module.exports = {
-  tokens: require('../../src/tokens')
-}
+module.exports = require('../../src/tokens')
