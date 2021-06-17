@@ -13,6 +13,9 @@
     "src",
     "tailwind.config.js"
   ],
+  "engines": {
+    "node": ">= 12"
+  },
   "scripts": {
     "build": "run-s build-css build-js build-docs",
     "build-docs": "eleventy",
@@ -21,7 +24,7 @@
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
     "lint": "run-p lint-js",
-    "lint-js": "eslint '*.js' 'src/**/*.js'",
+    "lint-js": "eslint lib src '*.js'",
     "watch": "run-p watch-css watch-js",
     "watch-css": "watchy -w '*.config.js' -w src -- npm run build-css",
     "watch-js": "npm run build-js -- --watch",
@@ -38,6 +41,7 @@
     "classnames": "^2.3.1",
     "cssnano": "^5.0.6",
     "eslint": "^7.17.0",
+    "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-sfgov": "^0.0.0-da6c354",
     "execa": "^5.0.0",
     "globby": "^5.0.0",
