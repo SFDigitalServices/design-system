@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   title: Tokens
+  key: tokens
   parent: primary
 ---
 
@@ -8,7 +9,8 @@ eleventyNavigation:
 
 We should say something about design tokens here.
 
-{% set items = collections.token | eleventyNavigation %}
-{% for item in items %}
+## Pages
+{% set items = collections.all | eleventyNavigation('tokens') %}
+{% for item in items -%}
 - [{{ item.title }}]({{ item.url }})
 {% endfor %}

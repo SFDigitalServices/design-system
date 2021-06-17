@@ -1,7 +1,9 @@
 ---
-tags: ['component']
+tag: ['component']
 eleventyNavigation:
   title: Buttons
+  key: buttons
+  parent: components
 ---
 
 # Buttons

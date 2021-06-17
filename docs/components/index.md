@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   title: Components
+  key: components
   parent: primary
 ---
 
@@ -8,7 +9,8 @@ eleventyNavigation:
 
 Let's say something about components here.
 
-{% set items = collections.component | eleventyNavigation %}
-{% for item in items %}
+## Pages
+{% set items = collections.all | eleventyNavigation('components') %}
+{% for item in items -%}
 - [{{ item.title }}]({{ item.url }})
 {% endfor %}
