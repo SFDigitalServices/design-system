@@ -33,6 +33,7 @@
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "@fec/eleventy-plugin-remark": "^2.2.1",
     "autoprefixer": "^10.2.6",
     "cssnano": "^5.0.6",
     "eslint": "^7.17.0",
@@ -47,8 +48,15 @@
     "postcss-nested": "^5.0.5",
     "postcss-normalize-charset": "^5.0.1",
     "postcss-strip-inline-comments": "^0.1.5",
+    "rehype-stringify": "^8.0.0",
+    "remark": "^13.0.0",
+    "remark-autolink-headings": "^6.0.1",
+    "remark-highlight.js": "^6.0.0",
+    "remark-rehype": "^8.1.0",
+    "remark-slug": "^6.0.0",
     "tailwindcss": "^2.0.2",
     "tailwindcss-interaction-variants": "^5.0.0",
+    "unist-util-visit": "^2.0.3",
     "watchy": "^0.9.9"
   }
 }
