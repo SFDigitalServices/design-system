@@ -1,9 +1,8 @@
 const globby = require('globby')
 const remark = require('remark')
 const visit = require('unist-util-visit')
-const { parseMeta, getSlug } = require('../../lib/remark')
+const { codeExamplePlugin } = require('../../lib/remark')
 const { readFileSync } = require('fs')
-const { join } = require('path')
 
 module.exports = getExamples
 
@@ -12,15 +11,12 @@ async function getExamples () {
   const mds = await globby('docs/**/*.md')
   const processor = remark()
     .use(require('remark-slug'))
+    .use(codeExamplePlugin)
     .use(() => (tree, file) => {
       visit(tree, 'code', (node, index, parent) => {
-        const meta = parseMeta(node.meta)
-        const id = meta.id || getSlug(node, parent)
         examples.push({
-          id,
           code: node.value,
-          file,
-          meta
+          ...node.data
         })
       })
     })
