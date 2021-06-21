@@ -74,7 +74,7 @@ module.exports = {
     backgroundColor: ['focus', 'hover', 'hocus'],
     borderColor: ['focus', 'hover', 'hocus'],
     cursor: [],
-    display: ['responsive'],
+    display: ['responsive', 'group-hover'],
     fill: [],
     fontWeight: ['responsive'],
     fontSize: ['responsive'],
