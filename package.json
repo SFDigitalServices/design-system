@@ -14,7 +14,7 @@
     "tailwind.config.js"
   ],
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "scripts": {
     "build": "run-s build-css build-js build-docs",
