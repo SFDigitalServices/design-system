@@ -14,6 +14,7 @@ module.exports = {
   },
   borderRadius: {
     DEFAULT: '8px',
+    2: '2px',
     0: '0'
   },
   borderWidth: {
@@ -21,6 +22,10 @@ module.exports = {
     0: '0',
     1: '1px'
   },
+  maxWidth: theme => ({
+    ...breakpoints,
+    ...theme('width')
+  }),
   width: {
     '1/2': '50%',
     '2/2': '100%',
