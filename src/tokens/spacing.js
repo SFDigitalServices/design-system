@@ -1,6 +1,7 @@
 module.exports = {
   0: '0',
   ...pxMap([
+    2,
     4,
     8,
     16,

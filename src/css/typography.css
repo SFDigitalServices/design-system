@@ -54,6 +54,10 @@
     @apply text-small !important;
   }
 
+  .font-mono {
+    @apply text-small;
+  }
+
   @screen lg {
     .display-lg {
       font-size: 72px;
@@ -101,11 +105,6 @@
       font-size: 24px;
       line-height: 32px;
       @apply font-regular;
-    }
-
-    .body {
-      font-size: 16px;
-      line-height: 24px;
     }
   }
 }
