@@ -1,0 +1,9 @@
+---
+layout: skeleton
+pagination:
+  data: examples
+  size: 1
+  alias: example
+permalink: "/examples/{{ example.id }}.html"
+---
+<div class="{{ example.class }}">{{ example.code | safe }}</div>

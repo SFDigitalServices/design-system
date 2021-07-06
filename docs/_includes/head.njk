@@ -1,0 +1,14 @@
+<title>{{ page.title }}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="{{ page.meta.viewport | default('width=device-width,initial-scale=1') }}">
+{% for style in assets.styles %}
+  {% if style.href %}
+    <link href="{{ style.href }}"
+          media="{{ style.media | default('screen') }}"
+          rel="stylesheet">
+  {% else %}
+    <style type="text/css" media="{{ style.media | default('screen') }}">
+      {{ style.content | safe }}
+    </style>
+  {% endif %}
+{% endfor %}

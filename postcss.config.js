@@ -2,14 +2,12 @@ const { NODE_ENV } = process.env
 const prod = NODE_ENV === 'production'
 
 module.exports = {
-  syntax: 'postcss-scss',
   plugins: [
     require('postcss-import'),
-    require('postcss-strip-inline-comments'),
     require('postcss-nested'),
+    require('postcss-strip-inline-comments'),
     require('tailwindcss'),
     require('autoprefixer'),
-    require('postcss-custom-properties'),
     prod && require('cssnano'),
     require('postcss-normalize-charset')
   ].filter(Boolean),

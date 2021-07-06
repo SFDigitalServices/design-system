@@ -1,0 +1,34 @@
+<footer class="py-60 bg-black text-white">
+  <div class="max-w-xl mx-auto">
+    <div class="flex items-start">
+      <div class="w-1/2 flex items-center">
+        <img src="https://sf.gov/themes/custom/sfgovpl/logo-white.svg"
+             width="90" height="90"
+             alt="Seal of the City &amp; County of San Francisco"
+             class="block">
+        <div class="title-md font-light ml-20">
+          City and County<br>
+          of San Francisco
+        </div>
+      </div>
+      <div class="w-1/2 pt-16">
+        <div class="flex">
+          <div class="w-1/2 pl-20 flex-shrink-0">
+            {% for link in footer.links.left %}
+              <a class="block font-medium text-white no-underline mb-16" href="javascript:void(0)">
+                {{ link.text }}
+              </a>
+            {% endfor %}
+          </div>
+          <div class="w-1/2 pl-20">
+            {% for link in footer.links.right %}
+              <a class="block text-grey-2 no-underline mb-16" href="javascript:void(0)">
+                {{ link.text }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

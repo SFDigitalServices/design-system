@@ -1,0 +1,13 @@
+---
+---
+<!doctype html>
+<html lang="{{ page.lang | default('en') }}">
+  <head>
+    {% block head %}
+      {% include 'head.njk' %}
+    {% endblock %}
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
