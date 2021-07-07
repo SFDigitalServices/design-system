@@ -5,6 +5,13 @@ module.exports = {
   syntax: 'postcss-scss',
   plugins: [
     require('postcss-import'),
+    require('./lib/postcss/font-weight-map')({
+      fontFamilyWeightMap: {
+        'Noto Sans TC': {
+          500: '700'
+        }
+      }
+    }),
     require('postcss-strip-inline-comments'),
     require('postcss-nested'),
     require('tailwindcss'),
