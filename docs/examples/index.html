@@ -39,9 +39,19 @@ eleventyNavigation:
         class="font-medium no-underline ml-20">
         Reference
       </a>
+      <form
+        action="https://codepen.io/pen/define/"
+        method="POST"
+        target="_blank"
+        class="inline-block ml-20">
+        <button
+          type="submit"
+          class="btn btn-inverse p-0 bg-none"
+          title="open in CodePen">
+          CodePen
+        </button>
+        <input type="hidden" name="data" value="{{ example.codepen | dump | e }}">
+      </form>
     </div>
-    <!--
-      <pre>{{ example | dump(2) }}</pre>
-    -->
   </div>
 {% endfor %}

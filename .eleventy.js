@@ -1,3 +1,4 @@
+const pkg = require('./lib/package')
 const remark = require('@fec/eleventy-plugin-remark')
 const remarkConfig = require('./lib/remark').eleventyPluginConfig
 const navigation = require('@11ty/eleventy-navigation')
@@ -12,6 +13,8 @@ module.exports = config => {
   config.setUseGitIgnore(false)
   config.addWatchTarget('./dist')
   config.addPassthroughCopy('dist')
+
+  config.addGlobalData('package', pkg)
 
   return {
     dir: {

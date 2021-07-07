@@ -12,6 +12,10 @@ module.exports = {
     inherit: 'inherit'
   },
   ...typography,
+  backgroundColor: {
+    none: 'transparent',
+    ...colors
+  },
   borderColor: {
     current: 'currentColor',
     ...colors
