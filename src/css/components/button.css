@@ -46,6 +46,17 @@
     }
   }
 
+  .btn-link {
+    @apply border-0 hocus:border-0;
+    @apply bg-none text-blue-bright;
+    @apply hover:bg-none hover:text-blue-dark;
+
+    &.hover,
+    &.focus {
+      @apply bg-none text-blue-dark;
+    }
+  }
+
   .btn-block {
     @apply flex w-full;
   }

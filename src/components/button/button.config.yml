@@ -45,3 +45,8 @@ variants:
       class: btn btn-inverse
       wrapper:
         class: bg-yellow-3
+
+  - name: link
+    label: Link
+    context:
+      class: btn btn-link
