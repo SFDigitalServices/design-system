@@ -27,6 +27,7 @@ module.exports = {
     ...theme('width')
   }),
   width: {
+    auto: 'auto',
     '1/2': '50%',
     '2/2': '100%',
     '1/3': '33.3333333%',
