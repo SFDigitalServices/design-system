@@ -1,6 +1,6 @@
 {
   "name": "sfgov-design-system",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "repository": "SFDigitalServices/design-system",
   "author": "City & County of San Francisco, California",
   "license": "MIT",
@@ -20,8 +20,10 @@
     "build-js": "babel -d dist/js src/js/*.js",
     "build-clean": "run-s clean build",
     "clean": "rm -rf dist",
-    "lint": "run-p lint-js",
+    "lint": "run-p lint-js lint-scripts",
     "lint-js": "eslint '*.js' 'src/**/*.js'",
+    "lint-scripts": "shellcheck scripts/*",
+    "prepublishOnly": "scripts/prepublish-checks",
     "watch": "run-p watch-css watch-js",
     "watch-css": "watchy -w '*.config.js' -w src/css -w src/tokens -- npm run build-css",
     "watch-js": "npm run build-js -- --watch",
@@ -53,6 +55,7 @@
     "postcss-normalize-charset": "^4.0.1",
     "postcss-scss": "^2.1.1",
     "postcss-strip-inline-comments": "^0.1.5",
+    "shellcheck": "^1.0.0",
     "tailwindcss": "^2.0.2",
     "tailwindcss-interaction-variants": "^5.0.0",
     "watchy": "^0.9.9"
