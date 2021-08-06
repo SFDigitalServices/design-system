@@ -34,6 +34,7 @@ module.exports = {
     'cursor',
     'display',
     'flex',
+    'flexDirection',
     'flexShrink',
     'flexWrap',
     'fontFamily',
