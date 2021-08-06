@@ -27,3 +27,12 @@
   /* "literal string, character" */
   .hljs-string { @apply text-slate; }
 }
+
+.prose {
+  h1 { @apply mt-0 mb-48; }
+  h2 { @apply mt-0 mb-28; }
+  h3 { @apply mt-0 mb-28; }
+  h4 { @apply mt-0 mb-16; }
+  h5 { @apply mt-0 mb-8; }
+  h6 { @apply mt-0 mb-8; }
+}
