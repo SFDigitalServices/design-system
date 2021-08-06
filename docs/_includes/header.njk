@@ -1,5 +1,5 @@
 <header>
-  <div class="max-w-xl mx-auto py-48">
+  <div class="px-20 max-w-xl mx-auto py-20 lg:py-48">
     <div class="flex items-center justify-between">
       <a class="flex items-center no-underline" href="/">
         <img
@@ -12,15 +12,7 @@
         </div>
       </a>
       <nav class="flex items-center">
-        {% set items = collections.all | eleventyNavigation('primary') %}
-        {% for item in items %}
-          <a
-            class="inline-block font-medium no-underline mr-28"
-            href="{{ item.url }}">
-              {{- item.title }}
-          </a>
-        {% endfor %}
-        {% include 'search.njk' %}
+        {# % include 'search.njk' % #}
       </nav>
     </div>
   </div>

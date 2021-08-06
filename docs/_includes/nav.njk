@@ -1,1 +1,10 @@
-Nav
+{% set items = collections.all | eleventyNavigation('primary') %}
+{% for item in items %}
+  <div class="mb-20">
+    <a
+      class="block font-medium no-underline mb-8"
+      href="{{ item.url }}">
+        {{- item.title }}
+    </a>
+  </div>
+{% endfor %}

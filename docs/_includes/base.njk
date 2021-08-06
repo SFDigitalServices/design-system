@@ -3,16 +3,18 @@ layout: skeleton
 ---
 {% include 'header.njk' %}
 {% block main %}
-  <main class="max-w-xl mx-auto mt-40 mb-100">
-    <div class="flex justify-start">
-      <div class="w-full lg:w-1/4 lg:pr-20">
+  <main class="px-20 max-w-xl mx-auto mt-40 mb-100">
+    <div class="lg:flex justify-start">
+      <div class="lg:w-1/4 lg:pr-20 mb-40">
         {% include 'nav.njk' %}
       </div>
-      <div class="w-full lg:w-1/2 lg:pr-20">
-        {% include 'main.njk' %}
-      </div>
-      <div class="none lg:block lg:w-1/4">
-        {% include 'toc.njk' %}
+      <div class="lg:w-3/4 lg:flex justify-start flex-row-reverse">
+        <div class="none lg:block lg:w-1/4 mb-40">
+          {% include 'toc.njk' %}
+        </div>
+        <div class="lg:w-3/4">
+          {% include 'main.njk' %}
+        </div>
       </div>
     </div>
   </main>
