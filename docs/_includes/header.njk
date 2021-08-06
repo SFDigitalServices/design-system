@@ -20,15 +20,7 @@
               {{- item.title }}
           </a>
         {% endfor %}
-        <!-- search -->
-        <form class="flex items-stretch" onsubmit="javascript:void(0)" hidden>
-          <input class="text-body px-16 py-8 rounded-l border border-solid border-action"
-            type="text" size="16" placeholder="Search">
-          <button class="btn rounded-l-0 px-16" type="submit" aria-label="Submit">
-            <sfgov-icon symbol="search"></sfgov-icon>
-          </button>
-        </form>
-        <!-- /search -->
+        {% include 'search.njk' %}
       </nav>
     </div>
   </div>
