@@ -2,8 +2,20 @@
 layout: skeleton
 ---
 {% include 'header.njk' %}
-<div class="mt-20 mb-100">
-  {% include 'main.njk' %}
-</div>
+{% block main %}
+  <main class="max-w-xl mx-auto mt-40 mb-100">
+    <div class="flex justify-start">
+      <div class="w-full lg:w-1/4 lg:pr-20">
+        {% include 'nav.njk' %}
+      </div>
+      <div class="w-full lg:w-1/2 lg:pr-20">
+        {% include 'main.njk' %}
+      </div>
+      <div class="none lg:block lg:w-1/4">
+        {% include 'toc.njk' %}
+      </div>
+    </div>
+  </main>
+{% endblock %}
 {% include 'footer.njk' %}
 {% include 'scripts.njk' %}
