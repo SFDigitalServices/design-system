@@ -1,4 +1,5 @@
 ---
+title: Components
 eleventyNavigation:
   title: Components
   key: components
