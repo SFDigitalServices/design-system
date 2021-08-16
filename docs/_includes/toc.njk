@@ -1,1 +1,17 @@
-<h4 class="title-xs text-black mt-0 mb-8">Table of contents</h4>
+{% macro toc_section(title, children) %}
+  {% if title %}
+    <h4 class="title-xs text-black mt-0 mb-8">{{ title }}</h4>
+  {% endif %}
+  {% if children.length %}
+    <ul class="m-0 p-0 list-none">
+      {% for child in children %}
+        <li class="m-0 mb-8 pl-24">
+          <a href="{{ child.href }}">{{ child.title }}</a>
+          {{ toc_section('', child.children) }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{{ toc_section(title, []) }}
