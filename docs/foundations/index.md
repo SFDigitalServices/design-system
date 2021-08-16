@@ -1,4 +1,5 @@
 ---
+title: Foundations
 eleventyNavigation:
   title: Foundations
   key: foundations
