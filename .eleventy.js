@@ -9,6 +9,8 @@ module.exports = config => {
   config.addPlugin(remark, remarkConfig)
   config.addPlugin(toc, {
     tags: ['h3'],
+    wrapper: 'div',
+    wrapperClass: '',
     ul: true
   })
 
