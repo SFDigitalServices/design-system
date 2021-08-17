@@ -22,6 +22,7 @@
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "babel -d dist/js 'src/js/*.js'",
     "build-clean": "run-s clean build",
+    "develop": "NODE_ENV=development npm start",
     "clean": "rm -rf dist",
     "lint": "run-p lint-js",
     "lint-js": "eslint lib src '*.js'",
