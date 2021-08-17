@@ -1,33 +1,49 @@
-{% set items = collections.all | eleventyNavigation('primary') %}
-{% for item in items %}
-  {% if page.url === '/' %}
-    {% set active = page.url === item.url %}
-  {% else %}
-    {% set active = item.url.startsWith(page.url) %}
-  {% endif %}
+{% macro nav_link(url, deep=true) %}
+  {% set node = url | node(collections.all) %}
+  {% set children = node.data.page | children(collections.all) %}
   <div class="mb-20">
     <a
-      class="flex justify-center title-xs no-underline mb-8"
-      href="{{ item.url }}"
-      {% if active %}
-        aria-current="link"
-      {% endif %}>
-        <div class="flex-auto">{{ item.title }}</div>
-        <div>
-          {% if item.children.length %}
-            <sfgov-icon symbol="chevron-down"></sfgov-icon>
-          {% endif %}
-        </div>
+      class="flex justify-center title-xs no-underline mb-20"
+      href="{{ url }}"
+      {% if node.data.page.url === page.url %}
+        aria-current="page"
+      {% endif %}
+    >
+      <div class="flex-auto">{{ node.data.title }}</div>
+      <div>
+        {% if deep and children.length %}
+          <sfgov-icon symbol="chevron-down"></sfgov-icon>
+        {% endif %}
+      </div>
     </a>
-    {% if active %}
-      <ul class="m-0 p-0 list-none">
-        {% for child in item.children %}
-          <li class="p-4 pl-16 m-0 mb-20">
-            <a href="{{ child.url }}">{{ child.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+    {% if deep %}
+      {% if url === '/' %}
+        {% set parent_active = page.url === url %}
+      {% else %}
+        {% set parent_active = page.url.startsWith(url) %}
+      {% endif %}
+      {% if parent_active %}
+        <ul class="m-0 p-0 list-none">
+          {% for child in children %}
+            {% set child_active = child.url === page.url %}
+            <li class="pl-16 m-0 mb-20">
+              <a
+                href="{{ child.url }}"
+                {% if child_active %}
+                  aria-current="page"
+                {% endif %}
+                class="text-slate no-underline {{ 'font-medium' if child_active }}"
+              >
+                {{ child.data.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     {% endif %}
   </div>
-{% endfor %}
-<pre hidden>{{ items | dump(2) | e }}</pre>
+{% endmacro %}
+
+{{ nav_link('/', false) }}
+{{ nav_link('/foundations') }}
+{{ nav_link('/components') }}

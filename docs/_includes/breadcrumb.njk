@@ -1,1 +1,9 @@
-{# TODO #}
+{% set crumbs = page | ancestors(collections.all, '/') %}
+{% if crumbs.length %}
+  <div class="text-small mb-8">
+    {% for ancestor in crumbs | reverse %}
+      <a href="{{ ancestor.data.page.url }}" class="text-slate no-underline">{{ ancestor.data.title }}</a>
+      {% if not loop.last %} / {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
