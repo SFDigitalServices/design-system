@@ -7,6 +7,4 @@ eleventyNavigation:
   order: 1
 ---
 
-# Overview
-
 Hi, this is the overview.
