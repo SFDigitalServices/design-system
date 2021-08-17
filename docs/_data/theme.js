@@ -1,3 +1,1 @@
-module.exports = {
-  theme: require('../../src/theme')
-}
+module.exports = require('../../src/theme')
