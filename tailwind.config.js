@@ -82,6 +82,7 @@ module.exports = {
     fontSize: ['responsive'],
     fontSmoothing: [],
     fontStyle: [],
+    flexDirection: ['responsive'],
     flexWrap: [],
     height: ['responsive'],
     inset: ['responsive'],
