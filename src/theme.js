@@ -35,7 +35,7 @@ module.exports = {
     ...breakpoints,
     ...theme('width')
   }),
-  width: {
+  width: theme => ({
     '1/2': '50%',
     '2/2': '100%',
     '1/3': '33.3333333%',
@@ -45,6 +45,11 @@ module.exports = {
     '2/4': '50%',
     '3/4': '75%',
     '4/4': '100%',
-    full: '100%'
-  }
+    full: '100%',
+    ...theme('spacing')
+  }),
+  height: theme => ({
+    full: '100%',
+    ...theme('spacing')
+  })
 }
