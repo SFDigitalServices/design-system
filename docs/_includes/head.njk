@@ -1,4 +1,9 @@
-<title>{{ title | default(site.title) }}</title>
+<title>
+  {% if title and page.url !== '/' %}
+    {{ title }} |
+  {% endif %}
+  {{ site.title }}
+</title>
 <meta charset="utf-8">
 <meta name="viewport" content="{{ meta.viewport | default('width=device-width,initial-scale=1') }}">
 {% for style in assets.styles %}
