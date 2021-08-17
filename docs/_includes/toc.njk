@@ -1,4 +1,12 @@
 <nav class="toc pl-16 border-0 border-l-2 border-solid border-slate">
-  <a href="#top">{{ title }}</a>
-  {{ toc | safe }}
+  <a href="#top" class="block font-medium text-black no-underline">{{ title }}</a>
+  <ul class="list-none mt-8 p-0 m-0 space-y-8">
+    {% for item in toc %}
+      <li class="m-0 p-0">
+        <a class="block no-underline text-slate" href="{{ item.href }}">
+          {{ item.html | safe }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </nav>
