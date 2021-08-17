@@ -1,13 +1,6 @@
 ---
 title: Buttons
-eleventyNavigation:
-  title: Buttons
-  key: buttons
-  parent: components
-  order: 1
 ---
-
-# Buttons
 
 ## Link buttons
 
