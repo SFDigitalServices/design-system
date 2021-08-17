@@ -1,6 +1,5 @@
 ---
 title: Buttons
-toc: true
 eleventyNavigation:
   title: Buttons
   key: buttons
@@ -9,6 +8,8 @@ eleventyNavigation:
 ---
 
 # Buttons
+
+## Table of contents
 
 ## Link buttons
 
