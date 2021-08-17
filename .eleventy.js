@@ -5,6 +5,11 @@ const yaml = require('js-yaml')
 const toc = require('eleventy-plugin-toc')
 
 module.exports = config => {
+  if (process.env.NODE_ENV === 'development') {
+    const reloadOnChange = require('./lib/eleventy/reload')
+    reloadOnChange(__filename, ['lib/**/*.js'])
+  }
+
   config.addPlugin(navigation)
   config.addPlugin(remark, remarkConfig)
   config.addPlugin(toc, {
