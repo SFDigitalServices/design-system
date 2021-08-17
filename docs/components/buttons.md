@@ -9,8 +9,6 @@ eleventyNavigation:
 
 # Buttons
 
-## Table of contents
-
 ## Link buttons
 
 This is some text about link buttons. We should explain why we want links to
