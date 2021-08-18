@@ -1,17 +1,5 @@
 ---
 title: Usage
-bundles:
-  css:
-    - path: dist/css/sfds.css
-      desc: includes all of the bundles listed below. Use this if you don't have any other CSS on your site.
-    - path: dist/css/base.css
-      desc: contains so-called "base" styles, including global resets, focus, and placeholder styles. These may conflict with other global styles.
-    - path: dist/css/fonts.css
-      desc: imports all of the custom web fonts necessary to display Latin and Traditional Chinese text. Fonts are currently (in version 1.x) loaded from [Google](https://fonts.google.com/), but this may change in future versions.
-    - path: dist/css/typography.css
-      desc: contains all of the typography styles. These are offered separately so as not to conflict with other (global) type styles.
-    - path: dist/css/utilities.css
-      desc: contains all of the [Tailwind]-generated utility classes.
 ---
 
 ## Installation
@@ -28,7 +16,7 @@ npm install {{ package.name }}
 The current version is `{{ package.version }}`. See the [release
 history] for other available versions and release notes.
 
-## CDN
+### CDN
 There are many content delivery networks that mirror npm
 packages. For instance, to import all of the design system CSS
 from the latest version of the npm package from [unpkg], you
@@ -38,17 +26,31 @@ could add the following to your `<head>`:
 <link rel="stylesheet" href="https://unpkg.com/{{ package.name }}/dist/sfds.css">
 ```
 
-## CSS
-There are several different CSS files ("bundles") that contain different parts
-of the system so that you can tailor it to your needs without a custom build
-process:
+See the [CSS guide](./css) for more detailed usage instructions.
 
-File | Description
-:--- | :---
-{% for bundle in bundles.css -%}
-  `{{ bundle.path }}` `({{ manifest[bundle.path].size | filesize }})` | {{ bundle.desc }}
-{% endfor %}
+## Browser support
+Generally speaking, our CSS supports the same browsers as
+[Tailwind](https://tailwindcss.com/docs/browser-support) (as of
+version 2.x, "the latest stable versions of Chrome, Firefox,
+Edge, and Safari"). Starting in version 2.0, Tailwind notably
+introduced the use of [CSS custom properties] (also known as "CSS
+variables"), which are [supported](https://caniuse.com/css-variables) by approximately
+95% of browsers relative to usage as of August, 2021.
 
+### Internet Explorer
+**Internet Explorer is not supported**. Microsoft [announced][IE
+EOL] that it will no longer support the browser on June 15, 2022,
+and its usage has declined rapidly since. In July of 2021 there
+were **7 unique visitors** using Internet Explorer on
+[sf.gov](https://sf.gov).
+
+Support for Internet Explorer is still available in [Tailwind
+version 1.9](https://v1.tailwindcss.com/). If your project
+requires IE support, please [contact us](/about/#contact) and we
+can offer suggestions for a custom CSS build.
+
+[IE EOL]: https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge#:~:text=Yes%2C%20Internet%20Explorer%2011%20is,Internet%20Explorer%20(IE)%20mode.
+[css custom properties]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+[release history]: https://github.com/{{ package.repository }}/releases
 [tailwind]: https://tailwindcss.com/
 [unpkg]: https://unpkg.com
-[release history]: https://github.com/{{ package.repository }}/releases
