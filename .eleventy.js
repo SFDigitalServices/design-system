@@ -1,6 +1,7 @@
 const remark = require('@fec/eleventy-plugin-remark')
 const remarkConfig = require('./lib/remark').eleventyPluginConfig
 const navigation = require('./lib/eleventy/nav')
+const prettysize = require('prettysize')
 const yaml = require('js-yaml')
 const toc = require('./lib/eleventy/toc')
 
@@ -16,6 +17,8 @@ module.exports = config => {
     ignore: 'h1',
     startLevel: 3
   })
+
+  config.addFilter('filesize', num => prettysize(num, true, true))
 
   config.addDataExtension('yml', contents => yaml.safeLoad(contents))
 
