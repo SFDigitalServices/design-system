@@ -27,12 +27,16 @@
     border-collapse: collapse;
     border-spacing: 0;
 
-    td,
-    th {
-      @apply align-top text-left px-8 py-4;
+    thead th {
+      @apply border-0 border-b-1 border-solid border-black;
     }
 
-    thead > * > * {
+    td,
+    th {
+      @apply align-top text-left px-16 py-8;
+    }
+
+    tbody tr:nth-child(even) {
       @apply bg-grey-1;
     }
   }
