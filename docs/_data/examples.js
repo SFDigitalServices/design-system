@@ -14,10 +14,12 @@ async function getExamples () {
     .use(codeExamplePlugin)
     .use(() => (tree, file) => {
       visit(tree, 'code', (node, index, parent) => {
-        examples.push({
-          code: node.value,
-          ...node.data
-        })
+        if (node.data?.id && node.data?.meta?.static !== 'true') {
+          examples.push({
+            code: node.value,
+            ...node.data
+          })
+        }
       })
     })
 
