@@ -65,9 +65,9 @@ specimens:
 </p>
 ```
 
-### Big description
+### Small text
 ```html
-<p class="text-small">Sagittis aliquam malesuada bibendum arcu vitae (regular)</p>
+<p class="text-small">Sagittis aliquam malesuada bibendum arcu vitae</p>
 ```
 
 ### Monospace body
