@@ -22,6 +22,20 @@
   pre {
     @apply m-0;
   }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    td,
+    th {
+      @apply align-top text-left px-8 py-4;
+    }
+
+    thead > * > * {
+      @apply bg-grey-1;
+    }
+  }
 }
 
 /**
