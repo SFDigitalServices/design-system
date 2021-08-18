@@ -7,42 +7,34 @@ title: Buttons
 This is some text about link buttons. We should explain why we want links to
 look like buttons.
 
-### Link button (inline)
+### Inline link
 ```html
-<div class="m-20">
-  <a class="btn" href="#">
-    This is a link
-  </a>
-</div>
+<a class="btn" href="#">
+  This is a link
+</a>
 ```
 
-### Link button (block)
+### Block link
 ```html
-<div class="m-20">
-  <a class="btn btn-block" href="#">
-    This is a block link
-  </a>
-</div>
+<a class="btn btn-block" href="#">
+  This is a block link
+</a>
 ```
 
 ## HTML buttons
 
 This is some text about actual styling actual `<button>` elements.
 
-### HTML button (inline)
+### Inline button
 ```html
-<div class="m-20">
-  <button class="btn">
-    This is a button
-  </button>
-</div>
+<button class="btn">
+  This is a button
+</button>
 ```
 
-### HTML button (block)
+### Block button
 ```html
-<div class="m-20">
-  <button class="btn btn-block">
-    This is a block button
-  </button>
-</div>
+<button class="btn btn-block">
+  This is a block button
+</button>
 ```
