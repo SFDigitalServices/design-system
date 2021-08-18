@@ -8,11 +8,9 @@
     @apply mt-60 mb-24;
   }
 
-  > :first-of-type {
+  > :first-child {
     @apply mt-0;
   }
-
-  /* h2 { @apply title-lg; } */
 
   p,
   blockquote {
