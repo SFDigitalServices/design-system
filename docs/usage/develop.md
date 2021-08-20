@@ -64,11 +64,14 @@ We lint our JavaScript with [ESlint] and the [eslint-plugin-sfgov] preset.
 
 We do not yet lint our CSS, but when we do we will use [stylelint].
 
+Shell [scripts]({{ 'scripts' | repo_url }}) are linted with [shellcheck].
+
 [babel]: https://babeljs.io/
 [eleventy]: https://www.11ty.dev/
 [eslint]: https://eslint.org/
 [eslint-plugin-sfgov]: https://github.com/SFDigitalServices/eslint-plugin-sfgov
 [get node.js]: https://nodejs.org/en/download/
 [postcss]: https://postcss.org/
+[shellcheck]: https://www.shellcheck.net/
 [stylelint]: https://stylelint.io/
 [tailwind]: https://tailwindcss.com/
