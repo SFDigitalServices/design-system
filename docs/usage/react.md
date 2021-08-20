@@ -1,5 +1,6 @@
 ---
 title: React
+order: 2
 ---
 
 The {{ site.title }} does not **officially** support React yet. However,
