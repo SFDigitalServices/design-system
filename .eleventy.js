@@ -1,3 +1,4 @@
+const pkg = require('./package.json')
 const remark = require('@fec/eleventy-plugin-remark')
 const remarkConfig = require('./lib/remark').eleventyPluginConfig
 const navigation = require('./lib/eleventy/nav')
@@ -19,6 +20,10 @@ module.exports = config => {
   })
 
   config.addFilter('filesize', num => prettysize(num, true, true))
+  config.addFilter('repo_url', (path, branch = 'main') => {
+    const url = `https://github.com/${pkg.repository}`
+    return path ? `${url}/tree/main/${path}` : url
+  })
 
   config.addDataExtension('yml', contents => yaml.safeLoad(contents))
 
