@@ -1,6 +1,7 @@
 const brightBlue = '#4f66ee'
 
 module.exports = {
+  none: 'transparent',
   white: '#FFF',
   black: '#212123',
   action: brightBlue,

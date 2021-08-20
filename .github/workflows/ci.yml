@@ -23,6 +23,9 @@ jobs:
       - run: npm run build-js
       - run: npm run build-docs
 
+      # run pre-publish checks
+      - run: npm run prepublishOnly
+
       - uses: primer/publish@v3.0.0
         with:
           npm_args: --unsafe-perm --allow-same-version
