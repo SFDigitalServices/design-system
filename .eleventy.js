@@ -1,10 +1,9 @@
-const pkg = require('./package.json')
 const remark = require('@fec/eleventy-plugin-remark')
 const remarkConfig = require('./lib/remark').eleventyPluginConfig
 const navigation = require('./lib/eleventy/nav')
-const prettysize = require('prettysize')
 const yaml = require('js-yaml')
 const toc = require('./lib/eleventy/toc')
+const filters = require('./lib/eleventy/filters')
 
 module.exports = config => {
   if (process.env.NODE_ENV === 'development') {
@@ -19,11 +18,9 @@ module.exports = config => {
     startLevel: 3
   })
 
-  config.addFilter('filesize', num => prettysize(num, true, true))
-  config.addFilter('repo_url', (path, branch = 'main') => {
-    const url = `https://github.com/${pkg.repository}`
-    return path ? `${url}/tree/main/${path}` : url
-  })
+  for (const [name, filter] of Object.entries(filters)) {
+    config.addFilter(name, filter)
+  }
 
   config.addDataExtension('yml', contents => yaml.safeLoad(contents))
 
