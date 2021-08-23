@@ -1,0 +1,4 @@
+<div class="mt-60 text-slate-light">
+  {% set branch = git.branch if git.branch === '11ty' else git.defaultBranch %}
+  <a href="{{ page.inputPath | repo_url(branch) }}">Edit on GitHub</a> | generated <time>{{ site.generated.toLocaleString() }}</time>
+</div>
