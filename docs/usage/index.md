@@ -16,6 +16,19 @@ npm install {{ package.name }}
 The current version is `{{ package.version }}`. See the [release
 history] for other available versions and release notes.
 
+### Versioning
+We use [semantic versioning][semver] conventions to number our release
+versions:
+
+- Bug fixes, documentation updates, and development-related updates are
+  **patch** versions, e.g. `1.0.0` → `1.0.1`.
+
+- New features are **minor** versions, e.g. `1.0.0` → `1.1.0`.
+
+- Breaking changes, or any other changes that _may_ break any sites that
+  upgrade from the previous version, are **major** versions, e.g. `1.0.0`
+  → `2.0.0`.
+
 ### CDN
 There are many content delivery networks that mirror npm
 packages. For instance, to import all of the design system CSS
@@ -52,5 +65,6 @@ can offer suggestions for a custom CSS build.
 [IE EOL]: https://docs.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge#:~:text=Yes%2C%20Internet%20Explorer%2011%20is,Internet%20Explorer%20(IE)%20mode.
 [css custom properties]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 [release history]: https://github.com/{{ package.repository }}/releases
+[semver]: https://semver.org
 [tailwind]: https://tailwindcss.com/
 [unpkg]: https://unpkg.com
