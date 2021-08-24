@@ -1,14 +1,5 @@
-design-system
-============
+# San Francisco Design System
 
-The new design system for the City &amp; County of San Francisco
+This is the design system for [SF.gov](https://sf.gov) and the City &amp; County of San Francisco.
 
----
-
-## Setup
-Clone this repo and run `npm install` and `npm run build` to install all the dependencies and compile.
-
----
-
-## Usage
-Once the dependencies are installed, you can run  `npm start` to start the application. You will then be able to access it at localhost:8080
+Design and developer documentation is available at [design-system.sf.gov](https://design-system.sf.gov).
