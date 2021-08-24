@@ -17,10 +17,6 @@
     @apply mt-0 mb-24;
   }
 
-  pre {
-    @apply m-0;
-  }
-
   table {
     border-collapse: collapse;
     border-spacing: 0;
