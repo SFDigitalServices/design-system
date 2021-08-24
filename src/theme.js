@@ -1,32 +1,44 @@
 const breakpoints = require('./tokens/breakpoints')
 const colors = require('./tokens/colors')
-const typography = require('./tokens/typography')
+const { fontFamily, ...typography } = require('./tokens/typography')
 const spacing = require('./tokens/spacing')
 
 module.exports = {
-  ...typography,
   colors,
   screens: breakpoints,
   spacing,
+  fontFamily: {
+    ...fontFamily,
+    inherit: 'inherit'
+  },
+  ...typography,
   borderColor: {
     current: 'currentColor',
     ...colors
   },
+  textColor: {
+    inherit: 'inherit',
+    ...colors
+  },
   borderRadius: {
     DEFAULT: '8px',
+    0: '0',
     2: '2px',
-    0: '0'
+    4: '4px'
   },
   borderWidth: {
-    DEFAULT: '4px',
+    DEFAULT: '3px',
     0: '0',
-    1: '1px'
+    1: '1px',
+    2: '2px',
+    3: '3px',
+    4: '4px'
   },
   maxWidth: theme => ({
     ...breakpoints,
     ...theme('width')
   }),
-  width: {
+  width: theme => ({
     auto: 'auto',
     '1/2': '50%',
     '2/2': '100%',
@@ -37,6 +49,11 @@ module.exports = {
     '2/4': '50%',
     '3/4': '75%',
     '4/4': '100%',
-    full: '100%'
-  }
+    full: '100%',
+    ...theme('spacing')
+  }),
+  height: theme => ({
+    full: '100%',
+    ...theme('spacing')
+  })
 }

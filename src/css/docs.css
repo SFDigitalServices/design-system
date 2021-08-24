@@ -1,0 +1,66 @@
+.prose {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mt-60 mb-8;
+  }
+
+  > :first-child {
+    @apply mt-0;
+  }
+
+  p,
+  blockquote {
+    @apply mt-0 mb-24;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead th {
+      @apply border-0 border-b-1 border-solid border-black;
+    }
+
+    td,
+    th {
+      @apply align-top text-left px-16 py-8;
+    }
+
+    tbody tr:nth-child(even) {
+      @apply bg-grey-1;
+    }
+  }
+}
+
+/**
+ * The following are "scopes" defined by highlight.js:
+ * <https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html>
+ */
+.hljs {
+  /* "heading of a section in a config file, heading in text markup" */
+  .hljs-section { @apply text-slate-light; }
+
+  /* "XML/HTML tag" ("<" and ">", specifically) */
+  .hljs-tag { @apply text-slate; }
+
+  /* "name of an XML tag, the first word in an s-expression" (?) */
+  .hljs-name { @apply text-red-3; }
+
+  /* "name of an attribute with no language defined semantics (keys in JSON,
+   * setting names in .ini), also sub-attribute within another highlighted
+   * object, like XML tag" */
+  .hljs-attr { @apply text-slate-light; }
+
+   /* "name of an attribute followed by a structured value part, like CSS properties" */
+  .hljs-attribute { @apply text-red-4; }
+
+  /* "literal string, character" */
+  .hljs-string { @apply text-slate; }
+
+  /* HTML, CSS, and JS comments */
+  .hljs-comment { @apply text-slate-light; }
+}

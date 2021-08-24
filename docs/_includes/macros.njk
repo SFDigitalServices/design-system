@@ -1,0 +1,28 @@
+{% macro swatch(color, width, height) %}
+  <div class="mr-20 mb-20">
+    <h4 class="title-xs mt-0 mb-4">
+      {{ color.label }}
+    </h4>
+    {% if color.value or not color.swatches %}
+      <code class="block text-slate mb-8">
+        {{ color.value | default('???') }}
+      </code>
+    {% endif %}
+    {% if color.swatches %}
+      <div class="flex mt-20">
+        {% for child in color.swatches %}
+          {{ swatch(child, width, height) }}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="rounded {{ color.class }}"
+        style="
+          background-color: {{ color.value }};
+          width: {{ width | default(100) }}px;
+          height: {{ height | default(100) }}px;
+        ">
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}
+

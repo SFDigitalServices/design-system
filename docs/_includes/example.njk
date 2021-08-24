@@ -1,0 +1,39 @@
+{% set button_class = 'btn btn-inverse rounded-4 px-8 py-4' %}
+<div class="my-20 border-1 border-solid border-slate-4">
+  <div class="p-20">
+    <iframe class="w-full border-0 bg-white"
+      {% for attr, value in iframe.properties -%}
+        {{ attr }}="{{ value | e }}"
+      {% endfor %}></iframe>
+  </div>
+  <div class="bg-grey-1 border-0 border-t-1 border-solid border-slate-4 relative">
+    <div class="flex justify-start">
+      <div class="p-20 flex-auto" id="{{ id }}">
+        {{ content | safe }}
+      </div>
+      <div class="p-8 space-y-8">
+        <a
+          href="{{ url }}"
+          title="open in editor"
+          target="_blank"
+          class="{{ button_class }}"
+        >
+          <sfgov-icon symbol="arrow-up"></sfgov-icon>
+        </a>
+        <clipboard-copy for="{{ id }}" class="block">
+          <button
+            title="copy example code"
+            class="{{ button_class }}"
+          >
+            <sfgov-icon symbol="document"></sfgov-icon>
+          </button>
+        </clipboard-copy>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="p-20 border-0 border-t-1 border-solid border-slate-4">
+    <pre>{{ node | dump(2) }}</pre>
+  </div>
+  -->
+</div>
