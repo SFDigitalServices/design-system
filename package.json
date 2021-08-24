@@ -4,9 +4,6 @@
   "repository": "SFDigitalServices/design-system",
   "author": "City & County of San Francisco, California",
   "license": "MIT",
-  "project": {
-    "title": "SF.gov design system"
-  },
   "files": [
     "dist",
     "docs",
