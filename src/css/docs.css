@@ -5,7 +5,7 @@
   h4,
   h5,
   h6 {
-    @apply mt-60 mb-24;
+    @apply mt-60 mb-8;
   }
 
   > :first-child {
@@ -14,7 +14,7 @@
 
   p,
   blockquote {
-    @apply my-24;
+    @apply mt-0 mb-24;
   }
 
   pre {
