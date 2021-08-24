@@ -1,8 +1,8 @@
 {% macro swatch(color, width, height) %}
   <div class="mr-20 mb-20">
-    <h3 class="title-xs text-slate mt-0 mb-4">
+    <h4 class="title-xs text-slate mt-0 mb-4">
       {{ color.label }}
-    </h3>
+    </h4>
     {% if color.value or not color.swatches %}
       <code class="block text-slate mb-8">
         {{ color.value | default('???') }}
