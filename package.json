@@ -14,9 +14,10 @@
     "node": "14.x"
   },
   "scripts": {
-    "build": "run-s build-css build-js build-docs",
-    "build-docs": "eleventy",
+    "build": "run-s build-assets build-docs",
+    "build-assets": "run-p build-css build-js build-icons",
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
+    "build-docs": "eleventy",
     "build-icons": "scripts/build-icons",
     "build-js": "babel -d dist/js 'src/js/*.js'",
     "build-clean": "run-s clean build",
