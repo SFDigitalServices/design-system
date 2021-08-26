@@ -5,18 +5,18 @@ const { icons } = require('../src/icons/data.json')
 
 const dir = 'dist/icons'
 
-ensureDir(dir)
-  .catch(error => {
-    throw new Error(`unable to mkdir "${dir}": ${error.message}`)
-  })
-  .then(() => {
-    for (const [symbol, icon] of Object.entries(icons)) {
-      if (icon.svg) {
-        const path = `${dir}/${symbol}.svg`
-        console.warn('writing:', path)
-        writeFileSync(path, icon.svg, 'utf8')
-      } else {
-        console.warn('no SVG for symbol:', symbol, icon)
-      }
+main()
+
+async function main () {
+  await ensureDir(dir)
+
+  for (const [symbol, icon] of Object.entries(icons)) {
+    if (icon.svg) {
+      const path = `${dir}/${symbol}.svg`
+      console.warn('writing:', path)
+      writeFileSync(path, icon.svg, 'utf8')
+    } else {
+      console.warn('no SVG for symbol:', symbol, icon)
     }
-  })
+  }
+}
