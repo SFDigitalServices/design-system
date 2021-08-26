@@ -1,13 +1,7 @@
 ---
 title: Typography
 specimens:
-  sm: The quick brown fox jumps over the lazy dog.
-  md: Sagittis aliquam malesuada bibendum arcu vitae (regular)
-  lg: Euismod in pellentesque massa placerat duis ultricies. Mauris vitae ultricies leo integer malesuada nunc vel. Sed odio morbi quis commodo odio.
-  xl: 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod in pellentesque massa placerat duis ultricies. Mauris vitae ultricies leo integer malesuada nunc vel. Sed odio morbi quis commodo odio. 
-    <br><br>
-    Sagittis aliquam malesuada bibendum arcu vitae. Eros in cursus turpis massa tincidunt dui ut. Urna nunc id cursus metus aliquam eleifend mi. Ac turpis egestas sed tempus. Diam quis enim lobortis scelerisque fermentum. Rutrum quisque non tellus orci ac auctor augue mauris.
+  default: The quick brown fox jumps over the lazy dog.
 ---
 
 ## Introduction
@@ -46,9 +40,7 @@ text (for instance in `<kbd>` for keyboard instructions). In the future,
 another possible use is when proportionally spaced characters would cause
 misalignment or jumping.
 
-```html
-<p class="font-mono m-0">The quick brown fox jumps over the lazy dog.</p>
-```
+> <div class="font-mono">The quick brown fox jumps over the lazy dog.</div>
 
 ## Desktop text styles
 These styles are used on larger screens.
@@ -62,46 +54,28 @@ with color banner) or display [large](#large-title) (pages with no color
 banner) to style the one-time page title (`<h1>`).
 
 #### X-large title
-```html
-<h1 class="title-xl m-0 mb-8">The quick brown fox jumps over the lazy dog.</h1>
-```
+> <div class="title-xl">{{ specimens.default }}</div>
 
 #### Large title
-```html
-<h1 class="title-lg m-0 mb-8">The quick brown fox jumps over the lazy dog.</h1>
-```
+> <div class="title-lg">{{ specimens.default }}</div>
 
 #### Medium title
-```html
-<h1 class="title-md m-0 mb-8">The quick brown fox jumps over the lazy dog.</h1>
-```
+> <div class="title-md">{{ specimens.default }}</div>
 
 #### Small title
-```html
-<h1 class="title-sm m-0 mb-8">The quick brown fox jumps over the lazy dog.</h1>
-```
+> <div class="title-sm">{{ specimens.default }}</div>
 
 #### X-small title
-```html
-<h1 class="title-xs m-0 mb-8">The quick brown fox jumps over the lazy dog.</h1>
-```
+> <div class="title-xs">{{ specimens.default }}</div>
 
 #### X-small title link
-```html
-<h1 class="title-xs m-0 mb-8">
-  <a href="#">The quick brown fox jumps over the lazy dog.</a>
-</h1>
-```
+> <div class="title-xs"><a href="#">{{ specimens.default }}</a></div>
 
 #### Display large
-```html
-<h1 class="display-lg m-0 mb-8">The quick brown fox jumps over the lazy dog.</h1>
-```
+> <div class="display-lg">{{ specimens.default }}</div>
 
 #### Display small
-```html
-<h1 class="display-sm m-0 mb-8">The quick brown fox jumps over the lazy dog.</h1>
-```
+> <div class="display-sm">{{ specimens.default }}</div>
 
 ### Additional text styles
 
@@ -110,31 +84,19 @@ Use to draw attention to blocks of text, such as the page introduction
 paragraph. This style is slightly larger in size and line height compared to
 the regular body text style.
 
-```html
-<p class="big-desc m-0">Euismod in pellentesque massa placerat duis ultricies. Mauris vitae ultricies leo integer malesuada nunc vel. Sed odio morbi quis commodo odio.</p>
-```
+> <div class="big-desc">{{ specimens.default }}</div>
 
 #### Body
 Use for paragraph and list text. This style can be used in regular, bold and
 link format.
 
-```html
-<p class="text-body m-0">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod in pellentesque massa placerat duis ultricies. Mauris vitae ultricies leo integer malesuada nunc vel. Sed odio morbi quis commodo odio. 
-  <br><br>
-  Sagittis aliquam malesuada bibendum arcu vitae. Eros in cursus turpis massa tincidunt dui ut. Urna nunc id cursus metus aliquam eleifend mi. Ac turpis egestas sed tempus. Diam quis enim lobortis scelerisque fermentum. Rutrum quisque non tellus orci ac auctor augue mauris.
-</p>
-```
+> <div class="text-body">{{ specimens.default }}</div>
 
 #### Small text
 Use this style sparingly for text that is smaller than the regular body style
 size, such as photo credits.
 
-```html
-<p class="text-small m-0">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-```
+> <div class="text-small">{{ specimens.default }}</div>
 
 ### Mobile text styles
 These styles follow the same guidelines as the desktop styles but are
