@@ -1,13 +1,13 @@
 module.exports = {
+  plugins: ['sfgov'],
+  extends: [
+    'plugin:sfgov/recommended',
+    'plugin:sfgov/node'
+  ],
   env: {
-    browser: true,
-    commonjs: true,
     es2021: true,
     node: true
   },
-  extends: [
-    'standard'
-  ],
   parserOptions: {
     ecmaVersion: 12
   },

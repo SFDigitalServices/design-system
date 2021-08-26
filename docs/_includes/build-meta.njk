@@ -1,0 +1,17 @@
+<div class="mt-60 text-slate-light">
+  {% set branch = git.branch if git.pr else git.defaultBranch %}
+  <a href="{{ page.inputPath | repo_url(branch) }}">Edit on GitHub</a>
+  {% if git.commit %}
+    | last updated
+    <a
+      class="text-inherit"
+      href="{{ '' | repo_url }}/commit/{{ git.commit.sha }}"
+    >{{ git.commit.date | local_date }}</a>
+    {% if git.commit.author %}
+      by <a
+        class="text-inherit"
+        href="https://github.com/{{ git.commit.author.login }}"
+      >{{ git.commit.author.name | default('@' + git.commit.author.login) }}</a>
+    {% endif %}
+  {% endif %}
+</div>

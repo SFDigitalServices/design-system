@@ -1,16 +1,23 @@
+const brightBlue = '#4f66ee'
+
 module.exports = {
   none: 'transparent',
   white: '#FFF',
   black: '#212123',
+  action: brightBlue,
   blue: {
     1: '#edf4f7',
     2: '#a9d6ea',
-    bright: '#4f66ee',
+    bright: brightBlue,
     dark: '#0c1464'
   },
   slate: {
     DEFAULT: '#1c3e57',
-    light: '#607889'
+    light: '#607889',
+    4: '#002B48',
+    3: '#1D4D70',
+    2: '#5b7c94',
+    1: '#CEDAE4'
   },
   green: {
     4: '#1B674D',
