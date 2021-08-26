@@ -31,6 +31,12 @@ module.exports = {
       parserOptions: {
         sourceType: 'module'
       }
+    },
+    {
+      files: 'scripts/*.js',
+      rules: {
+        'node/shebang': 0
+      }
     }
   ]
 }
