@@ -18,9 +18,9 @@
   "scripts": {
     "build": "run-s build-assets build-docs",
     "build-assets": "run-p build-css build-js build-icons",
-    "build-css": "postcss --verbose -d dist/css src/css/*.css",
-    "build-docs": "eleventy",
     "build-icons": "scripts/build-icons.js",
+    "build-docs": "eleventy",
+    "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "rollup -c",
     "build-clean": "run-s clean build",
     "develop": "NODE_ENV=development npm start",
