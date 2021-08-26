@@ -1,3 +1,8 @@
+const dev = process.env.NODE_ENV === 'development'
+if (dev) {
+  require('dotenv').config()
+}
+
 const remark = require('@fec/eleventy-plugin-remark')
 const remarkConfig = require('./lib/remark').eleventyPluginConfig
 const navigation = require('./lib/eleventy/nav')
@@ -6,7 +11,7 @@ const toc = require('./lib/eleventy/toc')
 const filters = require('./lib/eleventy/filters')
 
 module.exports = config => {
-  if (process.env.NODE_ENV === 'development') {
+  if (dev) {
     const reloadOnChange = require('./lib/eleventy/reload')
     reloadOnChange(__filename, ['lib/**/*.js'])
   }
