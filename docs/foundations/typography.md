@@ -54,28 +54,28 @@ with color banner) or display [large](#large-title) (pages with no color
 banner) to style the one-time page title (`<h1>`).
 
 #### X-large title
-> <div class="title-xl">{{ specimens.default }}</div>
+> <div class="title-xl-desktop">{{ specimens.default }}</div>
 
 #### Large title
-> <div class="title-lg">{{ specimens.default }}</div>
+> <div class="title-lg-desktop">{{ specimens.default }}</div>
 
 #### Medium title
-> <div class="title-md">{{ specimens.default }}</div>
+> <div class="title-md-desktop">{{ specimens.default }}</div>
 
 #### Small title
-> <div class="title-sm">{{ specimens.default }}</div>
+> <div class="title-sm-desktop">{{ specimens.default }}</div>
 
 #### X-small title
-> <div class="title-xs">{{ specimens.default }}</div>
+> <div class="title-xs-desktop">{{ specimens.default }}</div>
 
 #### X-small title link
-> <div class="title-xs"><a href="#">{{ specimens.default }}</a></div>
+> <div class="title-xs-desktop"><a href="#">{{ specimens.default }}</a></div>
 
 #### Display large
-> <div class="display-lg">{{ specimens.default }}</div>
+> <div class="display-lg-desktop">{{ specimens.default }}</div>
 
 #### Display small
-> <div class="display-sm">{{ specimens.default }}</div>
+> <div class="display-sm-desktop">{{ specimens.default }}</div>
 
 ### Additional text styles
 
@@ -84,7 +84,7 @@ Use to draw attention to blocks of text, such as the page introduction
 paragraph. This style is slightly larger in size and line height compared to
 the regular body text style.
 
-> <div class="big-desc">{{ specimens.default }}</div>
+> <div class="big-desc-desktop">{{ specimens.default }}</div>
 
 #### Body
 Use for paragraph and list text. This style can be used in regular, bold and
