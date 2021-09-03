@@ -4,6 +4,10 @@
   h5 { @apply mt-16 mb-8; }
   h6 { @apply mt-8 mb-4; }
 
+  > :first-child {
+    @apply mt-0 !important;
+  }
+
   ul,
   ol {
     @apply p-0 mx-0 my-20;
