@@ -1,4 +1,4 @@
-const { branch, git, github } = require('../../lib/git')
+const { branch, git, github, context } = require('../../lib/git')
 
 const gitMetaCache = new Map()
 
@@ -44,13 +44,7 @@ function getLastCommitFromGit (path) {
 }
 
 async function getLastCommitFromGitHub (path) {
-  const args = {
-    owner,
-    repo,
-    path,
-    sha: branch,
-    per_page: 1
-  }
+  const args = { ...context, path, sha: branch, per_page: 1 }
 
   console.info('getting last commit from github:', args)
 
