@@ -1,7 +1,6 @@
 const pkg = require('../../package.json')
-const { git } = require('../../lib/git')
+const { git, branch } = require('../../lib/git')
 const { Octokit } = require('@octokit/rest')
-const { branch } = require('./git')
 
 const github = new Octokit({ auth: process.env.GITHUB_TOKEN })
 
@@ -22,7 +21,6 @@ async function getLastCommit (path) {
     return await gitMetaCache.get(path)
   }
 
-  console.info('getting last commit for', path)
   if (process.env.NODE_ENV === 'development') {
     meta = getLastCommitFromGit(path)
   } else if (github) {
@@ -37,6 +35,7 @@ async function getLastCommit (path) {
 }
 
 function getLastCommitFromGit (path) {
+  console.info('getting last commit from `git log -1 -- %s`', path)
   const log = git('log', '-1', '--', path)
   const [first, second, third] = log.split('\n')
   return {
@@ -48,15 +47,19 @@ function getLastCommitFromGit (path) {
 
 async function getLastCommitFromGitHub (path) {
   const [owner, repo] = pkg.repository.split('/')
+  const args = {
+    owner,
+    repo,
+    path,
+    sha: branch,
+    per_page: 1
+  }
+
+  console.info('getting last commit from github:', args)
+
   let res, commits
   try {
-    res = await github.rest.repos.listCommits({
-      owner,
-      repo,
-      path,
-      sha: branch,
-      per_page: 1
-    })
+    res = await github.rest.repos.listCommits(args)
     commits = res.data
   } catch (error) {
     console.warn('error loading commits for "%s"', path, error)
