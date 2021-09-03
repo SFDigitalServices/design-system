@@ -1,6 +1,5 @@
 <div class="mt-60 text-slate-light">
-  {% set branch = git.branch if git.pr else git.defaultBranch %}
-  <a href="{{ page.inputPath | repo_url(branch) }}">Edit on GitHub</a>
+  <a href="{{ page.inputPath | repo_url }}">Edit on GitHub</a>
   {% if git.commit %}
     | last updated
     <a
