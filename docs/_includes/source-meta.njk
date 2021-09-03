@@ -1,7 +1,11 @@
 <div class="mt-60 text-slate-light">
   <a href="{{ page.inputPath | repo_url }}">Edit on GitHub</a>
   {% if git.commit %}
-    | last updated
+  | last
+    <a
+      class="text-inherit"
+      href="{{ '' | repo_url }}/blame/{{ git.branch }}/{{ page.inputPath }}"
+    >updated</a>
     <a
       class="text-inherit"
       href="{{ '' | repo_url }}/commit/{{ git.commit.sha }}"
