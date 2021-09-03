@@ -1,12 +1,23 @@
 const pkg = require('../../package.json')
-const { git, branch } = require('../../lib/git')
+const { git, branch, sha } = require('../../lib/git')
 const { Octokit } = require('@octokit/rest')
 
+const [owner, repo] = pkg.repository.split('/')
 const github = new Octokit({ auth: process.env.GITHUB_TOKEN })
 
 const gitMetaCache = new Map()
 
+let publishedVersion
+
 module.exports = {
+  package: {
+    async version () {
+      if (!publishedVersion) {
+        publishedVersion = await getPublishedStatusVersion() || pkg.version
+      }
+      return publishedVersion
+    }
+  },
   git: {
     commit (data) {
       const path = data.page.inputPath.replace(/^\.\//, '')
@@ -48,7 +59,6 @@ function getLastCommitFromGit (path) {
 }
 
 async function getLastCommitFromGitHub (path) {
-  const [owner, repo] = pkg.repository.split('/')
   const args = {
     owner,
     repo,
@@ -84,6 +94,27 @@ async function getLastCommitFromGitHub (path) {
   } else {
     console.warn('unable to get commit for "%s"', path, res)
     return null
+  }
+}
+
+async function getPublishedStatusVersion () {
+  try {
+    const data = await github.repos.listCommitStatusesForRef({
+      owner,
+      repo,
+      ref: sha
+    })
+    const versionStatus = data.statuses?.find(status => {
+      return status.state === 'success' && status.context.includes('publish')
+    })
+    if (versionStatus) {
+      console.info('got published version status:', versionStatus)
+      return versionStatus.description
+    } else {
+      console.warn('no published version status for %s', sha)
+    }
+  } catch (error) {
+    console.warn('unable to get published version status:', error)
   }
 }
 
