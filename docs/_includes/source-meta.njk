@@ -11,6 +11,8 @@
         class="text-inherit"
         href="https://github.com/{{ git.commit.author.login }}"
       >{{ git.commit.author.name | default('@' + git.commit.author.login) }}</a>
+    {% elif git.commit.author.name %}
+      by {{ git.commit.author.name }}
     {% endif %}
   {% endif %}
 </div>
