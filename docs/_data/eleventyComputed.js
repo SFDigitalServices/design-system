@@ -76,7 +76,7 @@ async function getLastCommitFromGitHub (path) {
       date: commit.author?.date,
       author: {
         name: commit.author?.name,
-        login: author.login
+        login: author?.login
       }
     }
     // console.info('caching git meta for "%s"', path, meta)
