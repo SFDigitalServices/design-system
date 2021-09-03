@@ -12,18 +12,19 @@ module.exports = async function getPackageWithVersion () {
 
 async function getPublishedStatusVersion () {
   try {
-    const data = await github.repos.listCommitStatusesForRef({
+    const res = await github.repos.listCommitStatusesForRef({
       ...context,
       ref: sha
     })
-    const versionStatus = data.statuses?.find(status => {
+    const statuses = res.data
+    const versionStatus = statuses.find(status => {
       return status.state === 'success' && status.context.includes('publish')
     })
     if (versionStatus) {
       console.info('got published version status:', versionStatus)
       return versionStatus.description
     } else {
-      console.warn('no published version status for %s', sha)
+      console.warn('no published version status for %s', sha, statuses)
     }
   } catch (error) {
     console.warn('unable to get published version status:', error)
