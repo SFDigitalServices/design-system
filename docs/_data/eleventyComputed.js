@@ -38,9 +38,11 @@ function getLastCommitFromGit (path) {
   console.info('getting last commit from `git log -1 -- %s`', path)
   const log = git('log', '-1', '--', path)
   const [first, second, third] = log.split('\n')
+  const name = match(second, /Author: (.+) </, 1)
+  const login = match(second, /<([^@]+)@users\.noreply\.github\.com>/, 1)
   return {
     sha: match(first, /^commit ([a-f0-9]+)/, 1),
-    author: match(second, /Author: +.*<([^@]+)@users\.noreply\.github\.com>/, 1),
+    author: { name, login },
     date: match(third, /Date: +(.+)/, 1)
   }
 }
