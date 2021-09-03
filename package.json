@@ -22,7 +22,7 @@
     "develop": "NODE_ENV=development npm start",
     "clean": "rm -rf dist",
     "lint": "run-p lint-js lint-scripts",
-    "lint-js": "eslint '*.js' 'src/**/*.js'",
+    "lint-js": "eslint *.js src lib docs",
     "lint-scripts": "shellcheck scripts/*",
     "prepublishOnly": "scripts/prepublish-checks",
     "watch": "run-p watch-css watch-js",
