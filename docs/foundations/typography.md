@@ -45,7 +45,7 @@ misalignment or jumping.
 ## Desktop text styles
 These styles are used on larger screens.
 
-### Page tiles
+### Page titles
 Use page titles to introduce and group sections of content. Ideally, page
 titles should be nested, from [x-large](#x-large-title) to
 [x-small](#x-small-title) sizes, but occasionally a title style is skipped for
@@ -98,10 +98,36 @@ size, such as photo credits.
 
 > <div class="text-small">{{ specimens.default }}</div>
 
-### Mobile text styles
+## Mobile text styles
 These styles follow the same guidelines as the desktop styles but are
 smaller in size for use on smaller screens.
 
+#### X-large title
+> <div class="title-xl-mobile">{{ specimens.default }}</div>
+
+#### Large title
+> <div class="title-lg-mobile">{{ specimens.default }}</div>
+
+#### Medium title
+> <div class="title-md-mobile">{{ specimens.default }}</div>
+
+#### Small title
+> <div class="title-sm-mobile">{{ specimens.default }}</div>
+
+#### X-small title
+> <div class="title-xs-mobile">{{ specimens.default }}</div>
+
+#### X-small title link
+> <div class="title-xs-mobile"><a href="#">{{ specimens.default }}</a></div>
+
+#### Display large
+> <div class="display-lg-mobile">{{ specimens.default }}</div>
+
+#### Display small
+> <div class="display-sm-mobile">{{ specimens.default }}</div>
+
+#### Big description
+> <div class="big-desc-mobile">{{ specimens.default }}</div>
 
 [google fonts]: https://fonts.google.com
 [rubik]: https://fonts.google.com/specimen/Rubik
