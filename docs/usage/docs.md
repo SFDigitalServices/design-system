@@ -19,7 +19,7 @@ The syntax is easier to read and write, and allows us to enhance the content
 programmatically with [remark](#remark).
 
 ### Frontmatter
-The term [frontmatter][] (sometimes written as "front matter" or "front
+The term [frontmatter][] (sometimes written as "front-matter" or "front
 matter") was popularized by a static site generator called [Jekyll], which
 heavily influenced Eleventy's conventions. Like Jekyll, Eleventy allows us to
 embed metadata with frontmatter written in [YAML] at the top of each page.
