@@ -53,5 +53,11 @@ module.exports = {
     body: ['16px', '24px'],
     small: ['14px', '18px']
   },
-  fontWeight
+  fontWeight,
+  // TODO: deprecate in 3.0.0
+  letterSpacing: {
+    0: '0',
+    n1: '-1px',
+    n2: '-2px'
+  }
 }
