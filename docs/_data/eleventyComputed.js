@@ -1,9 +1,4 @@
-const pkg = require('../../package.json')
-const { git } = require('../../lib/git')
-const { Octokit } = require('@octokit/rest')
-const { branch } = require('./git')
-
-const github = new Octokit({ auth: process.env.GITHUB_TOKEN })
+const { branch, git, github, context } = require('../../lib/git')
 
 const gitMetaCache = new Map()
 
@@ -22,7 +17,6 @@ async function getLastCommit (path) {
     return await gitMetaCache.get(path)
   }
 
-  console.info('getting last commit for', path)
   if (process.env.NODE_ENV === 'development') {
     meta = getLastCommitFromGit(path)
   } else if (github) {
@@ -37,26 +31,26 @@ async function getLastCommit (path) {
 }
 
 function getLastCommitFromGit (path) {
+  console.info('getting last commit from `git log -1 -- %s`', path)
   const log = git('log', '-1', '--', path)
   const [first, second, third] = log.split('\n')
+  const name = match(second, /Author: (.+) </, 1)
+  const login = match(second, /<([^@]+)@users\.noreply\.github\.com>/, 1)
   return {
     sha: match(first, /^commit ([a-f0-9]+)/, 1),
-    author: match(second, /Author: +.*<([^@]+)@users\.noreply\.github\.com>/, 1),
+    author: { name, login },
     date: match(third, /Date: +(.+)/, 1)
   }
 }
 
 async function getLastCommitFromGitHub (path) {
-  const [owner, repo] = pkg.repository.split('/')
+  const args = { ...context, path, sha: branch, per_page: 1 }
+
+  console.info('getting last commit from github:', args)
+
   let res, commits
   try {
-    res = await github.rest.repos.listCommits({
-      owner,
-      repo,
-      path,
-      sha: branch,
-      per_page: 1
-    })
+    res = await github.rest.repos.listCommits(args)
     commits = res.data
   } catch (error) {
     console.warn('error loading commits for "%s"', path, error)
