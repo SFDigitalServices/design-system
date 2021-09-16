@@ -58,6 +58,63 @@
   }
 }
 
+/* Below is for hard-coding mobile/desktop examples */
+.display-lg-mobile {
+  @apply text-display-lg font-light;
+}
+
+.display-lg-desktop {
+  @apply text-display-lg-desktop font-light;
+}
+
+.display-sm-mobile {
+  @apply text-display-sm font-light;
+}
+
+.display-sm-desktop {
+  @apply text-display-sm-desktop font-light;
+}
+
+.title-xl-mobile {
+  @apply text-title-xl font-medium;
+}
+
+.title-xl-desktop {
+  @apply text-title-xl-desktop font-medium;
+}
+
+.title-lg-mobile {
+  @apply text-title-lg font-medium;
+}
+
+.title-lg-desktop {
+  @apply text-title-lg-desktop font-medium;
+}
+
+.title-md-mobile {
+  @apply text-title-md font-medium;
+}
+
+.title-md-desktop {
+  @apply text-title-md-desktop font-medium;
+}
+
+.title-sm-desktop {
+  @apply text-title-sm-desktop font-medium;
+}
+
+.title-xs-desktop {
+  @apply text-title-xs-desktop font-medium;
+}
+
+.big-desc-mobile {
+  @apply text-big-desc font-regular;
+}
+
+.big-desc-desktop {
+  @apply text-big-desc-desktop font-regular;
+}
+
 /**
  * The following are "scopes" defined by highlight.js:
  * <https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html>
