@@ -1,5 +1,5 @@
 const breakpoints = require('./tokens/breakpoints')
-const colors = require('./tokens/colors')
+const { text: textColor, ...colors } = require('./tokens/colors')
 const { fontFamily, ...typography } = require('./tokens/typography')
 const spacing = require('./tokens/spacing')
 
@@ -18,7 +18,8 @@ module.exports = {
   },
   textColor: {
     inherit: 'inherit',
-    ...colors
+    ...colors, // FIXME: deprecate in 3.0.0
+    ...textColor
   },
   borderRadius: {
     DEFAULT: '8px',
