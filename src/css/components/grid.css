@@ -1,0 +1,13 @@
+.responsive-grid {
+  @apply grid grid-cols-6;
+  @apply gap-20;
+  @apply md:grid-cols-12 md:gap-28;
+  @apply lg:grid-cols-12;
+}
+
+.responsive-container {
+  @apply mx-20 max-w-lg;
+  @apply md:gap-28 md:mx-28;
+  @apply lg:mx-96;
+  @apply xl:mx-gutter-auto;
+}
