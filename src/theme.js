@@ -80,6 +80,7 @@ module.exports = {
     ...theme('spacing')
   }),
   height: theme => ({
+    auto: 'auto',
     full: '100%',
     ...theme('spacing')
   })
