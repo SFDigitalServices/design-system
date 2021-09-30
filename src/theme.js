@@ -76,6 +76,7 @@ module.exports = {
     '3/4': '75%',
     '4/4': '100%',
     full: '100%',
+    ...breakpoints,
     ...theme('spacing')
   }),
   height: theme => ({
