@@ -9,8 +9,8 @@ Use the `responsive-container` class to apply
 horizontal margins and max-widths that fit within our
 layout grid.
 
-```html
-<div class="responsive-container">
+```html wrapper_class="p-0"
+<div class="responsive-container my-20">
   <div class="rounded bg-red-2 h-96"></div>
 </div>
 ```
