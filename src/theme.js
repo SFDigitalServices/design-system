@@ -55,6 +55,7 @@ module.exports = {
     'span-12': 'span 12 / span 12'
   },
   margin: theme => ({
+    auto: 'auto',
     ...theme('spacing'),
     'gutter-auto': `calc((100vw - ${breakpoints.lg}) / 2)`
   }),
