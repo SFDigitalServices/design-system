@@ -35,35 +35,41 @@ module.exports = {
     3: '3px',
     4: '4px'
   },
-  gap: theme => ({
-    ...theme('spacing')
-  }),
-  gridTemplateColumns: {
-    1: 'repeat(1, minmax(0, 1fr))',
-    2: 'repeat(2, minmax(0, 1fr))',
-    3: 'repeat(3, minmax(0, 1fr))',
-    6: 'repeat(6, minmax(0, 1fr))',
-    12: 'repeat(12, minmax(0, 1fr))'
+  gap: {
+    ...spacing
   },
   gridColumn: {
     'span-auto': 'auto',
-    'span-1': 'span 1 / span 1',
-    'span-2': 'span 2 / span 2',
-    'span-3': 'span 3 / span 3',
-    'span-4': 'span 4 / span 4',
-    'span-6': 'span 6 / span 6',
-    'span-12': 'span 12 / span 12'
+    ...Object.fromEntries(
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => [
+        `span-${n}`,
+        `span ${n} / span ${n}`
+      ])
+    )
   },
-  margin: theme => ({
+  gridTemplateColumns: {
+    ...Object.fromEntries(
+      [1, 2, 3, 6, 12].map(n => [
+        n,
+        `repeat(${n}, minmax(0, 1fr))`
+      ])
+    )
+  },
+  height: {
     auto: 'auto',
-    ...theme('spacing'),
+    full: '100%',
+    ...spacing
+  },
+  margin: {
+    auto: 'auto',
+    ...spacing,
     'gutter-auto': `calc((100vw - ${breakpoints.lg}) / 2)`
-  }),
+  },
   maxWidth: theme => ({
     ...breakpoints,
     ...theme('width')
   }),
-  width: theme => ({
+  width: {
     auto: 'auto',
     '1/1': '100%',
     '1/2': '50%',
@@ -77,11 +83,6 @@ module.exports = {
     '4/4': '100%',
     full: '100%',
     ...breakpoints,
-    ...theme('spacing')
-  }),
-  height: theme => ({
-    auto: 'auto',
-    full: '100%',
-    ...theme('spacing')
-  })
+    ...spacing
+  }
 }
