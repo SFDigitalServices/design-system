@@ -115,8 +115,6 @@ for fully responsive grid layouts.
 </div>
 ```
 
-## Position
-
 ## Size
 
 ### Width
