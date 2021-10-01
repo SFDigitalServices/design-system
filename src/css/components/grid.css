@@ -7,7 +7,7 @@
 
 .responsive-container {
   @apply mx-20 max-w-lg;
-  @apply md:gap-28 md:mx-28;
+  @apply md:mx-28;
   @apply lg:mx-96;
-  @apply xl:mx-gutter-auto;
+  @apply xl:mx-auto;
 }
