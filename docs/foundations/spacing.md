@@ -24,9 +24,9 @@ with `col-span-*`.
 
 ```html
 <div class="responsive-grid">
-  {% for i in range(28) -%}
-    <div class="rounded bg-green-2 h-96"></div>
-  {% endfor %}
+  {%- for i in range(28) %}
+  <div class="rounded bg-green-2 h-96"></div>
+  {%- endfor %}
 </div>
 ```
 
@@ -39,18 +39,18 @@ for fully responsive grid layouts.
   rounded bg-yellow-2
   grid-cols-1 md:grid-cols-3
 ">
-  {% for i in range(6) -%}
-    <div class="rounded bg-green-2 h-96"></div>
-  {% endfor %}
+  {%- for i in range(6) %}
+  <div class="rounded bg-green-2 h-96"></div>
+  {%- endfor %}
 </div>
 ```
 
 ### 12-column grid
 ```html
 <div class="grid grid-cols-12 gap-28">
-  {% for i in range(28) -%}
-    <div class="rounded bg-green-2 h-96"></div>
-  {% endfor %}
+  {%- for i in range(28) %}
+  <div class="rounded bg-green-2 h-96"></div>
+  {%- endfor %}
 </div>
 ```
 
@@ -68,24 +68,30 @@ for fully responsive grid layouts.
   <div class="rounded bg-green-2 col-span-4 h-96"></div>
   <div class="rounded bg-green-2 col-span-4 h-96"></div>
   <div class="rounded bg-green-2 col-span-4 h-96"></div>
+
+  <div class="rounded bg-green-2 col-span-5 h-96"></div>
+  <div class="rounded bg-green-2 col-span-7 h-96"></div>
+
+  <div class="rounded bg-green-2 col-span-10 h-96"></div>
+  <div class="rounded bg-green-2 col-span-2 h-96"></div>
 </div>
 ```
 
 ### 3-column grid
 ```html
 <div class="grid grid-cols-3 gap-28">
-  {% for i in range(13) -%}
-    <div class="rounded bg-green-2 h-96"></div>
-  {% endfor %}
+  {%- for i in range(13) %}
+  <div class="rounded bg-green-2 h-96"></div>
+  {%- endfor %}
 </div>
 ```
 
 ### 2-column grid
 ```html
 <div class="grid grid-cols-2 gap-28">
-  {% for i in range(9) -%}
-    <div class="rounded bg-green-2 h-96"></div>
-  {% endfor %}
+  {%- for i in range(9) %}
+  <div class="rounded bg-green-2 h-96"></div>
+  {%- endfor %}
 </div>
 ```
 
