@@ -62,8 +62,7 @@ module.exports = {
   },
   margin: {
     auto: 'auto',
-    ...spacing,
-    'gutter-auto': `calc((100vw - ${breakpoints.lg}) / 2)`
+    ...spacing
   },
   maxWidth: theme => ({
     ...breakpoints,
