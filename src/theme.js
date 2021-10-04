@@ -3,6 +3,15 @@ const { text: textColor, ...colors } = require('./tokens/colors')
 const { fontFamily, ...typography } = require('./tokens/typography')
 const spacing = require('./tokens/spacing')
 
+// available column grid templates
+const gridColumns = [1, 2, 3, 6, 12]
+// possible per-column spans
+const gridColumnSpans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+// available row grid templates
+const gridRows = [1, 2, 3]
+// possible per-row spans
+const gridRowSpans = gridRows
+
 module.exports = {
   colors,
   screens: breakpoints,
@@ -40,8 +49,19 @@ module.exports = {
   },
   gridColumn: {
     'span-auto': 'auto',
+    'span-full': '1 / -1',
     ...Object.fromEntries(
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => [
+      gridColumnSpans.map(n => [
+        `span-${n}`,
+        `span ${n} / span ${n}`
+      ])
+    )
+  },
+  gridRow: {
+    'span-auto': 'auto',
+    'span-full': '1 / -1',
+    ...Object.fromEntries(
+      gridRowSpans.map(n => [
         `span-${n}`,
         `span ${n} / span ${n}`
       ])
@@ -49,7 +69,15 @@ module.exports = {
   },
   gridTemplateColumns: {
     ...Object.fromEntries(
-      [1, 2, 3, 6, 12].map(n => [
+      gridColumns.map(n => [
+        n,
+        `repeat(${n}, minmax(0, 1fr))`
+      ])
+    )
+  },
+  gridTemplateRows: {
+    ...Object.fromEntries(
+      gridRows.map(n => [
         n,
         `repeat(${n}, minmax(0, 1fr))`
       ])
