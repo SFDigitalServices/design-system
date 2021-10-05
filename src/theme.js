@@ -79,7 +79,7 @@ module.exports = {
     ...Object.fromEntries(
       gridRows.map(n => [
         n,
-        `repeat(${n}, minmax(0, 1fr))`
+        `repeat(${n}, minmax(0, auto))`
       ])
     )
   },
