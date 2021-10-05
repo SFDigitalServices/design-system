@@ -6,14 +6,14 @@ module.exports = {
     8,
     16,
     20,
-    24, // body line height
+    24, // TODO: deprecate @3
     28,
     40,
-    48,
+    48, // TODO: deprecate @3
     60,
     80,
     96,
-    100
+    100 // TODO: deprecate @3
   ])
 }
 
