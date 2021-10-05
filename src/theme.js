@@ -15,7 +15,7 @@ const gridRowSpans = gridRows
 module.exports = {
   colors,
   screens: breakpoints,
-  spacing,
+  spacing, // TODO: add line heights @3
   fontFamily: {
     ...fontFamily,
     inherit: 'inherit'
