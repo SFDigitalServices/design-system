@@ -1,6 +1,6 @@
 {% set button_class = 'btn btn-inverse rounded-4 px-8 py-4' %}
 <div class="my-20 border-1 border-solid border-slate-4">
-  <div class="p-20 relative">
+  <div class="p-20">
     <iframe class="w-full border-0 bg-white"
       {% for attr, value in iframe.properties -%}
         {{ attr }}="{{ value | e }}"
