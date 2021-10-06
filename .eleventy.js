@@ -5,6 +5,7 @@ if (dev) {
 
 const remark = require('@fec/eleventy-plugin-remark')
 const remarkConfig = require('./lib/remark').eleventyPluginConfig
+const prettierTransform = require('./lib/eleventy/prettier')
 const navigation = require('./lib/eleventy/nav')
 const yaml = require('js-yaml')
 const toc = require('./lib/eleventy/toc')
@@ -30,6 +31,7 @@ module.exports = config => {
   config.addDataExtension('yml', contents => yaml.safeLoad(contents))
 
   config.setUseGitIgnore(false)
+  config.addTransform('prettier', prettierTransform)
   config.addWatchTarget('./dist')
   config.addPassthroughCopy('dist')
 
