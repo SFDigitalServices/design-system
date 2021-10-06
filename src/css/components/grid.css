@@ -2,7 +2,6 @@
   @apply grid grid-cols-6;
   @apply gap-20;
   @apply md:grid-cols-12 md:gap-28;
-  @apply lg:grid-cols-12;
 }
 
 .responsive-container {
