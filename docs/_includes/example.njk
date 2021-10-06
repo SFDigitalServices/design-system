@@ -1,13 +1,19 @@
 {% set button_class = 'btn btn-inverse rounded-4 px-8 py-4' %}
 <div class="my-20 border-1 border-solid border-slate-4">
-  <div class="p-20 relative group">
+  <div class="p-20 relative">
     <iframe class="w-full border-0 bg-white"
       {% for attr, value in iframe.properties -%}
         {{ attr }}="{{ value | e }}"
       {% endfor %}></iframe>
-    {% if codepen %}
-      <div class="absolute top-0 right-0 p-8 hidden group-hover:block">
+  </div>
+  <div class="bg-grey-1 border-0 border-t-1 border-solid border-slate-4 relative">
+    <div class="flex justify-start">
+      <div class="p-20 flex-auto" id="{{ id }}">
+        {{ content | safe }}
+      </div>
+      <div class="p-8 space-y-8">
         <form
+          class="block"
           action="https://codepen.io/pen/define/"
           method="POST"
           target="_blank"
@@ -19,36 +25,27 @@
           >
           <button
             type="submit"
-            class="btn bg-white px-8 py-2 text-slate-light text-small font-mono"
-            title="Edit this example in CodePen">
-            CodePen
+            class="{{ button_class }}"
+            title="Edit in CodePen">
+            <sfgov-icon symbol="pencil"></sfgov-icon>
           </button>
         </form>
-      </div>
-    {% endif %}
-  </div>
-  <div class="bg-grey-1 border-0 border-t-1 border-solid border-slate-4 relative">
-    <div class="flex justify-start">
-      <div class="p-20 flex-auto" id="{{ id }}">
-        {{ content | safe }}
-      </div>
-      <div class="p-8 space-y-8">
-        <a
-          href="{{ url }}"
-          title="open in editor"
-          target="_blank"
-          class="{{ button_class }}"
-        >
-          <sfgov-icon symbol="arrow-up"></sfgov-icon>
-        </a>
         <clipboard-copy for="{{ id }}" class="block">
           <button
-            title="copy example code"
+            title="Copy code"
             class="{{ button_class }}"
           >
             <sfgov-icon symbol="document"></sfgov-icon>
           </button>
         </clipboard-copy>
+        <a
+          href="{{ url }}"
+          title="View in separate window"
+          target="_blank"
+          class="{{ button_class }}"
+        >
+          <sfgov-icon symbol="arrow-up"></sfgov-icon>
+        </a>
       </div>
     </div>
   </div>
