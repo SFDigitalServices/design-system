@@ -3,7 +3,6 @@ import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 
-import { main, browser } from './package.json'
 // eslint-disable-next-line no-undef
 const { NODE_ENV = 'development' } = process.env
 const prod = NODE_ENV === 'production'
@@ -11,32 +10,45 @@ const prod = NODE_ENV === 'production'
 const commonPlugins = [
   resolve(),
   json(),
-  babel(),
+  babel({
+    babelHelpers: 'bundled'
+  }),
   prod ? terser() : null
 ].filter(Boolean)
 
 export default [
-  {
-    input: 'src/js/sfds.js',
-    plugins: [
-      ...commonPlugins
-    ],
-    output: {
-      file: browser,
-      format: 'umd',
-      name: 'sfgov',
-      sourcemap: prod
-    }
-  },
-  {
-    input: 'src/js/sfds.js',
-    plugins: [
-      ...commonPlugins
-    ],
-    output: {
-      file: main,
-      format: 'cjs',
-      sourcemap: prod
-    }
-  }
+  target({ input: 'src/js/sfds.js', name: 'sfgov' }),
+  target({ input: 'src/js/icons.js', name: 'sfgovIcons' })
 ]
+
+function target ({ input, name, ...rest }) {
+  const outputBase = input.replace('src/', 'dist/')
+  return {
+    input,
+    plugins: [...commonPlugins],
+    output: [
+      output({
+        file: outputBase,
+        format: 'umd',
+        name
+      }),
+      output({
+        file: outputBase.replace('.js', '.cjs.js'),
+        format: 'cjs',
+        name
+      }),
+      output({
+        file: outputBase.replace('.js', '.mjs'),
+        format: 'esm'
+      })
+    ]
+  }
+}
+
+function output (props) {
+  return {
+    entryFileNames: 'dist/js/[name].[format].js',
+    sourcemap: prod,
+    ...props
+  }
+}
