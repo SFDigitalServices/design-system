@@ -2,7 +2,7 @@
 title: CSS
 bundles:
   - path: dist/css/sfds.css
-    desc: Includes all of the bundles listed below. **Use this if you don't have any other CSS on your site.**
+    desc: Includes all of the bundles listed below, **except** `fonts.css`. Use this if you don't have any other CSS on your site.
   - path: dist/css/base.css
     desc: Defines "base" styles, including global resets, focus, and placeholder styles.
   - path: dist/css/fonts.css
@@ -25,5 +25,18 @@ File | Size | Description
   {%- set size = manifest[bundle.path].size -%}
   [`{{ bundle.path }}`]({{ url }}) | {{ size | filesize }} ([stats](https://cssstats.com/stats/?url={{ url | e }})) | {{ bundle.desc }}
 {% endfor %}
+
+### All CSS and custom fonts
+
+```html static="true"
+<link rel="stylesheet" href="https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/css/sfds.css">
+<link rel="stylesheet" href="https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/css/fonts.css">
+```
+
+### Only utilities
+
+```html static="true"
+<link rel="stylesheet" href="https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/css/utilities.css">
+```
 
 [tailwind]: https://tailwindcss.com/
