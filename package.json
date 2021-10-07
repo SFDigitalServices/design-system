@@ -42,6 +42,7 @@
     "@babel/eslint-parser": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@fec/eleventy-plugin-remark": "^2.2.1",
+    "@github/clipboard-copy-element": "^1.1.2",
     "@octokit/rest": "^18.9.1",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-json": "^4.1.0",
