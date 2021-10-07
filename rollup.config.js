@@ -18,7 +18,8 @@ const commonPlugins = [
 
 export default [
   target({ input: 'src/js/sfds.js', name: 'sfgov' }),
-  target({ input: 'src/js/icons.js', name: 'sfgovIcons' })
+  target({ input: 'src/js/icons.js', name: 'sfgovIcons' }),
+  target({ input: 'src/js/docs.js', name: 'sfgovDocs' })
 ]
 
 function target ({ input, name, ...rest }) {
@@ -30,11 +31,6 @@ function target ({ input, name, ...rest }) {
       output({
         file: outputBase,
         format: 'umd',
-        name
-      }),
-      output({
-        file: outputBase.replace('.js', '.cjs.js'),
-        format: 'cjs',
         name
       }),
       output({

@@ -4,7 +4,6 @@
   "repository": "SFDigitalServices/design-system",
   "author": "City & County of San Francisco, California",
   "license": "MIT",
-  "main": "dist/js/sfds.cjs.js",
   "browser": "dist/js/sfds.js",
   "module": "dist/js/sfds.mjs",
   "files": [
