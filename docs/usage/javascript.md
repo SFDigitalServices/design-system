@@ -9,23 +9,23 @@ bundles:
     desc: Documentation support for this site, including clipboard copying functionality.
 ---
 
-## Browser-ready bundles
+## Browser bundles
 We distribute several JavaScript files, each of which "bundles"
 different parts of the system so that you can tailor it to your site
 without the need for a custom build process.
-
-File | Size | Description
-:--- | ---: | :---
-{% for bundle in bundles -%}
-  {%- set url -%}https://unpkg.com/{{ package.name }}@{{ package.version }}/{{ bundle.path }}{% endset %}
-  {%- set size = manifest[bundle.path].size -%}
-  [`{{ bundle.path }}`]({{ url }}) | {{ size | filesize }} | {{ bundle.desc | safe }}
-{% endfor %}
 
 Our browser bundles (with the `.js` filename extension) conform to
 the [Universal Module Definition (UMD)][umd] spec, and—barring
 availability of browser globals such as `window` and
 `document`—should run in both web browsers and Node.js.
+
+File | Size | Description
+:--- | ---: | :---
+{% for bundle in bundles -%}
+  {%- set url = bundle.path | published_url(package.version) -%}
+  {%- set size = manifest[bundle.path].size -%}
+  [`{{ bundle.path }}`]({{ url }}) | {{ size | filesize }} | {{ bundle.desc | safe }}
+{% endfor %}
 
 ## ESM
 Each bundle is also available in the [ECMAScript Module (ESM)][esm]
@@ -34,8 +34,8 @@ format with the `.mjs` extension:
 File | Size | Description
 :--- | ---: | :---
 {% for bundle in bundles -%}
-  {%- set path = bundle.path | replace('.js', '.mjs') %}
-  {%- set url -%}https://unpkg.com/{{ package.name }}@{{ package.version }}/{{ path }}{% endset %}
+  {%- set path = bundle.path | replace('.js', '.mjs') -%}
+  {%- set url = path | published_url(package.version) -%}
   {%- set size = manifest[path].size -%}
   [`{{ path }}`]({{ url }}) | {{ size | filesize }} | {{ bundle.desc | safe }}
 {% endfor %}

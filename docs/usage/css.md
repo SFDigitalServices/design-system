@@ -21,7 +21,7 @@ site without the need for a custom build process:
 File | Size | Description
 :--- | ---: | :---
 {% for bundle in bundles -%}
-  {%- set url -%}https://unpkg.com/{{ package.name }}@{{ package.version }}/{{ bundle.path }}{% endset %}
+  {%- set url = bundle.path | published_url(package.version) -%}
   {%- set size = manifest[bundle.path].size -%}
   [`{{ bundle.path }}`]({{ url }}) | {{ size | filesize }} ([stats](https://cssstats.com/stats/?url={{ url | e }})) | {{ bundle.desc }}
 {% endfor %}
@@ -29,14 +29,14 @@ File | Size | Description
 ### All CSS and custom fonts
 
 ```html static="true"
-<link rel="stylesheet" href="https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/css/sfds.css">
-<link rel="stylesheet" href="https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/css/fonts.css">
+<link rel="stylesheet" href="{{ '/dist/css/sfds.css' | published_url(package.version) }}">
+<link rel="stylesheet" href="{{ '/dist/css/fonts.css' | published_url(package.version) }}">
 ```
 
 ### Only utilities
 
 ```html static="true"
-<link rel="stylesheet" href="https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/css/utilities.css">
+<link rel="stylesheet" href="{{ '/dist/css/utilities.css' | published_url(package.version) }}">
 ```
 
 [tailwind]: https://tailwindcss.com/

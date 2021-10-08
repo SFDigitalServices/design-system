@@ -2,6 +2,18 @@
 title: Code
 ---
 
+## SVG
+
+Our icons are published as both individual SVG files and a [custom
+element](#custom-element) to display and style them on the web.
+
+Icon | Name | File
+:--: | :--- | :---
+{% for icon in icons -%}
+{%- set path = '/dist/icons/' + icon.symbol + '.svg' -%}
+<sfgov-icon symbol="{{ icon.symbol }}"></sfgov-icon> | {{ icon.name }} | [`{{ path }}`]({{ path | published_url }})
+{% endfor %}
+
 ## Custom element
 
 The simplest way to use our icons is with the `<sfgov-icon>` [custom
@@ -29,17 +41,19 @@ color of `<sfgov-icon>` shapes. This works because the
 custom element styles its SVG elements with `fill: currentColor`.
 
 ```html
-<div class="flex space-x-8 text-red-3">
-  <sfgov-icon symbol="alert"></sfgov-icon>
-  <b>red</b>
-</div>
-<div class="flex space-x-8 text-green-3">
-  <sfgov-icon symbol="alert"></sfgov-icon>
-  <b>green</b>
-</div>
-<div class="flex space-x-8 text-blue-bright">
-  <sfgov-icon symbol="alert"></sfgov-icon>
-  <b>blue</b>
+<div class="space-y-8">
+  <div class="flex space-x-8 text-red-3">
+    <sfgov-icon symbol="close"></sfgov-icon>
+    <b>red</b>
+  </div>
+  <div class="flex space-x-8 text-green-3">
+    <sfgov-icon symbol="check"></sfgov-icon>
+    <b>green</b>
+  </div>
+  <div class="flex space-x-8 text-blue-bright">
+    <sfgov-icon symbol="plus"></sfgov-icon>
+    <b>blue</b>
+  </div>
 </div>
 ```
 
