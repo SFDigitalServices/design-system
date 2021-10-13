@@ -12,22 +12,44 @@
         {{ content | safe }}
       </div>
       <div class="p-8 space-y-8">
-        <a
-          href="{{ url }}"
-          title="open in editor"
-          target="_blank"
-          class="{{ button_class }}"
-        >
-          <sfgov-icon symbol="arrow-up"></sfgov-icon>
-        </a>
+        {% if codepen %}
+          <form
+            class="block"
+            action="https://codepen.io/pen/define/"
+            method="POST"
+            target="_blank"
+          >
+            <input
+              name="data"
+              type="hidden"
+              value="{{ codepen | dump(2) | e }}"
+            >
+            <button
+              type="submit"
+              class="{{ button_class }}"
+              title="Edit in CodePen">
+              <sfgov-icon symbol="pencil"></sfgov-icon>
+            </button>
+          </form>
+        {% endif %}
+
         <clipboard-copy for="{{ id }}" class="block">
           <button
-            title="copy example code"
+            title="Copy code"
             class="{{ button_class }}"
           >
             <sfgov-icon symbol="document"></sfgov-icon>
           </button>
         </clipboard-copy>
+
+        <a
+          href="{{ url }}"
+          title="View in separate window"
+          target="_blank"
+          class="{{ button_class }}"
+        >
+          <sfgov-icon symbol="arrow-up"></sfgov-icon>
+        </a>
       </div>
     </div>
   </div>
