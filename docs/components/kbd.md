@@ -24,16 +24,16 @@ Press <kbd>Control + X</kbd> at any time to close this dialog.
   <div class="bg-blue-1 p-40 rounded">
     <ul class="list-none space-y-20 m-0 p-0">
       <li>
-        <kbd>Control</kbd> <span class="mx-8">+</span> <kbd class="mr-8">Enter</kbd> to enter
-        the dashboard
+        <kbd>Control</kbd> <span class="mx-8">+</span>
+        <kbd class="mr-8">Enter</kbd> to enter the dashboard
       </li>
       <li>
         <kbd class="mr-8">Tab</kbd> or <kbd class="mx-8">Arrow</kbd> to move
         between visuals
       </li>
       <li>
-        <kbd class="mr-8">Control</kbd> + <kbd class="mx-8">Right arrow</kbd> to
-        enter a visual or filter
+        <kbd>Control</kbd> <span class="mx-8">+</span>
+        <kbd class="mr-8">Right arrow</kbd> to enter a visual or filter
       </li>
       <li><kbd class="mr-8">Escape</kbd> to exit a visual or dashboard</li>
     </ul>
@@ -54,7 +54,10 @@ the beginning of a line aligned to the left edge of their container:
     <ul class="list-none space-y-20 m-0 p-0">
       <li><kbd>Control</kbd> <span class="mx-8">+</span> <kbd class="mr-8">Enter</kbd> to enter the dashboard</li>
       <li><kbd class="mr-8">Tab</kbd> or <kbd class="mx-8">Arrow</kbd> to move between visuals</li>
-      <li><kbd>Control</kbd> <span class="mx-8">+</span> <kbd class="mx-8">Right arrow</kbd> to enter a visual or filter</li>
+      <li>
+        <kbd>Control</kbd> <span class="mx-8">+</span> <kbd class="mr-8">Right arrow</kbd> to
+        enter a visual or filter
+      </li>
       <li><kbd>Escape</kbd> to exit a visual or dashboard</li>
     </ul>
   </div>
