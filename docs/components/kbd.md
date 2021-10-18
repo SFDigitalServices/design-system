@@ -16,7 +16,7 @@ without spaces in between them.
 ## Keyboard shortcut
 
 ```html
-Press <kbd>Control + X</kbd> at any time to close this dialog.
+Press <kbd class="mx-4">Control + X</kbd> at any time to close this dialog.
 ```
 
 ## Data Stories component
