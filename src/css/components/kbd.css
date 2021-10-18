@@ -1,5 +1,5 @@
 kbd {
   @apply font-mono font-regular text-small text-slate;
-  @apply inline-block px-8 py-2;
+  @apply inline-block px-8 py-2 my-2;
   @apply border-1 border-solid rounded-2;
 }
