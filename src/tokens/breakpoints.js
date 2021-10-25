@@ -1,5 +1,5 @@
 module.exports = {
-  md: '768px',
-  lg: '1076px',
-  xl: '1280px'
+  md: '481px',
+  lg: '769px',
+  xl: '1201px'
 }
