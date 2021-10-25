@@ -2,6 +2,7 @@ const breakpoints = require('./tokens/breakpoints')
 const { text: textColor, ...colors } = require('./tokens/colors')
 const { fontFamily, ...typography } = require('./tokens/typography')
 const spacing = require('./tokens/spacing')
+const widths = require('./tokens/widths')
 
 // available column grid templates
 const gridColumns = [1, 2, 3, 6, 12]
@@ -93,7 +94,7 @@ module.exports = {
     ...spacing
   },
   maxWidth: theme => ({
-    ...breakpoints,
+    ...widths,
     ...theme('width')
   }),
   width: {
@@ -109,7 +110,7 @@ module.exports = {
     '3/4': '75%',
     '4/4': '100%',
     full: '100%',
-    ...breakpoints,
+    ...widths,
     ...spacing
   }
 }
