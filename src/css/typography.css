@@ -47,6 +47,14 @@
     @apply text-title-md font-medium;
   }
 
+  .title-sm {
+    @apply text-title-sm font-medium;
+  }
+
+  .title-xs {
+    @apply text-title-xs font-medium;
+  }
+
   .big-desc {
     @apply text-big-desc font-regular;
   }
