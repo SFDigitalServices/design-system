@@ -19,7 +19,7 @@
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "babel -d dist/js 'src/js/*.js'",
     "build-clean": "run-s clean build",
-    "develop": "NODE_ENV=development npm start",
+    "develop": "NODE_ENV=development run-p start watch",
     "clean": "rm -rf dist",
     "lint": "run-p lint-js lint-scripts",
     "lint-js": "eslint *.js src lib docs",
