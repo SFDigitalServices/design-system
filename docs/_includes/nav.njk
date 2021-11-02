@@ -44,7 +44,23 @@
   </div>
 {% endmacro %}
 
-{{ nav_link('/', false) }}
-{{ nav_link('/foundations') }}
-{{ nav_link('/components') }}
-{{ nav_link('/usage') }}
+{% set nav %}
+  {{ nav_link('/', false) }}
+  {{ nav_link('/foundations') }}
+  {{ nav_link('/components') }}
+  {{ nav_link('/usage') }}
+{% endset %}
+
+<details class="lg:hidden">
+  <summary>
+    <sfgov-icon class="pr-20" symbol="plus"></sfgov-icon>
+  </summary>
+  <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50">
+    <sfgov-icon class="py-20" symbol="close" data-close-dialog></sfgov-icon>
+    {{ nav | safe }}
+  </details-dialog>
+</details>
+
+<div class="md:hidden lg:block">
+   {{ nav | safe }}
+</div>
