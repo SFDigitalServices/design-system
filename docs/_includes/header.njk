@@ -1,6 +1,9 @@
-<header>
-  <div class="px-20 max-w-xl mx-auto py-20 lg:py-48">
+<header class="responsive-container col-span-6 md:col-span-12">
+  <div class="max-w-xl mx-auto py-20 lg:py-48">
     <div class="flex items-center justify-between">
+      <div class="lg:hidden">
+        {% include 'nav.njk' %}
+      </div>
       <a class="flex items-center no-underline" href="/">
         <img
           alt="City &amp; County of San Francisco"
