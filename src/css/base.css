@@ -23,4 +23,12 @@
   ::placeholder {
     @apply text-slate-light;
   }
+
+  summary {
+    list-style: none;
+
+    &::marker {
+      display: none;
+    }
+  }
 }
