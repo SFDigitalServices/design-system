@@ -63,7 +63,8 @@ module.exports = {
     'textDecoration',
     'verticalAlign',
     'whitespace',
-    'width'
+    'width',
+    'zIndex'
   ],
 
   /*
@@ -113,7 +114,8 @@ module.exports = {
     textDecoration: ['focus', 'hover', 'hocus'],
     userSelect: [],
     verticalAlign: ['responsive'],
-    width: ['responsive']
+    width: ['responsive'],
+    zIndex: ['responsive']
   },
 
   plugins: [
