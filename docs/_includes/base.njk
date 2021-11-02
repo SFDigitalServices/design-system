@@ -6,9 +6,9 @@ layout: skeleton
 {% set toc = content | toc %}
 
 {% block main %}
-  <div class="px-20 max-w-xl mx-auto mt-40 mb-100">
+  <div class="responsive-container col-span-6 md:col-span-12">
     <div class="lg:flex justify-end">
-      <div class="lg:w-1/4 lg:mr-60 mb-40">
+      <div class="hidden lg:block lg:w-1/4 lg:mr-60 mb-40">
         {% block nav %}
           {% include 'nav.njk' %}
         {% endblock %}
@@ -18,7 +18,7 @@ layout: skeleton
           {% include 'title.njk' %}
           {% if toc %}
             <div class="flex justify-start flex-row-reverse">
-              <div class="none lg:block lg:w-1/4 mb-40 ml-40">
+              <div class="hidden none lg:block lg:w-1/4 mb-40 ml-40">
                 {% include 'toc.njk' %}
               </div>
               <div class="lg:w-3/4">
