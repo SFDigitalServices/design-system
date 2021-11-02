@@ -79,5 +79,8 @@
     "unist-util-select": "^3.0.4",
     "unist-util-visit": "^2.0.3",
     "watchy": "^0.9.9"
+  },
+  "dependencies": {
+    "@github/details-dialog-element": "^3.1.3"
   }
 }
