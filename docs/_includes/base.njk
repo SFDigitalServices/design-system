@@ -1,17 +1,42 @@
 ---
 layout: skeleton
 ---
-{% include 'header.njk' %}
+
+{% from 'nav.njk' import nav_link with context %}
+{% set nav %}
+  {{ nav_link('/', false) }}
+  {{ nav_link('/foundations') }}
+  {{ nav_link('/components') }}
+  {{ nav_link('/usage') }}
+{% endset %}
 
 {% set toc = content | toc %}
 
+<details class="responsive-container lg:hidden row-span-full col-span-1 py-48">
+  <summary>
+    <sfgov-icon class="pr-20" symbol="plus"></sfgov-icon>
+  </summary>
+  <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50">
+    <sfgov-icon class="py-20" symbol="close" data-close-dialog></sfgov-icon>
+    {{ nav | safe }}
+  </details-dialog>
+</details>
+
+<div class="md:hidden">
+  {% include 'header.njk' %}
+</div>
+
 {% block main %}
-  <div class="responsive-container col-span-6 md:col-span-12">
+  <div class="responsive-container col-span-6 md:col-span-10">
     <div class="lg:flex justify-end">
       <div class="hidden lg:block lg:w-1/4 lg:mr-60 mb-40">
-        {% block nav %}
-          {% include 'nav.njk' %}
-        {% endblock %}
+        <div class="hidden lg:block">
+          {% include 'header.njk' %}
+        </div>
+        {{ nav | safe }}
+      </div>
+      <div class="hidden md:block lg:hidden">
+        {% include 'header.njk' %}
       </div>
       <div class="lg:w-3/4">
         {% block content %}
