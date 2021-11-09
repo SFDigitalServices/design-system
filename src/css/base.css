@@ -11,7 +11,7 @@
   }
 
   a {
-    @apply text-action;
+    @apply text-slate-3;
   }
 
   :focus,
