@@ -26,13 +26,13 @@
         <ul class="m-0 p-0 list-none">
           {% for child in children %}
             {% set child_active = child.url === page.url %}
-            <li class="pl-16 m-0 mb-20">
+            <li class="pl-16 m-0 mb-20 {{ 'bg-slate-2 rounded-4' if child_active }}">
               <a
                 href="{{ child.url }}"
                 {% if child_active %}
                   aria-current="page"
                 {% endif %}
-                class="block text-slate no-underline {{ 'font-medium' if child_active }}"
+                class="block no-underline {{ 'text-white' if child_active else 'text-slate-4' }}"
               >
                 {{ child.data.title }}
               </a>
@@ -43,24 +43,3 @@
     {% endif %}
   </div>
 {% endmacro %}
-
-{% set nav %}
-  {{ nav_link('/', false) }}
-  {{ nav_link('/foundations') }}
-  {{ nav_link('/components') }}
-  {{ nav_link('/usage') }}
-{% endset %}
-
-<details class="lg:hidden">
-  <summary>
-    <sfgov-icon class="pr-20" symbol="plus"></sfgov-icon>
-  </summary>
-  <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50">
-    <sfgov-icon class="py-20" symbol="close" data-close-dialog></sfgov-icon>
-    {{ nav | safe }}
-  </details-dialog>
-</details>
-
-<div class="md:hidden lg:block">
-   {{ nav | safe }}
-</div>
