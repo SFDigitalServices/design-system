@@ -1,9 +1,6 @@
-<header class="responsive-container col-span-6 md:col-span-12">
+<header class="col-span-6 md:col-span-12">
   <div class="max-w-xl mx-auto py-20 lg:py-48">
     <div class="flex items-center justify-between">
-      <div class="lg:hidden">
-        {% include 'nav.njk' %}
-      </div>
       <a class="flex items-center no-underline" href="/">
         <img
           alt="City &amp; County of San Francisco"
@@ -14,7 +11,7 @@
           <div class="title-sm text-slate mt-2">{{ site.title }}</div>
         </div>
       </a>
-      <div class="flex items-center">
+      <div class="flex items-center lg:hidden">
         <div>
           <a
             href="https://unpkg.com/{{ package.name }}@{{ package.version }}/"
