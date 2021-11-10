@@ -12,51 +12,48 @@ layout: skeleton
 
 {% set toc = content | toc %}
 
-<details class="responsive-container lg:hidden row-span-full col-span-1 py-48">
-  <summary>
-    <sfgov-icon class="pr-20" symbol="plus"></sfgov-icon>
-  </summary>
-  <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50">
-    <sfgov-icon class="py-20" symbol="close" data-close-dialog></sfgov-icon>
-    {{ nav | safe }}
-  </details-dialog>
-</details>
+<div class="bg-grey-1 ">
+  <div class="responsive-container py-8 text-right">
+  {% include 'repo-links.njk' %}
+  </div>
+</div>
 
-<div class="md:hidden">
-  {% include 'header.njk' %}
+<div class="responsive-grid responsive-container lg:hidden mt-60 mb-28 items-center">
+  <details class="col-span-1">
+    <summary>
+      <sfgov-icon class="pr-20" symbol="plus"></sfgov-icon>
+    </summary>
+    <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50 max-w-sm">
+      <sfgov-icon class="py-20 block mt-96 ml-8" symbol="close" data-close-dialog></sfgov-icon>
+      {{ nav | safe }}
+    </details-dialog>
+  </details>
+
+  <header class="col-span-5 md:col-span-11">
+    {% include 'header.njk' %}
+  </header>
 </div>
 
 {% block main %}
-  <div class="responsive-container col-span-6 md:col-span-10">
-    <div class="lg:flex justify-end">
-      <div class="hidden lg:block lg:w-1/4 lg:mr-60 mb-40">
-        <div class="hidden lg:block">
-          {% include 'header.njk' %}
-        </div>
-        {{ nav | safe }}
-      </div>
-      <div class="hidden md:block lg:hidden">
-        {% include 'header.njk' %}
-      </div>
-      <div class="lg:w-3/4">
-        {% block content %}
-          {% include 'title.njk' %}
-          {% if toc %}
-            <div class="flex justify-start flex-row-reverse">
-              <div class="hidden none lg:block lg:w-1/4 mb-40 ml-40">
-                {% include 'toc.njk' %}
-              </div>
-              <div class="lg:w-3/4">
-                {% include 'main.njk' %}
-              </div>
-            </div>
-          {% else %}
-            {% include 'main.njk' %}
-          {% endif %}
-        {% endblock %}
-        {% include 'source-meta.njk' %}
-      </div>
+  <div class="responsive-grid responsive-container grid-rows-2">
+    <div class="hidden lg:block lg:row-span-full lg:col-span-3">
+      {% include 'header.njk' %}
+      {{ nav | safe }}
     </div>
+    <div class="col-span-full lg:col-span-9 lg:mt-48">
+      {% include 'title.njk' %}
+    </div>
+    <div class="col-span-full lg:col-span-9 {% if toc %} xl:col-span-6 {% endif %}">
+      {% block content %}
+        {% include 'main.njk' %}
+      {% endblock %}
+      {% include 'source-meta.njk' %}
+    </div>
+    {% if toc %}
+      <div class="hidden xl:block xl:col-span-3">
+        {% include 'toc.njk' %}
+      </div>
+    {% endif %}
   </div>
 {% endblock %}
 
