@@ -23,15 +23,16 @@
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "rollup -c",
     "build-clean": "run-s clean build",
-    "develop": "NODE_ENV=development npm start",
+    "develop": "NODE_ENV=development run-p start watch",
     "clean": "rm -rf dist",
     "lint": "run-p lint-js lint-scripts",
     "lint-js": "eslint src lib '*.js' 'scripts/*.js'",
     "lint-scripts": "shellcheck scripts/*.sh",
     "prepublishOnly": "scripts/prepublish-checks.sh",
-    "watch": "run-p watch-css watch-js",
+    "watch": "run-p watch-css watch-js watch-icons",
     "watch-css": "watchy -w '*.config.js' -w src -- npm run build-css",
     "watch-js": "npm run build-js -- --watch",
+    "watch-icons": "watchy -w src/icons -- npm run build-icons",
     "start": "eleventy --serve"
   },
   "devDependencies": {
