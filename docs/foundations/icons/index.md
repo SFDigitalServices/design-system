@@ -2,6 +2,8 @@
 title: Icons
 ---
 
+See the [Icons code page](./code/) for usage information.
+
 <div class="flex flex-wrap">
   {% for icon in icons -%}
     <div class="w-1/3 mb-80">
