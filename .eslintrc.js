@@ -4,9 +4,6 @@ module.exports = {
   extends: [
     'plugin:sfgov/recommended'
   ],
-  parserOptions: {
-    ecmaVersion: 2020
-  },
   rules: {
   },
   overrides: [
