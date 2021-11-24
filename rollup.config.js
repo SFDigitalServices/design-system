@@ -1,4 +1,5 @@
 import babel from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
@@ -9,6 +10,9 @@ const prod = NODE_ENV === 'production'
 
 const commonPlugins = [
   resolve(),
+  commonjs({
+    transformMixedEsModules: true
+  }),
   json(),
   babel({
     babelHelpers: 'bundled'
@@ -18,26 +22,26 @@ const commonPlugins = [
 
 export default [
   target({ input: 'src/js/sfds.js', name: 'sfgov' }),
-  target({ input: 'src/js/icons.js', name: 'sfgovIcons' }),
-  target({ input: 'src/js/docs.js', name: 'sfgovDocs' })
+  target({ input: 'src/js/icons.js', name: 'sfgov.icons' }),
+  target({ input: 'src/js/docs.js', name: 'sfgov.docs', module: false })
 ]
 
-function target ({ input, name, ...rest }) {
+function target ({ input, name, plugins = commonPlugins, ...rest }) {
   const outputBase = input.replace('src/', 'dist/')
   return {
     input,
-    plugins: [...commonPlugins],
+    plugins,
     output: [
-      output({
+      name && output({
         file: outputBase,
         format: 'umd',
         name
       }),
-      output({
+      rest.module !== false && output({
         file: outputBase.replace('.js', '.mjs'),
         format: 'esm'
       })
-    ]
+    ].filter(Boolean)
   }
 }
 
