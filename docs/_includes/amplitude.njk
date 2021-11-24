@@ -1,6 +1,0 @@
-{% if env.AMPLITUDE_API_KEY -%}
-<script type="text/javascript" defer>(function() {
-  {% include 'amplitude-js/amplitude.umd.min.js' %}
-  window.amp = amplitude.getInstance().init(env.AMPLITUDE_API_KEY);
-})()</script>
-{% endif %}
