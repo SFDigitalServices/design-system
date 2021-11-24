@@ -244,6 +244,16 @@
       "svg": "<svg viewBox=\"0 0 20 20\"><path d=\"M20 9V4a1.244 1.244 0 00-1.25-1.25H16v-1.5a1.25 1.25 0 00-2.5 0v1.5h-7v-1.5a1.25 1.25 0 00-2.5 0v1.5H1.25a1.275 1.275 0 00-.885.365A1.275 1.275 0 000 4v14.5c.002.331.133.649.365.885.236.232.554.363.885.365h17.5A1.244 1.244 0 0020 18.5V9zm-2.5-3.75v2.5h-15v-2.5h15zm-15 5h15v7h-15v-7z\"/></svg>",
       "filename": "calendar.svg"
     },
+    "menu": {
+      "name": "Menu",
+      "url": "https://www.figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Assets?node-id=1519%3A27",
+      "id": "menu",
+      "tags": [
+        "hamburger"
+      ],
+      "svg": "<svg viewBox=\"0 0 20 20\"><rect x=\"2\" y=\"14\" width=\"16\" height=\"2\" rx=\"1\" fill=\"#002B48\"/><rect x=\"2\" y=\"9\" width=\"16\" height=\"2\" rx=\"1\" fill=\"#002B48\"/><rect x=\"2\" y=\"4\" width=\"16\" height=\"2\" rx=\"1\" fill=\"#002B48\"/></svg>",
+      "filename": "menu.svg"
+    },
     "minus": {
       "name": "Minus",
       "url": "https://figma.com/file/R9KP76KdmjlWdKLZD9qTiw/Assets (Copy)?node-id=368:28",
