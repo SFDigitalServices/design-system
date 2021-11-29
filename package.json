@@ -30,6 +30,9 @@
     "watch-js": "npm run build-js -- --watch",
     "start": "eleventy --serve"
   },
+  "dependencies": {
+    "tailwindcss-interaction-variants": "^5.0.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.3.2",
