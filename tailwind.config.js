@@ -57,6 +57,7 @@ module.exports = {
     'textColor',
     'textDecoration',
     'verticalAlign',
+    'visibility',
     'whitespace',
     'width'
   ],
@@ -73,8 +74,8 @@ module.exports = {
   variants: {
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
-    backgroundColor: ['focus', 'hover', 'hocus'],
-    borderColor: ['focus', 'hover', 'hocus'],
+    backgroundColor: ['focus', 'hover', 'hocus', 'group-hover'],
+    borderColor: ['focus', 'hover', 'hocus', 'group-hover'],
     borderWidth: ['hocus'],
     cursor: [],
     display: ['responsive', 'group-hover'],
@@ -99,10 +100,11 @@ module.exports = {
     space: ['responsive'],
     stroke: [],
     strokeWidth: [],
-    textColor: ['focus', 'hover', 'hocus'],
+    textColor: ['focus', 'hover', 'hocus', 'group-hover'],
     textDecoration: ['focus', 'hover', 'hocus'],
     userSelect: [],
     verticalAlign: ['responsive'],
+    visibility: ['responsive', 'group-hover'],
     width: ['responsive']
   },
 
