@@ -1,5 +1,8 @@
 ---
-title: Code
+title: Icons
+see_also:
+  - title: Icon library
+    href: /resources/icon-library/
 ---
 
 ## SVG

@@ -1,8 +1,9 @@
 ---
-title: Icons
+title: Icon library
+see_also:
+  - title: Icon usage
+    href: /usage/icons/
 ---
-
-See the [Icons code page](./code/) for usage information.
 
 <div class="flex flex-wrap">
   {% for icon in icons -%}
