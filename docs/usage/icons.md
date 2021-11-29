@@ -14,7 +14,7 @@ Icon | Name | File
 :--: | :--- | :---
 {% for icon in icons -%}
 {%- set path = '/dist/icons/' + icon.symbol + '.svg' -%}
-<sfgov-icon symbol="{{ icon.symbol }}"></sfgov-icon> | {{ icon.name }} | [`{{ path }}`]({{ path | published_url }})
+<sfgov-icon symbol="{{ icon.symbol }}"></sfgov-icon> | {{ icon.name }} | [`{{ icon.symbol }}.svg`]({{ path | published_url }})
 {% endfor %}
 
 ## Custom element
@@ -36,6 +36,16 @@ Attribute | Default | Notes
 `height` | `20` | Sets the height of the `<svg>` element in pixels. The width is determined by the icon's [intrinsic size] unless `width` is also specified.
 `width` | | Sets the width of the `<svg>` element in pixels. The height is determined by the icon's [intrinsic size] unless `height` is also specified.
 `role` | `img` | The [ARIA role] of the element.
+
+### Symbols
+
+The following table lists valid values for the `symbol` attribute:
+
+Icon | Name | `symbol`
+:--: | :--- | :---
+{% for icon in icons -%}
+<sfgov-icon symbol="{{ icon.symbol }}"></sfgov-icon> | {{ icon.name }} | `{{ icon.symbol }}`
+{% endfor %}
 
 ### Icon color
 
@@ -59,16 +69,6 @@ custom element styles its SVG elements with `fill: currentColor`.
   </div>
 </div>
 ```
-
-### Symbols
-
-The following table lists valid values for the `symbol` attribute:
-
-Icon | Name | `symbol`
-:--: | :--- | :--- 
-{% for icon in icons -%}
-<sfgov-icon symbol="{{ icon.symbol }}"></sfgov-icon> | {{ icon.name }} | `{{ icon.symbol }}`
-{% endfor %}
 
 [custom element]: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 [aria role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#roles
