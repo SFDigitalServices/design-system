@@ -1,10 +1,20 @@
 import '@github/clipboard-copy-element'
+import { observe } from 'selector-observer'
 import { on } from 'delegated-events'
 
 on('click', '[data-copy-feedback]', ({ currentTarget }) => {
   const text = currentTarget.getAttribute('data-copy-feedback')
   const el = createBubble(text, { fade: true })
   currentTarget.appendChild(el)
+})
+
+observe('clipboard-copy[role=button]', {
+  add (el) {
+    if (el.querySelector('button, [role=button]')) {
+      el.removeAttribute('role')
+      el.removeAttribute('tabindex')
+    }
+  }
 })
 
 function createBubble (text, options) {
