@@ -79,11 +79,11 @@ module.exports = {
   variants: {
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
-    backgroundColor: ['focus', 'hover', 'hocus', 'group-hover'],
+    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus'],
     borderColor: ['focus', 'hover', 'hocus', 'group-hover'],
     borderWidth: ['hocus'],
     cursor: [],
-    display: ['responsive', 'group-hover'],
+    display: ['responsive', 'group-hocus'],
     fill: [],
     fontWeight: ['responsive'],
     fontSize: ['responsive'],
@@ -106,12 +106,12 @@ module.exports = {
     space: ['responsive'],
     stroke: [],
     strokeWidth: [],
-    textColor: ['focus', 'hover', 'hocus', 'group-hover'],
+    textColor: ['focus', 'hover', 'hocus', 'group-hocus'],
     textDecoration: ['focus', 'hover', 'hocus'],
     transitionProperty: ['motion-safe'],
     userSelect: [],
     verticalAlign: ['responsive'],
-    visibility: ['responsive', 'group-hover'],
+    visibility: ['responsive', 'group-hocus'],
     width: ['responsive']
   },
 
