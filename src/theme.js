@@ -28,7 +28,8 @@ module.exports = {
   },
   textColor: {
     inherit: 'inherit',
-    ...colors, // FIXME: deprecate in 3.0.0
+    // TODO [>=3]: remove this in favor of only textColor
+    ...colors,
     ...textColor
   },
   borderRadius: {
