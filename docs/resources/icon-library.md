@@ -18,18 +18,18 @@ see_also:
           ></sfgov-icon>
         </div>
         <clipboard-copy
-          class="block relative"
+          aria-label="Copy &lsquo;{{ icon.symbol }}&rsquo; to the clipboard"
           value="{{ icon.symbol }}"
-          data-copy-feedback="Name copied">
-          <button class="cursor-pointer btn-block group py-4 relative border-0 bg-none hover:bg-slate-1">
-            <div class="w-full text-slate-4 font-mono pl-20">{{ icon.symbol }}</div>
-            <sfgov-icon
-              symbol="document"
-              class="text-slate-3 invisible group-hover:visible"
-              width="20"
-              height="16"
-            ></sfgov-icon>
-          </button>
+          data-copy-feedback="Name copied"
+          class="cursor-pointer flex relative group py-4 hover:bg-slate-1"
+        >
+          <div class="w-full text-slate-4 font-mono pl-20">{{ icon.symbol }}</div>
+          <sfgov-icon
+            symbol="document"
+            class="text-slate-3 invisible group-hover:visible"
+            width="20"
+            height="16"
+          ></sfgov-icon>
         </clipboard-copy>
       </div>
     </div>
