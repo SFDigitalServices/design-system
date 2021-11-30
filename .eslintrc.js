@@ -1,10 +1,15 @@
 module.exports = {
   parser: '@babel/eslint-parser',
-  plugins: ['sfgov'],
+  plugins: [
+    'sfgov',
+    'unicorn'
+  ],
   extends: [
     'plugin:sfgov/recommended'
   ],
   rules: {
+    'unicorn/expiring-todo-comments': ['error', {
+    }]
   },
   overrides: [
     {
