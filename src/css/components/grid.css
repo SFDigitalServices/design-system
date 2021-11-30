@@ -5,7 +5,7 @@
 }
 
 .responsive-container {
-  @apply mx-20 max-w-lg;
+  @apply mx-20 max-w-xl;
   @apply md:mx-28;
   @apply lg:mx-96;
   @apply xl:mx-auto;
