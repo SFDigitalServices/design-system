@@ -2,7 +2,7 @@ const globby = require('globby')
 const { stat } = require('fs').promises
 
 module.exports = async function loadManifest () {
-  const paths = await globby('dist/**/*.{css,js}')
+  const paths = await globby('dist/**/*.{css,*js}')
   return Promise.all(
     paths.map(path => {
       return stat(path)
