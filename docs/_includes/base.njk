@@ -12,9 +12,30 @@ layout: skeleton
 
 {% set toc = content | toc %}
 
-<div class="bg-grey-1 ">
-  <div class="responsive-container py-8 text-right">
-  {% include 'repo-links.njk' %}
+<div class="bg-grey-1">
+  {% set overlayClasses = 'z-50 pointer-events-none responsive-container responsive-grid fixed h-full top-0 left-0 right-0 opacity-75' %}
+
+  <div class="responsive-container flex justify-between py-8">
+    <details>
+      <summary
+        data-hotkey="Control+g"
+        aria-label="press Control+g to enable the grid overlay"
+        class="text-slate-light font-mono"
+      >Press <kbd>CTRL</kbd> + <kbd>G</kbd> to toggle grid overlay</summary>
+      <div class="md:hidden {{ overlayClasses }}">
+        {% for i in range(0, 6) %}
+          <div class="bg-red-1"></div>
+        {% endfor %}
+      </div>
+      <div class="hidden md:grid {{ overlayClasses }}">
+        {% for i in range(0, 12) %}
+          <div class="bg-red-1"></div>
+        {% endfor %}
+      </div>
+    </details>
+    <div>
+      {% include 'repo-links.njk' %}
+    </div>
   </div>
 </div>
 
