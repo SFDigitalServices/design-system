@@ -1,54 +1,41 @@
-const fontWeightLookup = {
-  300: 'Light',
-  400: 'Regular',
-  500: 'Medium'
-}
+import '@github/clipboard-copy-element'
+import { observe } from 'selector-observer'
+import { on } from 'delegated-events'
 
-window.customElements.define('computed-style', class extends HTMLElement {
-  connectedCallback () {
-    this.style.display = 'block'
-    this.render()
-    window.addEventListener('resize', () => this.render())
-  }
+on('click', '[data-copy-feedback]', ({ currentTarget }) => {
+  const text = currentTarget.getAttribute('data-copy-feedback')
+  const el = createBubble(text, { fade: true })
+  currentTarget.appendChild(el)
+})
 
-  render () {
-    const target = this.getAttribute('data-target')
-    const el = target ? document.querySelector(target) : this
-    const style = window.getComputedStyle(el)
-    const targets = this.querySelectorAll('[data-css-property]')
-    for (const target of targets) {
-      const prop = target.getAttribute('data-css-property')
-      const rawValue = style.getPropertyValue(prop)
-      const { value, units } = this.parseValue(rawValue, prop)
-      target.setAttribute('data-css-value', value)
-      target.setAttribute('data-css-units', units)
-      const text = target.getAttribute('data-units') === 'false'
-        ? value
-        : rawValue
-      const ignore = target.getAttribute('data-ignore')
-      if (text && text !== ignore) {
-        const format = target.getAttribute('data-format')
-        target.textContent = format
-          ? format.replace('%s', text)
-          : text
-      } else {
-        target.textContent = target.getAttribute('data-empty') || ''
-      }
-    }
-  }
-
-  parseValue (value, prop) {
-    if (prop === 'font-weight') {
-      return {
-        value: fontWeightLookup[value] || value,
-        units: undefined
-      }
-    }
-    const match = value.match(/^(?<value>.+)(?<units>px|%|r?em)$/)
-    if (match) {
-      return match.groups
-    } else {
-      return { value, units: undefined }
+observe('clipboard-copy[role=button]', {
+  add (el) {
+    if (el.querySelector('button, [role=button]')) {
+      el.removeAttribute('role')
+      el.removeAttribute('tabindex')
     }
   }
 })
+
+function createBubble (text, options) {
+  const bubble = document.createElement('div')
+  bubble.classList.add(
+    'rounded-4', 'px-8', 'py-4',
+    'bg-slate-4', 'text-white', 'text-small',
+    'absolute', 'top-full', 'right-0', 'mt-4'
+  )
+  bubble.textContent = text
+  if (options?.fade) {
+    const opacityClass = 'opacity-100'
+    bubble.classList.add(
+      opacityClass,
+      'transition-opacity',
+      'ease-in', 'duration-250'
+    )
+    setTimeout(() => {
+      bubble.classList.replace(opacityClass, 'opacity-0')
+      setTimeout(() => bubble.remove(), 1000)
+    }, 750)
+  }
+  return bubble
+}

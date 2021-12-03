@@ -1,10 +1,20 @@
 {% set button_class = 'btn btn-inverse rounded-4 px-8 py-4' %}
+{% set resize_handler %}this.style.height = this.contentDocument.documentElement.offsetHeight + 'px'{% endset %}
+{% set standalone = meta.standalone !== 'false' %}
 <div class="my-20 border-1 border-solid border-slate-4">
   <div class="p-20">
-    <iframe class="w-full border-0 bg-white"
-      {% for attr, value in iframe.properties -%}
-        {{ attr }}="{{ value | e }}"
-      {% endfor %}></iframe>
+    <iframe
+      class="w-full border-0 bg-white"
+      onload="{{ resize_handler }}"
+      onresize="{{ resize_handler }}"
+      scrolling="no"
+      style="overflow-y: auto;"
+      {% if standalone %}
+        src="{{ url }}"
+      {% else %}
+        srcdoc="{{ code | e }}"
+      {% endif %}
+    ></iframe>
   </div>
   <div class="bg-grey-1 border-0 border-t-1 border-solid border-slate-4 relative">
     <div class="flex justify-start">
@@ -53,9 +63,4 @@
       </div>
     </div>
   </div>
-  <!--
-  <div class="p-20 border-0 border-t-1 border-solid border-slate-4">
-    <pre>{{ node | dump(2) }}</pre>
-  </div>
-  -->
 </div>

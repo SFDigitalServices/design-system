@@ -20,8 +20,7 @@ jobs:
           echo NODE_ENV=production >> $GITHUB_ENV
 
       # run these separately so that it's easier to see what failed
-      - run: npm run build-css
-      - run: npm run build-js
+      - run: npm run build-assets
       - run: npm run build-docs
 
       # run pre-publish checks
