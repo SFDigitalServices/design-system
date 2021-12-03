@@ -24,7 +24,7 @@
     "build-clean": "run-s clean build",
     "develop": "NODE_ENV=development run-p start watch",
     "clean": "rm -rf dist",
-    "lint": "run-p lint-js lint-scripts",
+    "lint": "run-p lint-scripts",
     "lint-scripts": "shellcheck scripts/*.sh",
     "prepublishOnly": "scripts/prepublish-checks.sh",
     "watch": "run-p watch-css watch-js watch-icons",
