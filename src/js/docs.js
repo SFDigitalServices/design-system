@@ -1,7 +1,14 @@
+import { install } from '@github/hotkey'
+
 const fontWeightLookup = {
   300: 'Light',
   400: 'Regular',
   500: 'Medium'
+}
+
+// Install all the hotkeys on the page
+for (const el of document.querySelectorAll('[data-hotkey]')) {
+  install(el)
 }
 
 window.customElements.define('computed-style', class extends HTMLElement {
