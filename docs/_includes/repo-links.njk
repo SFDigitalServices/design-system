@@ -1,6 +1,6 @@
 <div class="inline-flex flex-wrap">
     <a
-      href="https://unpkg.com/{{ package.name }}@{{ package.version }}/"
+      href="{{ '/' | published_url(package.version) }}"
       class="text-slate-light font-mono no-underline"
     >{{ package.name }}@{{ package.version }}</a>
 </div>

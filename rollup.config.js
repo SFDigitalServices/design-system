@@ -17,6 +17,8 @@ const commonPlugins = [
 ].filter(Boolean)
 
 export default [
+  target({ input: 'src/js/sfds.js', name: 'sfgov' }),
+  target({ input: 'src/js/icons.js', name: 'sfgovIcons' }),
   target({ input: 'src/js/docs.js', name: 'sfgovDocs' })
 ]
 

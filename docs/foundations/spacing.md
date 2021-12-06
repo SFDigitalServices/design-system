@@ -5,9 +5,8 @@ title: Spacing
 ## Grid
 
 ### Responsive container
-Use the `responsive-container` class to apply
-horizontal margins and max-widths that fit within our
-layout grid.
+Use the `responsive-container` class to apply responsive horizontal
+margins and a max-width that fits our [layout grid](https://www.figma.com/file/svEAhwa9aGljDbcKfOCBsq/Layout?node-id=862%3A98).
 
 ```html wrapper_class="p-0"
 <div class="responsive-container my-20">
@@ -16,11 +15,12 @@ layout grid.
 ```
 
 ### Responsive grid
-Use the `responsive-grid` class to create responsive
-grid layouts. You can customize the number of columns
-by adding `grid-cols-*` utilities (and their
-responsive variants), and adjust per-column spans
-with `col-span-*`.
+Use the `responsive-grid` class to create responsive grid
+layouts. You can customize the number of columns by adding
+`grid-cols-*` utilities (and responsive variants). You can
+adjust the column and row spans for grid elements with the
+`col-span-*`  and `row-span-*` utilities and their
+responsive variants.
 
 ```html
 <div class="responsive-grid">

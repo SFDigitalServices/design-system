@@ -79,7 +79,7 @@ module.exports = {
     4: '#002B48',
     3: '#1D4D70',
     2: '#5b7c94',
-    1: '#CEDAE4'
+    1: '#EFF3F4'
   },
   green: {
     4: '#1B674D',

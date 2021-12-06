@@ -25,9 +25,9 @@ versions:
 
 - New features are **minor** versions, e.g. `1.0.0` → `1.1.0`.
 
-- Breaking changes, or any other changes that _may_ break any sites that
-  upgrade from the previous version, are **major** versions, e.g. `1.0.0`
-  → `2.0.0`.
+- Breaking changes, or any other changes that **may** break any
+  sites that upgrade from the previous version, are **major**
+  versions, e.g. `1.0.0` → `2.0.0`.
 
 ### CDN
 There are many content delivery networks that mirror npm
@@ -36,7 +36,7 @@ from the latest version of the npm package from [unpkg], you
 could add the following to your `<head>`:
 
 ```html static="true"
-<link rel="stylesheet" href="https://unpkg.com/{{ package.name }}/dist/sfds.css">
+<link rel="stylesheet" href="{{ '/dist/sfds.css' | published_url(package.version) }}">
 ```
 
 See the [CSS guide](./css) for more detailed usage instructions.
