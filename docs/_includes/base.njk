@@ -22,15 +22,17 @@ layout: skeleton
         aria-label="press Control+g to enable the grid overlay"
         class="text-slate-light font-mono"
       >Press <kbd>CTRL</kbd> + <kbd>G</kbd> to toggle grid overlay</summary>
-      <div class="md:hidden {{ overlayClasses }}">
-        {% for i in range(0, 6) %}
-          <div class="bg-red-1"></div>
-        {% endfor %}
-      </div>
-      <div class="hidden md:grid {{ overlayClasses }}">
-        {% for i in range(0, 12) %}
-          <div class="bg-red-1"></div>
-        {% endfor %}
+      <div class="z-50 pointer-events-none responsive-container fixed h-full top-0 left-0 right-0 opacity-25">
+        <div class="responsive-grid grid md:hidden h-full">
+          {% for i in range(0, 6) %}
+            <div class="bg-red-3"></div>
+          {% endfor %}
+        </div>
+        <div class="responsive-grid hidden md:grid h-full">
+          {% for i in range(0, 12) %}
+            <div class="bg-red-3"></div>
+          {% endfor %}
+        </div>
       </div>
     </details>
     <div>
@@ -42,7 +44,7 @@ layout: skeleton
 <div class="responsive-container flex lg:hidden mt-60 mb-28 items-center">
   <details>
     <summary>
-      <sfgov-icon class="pr-20" symbol="plus"></sfgov-icon>
+      <sfgov-icon class="pr-20" symbol="menu"></sfgov-icon>
     </summary>
     <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50 max-w-sm">
       <sfgov-icon class="py-20 block mt-96 ml-8" symbol="close" data-close-dialog></sfgov-icon>

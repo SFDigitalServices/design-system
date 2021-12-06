@@ -1,4 +1,5 @@
 import '@github/clipboard-copy-element'
+import '@github/details-dialog-element'
 import { install } from '@github/hotkey'
 import { observe } from 'selector-observer'
 import { on } from 'delegated-events'
