@@ -1,4 +1,4 @@
-{% set button_class = 'btn btn-inverse rounded-4 px-8 py-4' %}
+{% from 'macros.njk' import bubble %}
 {% set resize_handler %}this.style.height = this.contentDocument.documentElement.offsetHeight + 'px'{% endset %}
 {% set standalone = meta.standalone !== 'false' %}
 <div class="my-20 border-1 border-solid border-slate-4">
@@ -16,51 +16,53 @@
       {% endif %}
     ></iframe>
   </div>
-  <div class="bg-grey-1 border-0 border-t-1 border-solid border-slate-4 relative">
-    <div class="flex justify-start">
-      <div class="p-20 flex-auto" id="{{ id }}">
+  <div class="bg-grey-1 border-0 border-t-2 border-solid border-slate-4 relative">
+    <details class="details-reset p-20">
+      <summary class="flex gap-8 justify-start align-middle">
+        <div class="small font-medium mt-2">
+          Code sample
+        </div>
+        <sfgov-icon symbol="chevron-right" class="open:hidden"></sfgov-icon>
+        <sfgov-icon symbol="chevron-down" class="hidden open:inline-flex"></sfgov-icon>
+      </summary>
+      <div class="mt-16 flex-auto" id="{{ id }}">
         {{ content | safe }}
       </div>
-      <div class="p-8 space-y-8">
-        {% if codepen %}
-          <form
-            class="block"
-            action="https://codepen.io/pen/define/"
-            method="POST"
-            target="_blank"
-          >
-            <input
-              name="data"
-              type="hidden"
-              value="{{ codepen | dump(2) | e }}"
-            >
-            <button
-              type="submit"
-              class="{{ button_class }}"
-              title="Edit in CodePen">
-              <sfgov-icon symbol="pencil"></sfgov-icon>
-            </button>
-          </form>
-        {% endif %}
-
-        <clipboard-copy for="{{ id }}" class="block">
-          <button
-            title="Copy code"
-            class="{{ button_class }}"
-          >
-            <sfgov-icon symbol="document"></sfgov-icon>
-          </button>
-        </clipboard-copy>
-
-        <a
-          href="{{ url }}"
-          title="View in separate window"
+    </details>
+    <div class="absolute top-20 right-20 flex justify-end gap-8">
+      {% set button_class = 'btn btn-inverse rounded-4 px-8 py-4 hocus:bg-slate-4 hocus:text-white' %}
+      {% if codepen %}
+        <form
+          class="block"
+          action="https://codepen.io/pen/define/"
+          method="POST"
           target="_blank"
-          class="{{ button_class }}"
         >
-          <sfgov-icon symbol="arrow-up"></sfgov-icon>
-        </a>
-      </div>
+          <input
+            name="data"
+            type="hidden"
+            value="{{ codepen | dump(2) | e }}"
+          >
+          <button
+            type="submit"
+            aria-label="Edit in CodePen"
+            class="{{ button_class }} group relative"
+          >
+            <sfgov-icon symbol="code"></sfgov-icon>
+            {{ bubble('Edit in CodePen') }}
+          </button>
+        </form>
+      {% endif %}
+
+      <clipboard-copy for="{{ id }}" class="block">
+        <button
+          aria-label="Copy code"
+          class="{{ button_class }} group relative"
+        >
+          <sfgov-icon symbol="clipboard"></sfgov-icon>
+          {{ bubble('Copy code') }}
+        </button>
+      </clipboard-copy>
     </div>
   </div>
 </div>
