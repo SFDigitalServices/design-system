@@ -25,3 +25,9 @@
     {% endif %}
   </div>
 {% endmacro %}
+
+{% macro bubble(text) %}
+  <div class="hidden group-hocus:block absolute top-full right-0 mt-4 rounded-4 px-8 py-4 bg-slate-4 text-white text-small font-regular">
+    {{ text }}
+  </div>
+{% endmacro %}
