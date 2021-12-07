@@ -91,7 +91,7 @@ module.exports = {
     borderColor: ['focus', 'hover', 'hocus', 'group-hover'],
     borderWidth: ['hocus'],
     cursor: [],
-    display: ['responsive', 'group-hocus'],
+    display: ['responsive', 'group-hocus', 'details'],
     fill: [],
     fontWeight: ['responsive'],
     fontSize: ['responsive'],
@@ -131,6 +131,7 @@ module.exports = {
   },
 
   plugins: [
-    require('tailwindcss-interaction-variants')
+    require('tailwindcss-interaction-variants'),
+    require('./lib/tailwind/details')
   ]
 }
