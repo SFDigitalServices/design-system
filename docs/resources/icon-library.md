@@ -27,7 +27,7 @@ see_also:
           >
             <div class="w-full text-slate-4 font-mono pl-20">{{ icon.symbol }}</div>
             <sfgov-icon
-              symbol="document"
+              symbol="clipboard"
               class="text-slate-3 invisible group-hocus:visible"
               width="20"
               height="16"
