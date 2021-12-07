@@ -82,9 +82,12 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuring-variants>
    */
   variants: {
+    // TODO [^3]: nix 'focus'
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
+    // TODO [^3]: nix 'focus' + 'hover'
     backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus'],
+    // TODO [^3]: nix 'focus' + 'hover'
     borderColor: ['focus', 'hover', 'hocus', 'group-hover'],
     borderWidth: ['hocus'],
     cursor: [],
@@ -107,8 +110,8 @@ module.exports = {
     lineHeight: ['responsive'],
     listStyleType: ['responsive'],
     listStylePosition: [],
-    opacity: [],
-    overflow: [],
+    opacity: [], // TODO [^2.3]: add 'hocus', 'group-hocus'
+    overflow: [], // TODO [^2.3]: add 'hocus', 'group-hocus'
     padding: ['responsive'],
     position: ['responsive'],
     margin: ['responsive'],
@@ -116,7 +119,9 @@ module.exports = {
     space: ['responsive'],
     stroke: [],
     strokeWidth: [],
+    // TODO [^3]: nix 'focus' + 'hover'
     textColor: ['focus', 'hover', 'hocus', 'group-hocus'],
+    // TODO [^3]: nix 'focus' + 'hover'
     textDecoration: ['focus', 'hover', 'hocus'],
     transitionProperty: ['motion-safe'],
     userSelect: [],
