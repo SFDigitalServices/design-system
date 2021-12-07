@@ -1,3 +1,12 @@
 *[hidden] {
   display: none !important;
 }
+
+.details-reset {
+  list-style: none;
+
+  summary::marker,
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
