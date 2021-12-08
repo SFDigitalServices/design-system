@@ -35,8 +35,9 @@
   * + pre { @apply mb-20; }
   pre + * { @apply mt-20; }
 
-  code:not([class]) {
-    @apply px-4 py-2 rounded-2 bg-grey-1 whitespace-nowrap;
+  code:not([class]),
+  .inline-code {
+    @apply inline-flex px-4 py-2 rounded-4 bg-grey-2 whitespace-nowrap;
   }
 
   table:not([class]) {
