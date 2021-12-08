@@ -56,16 +56,11 @@ module.exports = {
     'position',
     'margin',
     'maxWidth',
-    'opacity',
     'overflow',
     'space',
     'textAlign',
     'textColor',
     'textDecoration',
-    'transitionDelay',
-    'transitionDuration',
-    'transitionProperty',
-    'transitionTimingFunction',
     'verticalAlign',
     'visibility',
     'whitespace',
@@ -110,7 +105,6 @@ module.exports = {
     lineHeight: ['responsive'],
     listStyleType: ['responsive'],
     listStylePosition: [],
-    opacity: [], // TODO [^2.3]: add 'hocus', 'group-hocus'
     overflow: [], // TODO [^2.3]: add 'hocus', 'group-hocus'
     padding: ['responsive'],
     position: ['responsive'],
@@ -123,7 +117,6 @@ module.exports = {
     textColor: ['focus', 'hover', 'hocus', 'group-hocus'],
     // TODO [^3]: nix 'focus' + 'hover'
     textDecoration: ['focus', 'hover', 'hocus'],
-    transitionProperty: ['motion-safe'],
     userSelect: [],
     verticalAlign: ['responsive'],
     visibility: ['responsive', 'group-hocus'],
