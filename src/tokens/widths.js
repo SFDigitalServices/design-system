@@ -1,7 +1,7 @@
 /**
  * These are "ideal" content widths that accommodate
  * nice line lengths and evenly sized grids with standard
- * spacing (20 or 28px) *and*
+ * spacing (20 or 28px)
  */
 module.exports = {
   sm: '340px',
