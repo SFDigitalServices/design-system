@@ -4,8 +4,8 @@ subtitle: The progressive disclosure element
 ---
 
 The HTML [`<details>` element][details] is a browser-native disclosure control
-for showing and hiding a single element. Without any styling, the markup looks
-like this this:
+for showing and hiding a single element. Without any styling, it looks like
+this:
 
 ```html id="bare-details" standalone="false" height="40"
 <details>
