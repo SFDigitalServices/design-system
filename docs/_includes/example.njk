@@ -55,8 +55,8 @@
             <sfgov-icon symbol="code"></sfgov-icon>
             {{
               tooltip('Edit in CodePen', {
-                'aria-hidden': true,
-                class: 'absolute top-full right-0 mt-4'
+                class: 'absolute top-full right-0 mt-4',
+                'aria-hidden': true
               }) | safe
             }}
           </button>
@@ -72,7 +72,6 @@
           {{
             tooltip('Copy code', {
               class: 'absolute top-full right-0 mt-4',
-              hidden: true,
               'aria-hidden': true,
               'data-copy-feedback': 'Copied'
             }) | safe
