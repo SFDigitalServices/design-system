@@ -2,7 +2,7 @@
 {% set resize_handler %}this.style.height = this.contentDocument.documentElement.offsetHeight + 'px'{% endset %}
 {% set standalone = meta.standalone !== 'false' %}
 <div class="my-20 border-1 border-solid border-slate-4">
-  <div class="p-20">
+  <div class="{{ meta.wrapper_class | default('p-20') }}">
     <iframe
       class="w-full border-0 bg-white"
       onload="{{ resize_handler }}"
