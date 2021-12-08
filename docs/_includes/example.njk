@@ -1,4 +1,4 @@
-{% from 'macros.njk' import bubble %}
+{% from 'macros.njk' import tooltip %}
 {% set resize_handler %}this.style.height = this.contentDocument.documentElement.offsetHeight + 'px'{% endset %}
 {% set standalone = meta.standalone !== 'false' %}
 <div class="my-20 border-1 border-solid border-slate-4">
@@ -29,7 +29,7 @@
         {{ content | safe }}
       </div>
     </details>
-    <div class="absolute top-20 right-20 flex justify-end gap-8">
+    <div class="absolute top-16 right-16 flex justify-end gap-8">
       {% set button_class = 'btn btn-inverse rounded-4 px-8 py-4 hocus:bg-slate-4 hocus:text-white' %}
       {% if codepen %}
         <form
@@ -49,7 +49,12 @@
             class="{{ button_class }} group relative"
           >
             <sfgov-icon symbol="code"></sfgov-icon>
-            {{ bubble('Edit in CodePen') }}
+            {{
+              tooltip('Edit in CodePen', {
+                'aria-hidden': true,
+                class: 'hidden group-hocus:block absolute top-full right-0 mt-4'
+              }) | safe
+            }}
           </button>
         </form>
       {% endif %}
@@ -60,7 +65,14 @@
           class="{{ button_class }} group relative"
         >
           <sfgov-icon symbol="clipboard"></sfgov-icon>
-          {{ bubble('Copy code') }}
+          {{
+            tooltip('Copy code', {
+              class: 'absolute top-full right-0 mt-4',
+              hidden: true,
+              'aria-hidden': true,
+              'data-copy-feedback': 'Copied'
+            }) | safe
+          }}
         </button>
       </clipboard-copy>
     </div>

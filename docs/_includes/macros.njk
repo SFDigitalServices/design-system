@@ -26,8 +26,12 @@
   </div>
 {% endmacro %}
 
-{% macro bubble(text) %}
-  <div class="hidden group-hocus:block absolute top-full right-0 mt-4 rounded-4 px-8 py-4 bg-slate-4 text-white text-small font-regular">
-    {{ text }}
-  </div>
+{% macro tooltip(text, attrs) %}
+  <div
+    {{
+      attrs | attributes(
+        { class: 'hidden group-hocus:block rounded-4 px-8 py-4 bg-slate-4 text-white text-small font-regular' }
+      ) | safe
+    }}
+  >{{ text }}</div>
 {% endmacro %}

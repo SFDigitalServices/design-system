@@ -5,6 +5,7 @@ see_also:
     href: /usage/icons/
 ---
 
+{% from 'macros.njk' import tooltip %}
 <div class="flex flex-wrap">
   {% for icon in icons -%}
     <div class="w-1/2 lg:w-1/3 mb-80">
@@ -20,7 +21,7 @@ see_also:
         <clipboard-copy
           class="cursor-pointer block relative"
           value="{{ icon.symbol }}"
-          data-copy-feedback="Name copied">
+        >
           <button
             class="cursor-pointer btn-block group py-4 relative border-0 bg-none hocus:bg-slate-1"
             aria-label="Copy &lsquo;{{ icon.symbol }}&rsquo; to the clipboard"
@@ -32,6 +33,13 @@ see_also:
               width="20"
               height="16"
             ></sfgov-icon>
+            {{
+              tooltip('Copy', {
+                class: 'absolute top-full right-0 mt-4',
+                'aria-hidden': true,
+                'data-copy-feedback': 'Name copied'
+              }) | safe
+            }}
           </button>
         </clipboard-copy>
       </div>
