@@ -8,7 +8,7 @@ const remarkConfig = require('./lib/remark').eleventyPluginConfig
 const navigation = require('./lib/eleventy/nav')
 const yaml = require('js-yaml')
 const toc = require('./lib/eleventy/toc')
-const filters = require('./lib/eleventy/filters')
+const { environment } = require('./lib/nunjucks')
 
 module.exports = config => {
   if (dev) {
@@ -23,10 +23,7 @@ module.exports = config => {
     startLevel: 3
   })
 
-  for (const [name, filter] of Object.entries(filters)) {
-    config.addFilter(name, filter)
-  }
-
+  config.setLibrary('njk', environment)
   config.addDataExtension('yml', contents => yaml.safeLoad(contents))
 
   config.setUseGitIgnore(false)
