@@ -52,7 +52,9 @@ module.exports = {
     'justifyItems',
     'letterSpacing',
     'listStyleType',
+    'opacity',
     'padding',
+    'pointerEvents',
     'position',
     'margin',
     'maxWidth',
@@ -69,7 +71,8 @@ module.exports = {
     'verticalAlign',
     'visibility',
     'whitespace',
-    'width'
+    'width',
+    'zIndex'
   ],
 
   /*
@@ -110,6 +113,7 @@ module.exports = {
     opacity: [],
     overflow: [],
     padding: ['responsive'],
+    pointerEvents: [],
     position: ['responsive'],
     margin: ['responsive'],
     maxWidth: ['responsive'],
@@ -122,7 +126,8 @@ module.exports = {
     userSelect: [],
     verticalAlign: ['responsive'],
     visibility: ['responsive', 'group-hocus'],
-    width: ['responsive']
+    width: ['responsive'],
+    zIndex: ['responsive']
   },
 
   plugins: [

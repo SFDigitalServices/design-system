@@ -11,7 +11,7 @@
   }
 
   a {
-    @apply text-action;
+    @apply text-slate-3;
   }
 
   :focus,
@@ -22,5 +22,13 @@
 
   ::placeholder {
     @apply text-slate-light;
+  }
+
+  summary {
+    list-style: none;
+
+    &::marker {
+      display: none;
+    }
   }
 }
