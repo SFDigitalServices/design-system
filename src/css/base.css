@@ -23,4 +23,15 @@
   ::placeholder {
     @apply text-slate-light;
   }
+
+  .details-reset {
+    summary {
+      list-style: none;
+
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+  }
 }
