@@ -1,15 +1,19 @@
 {% from 'macros.njk' import tooltip %}
 {% set resize_handler %}this.style.height = this.contentDocument.documentElement.offsetHeight + 'px'{% endset %}
-{% set standalone = meta.standalone !== 'false' %}
+
 <div class="my-20 border-1 border-solid border-slate-4">
   <div class="{{ meta.wrapper_class | default('p-20') }}">
     <iframe
       class="w-full border-0 bg-white"
-      onload="{{ resize_handler }}"
-      onresize="{{ resize_handler }}"
+      {% if meta.height %}
+        height="{{ meta.height | e }}"
+      {% else %}
+        onload="{{ resize_handler | e }}"
+        onresize="{{ resize_handler | e }}"
+      {% endif %}
       scrolling="no"
       style="overflow-y: auto;"
-      {% if standalone %}
+      {% if meta.standalone !== 'false' %}
         src="{{ url }}"
       {% else %}
         srcdoc="{{ code | e }}"
@@ -25,7 +29,7 @@
         <sfgov-icon symbol="chevron-right" class="open:hidden"></sfgov-icon>
         <sfgov-icon symbol="chevron-down" class="hidden open:inline-flex"></sfgov-icon>
       </summary>
-      <div class="mt-16 flex-auto" id="{{ id }}">
+      <div class="mt-16" id="{{ id }}">
         {{ content | safe }}
       </div>
     </details>
