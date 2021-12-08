@@ -3,7 +3,6 @@ const remark = require('remark')
 const visit = require('unist-util-visit')
 const interpolateCode = require('../../lib/remark/interpolate-code')
 const codeExample = require('../../lib/remark/code-example')
-const icons = require('./icons')
 const { readFileSync } = require('fs')
 
 module.exports = getExamples
@@ -33,19 +32,6 @@ async function getExamples () {
     })
   }
 
-  for (const icon of icons) {
-    const { symbol, code } = icon
-    const id = `icon-${symbol}`
-    examples.push({
-      title: icon.name,
-      id,
-      url: `/examples/${id}.html`,
-      code,
-      meta: {
-        standalone: true
-      }
-    })
-  }
 
   return examples
 }

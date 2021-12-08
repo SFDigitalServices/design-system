@@ -94,7 +94,6 @@ module.exports = {
     ...spacing
   },
   maxWidth: theme => ({
-    ...widths,
     ...theme('width')
   }),
   width: {
