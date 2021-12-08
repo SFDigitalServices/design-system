@@ -81,9 +81,9 @@ module.exports = {
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
     // TODO [^3]: nix 'focus' + 'hover'
-    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus'],
+    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
     // TODO [^3]: nix 'focus' + 'hover'
-    borderColor: ['focus', 'hover', 'hocus', 'group-hover'],
+    borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
     borderWidth: ['hocus'],
     cursor: [],
     display: ['responsive', 'group-hocus', 'details'],
@@ -114,7 +114,7 @@ module.exports = {
     stroke: [],
     strokeWidth: [],
     // TODO [^3]: nix 'focus' + 'hover'
-    textColor: ['focus', 'hover', 'hocus', 'group-hocus'],
+    textColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
     // TODO [^3]: nix 'focus' + 'hover'
     textDecoration: ['focus', 'hover', 'hocus'],
     userSelect: [],
