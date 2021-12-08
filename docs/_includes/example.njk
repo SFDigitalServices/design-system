@@ -21,7 +21,7 @@
     ></iframe>
   </div>
   <div class="bg-grey-1 border-0 border-t-2 border-solid border-slate-4 relative">
-    <details class="details-reset p-20">
+    <details class="details-reset p-20"{% if meta.closed != 'true' %} open{% endif %}>
       <summary class="flex gap-8 justify-start align-middle">
         <div class="small font-medium mt-2">
           Code sample
