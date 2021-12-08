@@ -17,9 +17,18 @@ on('click', 'clipboard-copy', function () {
     if (!el.hasAttribute('data-default-text')) {
       el.setAttribute('data-default-text', el.textContent)
     }
+
+    const wasHidden = el.getAttribute('aria-hidden') === 'true'
     el.textContent = el.getAttribute('data-copy-feedback')
+    el.setAttribute('aria-hidden', false)
+
     this.addEventListener('blur', () => {
       el.textContent = el.getAttribute('data-default-text')
-    }, { once: true, capture: true, passive: true })
+      if (wasHidden) el.setAttribute('aria-hidden', true)
+    }, {
+      once: true,
+      capture: true,
+      passive: true
+    })
   }
 })
