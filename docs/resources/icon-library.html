@@ -24,7 +24,7 @@ see_also:
         >
           <button
             class="cursor-pointer btn-block group py-4 relative border-0 bg-none hocus:bg-slate-1"
-            aria-label="Copy &lsquo;{{ icon.symbol }}&rsquo; to the clipboard"
+            aria-label='Copy "{{ icon.symbol }}"'
           >
             <div class="w-full text-slate-4 font-mono pl-20">{{ icon.symbol }}</div>
             <sfgov-icon
@@ -37,7 +37,7 @@ see_also:
               tooltip('Copy', {
                 class: 'absolute top-full right-0 mt-4',
                 'aria-hidden': true,
-                'data-copy-feedback': 'Name copied'
+                'data-copy-feedback': 'Copied'
               }) | safe
             }}
           </button>
