@@ -78,7 +78,6 @@ on SF.gov:
   <summary class="
     title-xs bg-white text-action
     open:bg-action open:text-white
-    hocus:bg-action hocus:text-white
     px-20 py-16
     cursor-pointer
   ">
