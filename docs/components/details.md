@@ -62,15 +62,16 @@ descendents of the `<summary>`, and are available for:
 
 - display utilities (`hidden`, `block`, etc.)
 - color utilities (`bg-*`, `text-<color>`, etc.)
-- border utilities (`border-*`)
+- border utilities (`border-*`, etc. for width, style, and color)
 
 Also note that the variants only target the **directly descendent** summary of
 the open details element, which makes it possible to distinctly style nested
 summary elements.
 
 ## Putting it all together
-This example uses border, color, typography, and spacing utilities with `open:`
-variants to style a `<details>` element as they're currently shown on SF.gov:
+This example uses display, border, color, typography, and spacing utilities
+with `open:` variants to style a `<details>` element as they're currently shown
+on SF.gov:
 
 ```html height="180"
 <details class="details-reset rounded overflow-hidden border-solid border-3 border-action">
