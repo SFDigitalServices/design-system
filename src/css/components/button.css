@@ -12,7 +12,6 @@
     @apply border-0 border-solid border-current;
     @apply text-center justify-center items-center;
     @apply whitespace-nowrap;
-
     @apply hocus:bg-blue-dark;
 
     &.hover,
@@ -24,7 +23,6 @@
   .btn-inverse {
     @apply bg-white;
     @apply text-blue-bright;
-
     @apply hocus:bg-white hocus:text-blue-dark;
 
     &.hover,
@@ -37,7 +35,6 @@
     @apply bg-white;
     @apply text-blue-bright;
     @apply border;
-
     @apply hocus:bg-white hocus:text-blue-dark;
 
     &.hover,
