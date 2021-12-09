@@ -1,6 +1,13 @@
 import '@github/clipboard-copy-element'
+import '@github/details-dialog-element'
+import { install } from '@github/hotkey'
 import { observe } from 'selector-observer'
 import { on } from 'delegated-events'
+
+// Install all the hotkeys on the page
+for (const el of document.querySelectorAll('[data-hotkey]')) {
+  install(el)
+}
 
 observe('clipboard-copy[role=button]', {
   add (el) {
