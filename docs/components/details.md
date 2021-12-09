@@ -15,7 +15,7 @@ this:
 ```
 
 ## Details reset
-Browsers style the `<details>` and `<summary>` elements differently, so we
+Browsers style `<details>` and `<summary>` elements differently, so we
 provide a `details-reset` class to normalize them and remove the ▶ summary
 marker. You can still click the word "Summary" to hide and show "Details":
 
@@ -28,13 +28,10 @@ marker. You can still click the word "Summary" to hide and show "Details":
 
 ## Open variants
 We provide `open:` utility class variants so that you can conditionally
-show and hide elements within the `<summary>` when the `<details>` element is
-open (whenever the `open` attribute is present).
-This is how you would visually swap a
-<sfgov-icon symbol="chevron-right" aria-label="chevron-right icon"></sfgov-icon>
-when closed for a 
-<sfgov-icon symbol="chevron-down" aria-label="chevron-down icon"></sfgov-icon>
-when open:
+show and hide elements within `<summary>` when their parent `<details>` element
+is open (whenever the `open` attribute is present).  This is how you would
+visually swap a <code>:icon[right arrow]{symbol=chevron-right}</code> when
+closed for a <code>:icon[down arrow]{symbol=chevron-down}</code> when open:
 
 ```html height="96"
 <details class="details-reset">
@@ -97,12 +94,10 @@ on SF.gov:
 ## Guidelines
 When styling `<details>`:
 
-1. Use the `cursor-pointer` class on the `<summary>` to make it more obviously
+1. Use the `cursor-pointer` class on `<summary>` to make it obviously
    clickable.
-1. Use `hocus:` variants to style the `<summary>` clearly when it's hovered or
-   focused.
 1. Do not use `open:` variants in the content portion (the element after
-   `<summary>`) of a `<details>`. They will have no effect because this element
-   is only visible when the details element is **open**.
+   `<summary>`) of `<details>`. They will have no effect because this element
+   is only visible when the details element is open.
 
 [details]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
