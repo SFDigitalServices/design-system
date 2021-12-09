@@ -1,5 +1,5 @@
 ---
-~title: Resources
+title: Resources
 ---
 
-derp derp derp
+We need content for this page.
