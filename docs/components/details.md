@@ -46,14 +46,6 @@ closed for a <code>:icon[down arrow]{symbol=chevron-down}</code> when open:
 </details>
 ```
 
-<div class="flex items-start gap-20 bg-blue-1 rounded p-20 my-40">
-  <sfgov-icon symbol="info" class="mt-2"></sfgov-icon>
-  <div>
-    It's not necessary to label icons with <code>aria-label</code> or
-    <code>title</code> attributes. Doing so may confuse screen reader users.
-  </div>
-</div>
-
 The `open:` variants apply to the `<details>` and `<summary>` elements, and
 descendents of the `<summary>`, and are available for:
 
