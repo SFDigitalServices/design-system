@@ -23,9 +23,10 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuration#core-plugins>
    */
   corePlugins: [
-    'appearance',
+    // TODO [^3]: add preflight (https://tailwindcss.com/docs/preflight)
     'alignContent',
     'alignItems',
+    'appearance',
     'backgroundColor',
     'borderColor',
     'borderRadius',
@@ -52,14 +53,13 @@ module.exports = {
     'justifyItems',
     'letterSpacing',
     'listStyleType',
+    'margin',
+    'maxWidth',
     'opacity',
+    'overflow',
     'padding',
     'pointerEvents',
     'position',
-    // TODO [^3]: add preflight (https://tailwindcss.com/docs/preflight)
-    'margin',
-    'maxWidth',
-    'overflow',
     'space',
     'textAlign',
     'textColor',
