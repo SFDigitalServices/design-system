@@ -1,0 +1,10 @@
+.details-reset {
+  summary {
+    list-style: none;
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
