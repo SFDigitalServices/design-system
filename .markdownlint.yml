@@ -1,0 +1,14 @@
+default: false
+heading-increment: true
+heading-style: atx
+first-heading-h1: { level: 2 }
+front-matter:
+  required_keys:
+    - title
+line-length: false
+links: true
+list-indent: true
+no-bare-urls: false
+ul-indent: { indent: 2, start_indented: false }
+ul-style: consistent
+whitespace: true
