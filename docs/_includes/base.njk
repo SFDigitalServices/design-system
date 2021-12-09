@@ -13,8 +13,8 @@ layout: skeleton
 {% set toc = content | toc %}
 
 <div class="bg-grey-1">
-  <div class="responsive-container flex justify-between py-8">
-    <details>
+  <div class="responsive-container flex flex-wrap justify-between py-8">
+    <details class="details-reset">
       <summary
         data-hotkey="Control+g"
         aria-label="press Control+g to enable the grid overlay"
@@ -40,7 +40,7 @@ layout: skeleton
 </div>
 
 <div class="responsive-container flex lg:hidden mt-60 mb-28 items-center">
-  <details>
+  <details class="details-reset">
     <summary role="navigation" aria-label="open navigation menu">
       <sfgov-icon class="pr-20" symbol="menu" role="img" aria-label="hamburger menu"></sfgov-icon>
     </summary>
