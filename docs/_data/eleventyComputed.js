@@ -46,14 +46,14 @@ function getLastCommitFromGit (path) {
 async function getLastCommitFromGitHub (path) {
   const args = { ...context, path, sha: branch, per_page: 1 }
 
-  console.info('getting last commit from github:', args)
+  console.info('getting last commit from github:', path)
 
   let res, commits
   try {
     res = await github.rest.repos.listCommits(args)
     commits = res.data
   } catch (error) {
-    console.warn('error loading commits for "%s"', path, error)
+    console.warn('error loading commits for "%s"', path, error.response.data?.message || '(unknown error)')
     gitMetaCache.set(path, null)
     return null
   }
