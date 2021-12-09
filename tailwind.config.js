@@ -56,6 +56,7 @@ module.exports = {
     'padding',
     'pointerEvents',
     'position',
+    // TODO [^3]: add preflight (https://tailwindcss.com/docs/preflight)
     'margin',
     'maxWidth',
     'overflow',
