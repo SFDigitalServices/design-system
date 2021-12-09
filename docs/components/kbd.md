@@ -63,7 +63,7 @@ the beginning of a line aligned to the left edge of their container:
       <li><kbd>Escape</kbd> to exit a visual or dashboard</li>
     </ul>
   </div>
-</div
+</div>
 ```
 
 [kbd]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
