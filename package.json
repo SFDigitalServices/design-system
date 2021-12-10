@@ -76,7 +76,7 @@
     "postcss-nested": "^5.0.5",
     "postcss-normalize-charset": "^5.0.1",
     "postcss-strip-inline-comments": "^0.1.5",
-    "prettier": "^2.4.1",
+    "prettierx": "^0.19.0",
     "prettysize": "^2.0.0",
     "rehype-raw": "^5.1.0",
     "rehype-stringify": "^8.0.0",
