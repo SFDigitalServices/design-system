@@ -21,7 +21,7 @@ async function getPublishedStatusVersion () {
       return status.state === 'success' && status.context.includes('publish')
     })
     if (versionStatus) {
-      console.info('got published version status:', versionStatus)
+      console.info('got published version status:', versionStatus.description)
       return versionStatus.description
     } else {
       console.warn('no published version status for %s', sha, statuses)
