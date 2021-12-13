@@ -9,12 +9,6 @@ for (const el of document.querySelectorAll('[data-hotkey]')) {
   install(el)
 }
 
-on('click', '[data-copy-feedback]', ({ currentTarget }) => {
-  const text = currentTarget.getAttribute('data-copy-feedback')
-  const el = createBubble(text, { fade: true })
-  currentTarget.appendChild(el)
-})
-
 observe('clipboard-copy[role=button]', {
   add (el) {
     if (el.querySelector('button, [role=button]')) {
@@ -24,25 +18,24 @@ observe('clipboard-copy[role=button]', {
   }
 })
 
-function createBubble (text, options) {
-  const bubble = document.createElement('div')
-  bubble.classList.add(
-    'rounded-4', 'px-8', 'py-4',
-    'bg-slate-4', 'text-white', 'text-small',
-    'absolute', 'top-full', 'right-0', 'mt-4'
-  )
-  bubble.textContent = text
-  if (options?.fade) {
-    const opacityClass = 'opacity-100'
-    bubble.classList.add(
-      opacityClass,
-      'transition-opacity',
-      'ease-in', 'duration-250'
-    )
-    setTimeout(() => {
-      bubble.classList.replace(opacityClass, 'opacity-0')
-      setTimeout(() => bubble.remove(), 1000)
-    }, 750)
+on('click', 'clipboard-copy', function () {
+  const el = this.querySelector('[data-copy-feedback]')
+  if (el) {
+    if (!el.hasAttribute('data-default-text')) {
+      el.setAttribute('data-default-text', el.textContent)
+    }
+
+    const wasHidden = el.getAttribute('aria-hidden') === 'true'
+    el.textContent = el.getAttribute('data-copy-feedback')
+    el.setAttribute('aria-hidden', false)
+
+    this.addEventListener('blur', () => {
+      el.textContent = el.getAttribute('data-default-text')
+      if (wasHidden) el.setAttribute('aria-hidden', true)
+    }, {
+      once: true,
+      capture: true,
+      passive: true
+    })
   }
-  return bubble
-}
+})

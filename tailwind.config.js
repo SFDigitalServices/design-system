@@ -23,9 +23,10 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuration#core-plugins>
    */
   corePlugins: [
-    'appearance',
+    // TODO [^3]: add preflight (https://tailwindcss.com/docs/preflight)
     'alignContent',
     'alignItems',
+    'appearance',
     'backgroundColor',
     'borderColor',
     'borderRadius',
@@ -52,22 +53,17 @@ module.exports = {
     'justifyItems',
     'letterSpacing',
     'listStyleType',
-    'opacity',
-    'padding',
-    'pointerEvents',
-    'position',
     'margin',
     'maxWidth',
     'opacity',
     'overflow',
+    'padding',
+    'pointerEvents',
+    'position',
     'space',
     'textAlign',
     'textColor',
     'textDecoration',
-    'transitionDelay',
-    'transitionDuration',
-    'transitionProperty',
-    'transitionTimingFunction',
     'verticalAlign',
     'visibility',
     'whitespace',
@@ -85,13 +81,16 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuring-variants>
    */
   variants: {
+    // TODO [^3]: nix 'focus'
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
-    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus'],
-    borderColor: ['focus', 'hover', 'hocus', 'group-hover'],
+    // TODO [^3]: nix 'focus' + 'hover'
+    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    // TODO [^3]: nix 'focus' + 'hover'
+    borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
     borderWidth: ['hocus'],
     cursor: [],
-    display: ['responsive', 'group-hocus'],
+    display: ['responsive', 'group-hocus', 'details'],
     fill: [],
     fontWeight: ['responsive'],
     fontSize: ['responsive'],
@@ -110,8 +109,7 @@ module.exports = {
     lineHeight: ['responsive'],
     listStyleType: ['responsive'],
     listStylePosition: [],
-    opacity: [],
-    overflow: [],
+    overflow: [], // TODO [^2.3]: add 'hocus', 'group-hocus'
     padding: ['responsive'],
     pointerEvents: [],
     position: ['responsive'],
@@ -120,9 +118,10 @@ module.exports = {
     space: ['responsive'],
     stroke: [],
     strokeWidth: [],
-    textColor: ['focus', 'hover', 'hocus', 'group-hocus'],
+    // TODO [^3]: nix 'focus' + 'hover'
+    textColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    // TODO [^3]: nix 'focus' + 'hover'
     textDecoration: ['focus', 'hover', 'hocus'],
-    transitionProperty: ['motion-safe'],
     userSelect: [],
     verticalAlign: ['responsive'],
     visibility: ['responsive', 'group-hocus'],
@@ -131,6 +130,7 @@ module.exports = {
   },
 
   plugins: [
-    require('tailwindcss-interaction-variants')
+    require('tailwindcss-interaction-variants'),
+    require('./lib/tailwind/details')
   ]
 }

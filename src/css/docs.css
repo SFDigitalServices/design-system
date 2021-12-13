@@ -35,8 +35,9 @@
   * + pre { @apply mb-20; }
   pre + * { @apply mt-20; }
 
-  code:not([class]) {
-    @apply px-4 py-2 rounded-2 bg-grey-1 whitespace-nowrap;
+  code:not([class]),
+  .inline-code {
+    @apply px-4 py-2 rounded-4 bg-grey-2 whitespace-nowrap;
   }
 
   table:not([class]) {
@@ -59,6 +60,10 @@
     tbody tr:nth-child(even) {
       @apply bg-grey-1;
     }
+  }
+
+  sfgov-icon:not([class]) {
+    @apply h-16 w-16 align-middle;
   }
 }
 
