@@ -94,7 +94,7 @@ module.exports = {
     overflow: [],
     padding: ['responsive'],
     position: ['responsive'],
-    margin: ['responsive'],
+    margin: ['responsive', 'last'],
     maxWidth: ['responsive'],
     space: ['responsive'],
     stroke: [],
