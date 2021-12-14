@@ -67,6 +67,11 @@
   }
 }
 
+/* TODO: remove and add to base.css in 3.0.0 */
+a {
+  @apply text-slate-3;
+}
+
 /* Below is for hard-coding mobile/desktop examples */
 .display-lg-mobile {
   @apply text-display-lg font-light;
