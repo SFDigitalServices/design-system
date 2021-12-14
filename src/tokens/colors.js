@@ -88,7 +88,6 @@ module.exports = {
     1: '#E9F7EC'
   },
   red: {
-    grid: '#FF0000',
     4: '#BC4427',
     3: '#C9563A',
     2: '#EFCABB',
