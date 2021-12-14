@@ -15,4 +15,4 @@ module.exports = require('{{ package.name }}/tailwind.config')
 ```
 
 [tailwind-styled-components]: https://www.npmjs.com/package/tailwind-styled-components
-[our tailwind configuration]: https://unpkg.com/{{ package.name }}@{{ package.version }}/tailwind.config.js
+[our tailwind configuration]: {{ 'tailwind.config.js' | published_url(package.version) }}

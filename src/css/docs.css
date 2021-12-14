@@ -35,8 +35,9 @@
   * + pre { @apply mb-20; }
   pre + * { @apply mt-20; }
 
-  code:not([class]) {
-    @apply px-4 py-2 rounded-2 bg-grey-1 whitespace-nowrap;
+  code:not([class]),
+  .inline-code {
+    @apply px-4 py-2 rounded-4 bg-grey-2 whitespace-nowrap;
   }
 
   table:not([class]) {
@@ -52,10 +53,23 @@
       @apply align-top text-left px-16 py-8;
     }
 
+    [align=left] { @apply text-left; }
+    [align=center] { @apply text-center; }
+    [align=right] { @apply text-right; }
+
     tbody tr:nth-child(even) {
       @apply bg-grey-1;
     }
   }
+
+  sfgov-icon:not([class]) {
+    @apply h-16 w-16 align-middle;
+  }
+}
+
+/* TODO: remove and add to base.css in 3.0.0 */
+a {
+  @apply text-slate-3;
 }
 
 /* Below is for hard-coding mobile/desktop examples */

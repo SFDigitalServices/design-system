@@ -31,7 +31,7 @@ async function getLastCommit (path) {
 }
 
 function getLastCommitFromGit (path) {
-  console.info('getting last commit from `git log -1 -- %s`', path)
+  // console.info('getting last commit from `git log -1 -- %s`', path)
   const log = git('log', '-1', '--', path)
   const [first, second, third] = log.split('\n')
   const name = match(second, /Author: (.+) </, 1)
@@ -46,7 +46,7 @@ function getLastCommitFromGit (path) {
 async function getLastCommitFromGitHub (path) {
   const args = { ...context, path, sha: branch, per_page: 1 }
 
-  console.info('getting last commit from github:', args)
+  // console.info('getting last commit from github:', args)
 
   let res, commits
   try {
