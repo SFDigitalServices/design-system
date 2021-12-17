@@ -2,14 +2,8 @@
 layout: skeleton
 ---
 
-{% from 'nav.njk' import nav_link with context %}
-{% set nav %}
-  {{ nav_link('/', false) }}
-  {{ nav_link('/foundations') }}
-  {{ nav_link('/components') }}
-  {{ nav_link('/resources') }}
-  {{ nav_link('/usage') }}
-{% endset %}
+{% from 'macros.njk' import nav_link with context %}
+{% set nav %}{% include 'nav.njk' %}{% endset %}
 
 {% set toc = content | toc %}
 
