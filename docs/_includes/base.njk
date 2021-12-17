@@ -8,6 +8,7 @@ layout: skeleton
   {{ nav_link('/foundations') }}
   {{ nav_link('/components') }}
   {{ nav_link('/usage') }}
+  {{ nav_link('/resources') }}
 {% endset %}
 
 {% set toc = content | toc %}
@@ -23,12 +24,12 @@ layout: skeleton
       <div class="z-50 pointer-events-none responsive-container fixed h-full top-0 left-0 right-0 opacity-10">
         <div class="responsive-grid grid md:hidden h-full">
           {% for i in range(0, 6) %}
-            <div style="background-color: '#FF0000'"></div>
+            <div style="background-color: #FF0000"></div>
           {% endfor %}
         </div>
         <div class="responsive-grid hidden md:grid h-full">
           {% for i in range(0, 12) %}
-            <div style="background-color: '#FF0000'"></div>
+            <div style="background-color: #FF0000"></div>
           {% endfor %}
         </div>
       </div>
