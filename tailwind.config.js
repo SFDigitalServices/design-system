@@ -85,12 +85,12 @@ module.exports = {
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
     // TODO [^3]: nix 'focus' + 'hover'
-    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus', 'group-hover', 'details'],
     // TODO [^3]: nix 'focus' + 'hover'
-    borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'group-hover', 'details'],
     borderWidth: ['hocus'],
     cursor: [],
-    display: ['responsive', 'group-hocus', 'details'],
+    display: ['responsive', 'group-hocus', 'group-hover', 'details'],
     fill: [],
     fontWeight: ['responsive'],
     fontSize: ['responsive'],
@@ -119,12 +119,12 @@ module.exports = {
     stroke: [],
     strokeWidth: [],
     // TODO [^3]: nix 'focus' + 'hover'
-    textColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    textColor: ['focus', 'hover', 'hocus', 'group-hocus', 'group-hover', 'details'],
     // TODO [^3]: nix 'focus' + 'hover'
     textDecoration: ['focus', 'hover', 'hocus'],
     userSelect: [],
     verticalAlign: ['responsive'],
-    visibility: ['responsive', 'group-hocus'],
+    visibility: ['responsive', 'group-hocus', 'group-hover'],
     width: ['responsive'],
     zIndex: ['responsive']
   },
