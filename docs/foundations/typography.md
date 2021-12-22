@@ -59,6 +59,9 @@ banner) to style the one-time page title (`<h1>`).
 #### Large title
 > <div class="title-lg-desktop">{{ specimens.default }}</div>
 
+#### Large title ant test semibold
+> <div class="title-lg-semibold-desktop">{{ specimens.default }}</div>
+
 #### Medium title
 > <div class="title-md-desktop">{{ specimens.default }}</div>
 

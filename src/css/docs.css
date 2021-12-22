@@ -105,6 +105,10 @@ a {
   @apply text-title-lg-desktop font-medium;
 }
 
+.title-lg-semibold-desktop {
+  @apply text-title-lg-desktop font-semibold;
+}
+
 .title-md-mobile {
   @apply text-title-md font-medium;
 }

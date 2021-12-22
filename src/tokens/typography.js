@@ -6,7 +6,8 @@ const fontFamily = {
 const fontWeight = {
   light: 300,
   regular: 400,
-  medium: 500
+  medium: 500,
+  semibold: 600
 }
 
 module.exports = {
