@@ -6,6 +6,7 @@ const fontFamily = {
 const fontWeight = {
   light: 300,
   regular: 400,
+  // TODO [>=3]: rename to "semibold" (or "bold"?) and alias to "medium"
   medium: 600
 }
 
