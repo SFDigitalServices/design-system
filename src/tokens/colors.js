@@ -1,4 +1,4 @@
-const brightBlue = '#4f66ee'
+const brightBlue = '#495ed4'
 const sequential = {
   darkBlue: {
     7: '#0d1670',

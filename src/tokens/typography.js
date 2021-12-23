@@ -6,7 +6,8 @@ const fontFamily = {
 const fontWeight = {
   light: 300,
   regular: 400,
-  medium: 500
+  // TODO [>=3]: rename to "semibold" (or "bold"?) and alias to "medium"
+  medium: 600
 }
 
 module.exports = {
