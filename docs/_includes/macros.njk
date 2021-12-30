@@ -1,47 +1,45 @@
 {% macro nav_link(url, deep=true) %}
   {% set node = url | node(collections.all) %}
   {% set children = node.data.page | children(collections.all) %}
-  <div class="mb-20">
-    <a
-      class="flex justify-center title-xs no-underline mb-20"
-      href="{{ url }}"
-      {% if node.data.page.url === page.url %}
-        aria-current="page"
-      {% endif %}
-    >
-      <div class="flex-auto">{{ node.data.title }}</div>
-      <div>
-        {% if deep and children.length %}
-          <sfgov-icon symbol="chevron-down" role="img" aria-label="arrow pointing down"></sfgov-icon>
+  {% if deep and children.length %}
+    <details class="details-reset mb-20">
+      <summary class="title-xs text-slate-3 mb-20">
+        <div class="flex">
+          <span class="flex-auto">{{ node.data.title }}</span>
+          <sfgov-icon class="open:hidden" symbol="chevron-down" aria-hidden="true"></sfgov-icon>
+          <sfgov-icon class="hidden open:inline-flex" symbol="chevron-up" aria-hidden="true"></sfgov-icon>
+        </div>
+      </summary>
+      <ul class="m-0 p-0 list-none">
+        {% for child in children %}
+          {% set child_active = child.url === page.url %}
+          <li class="pl-16 m-0 mb-20 {{ 'bg-slate-2 rounded-4' if child_active }}">
+            <a
+              href="{{ child.url }}"
+              {% if child_active %}
+                aria-current="page"
+              {% endif %}
+              class="block no-underline {{ 'text-white' if child_active else 'text-slate-4' }}"
+            >
+              {{ child.data.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
+  {% else %}
+    <div class="mb-20">
+      <a
+        class="flex justify-center title-xs no-underline mb-20"
+        href="{{ url }}"
+        {% if node.data.page.url === page.url %}
+          aria-current="page"
         {% endif %}
-      </div>
-    </a>
-    {% if deep %}
-      {% if url === '/' %}
-        {% set parent_active = page.url === url %}
-      {% else %}
-        {% set parent_active = page.url.startsWith(url) %}
-      {% endif %}
-      {% if parent_active %}
-        <ul class="m-0 p-0 list-none">
-          {% for child in children %}
-            {% set child_active = child.url === page.url %}
-            <li class="pl-16 m-0 mb-20 {{ 'bg-slate-2 rounded-4' if child_active }}">
-              <a
-                href="{{ child.url }}"
-                {% if child_active %}
-                  aria-current="page"
-                {% endif %}
-                class="block no-underline {{ 'text-white' if child_active else 'text-slate-4' }}"
-              >
-                {{ child.data.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endif %}
-  </div>
+      >
+        <div class="flex-auto">{{ node.data.title }}</div>
+      </a>
+    </div>
+  {% endif %}
 {% endmacro %}
 
 {% macro swatch(color, width, height) %}
