@@ -39,8 +39,8 @@ closed for a <code>:icon[down arrow]{symbol=chevron-down}</code> when open:
     <div class="title-xs">
       Summary
     </div>
-    <sfgov-icon symbol="chevron-right" class="open:hidden"></sfgov-icon>
-    <sfgov-icon symbol="chevron-down" class="hidden open:inline-flex"></sfgov-icon>
+    <sfgov-icon symbol="chevron-right" class="open:hidden" aria-hidden="true"></sfgov-icon>
+    <sfgov-icon symbol="chevron-down" class="hidden open:inline-flex" aria-hidden="true"></sfgov-icon>
   </summary>
   <div class="mt-8 bg-blue-1 rounded p-20">Details</div>
 </details>
@@ -72,8 +72,8 @@ on SF.gov:
   ">
     <div class="flex space-between">
       <span class="flex-auto">Summary</span>
-      <sfgov-icon symbol="plus" class="open:hidden"></sfgov-icon>
-      <sfgov-icon symbol="minus" class="hidden open:inline-flex"></sfgov-icon>
+      <sfgov-icon symbol="plus" class="open:hidden" aria-hidden="true"></sfgov-icon>
+      <sfgov-icon symbol="minus" class="hidden open:inline-flex" aria-hidden="true"></sfgov-icon>
     </div>
   </summary>
   <div class="px-20 py-16 space-y-20">
