@@ -2,7 +2,7 @@
   {% set node = url | node(collections.all) %}
   {% set children = node.data.page | children(collections.all) %}
   {% if deep and children.length %}
-    <details class="details-reset mb-20" {% if page.url.startsWith(url) %} open {% endif %}>
+    <details class="details-reset mb-20 cursor-pointer" {% if page.url.startsWith(url) %} open {% endif %}>
       <summary class="title-xs text-slate-3 mb-20">
         <div class="flex">
           <span class="flex-auto">{{ node.data.title }}</span>
