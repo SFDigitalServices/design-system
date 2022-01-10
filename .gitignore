@@ -1,0 +1,6 @@
+**/.*.sw?
+*.tgz
+.env
+dist/
+node_modules/
+public/

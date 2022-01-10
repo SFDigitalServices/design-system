@@ -1,0 +1,23 @@
+<div class="mt-60 text-slate-light">
+  <a href="{{ page.inputPath | repo_url }}">Edit on GitHub</a>
+  {% if git.commit %}
+  | last
+    <a
+      class="text-inherit"
+      href="{{ page.inputPath | blame_url }}"
+    >updated</a>
+    on
+    <a
+      class="text-inherit"
+      href="{{ git.commit.sha | commit_url }}"
+    >{{ git.commit.date | local_date }}</a>
+    {% if git.commit.author.login %}
+      by <a
+        class="text-inherit"
+        href="https://github.com/{{ git.commit.author.login }}"
+      >{{ git.commit.author.name | default('@' + git.commit.author.login) }}</a>
+    {% elif git.commit.author.name %}
+      by {{ git.commit.author.name }}
+    {% endif %}
+  {% endif %}
+</div>

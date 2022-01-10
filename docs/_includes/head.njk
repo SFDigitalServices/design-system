@@ -1,0 +1,23 @@
+<title>
+  {% if title and page.url !== '/' %}
+    {{ title }} |
+  {% endif %}
+  {{ site.title }}
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="{{ meta.viewport | default('width=device-width,initial-scale=1') }}">
+<link rel="shortcut icon" href="https://sf.gov/themes/custom/sfgovpl/favicon.ico" type="image/vnd.microsoft.icon">
+{# these speed up Google Fonts requests considerably #}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% for style in assets.styles %}
+  {% if style.href %}
+    <link href="{{ style.href }}"
+          media="{{ style.media | default('screen') }}"
+          rel="stylesheet">
+  {% else %}
+    <style type="text/css" media="{{ style.media | default('screen') }}">
+      {{ style.content | safe }}
+    </style>
+  {% endif %}
+{% endfor %}

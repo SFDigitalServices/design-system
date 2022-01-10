@@ -1,0 +1,159 @@
+.prose {
+  h3 { @apply mt-40 mb-20; }
+  h4 { @apply mt-28 mb-16; }
+  h5 { @apply mt-16 mb-8; }
+  h6 { @apply mt-8 mb-4; }
+
+  > :first-child {
+    @apply mt-0 !important;
+  }
+
+  ul,
+  ol {
+    @apply p-0 mx-0 my-20;
+  }
+
+  ul:not([class]),
+  ol:not([class]) {
+    @apply space-y-8;
+
+    li {
+      @apply p-0 ml-28 my-0;
+    }
+  }
+
+  blockquote,
+  p,
+  table {
+    @apply mt-0 mb-20;
+  }
+
+  pre {
+    @apply m-0;
+  }
+
+  * + pre { @apply mb-20; }
+  pre + * { @apply mt-20; }
+
+  code:not([class]),
+  .inline-code {
+    @apply px-4 py-2 rounded-4 bg-grey-2 whitespace-nowrap;
+  }
+
+  table:not([class]) {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead th {
+      @apply border-0 border-b-1 border-solid border-black;
+    }
+
+    td,
+    th {
+      @apply align-top text-left px-16 py-8;
+    }
+
+    [align=left] { @apply text-left; }
+    [align=center] { @apply text-center; }
+    [align=right] { @apply text-right; }
+
+    tbody tr:nth-child(even) {
+      @apply bg-grey-1;
+    }
+  }
+
+  sfgov-icon:not([class]) {
+    @apply h-16 w-16 align-middle;
+  }
+}
+
+/* TODO: remove and add to base.css in 3.0.0 */
+a {
+  @apply text-slate-3;
+}
+
+/* Below is for hard-coding mobile/desktop examples */
+.display-lg-mobile {
+  @apply text-display-lg font-light;
+}
+
+.display-lg-desktop {
+  @apply text-display-lg-desktop font-light;
+}
+
+.display-sm-mobile {
+  @apply text-display-sm font-light;
+}
+
+.display-sm-desktop {
+  @apply text-display-sm-desktop font-light;
+}
+
+.title-xl-mobile {
+  @apply text-title-xl font-medium;
+}
+
+.title-xl-desktop {
+  @apply text-title-xl-desktop font-medium;
+}
+
+.title-lg-mobile {
+  @apply text-title-lg font-medium;
+}
+
+.title-lg-desktop {
+  @apply text-title-lg-desktop font-medium;
+}
+
+.title-md-mobile {
+  @apply text-title-md font-medium;
+}
+
+.title-md-desktop {
+  @apply text-title-md-desktop font-medium;
+}
+
+.title-sm-desktop {
+  @apply text-title-sm-desktop font-medium;
+}
+
+.title-xs-desktop {
+  @apply text-title-xs-desktop font-medium;
+}
+
+.big-desc-mobile {
+  @apply text-big-desc font-regular;
+}
+
+.big-desc-desktop {
+  @apply text-big-desc-desktop font-regular;
+}
+
+/**
+ * The following are "scopes" defined by highlight.js:
+ * <https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html>
+ */
+.hljs {
+  /* "heading of a section in a config file, heading in text markup" */
+  .hljs-section { @apply text-slate-light; }
+
+  /* "XML/HTML tag" ("<" and ">", specifically) */
+  .hljs-tag { @apply text-slate; }
+
+  /* "name of an XML tag, the first word in an s-expression" (?) */
+  .hljs-name { @apply text-red-3; }
+
+  /* "name of an attribute with no language defined semantics (keys in JSON,
+   * setting names in .ini), also sub-attribute within another highlighted
+   * object, like XML tag" */
+  .hljs-attr { @apply text-slate-light; }
+
+   /* "name of an attribute followed by a structured value part, like CSS properties" */
+  .hljs-attribute { @apply text-red-4; }
+
+  /* "literal string, character" */
+  .hljs-string { @apply text-slate; }
+
+  /* HTML, CSS, and JS comments */
+  .hljs-comment { @apply text-slate-light; }
+}

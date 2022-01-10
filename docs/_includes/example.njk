@@ -1,0 +1,75 @@
+{% from 'macros.njk' import tooltip %}
+{% set resize_handler %}this.style.height = this.contentDocument.documentElement.offsetHeight + 'px'{% endset %}
+
+<div class="my-20 border-1 border-solid border-slate-4">
+  <div class="{{ meta.wrapper_class | default('p-20') }}">
+    <iframe
+      class="w-full border-0 bg-white"
+      {% if meta.height %}
+        height="{{ meta.height | e }}"
+      {% else %}
+        onload="{{ resize_handler | e }}"
+        onresize="{{ resize_handler | e }}"
+      {% endif %}
+      scrolling="no"
+      style="overflow-y: auto;"
+      {% if meta.standalone !== 'false' %}
+        src="{{ url }}"
+      {% else %}
+        srcdoc="{{ code | e }}"
+      {% endif %}
+    ></iframe>
+  </div>
+  <div class="bg-grey-1 border-0 border-t-2 border-solid border-slate-4 relative">
+    <div class="p-20" id="{{ id }}">
+      <div class="font-medium text-small m-0 mb-20">Code sample</div>
+      {{ content | safe }}
+    </div>
+    <div class="absolute top-16 right-16 flex justify-end gap-8">
+      {% set button_class = 'btn btn-inverse rounded-4 px-8 py-4 hocus:bg-slate-4 hocus:text-white' %}
+      {% if codepen %}
+        <form
+          class="block"
+          action="https://codepen.io/pen/define/"
+          method="POST"
+          target="_blank"
+        >
+          <input
+            name="data"
+            type="hidden"
+            value="{{ codepen | dump(2) | e }}"
+          >
+          <button
+            type="submit"
+            aria-label="Edit in CodePen"
+            class="{{ button_class }} group relative"
+          >
+            <sfgov-icon symbol="code"></sfgov-icon>
+            {{
+              tooltip('Edit in CodePen', {
+                class: 'absolute top-full right-0 mt-4',
+                'aria-hidden': true
+              }) | safe
+            }}
+          </button>
+        </form>
+      {% endif %}
+
+      <clipboard-copy for="{{ id }}" class="block">
+        <button
+          aria-label="Copy code"
+          class="{{ button_class }} group relative"
+        >
+          <sfgov-icon symbol="clipboard"></sfgov-icon>
+          {{
+            tooltip('Copy code', {
+              class: 'absolute top-full right-0 mt-4',
+              'aria-hidden': true,
+              'data-copy-feedback': 'Copied'
+            }) | safe
+          }}
+        </button>
+      </clipboard-copy>
+    </div>
+  </div>
+</div>
