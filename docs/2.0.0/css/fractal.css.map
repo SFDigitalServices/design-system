@@ -1,0 +1,1 @@
+{"version":3,"sources":["%3Cinput%20css%20v7uTG-%3E","../../src/css/fractal.css"],"names":[],"mappings":"AAEA;EAAA,mCAAmB;EAAnB;AAAmB;;ACFnB;;EAGE;AACF","file":"fractal.css","sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;","code,\n.Code {\n  @apply font-mono font-light;\n  white-space: pre;\n}\n"]}
