@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/css/fonts.css"],"names":[],"mappings":"AAAA,qFAAqF;;AACrF,mFAAmF","file":"fonts.css","sourcesContent":["@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap');\n@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap');\n"]}
