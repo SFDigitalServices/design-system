@@ -1,0 +1,208 @@
+.prose h3 { margin-top: 40px; margin-bottom: 20px;
+  }
+  .prose h4 { margin-top: 28px; margin-bottom: 16px;
+  }
+  .prose h5 { margin-top: 16px; margin-bottom: 8px;
+  }
+  .prose h6 { margin-top: 8px; margin-bottom: 4px;
+  }
+  .prose > :first-child {
+    margin-top: 0 !important;
+  }
+  .prose ul, .prose ol {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .prose ul:not([class]) > :not([hidden]) ~ :not([hidden]), .prose ol:not([class]) > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(8px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(8px * var(--tw-space-y-reverse));
+  }
+  .prose ul:not([class]) li, .prose ol:not([class]) li {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 28px;
+    }
+  .prose blockquote, .prose p, .prose table {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .prose pre {
+    margin: 0;
+  }
+  .prose * + pre { margin-bottom: 20px;
+  }
+  .prose pre + * { margin-top: 20px;
+  }
+  .prose code:not([class]) {
+    background-color: #F8F8F8;
+    border-radius: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    white-space: nowrap;
+  }
+  .prose table:not([class]) {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  .prose table:not([class]) thead th {
+      border-color: #212123;
+      border-style: solid;
+      border-width: 0;
+      border-bottom-width: 1px;
+    }
+  .prose table:not([class]) td, .prose table:not([class]) th {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+  .prose table:not([class]) tbody tr:nth-child(even) {
+      background-color: #F8F8F8;
+    }
+
+/* Below is for hard-coding mobile/desktop examples */
+
+.display-lg-mobile {
+  font-size: 44px;
+  line-height: 48px;
+  letter-spacing: -1px;
+  font-weight: 300;
+}
+
+.display-lg-desktop {
+  font-size: 72px;
+  line-height: 76px;
+  letter-spacing: -2px;
+  font-weight: 300;
+}
+
+.display-sm-mobile {
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -1px;
+  font-weight: 300;
+}
+
+.display-sm-desktop {
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: -1px;
+  font-weight: 300;
+}
+
+.title-xl-mobile {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.title-xl-desktop {
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.title-lg-mobile {
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.title-lg-desktop {
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.title-md-mobile {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.title-md-desktop {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 500;
+}
+
+.title-sm-desktop {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.title-xs-desktop {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.big-desc-mobile {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.big-desc-desktop {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+/**
+ * The following are "scopes" defined by highlight.js:
+ * <https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html>
+ */
+
+/* "heading of a section in a config file, heading in text markup" */
+
+.hljs .hljs-section { color: #607889;
+  }
+
+/* "XML/HTML tag" ("<" and ">", specifically) */
+
+.hljs .hljs-tag { color: #1c3e57;
+  }
+
+/* "name of an XML tag, the first word in an s-expression" (?) */
+
+.hljs .hljs-name { color: #C9563A;
+  }
+
+/* "name of an attribute with no language defined semantics (keys in JSON,
+   * setting names in .ini), also sub-attribute within another highlighted
+   * object, like XML tag" */
+
+.hljs .hljs-attr { color: #607889;
+  }
+
+/* "name of an attribute followed by a structured value part, like CSS properties" */
+
+.hljs .hljs-attribute { color: #BC4427;
+  }
+
+/* "literal string, character" */
+
+.hljs .hljs-string { color: #1c3e57;
+  }
+
+/* HTML, CSS, and JS comments */
+
+.hljs .hljs-comment { color: #607889;
+  }
+
+/*# sourceMappingURL=docs.css.map */
