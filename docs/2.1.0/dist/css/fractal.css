@@ -1,0 +1,11 @@
+code, .Code {
+  font-family: Roboto mono, monospace;
+  font-weight: 300
+}
+
+code,
+.Code {
+  white-space: pre
+}
+
+/*# sourceMappingURL=fractal.css.map */

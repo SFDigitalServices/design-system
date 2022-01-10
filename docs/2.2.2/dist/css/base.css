@@ -1,0 +1,36 @@
+*, ::before, ::after {
+  border-color: currentColor;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #4f66ee;
+}
+
+:focus,
+  .focus {
+  outline: 2px dotted #aeb0b5;
+  outline-offset: 3px;
+}
+
+::-webkit-input-placeholder {
+  color: #607889;
+}
+
+:-ms-input-placeholder {
+  color: #607889;
+}
+
+::placeholder {
+  color: #607889;
+}
+
+/*# sourceMappingURL=base.css.map */
