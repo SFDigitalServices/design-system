@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "plugin:sfgov/babel"
-  ],
-  "env": {
-    "browser": true,
-    "commonjs": true
-  }
-}
