@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/sfds.css" media="all" />
+    <link rel="stylesheet" href="../../css/fonts.css" media="all" />
+    <link rel="stylesheet" href="../../css/fractal.css" media="all" />
+    <title>Preview Layout</title>
+  </head>
+  <body>
+    <main>
+      
+    </main>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
+    <script>
+      /*
+       * html-inspectors doesn't like classnames with "/" in
+       * them, so we ignore them :shrug:
+       */
+      HTMLInspector.rules.extend('unused-classes', {
+        whitelist: /\//
+      })
+
+      HTMLInspector.inspect({
+        excludeRules: [
+          'unnecessary-elements',
+          'validate-attributes'
+        ],
+        excludeElements: [
+          // ignore our own style display element
+          'computed-style',
+          'sfgov-icon',
+          // ignore BrowserSync script tag
+          '#__bs_script__',
+          // ignore styles added by browser extensions like Stylish
+          '[id^=stylish]',
+          // just ignore SVG altogether
+          'svg'
+        ],
+        excludeSubTrees: ['svg']
+      })
+    </script>
+
+  </body>
+</html>
+
