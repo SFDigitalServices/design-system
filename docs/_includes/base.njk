@@ -35,13 +35,13 @@ layout: skeleton
 </div>
 
 <div class="responsive-container flex lg:hidden mt-60 mb-28 items-center">
-  <details class="details-reset">
-    <summary class="cursor-pointer" role="navigation" aria-label="open navigation menu">
+  <details class="details-reset" role="navigation" aria-label="navigation menu">
+    <summary class="cursor-pointer">
       <sfgov-icon class="pr-20" symbol="menu"></sfgov-icon>
     </summary>
     <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50 max-w-sm">
       <button class="block mt-96 py-20 border-0 bg-grey-1" aria-label="close navigation menu" data-close-dialog>
-        <sfgov-icon symbol="close" aria-label="hidden"></sfgov-icon>
+        <sfgov-icon symbol="close"></sfgov-icon>
       </button>
       {{ nav | safe }}
     </details-dialog>
