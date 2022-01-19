@@ -56,6 +56,7 @@ module.exports = {
     'margin',
     'maxWidth',
     'opacity',
+    'outline',
     'overflow',
     'padding',
     'pointerEvents',
@@ -88,6 +89,7 @@ module.exports = {
     backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
     // TODO [^3]: nix 'focus' + 'hover'
     borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    borderStyle: ['hover', 'focus', 'hocus'],
     borderWidth: ['hocus'],
     cursor: [],
     display: ['responsive', 'group-hocus', 'details'],
@@ -110,6 +112,7 @@ module.exports = {
     listStyleType: ['responsive'],
     listStylePosition: [],
     overflow: [], // TODO [^2.3]: add 'hocus', 'group-hocus'
+    outline: [],
     padding: ['responsive'],
     pointerEvents: [],
     position: ['responsive'],
@@ -131,6 +134,9 @@ module.exports = {
 
   plugins: [
     require('tailwindcss-interaction-variants'),
+    // require('@tailwindcss/forms')({
+    //   strategy: 'class'
+    // }),
     require('./lib/tailwind/details')
   ]
 }
