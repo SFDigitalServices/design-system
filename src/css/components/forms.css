@@ -1,0 +1,15 @@
+.form-input {
+  @apply appearance-none outline-none;
+  @apply py-8 px-12;
+  @apply bg-slate-1;
+  @apply border-2 border-solid border-transparent;
+  @apply rounded-4;
+
+  @apply hocus:border-slate-3;
+  /* @apply hover:border-solid border-1; */
+  @apply focus:border-solid border-2;
+}
+
+::placeholder {
+  @apply text-slate-2;
+}
