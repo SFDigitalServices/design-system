@@ -1,15 +1,27 @@
-.form-input {
+.form-input,
+.form-textarea {
   @apply appearance-none outline-none;
   @apply py-8 px-12;
-  @apply bg-slate-1;
-  @apply border-2 border-solid border-transparent;
   @apply rounded-4;
+  @apply bg-slate-1 text-black;
+  @apply border-2 border-solid border-transparent;
+  @apply hover:border-slate-2;
+  @apply focus:border-slate-3;
 
-  @apply hocus:border-slate-3;
-  /* @apply hover:border-solid border-1; */
-  @apply focus:border-solid border-2;
+  &:invalid,
+  &.invalid {
+    @apply bg-red-2;
+  }
 }
 
-::placeholder {
-  @apply text-slate-2;
+.input-sm {
+  @apply w-1/6 !important;
+}
+
+.input-md {
+  @apply w-1/3 !important;
+}
+
+.input-lg {
+  @apply w-full !important;
 }
