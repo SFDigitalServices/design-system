@@ -30,7 +30,7 @@
     "lint-scripts": "shellcheck scripts/*.sh",
     "prepublishOnly": "scripts/prepublish-checks.sh",
     "watch": "run-p watch-css watch-js watch-icons",
-    "watch-css": "watchy -w '*.config.js' -w src -- npm run build-css",
+    "watch-css": "watchy -w '*.config.js' -w node_modules -w src -- npm run build-css",
     "watch-js": "npm run build-js -- --watch",
     "watch-icons": "watchy -w src/icons -- npm run build-icons",
     "start": "eleventy --serve"
@@ -50,6 +50,7 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
+    "@tailwindcss/forms": "^0.4.0",
     "autoprefixer": "^10.2.6",
     "cheerio": "^1.0.0-rc.10",
     "classnames": "^2.3.1",
