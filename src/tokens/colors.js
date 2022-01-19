@@ -61,6 +61,7 @@ const sequential = {
 
 module.exports = {
   none: 'transparent',
+  transparent: 'transparent',
   white: '#FFF',
   black: '#212123',
   text: {
@@ -78,7 +79,7 @@ module.exports = {
     light: '#607889',
     4: '#002B48',
     3: '#1D4D70',
-    2: '#5b7c94',
+    2: '#5A7A92',
     1: '#EFF3F4'
   },
   green: {
