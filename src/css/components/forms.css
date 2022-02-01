@@ -9,7 +9,8 @@
   @apply focus:border-slate-3 focus:bg-white;
 
   &:invalid,
-  &.invalid {
+  &.invalid,
+  &[aria-invalid=true] {
     @apply bg-red-2;
   }
 }
