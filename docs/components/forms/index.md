@@ -120,6 +120,8 @@ Error message text should be small (`text-small`) and `{{ theme.colors.red[4] }}
 
 ## Text input
 
+Text-based `<input>` elements **must** have a `type` attribute (e.g. `type="text"`) and the `form-input` class to get the correct styles.
+
 ```html
 <div class="text-slate space-y-12">
   <label for="input-id" class="block title-xs">
@@ -131,12 +133,14 @@ Error message text should be small (`text-small`) and `{{ theme.colors.red[4] }}
 
 ## Text area
 
+HTML `<textarea>` elements must have the `form-textarea` class to receive form styles. Use the `w-full` utility or one of the [size modifiers](#size-modifiers) to establish the element's width.
+
 ```html
 <div class="text-slate space-y-12">
   <label for="input-id" class="block title-xs">
     Field label
   </label>
-  <textarea id="input-id" class="form-textarea input-lg" rows="4">Hello</textarea>
+  <textarea id="input-id" class="form-textarea w-full" rows="4">Hello</textarea>
 </div>
 ```
 
