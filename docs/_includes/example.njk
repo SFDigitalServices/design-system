@@ -22,8 +22,13 @@
   </div>
   <div class="bg-grey-1 border-0 border-t-2 border-solid border-slate-4 relative">
     <div class="p-20" id="{{ id }}">
-      <div class="font-medium text-small m-0 mb-20">Code sample</div>
-      {{ content | safe }}
+      <div class="font-medium text-small m-0 mb-20 group">
+        Code sample
+        {% if meta.standalone !== 'false' %}
+          <a href="{{ url }}" target="_new" class="hidden group-hocus:inline-block" title="open in new window">#</a>
+        {% endif %}
+      </div>
+      {{ content | hilite(meta.highlight) | safe }}
     </div>
     <div class="absolute top-16 right-16 flex justify-end gap-8">
       {% set button_class = 'btn btn-inverse rounded-4 px-8 py-4 hocus:bg-slate-4 hocus:text-white' %}
