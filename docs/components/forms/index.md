@@ -2,94 +2,169 @@
 title: Forms
 ---
 
+## Introduction
+
+We should probably explain what this page is and where folks can find more info about forms.
+
+## Form component anatomy
+
+Form components aren't just a label and an input. There are between 2 and 5 different parts of a form component, depending on its configuration and state.
+
+```html
+<div class="text-slate space-y-12">
+  <label for="foo-input" class="block title-xs">
+    Label 
+  </label>
+  <div id="foo-description">
+    Description
+  </div>
+  <div class="space-y-8">
+    <div class="text-small text-slate-2">
+      Placeholder
+    </div>
+    <input class="form-input" type="text" value="Input">
+    <div class="text-small text-red-4">
+      Error message
+    </div>
+  </div>
+</div>
+```
+
+The label and description are positioned `{{ theme.spacing[12] }}` from one another and the input, while the placeholder and error message elements are positioned `{{ theme.spacing[8] }}` from the input. In this example we use the `space-y-12` utility to apply uniform spacing to the form component's direct descendents, then wrap the placeholder, input, and error message in another div with `space-y-8`.
+
+### Label
+A label is **required**, and **must** be associated with the input either as a `<label>` with the input's `id` in its `for` attribute, or with its own `id` attribute referenced by the input's `aria-labelledby`.
+
+```html highlight="input-id"
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <input id="input-id" type="text" class="form-input">
+</div>
+```
+
+Labels are styled with the `title-xs` typography class, and should be block-level (either `class="block"` directly, or contained by a block-level parent).
+
+### Input
+The form input is typically a native `<input>`, `<select>`, or `<textarea>` element; but can also be more complex input "widgets", such as multi-selects and comboboxes.
+
+The `form-input` class applies CSS resets from [@tailwindcss/forms], and provides common styles for native input elements.
+
+### Description
+Form inputs may have a longer textual description, which **should** be referenced by its `id` in the `aria-describedby` attribute of the input.
+
+```html highlight="input-description"
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <div id="input-description">
+    This is the field description. It can be several sentences long, if necessary.
+  </div>
+  <input id="input-id" type="text" class="form-input"
+    aria-describedby="input-description">
+</div>
+```
+
+### Placeholder
+As a general rule, you should **avoid the `placeholder` attribute** because it poses usability challenges. Instead, place text that would normally act as a placholder before the input and reference its `id` in the input's `aria-describedby` attribute.
+
+Placeholder text should be small (`text-small`), colored `{{ theme.colors.slate[2] }}` (`text-slate-2`), and spaced `{{ theme.spacing[8] }}` above the text input.
+
+```html highlight="input-placeholder"
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <div id="input-description">
+    This is the field description. It can be several sentences long, if necessary.
+  </div>
+  <div class="space-y-8">
+    <div id="input-placeholder" class="text-small text-slate-2">
+      Type the first letter of your favorite fruit
+    </div>
+    <input id="input-id" type="text" class="form-input"
+      aria-describedby="input-description input-placeholder">
+  </div>
+</div>
+```
+
+### Error message
+Fields that are required and/or validated should include an error message, which **must** be referenced by its `id` in the `aria-describedby` attribute of the input, and **should not** have accessible text content unless the input is invalid (either matching `:invalid` or with `aria-invalid="true"`).
+
+```html highlight="input-error"
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <div id="input-description">
+    This is the field description. It can be several sentences long, if necessary.
+  </div>
+  <div class="space-y-8">
+    <div id="input-placeholder" class="text-small text-slate-2">
+      Type the first letter of your favorite fruit
+    </div>
+    <input id="input-id" type="text" value="x"
+      aria-describedby="input-description input-placeholder input-error"
+      aria-invalid="true"
+      class="form-input">
+    <div id="input-error" class="text-small text-red-4">
+      Please enter the first letter of a fruit
+    </div>
+  </div>
+</div>
+```
+
+Error message text should be small (`text-small`) and `{{ theme.colors.red[4] }}` (`text-red-4`).
+
 ## Text input
 
 ```html
-<label class="p-4 text-slate space-y-12">
-  <div class="title-xs">Field label</div>
-  <input type="text" class="form-input">
-</label>
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <input type="text" id="input-id" class="form-input">
+</div>
 ```
 
 ## Text area
 
 ```html
-<label class="p-4 text-slate space-y-12">
-  <div class="title-xs">Field label</div>
-  <textarea class="form-textarea input-lg" rows="4">Hello</textarea>
-</label>
-```
-
-## Field with short description
-
-Field descriptions should be included in the `<label>` and are colored `{{ tokens.colors.slate[2] }}` unless they're long.
-
-```html wrapper_class="p-20"
-<label class="text-slate space-y-12">
-  <div class="title-xs">Field label</div>
-  <div class="text-small text-slate-2">This is the field description.</div>
-  <input type="text" class="form-input">
-</label>
-```
-
-## Field with long description
-
-Longer field descriptions should use the `{{ tokens.colors.slate.DEFAULT }}` default text color.
-
-```html wrapper_class="p-20"
-<label class="text-slate space-y-12">
-  <div class="title-xs">Field label</div>
-  <div class="text-small">This is the long field description. You can put several sentences in here, but don't make it too long!</div>
-  <input type="text" class="form-input">
-</label>
-```
-
-## Error state
-
-Text fields that match `:invalid` or `.invalid` should be accompanied by an error message colored `{{ tokens.colors.red[3] }}`.
-
-```html wrapper_class="p-20"
-<label class="text-slate space-y-12">
-  <div class="title-xs">Field label</div>
-  <div class="text-small">This is the long field description. You can put several sentences in here, but don't make it too long!</div>
-  <input type="text" class="form-input invalid" value="invalid text" aria-describedby="error-id">
-  <div id="error-id" class="text-small text-red-3">This is the error message</div>
-</label>
-```
-
-### Required field
-
-```html wrapper_class="p-20"
-<label class="text-slate space-y-12">
-  <div class="title-xs">Field label</div>
-  <input type="text" class="form-input" required aria-describedby="error-id">
-  <div id="error-id" class="text-small text-red-3">This field is required.</div>
-</label>
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <textarea id="input-id" class="form-textarea input-lg" rows="4">Hello</textarea>
+</div>
 ```
 
 ## Size modifiers
 
 The `input-sm`, `input-md`, and `input-lg` utilities establish widths for common form field sizes:
 
-```html wrapper_class="p-20"
-<div class="form-sm mt-0 mb-20">
-  <label class="text-slate space-y-12">
-    <div class="title-xs">Small</div>
-    <input type="text" class="form-input input-sm">
+```html
+<div class="form-sm">
+  <div class="text-slate space-y-12">
+    <label class="block title-xs" for="input1">Small</label>
+    <input type="text" class="form-input input-sm" id="input1">
   </label>
 </div>
 
 <div class="form-md my-20">
-  <label class="p-4 text-slate space-y-12">
-    <div class="title-xs">Medium</div>
-    <input type="text" class="form-input input-md">
+  <label class="text-slate space-y-12">
+    <label class="block title-xs" for="input2">Medium</label>
+    <input type="text" class="form-input input-md" id="input2">
   </label>
 </div>
 
-<div class="form-lg mb-0">
-  <label class="p-4 text-slate space-y-12">
-    <div class="title-xs">Large</div>
-    <input type="text" class="form-input input-lg">
+<div class="form-lg">
+  <label class="text-slate space-y-12">
+    <label class="block title-xs" for="input3">Large</label>
+    <input type="text" class="form-input input-lg" id="input3">
   </label>
 </div>
 ```
+
+[@tailwindcss/forms]: https://github.com/tailwindlabs/tailwindcss-forms
