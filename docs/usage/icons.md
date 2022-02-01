@@ -23,7 +23,7 @@ The simplest way to use our icons is with the `<sfgov-icon>` [custom
 element], which is defined in our main [JavaScript
 bundle](/usage/javascript/).
 
-```html
+```html standalone="false"
 <sfgov-icon symbol="alert"></sfgov-icon>
 ```
 
