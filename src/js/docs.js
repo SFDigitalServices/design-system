@@ -39,3 +39,12 @@ on('click', 'clipboard-copy', function () {
     })
   }
 })
+
+on('click', 'input[type=checkbox]', function () {
+  // TODO: handle validity behavior e.g. `this.getAttribute('aria-invalid') === 'false' ? ... : ....`
+  if (this.checked) {
+    this.parentNode.classList.add('bg-slate-1')
+  } else {
+    this.parentNode.classList.remove('bg-slate-1')
+  }
+})

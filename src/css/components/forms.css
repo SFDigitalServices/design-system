@@ -15,6 +15,79 @@
   }
 }
 
+.checkbox-container {
+  @apply text-slate;
+  @apply flex items-center space-x-20 relative;
+  @apply p-12;
+  @apply rounded-4;
+  @apply border-2 border-solid border-transparent;
+  @apply hocus:border-slate-2;
+  @apply cursor-pointer;
+
+  .form-checkbox {
+    @apply appearance-none;
+    @apply w-24 h-24;
+    @apply bg-slate-1;
+    @apply border-1 border-solid rounded-4 border-slate-2;
+  }
+
+  .checkmark {
+    @apply absolute top-16 left-0;
+    @apply text-white;
+    @apply invisible;
+  }
+
+  :checked {
+    @apply bg-slate-4;
+  }
+
+  :checked ~ .checkmark {
+    @apply visible;
+  }
+
+  &:invalid,
+  &.invalid,
+  &[aria-invalid=true] {
+    @apply bg-red-2;
+    @screen lg {
+      @apply bg-red-1;
+    }
+
+    .form-checkbox {
+      @apply bg-white;
+      @apply border-1 border-solid rounded-4 border-red-3;
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    @apply border-0;
+    @apply hocus:border-none;
+    @apply cursor-not-allowed;
+
+    .form-checkbox {
+      @apply bg-grey-1;
+      @apply border-1 border-solid rounded-4 border-grey-2;
+    }
+  }
+}
+
+fieldset {
+  &:invalid,
+  &.invalid,
+  &[aria-invalid=true] {
+    .checkbox-container {
+      @apply bg-red-3 text-white;
+    }
+
+    .form-checkbox {
+      @apply bg-white;
+      @apply border-white;
+    }
+  }
+}
+
 .input-sm {
   @apply w-1/6 !important;
 }
