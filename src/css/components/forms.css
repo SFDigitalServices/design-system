@@ -15,76 +15,84 @@
   }
 }
 
-.checkbox-container {
-  @apply text-slate;
-  @apply flex items-center space-x-20 relative;
-  @apply p-12;
-  @apply rounded-4;
-  @apply border-2 border-solid border-transparent;
-  @apply hocus:border-slate-2;
-  @apply cursor-pointer;
+.form-checkbox {
+  @apply absolute outline-none w-0 h-0;
 
-  .form-checkbox {
-    @apply appearance-none;
-    @apply w-24 h-24;
-    @apply bg-slate-1;
-    @apply border-1 border-solid rounded-4 border-slate-2;
+  & ~ label {
+    @apply rounded flex flex-wrap items-center;
+    @apply p-12 gap-20 cursor-pointer; 
+    @apply rounded-4 border-2 border-solid border-white hocus:border-slate-2;
   }
 
-  .checkmark {
-    @apply absolute top-16 left-0;
-    @apply text-white;
-    @apply invisible;
+  & ~ label .form-checkbox-check {
+    @apply text-transparent;
+    @apply w-24 h-24 p-4 rounded-4 bg-slate-1 border-1 border-solid border-slate;
   }
 
-  :checked {
-    @apply bg-slate-4;
-  }
+  &:checked {
+    ~ label {
+      @apply rounded-4 bg-slate-1;
 
-  :checked ~ .checkmark {
-    @apply visible;
+      .form-checkbox-check {
+        @apply text-white bg-slate-3 border-transparent !important;
+      }
+    }
   }
 
   &:invalid,
   &.invalid,
   &[aria-invalid=true] {
-    @apply bg-red-2;
-    @screen lg {
-      @apply bg-red-1;
-    }
+    ~ label {
+      @apply bg-red-2;
+      @screen lg {
+        @apply bg-red-1;
+      }
 
-    .form-checkbox {
-      @apply bg-white;
-      @apply border-1 border-solid rounded-4 border-red-3;
+      .form-checkbox-check {
+        @apply bg-white;
+        @apply border-1 border-solid rounded-4 border-red-3;
+      }    
     }
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    @apply border-0;
-    @apply hocus:border-none;
-    @apply cursor-not-allowed;
+    ~ label {
+      @apply border-0;
+      @apply hocus:border-none;
+      @apply pointer-events-none;
 
-    .form-checkbox {
-      @apply bg-grey-1;
-      @apply border-1 border-solid rounded-4 border-grey-2;
+      .form-checkbox-check {
+        @apply bg-grey-1;
+        @apply border-1 border-solid rounded-4 border-grey-2;
+      }
     }
   }
 }
 
-fieldset {
-  &:invalid,
-  &.invalid,
-  &[aria-invalid=true] {
-    .checkbox-container {
-      @apply bg-red-3 text-white;
-    }
+.small-checkbox-group {
+  @apply flex space-x-8;
+  @apply border-0;
 
-    .form-checkbox {
-      @apply bg-white;
-      @apply border-white;
+  & > div {
+    @apply flex;
+  }
+
+  label {
+    @apply inline-flex items-center;
+  }
+
+  .form-checkbox {
+    &:checked {
+      ~ label {
+        @apply bg-none;
+      }
     }
+  }
+
+  .vertical {
+    @apply flex-col;
   }
 }
 
