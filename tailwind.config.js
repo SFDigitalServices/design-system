@@ -86,7 +86,7 @@ module.exports = {
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
     // TODO [^3]: nix 'focus' + 'hover'
-    backgroundColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    backgroundColor: ['focus', 'focus-within', 'hover', 'hocus', 'group-hocus', 'details'],
     // TODO [^3]: nix 'focus' + 'hover'
     borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
     borderWidth: ['hocus'],
