@@ -29,6 +29,13 @@
     @apply w-24 h-24 p-4 rounded-4 bg-slate-1 border-1 border-solid border-slate;
   }
 
+  /* TODO: much of the following could be done with the `peer-` variants in tailwind 3.0.0 */
+  &:focus {
+    ~ label {
+      @apply border-slate-2;
+    }
+  }
+
   &:checked {
     ~ label {
       @apply rounded-4 bg-slate-1;

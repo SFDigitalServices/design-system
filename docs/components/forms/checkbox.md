@@ -1,5 +1,8 @@
 ---
 title: Checkbox
+see_also:
+  - title: Figma
+    href: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/SF-Components?node-id=3861%3A4832'
 ---
 
 ## Introduction
@@ -10,7 +13,7 @@ Here we will explain everything you could possibly need to know about the SF Des
 
 Check it out:
 
-```html
+```html highlight="(form-checkbox[-\w]*|checkbox-id)"
 <form>
   <div>
     <input type="checkbox" class="form-checkbox sr-only" id="checkbox-id">
@@ -90,7 +93,7 @@ Here's how we group together a set of chekboxes. Put in da `border-0` class on d
 Here are alts to the default checkbox configuration.
 ### Small groups
 
-The small checkbox groups are an option when the strings for choices are short and present better as a list of inline options. Use the class `.small-checkbox-group` on the wrapping element, with `.flex` elements as containers for the checkboxes.
+The small checkbox groups are an option when the strings for choices are short and present better as a list of inline options. Use the `.small-checkbox-group` class on the wrapping element, with a `<div>` as container for each checkbox in the group.
 
 ```html highlight="small-checkbox-group"
 <fieldset class="border-0 space-y-12">
@@ -145,9 +148,9 @@ The small checkbox groups are an option when the strings for choices are short a
 
 ### Label positioning
 
-We allow for placement of the label horizontally (by default) and vertically (via placing the class `.vertical` on the `<label>`) relative to the checkbox input element. Changing whether the label is written before the checkmark icon or after will change which end of the axis it appears on.
+We allow for placement of the label horizontally (by default) and vertically (via placing the `.vertical` class on the `<label>`) relative to the checkbox input element. Labels should be placed to the right or above the input element.
 
-```html
+```html highlight="vertical"
 <fieldset class="small-checkbox-group">
   <div>
     <input type="checkbox" class="form-checkbox sr-only" id="checkbox-top">
@@ -161,20 +164,6 @@ We allow for placement of the label horizontally (by default) and vertically (vi
     <label for="checkbox-right">
       <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       <span>Right</span>
-    </label>
-  </div>
-  <div>
-    <input type="checkbox" class="form-checkbox sr-only" id="checkbox-btm">
-    <label class="vertical" for="checkbox-btm">
-      <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
-      <span>Bottom</span>
-    </label>
-  </div>
-  <div>
-    <input type="checkbox" class="form-checkbox sr-only" id="checkbox-left">
-    <label for="checkbox-left">
-      <span>Left</span>
-      <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
     </label>
   </div>
 </fieldset>
