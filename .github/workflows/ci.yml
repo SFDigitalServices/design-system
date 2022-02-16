@@ -1,7 +1,5 @@
 name: CI
-on:
-  push:
-  delete:
+on: [push]
 
 jobs:
   build:
@@ -43,22 +41,8 @@ jobs:
       # so that other apps can reference the latest release from a branch
       # with "sfgov-design-system@branch/{branch}"
       - if: steps.publish.conclusion == 'success' && github.ref_type == 'branch'
-        run: |
-          npm dist-tag add \
-            "$(npm info . name)@$(npm info . version)" \
-            "branch/${{ github.ref_name }}"
-
-  delete:
-    if: github.event == 'delete'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-          cache: npm
-      - env:
+        env:
           DIST_TAG: branch/${{ github.ref_name }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
-          npm dist-tag rm "$(npm info . name)@$DIST_TAG" || \
-            echo "Unable to delete npm dist-tag '$DIST_TAG'"
+          npm dist-tag add "$(npm info . name)@$(npm info . version)" "$DIST_TAG"
