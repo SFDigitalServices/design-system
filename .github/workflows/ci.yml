@@ -1,8 +1,11 @@
 name: CI
-on: [push]
+on:
+  push:
+  delete:
 
 jobs:
   build:
+    if: github.event != 'delete'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,9 +30,35 @@ jobs:
       - run: npm run prepublishOnly
 
       - uses: primer/publish@v3.0.0
+        id: publish
         with:
           npm_args: --unsafe-perm --allow-same-version
           default_branch: main
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      # if the package was published, add a "branch/{branch}" dist-tag
+      # (see: <https://docs.npmjs.com/adding-dist-tags-to-packages>)
+      # so that other apps can reference the latest release from a branch
+      # with "sfgov-design-system@branch/{branch}"
+      - if: steps.publish.conclusion == 'success' && github.ref_type == 'branch'
+        run: |
+          npm dist-tag add \
+            "$(npm info . name)@$(npm info . version)" \
+            "branch/${{ github.ref_name }}"
+
+  delete:
+    if: github.event == 'delete'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: npm
+      - env:
+          DIST_TAG: branch/${{ github.ref_name }}
+        run: |
+          npm dist-tag rm "$(npm info . name)@$DIST_TAG" || \
+            echo "Unable to delete npm dist-tag '$DIST_TAG'"
