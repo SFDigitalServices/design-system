@@ -19,8 +19,7 @@
   @apply absolute outline-none w-0 h-0;
 
   & ~ label {
-    @apply rounded flex flex-wrap items-center;
-    @apply p-12 gap-20 cursor-pointer; 
+    @apply rounded cursor-pointer;
     @apply rounded-4 border-2 border-solid border-white hocus:border-slate-2;
   }
 
@@ -31,6 +30,11 @@
 
   /* TODO: much of the following could be done with the `peer-` variants in tailwind 3.0.0 */
   &:focus {
+    &:invalid {
+      ~ label {
+        @apply border-red-3;
+      }
+    }
     ~ label {
       @apply border-slate-2;
     }
@@ -53,6 +57,10 @@
       @apply bg-red-2;
       @screen lg {
         @apply bg-red-1;
+      }
+
+      &:hover {
+        @apply border-red-3;
       }
 
       .form-checkbox-check {

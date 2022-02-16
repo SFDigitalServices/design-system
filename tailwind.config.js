@@ -24,6 +24,7 @@ module.exports = {
    */
   corePlugins: [
     // TODO [^3]: add preflight (https://tailwindcss.com/docs/preflight)
+    'accessibility',
     'alignContent',
     'alignItems',
     'appearance',

@@ -17,7 +17,7 @@ Check it out:
 <form>
   <div>
     <input type="checkbox" class="form-checkbox sr-only" id="checkbox-id">
-    <label for="checkbox-id">
+    <label for="checkbox-id" class="flex flex-wrap items-center p-12 gap-20">
       <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       <span>This is the label</span>
     </label>
@@ -27,11 +27,11 @@ Check it out:
 
 ### Error state
 
-```html highlight="aria-invalid"
+```html highlight="required"
 <form>
   <div>
-    <input type="checkbox" class="form-checkbox sr-only" id="checkbox-id" aria-invalid="true">
-    <label for="checkbox-id">
+    <input type="checkbox" class="form-checkbox sr-only" id="checkbox-id" required>
+    <label for="checkbox-id" class="flex flex-wrap items-center p-12 gap-20">
       <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       <span>This is the label</span>
     </label>
@@ -43,11 +43,11 @@ Check it out:
 
 We should probably come up with guidance about accessibility and disabled form elements. We might have to be particularly descriptive about _why_ a particular element is disabled within the context of a form.
 
-```html highlight="aria-disabled"
+```html highlight="disabled"
 <form>
   <div>
-    <input type="checkbox" class="form-checkbox sr-only" id="checkbox-id" aria-disabled="true">
-    <label for="checkbox-id">
+    <input type="checkbox" class="form-checkbox sr-only" id="checkbox-id" disabled>
+    <label for="checkbox-id" class="flex flex-wrap items-center p-12 gap-20">
       <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       <span>This is the label</span>
     </label>
@@ -75,7 +75,7 @@ Here's how we group together a set of chekboxes. Put in da `border-0` class on d
       {%- for i in range(4) %}
         <div>
           <input type="checkbox" class="form-checkbox sr-only" id="checkbox-{{ i }}">
-          <label for="checkbox-{{ i }}">
+          <label for="checkbox-{{ i }}" class="flex flex-wrap items-center p-12 gap-20">
             <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
             <span>This is the label</span>
           </label>
@@ -109,35 +109,35 @@ The small checkbox groups are an option when the strings for choices are short a
   <div class="small-checkbox-group">
     <div>
       <input type="checkbox" class="form-checkbox sr-only" id="checkbox-mon">
-      <label class="vertical" for="checkbox-mon">
+      <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-mon">
         <span>Mon</span>
         <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       </label>
     </div>
     <div>
       <input type="checkbox" class="form-checkbox sr-only" id="checkbox-tues">
-      <label class="vertical" for="checkbox-tues">
+      <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-tues">
         <span>Tues</span>
         <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       </label>
     </div>
     <div>
       <input type="checkbox" class="form-checkbox sr-only" id="checkbox-weds">
-      <label class="vertical" for="checkbox-weds">
+      <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-weds">
         <span>Weds</span>
         <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       </label>
     </div>
     <div>
       <input type="checkbox" class="form-checkbox sr-only" id="checkbox-thurs">
-      <label class="vertical" for="checkbox-thurs">
+      <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-thurs">
         <span>Thurs</span>
         <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       </label>
     </div>
     <div>
       <input type="checkbox" class="form-checkbox sr-only" id="checkbox-fri">
-      <label class="vertical" for="checkbox-fri">
+      <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-fri">
         <span>Fri</span>
         <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       </label>
@@ -154,14 +154,14 @@ We allow for placement of the label horizontally (by default) and vertically (vi
 <fieldset class="small-checkbox-group">
   <div>
     <input type="checkbox" class="form-checkbox sr-only" id="checkbox-top">
-    <label class="vertical" for="checkbox-top">
+    <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-top">
       <span>Top</span>
       <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
     </label>
   </div>
   <div>
     <input type="checkbox" class="form-checkbox sr-only" id="checkbox-right">
-    <label for="checkbox-right">
+    <label class="flex flex-wrap items-center p-12 gap-20" for="checkbox-right">
       <sfgov-icon symbol="check" class="form-checkbox-check" width="16" height="16"></sfgov-icon>
       <span>Right</span>
     </label>
