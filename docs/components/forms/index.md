@@ -93,8 +93,27 @@ Placeholder text should be small (`text-small`), colored `{{ theme.colors.slate[
 </div>
 ```
 
-### Error message
-Fields that are required and/or validated should include an error message, which **must** be referenced by its `id` in the `aria-describedby` attribute of the input, and **should not** have accessible text content unless the input is invalid (either matching `:invalid` or with `aria-invalid="true"`).
+## Required fields
+Required fields **must** include either:
+
+- The `required` attribute if it is a native form control element, such as `<input>`, `<select>`, or `<textarea>`; or
+- The [aria-required][aria-required] attribute if it is a custom form control with an explicit [role].
+
+Required fields **should** be initialized with `aria-invalid="false"` to prevent screen readers from announcing the control as invalid until it's been modified. After modification, you **must** update the `aria-invalid` attribute to reflect the control's [validity state].
+
+```html highlight="[-\w]*(required|invalid|false)"
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Required field
+  </label>
+  <input id="input-id" type="text" class="form-input"
+    required
+    aria-invalid="false">
+</div>
+```
+
+## Error messages
+Fields that are [required](#required-fields) and/or validated should include an error message, which **must** be referenced by its `id` in the `aria-describedby` attribute of the input, and **should not** have accessible text content unless the input is invalid (either matching `:invalid` or with `aria-invalid="true"`).
 
 ```html highlight="input-error"
 <div class="text-slate space-y-12">
@@ -120,32 +139,6 @@ Fields that are required and/or validated should include an error message, which
 ```
 
 Error message text should be small (`text-small`) and `{{ theme.colors.red[3] }}` (`text-red-3`).
-
-## Text input
-
-Text-based `<input>` elements **must** have a `type` attribute (e.g. `type="text"`) and the `form-input` class to get the correct styles.
-
-```html
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <input type="text" id="input-id" class="form-input">
-</div>
-```
-
-## Text area
-
-HTML `<textarea>` elements must have the `form-textarea` class to receive form styles. Use the `w-full` utility or one of the [size modifiers](#size-modifiers) to establish the element's width.
-
-```html
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <textarea id="input-id" class="form-textarea w-full" rows="4">Hello</textarea>
-</div>
-```
 
 ## Size modifiers
 
@@ -174,4 +167,36 @@ The `input-sm`, `input-md`, and `input-lg` utilities establish widths for common
 </div>
 ```
 
+## Input types
+
+### Text input
+
+Text-based `<input>` elements **must** have a `type` attribute (e.g. `type="text"`) and the `form-input` class to get the correct styles.
+
+```html
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <input type="text" id="input-id" class="form-input">
+</div>
+```
+
+### Text area
+
+HTML `<textarea>` elements must have the `form-textarea` class to receive form styles. Use the `w-full` utility or one of the [size modifiers](#size-modifiers) to establish the element's width.
+
+```html
+<div class="text-slate space-y-12">
+  <label for="input-id" class="block title-xs">
+    Field label
+  </label>
+  <textarea id="input-id" class="form-textarea w-full" rows="4">Hello</textarea>
+</div>
+```
+
+
+[aria-required]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-required
+[role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+[validity state]: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
 [@tailwindcss/forms]: https://github.com/tailwindlabs/tailwindcss-forms

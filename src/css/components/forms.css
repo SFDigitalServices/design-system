@@ -8,8 +8,8 @@
   @apply hover:border-slate-2;
   @apply focus:border-slate-3 focus:bg-white;
 
-  &:invalid,
   &.invalid,
+  &:invalid, /* FIXME: should we qualify this with `:not([aria-invalid=false])`? */
   &[aria-invalid=true] {
     @apply bg-red-2;
   }

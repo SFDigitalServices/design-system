@@ -5,7 +5,6 @@ module.exports = {
   plugins: [
     require('postcss-import'),
     require('postcss-nested'),
-    require('postcss-strip-inline-comments'),
     require('tailwindcss'),
     require('autoprefixer'),
     prod && require('cssnano'),
