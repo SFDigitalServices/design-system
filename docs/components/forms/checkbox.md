@@ -57,7 +57,7 @@ We should probably come up with guidance about accessibility and disabled form e
 
 ## Fieldset
 
-Here's how we group together a set of chekboxes. Put in da `border-0` class on da `<fieldset>` to reset da default stylez.
+Two or more checkboxes should be grouped inside a `<fieldset>`. The `border-0` and `space-y-12` classes remove browser default styling and add vertical space between children.
 
 ```html
 <fieldset class="border-0 space-y-12">
