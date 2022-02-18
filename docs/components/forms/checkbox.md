@@ -57,7 +57,7 @@ We should probably come up with guidance about accessibility and disabled form e
 
 ## Fieldset
 
-Here's how we group together a set of chekboxes. Put in da `border-0` class on da `<fieldset>` to reset da default stylez.
+Two or more checkboxes should be grouped inside a `<fieldset>`. The `border-0` and `space-y-12` classes remove browser default styling and add vertical space between children.
 
 ```html
 <fieldset class="border-0 space-y-12">
@@ -93,9 +93,9 @@ Here's how we group together a set of chekboxes. Put in da `border-0` class on d
 Here are alts to the default checkbox configuration.
 ### Small groups
 
-The small checkbox groups are an option when the strings for choices are short and present better as a list of inline options. Use the `.small-checkbox-group` class on the wrapping element, with a `<div>` as container for each checkbox in the group.
+The small checkbox groups are an option when the strings for choices are short and present better as a list of inline options. Use the `.small-input-group` class on the wrapping element, with a `<div>` as container for each checkbox in the group.
 
-```html highlight="small-checkbox-group"
+```html highlight="small-input-group"
 <fieldset class="border-0 space-y-12">
   <div for="foo-input" class="block title-xs">
     Select the days that you’re open
@@ -106,7 +106,7 @@ The small checkbox groups are an option when the strings for choices are short a
   <div class="text-small text-slate-2">
     Select all that apply
   </div>
-  <div class="small-checkbox-group">
+  <div class="small-input-group">
     <div>
       <input type="checkbox" class="form-checkbox sr-only" id="checkbox-mon">
       <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-mon">
@@ -151,7 +151,7 @@ The small checkbox groups are an option when the strings for choices are short a
 We allow for placement of the label horizontally (by default) and vertically (via placing the `.vertical` class on the `<label>`) relative to the checkbox input element. Labels should be placed to the right or above the input element.
 
 ```html highlight="vertical"
-<fieldset class="small-checkbox-group">
+<fieldset class="small-input-group">
   <div>
     <input type="checkbox" class="form-checkbox sr-only" id="checkbox-top">
     <label class="vertical flex flex-wrap items-center p-12 gap-20" for="checkbox-top">

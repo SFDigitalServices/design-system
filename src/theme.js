@@ -35,7 +35,8 @@ module.exports = {
     DEFAULT: '8px',
     0: '0',
     2: '2px',
-    4: '4px'
+    4: '4px',
+    full: '9999px'
   },
   borderWidth: {
     DEFAULT: '3px',
@@ -43,7 +44,8 @@ module.exports = {
     1: '1px',
     2: '2px',
     3: '3px',
-    4: '4px'
+    4: '4px',
+    6: '6px'
   },
   gap: {
     ...spacing
