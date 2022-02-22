@@ -1,5 +1,5 @@
 ---
-title: Radio Fields
+title: Radio buttons
 see_also:
   - title: Figma
     href: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/SF-Components?node-id=3861%3A3791'
@@ -16,7 +16,7 @@ Check it out:
 ```html highlight="(form-radio[-\w]*|radio-id)"
 <form>
   <div>
-    <input type="radio" class="form-radio" id="radio-id" name="radio" value="radio">
+    <input type="radio" class="form-radio" id="radio-id" name="radio" value="cool">
     <label for="radio-id" class="flex flex-wrap items-center p-12 gap-20">
       <div class="form-radio-check"></div>
       <span>This is the label</span>
@@ -30,7 +30,7 @@ Check it out:
 ```html highlight="required"
 <form>
   <div>
-    <input type="radio" class="form-radio" id="radio-id" name="radio" value="radio" required>
+    <input type="radio" class="form-radio" id="radio-id" name="radio" value="cool" required>
     <label for="radio-id" class="flex flex-wrap items-center p-12 gap-20">
       <div class="form-radio-check"></div>
       <span>This is the label</span>
@@ -46,7 +46,7 @@ We should probably come up with guidance about accessibility and disabled form e
 ```html highlight="disabled"
 <form>
   <div>
-    <input type="radio" class="form-radio" id="radio-id" name="radio" value="radio" disabled>
+    <input type="radio" class="form-radio" id="radio-id" name="radio" value="cool" disabled>
     <label for="radio-id" class="flex flex-wrap items-center p-12 gap-20">
       <div class="form-radio-check"></div>
       <span>This is the label</span>
@@ -74,7 +74,7 @@ Two or more radio inputs should be grouped inside a `<fieldset>`. The `border-0`
     <div class="space-y-12">
       {%- for i in range(4) %}
         <div>
-          <input type="radio" class="form-radio" id="radio-{{ i }}" name="radio" value="radio">
+          <input type="radio" class="form-radio" id="radio-{{ i }}" name="radio" value="cool">
           <label for="radio-{{ i }}" class="flex flex-wrap items-center p-12 gap-20">
             <div class="form-radio-check"></div>
             <span>This is the label</span>
@@ -109,35 +109,35 @@ The small radio inputs groups are an option when the strings for choices are sho
   </div>
   <div class="small-input-group">
     <div>
-      <input type="radio" class="form-radio" id="radio-mon" name="radio" value="radio">
+      <input type="radio" class="form-radio" id="radio-mon" name="radio" value="cool">
       <label class="vertical flex flex-wrap items-center p-12 gap-20" for="radio-mon">
         <span>Mon</span>
         <div class="form-radio-check"></div>
       </label>
     </div>
     <div>
-      <input type="radio" class="form-radio" id="radio-tues" name="radio" value="radio">
+      <input type="radio" class="form-radio" id="radio-tues" name="radio" value="cool">
       <label class="vertical flex flex-wrap items-center p-12 gap-20" for="radio-tues">
         <span>Tues</span>
         <div class="form-radio-check"></div>
       </label>
     </div>
     <div>
-      <input type="radio" class="form-radio" id="radio-weds" name="radio" value="radio">
+      <input type="radio" class="form-radio" id="radio-weds" name="radio" value="cool">
       <label class="vertical flex flex-wrap items-center p-12 gap-20" for="radio-weds">
         <span>Weds</span>
         <div class="form-radio-check"></div>
       </label>
     </div>
     <div>
-      <input type="radio" class="form-radio" id="radio-thurs" name="radio" value="radio">
+      <input type="radio" class="form-radio" id="radio-thurs" name="radio" value="cool">
       <label class="vertical flex flex-wrap items-center p-12 gap-20" for="radio-thurs">
         <span>Thurs</span>
         <div class="form-radio-check"></div>
       </label>
     </div>
     <div>
-      <input type="radio" class="form-radio" id="radio-fri" name="radio" value="radio">
+      <input type="radio" class="form-radio" id="radio-fri" name="radio" value="cool">
       <label class="vertical flex flex-wrap items-center p-12 gap-20" for="radio-fri">
         <span>Fri</span>
         <div class="form-radio-check"></div>
@@ -154,14 +154,14 @@ We allow for placement of the label horizontally (by default) and vertically (vi
 ```html highlight="vertical"
 <fieldset class="small-input-group">
   <div>
-    <input type="radio" class="form-radio" id="radio-top" name="radio" value="radio">
+    <input type="radio" class="form-radio" id="radio-top" name="radio" value="cool">
     <label class="vertical flex flex-wrap items-center p-12 gap-20" for="radio-top">
       <span>Top</span>
       <div class="form-radio-check"></div>
     </label>
   </div>
   <div>
-    <input type="radio" class="form-radio" id="radio-right" name="radio" value="radio">
+    <input type="radio" class="form-radio" id="radio-right" name="radio" value="cool">
     <label for="radio-right" class="flex flex-wrap items-center p-12 gap-20">
       <div class="form-radio-check"></div>
       <span>Right</span>
