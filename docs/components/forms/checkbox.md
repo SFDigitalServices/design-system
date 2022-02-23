@@ -11,7 +11,7 @@ Here we will explain everything you could possibly need to know about the SF Des
 
 ## Checkbox component anatomy
 
-Check it out:
+Checkboxes are made up of three constitutive parts: an input, a label, and a `<sfgov-icon>` checkmark.
 
 ```html highlight="(form-checkbox[-\w]*|checkbox-id)"
 <form>
@@ -25,7 +25,13 @@ Check it out:
 </form>
 ```
 
+The label acts as a wrapper for the checkmark and the label text. The `flex` utility is used to display elements side-by-side. In this example we use the `p-12` utility to expand the hover area and `gap-20` to create uniform spacing between the checkmark and label text.
+
+A label is **required**, and **must** be associated with the input either as a `<label>` with the input's `id` in its `for` attribute, or with its own `id` attribute referenced by the input's `aria-labelledby`.
+
 ### Error state
+
+Fields that are required should have the `required` attribute or `aria-invalid="true"` when the form is invalid.
 
 ```html highlight="required"
 <form>
@@ -40,6 +46,8 @@ Check it out:
 ```
 
 ### Disabled state
+
+Fields that are disabled should have the `disabled` attribute or `aria-disabled="true"` and should not allow mouse or keyboard interaction.
 
 We should probably come up with guidance about accessibility and disabled form elements. We might have to be particularly descriptive about _why_ a particular element is disabled within the context of a form.
 
