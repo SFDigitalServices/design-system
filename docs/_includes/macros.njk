@@ -12,6 +12,8 @@
         </div>
       </summary>
       <ul class="m-0 p-0 list-none">
+        {# TODO: remove or reinstate once we decide whether overview pages will be a thing #}
+        {#
         <li class="pl-16 m-0 mb-20 {{ 'bg-slate-2 rounded-4' if page_active }}">
           <a
             href="{{ url }}"
@@ -23,6 +25,7 @@
             {{ node.data.title }} Overview
           </a>
         </li>
+        #}
         {% for child in children %}
           {% set child_active = child.url === page.url %}
           <li class="pl-16 m-0 mb-20 {{ 'bg-slate-2 rounded-4' if child_active }}">
