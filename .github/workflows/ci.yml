@@ -4,7 +4,7 @@ on:
   - delete
 
 jobs:
-  test:
+  ci:
     runs-on: ubuntu-latest
     env:
       NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
