@@ -34,39 +34,40 @@ layout: skeleton
   </div>
 </div>
 
-<div class="responsive-container flex lg:hidden mt-60 mb-28 items-center">
-  <details class="details-reset">
-    <summary role="navigation" aria-label="open navigation menu">
-      <sfgov-icon class="pr-20" symbol="menu" role="img" aria-label="hamburger menu"></sfgov-icon>
-    </summary>
-    <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50 max-w-sm">
-      <sfgov-icon class="py-20 block mt-96 ml-8" symbol="close" role="img" aria-label="x" data-close-dialog></sfgov-icon>
-      {{ nav | safe }}
-    </details-dialog>
-  </details>
-
-  <header>
-    {% include 'header.njk' %}
-  </header>
-</div>
 
 {% block main %}
-  <div class="responsive-grid responsive-container grid-rows-2">
-    <div class="hidden lg:block lg:row-span-full lg:col-span-3">
-      {% include 'header.njk' %}
-      {{ nav | safe }}
+  <div class="responsive-grid responsive-container gap-y-0">
+    <div class="col-span-full lg:col-span-3 flex items-center mt-60 mb-28 lg:m-0">
+      <details class="details-reset lg:hidden">
+        <summary class="cursor-pointer">
+          <sfgov-icon class="pr-20" symbol="menu"></sfgov-icon>
+        </summary>
+        <details-dialog class="top-0 left-0 w-full h-full fixed p-20 bg-grey-1 z-50 max-w-sm"
+          role="navigation"
+          aria-label="navigation menu"
+        >
+          <button class="block mt-96 py-20 border-0 bg-grey-1" aria-label="close navigation menu" data-close-dialog>
+            <sfgov-icon symbol="close"></sfgov-icon>
+          </button>
+          {{ nav | safe }}
+        </details-dialog>
+      </details>
+      <div>{% include 'header.njk' %}</div>
     </div>
-    <div class="col-span-full lg:col-span-9 lg:mt-48">
+    <div class="col-span-full lg:col-span-9 row-span-1 lg:mt-48">
       {% include 'title.njk' %}
     </div>
-    <div class="col-span-full lg:col-span-9 {% if toc %} xl:col-span-6 {% endif %}">
+    <div class="hidden lg:block lg:row-span-2 lg:col-span-3">
+      {{ nav | safe }}
+    </div>
+    <div class="col-span-full lg:col-span-9 lg:row-span-2 {% if toc %} xl:col-span-6 {% endif %}">
       {% block content %}
         {% include 'main.njk' %}
       {% endblock %}
       {% include 'source-meta.njk' %}
     </div>
     {% if toc %}
-      <div class="hidden xl:block xl:col-span-3">
+      <div class="hidden xl:block xl:col-span-3 xl:row-span-2">
         {% include 'toc.njk' %}
       </div>
     {% endif %}
