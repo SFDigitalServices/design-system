@@ -45,4 +45,5 @@ jobs:
           DIST_TAG: branch/${{ github.ref_name }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
+          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
           npm dist-tag add "$(npm info . name)@$(npm info . version)" "$DIST_TAG"
