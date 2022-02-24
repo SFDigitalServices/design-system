@@ -5,6 +5,8 @@ jobs:
   build:
     if: github.event != 'delete'
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -41,9 +43,6 @@ jobs:
       # so that other apps can reference the latest release from a branch
       # with "sfgov-design-system@branch/{branch}"
       - if: steps.publish.conclusion == 'success' && github.ref_type == 'branch'
-        env:
-          DIST_TAG: branch/${{ github.ref_name }}
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
-          npm dist-tag add "$(npm info . name)@$(npm info . version)" "$DIST_TAG"
+          npm dist-tag add "$(npm info . name)@$(npm info . version)" "branch/${{ github.ref_name }}"
