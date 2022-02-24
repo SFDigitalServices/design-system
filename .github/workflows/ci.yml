@@ -1,12 +1,13 @@
 name: CI
-on: [push]
+on:
+  - push
+  - delete
 
 jobs:
-  build:
-    if: github.event != 'delete'
+  test:
     runs-on: ubuntu-latest
     env:
-      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -19,8 +20,10 @@ jobs:
 
       # this sets NODE_ENV=production for all of the build scripts
       # (`npm ci` doesn't install anything if it's set earlier)
-      - run: |
+      - name: set up node and npm environments
+        run: |
           echo NODE_ENV=production >> $GITHUB_ENV
+          echo '//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}' > $HOME/.npmrc
 
       # run these separately so that it's easier to see what failed
       - run: npm run build-assets
@@ -32,17 +35,22 @@ jobs:
       - uses: primer/publish@v3.0.0
         id: publish
         with:
-          npm_args: --unsafe-perm --allow-same-version
+          npm_args: --unsafe-perm
           default_branch: main
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      # if the package was published, add a "branch/{branch}" dist-tag
-      # (see: <https://docs.npmjs.com/adding-dist-tags-to-packages>)
-      # so that other apps can reference the latest release from a branch
-      # with "sfgov-design-system@branch/{branch}"
-      - if: steps.publish.conclusion == 'success' && github.ref_type == 'branch'
+      - name: set BRANCH_DIST_TAG
+        if: github.ref_type == 'branch'
+        run: echo "BRANCH_DIST_TAG=branch.${{ github.ref_name }}" >> $GITHUB_ENV
+
+      - name: npm dist-tag add
+        if: steps.publish.conclusion == 'success' && env.BRANCH_DIST_TAG
         run: |
-          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
-          npm dist-tag add "$(npm info . name)@$(npm info . version)" "branch/${{ github.ref_name }}"
+          CURRENT=$(node -e 'const { name, version } = require("./package.json"); console.log(`${name}@${version}`)')
+          npm dist-tag add "$CURRENT" "$BRANCH_DIST_TAG"
+
+      - name: npm dist-tag rm
+        if: github.event_name == 'delete' && env.BRANCH_DIST_TAG
+        run: |
+          npm dist-tag rm "$BRANCH_DIST_TAG"
