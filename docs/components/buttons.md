@@ -2,6 +2,12 @@
 title: Buttons
 ---
 
+# Introduction
+
+Use buttons for important or major actions.
+
+Buttons draw more attention than a simple text link. Because of their larger surface and color, they are visually more findable and easier to click or tap. 
+
 ## Link buttons
 
 This is some text about link buttons. We should explain why we want links to
