@@ -15,17 +15,25 @@
   }
 }
 
-.form-checkbox {
+.form-checkbox, .form-radio {
   @apply absolute outline-none w-0 h-0;
 
   & ~ label {
     @apply rounded cursor-pointer;
     @apply rounded-4 border-2 border-solid border-white hocus:border-slate-2;
-  }
 
-  & ~ label .form-checkbox-check {
-    @apply text-transparent;
-    @apply w-24 h-24 p-4 rounded-4 bg-slate-1 border-1 border-solid border-slate;
+    .form-checkbox-check, .form-radio-check {
+      @apply text-transparent;
+      @apply w-24 h-24 p-4 bg-slate-1 border-1 border-solid border-slate-2;
+    }
+    
+    .form-checkbox-check {
+      @apply rounded-4;
+    }
+
+    .form-radio-check {
+      @apply rounded-full;
+    }
   }
 
   /* TODO: much of the following could be done with the `peer-` variants in tailwind 3.0.0 */
@@ -47,6 +55,10 @@
       .form-checkbox-check {
         @apply text-white bg-slate-3 border-transparent !important;
       }
+      
+      .form-radio-check {
+        @apply bg-white border-6 border-slate-3;
+      }
     }
   }
 
@@ -63,9 +75,9 @@
         @apply border-red-3;
       }
 
-      .form-checkbox-check {
+      .form-checkbox-check, .form-radio-check {
         @apply bg-white;
-        @apply border-1 border-solid rounded-4 border-red-3;
+        @apply border-1 border-solid border-red-3;
       }    
     }
   }
@@ -75,18 +87,19 @@
   &[aria-disabled=true] {
     ~ label {
       @apply border-0;
+      @apply text-grey-3;
       @apply hocus:border-none;
       @apply pointer-events-none;
 
-      .form-checkbox-check {
+      .form-checkbox-check, .form-radio-check {
         @apply bg-grey-1;
-        @apply border-1 border-solid rounded-4 border-grey-2;
+        @apply border-1 border-solid border-grey-2;
       }
     }
   }
 }
 
-.small-checkbox-group {
+.small-input-group {
   @apply flex space-x-8;
   @apply border-0;
 
@@ -98,7 +111,7 @@
     @apply inline-flex items-center;
   }
 
-  .form-checkbox {
+  .form-checkbox, .form-radio {
     &:checked {
       ~ label {
         @apply bg-none;
