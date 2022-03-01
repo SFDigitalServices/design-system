@@ -1,7 +1,6 @@
 ---
 title: Buttons
 ---
-
 Use buttons for important or major actions.
 
 Buttons draw more attention than a simple text link. Because of their larger surface and color, they are visually more findable and easier to click or tap. 
@@ -11,11 +10,10 @@ Buttons draw more attention than a simple text link. Because of their larger sur
 
 ### Primary
 
-<img width="175" alt="primarybutton" src="https://user-images.githubusercontent.com/32344055/156226459-7bf023c6-e70b-4df5-8247-485bf3e612c2.png">
-
 <button class="btn">
   Do something
 </button>
+
 
 Use these to direct people to a clear primary action. Try not to have more than 1 primary button on a page (or section of a page). 
 
