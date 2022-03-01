@@ -13,6 +13,10 @@ Buttons draw more attention than a simple text link. Because of their larger sur
 
 <img width="175" alt="primarybutton" src="https://user-images.githubusercontent.com/32344055/156226459-7bf023c6-e70b-4df5-8247-485bf3e612c2.png">
 
+<button class="btn">
+  Do something
+</button>
+
 Use these to direct people to a clear primary action. Try not to have more than 1 primary button on a page (or section of a page). 
 
 To call out that they are actionable, they are Action blue. This is the most common type of button.
