@@ -192,6 +192,56 @@ HTML `<textarea>` elements must have the `form-textarea` class to receive form s
 </div>
 ```
 
+## Text field components
+
+Often times, forms call for more complex text components, like date inputs and pickers. Here we'll show examples of those and other tools to help organize form patterns.
+
+### Form well
+
+A form well is useful for grouping together a set of related form inputs, like an address fieldset.
+
+A `<fieldset>` using utility classes for spacing and to create a rounded border should be used to indicate the grouping. A well should have a title label (using `title-xs`) and its fields should each have smaller, bolded labels (`text-small` and `font-medium`).
+
+```html
+<form>
+  <fieldset class="border-1 rounded-4 border-slate-3 py-24 px-28">
+    <div class="text-slate space-y-12">
+      <label class="block title-xs">
+        Address fieldset in a well
+      </label>
+      <div id="input-description">
+        Some text about how complicated this field is and this explains it.
+      </div>
+      <label for="addr-1" class="block text-small font-medium">
+        Address line 1
+      </label>
+      <input type="text" id="addr-1" class="form-input">
+      <label for="addr-2" class="block text-small font-medium">
+        Address line 2
+      </label>
+      <input type="text" id="addr-2" class="form-input">
+      <label for="city" class="block text-small font-medium">
+        City
+      </label>
+      <input type="text" id="city" class="form-input block">
+      <div class="flex justify-between">
+        <div class="space-y-12">
+          <label for="state" class="block text-small font-medium">
+            State
+          </label>
+          <input type="text" id="state" class="form-input">
+        </div>
+        <div class="space-y-12">
+          <label for="zip-code" class="block text-small font-medium">
+            Zip code
+          </label>
+          <input type="text" id="zip-code" class="form-input">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+```
 
 [aria-required]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-required
 [role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
