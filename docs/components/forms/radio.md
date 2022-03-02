@@ -7,11 +7,11 @@ see_also:
 
 ## Introduction
 
-Here we will explain everything you could possibly need to know about the SF DesSys radio group component
+Radio buttons are used in a radio group, a grouping of related options that allow users to choose one option.
 
 ## Radio button component anatomy
 
-Radio buttons are made up of three constitutive parts: an input, a label, and a checkmark.
+Radio buttons are made up of three parts: an input, a label, and a checkmark.
 
 ```html highlight="(form-radio[-\w]*|radio-id)"
 <form>
@@ -98,13 +98,11 @@ A group of radio buttons **must** have a matching `name` value to associate them
 </fieldset>
 ```
 
-## Radio field alts
-
-Here are alts to the default radio group configuration.
+## Radio group variations
 
 ### Small radio groups
 
-The small radio inputs groups are an option when the strings for choices are short and present better as a list of inline options. Use the `.small-input-group` class on the wrapping element, with a `<div>` as container for each radio group in the group.
+Small radio input groups are an option when the strings for choices are short and present better as a list of inline options. Use the `.small-input-group` class on the wrapping element, with a `<div>` as container for each radio group in the group.
 
 ```html highlight="small-input-group"
 <fieldset class="border-0 space-y-12">

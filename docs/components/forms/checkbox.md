@@ -7,11 +7,11 @@ see_also:
 
 ## Introduction
 
-Here we will explain everything you could possibly need to know about the SF DesSys checkbox component
+Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
 
 ## Checkbox component anatomy
 
-Checkboxes are made up of three constitutive parts: an input, a label, and a `<sfgov-icon>` checkmark.
+Checkboxes are made up of three parts: an input, a label, and a `<sfgov-icon>` checkmark.
 
 ```html highlight="(form-checkbox[-\w]*|checkbox-id)"
 <form>
@@ -96,9 +96,8 @@ Two or more checkboxes should be grouped inside a `<fieldset>`. The `border-0` a
 </fieldset>
 ```
 
-## Checkbox Field Alts
+## Variations
 
-Here are alts to the default checkbox configuration.
 ### Small groups
 
 The small checkbox groups are an option when the strings for choices are short and present better as a list of inline options. Use the `.small-input-group` class on the wrapping element, with a `<div>` as container for each checkbox in the group.

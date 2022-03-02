@@ -36,7 +36,7 @@
     }
   }
 
-  /* TODO: much of the following could be done with the `peer-` variants in tailwind 3.0.0 */
+  /* TODO [tailwindcss@>=3]: use `peer-` variants */
   &:focus {
     &:invalid {
       ~ label {
