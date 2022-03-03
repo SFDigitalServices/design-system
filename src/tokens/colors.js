@@ -31,7 +31,7 @@ module.exports = {
   },
   red: {
     4: '#BC4427',
-    3: '#C9563A',
+    3: '#C55236',
     2: '#EFCABB',
     1: '#F5E9E5'
   },
@@ -49,10 +49,10 @@ module.exports = {
   },
   grey: {
     dark: '#424244',
-    4: '#D3D3D3',
-    3: '#E9E9E9',
-    2: '#F1F1F1',
-    1: '#F8F8F8'
+    4: '#A1A1A1',
+    3: '#C2C2C2',
+    2: '#E2E2E2',
+    1: '#F6F6F6'
   },
   sequential: {
     darkBlue: {

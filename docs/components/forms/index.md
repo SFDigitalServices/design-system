@@ -1,5 +1,8 @@
 ---
 title: Forms
+see_also:
+  - title: Checkbox
+    href: /components/forms/checkbox/
 ---
 
 ## Introduction
@@ -128,14 +131,14 @@ Fields that are [required](#required-fields) and/or validated should include an 
       aria-describedby="input-description input-placeholder input-error"
       aria-invalid="true"
       class="form-input">
-    <div id="input-error" class="text-small text-red-4">
+    <div id="input-error" class="text-small text-red-3">
       Please enter the first letter of a fruit
     </div>
   </div>
 </div>
 ```
 
-Error message text should be small (`text-small`) and `{{ theme.colors.red[4] }}` (`text-red-4`).
+Error message text should be small (`text-small`) and `{{ theme.colors.red[3] }}` (`text-red-3`).
 
 ## Size modifiers
 
