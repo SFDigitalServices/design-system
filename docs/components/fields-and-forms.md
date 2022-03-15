@@ -25,7 +25,7 @@ This page documents the general guidelines that apply to most form field types. 
 </figure>
 
 
-#### Optional Label
+#### Optional label
 
 With our forms, we’ve decided to take a slightly different route when distinguishing between required and optional fields.
 
