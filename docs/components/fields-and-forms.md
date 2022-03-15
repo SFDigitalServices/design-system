@@ -29,7 +29,7 @@ This page documents the general guidelines that apply to most form field types. 
 
 With our forms, we’ve decided to take a slightly different route when distinguishing between required and optional fields.
 
-There are more required fields than optional fields in a form in most cases. This leads to a series of red asterisks (*) next to most fields. While pretty universal on forms, the asterisk next to the field label is not universally understood and can lead to confusion. If the intent of the asterisk is not understood, the user will have to find your footnote describing its use and then navigate back to their place.
+Most of our forms have more required fields than optional ones. This leads to a series of red asterisks (*) next to most fields. While pretty universal on forms, the asterisk next to the field label is not universally understood and can lead to confusion. If the intent of the asterisk is not understood, the user will have to find your footnote describing its use and then navigate back to their place.
 
 Beyond the useability and accessibility problems introduced, the repeated use of a red asterisk adds visual noise to an interface that benefits from having the least visual noise possible.
 
