@@ -52,7 +52,7 @@ Our implementation of the placeholder text is somewhat different from most. We p
 
 Some guidelines for placeholder text are:
 
-* There isn’t a need to use it with every field. If the field name is clear and a concept that doesn’t require further explanation, like “first name,” skip it.
+* **Use sparingly**. No placeholder is needed if the field name is clear and doesn’t require further explanation (e.g. “First name”).
 * But be thoughtful about its use. Suppose your audience represents a sizeable immigrant population, for example. In that case, it may be helpful to add “Your surname or family name” as placeholder text for a “last name” field
 * **Keep it short**. Placeholder text should not exceed one line.
 
