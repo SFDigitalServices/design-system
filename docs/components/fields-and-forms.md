@@ -5,7 +5,7 @@ subtitle: Forms are easily one of the essential parts of the SF.gov product. The
 
 This documentation will cover some of the more technical aspects of the forms, but please visit our [Form Style Guide](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pages/1807024424/Form+style+guide) for guidance on writing effective forms.
 
-## Field types (This will be replaced with a component later)
+## Field types <!-- This will be replaced with a component later. -->
 This page documents the general guidelines that apply to most form field types. Pick from our form fields selection below for information around a specific field type.
 
 |       |  |
