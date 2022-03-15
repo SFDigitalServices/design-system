@@ -62,7 +62,7 @@ In the example above, the field area contains a text field for typed input. The 
 
 #### Field status message
 
-The field status message contains the error message or success message for that field.
+The status message contains text describing the field's error or success status.
 
 The string should be pertinent to the specific text field and not a status message related to the entirety of the form section.
 
