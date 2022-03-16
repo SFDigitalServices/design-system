@@ -64,6 +64,6 @@ In the example above, the field area contains a text field for typed input. The 
 
 The status message contains text describing the field's error or success status.
 
-The string should be pertinent to the specific text field and not a status message related to the entirety of the form section.
+The text should describe the status of an individual field and not the larger form section.
 
 An example would be communicating that the user placed text characters in a date field vs. an automatic lookup that relied on multiple fields and failed to find a result.
