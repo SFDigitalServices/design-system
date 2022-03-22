@@ -1,15 +1,8 @@
-const theme = require('./src/theme')
+const preset = require('./tailwind.preset')
 
 module.exports = {
-  important: true,
-
-  /*
-   * This is essentially where we define all of the "tokens" that
-   * Tailwind uses to generate CSS.
-   *
-   * See: <https://tailwindcss.com/docs/theme>
-   */
-  theme,
+  // use our preset
+  presets: [preset],
 
   /*
    * This is where we disable Tailwind's "core plugins", most of
@@ -101,9 +94,5 @@ module.exports = {
     userSelect: [],
     verticalAlign: ['responsive'],
     width: ['responsive']
-  },
-
-  plugins: [
-    require('tailwindcss-interaction-variants')
-  ]
+  }
 }
