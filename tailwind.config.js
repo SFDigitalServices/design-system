@@ -1,7 +1,6 @@
 const preset = require('./tailwind.preset')
 
 module.exports = {
-  // use our preset
   presets: [preset],
 
   /*
