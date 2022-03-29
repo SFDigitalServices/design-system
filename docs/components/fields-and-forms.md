@@ -43,18 +43,18 @@ Use the field description when required to add context to the form field beyond 
 
 Two guiding principles with the field description are:
 
-* There isn’t a need to use it with every field. If the field name is clear and a concept that doesn’t require further explanation, like “first name,” skip it.
-* Keep it as brief as possible without degrading the message.
+- There isn’t a need to use it with every field. If the field name is clear and a concept that doesn’t require further explanation, like “first name,” skip it.
+- Keep it as brief as possible without degrading the message.
 
-#### Hint (Placeholder) text
+#### Hint text<a name="placeholder-text"></a>
 
-Our implementation of the placeholder text is somewhat different from most. We do not use semantic placeholder text and instead use hint text placed outside the text field. This placement enhances the field's accessibility by having it always visible, allows for translation, and makes it easier for screen readers to access since [placeholder text is not universally supported](https://www.w3.org/WAI/tutorials/forms/instructions/#placeholder-text).
+Our implementation of the placeholder text is somewhat different from most. We do not use the `placeholder` attribute, and instead provide hint text outside the text field. This placement ensures that it's always visible, allows for translation, and makes it easier for screen readers to access since [placeholder text is not universally supported](https://www.w3.org/WAI/tutorials/forms/instructions/#placeholder-text).
 
 Some guidelines for hint text are:
 
-* **Use sparingly**. No hint is needed if the field name is clear and doesn’t require further explanation (e.g. “First name”).
-* But be thoughtful about its use. Suppose your audience represents a sizeable immigrant population, for example. In that case, it may be helpful to add “Your surname or family name” as hint text for a “last name” field
-* **Keep it short**. Hint text should not exceed one line.
+- **Use sparingly**. No hint is needed if the field name is clear and doesn’t require further explanation (e.g. “First name”).
+- But **be thoughtful** about its use. For instance, if your audience includes a sizeable immigrant population it may be helpful to add “Your surname or family name” as hint text for a “last name” field.
+- **Keep it short**. Hint text should not exceed one line.
 
 #### Field area
 
