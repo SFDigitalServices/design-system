@@ -1,254 +1,69 @@
 ---
-title: Forms
-see_also:
-  - title: Checkbox
-    href: /components/forms/checkbox/
+title: Fields and Forms
+subtitle: Forms are one of the essential parts of the SF.gov product. They allow us to lower the friction involved when applying for a service or grant.
 ---
 
-## Introduction
+This documentation will cover some of the more technical aspects of the forms, but please visit our [Form Style Guide](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pages/1807024424/Form+style+guide) for guidance on writing effective forms.
 
-We should probably explain what this page is and where folks can find more info about forms.
+## Field types <!-- This will be replaced with a component later. -->
+This page documents the general guidelines that apply to most form field types. Pick from our form fields selection below for information around a specific field type.
 
-## Form component anatomy
+|       |  |
+| ----------- | ----------- |
+| [Text field](/components/forms/text) | [Chips](/components/forms/#) |
+| [Radio button](/components/forms/radio) | [File upload](/components/forms/#) |
+| [Checkbox button](/components/forms/checkbox) | [Form alerts](/components/forms/#) |
+| [Dropdown](/components/forms/#) | [Form patterns](/components/forms/#) |
 
-Form components aren't just a label and an input. There are between 2 and 5 different parts of a form component, depending on its configuration and state.
+## Form field structure
 
-```html
-<div class="text-slate space-y-12">
-  <label for="foo-input" class="block title-xs">
-    Label 
-  </label>
-  <div id="foo-description">
-    Description
-  </div>
-  <div class="space-y-8">
-    <div class="text-small text-slate-2">
-      Hint
-    </div>
-    <input id="foo-input" class="form-input" type="text" value="Input">
-    <div class="text-small text-red-4">
-      Error message
-    </div>
-  </div>
-</div>
-```
+### Form field layout
 
-The label and description are positioned `{{ theme.spacing[12] }}` from one another and the input, while the hint and error message elements are positioned `{{ theme.spacing[8] }}` from the input. In this example we use the `space-y-12` utility to apply uniform spacing to the form component's direct descendents, then wrap the hint, input, and error message in another div with `space-y-8`.
+<figure>
+  <img class="w-1/1" alt="A diagram showing form field structure" src="https://user-images.githubusercontent.com/957314/158282202-43128233-c1c7-464c-b2d7-d3ece55850b6.png">
+  <figcaption align="center">1. Optional label, 2. Field name, 3. Field description, 4. Hint text, 5. Field area, 6. Field status message</figcaption>
+</figure>
 
-### Label
-A label is **required**, and **must** be associated with the input either as a `<label>` with the input's `id` in its `for` attribute, or with its own `id` attribute referenced by the input's `aria-labelledby`.
 
-```html highlight="input-id"
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <input id="input-id" type="text" class="form-input">
-</div>
-```
+#### Optional label
 
-Labels are styled with the `title-xs` typography class, and should be block-level (either `class="block"` directly, or contained by a block-level parent).
+Many web forms indicate required fields with red text ("required") or asterisks ("*"). We’ve decided to take a slightly different route when distinguishing between required and optional fields.
 
-### Input
-The form input is typically a native `<input>`, `<select>`, or `<textarea>` element; but can also be more complex input "widgets", such as multi-selects and comboboxes.
+Most of our forms have more required fields than optional ones. This leads to a series of red asterisks (*) next to most fields. While pretty universal on forms, the asterisk next to the field label is not universally understood and can lead to confusion. If the intent of the asterisk is not understood, the user will have to find your footnote describing its use and then navigate back to their place.
 
-The `form-input` class applies CSS resets from [@tailwindcss/forms], and provides common styles for native input elements.
+The repeated use of a red asterisk also adds unnecessary visual noise to an interface that benefits from having the least visual noise possible.
 
-### Description
-Form inputs may have a longer textual description, which **should** be referenced by its `id` in the `aria-describedby` attribute of the input.
+#### Field name
 
-```html highlight="input-description"
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <div id="input-description">
-    This is the field description. It can be several sentences long, if necessary.
-  </div>
-  <input id="input-id" type="text" class="form-input"
-    aria-describedby="input-description">
-</div>
-```
+The field name should be as specific as possible and as brief as possible. We have the field description and hint text to add more context to the field if needed.
 
-### Hint
-We use hint text rather than placeholder text. As a general rule, you should **avoid the `placeholder` attribute** because it poses usability challenges. Instead, place hint text that would normally act as a placholder before the input and reference its `id` in the input's `aria-describedby` attribute.
+#### Field description
 
-Hint text should be small (`text-small`), colored `{{ theme.colors.slate[2] }}` (`text-slate-2`), and spaced `{{ theme.spacing[8] }}` above the text input.
+Use the field description when required to add context to the form field beyond what the field label provides.
 
-```html highlight="input-hint"
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <div id="input-description">
-    This is the field description. It can be several sentences long, if necessary.
-  </div>
-  <div class="space-y-8">
-    <div id="input-hint" class="text-small text-slate-2">
-      Type the first letter of your favorite fruit
-    </div>
-    <input id="input-id" type="text" class="form-input"
-      aria-describedby="input-description input-hint">
-  </div>
-</div>
-```
+Two guiding principles with the field description are:
 
-## Required fields
-Required fields **must** include either:
+- There isn’t a need to use it with every field. If the field name is clear and a concept that doesn’t require further explanation, like “first name,” skip it.
+- Keep it as brief as possible without degrading the message.
 
-- The `required` attribute if it is a native form control element, such as `<input>`, `<select>`, or `<textarea>`; or
-- The [aria-required][aria-required] attribute if it is a custom form control with an explicit [role].
+#### Hint text<a name="placeholder-text"></a>
 
-Required fields **should** be initialized with `aria-invalid="false"` to prevent screen readers from announcing the control as invalid until it's been modified. After modification, you **must** update the `aria-invalid` attribute to reflect the control's [validity state].
+Our implementation of the placeholder text is somewhat different from most. We do not use the `placeholder` attribute, and instead provide hint text outside the text field. This placement ensures that it's always visible, allows for translation, and makes it easier for screen readers to access since [placeholder text is not universally supported](https://www.w3.org/WAI/tutorials/forms/instructions/#placeholder-text).
 
-```html highlight="[-\w]*(required|invalid|false)"
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Required field
-  </label>
-  <input id="input-id" type="text" class="form-input"
-    required
-    aria-invalid="false">
-</div>
-```
+Some guidelines for hint text are:
 
-## Error messages
-Fields that are [required](#required-fields) and/or validated should include an error message, which **must** be referenced by its `id` in the `aria-describedby` attribute of the input, and **should not** have accessible text content unless the input is invalid (either matching `:invalid` or with `aria-invalid="true"`).
+- **Use sparingly**. No hint is needed if the field name is clear and doesn’t require further explanation (e.g. “First name”).
+- But **be thoughtful** about its use. For instance, if your audience includes a sizeable immigrant population it may be helpful to add “Your surname or family name” as hint text for a “last name” field.
+- **Keep it short**. Hint text should not exceed one line.
 
-```html highlight="input-error"
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <div id="input-description">
-    This is the field description. It can be several sentences long, if necessary.
-  </div>
-  <div class="space-y-8">
-    <div id="input-hint" class="text-small text-slate-2">
-      Type the first letter of your favorite fruit
-    </div>
-    <input id="input-id" type="text" value="x"
-      aria-describedby="input-description input-hint input-error"
-      aria-invalid="true"
-      class="form-input">
-    <div id="input-error" class="text-small text-red-3">
-      Please enter the first letter of a fruit
-    </div>
-  </div>
-</div>
-```
+#### Field area
 
-Error message text should be small (`text-small`) and `{{ theme.colors.red[3] }}` (`text-red-3`).
+In the example above, the field area contains a text field for typed input. The field area in our main configuration could be any interactive form element beyond a text field. Examples of an interactive form element could include a text area, date picker, a series of radio buttons, etc.
 
-## Size modifiers
+#### Field status message
 
-The `input-sm`, `input-md`, and `input-lg` utilities establish widths for common form field sizes:
+The status message contains text describing the field's error or success status.
 
-```html
-<div class="form-sm">
-  <div class="text-slate space-y-12">
-    <label class="block title-xs" for="input1">Small</label>
-    <input type="text" class="form-input input-sm" id="input1">
-  </label>
-</div>
+The text should describe the status of an individual field and not the larger form section.
 
-<div class="form-md my-20">
-  <label class="text-slate space-y-12">
-    <label class="block title-xs" for="input2">Medium</label>
-    <input type="text" class="form-input input-md" id="input2">
-  </label>
-</div>
-
-<div class="form-lg">
-  <label class="text-slate space-y-12">
-    <label class="block title-xs" for="input3">Large</label>
-    <input type="text" class="form-input input-lg" id="input3">
-  </label>
-</div>
-```
-
-## Input types
-
-### Text input
-
-Text-based `<input>` elements **must** have a `type` attribute (e.g. `type="text"`) and the `form-input` class to get the correct styles.
-
-```html
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <input type="text" id="input-id" class="form-input">
-</div>
-```
-
-### Text area
-
-HTML `<textarea>` elements must have the `form-textarea` class to receive form styles. Use the `w-full` utility or one of the [size modifiers](#size-modifiers) to establish the element's width.
-
-```html
-<div class="text-slate space-y-12">
-  <label for="input-id" class="block title-xs">
-    Field label
-  </label>
-  <textarea id="input-id" class="form-textarea w-full" rows="4">Hello</textarea>
-</div>
-```
-
-## Text field components
-
-Often times, forms call for more complex text components, like date inputs and pickers. Here we'll show examples of those and other tools to help organize form patterns.
-
-### Form well
-
-A form well is useful for grouping together a set of related form inputs, like an address fieldset.
-
-A `<fieldset>` using utility classes for spacing and to create a rounded border should be used to indicate the grouping. A well should have a `<legend>` (using `title-xs`) and its fields should each have smaller, bolded labels (`text-small` and `font-medium`).
-
-Screen reader settings vary, and some read out the legend either with every inner form input, once, or not at all. Based on this, when choosing a `<legend>` we advise making the legend as short as possible (for when read together with each input's label) as well as making individual labels as self-explanatory as possible (for when legends are not read or repeated).
-
-```html
-<form>
-  <fieldset class="border-1 rounded-4 border-slate-3 py-24 px-28">
-    <div class="text-slate space-y-12">
-      <legend class="block title-xs">
-        Address fieldset in a well
-      </legend>
-      <div id="input-description">
-        Some text about how complicated this field is and this explains it.
-      </div>
-      <label for="addr-1" class="block text-small font-medium">
-        Address line 1
-      </label>
-      <input type="text" id="addr-1" class="form-input">
-      <label for="addr-2" class="block text-small font-medium">
-        Address line 2
-      </label>
-      <input type="text" id="addr-2" class="form-input">
-      <label for="city" class="block text-small font-medium">
-        City
-      </label>
-      <input type="text" id="city" class="form-input block">
-      <div class="flex justify-between">
-        <div class="space-y-12">
-          <label for="state" class="block text-small font-medium">
-            State
-          </label>
-          <input type="text" id="state" class="form-input">
-        </div>
-        <div class="space-y-12">
-          <label for="zip-code" class="block text-small font-medium">
-            Zip code
-          </label>
-          <input type="text" id="zip-code" class="form-input">
-        </div>
-      </div>
-    </div>
-  </fieldset>
-</form>
-```
-
-[aria-required]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-required
-[role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
-[validity state]: https://developer.mozilla.org/en-US/docs/Web/API/ValidityState
-[@tailwindcss/forms]: https://github.com/tailwindlabs/tailwindcss-forms
+An example would be communicating that the user placed text characters in a date field vs. an automatic lookup that relied on multiple fields and failed to find a result.
