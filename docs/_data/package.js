@@ -1,9 +1,12 @@
 const pkg = require('../../package.json')
-const { github, context, sha } = require('../../lib/git')
+const { github, context, branch, defaultBranch, sha } = require('../../lib/git')
 
-let version
+// if we're on the main branch, just use the version in package.json
+let version = (branch === defaultBranch) ? pkg.version : undefined
 
 module.exports = async function getPackageWithVersion () {
+  // if no version was set yet, try to figure out the version published by
+  // GitHub Actions
   if (!version) {
     version = await getPublishedStatusVersion() || pkg.version
   }
@@ -21,7 +24,7 @@ async function getPublishedStatusVersion () {
       return status.state === 'success' && status.context.includes('publish')
     })
     if (versionStatus) {
-      console.info('got published version status:', versionStatus)
+      // console.info('got published version status:', versionStatus)
       return versionStatus.description
     } else {
       console.warn('no published version status for %s', sha, statuses)

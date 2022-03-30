@@ -8,6 +8,12 @@
     {% endblock %}
   </head>
   <body>
+    <div class="fixed top-0 left-0 focus-within:bg-action p-8">
+      <a href="#main-content" class="sr-only focus:not-sr-only text-white">Skip to content</a>
+    </div>
     {{ content | safe }}
+    {% block scripts %}
+      {% include 'scripts.njk' %}
+    {% endblock %}
   </body>
 </html>

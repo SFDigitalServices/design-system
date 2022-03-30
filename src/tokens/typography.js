@@ -6,7 +6,8 @@ const fontFamily = {
 const fontWeight = {
   light: 300,
   regular: 400,
-  medium: 500
+  // TODO [>=3]: rename to "semibold" (or "bold"?) and alias to "medium"
+  medium: 600
 }
 
 module.exports = {
@@ -29,6 +30,8 @@ module.exports = {
       lineHeight: '32px'
     }],
     'title-md': ['24px', '28px'],
+    'title-sm': ['24px', '28px'],
+    'title-xs': ['20px', '24px'],
     'big-desc': ['20px', '28px'],
     'display-lg-desktop': ['72px', {
       letterSpacing: '-2px',
