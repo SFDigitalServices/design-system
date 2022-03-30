@@ -135,3 +135,7 @@
 .input-lg {
   @apply w-full !important;
 }
+
+legend {
+  @apply p-0;
+}

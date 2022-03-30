@@ -23,9 +23,9 @@ Form components aren't just a label and an input. There are between 2 and 5 diff
   </div>
   <div class="space-y-8">
     <div class="text-small text-slate-2">
-      Placeholder
+      Hint
     </div>
-    <input class="form-input" type="text" value="Input">
+    <input id="foo-input" class="form-input" type="text" value="Input">
     <div class="text-small text-red-4">
       Error message
     </div>
@@ -33,7 +33,7 @@ Form components aren't just a label and an input. There are between 2 and 5 diff
 </div>
 ```
 
-The label and description are positioned `{{ theme.spacing[12] }}` from one another and the input, while the placeholder and error message elements are positioned `{{ theme.spacing[8] }}` from the input. In this example we use the `space-y-12` utility to apply uniform spacing to the form component's direct descendents, then wrap the placeholder, input, and error message in another div with `space-y-8`.
+The label and description are positioned `{{ theme.spacing[12] }}` from one another and the input, while the hint and error message elements are positioned `{{ theme.spacing[8] }}` from the input. In this example we use the `space-y-12` utility to apply uniform spacing to the form component's direct descendents, then wrap the hint, input, and error message in another div with `space-y-8`.
 
 ### Label
 A label is **required**, and **must** be associated with the input either as a `<label>` with the input's `id` in its `for` attribute, or with its own `id` attribute referenced by the input's `aria-labelledby`.
@@ -70,12 +70,12 @@ Form inputs may have a longer textual description, which **should** be reference
 </div>
 ```
 
-### Placeholder
-As a general rule, you should **avoid the `placeholder` attribute** because it poses usability challenges. Instead, place text that would normally act as a placholder before the input and reference its `id` in the input's `aria-describedby` attribute.
+### Hint
+We use hint text rather than placeholder text. As a general rule, you should **avoid the `placeholder` attribute** because it poses usability challenges. Instead, place hint text that would normally act as a placholder before the input and reference its `id` in the input's `aria-describedby` attribute.
 
-Placeholder text should be small (`text-small`), colored `{{ theme.colors.slate[2] }}` (`text-slate-2`), and spaced `{{ theme.spacing[8] }}` above the text input.
+Hint text should be small (`text-small`), colored `{{ theme.colors.slate[2] }}` (`text-slate-2`), and spaced `{{ theme.spacing[8] }}` above the text input.
 
-```html highlight="input-placeholder"
+```html highlight="input-hint"
 <div class="text-slate space-y-12">
   <label for="input-id" class="block title-xs">
     Field label
@@ -84,11 +84,11 @@ Placeholder text should be small (`text-small`), colored `{{ theme.colors.slate[
     This is the field description. It can be several sentences long, if necessary.
   </div>
   <div class="space-y-8">
-    <div id="input-placeholder" class="text-small text-slate-2">
+    <div id="input-hint" class="text-small text-slate-2">
       Type the first letter of your favorite fruit
     </div>
     <input id="input-id" type="text" class="form-input"
-      aria-describedby="input-description input-placeholder">
+      aria-describedby="input-description input-hint">
   </div>
 </div>
 ```
@@ -124,11 +124,11 @@ Fields that are [required](#required-fields) and/or validated should include an 
     This is the field description. It can be several sentences long, if necessary.
   </div>
   <div class="space-y-8">
-    <div id="input-placeholder" class="text-small text-slate-2">
+    <div id="input-hint" class="text-small text-slate-2">
       Type the first letter of your favorite fruit
     </div>
     <input id="input-id" type="text" value="x"
-      aria-describedby="input-description input-placeholder input-error"
+      aria-describedby="input-description input-hint input-error"
       aria-invalid="true"
       class="form-input">
     <div id="input-error" class="text-small text-red-3">
@@ -203,15 +203,17 @@ Often times, forms call for more complex text components, like date inputs and p
 
 A form well is useful for grouping together a set of related form inputs, like an address fieldset.
 
-A `<fieldset>` using utility classes for spacing and to create a rounded border should be used to indicate the grouping. A well should have a title label (using `title-xs`) and its fields should each have smaller, bolded labels (`text-small` and `font-medium`).
+A `<fieldset>` using utility classes for spacing and to create a rounded border should be used to indicate the grouping. A well should have a `<legend>` (using `title-xs`) and its fields should each have smaller, bolded labels (`text-small` and `font-medium`).
+
+Screen reader settings vary, and some read out the legend either with every inner form input, once, or not at all. Based on this, when choosing a `<legend>` we advise making the legend as short as possible (for when read together with each input's label) as well as making individual labels as self-explanatory as possible (for when legends are not read or repeated).
 
 ```html
 <form>
   <fieldset class="border-1 rounded-4 border-slate-3 py-24 px-28">
     <div class="text-slate space-y-12">
-      <label class="block title-xs">
+      <legend class="block title-xs">
         Address fieldset in a well
-      </label>
+      </legend>
       <div id="input-description">
         Some text about how complicated this field is and this explains it.
       </div>

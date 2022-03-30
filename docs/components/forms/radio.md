@@ -34,22 +34,25 @@ A label is **required**, and **must** be associated with the input either as a `
 Fields that are required should have the `required` attribute or `aria-invalid="true"` when the form is invalid.
 
 ```html highlight="required"
-<form>
+<form class="space-y-8">
   <div>
-    <input type="radio" class="form-radio" id="radio-id" name="radio" value="cool" required>
+    <input type="radio" class="form-radio" id="radio-id" name="radio" value="cool" aria-describedby="error-msg" required>
     <label for="radio-id" class="flex flex-wrap p-12 gap-20">
       <div class="form-radio-check"></div>
       <span>This is the label</span>
     </label>
   </div>
+  <div id="error-msg" class="text-small text-red-4">
+      Error message
+    </div>
 </form>
 ```
 
 ### Radio disabled state
 
-Fields that are disabled should have the `disabled` attribute or `aria-disabled="true"` and should not allow mouse or keyboard interaction.
+As a rule of thumb, from a usability and accessibility perspective, disabled checkboxes should ideally be avoided all together.
 
-We should probably come up with guidance about accessibility and disabled form elements. We might have to be particularly descriptive about _why_ a particular element is disabled within the context of a form.
+In scenarios where a diabled field _must_ be used, it should have the `disabled` attribute or `aria-disabled="true"` and should not allow mouse or keyboard interaction.
 
 ```html highlight="disabled"
 <form>
@@ -71,9 +74,9 @@ A group of radio buttons **must** have a matching `name` value to associate them
 
 ```html
 <fieldset class="border-0 space-y-12">
-  <div for="foo-input" class="block title-xs">
+  <legend class="block title-xs">
     Title 
-  </div>
+  </legend>
   <div id="foo-description">
     Description
   </div>
@@ -106,9 +109,9 @@ Small radio input groups are an option when the strings for choices are short an
 
 ```html highlight="small-input-group"
 <fieldset class="border-0 space-y-12">
-  <div for="foo-input" class="block title-xs">
+  <legend class="block title-xs">
     Select your favorite day
-  </div>
+  </legend>
   <div id="foo-description">
     Please pick the day that suits you best.
   </div>
