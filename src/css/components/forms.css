@@ -15,18 +15,20 @@
   }
 }
 
-.form-checkbox, .form-radio {
+.form-checkbox,
+.form-radio {
   @apply absolute outline-none w-0 h-0;
 
   & ~ label {
     @apply rounded cursor-pointer;
     @apply rounded-4 border-2 border-solid border-white hocus:border-slate-2;
 
-    .form-checkbox-check, .form-radio-check {
+    .form-checkbox-check,
+    .form-radio-check {
       @apply text-transparent;
       @apply w-24 h-24 p-4 bg-slate-1 border-1 border-solid border-slate-2;
     }
-    
+
     .form-checkbox-check {
       @apply rounded-4;
     }
@@ -55,7 +57,7 @@
       .form-checkbox-check {
         @apply text-white bg-slate-3 border-transparent !important;
       }
-      
+
       .form-radio-check {
         @apply bg-white border-6 border-slate-3;
       }
@@ -64,7 +66,7 @@
 
   &:invalid,
   &.invalid,
-  &[aria-invalid=true] {
+  &[aria-invalid="true"] {
     ~ label {
       @apply bg-red-2;
       @screen lg {
@@ -75,23 +77,25 @@
         @apply border-red-3;
       }
 
-      .form-checkbox-check, .form-radio-check {
+      .form-checkbox-check,
+      .form-radio-check {
         @apply bg-white;
         @apply border-1 border-solid border-red-3;
-      }    
+      }
     }
   }
 
   &:disabled,
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled="true"] {
     ~ label {
       @apply border-0;
       @apply text-grey-3;
       @apply hocus:border-none;
       @apply pointer-events-none;
 
-      .form-checkbox-check, .form-radio-check {
+      .form-checkbox-check,
+      .form-radio-check {
         @apply bg-grey-1;
         @apply border-1 border-solid border-grey-2;
       }
@@ -111,7 +115,8 @@
     @apply inline-flex items-center;
   }
 
-  .form-checkbox, .form-radio {
+  .form-checkbox,
+  .form-radio {
     &:checked {
       ~ label {
         @apply bg-none;
@@ -138,4 +143,29 @@
 
 legend {
   @apply p-0;
+}
+
+.form-chip {
+  ~ label {
+    border-radius: 36px;
+    @apply cursor-pointer;
+    @apply bg-slate-1 border-1 border-slate-3 border-solid text-slate-3;
+  }
+
+  /* TODO: add focus styles once designed
+  &:focus {
+    ~ label {
+    }
+  }
+  */
+
+  &:checked {
+    ~ label {
+      @apply text-white bg-slate-3;
+
+      .form-checkbox-check {
+        @apply text-white;
+      }
+    }
+  }
 }
