@@ -23,9 +23,11 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuration#core-plugins>
    */
   corePlugins: [
-    'appearance',
+    // TODO [^3]: add preflight (https://tailwindcss.com/docs/preflight)
+    'accessibility',
     'alignContent',
     'alignItems',
+    'appearance',
     'backgroundColor',
     'borderColor',
     'borderRadius',
@@ -41,24 +43,33 @@ module.exports = {
     'fontSize',
     'fontSmoothing',
     'fontWeight',
+    'gap',
+    'gridColumn',
+    'gridRow',
+    'gridTemplateColumns',
+    'gridTemplateRows',
     'height',
     'inset',
     'justifyContent',
     'justifyItems',
     'letterSpacing',
     'listStyleType',
-    'padding',
-    'position',
     'margin',
     'maxWidth',
+    'opacity',
     'overflow',
+    'padding',
+    'pointerEvents',
+    'position',
     'space',
     'textAlign',
     'textColor',
     'textDecoration',
     'verticalAlign',
+    'visibility',
     'whitespace',
-    'width'
+    'width',
+    'zIndex'
   ],
 
   /*
@@ -71,13 +82,16 @@ module.exports = {
    * See: <https://tailwindcss.com/docs/configuring-variants>
    */
   variants: {
+    // TODO [^3]: nix 'focus'
     accessibility: ['responsive', 'focus', 'hocus'],
     appearance: [],
-    backgroundColor: ['focus', 'hover', 'hocus'],
-    borderColor: ['focus', 'hover', 'hocus'],
+    // TODO [^3]: nix 'focus' + 'hover'
+    backgroundColor: ['focus', 'focus-within', 'hover', 'hocus', 'group-hocus', 'details'],
+    // TODO [^3]: nix 'focus' + 'hover'
+    borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
     borderWidth: ['hocus'],
     cursor: [],
-    display: ['responsive', 'group-hover'],
+    display: ['responsive', 'group-hocus', 'details'],
     fill: [],
     fontWeight: ['responsive'],
     fontSize: ['responsive'],
@@ -85,28 +99,39 @@ module.exports = {
     fontStyle: [],
     flexDirection: ['responsive'],
     flexWrap: [],
+    gap: ['responsive'],
+    gridColumn: ['responsive'],
+    gridRow: ['responsive'],
+    gridTemplateColumns: ['responsive'],
+    gridTemplateRows: ['responsive'],
     height: ['responsive'],
     inset: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
     listStyleType: ['responsive'],
     listStylePosition: [],
-    overflow: [],
+    overflow: [], // TODO [^2.3]: add 'hocus', 'group-hocus'
     padding: ['responsive'],
+    pointerEvents: [],
     position: ['responsive'],
     margin: ['responsive'],
     maxWidth: ['responsive'],
     space: ['responsive'],
     stroke: [],
     strokeWidth: [],
-    textColor: ['focus', 'hover', 'hocus'],
+    // TODO [^3]: nix 'focus' + 'hover'
+    textColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
+    // TODO [^3]: nix 'focus' + 'hover'
     textDecoration: ['focus', 'hover', 'hocus'],
     userSelect: [],
     verticalAlign: ['responsive'],
-    width: ['responsive']
+    visibility: ['responsive', 'group-hocus'],
+    width: ['responsive'],
+    zIndex: ['responsive']
   },
 
   plugins: [
-    require('tailwindcss-interaction-variants')
+    require('tailwindcss-interaction-variants'),
+    require('./lib/tailwind/details')
   ]
 }

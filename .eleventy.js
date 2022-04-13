@@ -8,12 +8,21 @@ const remarkConfig = require('./lib/remark').eleventyPluginConfig
 const navigation = require('./lib/eleventy/nav')
 const yaml = require('js-yaml')
 const toc = require('./lib/eleventy/toc')
-const filters = require('./lib/eleventy/filters')
+const { environment } = require('./lib/nunjucks')
 
 module.exports = config => {
   if (dev) {
+    const throttle = 100
     const reloadOnChange = require('./lib/eleventy/reload')
-    reloadOnChange(__filename, ['lib/**/*.js'])
+    reloadOnChange(__filename, [
+      'lib/**/*.js',
+      // we need to watch these ones explicitly because they
+      // change how examples and color swatches are rendered
+      'docs/_includes/{example,macros}.njk'
+    ], throttle)
+
+    // throttle subsequent rebuilds
+    config.setWatchThrottleWaitTime(throttle)
   }
 
   config.addPlugin(navigation)
@@ -23,10 +32,7 @@ module.exports = config => {
     startLevel: 3
   })
 
-  for (const [name, filter] of Object.entries(filters)) {
-    config.addFilter(name, filter)
-  }
-
+  config.setLibrary('njk', environment)
   config.addDataExtension('yml', contents => yaml.safeLoad(contents))
 
   config.setUseGitIgnore(false)

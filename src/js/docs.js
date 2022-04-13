@@ -1,54 +1,41 @@
-const fontWeightLookup = {
-  300: 'Light',
-  400: 'Regular',
-  500: 'Medium'
+import '@github/clipboard-copy-element'
+import '@github/details-dialog-element'
+import { install } from '@github/hotkey'
+import { observe } from 'selector-observer'
+import { on } from 'delegated-events'
+
+// Install all the hotkeys on the page
+for (const el of document.querySelectorAll('[data-hotkey]')) {
+  install(el)
 }
 
-window.customElements.define('computed-style', class extends HTMLElement {
-  connectedCallback () {
-    this.style.display = 'block'
-    this.render()
-    window.addEventListener('resize', () => this.render())
-  }
-
-  render () {
-    const target = this.getAttribute('data-target')
-    const el = target ? document.querySelector(target) : this
-    const style = window.getComputedStyle(el)
-    const targets = this.querySelectorAll('[data-css-property]')
-    for (const target of targets) {
-      const prop = target.getAttribute('data-css-property')
-      const rawValue = style.getPropertyValue(prop)
-      const { value, units } = this.parseValue(rawValue, prop)
-      target.setAttribute('data-css-value', value)
-      target.setAttribute('data-css-units', units)
-      const text = target.getAttribute('data-units') === 'false'
-        ? value
-        : rawValue
-      const ignore = target.getAttribute('data-ignore')
-      if (text && text !== ignore) {
-        const format = target.getAttribute('data-format')
-        target.textContent = format
-          ? format.replace('%s', text)
-          : text
-      } else {
-        target.textContent = target.getAttribute('data-empty') || ''
-      }
+observe('clipboard-copy[role=button]', {
+  add (el) {
+    if (el.querySelector('button, [role=button]')) {
+      el.removeAttribute('role')
+      el.removeAttribute('tabindex')
     }
   }
+})
 
-  parseValue (value, prop) {
-    if (prop === 'font-weight') {
-      return {
-        value: fontWeightLookup[value] || value,
-        units: undefined
-      }
+on('click', 'clipboard-copy', function () {
+  const el = this.querySelector('[data-copy-feedback]')
+  if (el) {
+    if (!el.hasAttribute('data-default-text')) {
+      el.setAttribute('data-default-text', el.textContent)
     }
-    const match = value.match(/^(?<value>.+)(?<units>px|%|r?em)$/)
-    if (match) {
-      return match.groups
-    } else {
-      return { value, units: undefined }
-    }
+
+    const wasHidden = el.getAttribute('aria-hidden') === 'true'
+    el.textContent = el.getAttribute('data-copy-feedback')
+    el.setAttribute('aria-hidden', false)
+
+    this.addEventListener('blur', () => {
+      el.textContent = el.getAttribute('data-default-text')
+      if (wasHidden) el.setAttribute('aria-hidden', true)
+    }, {
+      once: true,
+      capture: true,
+      passive: true
+    })
   }
 })

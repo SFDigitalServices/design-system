@@ -5,12 +5,13 @@ specimens:
 ---
 
 ## Introduction
-Our typeface is Rubik, which was designed by Hubert and Fischer in 2015 for
-Google Fonts. It is an open-source typeface that comes in 5 weights with
-Roman and Italic styles, and can be accessed for free through [Google
-Fonts][rubik].
+Our typeface is [Rubik], which was designed by Hubert and Fischer in 2015 for
+Google. It is an open-source typeface that comes in 5 weights with Roman and
+Italic styles, and is available for free from [Google Fonts].
 
-We are primarily using only 3 of Rubik’s weights: Light, Regular, and Semibold.
+We are primarily using only 3 of Rubik’s weights: Light
+({{ theme.fontWeight.light }}), Regular ({{ theme.fontWeight.regular }}), and
+Semibold ({{ theme.fontWeight.medium }}).
 
 ## Text styles
 This set of standardized text styles should cover most needs, including
