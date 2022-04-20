@@ -7,9 +7,18 @@ utility_groups:
   - title: Background color
     css: background-color
     theme: colors
+  - title: Border color
+    css: border-color
+    theme: colors
+  - title: Font family
+    css: font-family
+    theme: fontFamily
   - title: Font size
     css: font-size
     theme: fontSize
+  - title: Font weight
+    css: font-weight
+    theme: fontWeight
 ---
 
 ## All classes
