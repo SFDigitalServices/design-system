@@ -21,7 +21,8 @@ utility_groups:
     theme: fontWeight
 ---
 
-## All classes
+This is an incomplete listing of classes styled by [our CSS](/usage/css). You
+can mix and match these in the `class` attribute of any HTML element.
 
 {% for group in utility_groups %}
 ## {{ group.title }}
