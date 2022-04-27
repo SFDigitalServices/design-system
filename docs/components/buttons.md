@@ -19,31 +19,50 @@ If the action should not be prompted, a text link may be a better option.
 
 ### Primary button
 
+This is the most common type of button. Use these to direct people to a clear primary action. To call out that these buttons are actionable, they are action blue (`{{ tokens.colors.action }}`).
+
+```html
 <button class="btn">
   Do something
 </button>
-
-
-This is the most common type of button. Use these to direct people to a clear primary action. To call out that these buttons are actionable, they are Action blue.
+```
 
 Try not to have more than 1 primary button on a page. Multiple primary buttons puts more cognitive load on people. It takes them more time and effort to figure out what to do.
 
 ### Inverse button
 
-[insert code sample]
+On some backgrounds, the primary button color will not have sufficient contrast. In this case, use inverse buttons, which have a white fill.
 
-On some backgrounds, the primary button color will not have sufficient contrast. In this case, use Inverse buttons which have a white fill.
-
+```html wrapper_class="bg-blue-dark p-20"
+<div class="bg-blue-dark">
+  <button class="btn btn-inverse">
+    Do something
+  </button>
+</div>
+```
 
 ### Secondary button
 
-[insert code sample]
+```html
+<button class="btn btn-secondary">
+  Do something
+</button>
+```
 
 Secondary buttons don’t have as much visual weight because they are outlined instead of solid. Use these if your button is not an important action on the page. 
 
 Pair it side-by-side with a primary button to prompt toward the primary button’s action.
 
-[insert side by side example image]
+```html id="buttons-side-by-side"
+<div class="flex gap-20">
+  <button class="btn btn-secondary">
+    Cancel
+  </button>
+  <button class="btn">
+    Continue
+  </button>
+</div>
+```
 
 
 ## Variations
@@ -51,26 +70,49 @@ Pair it side-by-side with a primary button to prompt toward the primary button�
 
 ### Block buttons
 
-<button class="btn btn-block">
-  This is a block button
-</button>
-
-
 Block buttons stretch to fill the width of the screen or area instead of having a set width. They are often used on mobile layouts.
 
+```html
+<div class="bg-blue-1 p-20 text-slate text-body">
+  <div>COVID-19 vaccination appointments available only for San Francisco Health Network patients.</div>
+  <button class="btn btn-block my-20">
+    Check for availability
+  </button>
+  <div class="text-center">
+    Or call <a href="tel:1234567890" class="text-action">123-456-7890</a>
+  </div>
+</div>
+```
 
 ### Icons
 
-[insert image of “next” button]
-
 Icons can be on the left or right of the text in a button. Do not use more than one icon in a button.
 
-Icons can be on the left or right of the text in a button. Do not use more than one icon in a button.
+```html
+<div class="flex justify-around items-center gap-16 title-xs">
+  <a href="#" class="btn btn-secondary flex gap-8">
+    <sfgov-icon symbol="arrow-left"></sfgov-icon>
+    <span>Previous</span>
+  </a>
+  <a href="#" class="text-action">1</a>
+  <span>...</span>
+  <a href="#" class="text-action">8</a>
+  <a href="#" class="text-action">9</a>
+  <span>10</span>
+  <a href="#" class="text-action">11</a>
+  <a href="#" class="btn btn-secondary flex gap-8">
+    <span>Next</span>
+    <sfgov-icon symbol="arrow-right"></sfgov-icon>
+  </a>
+</div>
+```
 
 Icons should reinforce the meaning of the button’s text. In rare cases, an icon can be used without text. Only do this if the icon is extremely universally understood, such as an arrow or search magnifying glass. [Read more about icons](/foundations/icons/)
 
 
 ## Appearance
+
+<img src="/static/images/button-specs.png" class="w-full">
 
 Buttons have:
 * corner radius of 8px
@@ -81,21 +123,19 @@ Buttons have:
 
 ## Usage
 
-### Placement
+### Alignment
 
-#### Alignment
+Buttons are typically left aligned with other content, not centered. For exceptions, see <a href="#block-buttons">block buttons</a>.
 
-Buttons are typically left aligned with other content, not centered. For exceptions, see Centered buttons.
-
-| <img class="w-1/1" alt="Left aligned button with left aligned text" src=""> | <img class="w-1/1" alt="Center aligned button with left aligned text" src=""> |
+| <img class="w-1/1" alt="Left aligned button with left aligned text" src="/static/images/alignment-correct.png"> | <img class="w-1/1" alt="Center aligned button with left aligned text" src="/static/images/alignment-incorrect.png"> |
 | ----------- | ----------- |
 | Yes      | No       |
 | Button is left aligned with other content | Button is centered |
 
-#### Arrangement of multiple buttons
+### Arrangement of multiple buttons
 For 2 or more button options, place them side by side instead of on top of one another if possible. This reduces the chance of accidentally clicking the wrong one and avoids alignment issues.
 
-| <img class="w-1/1" alt="Two buttons are to the right and left of each other" src=""> | <img class="w-1/1" alt="Two buttons are above and below each other" src=""> |
+| <img class="w-1/1" alt="Two buttons are to the right and left of each other" src="/static/images/side-by-side-example.png"> | <img class="w-1/1" alt="Two buttons are above and below each other" src="/static/images/side-by-side-incorrect.png"> |
 | ----------- | ----------- |
 | Yes      | No       |
 | Choices are side by side| Choices are stacked |
@@ -109,27 +149,26 @@ Refer to the [button text library](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pa
 
 Long button text is less legible, less impactful, and sometimes can even cause wrapping.
 
-| <img class="w-1/1" alt="Button with text Apply now" src=""> | <img class="w-1/1" alt="Button with text Apply now for your Small Business Grant" src=""> | <img class="w-1/1" alt="Button with text Apply now for your on the first line and Small Business Grant on the second line" src=""> |
-| ----------- | ----------- | ----------- |
-| Yes      | No       | No       |
-| Button text is short (details can be explained outside the button)| Button text is very long | Button text wraps to fit |
+| <button class="btn">Apply now</button> | <button class="btn">Apply now for your Small Business Grant</button> |
+| ----------- | ----------- |
+| Yes      | No       |
+| Button text is short | Button text is very long |
 
+| <button class="btn">Apply now</button> | <button class="btn">Apply now for your<br>Small Business Grant</button> |
+| ----------- | ----------- |
+| Yes      | No       |
+| Button text fits on one line | Button text wraps to fit |
 
+## HTML implementation
 
-## Technical implementation
+Buttons styles can be applied to both HTML links (`<a>` elements) and interactive buttons (`<button>`).
 
 ### Link buttons
-
-This is some text about link buttons. We should explain why we want links to
-look like buttons.
-
-### Inline link
 ```html
 <a class="btn" href="#">
   This is a link
 </a>
 ```
-
 ### Block link
 ```html
 <a class="btn btn-block" href="#">
@@ -137,17 +176,12 @@ look like buttons.
 </a>
 ```
 
-## HTML buttons
-
-This is some text about actual styling actual `<button>` elements.
-
-### Inline button
+### HTML buttons
 ```html
 <button class="btn">
   This is a button
 </button>
 ```
-
 ### Block button
 ```html
 <button class="btn btn-block">
