@@ -4,6 +4,7 @@ module.exports = {
     2,
     4,
     8,
+    12,
     16,
     20,
     24, // TODO: deprecate @3
@@ -14,7 +15,8 @@ module.exports = {
     80,
     96,
     100 // TODO: deprecate @3
-  ])
+  ]),
+  full: '100%'
 }
 
 function pxMap (values) {
