@@ -44,6 +44,8 @@ function getLastCommitFromGit (path) {
 }
 
 async function getLastCommitFromGitHub (path) {
+  if (process.env.NODE_ENV === 'development') return null
+
   const args = { ...context, path, sha: branch, per_page: 1 }
 
   // console.info('getting last commit from github:', args)
@@ -53,7 +55,7 @@ async function getLastCommitFromGitHub (path) {
     res = await github.rest.repos.listCommits(args)
     commits = res.data
   } catch (error) {
-    console.warn('error loading commits for "%s"', path, error)
+    console.warn('error loading commits for "%s"', path)
     gitMetaCache.set(path, null)
     return null
   }
@@ -71,7 +73,7 @@ async function getLastCommitFromGitHub (path) {
     // console.info('caching git meta for "%s"', path, meta)
     return meta
   } else {
-    console.warn('unable to get commit for "%s"', path, res)
+    console.warn('unable to get commit for "%s"', path)
     return null
   }
 }
