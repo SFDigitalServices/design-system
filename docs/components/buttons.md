@@ -149,12 +149,12 @@ Refer to the [button text library](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pa
 
 Long button text is less legible, less impactful, and sometimes can even cause wrapping.
 
-| <button class="btn">Apply now</button> | <button class="btn">Apply now for your Small Business Grant</button> |
+| <button class="btn mb-48">Apply now</button> | <button class="btn mb-48">Apply now for your Small Business Grant</button> |
 | ----------- | ----------- |
 | Yes      | No       |
 | Button text is short | Button text is very long |
 
-| <button class="btn">Apply now</button> | <button class="btn">Apply now for your<br>Small Business Grant</button> |
+| <button class="btn mb-20">Apply now</button> | <button class="btn mb-20">Apply now for your<br>Small Business Grant</button> |
 | ----------- | ----------- |
 | Yes      | No       |
 | Button text fits on one line | Button text wraps to fit |
