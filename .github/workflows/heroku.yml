@@ -1,29 +1,59 @@
 name: Heroku
 on:
+  push:
+    branches:
+      - main
   pull_request:
     types: [opened, synchronize, closed, reopened]
 
-jobs:
-  create-review-app:
-    if: github.event.action == 'opened' || github.event.action == 'reopened'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: fastruby/manage-heroku-review-app@v1.2
-        with:
-          action: create
-        env:
-          HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_PIPELINE_ID: ${{ secrets.HEROKU_PIPELINE_ID }}
-          GITHUB_TOKEN: ${{ github.token }}
+env:
+  HEROKU_APP_NAME: sfgov-design-system
+  HEROKU_PIPELINE: sfgov-design-system
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
+  CREATE_REVIEW_APP_LABEL: heroku-review-app
+  PR_NUMBER: ${{ github.event.number }}
 
-  destroy-review-app:
-    if: github.event.action == 'closed'
+jobs:
+  heroku:
     runs-on: ubuntu-latest
     steps:
-      - uses: fastruby/manage-heroku-review-app@v1.2
+      # checkout the code
+      - uses: actions/checkout@v3
+      # setup node
+      - uses: actions/setup-node@v3
         with:
-          action: destroy
-        env:
-          HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_PIPELINE_ID: ${{ secrets.HEROKU_PIPELINE_ID }}
-          GITHUB_TOKEN: ${{ github.token }}
+          node-version: 14
+
+      # add the "-pr-$PR_NUMBER" suffix to $HEROKU_APP_NAME
+      - if: github.event_name == 'pull_request'
+        name: add review app suffix to HEROKU_APP_NAME
+        # appending to $GITHUB_ENV is how we export the variable to subsequent steps
+        run: echo "HEROKU_APP_NAME=${HEROKU_APP_NAME}-pr-${PR_NUMBER}" >> $GITHUB_ENV
+
+      # install dependencies, including the heroku cli
+      - run: npm install
+
+      # create a review app if:
+      # - a pr is opened or re-opened
+      # - a pr is labeled with env.CREATE_REVIEW_APP_LABEL
+      - if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.label.name == env.CREATE_REVIEW_APP_LABEL
+        name: create review app
+        run: |
+          heroku apps:create $HEROKU_APP_NAME
+          heroku pipelines:add $HEROKU_PIPELINE --app=$HEROKU_APP_NAME --stage=development
+
+      # destroy the review app when a pull request is closed
+      - if: github.event.action == 'closed'
+        name: destroy review app
+        run: heroku apps:destroy --app=$HEROKU_APP_NAME
+
+      # lastly, deploy the code
+      - if: github.event.action == 'opened' || github.event_name == 'push'
+        name: deploy to heroku
+        uses: formsort/action-heroku-deploy@v1
+        with:
+          github_repo: ${{ github.repository }}
+          github_token: ${{ github.token }}
+          heroku_api_key: ${{ env.HEROKU_API_KEY }}
+          heroku_app_name: ${{ env.HEROKU_APP_NAME }}
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
