@@ -6,16 +6,16 @@ Use buttons for major actions.
 Buttons draw more attention than a simple text link. Because of their larger surface and color, they are visually more findable and easier to click or tap.
 
 ## When to use
+
 Use a button when an action has more weight or significance. Examples:
+
 * There is a clear primary action people should take
 * Highlighting a suggested action in a page section
 * A significant or destructive action will be applied and users need to be aware
 
 If the action should not be prompted, a text link may be a better option.
 
-
 ## Types of buttons
-
 
 ### Primary button
 
@@ -64,9 +64,7 @@ Pair it side-by-side with a primary button to prompt toward the primary buttonâ€
 </div>
 ```
 
-
 ## Variations
-
 
 ### Block buttons
 
@@ -109,7 +107,6 @@ Icons can be on the left or right of the text in a button. Do not use more than 
 
 Icons should reinforce the meaning of the buttonâ€™s text. In rare cases, an icon can be used without text. Only do this if the icon is extremely universally understood, such as an arrow or search magnifying glass. [Read more about icons](/foundations/icons/)
 
-
 ## Appearance
 
 <img src="/static/images/button-specs.png" class="w-full">
@@ -119,7 +116,6 @@ Buttons have:
 * 8px padding on the top and bottom
 * 20px padding left and right, but can be variable on block buttons
 * Body Bold text
-
 
 ## Usage
 
@@ -133,13 +129,13 @@ Buttons are typically left aligned with other content, not centered. For excepti
 | Button is left aligned with other content | Button is centered |
 
 ### Arrangement of multiple buttons
+
 For 2 or more button options, place them side by side instead of on top of one another if possible. This reduces the chance of accidentally clicking the wrong one and avoids alignment issues.
 
 | <img class="w-1/1" alt="Two buttons are to the right and left of each other" src="/static/images/side-by-side-example.png"> | <img class="w-1/1" alt="Two buttons are above and below each other" src="/static/images/side-by-side-incorrect.png"> |
 | ----------- | ----------- |
 | Yes      | No       |
 | Choices are side by side| Choices are stacked |
-
 
 ### Writing button text
 
@@ -164,12 +160,15 @@ Long button text is less legible, less impactful, and sometimes can even cause w
 Buttons styles can be applied to both HTML links (`<a>` elements) and interactive buttons (`<button>`).
 
 ### Link buttons
+
 ```html
 <a class="btn" href="#">
   This is a link
 </a>
 ```
+
 ### Block link
+
 ```html
 <a class="btn btn-block" href="#">
   This is a block link
@@ -177,12 +176,15 @@ Buttons styles can be applied to both HTML links (`<a>` elements) and interactiv
 ```
 
 ### HTML buttons
+
 ```html
 <button class="btn">
   This is a button
 </button>
 ```
+
 ### Block button
+
 ```html
 <button class="btn btn-block">
   This is a block button
