@@ -32,4 +32,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          npm_config_registry: https://registry.npmjs.org/
+          NPM_REGISTRY_URL: https://registry.npmjs.org/
