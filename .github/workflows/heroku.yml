@@ -43,7 +43,6 @@ jobs:
           github.event.action == 'opened' ||
           github.event.action == 'reopened' ||
           github.event.label.name == env.CREATE_REVIEW_APP_LABEL
-        id: create
         name: create review app
         run: |
           heroku apps:create $HEROKU_APP_NAME
@@ -51,12 +50,11 @@ jobs:
 
       # destroy the review app when a pull request is closed
       - if: github.event.action == 'closed'
-        id: destroy
         name: destroy review app
         run: heroku apps:destroy --app=$HEROKU_APP_NAME
 
-      # lastly, deploy the code (if the env was created or _not_ destroyed)
-      - if: steps.create.outcome == 'success' || steps.destroy.outcome == 'skipped'
+      # lastly, deploy the code (if not a pr close event)
+      - if: github.event.action != 'closed'
         name: deploy to heroku
         uses: formsort/action-heroku-deploy@v1
         with:
