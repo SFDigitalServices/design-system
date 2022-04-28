@@ -31,8 +31,10 @@ jobs:
         # appending to $GITHUB_ENV is how we export the variable to subsequent steps
         run: echo "HEROKU_APP_NAME=${HEROKU_APP_NAME}-pr-${PR_NUMBER}" >> $GITHUB_ENV
 
-      # install dependencies, including the heroku cli
+      # install project dependencies
       - run: npm install
+      # install the heroku cli
+      - run: npm install -g heroku
 
       # create a review app if:
       # - a pr is opened or re-opened
