@@ -14,7 +14,7 @@ env:
   PR_NUMBER: ${{ github.event.number }}
 
 jobs:
-  heroku:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       # checkout the code
@@ -22,7 +22,8 @@ jobs:
       # setup node
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: '14.x'
+          cache: npm
 
       # add the "-pr-$PR_NUMBER" suffix to $HEROKU_APP_NAME
       - if: github.event_name == 'pull_request'
