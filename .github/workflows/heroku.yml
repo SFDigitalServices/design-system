@@ -37,7 +37,10 @@ jobs:
       # create a review app if:
       # - a pr is opened or re-opened
       # - a pr is labeled with env.CREATE_REVIEW_APP_LABEL
-      - if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.label.name == env.CREATE_REVIEW_APP_LABEL
+      - if: |
+          github.event.action == 'opened' ||
+          github.event.action == 'reopened' ||
+          github.event.label.name == env.CREATE_REVIEW_APP_LABEL
         name: create review app
         run: |
           heroku apps:create $HEROKU_APP_NAME
@@ -48,8 +51,8 @@ jobs:
         name: destroy review app
         run: heroku apps:destroy --app=$HEROKU_APP_NAME
 
-      # lastly, deploy the code
-      - if: github.event.action == 'opened' || github.event_name == 'push'
+      # lastly, deploy the code (if this isn't a pr close event)
+      - if: github.event.action != 'closed'
         name: deploy to heroku
         uses: formsort/action-heroku-deploy@v1
         with:
