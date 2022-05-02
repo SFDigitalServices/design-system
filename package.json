@@ -28,7 +28,7 @@
     "lint": "run-p lint-css lint-js lint-scripts",
     "lint-css": "stylelint src/css",
     "lint-js": "eslint src docs '*.js' lib 'scripts/*.js'",
-    "lint-scripts": "shellcheck scripts/*",
+    "lint-scripts": "shellcheck scripts/*.sh",
     "prepublishOnly": "scripts/prepublish-checks.sh",
     "watch": "run-p watch-css watch-js watch-icons",
     "watch-css": "watchy -w '*.config.js' -w src -- npm run build-css",
