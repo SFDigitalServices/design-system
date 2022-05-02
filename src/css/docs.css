@@ -49,9 +49,9 @@
       @apply align-top text-left px-16 py-8;
     }
 
-    [align=left] { @apply text-left; }
-    [align=center] { @apply text-center; }
-    [align=right] { @apply text-right; }
+    [align='left'] { @apply text-left; }
+    [align='center'] { @apply text-center; }
+    [align='right'] { @apply text-right; }
 
     thead th {
       @apply border-0 border-b-1 border-solid border-black;
