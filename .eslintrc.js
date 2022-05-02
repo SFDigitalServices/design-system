@@ -9,11 +9,12 @@ module.exports = {
   ],
   rules: {
     'unicorn/expiring-todo-comments': ['error', {
+      allowWarningComments: true
     }]
   },
   overrides: [
     {
-      files: ['src/js/*.js', 'src/icons/index.js'],
+      files: ['src/**/*.js'],
       env: {
         browser: true
       },
