@@ -9,6 +9,7 @@
   "files": [
     "dist",
     "docs",
+    "lib/tailwind",
     "src",
     "tailwind.config.js"
   ],
