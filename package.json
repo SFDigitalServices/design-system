@@ -9,8 +9,9 @@
   "files": [
     "dist",
     "docs",
+    "lib/tailwind",
     "src",
-    "tailwind.config.js"
+    "tailwind.*.js"
   ],
   "engines": {
     "node": "14.x"
@@ -37,6 +38,10 @@
     "watch-js": "npm run build-js -- --watch",
     "watch-lint": "watchy -w '{lib,src,scripts,docs}' -- npm run lint",
     "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.0.2",
+    "tailwindcss-interaction-variants": "^5.0.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
@@ -99,8 +104,6 @@
     "shellcheck": "^1.0.0",
     "stylelint": "^14.1.0",
     "stylelint-config-standard": "^24.0.0",
-    "tailwindcss": "^2.0.2",
-    "tailwindcss-interaction-variants": "^5.0.0",
     "unist-util-select": "^3.0.4",
     "unist-util-visit": "^2.0.3",
     "watchy": "^0.9.9"
