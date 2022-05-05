@@ -38,6 +38,7 @@ module.exports = config => {
   config.setUseGitIgnore(false)
   config.addWatchTarget('./dist')
   config.addPassthroughCopy('dist')
+  config.addPassthroughCopy('docs/static')
 
   return {
     dir: {

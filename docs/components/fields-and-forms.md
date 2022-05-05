@@ -24,7 +24,6 @@ This page documents the general guidelines that apply to most form field types. 
   <figcaption align="center">1. Optional label, 2. Field name, 3. Field description, 4. Hint text, 5. Field area, 6. Field status message</figcaption>
 </figure>
 
-
 #### Optional label
 
 Many web forms indicate required fields with red text ("required") or asterisks ("*"). We’ve decided to take a slightly different route when distinguishing between required and optional fields.

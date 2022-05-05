@@ -16,7 +16,7 @@ const gridRowSpans = gridRows
 module.exports = {
   colors,
   screens: breakpoints,
-  spacing, // TODO: add line heights @3
+  spacing, // TODO [>=3]: add line heights to spacing scale
   fontFamily: {
     ...fontFamily,
     inherit: 'inherit'
@@ -28,14 +28,15 @@ module.exports = {
   },
   textColor: {
     inherit: 'inherit',
-    ...colors, // FIXME: deprecate in 3.0.0
+    ...colors, // TODO [>=3]: remove this in favor of only textColor
     ...textColor
   },
   borderRadius: {
     DEFAULT: '8px',
     0: '0',
     2: '2px',
-    4: '4px'
+    4: '4px',
+    full: '100%'
   },
   borderWidth: {
     DEFAULT: '3px',

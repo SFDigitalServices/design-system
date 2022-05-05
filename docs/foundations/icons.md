@@ -119,7 +119,6 @@ We’ve created all icons 2px padding, and that padding should not be infringed 
 | Yes      | No       |
 | The right padding of the icon is respected | The right padding on the icon has been ignored and crowds the label |
 
-
 #### Alignment
 
 The icons should be center aligned to the accompanying label and not to the baseline of the icon.
