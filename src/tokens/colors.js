@@ -107,6 +107,7 @@ module.exports = {
   },
   grey: {
     dark: '#424244',
+    focus: '#aeb0b5',
     4: '#D3D3D3',
     3: '#E9E9E9',
     2: '#F1F1F1',

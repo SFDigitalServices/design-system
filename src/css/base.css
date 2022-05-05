@@ -16,8 +16,8 @@
 
   :focus,
   .focus {
-    outline: 2px dotted #aeb0b5;
-    outline-offset: 3px; /* TODO [^3]: remove outline-offset (or set to 0) */
+    outline: 2px dotted theme('colors.grey.focus');
+    outline-offset: 3px; /* TODO [>=3]: remove outline-offset (or set to 0) */
   }
 
   ::placeholder {
