@@ -39,3 +39,9 @@ on('click', 'clipboard-copy', function () {
     })
   }
 })
+
+// prevent scrolling on mock link clicks
+on('click', 'a[href="#"]', function (event) {
+  event.preventDefault()
+  return false
+})
