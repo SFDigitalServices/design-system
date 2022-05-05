@@ -37,7 +37,7 @@
 
   code:not([class]),
   .inline-code {
-    @apply px-4 py-2 rounded-4 bg-grey-2 whitespace-nowrap;
+    @apply inline-flex flex-nowrap px-4 py-2 rounded-4 bg-grey-2 whitespace-nowrap;
   }
 
   table:not([class]),
@@ -45,18 +45,18 @@
     border-collapse: collapse;
     border-spacing: 0;
 
-    thead th {
-      @apply border-0 border-b-1 border-solid border-black;
-    }
-
     td,
     th {
       @apply align-top text-left px-16 py-8;
     }
 
-    [align=left] { @apply text-left; }
-    [align=center] { @apply text-center; }
-    [align=right] { @apply text-right; }
+    [align='left'] { @apply text-left; }
+    [align='center'] { @apply text-center; }
+    [align='right'] { @apply text-right; }
+
+    thead th {
+      @apply border-0 border-b-1 border-solid border-black;
+    }
 
     tbody tr:nth-child(even) {
       @apply bg-grey-1;
@@ -149,7 +149,7 @@ a {
    * object, like XML tag" */
   .hljs-attr { @apply text-slate-light; }
 
-   /* "name of an attribute followed by a structured value part, like CSS properties" */
+  /* "name of an attribute followed by a structured value part, like CSS properties" */
   .hljs-attribute { @apply text-red-4; }
 
   /* "literal string, character" */
