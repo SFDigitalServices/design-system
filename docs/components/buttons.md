@@ -49,7 +49,7 @@ On some backgrounds, the primary button color will not have sufficient contrast.
 </button>
 ```
 
-Secondary buttons don’t have as much visual weight because they are outlined instead of solid. Use these if your button is not an important action on the page. 
+Secondary buttons don’t have as much visual weight because they are outlined instead of solid. Use these if your button is not an important action on the page.
 
 Pair it side-by-side with a primary button to prompt toward the primary button’s action.
 
@@ -139,9 +139,9 @@ For 2 or more button options, place them side by side instead of on top of one a
 
 ### Writing button text
 
-Button text should ideally be less than 15 characters. A maximum of 25 characters is OK if necessary. 
+Button text should ideally be less than 15 characters. A maximum of 25 characters is OK if necessary.
 
-Refer to the [button text library](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pages/3221651460/Button+text+library) for common button uses. 
+Refer to the [button text library](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pages/3221651460/Button+text+library) for common button uses.
 
 Long button text is less legible, less impactful, and sometimes can even cause wrapping.
 
