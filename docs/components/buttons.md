@@ -109,7 +109,7 @@ Icons should reinforce the meaning of the button’s text. In rare cases, an ico
 
 ## Appearance
 
-<img src="/static/images/button-specs.png" class="w-full">
+<img alt="" src="/static/images/button-specs.png" class="w-full">
 
 Buttons have:
 * corner radius of 8px
