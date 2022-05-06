@@ -137,7 +137,6 @@ For 2 or more button options, place them side by side instead of on top of one a
 | Yes      | No       |
 | Choices are side by side | Choices are stacked |
 
-
 ### Writing button text
 
 Button text should ideally be less than 15 characters. A maximum of 25 characters is OK if necessary.
