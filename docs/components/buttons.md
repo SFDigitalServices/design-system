@@ -73,9 +73,9 @@ Block buttons stretch to fill the width of the screen or area instead of having 
 ```html
 <div class="bg-blue-1 p-20 text-slate text-body">
   <div>COVID-19 vaccination appointments available only for San Francisco Health Network patients.</div>
-  <button class="btn btn-block my-20">
+  <a href="#" class="btn btn-block my-20">
     Check for availability
-  </button>
+  </a>
   <div class="text-center">
     Or call <a href="tel:1234567890" class="text-action">123-456-7890</a>
   </div>
@@ -87,7 +87,7 @@ Block buttons stretch to fill the width of the screen or area instead of having 
 Icons can be on the left or right of the text in a button. Do not use more than one icon in a button.
 
 ```html
-<div class="flex justify-around items-center gap-16 title-xs">
+<div class="flex justify-center items-center gap-16 title-xs">
   <a href="#" class="btn btn-secondary flex gap-8">
     <sfgov-icon symbol="arrow-left"></sfgov-icon>
     <span>Previous</span>
@@ -109,7 +109,7 @@ Icons should reinforce the meaning of the button’s text. In rare cases, an ico
 
 ## Appearance
 
-<img alt="" src="/static/images/button-specs.png" class="w-full">
+<img alt="" src="/static/images/button-specs.png" width="392" class="min-w-full">
 
 Buttons have:
 * corner radius of 8px
@@ -132,10 +132,11 @@ Buttons are typically left aligned with other content, not centered. For excepti
 
 For 2 or more button options, place them side by side instead of on top of one another if possible. This reduces the chance of accidentally clicking the wrong one and avoids alignment issues.
 
-| <img class="w-1/1" alt="Two buttons are to the right and left of each other" src="/static/images/side-by-side-example.png"> | <img class="w-1/1" alt="Two buttons are above and below each other" src="/static/images/side-by-side-incorrect.png"> |
+| <div class="flex gap-20"><button class="btn btn-secondary">Cancel</button><button class="btn">Continue</button></div> | <div><button class="btn btn-secondary mb-20">Cancel</button><br><button class="btn mb-20">Continue</button></div> |
 | ----------- | ----------- |
 | Yes      | No       |
-| Choices are side by side| Choices are stacked |
+| Choices are side by side | Choices are stacked |
+
 
 ### Writing button text
 
@@ -145,7 +146,7 @@ Refer to the [button text library](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pa
 
 Long button text is less legible, less impactful, and sometimes can even cause wrapping.
 
-| <button class="btn mb-48">Apply now</button> | <button class="btn mb-48">Apply now for your Small Business Grant</button> |
+| <button class="btn mb-48">Apply now</button> | <button class="btn mb-48">Apply now for this grant</button> |
 | ----------- | ----------- |
 | Yes      | No       |
 | Button text is short | Button text is very long |
@@ -189,4 +190,15 @@ Buttons styles can be applied to both HTML links (`<a>` elements) and interactiv
 <button class="btn btn-block">
   This is a block button
 </button>
+```
+
+### Horizontal arrangement
+
+For horizontal alignment and correct spacing (`{{ tokens.spacing['20'] }}`), wrap the buttons in an element with `flex gap-x-20`:
+
+```html
+<div class="flex gap-x-20">
+  <button class="btn btn-secondary">Cancel</button>
+  <button class="btn">Continue</button>
+</div>
 ```
