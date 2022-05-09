@@ -1,4 +1,4 @@
----
+i---
 title: Tailwind
 see_also:
   - title: Utility classes
@@ -15,7 +15,7 @@ We use [Tailwind] to build our CSS (specifically the [utility classes](/usage/cs
   </div>
 </div>
 
-### Preset
+## Preset
 We publish a [Tailwind preset][presets] so that you can use it in your own `tailwind.config.js` like so:
 
 ```js filename="tailwind.config.js"
@@ -31,7 +31,7 @@ module.exports = {
 }
 ```
 
-### Theme
+## Theme
 If you don't want or need all of the plugins provided by our preset, you can import the theme directly:
 
 ```js filename="tailwind.config.js"
