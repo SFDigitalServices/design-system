@@ -1,5 +1,10 @@
 ---
 title: CSS
+see_also:
+  - title: Utility classes
+    href: /usage/css/utilities/
+  - title: Tailwind
+    href: /usage/css/tailwind/
 bundles:
   - path: dist/css/sfds.css
     desc: Includes all of the bundles listed below, **except** `fonts.css`. Use this if you don't have any other CSS on your site.
@@ -10,7 +15,7 @@ bundles:
   - path: dist/css/typography.css
     desc: Defines global typography styles.
   - path: dist/css/utilities.css
-    desc: Includes all of the [Tailwind]-generated utility classes.
+    desc: Includes all of the [Tailwind]-generated [utility classes][utilities].
 ---
 
 ## Bundles
@@ -39,4 +44,5 @@ File | Size | Description
 <link rel="stylesheet" href="{{ '/dist/css/utilities.css' | published_url(package.version) }}">
 ```
 
-[tailwind]: https://tailwindcss.com/
+[tailwind]: https://v2.tailwindcss.com/
+[utilities]: /usage/css/utilities/
