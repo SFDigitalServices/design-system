@@ -1,0 +1,16 @@
+{
+  "unversionedId": "forms/intro",
+  "id": "forms/intro",
+  "title": "Forms Stuff",
+  "description": "",
+  "source": "@site/docs/forms/intro.md",
+  "sourceDirName": "forms",
+  "slug": "/forms/intro",
+  "permalink": "/docs/forms/intro",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/forms/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "formsSidebar"
+}

@@ -1,0 +1,25 @@
+{
+  "unversionedId": "design/typography",
+  "id": "design/typography",
+  "title": "Typography",
+  "description": "Introduction",
+  "source": "@site/docs/design/typography.md",
+  "sourceDirName": "design",
+  "slug": "/design/typography",
+  "permalink": "/docs/design/typography",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/design/typography.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Typography",
+    "specimens": {
+      "default": "The quick brown fox jumps over the lazy dog."
+    }
+  },
+  "sidebar": "designSidebar",
+  "previous": {
+    "title": "Spacing",
+    "permalink": "/docs/design/spacing"
+  }
+}

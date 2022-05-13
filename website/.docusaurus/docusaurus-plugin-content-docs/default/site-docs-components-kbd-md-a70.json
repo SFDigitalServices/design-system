@@ -1,0 +1,26 @@
+{
+  "unversionedId": "components/kbd",
+  "id": "components/kbd",
+  "title": "Keyboard",
+  "description": "The `` HTML element HTML element represents computer keyboard",
+  "source": "@site/docs/components/kbd.md",
+  "sourceDirName": "components",
+  "slug": "/components/kbd",
+  "permalink": "/docs/components/kbd",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/components/kbd.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Keyboard"
+  },
+  "sidebar": "componentsSidebar",
+  "previous": {
+    "title": "Component Stuffs",
+    "permalink": "/docs/components/intro"
+  },
+  "next": {
+    "title": "Usage",
+    "permalink": "/docs/components/usage/"
+  }
+}

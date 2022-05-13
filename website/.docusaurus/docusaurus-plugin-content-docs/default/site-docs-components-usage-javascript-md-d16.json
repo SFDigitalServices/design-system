@@ -1,0 +1,40 @@
+{
+  "unversionedId": "components/usage/javascript",
+  "id": "components/usage/javascript",
+  "title": "JavaScript",
+  "description": "Browser bundles",
+  "source": "@site/docs/components/usage/javascript.md",
+  "sourceDirName": "components/usage",
+  "slug": "/components/usage/javascript",
+  "permalink": "/docs/components/usage/javascript",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/components/usage/javascript.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "JavaScript",
+    "bundles": [
+      {
+        "path": "dist/js/sfds.js",
+        "desc": "Includes all of the bundles listed below."
+      },
+      {
+        "path": "dist/js/icons.js",
+        "desc": "Defines the `<sfgov-icon>` [custom element] for embedding [icons](../../foundations/icons) in HTML."
+      },
+      {
+        "path": "dist/js/docs.js",
+        "desc": "Documentation support for this site, including clipboard copying functionality."
+      }
+    ]
+  },
+  "sidebar": "componentsSidebar",
+  "previous": {
+    "title": "Install",
+    "permalink": "/docs/components/usage/install"
+  },
+  "next": {
+    "title": "React",
+    "permalink": "/docs/components/usage/react"
+  }
+}

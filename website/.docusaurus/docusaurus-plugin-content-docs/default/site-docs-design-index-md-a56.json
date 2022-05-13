@@ -1,0 +1,26 @@
+{
+  "unversionedId": "design/index",
+  "id": "design/index",
+  "title": "Foundations",
+  "description": "Let's say something about design tokens here.",
+  "source": "@site/docs/design/index.md",
+  "sourceDirName": "design",
+  "slug": "/design/",
+  "permalink": "/docs/design/",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/design/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Foundations"
+  },
+  "sidebar": "designSidebar",
+  "previous": {
+    "title": "Icons",
+    "permalink": "/docs/design/icons"
+  },
+  "next": {
+    "title": "Spacing",
+    "permalink": "/docs/design/spacing"
+  }
+}

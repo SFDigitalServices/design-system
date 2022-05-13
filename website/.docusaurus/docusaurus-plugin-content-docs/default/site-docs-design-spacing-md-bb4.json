@@ -1,0 +1,26 @@
+{
+  "unversionedId": "design/spacing",
+  "id": "design/spacing",
+  "title": "Spacing",
+  "description": "Grid",
+  "source": "@site/docs/design/spacing.md",
+  "sourceDirName": "design",
+  "slug": "/design/spacing",
+  "permalink": "/docs/design/spacing",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/design/spacing.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Spacing"
+  },
+  "sidebar": "designSidebar",
+  "previous": {
+    "title": "Foundations",
+    "permalink": "/docs/design/"
+  },
+  "next": {
+    "title": "Typography",
+    "permalink": "/docs/design/typography"
+  }
+}

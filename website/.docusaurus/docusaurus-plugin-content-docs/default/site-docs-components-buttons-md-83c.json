@@ -1,0 +1,22 @@
+{
+  "unversionedId": "components/buttons",
+  "id": "components/buttons",
+  "title": "Buttons",
+  "description": "Link buttons",
+  "source": "@site/docs/components/buttons.md",
+  "sourceDirName": "components",
+  "slug": "/components/buttons",
+  "permalink": "/docs/components/buttons",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/components/buttons.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Buttons"
+  },
+  "sidebar": "componentsSidebar",
+  "next": {
+    "title": "Details",
+    "permalink": "/docs/components/details"
+  }
+}

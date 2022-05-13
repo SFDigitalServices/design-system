@@ -1,6 +1,3 @@
 module.exports = {
-  presets: [
-    ['@babel/preset-env', {
-    }]
-  ]
-}
+  presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
+};

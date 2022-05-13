@@ -1,0 +1,16 @@
+{
+  "unversionedId": "developer/intro",
+  "id": "developer/intro",
+  "title": "Developer Stuff",
+  "description": "",
+  "source": "@site/docs/developer/intro.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/intro",
+  "permalink": "/docs/developer/intro",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/developer/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "devSidebar"
+}

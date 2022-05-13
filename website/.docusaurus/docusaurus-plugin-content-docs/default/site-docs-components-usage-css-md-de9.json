@@ -1,0 +1,48 @@
+{
+  "unversionedId": "components/usage/css",
+  "id": "components/usage/css",
+  "title": "CSS",
+  "description": "Bundles",
+  "source": "@site/docs/components/usage/css.md",
+  "sourceDirName": "components/usage",
+  "slug": "/components/usage/css",
+  "permalink": "/docs/components/usage/css",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/components/usage/css.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "CSS",
+    "bundles": [
+      {
+        "path": "dist/css/sfds.css",
+        "desc": "Includes all of the bundles listed below, **except** `fonts.css`. Use this if you don't have any other CSS on your site."
+      },
+      {
+        "path": "dist/css/base.css",
+        "desc": "Defines \"base\" styles, including global resets, focus, and placeholder styles."
+      },
+      {
+        "path": "dist/css/fonts.css",
+        "desc": "Imports web fonts needed to display Latin and Traditional Chinese text."
+      },
+      {
+        "path": "dist/css/typography.css",
+        "desc": "Defines global typography styles."
+      },
+      {
+        "path": "dist/css/utilities.css",
+        "desc": "Includes all of the [Tailwind]-generated utility classes."
+      }
+    ]
+  },
+  "sidebar": "componentsSidebar",
+  "previous": {
+    "title": "Usage",
+    "permalink": "/docs/components/usage/"
+  },
+  "next": {
+    "title": "Development",
+    "permalink": "/docs/components/usage/develop"
+  }
+}

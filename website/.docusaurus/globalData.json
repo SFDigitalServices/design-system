@@ -1,0 +1,166 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "design/color",
+          "docs": [
+            {
+              "id": "components/buttons",
+              "path": "/docs/components/buttons",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/details",
+              "path": "/docs/components/details",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/fields-and-forms",
+              "path": "/docs/components/fields-and-forms",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/index",
+              "path": "/docs/components/",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/intro",
+              "path": "/docs/components/intro",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/kbd",
+              "path": "/docs/components/kbd",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/resources/index",
+              "path": "/docs/components/resources/"
+            },
+            {
+              "id": "components/usage/css",
+              "path": "/docs/components/usage/css",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/usage/develop",
+              "path": "/docs/components/usage/develop",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/usage/docs",
+              "path": "/docs/components/usage/docs",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/usage/icons",
+              "path": "/docs/components/usage/icons",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/usage/index",
+              "path": "/docs/components/usage/",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/usage/install",
+              "path": "/docs/components/usage/install",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/usage/javascript",
+              "path": "/docs/components/usage/javascript",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "components/usage/react",
+              "path": "/docs/components/usage/react",
+              "sidebar": "componentsSidebar"
+            },
+            {
+              "id": "design/color",
+              "path": "/docs/design/color",
+              "sidebar": "designSidebar"
+            },
+            {
+              "id": "design/icons",
+              "path": "/docs/design/icons",
+              "sidebar": "designSidebar"
+            },
+            {
+              "id": "design/index",
+              "path": "/docs/design/",
+              "sidebar": "designSidebar"
+            },
+            {
+              "id": "design/spacing",
+              "path": "/docs/design/spacing",
+              "sidebar": "designSidebar"
+            },
+            {
+              "id": "design/typography",
+              "path": "/docs/design/typography",
+              "sidebar": "designSidebar"
+            },
+            {
+              "id": "developer/intro",
+              "path": "/docs/developer/intro",
+              "sidebar": "devSidebar"
+            },
+            {
+              "id": "forms/intro",
+              "path": "/docs/forms/intro",
+              "sidebar": "formsSidebar"
+            },
+            {
+              "id": "libraries/intro",
+              "path": "/docs/libraries/intro",
+              "sidebar": "librariesSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "designSidebar": {
+              "link": {
+                "path": "/docs/design/color",
+                "label": "design/color"
+              }
+            },
+            "componentsSidebar": {
+              "link": {
+                "path": "/docs/components/buttons",
+                "label": "components/buttons"
+              }
+            },
+            "formsSidebar": {
+              "link": {
+                "path": "/docs/forms/intro",
+                "label": "forms/intro"
+              }
+            },
+            "librariesSidebar": {
+              "link": {
+                "path": "/docs/libraries/intro",
+                "label": "libraries/intro"
+              }
+            },
+            "devSidebar": {
+              "link": {
+                "path": "/docs/developer/intro",
+                "label": "developer/intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

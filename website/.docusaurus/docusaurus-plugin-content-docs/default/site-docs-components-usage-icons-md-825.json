@@ -1,0 +1,32 @@
+{
+  "unversionedId": "components/usage/icons",
+  "id": "components/usage/icons",
+  "title": "Icons",
+  "description": "SVG",
+  "source": "@site/docs/components/usage/icons.md",
+  "sourceDirName": "components/usage",
+  "slug": "/components/usage/icons",
+  "permalink": "/docs/components/usage/icons",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/components/usage/icons.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Icons",
+    "see_also": [
+      {
+        "title": "Icon library",
+        "href": "/resources/icon-library/"
+      }
+    ]
+  },
+  "sidebar": "componentsSidebar",
+  "previous": {
+    "title": "Documentation",
+    "permalink": "/docs/components/usage/docs"
+  },
+  "next": {
+    "title": "Install",
+    "permalink": "/docs/components/usage/install"
+  }
+}

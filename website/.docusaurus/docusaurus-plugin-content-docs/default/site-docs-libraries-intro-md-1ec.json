@@ -1,0 +1,16 @@
+{
+  "unversionedId": "libraries/intro",
+  "id": "libraries/intro",
+  "title": "Lbrary Stuff",
+  "description": "",
+  "source": "@site/docs/libraries/intro.md",
+  "sourceDirName": "libraries",
+  "slug": "/libraries/intro",
+  "permalink": "/docs/libraries/intro",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/libraries/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "librariesSidebar"
+}

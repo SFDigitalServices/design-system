@@ -1,0 +1,26 @@
+{
+  "unversionedId": "components/usage/docs",
+  "id": "components/usage/docs",
+  "title": "Documentation",
+  "description": "This site is built with [Eleventy] and hosted on [Heroku]. All of the pages on",
+  "source": "@site/docs/components/usage/docs.md",
+  "sourceDirName": "components/usage",
+  "slug": "/components/usage/docs",
+  "permalink": "/docs/components/usage/docs",
+  "draft": false,
+  "editUrl": "https://github.com/SFDigitalServices/design-system/tree/main/docs/components/usage/docs.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Documentation"
+  },
+  "sidebar": "componentsSidebar",
+  "previous": {
+    "title": "Development",
+    "permalink": "/docs/components/usage/develop"
+  },
+  "next": {
+    "title": "Icons",
+    "permalink": "/docs/components/usage/icons"
+  }
+}
