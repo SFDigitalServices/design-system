@@ -11,6 +11,6 @@
   
   @breakpoint xl {
     @apply mx-auto;
-    max-width: calc(token('breakpoints.xl') - token('spacing.96') * 2);
+    max-width: calc(theme('breakpoints.xl') - theme('spacing.96') * 2);
   }
 }
