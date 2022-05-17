@@ -1,4 +1,4 @@
-i---
+---
 title: Tailwind
 see_also:
   - title: Utility classes
