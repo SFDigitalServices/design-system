@@ -99,7 +99,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '91b'),
+    component: ComponentCreator('/docs', 'f2f'),
     routes: [
       {
         path: '/docs/components/',
@@ -198,7 +198,7 @@ export default [
       },
       {
         path: '/docs/design/color',
-        component: ComponentCreator('/docs/design/color', '14e'),
+        component: ComponentCreator('/docs/design/color', 'a08'),
         exact: true,
         sidebar: "designSidebar"
       },

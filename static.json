@@ -1,0 +1,9 @@
+{
+    "https_only": true,
+    "root": "public",
+    "headers": {
+      "**/*.js": {
+        "Content-type": "text/javascript"
+      }
+    }
+  }
