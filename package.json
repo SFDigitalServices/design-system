@@ -6,6 +6,10 @@
   "license": "MIT",
   "browser": "dist/js/sfds.js",
   "module": "dist/js/sfds.mjs",
+  "workspaces": [
+    "website",
+    "packages/*"
+  ],
   "files": [
     "dist",
     "docs",
