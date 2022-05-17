@@ -5,8 +5,12 @@
 }
 
 .responsive-container {
-  @apply mx-20 max-w-xl;
+  @apply mx-20;
   @apply md:mx-28;
   @apply lg:mx-96;
-  @apply xl:mx-auto;
+  
+  @breakpoint xl {
+    @apply mx-auto;
+    max-width: calc(token('breakpoints.xl') - token('spacing.96') * 2);
+  }
 }
