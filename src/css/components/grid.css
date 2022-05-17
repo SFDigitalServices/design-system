@@ -9,7 +9,7 @@
   @apply md:mx-28;
   @apply lg:mx-96;
   
-  @breakpoint xl {
+  @screen xl {
     @apply mx-auto;
     max-width: calc(theme('breakpoints.xl') - theme('spacing.96') * 2);
   }
