@@ -13,7 +13,7 @@ env:
       
 jobs:
   create-app:
-    if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.label.name == env.HEROKU_CREATE_LABEL
+    if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.label.name == env. HEROKU_APP_LABEL
     runs-on: ubuntu-latest
     env:
       HEROKU_APP_NAME: ${{ env.HEROKU_APP_NAME }}-pr-${{ env.PR_NUMBER }}
