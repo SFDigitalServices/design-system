@@ -1,8 +1,12 @@
 ---
 title: Color
+links:
+  - rel: figma
+    href: https://www.figma.com/file/PztEA9PIX00czGHf68Gsr5/SF-Colors?node-id=16%3A3
 ---
 
 import ColorSwatch from '@site/src/components/content-containers/colorSwatch.js'
+import { colors } from '../../../src/tokens'
 
 The diversity of color and the range of saturations is a reflection of the contrasts that make San Francisco a unique place. The color palette is a useful tool that helps construct an experience that is both accessible and distinctly San Francisco.
 
@@ -10,16 +14,14 @@ The diversity of color and the range of saturations is a reflection of the contr
 
 These are the primary brand colors, often used for backgrounds or for general content. Blue does not have an L3 because there are a variety of different blues in use. Black is a very dark gray to subtly soften the extreme contrast.
 
-<ColorSwatch colorValue="#5A7A92" colorName="Dark Blue" />
-:::swatches
-
-- ::swatch[Dark Blue]{value="{{ tokens.colors.blue.dark }}"}
-- ::swatch[Blue L2]{value="{{ tokens.colors.blue[2] }}"}
-- ::swatch[Blue L1]{value="{{ tokens.colors.blue[1] }}"}
-- ::swatch[Black]{value="{{ tokens.colors.black }}"}
-- ::swatch[Dark grey]{value="{{ tokens.colors.grey.dark }}"}
-- ::swatch[White]{value="{{ tokens.colors.white }}" class="border-1 border-solid border-black"}
-:::
+<div className='flex flex-wrap gap-40'>
+  <ColorSwatch colorValue={colors.blue.dark} colorName="Dark blue" />
+  <ColorSwatch colorValue={ colors.blue[2] } colorName='Blue L2' />
+  <ColorSwatch colorValue={ colors.blue[1] } colorName='Blue L1' />
+  <ColorSwatch colorValue={ colors.black } colorName='Black' />
+  <ColorSwatch colorValue={ colors.grey.dark } colorName='Dark grey' />
+  <ColorSwatch colorValue={colors.white} addBorder={true} colorName='white' />
+</div>
 
 ## Text colors
 
