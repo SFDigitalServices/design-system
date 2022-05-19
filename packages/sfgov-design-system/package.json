@@ -6,19 +6,12 @@
   "license": "MIT",
   "browser": "dist/js/sfds.js",
   "module": "dist/js/sfds.mjs",
-  "workspaces": [
-    "website",
-    "packages/*"
-  ],
   "files": [
     "dist",
     "docs",
     "src",
-    "tailwind.config.js"
+    "tailwind.*.js"
   ],
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
     "build": "run-s build-assets build-docs",
     "build-assets": "run-p build-css build-js build-icons",
@@ -61,9 +54,6 @@
     "debounce": "^1.2.1",
     "delegated-events": "^1.1.2",
     "dotenv": "^10.0.0",
-    "eslint": "^7.17.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-sfgov": "^0.0.0-da6c354",
     "execa": "^5.0.0",
     "fs-extra": "^10.0.0",
     "globby": "^5.0.0",

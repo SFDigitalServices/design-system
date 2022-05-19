@@ -1,49 +1,49 @@
-const yaml = require("js-yaml");
+const yaml = require('js-yaml')
 
 module.exports = {
-  names: ["front-matter"],
-  description: "YAML frontmatter",
-  tags: ["local"],
+  names: ['front-matter'],
+  description: 'YAML frontmatter',
+  tags: ['local'],
   function: (params, onError) => {
-    const { config, frontMatterLines } = params;
-    const { required_keys: requiredKeys = [] } = config;
+    const { config, frontMatterLines } = params
+    const { required_keys: requiredKeys = [] } = config
 
     if (frontMatterLines?.length < 1) {
       onError({
         lineNumber: 1,
         detail: 'missing "---" delimiters',
-        context: frontMatterLines.join("\n"),
-      });
+        context: frontMatterLines.join('\n')
+      })
     } else {
-      const rawFrontMatter = frontMatterLines.join("\n").trim();
+      const rawFrontMatter = frontMatterLines.join('\n').trim()
       const content = rawFrontMatter
-        .split("\n")
+        .split('\n')
         .slice(1)
         .slice(0, -1)
-        .join("\n");
+        .join('\n')
 
-      let parsed;
+      let parsed
       try {
-        parsed = yaml.load(content, "utf8");
+        parsed = yaml.load(content, 'utf8')
       } catch (error) {
         onError({
           lineNumber: 1,
-          detail: "unable to parse YAML",
-          context: rawFrontMatter,
-        });
-        return;
+          detail: 'unable to parse YAML',
+          context: rawFrontMatter
+        })
+        return
       }
 
       const missing = requiredKeys.filter(
-        (key) => typeof parsed?.[key] === "undefined"
-      );
+        (key) => typeof parsed?.[key] === 'undefined'
+      )
       if (missing.length) {
         onError({
           lineNumber: 1,
           detail: `missing keys: "${missing.join('", "')}"`,
-          context: content,
-        });
+          context: content
+        })
       }
     }
-  },
-};
+  }
+}
