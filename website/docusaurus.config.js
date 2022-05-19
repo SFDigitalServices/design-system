@@ -11,10 +11,10 @@ const config = {
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'SFDigitalServices', // Usually your GitHub org/user name.
+  projectName: 'design-system', // Usually your repo name.
 
   presets: [
     [
