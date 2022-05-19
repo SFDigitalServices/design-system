@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "workspaces": [
+    "website",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=14.x"
+  },
+  "dependencies": {
+    "eslint": "^8.15.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-sfgov": "^1.0",
+    "eslint-plugin-unicorn": "^42.0.0"
+  }
+}
