@@ -11,22 +11,18 @@ jobs:
           node-version: 14
           cache: npm
 
-      - run: npm ci
+      - run: npm install
       - run: npm run lint
 
       # this sets NODE_ENV=production for all of the build scripts
-      # (`npm ci` doesn't install anything if it's set earlier)
-      - run: |
-          echo NODE_ENV=production >> $GITHUB_ENV
-
+      - run: echo NODE_ENV=production >> $GITHUB_ENV
       # run these separately so that it's easier to see what failed
-      - run: npm run build-assets
-      - run: npm run build-docs
-
+      - run: npm run build
       # run pre-publish checks
       - run: npm run prepublishOnly
 
       - uses: primer/publish@v3.0.0
+        if: ${{ false }} # FIXME: bring this back
         with:
           npm_args: --unsafe-perm --allow-same-version
           default_branch: main
