@@ -3,6 +3,10 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { repository } = require('sfgov-design-system/package.json')
+const [owner, repo] = repository.split('/')
+const repoUrl = `https://github.com/${repository}`
+const editUrl = `${repoUrl}/tree/main/docs`
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -11,10 +15,10 @@ const config = {
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'SFDigitalServices', // Usually your GitHub org/user name.
-  projectName: 'design-system', // Usually your repo name.
+  organizationName: owner, // Usually your GitHub org/user name.
+  projectName: repo, // Usually your repo name.
 
   presets: [
     [
@@ -23,14 +27,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/SFDigitalServices/design-system/tree/main/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -61,18 +58,18 @@ const config = {
             sidebarId: 'componentsSidebar',
             label: 'Components',
           },
-          {
+          /* {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'formsSidebar',
             label: 'Forms',
-          },
-          {
+          }, */
+          /* {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'librariesSidebar',
             label: 'Libraries',
-          },
+          }, */
           {
             type: 'docSidebar',
             position: 'left',
@@ -80,7 +77,6 @@ const config = {
             label: 'Developer',
           },
           
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/SFDigitalServices/design-system/tree/main/',
             label: 'GitHub',
@@ -102,17 +98,17 @@ const config = {
                 label: 'Components',
                 to: '/docs/components',
               },
-              {
+              /* {
                 label: 'Content',
                 to: '/docs/content',
-              },
-              {
+              }, */
+              /* {
                 label: 'Forms',
                 to: '/docs/forms',
-              },
+              }, */
             ],
           },
-          {
+          /* {
             title: 'Community',
             items: [
               {
@@ -128,17 +124,17 @@ const config = {
                 href: 'https://twitter.com/docusaurus',
               },
             ],
-          },
+          }, */
           {
             title: 'More',
             items: [
-              {
+              /* {
                 label: 'Blog',
                 to: '/blog',
-              },
+              }, */
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: repoUrl,
               },
             ],
           },
