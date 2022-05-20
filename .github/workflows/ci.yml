@@ -12,6 +12,7 @@ jobs:
           cache: npm
 
       - run: npm install
+      - uses: xt0rted/markdownlint-problem-matcher@v1
       - run: npm run lint
 
       # this sets NODE_ENV=production for all of the build scripts
