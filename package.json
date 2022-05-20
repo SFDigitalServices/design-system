@@ -7,10 +7,15 @@
   "engines": {
     "node": ">=14.x"
   },
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
   "dependencies": {
     "eslint": "^8.15.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-sfgov": "^1.0",
-    "eslint-plugin-unicorn": "^42.0.0"
+    "eslint-plugin-unicorn": "^42.0.0",
+    "shellcheck": "^1.1.0"
   }
 }
