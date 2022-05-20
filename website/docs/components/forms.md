@@ -1,5 +1,5 @@
 ---
-title: Fields and Forms
+title: Fields and forms
 subtitle: Forms are easily one of the essential parts of the SF.gov product. They allow us to lower the friction involved when applying for a service or grant.
 ---
 
