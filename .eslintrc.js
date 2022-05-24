@@ -1,43 +1,43 @@
 module.exports = {
-  parser: "@babel/eslint-parser",
-  plugins: ["sfgov", "unicorn"],
-  extends: ["plugin:sfgov/recommended"],
+  parser: '@babel/eslint-parser',
+  plugins: ['sfgov', 'unicorn'],
+  extends: ['plugin:sfgov/recommended'],
   rules: {
-    "unicorn/expiring-todo-comments": [
-      "error",
+    'unicorn/expiring-todo-comments': [
+      'error',
       {
-        allowWarningComments: true,
-      },
-    ],
+        allowWarningComments: true
+      }
+    ]
   },
   overrides: [
     {
-      files: ["src/**/*.js"],
+      files: ['src/**/*.js'],
       env: {
-        browser: true,
+        browser: true
       },
       parserOptions: {
-        sourceType: "module",
-      },
+        sourceType: 'module'
+      }
     },
     {
-      files: "lib/**/*.js",
-      extends: ["plugin:sfgov/node"],
+      files: 'lib/**/*.js',
+      extends: ['plugin:sfgov/node'],
       env: {
-        node: true,
-      },
+        node: true
+      }
     },
     {
-      files: "rollup.config.js",
+      files: 'rollup.config.js',
       parserOptions: {
-        sourceType: "module",
-      },
+        sourceType: 'module'
+      }
     },
     {
-      files: "scripts/*.js",
+      files: 'scripts/*.js',
       rules: {
-        "node/shebang": 0,
-      },
-    },
-  ],
-};
+        'node/shebang': 0
+      }
+    }
+  ]
+}
