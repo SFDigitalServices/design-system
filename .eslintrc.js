@@ -12,29 +12,13 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['src/**/*.js'],
-      env: {
-        browser: true
-      },
+      files: '**/rollup.config.js',
       parserOptions: {
         sourceType: 'module'
       }
     },
     {
-      files: 'lib/**/*.js',
-      extends: ['plugin:sfgov/node'],
-      env: {
-        node: true
-      }
-    },
-    {
-      files: 'rollup.config.js',
-      parserOptions: {
-        sourceType: 'module'
-      }
-    },
-    {
-      files: 'scripts/*.js',
+      files: '**/scripts/*.js',
       rules: {
         'node/shebang': 0
       }
