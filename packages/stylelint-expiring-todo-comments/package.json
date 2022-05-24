@@ -1,0 +1,18 @@
+{
+  "name": "stylelint-expiring-todo-comments",
+  "description": "Lint your CSS for expiring TODO comments, a la eslint-plugin-unicorn",
+  "main": "index.js",
+  "version": "0.0.1",
+  "keywords": [
+    "stylelint-plugin"
+  ],
+  "dependencies": {
+    "semver": "7.3.7"
+  },
+  "devDependencies": {
+    "stylelint": "14.8.4"
+  },
+  "peerDependencies": {
+    "stylelint": ">=14.x"
+  }
+}

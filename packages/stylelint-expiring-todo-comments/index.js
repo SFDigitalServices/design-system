@@ -1,15 +1,18 @@
+const { join } = require('path')
 const semver = require('semver')
 const stylelint = require('stylelint')
 const { report } = stylelint.utils
-const pkg = require('../../package.json')
 
-const version = process.env.PACKAGE_VERSION || pkg.version
-const ruleName = 'local/expiring-todo-comments'
+const ruleName = 'sfgov/expiring-todo-comments'
 
 module.exports = Object.assign(
   stylelint.createPlugin(ruleName, (enabled, options = {}) => {
     return (root, result, context) => {
       if (!enabled) return
+      
+      // FIXME: use find-up, relative to file being processed??
+      const pkg = require(join(process.cwd(), 'package.json'))
+      const { version } = pkg
 
       const { keywords = ['todo', 'fixme'] } = options || {}
       const pattern = /\b([a-z]+) \[(.+)\]: +(.+)/i
