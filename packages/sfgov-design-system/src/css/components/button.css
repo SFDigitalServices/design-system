@@ -1,0 +1,64 @@
+@layer components {
+  .btn {
+    @apply inline-flex;
+    @apply appearance-none;
+    @apply cursor-pointer;
+    @apply text-body font-medium;
+    @apply rounded;
+    @apply px-20 py-8;
+    @apply bg-blue-bright;
+    @apply text-white;
+    @apply no-underline;
+    @apply border-0 border-solid border-current;
+    @apply text-center justify-center items-center;
+    @apply whitespace-nowrap;
+
+    @apply hocus:bg-blue-dark;
+
+    &.hover,
+    &.focus {
+      @apply bg-blue-dark;
+    }
+  }
+
+  .btn-inverse {
+    @apply bg-white;
+    @apply text-blue-bright;
+
+    @apply hocus:bg-white hocus:text-blue-dark;
+
+    &.hover,
+    &.focus {
+      @apply bg-white text-blue-dark;
+    }
+  }
+
+  .btn-secondary {
+    @apply bg-white;
+    @apply text-blue-bright;
+    @apply border;
+
+    @apply hocus:bg-white hocus:text-blue-dark;
+
+    &.hover,
+    &.focus {
+      @apply bg-white text-blue-dark;
+    }
+  }
+
+  .btn-link {
+    @apply border-0 hocus:border-0;
+    @apply bg-none text-blue-bright;
+    @apply hover:bg-none hover:text-blue-dark;
+    @apply underline;
+
+    &.hover,
+    &.focus {
+      @apply bg-none text-blue-dark;
+    }
+  }
+
+  .btn-block {
+    @apply flex w-full;
+  }
+}
