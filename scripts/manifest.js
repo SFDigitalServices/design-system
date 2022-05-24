@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const globby = require('globby')
-const { statSync, writeFileSync } = require('fs')
+const { statSync } = require('fs')
 const globs = process.argv.slice(2)
 
 globby([...globs, '!**/manifest.json']).then(found => {
