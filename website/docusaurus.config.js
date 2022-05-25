@@ -13,7 +13,7 @@ const config = {
   tagline: 'Helping anyone creating digital products for San Francisco.',
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: owner, // Usually your GitHub org/user name.
