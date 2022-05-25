@@ -19,7 +19,7 @@
     "build-css": "postcss --verbose -d dist/css src/css/*.css",
     "build-js": "rollup -c",
     "build-clean": "run-s clean build",
-    "build-manifest": "../../scripts/manifest.js 'dist/**/*.{css,?js,svg}' > manifest.json",
+    "build-manifest": "../../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
     "develop": "NODE_ENV=development run-p start watch",
     "clean": "rm -rf dist manifest.json",
     "lint": "run-p lint-css lint-js lint-scripts",
