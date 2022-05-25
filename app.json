@@ -1,13 +1,17 @@
 {
-    "labs": [
-      "runtime-dyno-metadata"
-    ],
-    "buildpacks": [
-      {
-        "url": "heroku/nodejs"
-      },
-      {
-        "url": "https://github.com/heroku/heroku-buildpack-static"
-      }
-    ]
+  "labs": [
+    "runtime-dyno-metadata"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ],
+  "env": {
+    "USE_NPM_INSTALL": "true",
+    "NPM_CONFIG_PRODUCTION": "false"
   }
+}
