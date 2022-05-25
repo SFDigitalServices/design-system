@@ -1,12 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const { repository } = require('sfgov-design-system/package.json')
-const [owner, repo] = repository.split('/')
-const repoUrl = `https://github.com/${repository}`
-const editUrl = `${repoUrl}/tree/main/docs`
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const { owner, repo, repoUrl, defaultBranch } = require('./constants')
+const editUrl = `${repoUrl}/tree/${defaultBranch}/docs`
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,15 +23,16 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        debug: true,
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      }),
-    ],
+          customCss: require.resolve('./src/css/custom.css')
+        }
+      })
+    ]
   ],
 
   themeConfig:
@@ -50,13 +49,13 @@ const config = {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'designSidebar',
-            label: 'Design',
+            label: 'Design'
           },
           {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'componentsSidebar',
-            label: 'Components',
+            label: 'Components'
           },
           /* {
             type: 'docSidebar',
@@ -74,15 +73,15 @@ const config = {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'devSidebar',
-            label: 'Developer',
+            label: 'Develop'
           },
-          
+
           {
-            href: 'https://github.com/SFDigitalServices/design-system/tree/main/',
+            href: `${repoUrl}/tree/main/`,
             label: 'GitHub',
-            position: 'right',
-          },
-        ],
+            position: 'right'
+          }
+        ]
       },
       footer: {
         style: 'dark',
@@ -92,12 +91,12 @@ const config = {
             items: [
               {
                 label: 'Design',
-                to: '/docs/design',
+                to: '/docs/design'
               },
               {
                 label: 'Components',
-                to: '/docs/components',
-              },
+                to: '/docs/components'
+              }
               /* {
                 label: 'Content',
                 to: '/docs/content',
@@ -106,7 +105,7 @@ const config = {
                 label: 'Forms',
                 to: '/docs/forms',
               }, */
-            ],
+            ]
           },
           /* {
             title: 'Community',
@@ -134,18 +133,18 @@ const config = {
               }, */
               {
                 label: 'GitHub',
-                href: repoUrl,
-              },
-            ],
-          },
+                href: repoUrl
+              }
+            ]
+          }
         ],
-        copyright: `Built with Docusaurus.`,
+        copyright: 'Built with Docusaurus.'
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
-};
+        darkTheme: darkCodeTheme
+      }
+    })
+}
 
-module.exports = config;
+module.exports = config
