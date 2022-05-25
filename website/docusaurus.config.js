@@ -3,8 +3,9 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-const { owner, repo, repoUrl, defaultBranch } = require('./constants')
+const { owner, repo, repoUrl, defaultBranch, defaultPackage } = require('./constants')
 const editUrl = `${repoUrl}/tree/${defaultBranch}/docs`
+const packageFileUrl = `https://unpkg.com/${defaultPackage.name}@${defaultPackage.version}`
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,6 +19,10 @@ const config = {
   organizationName: owner, // Usually your GitHub org/user name.
   projectName: repo, // Usually your repo name.
 
+  plugins: [
+    '@docusaurus/theme-live-codeblock'
+  ],
+
   presets: [
     [
       'classic',
@@ -29,7 +34,10 @@ const config = {
           editUrl
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
+          customCss: [
+            require.resolve('sfgov-design-system/dist/css/sfds.css'),
+            require.resolve('./src/css/custom.css')
+          ]
         }
       })
     ]
@@ -143,6 +151,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme
+      },
+      liveCodeBlock: {
+        playgroundPosition: 'top'
       }
     })
 }
