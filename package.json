@@ -2,15 +2,15 @@
   "private": true,
   "repository": "SFDigitalServices/design-system",
   "workspaces": [
-    "website",
-    "packages/*"
+    "packages/*",
+    "website"
   ],
   "engines": {
     "node": ">=14.x",
     "npm": "8.x"
   },
   "scripts": {
-    "build": "scripts/build.sh",
+    "build": "lerna run build",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present"
   },
