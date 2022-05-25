@@ -1,21 +1,36 @@
 ---
 title: Icons
-see_also:
-  - title: Icon library
-    href: /resources/icon-library/
+description: Using our icons on the web
+tags: [icons]
 ---
+
+import { publishedUrl } from '@site/src/utils'
+import iconData from 'sfgov-design-system/src/icons/data.json'
+export const icons = Object.values(iconData.icons)
 
 ## SVG
 
 Our icons are published as both individual SVG files and a [custom
 element](#custom-element) to display and style them on the web.
 
-Icon | Name | File
-:--: | :--- | :---
-{% for icon in icons -%}
-{%- set path = '/dist/icons/' + icon.symbol + '.svg' -%}
-<sfgov-icon symbol="{{ icon.symbol }}"></sfgov-icon> | {{ icon.name }} | [`{{ icon.symbol }}.svg`]({{ path | published_url }})
-{% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th>Icon</th>
+      <th>Name</th>
+      <th>File</th>
+    </tr>
+  </thead>
+  <tbody>
+    {icons.map(icon => (
+      <tr key={icon.id}>
+        <td><sfgov-icon symbol={icon.id} /></td>
+        <td>{icon.name}</td>
+        <td><a href={publishedUrl(`dist/icons/${icon.filename}`)}>{icon.filename}</a></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
 
 ## Custom element
 
@@ -23,7 +38,7 @@ The simplest way to use our icons is with the `<sfgov-icon>` [custom
 element], which is defined in our main [JavaScript
 bundle](/usage/javascript/).
 
-```html
+```html live
 <sfgov-icon symbol="alert"></sfgov-icon>
 ```
 
@@ -42,19 +57,32 @@ Attribute | Default | Notes
 
 The following table lists valid values for the `symbol` attribute:
 
-Icon | Name | `symbol`
-:--: | :--- | :---
-{% for icon in icons -%}
-<sfgov-icon symbol="{{ icon.symbol }}"></sfgov-icon> | {{ icon.name }} | `{{ icon.symbol }}`
-{% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th>Icon</th>
+      <th>Name</th>
+      <th><code>symbol</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    {icons.map(icon => (
+      <tr key={icon.id}>
+        <td><sfgov-icon symbol={icon.id} /></td>
+        <td>{icon.name}</td>
+        <td><code>{icon.id}</code></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
 
 ### Icon color
 
-Use the `text-*` [color](/foundations/color/) to change the fill
+Use the `text-*` [color](/design/color/) to change the fill
 color of `<sfgov-icon>` shapes. This works because the
 custom element styles its SVG elements with `fill: currentColor`.
 
-```html
+```html live
 <div class="space-y-8">
   <div class="flex space-x-8 text-red-3">
     <sfgov-icon symbol="close"></sfgov-icon>

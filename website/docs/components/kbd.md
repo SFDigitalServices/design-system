@@ -15,13 +15,13 @@ without spaces in between them.
 
 ## Keyboard shortcut
 
-```html
-Press <kbd class="mx-4">Control + X</kbd> at any time to close this dialog.
+```html live
+<div>Press <kbd class="mx-4">Control + X</kbd> at any time to close this dialog.</div>
 ```
 
 ## Data Stories component
 
-```html
+```html live
 <div class="p-20 text-slate max-w-lg">
   <div class="bg-blue-1 p-40 rounded">
     <ul class="list-none space-y-20 m-0 p-0">
@@ -50,7 +50,7 @@ combinations such as `Control + Enter`, add spacing utilities to the `+`
 (e.g. `<span class="mx-4">+</span>`) to keep `kbd` elements that wrap to
 the beginning of a line aligned to the left edge of their container:
 
-```html
+```html live
 <div class="w-1/2 text-slate max-w-lg">
   <div class="bg-blue-1 p-40 rounded">
     <ul class="list-none space-y-20 m-0 p-0">
@@ -63,7 +63,7 @@ the beginning of a line aligned to the left edge of their container:
       <li><kbd>Escape</kbd> to exit a visual or dashboard</li>
     </ul>
   </div>
-</div
+</div>
 ```
 
 [kbd]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd

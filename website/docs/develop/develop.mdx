@@ -3,7 +3,7 @@ title: Development
 order: 3
 ---
 
-import { GitHubFileLink, SFGovIcon } from '@site/src/components'
+import { GitHubFileLink } from '@site/src/components'
 import { githubFileUrl } from '@site/src/utils'
 import { defaultPackage, repoUrl } from '@site/constants'
 
@@ -43,38 +43,16 @@ This should create files in the `dist/css`, `dist/js`, and
 `public` directories. Once you've confirmed that it's working,
 you can run one or both of the following:
 
-- `npm run watch` watches the source files and rebuilds the CSS
-  and JavaScript bundles when they change
-- `npm run develop` starts the [eleventy] server with
-  `NODE_ENV=develop`, which enables some helpful reloading and
-  debugging features
-
-### npm scripts
-
-<p>Common development tasks are listed in the <GitHubFileLink>package.json</GitHubFileLink>.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th><code>npm run {'<name>'}</code></th>
-      <th>Command</th>
-    </tr>
-  </thead>
-  <tbody>
-    {Object.entries(defaultPackage.scripts).map(([name, command]) => (
-      <tr key={name}>
-        <td><code>{name}</code></td>
-        <td><code>{command}</code></td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+- `npm run watch` watches the source files and rebuilds the CSS and JavaScript
+  bundles when they change
+- `npm run develop` starts the Docusaurus server, which includes some helpful
+  reloading and debugging features
 
 ## Code style
 
 - We lint our JavaScript with [ESlint] and the [eslint-plugin-sfgov] preset.
 - We lint our CSS with [stylelint][].
-- We lint shell (bash) <a href={githubFileUrl('scripts')}>scripts</a> with
+- We lint shell (bash) <GitHubFileLink>scripts</GitHubFileLink> with
   [shellcheck][].
 
 [babel]: https://babeljs.io/

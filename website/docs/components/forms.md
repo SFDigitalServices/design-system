@@ -6,6 +6,7 @@ subtitle: Forms are easily one of the essential parts of the SF.gov product. The
 This documentation will cover some of the more technical aspects of the forms, but please visit our [Form Style Guide](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pages/1807024424/Form+style+guide) for guidance on writing effective forms.
 
 ## Field types <!-- This will be replaced with a component later. -->
+
 This page documents the general guidelines that apply to most form field types. Pick from our form fields selection below for information around a specific field type.
 
 |       |  |
@@ -23,7 +24,6 @@ This page documents the general guidelines that apply to most form field types. 
   <img class="w-1/1" alt="A diagram showing form field structure" src="https://user-images.githubusercontent.com/957314/158282202-43128233-c1c7-464c-b2d7-d3ece55850b6.png" />
   <figcaption align="center">1. Optional label, 2. Field name, 3. Field description, 4. Placeholder text, 5. Field area, 6. Field status message</figcaption>
 </figure>
-
 
 #### Optional label
 

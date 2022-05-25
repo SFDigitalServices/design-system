@@ -5,6 +5,7 @@ title: Spacing
 ## Grid
 
 ### Responsive container
+
 Use the `responsive-container` class to apply responsive horizontal
 margins and a max-width that fits our [layout grid](https://www.figma.com/file/svEAhwa9aGljDbcKfOCBsq/Layout?node-id=862%3A98).
 
@@ -15,6 +16,7 @@ margins and a max-width that fits our [layout grid](https://www.figma.com/file/s
 ```
 
 ### Responsive grid
+
 Use the `responsive-grid` class to create responsive grid
 layouts. You can customize the number of columns by adding
 `grid-cols-*` utilities (and responsive variants). You can
@@ -46,6 +48,7 @@ for fully responsive grid layouts.
 ```
 
 ### 12-column grid
+
 ```html
 <div class="grid grid-cols-12 gap-28">
   {%- for i in range(28) %}
@@ -55,6 +58,7 @@ for fully responsive grid layouts.
 ```
 
 ### 12-column grid with variable column widths
+
 ```html
 <div class="grid grid-cols-12 gap-28">
   <div class="rounded bg-green-2 col-span-3 h-96"></div>
@@ -78,6 +82,7 @@ for fully responsive grid layouts.
 ```
 
 ### 3-column grid
+
 ```html
 <div class="grid grid-cols-3 gap-28">
   {%- for i in range(13) %}
@@ -87,6 +92,7 @@ for fully responsive grid layouts.
 ```
 
 ### 2-column grid
+
 ```html
 <div class="grid grid-cols-2 gap-28">
   {%- for i in range(9) %}
@@ -128,6 +134,7 @@ for fully responsive grid layouts.
 ```
 
 ### Height
+
 ```html
 <div class="text-small flex space-x-2">
   {%- for name, value in tokens.spacing %}
