@@ -1,3 +1,7 @@
+/** @type {import('@babel/core').PartialConfig} */
 module.exports = {
-  presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
-};
+  presets: [
+    '@babel/preset-react',
+    '@docusaurus/core/lib/babel/preset'
+  ]
+}
