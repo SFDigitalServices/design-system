@@ -1,6 +1,5 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import clsx from 'clsx'
+import styles from './styles.module.css'
 
 const FeatureList = [
   {
@@ -10,7 +9,7 @@ const FeatureList = [
       <>
         Something about the what and whys about the SF Design System design decisions.
       </>
-    ),
+    )
   },
   {
     title: 'Components',
@@ -19,7 +18,7 @@ const FeatureList = [
       <>
         See how we put foundational elements together into buttons, accordion details, and keyboard instructions.
       </>
-    ),
+    )
   },
   {
     title: 'Content',
@@ -28,7 +27,7 @@ const FeatureList = [
       <>
         Something about how to write great content the Digital Services way.
       </>
-    ),
+    )
   },
   {
     title: 'Forms',
@@ -37,34 +36,34 @@ const FeatureList = [
       <>
         Something about writing great forms the Digital Services way.
       </>
-    ),
-  },
-];
+    )
+  }
+]
 
-function Feature({Svg, title, description}) {
+function Feature ({ Svg, title, description }) {
   return (
     <div className={clsx('col col--3')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+      <div className='text--center'>
+        <Svg className={styles.featureSvg} role='img' />
       </div>
-      <div className="text--center padding-horiz--md">
+      <div className='text--center padding-horiz--md'>
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default function HomepageFeatures() {
+export default function HomepageFeatures () {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="row">
+      <div className='container'>
+        <div className='row'>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
