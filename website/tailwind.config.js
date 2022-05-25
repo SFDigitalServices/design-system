@@ -1,7 +1,12 @@
 module.exports = {
-  content: [
-    'docs/**/*.md?',
-    'src/**/*.{js,jsx,ts,tsx}'
+  presets: [
+    'sfgov-design-system/tailwind.preset'
   ],
-  presets: [require('sfgov-design-system/tailwind.preset')]
+  purge: {
+    enabled: true,
+    content: [
+      'docs/**/*.{md,mdx}',
+      'src/**/*.{js,jsx,ts,tsx}'
+    ]
+  }
 }
