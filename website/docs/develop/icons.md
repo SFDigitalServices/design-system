@@ -28,6 +28,7 @@ bundle](/usage/javascript/).
 ```
 
 ### Attributes
+
 The `<sfgov-icon>` element respects the following attributes:
 
 Attribute | Default | Notes

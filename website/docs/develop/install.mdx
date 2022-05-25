@@ -2,22 +2,25 @@
 title: Installation
 ---
 
-import pkg from 'sfgov-design-system/package.json'
+import { defaultPackage as pkg } from '@site/constants'
+import { PackageLink } from '@site/src/components'
 import { publishedUrl } from '@site/src/utils'
+import CodeBlock from '@theme/CodeBlock'
 
 ## npm
-<p>The design system CSS is published as <a
-href={`https://npmjs.com/package/${pkg.name}`}>{pkg.name}</a> on npm. You can
+
+<p>The design system CSS is published as <PackageLink>{pkg.name}</PackageLink> npm. You can
 install it in your project with:</p>
 
-<pre className="hljs lang-sh">
+<CodeBlock language='sh'>
   npm install {pkg.name}
-</pre>
+</CodeBlock>
 
 <p>The current version is <code>{pkg.version}</code>. See the <a href={`https://github.com/${pkg.repository}/releases`}>release history</a> for other
 available versions and release notes.</p>
 
 ## Versioning
+
 We use [semantic versioning][semver] conventions to number our release versions:
 
 - Bug fixes, documentation updates, and development-related updates are
@@ -30,17 +33,19 @@ We use [semantic versioning][semver] conventions to number our release versions:
   `2.0.0`.
 
 ## CDN
+
 There are many content delivery networks that mirror npm packages. For instance,
 to import all of the design system CSS from the latest version of the npm
 package from [unpkg], you could add the following to your `<head>`:
 
-<pre className="hljs lang-html">
+<CodeBlock language='html'>
   {`<link rel="stylesheet" href="${publishedUrl('/dist/sfds.css', pkg)}">`}
-</pre>
+</CodeBlock>
 
 See the [CSS guide](./css) for more detailed usage instructions.
 
 ## Browser support
+
 Generally speaking, our CSS supports the same browsers as
 [Tailwind](https://tailwindcss.com/docs/browser-support) (as of version 2.x,
 "the latest stable versions of Chrome, Firefox, Edge, and Safari"). Starting in
@@ -50,6 +55,7 @@ version 2.0, Tailwind notably introduced the use of [CSS custom properties]
 relative to usage as of August, 2021.
 
 ### Internet Explorer
+
 **Internet Explorer is not supported**. Microsoft [announced][IE EOL] that it
 will no longer support the browser on June 15, 2022, and its usage has declined
 rapidly since. In July of 2021 there were **7 unique visitors** using Internet
