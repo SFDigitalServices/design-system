@@ -6,7 +6,8 @@
     "packages/*"
   ],
   "engines": {
-    "node": "14.x"
+    "node": ">=14.x",
+    "npm": "8.x"
   },
   "scripts": {
     "build": "lerna run build",
