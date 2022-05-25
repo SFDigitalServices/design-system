@@ -3,9 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-const { owner, repo, repoUrl, defaultBranch, defaultPackage } = require('./constants')
+const { owner, repo, repoUrl, defaultBranch } = require('./constants')
 const editUrl = `${repoUrl}/tree/${defaultBranch}/docs`
-const packageFileUrl = `https://unpkg.com/${defaultPackage.name}@${defaultPackage.version}`
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
