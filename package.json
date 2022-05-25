@@ -10,7 +10,7 @@
     "npm": "8.x"
   },
   "scripts": {
-    "build": "lerna run build",
+    "build": "scripts/build.sh",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present"
   },
