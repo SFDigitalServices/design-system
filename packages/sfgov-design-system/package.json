@@ -14,24 +14,101 @@
     "tailwind.*.js"
   ],
   "scripts": {
-    "build": "run-p build-css build-js build-icons",
-    "build-icons": "scripts/build-icons.js",
-    "build-css": "postcss --verbose -d dist/css src/css/*.css",
-    "build-js": "rollup -c",
-    "build-clean": "run-s clean build",
-    "build-manifest": "../../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
-    "develop": "NODE_ENV=development run-p start watch",
-    "clean": "rm -rf dist manifest.json",
-    "lint": "run-p lint-css lint-js lint-scripts",
-    "lint-css": "stylelint 'src/css/**/*.css'",
-    "lint-js": "eslint src lib '*.js' 'scripts/*.js'",
-    "lint-scripts": "shellcheck scripts/*.sh",
-    "postbuild": "npm run build-manifest",
-    "prepublishOnly": "scripts/prepublish-checks.sh",
-    "watch": "run-p watch-css watch-js watch-icons",
-    "watch-css": "watchy -w '*.config.js' -w src -- npm run build-css",
-    "watch-js": "npm run build-js -- --watch",
-    "watch-icons": "watchy -w src/icons -- npm run build-icons"
+    "build": "wireit",
+    "build-icons": "wireit",
+    "build-css": "wireit",
+    "build-js": "wireit",
+    "build-manifest": "wireit",
+    "develop": "wireit",
+    "lint": "wireit",
+    "lint-css": "wireit",
+    "lint-js": "wireit",
+    "lint-scripts": "wireit",
+    "prepublishOnly": "scripts/prepublish-checks.sh"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "build-css",
+        "build-js",
+        "build-icons",
+        "build-manifest"
+      ]
+    },
+    "build-css": {
+      "command": "postcss --verbose -d dist/css 'src/css/*.css'",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/css/**/*.css",
+        "*.config.js"
+      ],
+      "output": [
+        "dist/css/**/*.css"
+      ]
+    },
+    "build-js": {
+      "command": "rollup -c",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/js/**/*.js",
+        "*.config.js"
+      ],
+      "output": [
+        "dist/**/*.js",
+        "dist/js/**/*.mjs"
+      ]
+    },
+    "build-icons": {
+      "command": "scripts/build-icons.js",
+      "files": [
+        "src/icons/**/*.{js,json,svg}"
+      ]
+    },
+    "build-manifest": {
+      "command": "../../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
+      "files": [
+        "dist/**/*.{css,*js,svg}"
+      ],
+      "output": [
+        "manifest.json"
+      ]
+    },
+    "develop": {
+      "command": "npm run build watch"
+    },
+    "lint": {
+      "dependencies": [
+        "lint-css",
+        "lint-js",
+        "lint-scripts"
+      ]
+    },
+    "lint-js": {
+      "command": "eslint --color --cache --cache-location=.eslintcache src lib '*.js' 'scripts/*.js'",
+      "files": [
+        "src/**/*.js",
+        "*.js",
+        "lib/**/*.js",
+        "scripts/*.js",
+        ".eslint*",
+        "../../.eslint*"
+      ],
+      "output": []
+    },
+    "lint-css": {
+      "command": "stylelint 'src/css/**/*.css'",
+      "files": [
+        "src/css/**/*.css",
+        ".stylelint*",
+        "../../.stylelint*"
+      ]
+    },
+    "lint-scripts": {
+      "command": "shellcheck scripts/*.sh",
+      "files": [
+        "scripts/*.sh"
+      ]
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
