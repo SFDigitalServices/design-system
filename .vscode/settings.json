@@ -1,4 +1,6 @@
 {
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
   "[css]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint",
     "editor.formatOnSave": true
