@@ -10,6 +10,7 @@
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}/website",
+      "preLaunchTask": "build",
       "program": "${workspaceFolder}/node_modules/.bin/docusaurus",
       "args": [
         "start"
