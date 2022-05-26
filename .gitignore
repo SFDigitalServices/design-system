@@ -1,6 +1,7 @@
 **/.DS_Store
-**/build/
-**/dist/
-**/node_modules/
-**/manifest.json
+**/.eslintcache
 **/.wireit
+**/build
+**/dist
+**/manifest.json
+**/node_modules
