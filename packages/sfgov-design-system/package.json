@@ -162,7 +162,6 @@
     "tailwindcss": "^2.2.19",
     "tailwindcss-interaction-variants": "^5.0.0",
     "unist-util-select": "^3.0.4",
-    "unist-util-visit": "^2.0.3",
-    "watchy": "^0.9.9"
+    "unist-util-visit": "^2.0.3"
   }
 }
