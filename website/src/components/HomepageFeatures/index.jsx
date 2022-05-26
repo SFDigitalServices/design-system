@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import styles from './styles.module.css'
 
@@ -41,9 +42,9 @@ const FeatureList = [
   }
 ]
 
-function Feature ({ Svg, title, description }) {
+function Feature ({ Svg, title, description, className, ...rest }) {
   return (
-    <div className={clsx('col col--3')}>
+    <div className={clsx(className, 'col col--3')} {...rest}>
       <div className='text--center'>
         <Svg className={styles.featureSvg} role='img' />
       </div>
@@ -53,6 +54,13 @@ function Feature ({ Svg, title, description }) {
       </div>
     </div>
   )
+}
+
+Feature.propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  Svg: PropTypes.elementType
 }
 
 export default function HomepageFeatures () {
