@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "lerna run build",
+    "prestart": "npm run build -w sfgov-design-system",
     "start": "npm start -w website",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present"
