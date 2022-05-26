@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build packages",
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [
+        "$node-sass"
+      ],
+      "detail": "lerna run build"
+    },
+    {
+      "label": "Start docs server",
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "detail": "npm start -w website"
+    }
+  ]
+}
