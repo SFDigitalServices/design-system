@@ -40,7 +40,11 @@ BundleTable.propTypes = {
       size: PropTypes.number.isRequired,
       desc: PropTypes.string
     })
-  )
+  ),
+  pkg: PropTypes.shape({
+    name: PropTypes.string,
+    version: PropTypes.string
+  })
 }
 
 BundleTable.decorate = (files, meta = []) => {
