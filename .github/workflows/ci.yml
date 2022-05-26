@@ -17,10 +17,12 @@ jobs:
 
       # this sets NODE_ENV=production for all of the build scripts
       - run: echo NODE_ENV=production >> $GITHUB_ENV
+
       # run these separately so that it's easier to see what failed
-      - run: npm run build
+      - run: npm run build -w sfgov-design-system
+
       # run pre-publish checks
-      - run: npm run prepublishOnly
+      - run: npm run prepublishOnly -w sfgov-design-system --if-present
 
       - uses: primer/publish@v3.0.0
         with:
