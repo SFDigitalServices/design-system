@@ -4,35 +4,38 @@ import BrowserOnly from '@docusaurus/BrowserOnly'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import clsx from 'clsx'
 
-/*
-TODO:
-- Add copy icon
-- Add copy function
-*/
-
 export default function ColorSwatch ({ value, label, addBorder, className, children, ...rest }) {
   const [copied, setCopied] = useState()
+  const [isHover, setIsHover] = useState(false)
+
   if (copied) {
     setTimeout(() => setCopied(false), 1000)
   }
   return (
-    <div className={clsx('flex flex-wrap w-40 my-4', className)} {...rest}>
+    <div className={clsx('flex flex-wrap w-1\/4', className)} {...rest}>
       <div
-        className={`h-24 w-full rounded ${addBorder ? 'border-solid border-1 border-grey-4' : ''}`}
+        className={`h-100 w-full rounded-4 ${addBorder ? 'border-solid border-1 border-grey-4' : ''}`}
         style={{ backgroundColor: value }}
       />
       <div className='w-full'>
-        {label ? <div className='font-semibold px-1 py-0.5'>{label}</div> : null}
+        {label ? <div className='font-medium px-8 pt-4 text-slate-4'>{label}</div> : null}
         <BrowserOnly>
           {() => (
             <CopyToClipboard text={value} onCopy={() => setCopied(true)}>
               <button
                 type='button'
-                className='w-full font-mono text-left text-slate-500 hover:bg-slate-200 px-1 py-0.5 relative'
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
+                className='w-full button-reset text-left text-slate-3 hover:bg-slate-1 px-8 py-4 relative'
               >
-                <div>{value}</div>
+                <div class='flex justify-between items-center'>
+                  {value}
+                  <div className={isHover ? 'inherit' : 'text-white'}>
+                  <sfgov-icon symbol='clipboard'></sfgov-icon>
+                  </div>
+                </div>
                 {children}
-                {copied ? <span className='absolute bg-black text-white'>Copied!</span> : null}
+                {copied ? <span className='absolute -bottom-28 bg-slate-4 rounded-4 text-white px-8 py-4'>Copied!</span> : null}
               </button>
             </CopyToClipboard>
           )}
