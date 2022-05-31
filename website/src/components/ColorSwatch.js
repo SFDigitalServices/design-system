@@ -7,6 +7,7 @@ import clsx from 'clsx'
 export default function ColorSwatch ({ value, label, addBorder, className, children, ...rest }) {
   const [copied, setCopied] = useState()
   const [isHover, setIsHover] = useState(false)
+  const ariaLabelText = `Copy ${label} hex value`
 
   if (copied) {
     setTimeout(() => setCopied(false), 1000)
@@ -26,7 +27,10 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
                 type='button'
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
-                className='w-full button-reset text-left text-slate-3 hover:bg-slate-1 px-8 py-4 relative'
+                onFocus={() => setIsHover(true)}
+                onBlur={() => setIsHover(false)}
+                aria-label={ariaLabelText}
+                className='w-full button-reset text-left text-slate-3 hocus:bg-slate-1 px-8 py-4 relative'
               >
                 <div class='flex justify-between items-center'>
                   {value}
