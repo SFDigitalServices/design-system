@@ -47,7 +47,9 @@ ColorSwatch.defaultProps = {
 }
 
 ColorSwatch.propTypes = {
-  value: PropTypes.string.isRequired,
+  addBorder: PropTypes.bool,
+  children: PropTypes.element,
+  className: PropTypes.string,
   label: PropTypes.string,
-  addBorder: PropTypes.bool
+  value: PropTypes.string.isRequired
 }
