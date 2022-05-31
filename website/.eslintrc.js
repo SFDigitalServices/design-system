@@ -11,7 +11,8 @@ module.exports = {
     '@docusaurus/eslint-plugin'
   ],
   extends: [
-    'plugin:sfgov/recommended'
+    'plugin:sfgov/recommended',
+    'plugin:react/recommended'
   ],
   rules: {
     'import/no-unresolved': 0,

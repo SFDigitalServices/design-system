@@ -19,6 +19,8 @@ InlineSwatch.propTypes = {
     PropTypes.string,
     PropTypes.func
   ]),
+  children: PropTypes.element,
+  className: PropTypes.string,
   value: PropTypes.string
 }
 
