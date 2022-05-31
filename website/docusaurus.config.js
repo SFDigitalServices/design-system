@@ -70,19 +70,18 @@ const config = {
             sidebarId: 'formsSidebar',
             label: 'Forms',
           }, */
-          /* {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'librariesSidebar',
-            label: 'Libraries',
-          }, */
           {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'devSidebar',
             label: 'Develop'
           },
-
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'librariesSidebar',
+            label: 'Libraries'
+          },
           {
             href: `${repoUrl}/tree/main/`,
             label: 'GitHub',
