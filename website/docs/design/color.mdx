@@ -25,17 +25,16 @@ These are the primary brand colors, often used for backgrounds or for general co
 
 Text is typically:
 
-- Slate L4 for most body text and headlines
-- Slate L2 for additional information or subheads
-- White for most body text and headlines on darker fields; contrast permitting.
+- <InlineSwatch label="Slate L4" value={colors.slate[4]} /> for most body text and
+  headlines
+- <InlineSwatch label="Slate L2" value={colors.slate[2]} /> for additional information
+  or subheads
+- <InlineSwatch label="White" value="#fff" addBorder={true} /> for most body text
+  and headlines on darker fields; contrast permitting.
 
 ## Action color
 
-Use bright blue for most links, buttons, and other actionable UI (such as accordions and form elements).
-
-<LibraryRow>
-  <ColorSwatch label="Bright blue" value={colors.blue.bright} />
-</LibraryRow>
+Use <InlineSwatch label="Action blue" value={colors.blue.bright} /> for most links, buttons, and other actionable UI (such as accordions and form elements).
 
 ## Secondary colors
 
@@ -115,10 +114,11 @@ When the numeric variable has a meaningful central value, like zero, then you ca
 
 <p>
   Colors for use when labeling the charts and maps are the two listed. The
-  darker of the two <InlineSwatch>{colors.black}</InlineSwatch> will be the
-  primary color for use when display text, titles, labels, etc. Reserve the
-  lighter color <InlineSwatch>{colors.text.secondary}</InlineSwatch> for
-  secondary information.
+  darker of the two, <InlineSwatch label="Black" value={colors.black} />, will
+  be the primary color for use when display text, titles, labels, etc. Reserve
+  the lighter{" "}
+  <InlineSwatch label="Secondary text color" value={colors.text.secondary} />{" "}
+  for secondary information.
 </p>
 
 [Label color palette](../libraries/colorMapsChartsLibrary#label-colors)
