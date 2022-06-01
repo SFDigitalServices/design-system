@@ -1,5 +1,6 @@
 export { default as BundleTable } from './BundleTable'
 export { default as ColorSwatch } from './ColorSwatch'
+export { default as IconSample } from './IconSample'
 export { default as GitHubFileLink } from './GitHubFileLink'
 export { default as LibraryRow } from './libraryRow'
 export { default as InlineSwatch } from './InlineSwatch'
