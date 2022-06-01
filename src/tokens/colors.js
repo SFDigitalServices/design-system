@@ -16,7 +16,7 @@ module.exports = {
   },
   slate: {
     DEFAULT: '#1D4D70', // Slate L3
-    light: '#5A7A92',   // Slate L2
+    light: '#5A7A92', // Slate L2
     4: '#002B48',
     3: '#1D4D70',
     2: '#5A7A92',
