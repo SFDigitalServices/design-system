@@ -32,7 +32,7 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
                 aria-label={ariaLabelText}
                 className='w-full button-reset text-left text-slate-3 hocus:bg-slate-1 px-8 py-4 relative'
               >
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between items-center font-mono'>
                   {value}
                   <div className={isHover ? 'inherit' : 'text-white'}>
                   <sfgov-icon symbol='clipboard'></sfgov-icon>
