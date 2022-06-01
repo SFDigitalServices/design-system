@@ -13,7 +13,7 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
     setTimeout(() => setCopied(false), 1000)
   }
   return (
-    <div className={clsx('flex flex-wrap w-1\/4', className)} {...rest}>
+    <div className={clsx('flex flex-wrap w-1/4', className)} {...rest}>
       <div
         className={`h-100 w-full rounded-4 ${addBorder ? 'border-solid border-1 border-grey-4' : ''}`}
         style={{ backgroundColor: value }}
@@ -32,7 +32,7 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
                 aria-label={ariaLabelText}
                 className='w-full button-reset text-left text-slate-3 hocus:bg-slate-1 px-8 py-4 relative'
               >
-                <div class='flex justify-between items-center'>
+                <div className='flex justify-between items-center'>
                   {value}
                   <div className={isHover ? 'inherit' : 'text-white'}>
                   <sfgov-icon symbol='clipboard'></sfgov-icon>
