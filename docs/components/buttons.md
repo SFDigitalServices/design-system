@@ -132,10 +132,10 @@ Buttons are typically left aligned with other content, not centered. For excepti
 
 For 2 or more button options, place them side by side instead of on top of one another if possible. This reduces the chance of accidentally clicking the wrong one and avoids alignment issues.
 
-| <img class="w-1/1" alt="Two buttons are to the right and left of each other" src="/static/images/side-by-side-example.png"> | <img class="w-1/1" alt="Two buttons are above and below each other" src="/static/images/side-by-side-incorrect.png"> |
+| <div class="flex gap-20"><button class="btn btn-secondary">Cancel</button><button class="btn">Continue</button></div> | <div><button class="btn btn-secondary mb-20">Cancel</button><br><button class="btn mb-20">Continue</button></div> |
 | ----------- | ----------- |
 | Yes      | No       |
-| Choices are side by side| Choices are stacked |
+| Choices are side by side | Choices are stacked |
 
 ### Writing button text
 
