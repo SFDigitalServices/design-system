@@ -99,7 +99,7 @@ size, such as photo credits.
 
 > <div class="text-small">{{ specimens.default }}</div>
 
-## Mobile text styles
+### Mobile text styles
 These styles follow the same guidelines as the desktop styles but are
 smaller in size for use on smaller screens.
 

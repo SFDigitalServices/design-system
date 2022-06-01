@@ -50,7 +50,6 @@ The broader secondary palette is used for highlighting and differentiating conte
 - ::swatch[L1]{value="{{ tokens.colors.slate[1] }}"}
 :::
 
-
 ### Green
 :::swatches
 - ::swatch[L4]{value="{{ tokens.colors.green[4] }}"}
@@ -146,7 +145,7 @@ The sequential palettes should always be used together and not individually in o
 
 #### Dark blue
 :::swatches
-- ::swatch{value="{{ tokens.colors.sequential.darkBlue[7] }}"} 
+- ::swatch{value="{{ tokens.colors.sequential.darkBlue[7] }}"}
 - ::swatch{value="{{ tokens.colors.sequential.darkBlue[6] }}"}
 - ::swatch{value="{{ tokens.colors.sequential.darkBlue[5] }}"}
 - ::swatch{value="{{ tokens.colors.sequential.darkBlue[4] }}"}
