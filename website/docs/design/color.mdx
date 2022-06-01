@@ -52,11 +52,11 @@ Depending on contrast ratios, different colors are recommended for plain text an
 
 ### Text
 
-Most text is either Slate L4 or White, depending on the background color. On white backgrounds, Slate L2 can also be used for creating hierarchy or denoting inactive text elements.
+Most text is either <InlineSwatch label="Slate L4" value={colors.slate[4]} /> or <InlineSwatch label="White" value="#fff" addBorder={true}/>, depending on the background color. On white backgrounds, <InlineSwatch label="Slate L2" value={colors.slate[2]} /> can also be used for creating hierarchy or denoting inactive text elements.
 
 ### Links
 
-Action blue is used for links on White or L1 colors. On darker colors, Bright blue has insufficient contrast and only Slate L4 or White is available to use. Because this has no differentiation between link and plain text color, it is especially important to underline the link text.
+Action blue is used for links on White or L1 colors. On darker colors, <InlineSwatch label="Action Blue" value={colors.blue.bright} /> has insufficient contrast and only <InlineSwatch label="Slate L4" value={colors.slate[4]} /> or <InlineSwatch label="White" value="#fff" addBorder={true}/> is available to use. Because this has no differentiation between link and plain text color, it is especially important to underline the link text.
 
 ## Contrast ratios
 
@@ -74,7 +74,10 @@ The Action blue link color passes WCAG 2 requirements for 4.51 for AA large text
 
 ### Links on L2 backgrounds
 
-Bright blue on L2 backgrounds passes WCAG 2 AA large text requirements. However it is just barely passing, and we do not recommend using it. In this case, it is better to use Slate (which meets our goal of 7:1) and distinguish links using an underline.
+<InlineSwatch label="Action Blue" value={colors.blue.bright} /> on L2 backgrounds
+passes WCAG 2 AA large text requirements. However it is just barely passing, and
+we do not recommend using it. In this case, it is better to use Slate (which meets
+our goal of 7:1) and distinguish links using an underline.
 
 ## Colors for charts and maps
 
