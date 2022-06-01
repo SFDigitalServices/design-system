@@ -19,6 +19,10 @@ export default function InlineSwatch ({ as: Comp = 'code', className, children, 
   )
 }
 
+InlineSwatch.defaultProps = {
+  addBorder: false
+}
+
 InlineSwatch.propTypes = {
   as: PropTypes.oneOf([
     PropTypes.string,
