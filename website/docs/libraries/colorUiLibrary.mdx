@@ -1,0 +1,92 @@
+---
+title: Colors - Interface
+links:
+  - rel: figma
+    href: https://www.figma.com/file/PztEA9PIX00czGHf68Gsr5/SF-Colors?node-id=16%3A3
+---
+
+import { ColorSwatch, LibraryRow } from "@site/src/components";
+import { colors } from "sfgov-design-system/src/tokens";
+
+To learn more about color best practices, please visit our [Color documentation](../design/color)
+
+## Primary colors
+
+<LibraryRow>
+  <ColorSwatch value={colors.blue.dark} label="Dark blue" />
+  <ColorSwatch value={colors.blue[2]} label="Blue L2" />
+  <ColorSwatch value={colors.blue[1]} label="Blue L1" />
+  <ColorSwatch value={colors.black} label="Black" />
+  <ColorSwatch value={colors.grey.dark} label="Dark grey" />
+  <ColorSwatch value={colors.white} addBorder={true} label="White" />
+</LibraryRow>
+
+### Suggested text colors
+
+<LibraryRow>
+  <ColorSwatch value={colors.slate[4]} label="Slate L4" />
+  <ColorSwatch value={colors.slate[2]} label="Slate L2" />
+  <ColorSwatch label="White" value={colors.white} addBorder={true} />
+</LibraryRow>
+
+### Action Color
+
+<LibraryRow>
+  <ColorSwatch label="Bright blue" value={colors.blue.bright} />
+</LibraryRow>
+
+## Secondary colors
+
+### Slate blue
+
+<LibraryRow>
+  <ColorSwatch label="L4" value={colors.slate[4]} />
+  <ColorSwatch label="L3" value={colors.slate[3]} />
+  <ColorSwatch label="L2" value={colors.slate[2]} />
+  <ColorSwatch label="L1" value={colors.slate[1]} />
+</LibraryRow>
+
+### Green
+
+<LibraryRow>
+  <ColorSwatch label="L4" value={colors.green[4]} />
+  <ColorSwatch label="L3" value={colors.green[3]} />
+  <ColorSwatch label="L2" value={colors.green[2]} />
+  <ColorSwatch label="L1" value={colors.green[1]} />
+</LibraryRow>
+
+### Red
+
+<LibraryRow>
+  <ColorSwatch label="L4" value={colors.red[4]} />
+  <ColorSwatch label="L3" value={colors.red[3]} />
+  <ColorSwatch label="L2" value={colors.red[2]} />
+  <ColorSwatch label="L1" value={colors.red[1]} />
+</LibraryRow>
+
+### Purple
+
+<LibraryRow>
+  <ColorSwatch label="L4" value={colors.purple[4]} />
+  <ColorSwatch label="L3" value={colors.purple[3]} />
+  <ColorSwatch label="L2" value={colors.purple[2]} />
+  <ColorSwatch label="L1" value={colors.purple[1]} />
+</LibraryRow>
+
+### Yellow
+
+<LibraryRow>
+  <ColorSwatch label="L4" value={colors.yellow[4]} />
+  <ColorSwatch label="L3" value={colors.yellow[3]} />
+  <ColorSwatch label="L2" value={colors.yellow[2]} />
+  <ColorSwatch label="L1" value={colors.yellow[1]} />
+</LibraryRow>
+
+### Grey
+
+<LibraryRow>
+  <ColorSwatch label="L4" value={colors.grey[4]} />
+  <ColorSwatch label="L3" value={colors.grey[3]} />
+  <ColorSwatch label="L2" value={colors.grey[2]} />
+  <ColorSwatch label="L1" value={colors.grey[1]} />
+</LibraryRow>

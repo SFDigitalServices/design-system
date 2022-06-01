@@ -5,12 +5,13 @@ links:
     href: https://www.figma.com/file/PztEA9PIX00czGHf68Gsr5/SF-Colors?node-id=16%3A3
 ---
 
-import clsx from 'clsx'
-import { ColorSwatch, InlineSwatch } from '@site/src/components'
-import { colors } from 'sfgov-design-system/src/tokens'
-import { MDXProvider } from '@mdx-js/react'
-export const Swatches = ({ className, ...rest }) => <div className={clsx('flex flex-wrap gap-40', className)} {...rest} />
-export default props => <MDXProvider components={{ inlineCode: InlineSwatch }} {...props} />
+import { ColorSwatch, InlineSwatch, LibraryRow } from "@site/src/components";
+import { colors } from "sfgov-design-system/src/tokens";
+import { MDXProvider } from "@mdx-js/react";
+
+export default (props) => (
+  <MDXProvider components={{ inlineCode: InlineSwatch }} {...props} />
+);
 
 The diversity of color and the range of saturations is a reflection of the contrasts that make San Francisco a unique place. The color palette is a useful tool that helps construct an experience that is both accessible and distinctly San Francisco.
 
@@ -18,14 +19,7 @@ The diversity of color and the range of saturations is a reflection of the contr
 
 These are the primary brand colors, often used for backgrounds or for general content. Blue does not have an L3 because there are a variety of different blues in use. Black is a very dark gray to subtly soften the extreme contrast.
 
-<Swatches>
-  <ColorSwatch value={colors.blue.dark} label="Dark blue" />
-  <ColorSwatch value={colors.blue[2]} label='Blue L2' />
-  <ColorSwatch value={colors.blue[1]} label='Blue L1' />
-  <ColorSwatch value={colors.black} label='Black' />
-  <ColorSwatch value={colors.grey.dark} label='Dark grey' />
-  <ColorSwatch value={colors.white} addBorder={true} label='White' />
-</Swatches>
+[Primary color palette](../libraries/colorUiLibrary#primary-colors)
 
 ## Text colors
 
@@ -35,19 +29,13 @@ Text is typically:
 - Slate L2 for additional information or subheads
 - White for most body text and headlines on darker fields; contrast permitting.
 
-<Swatches>
-  <ColorSwatch value={colors.slate[4]} label='Slate L4' />
-  <ColorSwatch value={colors.slate[2]} label='Slate L2' />
-  <ColorSwatch label='White' value={colors.white} addBorder={true} />
-</Swatches>
-
 ## Action color
 
 Use bright blue for most links, buttons, and other actionable UI (such as accordions and form elements).
 
-<Swatches>
-  <ColorSwatch label='Bright blue' value={colors.blue.bright} />
-</Swatches>
+<LibraryRow>
+  <ColorSwatch label="Bright blue" value={colors.blue.bright} />
+</LibraryRow>
 
 ## Secondary colors
 
@@ -57,59 +45,7 @@ The broader secondary palette is used for highlighting and differentiating conte
 - The L3 color is the base shade of each color. Use it for focusing attention, such as on a header.
 - Use L4 sparingly for hover states or when a darker color must contrast with the L3 color.
 
-### Slate blue
-
-<Swatches>
-  <ColorSwatch label='L4' value={colors.slate[4]} />
-  <ColorSwatch label='L3' value={colors.slate[3]} />
-  <ColorSwatch label='L2' value={colors.slate[2]} />
-  <ColorSwatch label='L1' value={colors.slate[1]} />
-</Swatches>
-
-### Green
-
-<Swatches>
-  <ColorSwatch label='L4' value={colors.green[4]} />
-  <ColorSwatch label='L3' value={colors.green[3]} />
-  <ColorSwatch label='L2' value={colors.green[2]} />
-  <ColorSwatch label='L1' value={colors.green[1]} />
-</Swatches>
-
-### Red
-
-<Swatches>
-  <ColorSwatch label='L4' value={colors.red[4]} />
-  <ColorSwatch label='L3' value={colors.red[3]} />
-  <ColorSwatch label='L2' value={colors.red[2]} />
-  <ColorSwatch label='L1' value={colors.red[1]} />
-</Swatches>
-
-### Purple
-
-<Swatches>
-  <ColorSwatch label='L4' value={colors.purple[4]} />
-  <ColorSwatch label='L3' value={colors.purple[3]} />
-  <ColorSwatch label='L2' value={colors.purple[2]} />
-  <ColorSwatch label='L1' value={colors.purple[1]} />
-</Swatches>
-
-### Yellow
-
-<Swatches>
-  <ColorSwatch label='L4' value={colors.yellow[4]} />
-  <ColorSwatch label='L3' value={colors.yellow[3]} />
-  <ColorSwatch label='L2' value={colors.yellow[2]} />
-  <ColorSwatch label='L1' value={colors.yellow[1]} />
-</Swatches>
-
-### Grey
-
-<Swatches>
-  <ColorSwatch label='L4' value={colors.grey[4]} />
-  <ColorSwatch label='L3' value={colors.grey[3]} />
-  <ColorSwatch label='L2' value={colors.grey[2]} />
-  <ColorSwatch label='L1' value={colors.grey[1]} />
-</Swatches>
+[Secondary color palette](../libraries/colorUiLibrary#secondary-colors)
 
 ## Recommended colors
 
@@ -157,14 +93,7 @@ The qualitative color palette could also be considered the primary color palette
 The first two colors, dark blue and orange, are the preferred color palette for the polygons/shapes in two-color data projects.
 The four remaining colors can be used when a more extensive palette is needed, and they are in no particular order of preference.
 
-<Swatches>
-  <ColorSwatch label='Dark Blue' value={colors.sequential.darkBlue[7]} />
-  <ColorSwatch label='Orange' value={colors.sequential.orange[7]} />
-  <ColorSwatch label='Teal' value={colors.sequential.teal[7]} />
-  <ColorSwatch label='Blue' value={colors.sequential.blue[7]} />
-  <ColorSwatch label='Purple' value={colors.sequential.purple[7]} />
-  <ColorSwatch label='Pink' value={colors.sequential.pink[7]} />
-</Swatches>
+[Qualitative color palette](../libraries/colorMapsChartsLibrary#qualitative-colors)
 
 ### Sequential
 
@@ -174,102 +103,25 @@ Keep in mind that color has meaning, so when assigning the colors at either end 
 
 The sequential palettes should always be used together and not individually in other settings.
 
-#### Dark blue
-
-<Swatches>
-  <ColorSwatch value={colors.sequential.darkBlue[7]} />
-  <ColorSwatch value={colors.sequential.darkBlue[6]} />
-  <ColorSwatch value={colors.sequential.darkBlue[5]} />
-  <ColorSwatch value={colors.sequential.darkBlue[4]} />
-  <ColorSwatch value={colors.sequential.darkBlue[3]} />
-  <ColorSwatch value={colors.sequential.darkBlue[2]} />
-  <ColorSwatch value={colors.sequential.darkBlue[1]} />
-</Swatches>
-
-#### Orange
-
-<Swatches>
-  <ColorSwatch value={colors.sequential.orange[7]} />
-  <ColorSwatch value={colors.sequential.orange[6]} />
-  <ColorSwatch value={colors.sequential.orange[5]} />
-  <ColorSwatch value={colors.sequential.orange[4]} />
-  <ColorSwatch value={colors.sequential.orange[3]} />
-  <ColorSwatch value={colors.sequential.orange[2]} />
-  <ColorSwatch value={colors.sequential.orange[1]} />
-</Swatches>
-
-#### Teal
-
-<Swatches>
-  <ColorSwatch value={colors.sequential.teal[7]} />
-  <ColorSwatch value={colors.sequential.teal[6]} />
-  <ColorSwatch value={colors.sequential.teal[5]} />
-  <ColorSwatch value={colors.sequential.teal[4]} />
-  <ColorSwatch value={colors.sequential.teal[3]} />
-  <ColorSwatch value={colors.sequential.teal[2]} />
-  <ColorSwatch value={colors.sequential.teal[1]} />
-</Swatches>
-
-#### Blue
-
-<Swatches>
-  <ColorSwatch value={colors.sequential.blue[7]} />
-  <ColorSwatch value={colors.sequential.blue[6]} />
-  <ColorSwatch value={colors.sequential.blue[5]} />
-  <ColorSwatch value={colors.sequential.blue[4]} />
-  <ColorSwatch value={colors.sequential.blue[3]} />
-  <ColorSwatch value={colors.sequential.blue[2]} />
-  <ColorSwatch value={colors.sequential.blue[1]} />
-</Swatches>
-
-#### Purple
-
-<Swatches>
-  <ColorSwatch value={colors.sequential.purple[7]} />
-  <ColorSwatch value={colors.sequential.purple[6]} />
-  <ColorSwatch value={colors.sequential.purple[5]} />
-  <ColorSwatch value={colors.sequential.purple[4]} />
-  <ColorSwatch value={colors.sequential.purple[3]} />
-  <ColorSwatch value={colors.sequential.purple[2]} />
-  <ColorSwatch value={colors.sequential.purple[1]} />
-</Swatches>
-
-#### Pink
-
-<Swatches>
-  <ColorSwatch value={colors.sequential.pink[7]} />
-  <ColorSwatch value={colors.sequential.pink[6]} />
-  <ColorSwatch value={colors.sequential.pink[5]} />
-  <ColorSwatch value={colors.sequential.pink[4]} />
-  <ColorSwatch value={colors.sequential.pink[3]} />
-  <ColorSwatch value={colors.sequential.pink[2]} />
-  <ColorSwatch value={colors.sequential.pink[1]} />
-</Swatches>
+[Sequential color palette](../libraries/colorMapsChartsLibrary#sequential-colors)
 
 ### Divergent
 
 When the numeric variable has a meaningful central value, like zero, then you can use the diverging palette.
 
-#### Dark Blue
+[Divergent color palette](../libraries/colorMapsChartsLibrary#divergent-colors)
 
-<Swatches>
-  <ColorSwatch value={colors.sequential.darkBlue[7]} />
-  <ColorSwatch value={colors.sequential.darkBlue[6]} />
-  <ColorSwatch value={colors.sequential.darkBlue[5]} />
-  <ColorSwatch value={colors.sequential.grey[0]} addBorder={true} />
-  <ColorSwatch value={colors.sequential.orange[5]} />
-  <ColorSwatch value={colors.sequential.orange[6]} />
-  <ColorSwatch value={colors.sequential.orange[7]} />
-</Swatches>
+### Label colors
 
-### Text colors
+<p>
+  Colors for use when labeling the charts and maps are the two listed. The
+  darker of the two <InlineSwatch>{colors.black}</InlineSwatch> will be the
+  primary color for use when display text, titles, labels, etc. Reserve the
+  lighter color <InlineSwatch>{colors.text.secondary}</InlineSwatch> for
+  secondary information.
+</p>
 
-<p>Colors for use when labeling the charts and maps are the two listed. The darker of the two <InlineSwatch>{colors.black}</InlineSwatch> will be the primary color for use when display text, titles, labels, etc. Reserve the lighter color <InlineSwatch>{colors.text.secondary}</InlineSwatch> for secondary information.</p>
-
-<Swatches>
-  <ColorSwatch label='Primary Text' value={colors.black} />
-  <ColorSwatch label='Secondary Text' value={colors.text.secondary} />
-</Swatches>
+[Label color palette](../libraries/colorMapsChartsLibrary#label-colors)
 
 ### Usage
 
