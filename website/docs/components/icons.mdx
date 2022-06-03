@@ -1,43 +1,81 @@
 ---
-title: Icon library
-see_also:
-  - title: Icon usage
-    href: /usage/icons/
+title: Icons
+description: Icon component usage documentation
+tags: [icons]
 ---
 
-import { icons } from 'sfgov-design-system/src/icons'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { publishedUrl } from '@site/src/utils'
+import iconData from 'sfgov-design-system/src/icons/data.json'
+export const icons = Object.values(iconData.icons)
 
-<div className="flex flex-wrap">
-  {icons.map(icon => (
-    <div className="w-1/2 lg:w-1/3 mb-80">
-      <div className="mx-28 no-underline text-center text-slate">
-        <div className="flex justify-around mb-4">
-          <sfgov-icon
-            className="p-20 lg:p-60 xl:p-80 border-1 border-solid border-grey-2"
-            width="28"
-            height="28"
-            symbol={icon.symbol}
-          />
-        </div>
-        <CopyToClipboard
-          className="cursor-pointer block relative"
-          text={icon.symbol}
-        >
-          <button
-            className="cursor-pointer btn-block group py-4 relative border-0 bg-none hocus:bg-slate-1"
-            aria-label={`Copy ${icon.symbol}`}
-          >
-            <div className="w-full text-slate-4 font-mono pl-20">{icon.symbol}</div>
-            <sfgov-icon
-              symbol="clipboard"
-              className="text-slate-3 invisible group-hocus:visible"
-              width="20"
-              height="16"
-            />
-          </button>
-        </CopyToClipboard>
-      </div>
-    </div>
-  ))}
+## Custom element
+
+Our icons are published as both a [SVG files](#symbols) and a custom element for
+the web. The simplest way to use our icons is with the `<sfgov-icon>` [custom
+element], which is defined in our main [JavaScript
+bundle](../develop/javascript/).
+
+```html live
+<sfgov-icon symbol="alert"></sfgov-icon>
+```
+
+### Attributes
+
+The `<sfgov-icon>` element respects the following attributes:
+
+| Attribute | Default | Notes                                                                                                                                       |
+| :-------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| `symbol`  |         | A valid [symbol ID](#symbols) (**required**).                                                                                               |
+| `height`  | `20`    | Sets the height of the `<svg>` element in pixels. The width is determined by the icon's [intrinsic size] unless `width` is also specified.  |
+| `width`   |         | Sets the width of the `<svg>` element in pixels. The height is determined by the icon's [intrinsic size] unless `height` is also specified. |
+| `role`    | `img`   | The [ARIA role] of the element.                                                                                                             |
+
+
+### Icon color
+
+Use the `text-*` [color](../libraries/colorUiLibrary#primary-colors) to change the fill color of `<sfgov-icon>` shapes. This works because the
+custom element styles its SVG elements with `fill: currentColor`.
+
+```html live
+<div class="space-y-8">
+  <div class="flex space-x-8 text-red-3">
+    <sfgov-icon symbol="close"></sfgov-icon>
+    <b>red</b>
+  </div>
+  <div class="flex space-x-8 text-green-3">
+    <sfgov-icon symbol="check"></sfgov-icon>
+    <b>green</b>
+  </div>
+  <div class="flex space-x-8 text-blue-bright">
+    <sfgov-icon symbol="plus"></sfgov-icon>
+    <b>blue</b>
+  </div>
 </div>
+```
+
+## Symbols
+
+<table>
+  <thead>
+    <th>Icon</th>
+    <th>Symbol</th>
+    <th>HTML</th>
+    <th>SVG</th>
+  </thead>
+  <tbody>
+    {Object.entries(iconData.icons).map(([symbol, icon]) => (
+      <tr key={symbol} className='align-middle'>
+        <td className='text-center'>
+          <sfgov-icon symbol={symbol} width={20} height={20} />
+        </td>
+        <td><code className='block px-8 py-4'>{symbol}</code></td>
+        <td><code className='block px-8 py-4'>{`<sfgov-icon symbol="${symbol}"></sfgov-icon>`}</code></td>
+        <td><a href={publishedUrl(`dist/icons/${symbol}.svg`)}>{symbol}.svg</a></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+[custom element]: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
+[aria role]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#roles
+[intrinsic size]: https://www.w3.org/Graphics/SVG/WG/wiki/Intrinsic_Sizing
