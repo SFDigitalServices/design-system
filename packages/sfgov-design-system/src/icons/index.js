@@ -1,7 +1,5 @@
 import { icons } from './data.json'
 
-export { icons }
-
 const templates = {}
 
 for (const [id, { aliases = [], svg }] of Object.entries(icons)) {
