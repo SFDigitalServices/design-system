@@ -1,17 +1,19 @@
 ---
-title: Icon Library
+title: Icon library
+description: A visual index of our icons
 hide_table_of_contents: true
+tags: [icons]
 ---
 
-import { IconSample, LibraryRow } from "@site/src/components";
-import iconData from "sfgov-design-system/src/icons/data.json";
-export const icons = Object.values(iconData.icons);
+import { IconSample, LibraryRow } from '@site/src/components'
+import { icons } from 'sfgov-design-system/src/icons/data.json'
 
-To learn more about icon design best practices, please visit our [icon documentation](../design/icons) and to begin developing with our icons, check out the ["using our icons" documentation](../develop/usingIcons).
+To learn more about icon design best practices, please visit our [icon
+documentation](../design/icons). See the [component
+documentation](../components/icons) for web integration.
 
 <LibraryRow>
-{icons.map((icon) => (
-
-<IconSample key={icon.id} iconInfo={icon.id} />
-))}
+  {Object.values(icons).map((icon) => (
+    <IconSample key={icon.id} iconInfo={icon.id} />
+  ))}
 </LibraryRow>
