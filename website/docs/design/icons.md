@@ -1,6 +1,6 @@
 ---
 title: Icons
-description: Our icons are visual representations of ideas and actions.
+description: Icon design and usage guidelines
 tags: [icons]
 ---
 
