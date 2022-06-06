@@ -51,7 +51,6 @@ You may add whatever data you want, and you can even reference it in your
 document with [Nunjucks](#nunjucks) in your markdown. For instance, to generate
 a list of links with predictable URLs you could do something like this:
 
-
 ```md
 ---
 fruits:

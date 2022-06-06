@@ -1,5 +1,8 @@
 ---
 title: JavaScript
+see_also:
+  - title: Tailwind
+    href: /usage/css/tailwind/
 bundles:
   - path: dist/js/sfds.js
     desc: Includes all of the bundles listed below.

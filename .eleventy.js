@@ -11,20 +11,6 @@ const toc = require('./lib/eleventy/toc')
 const { environment } = require('./lib/nunjucks')
 
 module.exports = config => {
-  if (dev) {
-    const throttle = 100
-    const reloadOnChange = require('./lib/eleventy/reload')
-    reloadOnChange(__filename, [
-      'lib/**/*.js',
-      // we need to watch these ones explicitly because they
-      // change how examples and color swatches are rendered
-      'docs/_includes/{example,macros}.njk'
-    ], throttle)
-
-    // throttle subsequent rebuilds
-    config.setWatchThrottleWaitTime(throttle)
-  }
-
   config.addPlugin(navigation)
   config.addPlugin(remark, remarkConfig)
   config.addPlugin(toc, {
@@ -38,6 +24,7 @@ module.exports = config => {
   config.setUseGitIgnore(false)
   config.addWatchTarget('./dist')
   config.addPassthroughCopy('dist')
+  config.addPassthroughCopy('docs/static')
 
   return {
     dir: {
