@@ -158,6 +158,7 @@
     "rollup": "^2.50.2",
     "rollup-plugin-terser": "^7.0.2",
     "selector-observer": "^2.1.6",
+    "stylelint-config-tailwindcss": "^0.0.3",
     "tailwindcss": "^2.2.19",
     "tailwindcss-interaction-variants": "^5.0.0",
     "unist-util-select": "^3.0.4",
