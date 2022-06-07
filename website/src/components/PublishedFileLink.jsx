@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { publishedUrl } from '../utils'
 import { defaultPackage } from '../../constants'
 
@@ -11,4 +12,10 @@ import { defaultPackage } from '../../constants'
  */
 export default function PublishedFileLink ({ children, path = children, pkg = defaultPackage, ...rest }) {
   return <a href={publishedUrl(path || children, pkg)} {...rest}>{children || path}</a>
+}
+
+PublishedFileLink.propTypes = {
+  children: PropTypes.element,
+  path: PropTypes.string,
+  pkg: PropTypes.string
 }
