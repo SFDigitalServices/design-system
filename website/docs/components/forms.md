@@ -9,13 +9,6 @@ This documentation will cover some of the more technical aspects of the forms, b
 
 This page documents the general guidelines that apply to most form field types. Pick from our form fields selection below for information around a specific field type.
 
-|       |  |
-| ----------- | ----------- |
-| [Text field](https://design-system.sf.gov/components/forms/#) | [Chips](https://design-system.sf.gov/components/forms/#) |
-| [Radio button](https://design-system.sf.gov/components/forms/#) | [File upload](https://design-system.sf.gov/components/forms/#) |
-| [Checkbox button](https://design-system.sf.gov/components/forms/#) | [Form alerts](https://design-system.sf.gov/components/forms/#) |
-| [Dropdown](https://design-system.sf.gov/components/forms/#) | [Form patterns](https://design-system.sf.gov/components/forms/#) |
-
 ## Form field structure
 
 ### Form field layout
