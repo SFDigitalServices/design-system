@@ -20,6 +20,9 @@ module.exports = {
     'no-unused-vars': ['warn', {
       varsIgnorePattern: '^@(site|theme)/'
     }],
+    'react/prop-types': ['warn', {
+      skipUndeclared: true
+    }],
     'unicorn/expiring-todo-comments': [
       'error',
       {
