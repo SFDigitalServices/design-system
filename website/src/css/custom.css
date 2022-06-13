@@ -1,3 +1,5 @@
+/* stylelint-disable selector-class-pattern */
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -8,7 +10,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -33,15 +35,39 @@
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(0 0 0 / 10%);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
 
-[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgb(0 0 0 / 30%);
 }
+
+/* --Custom CSS-- */
+p {
+  font-family: Rubik, ui-sans-serif, sans-serif;
+}
+
+/* Navbar items */
+.navbar {
+  height: auto;
+}
+
+.navbar__brand {
+  margin-right: 2.5rem;
+}
+
+.navbar__logo {
+  height: 3.5rem;
+}
+
+.navbar__logo:hover img {
+  opacity: 0.5;
+}
+
+/* --END Custom CSS-- */
 
 /* --BUTTON STYLE RESET-- */
 .button-reset {
@@ -50,7 +76,6 @@
   padding: 0;
   width: auto;
   overflow: visible;
-
   background: transparent;
 
   /* inherit font & color from ancestor */
@@ -65,10 +90,11 @@
   -moz-osx-font-smoothing: inherit;
 
   /* Corrects inability to style clickable `input` types in iOS */
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 .button-reset:hover {
   cursor: pointer;
 }
+
 /* --END BUTTON STYLE RESET-- */
