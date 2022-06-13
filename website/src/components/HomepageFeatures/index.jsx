@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import styles from './styles.module.css'
+import Link from '@docusaurus/Link'
 
 const FeatureList = [
   {
     title: 'Design',
-    Svg: require('@site/static/img/icon-design.svg').default,
+    link: 'design/color',
     description: (
       <>
         Something about the what and whys about the SF Design System design decisions.
@@ -15,7 +16,7 @@ const FeatureList = [
   },
   {
     title: 'Components',
-    Svg: require('@site/static/img/icon-component.svg').default,
+    link: 'components/buttons',
     description: (
       <>
         See how we put foundational elements together into buttons, accordion details, and keyboard instructions.
@@ -23,8 +24,8 @@ const FeatureList = [
     )
   },
   {
-    title: 'Content',
-    Svg: require('@site/static/img/icon-content.svg').default,
+    title: 'Develop',
+    link: 'develop/css',
     description: (
       <>
         Something about how to write great content the Digital Services way.
@@ -32,8 +33,8 @@ const FeatureList = [
     )
   },
   {
-    title: 'Forms',
-    Svg: require('@site/static/img/icon-forms.svg').default,
+    title: 'Libraries',
+    link: 'libraries/colorMapsChartsLibrary',
     description: (
       <>
         Something about writing great forms the Digital Services way.
@@ -42,23 +43,21 @@ const FeatureList = [
   }
 ]
 
-function Feature ({ Svg, title, description, className, ...rest }) {
+function Feature ({ title, link, description, className, ...rest }) {
   return (
-    <div className={clsx(className, 'col col--3')} {...rest}>
-      <div className='text--center'>
-        <Svg className={styles.featureSvg} role='img' />
+    <Link to={`/docs/${link}`} className={clsx(className, 'col col--6 no-underline px-20 py-16 rounded-4 hover:bg-grey-1')} {...rest}>
+      <div className='padding-horiz--md'>
+        <h3 className='title-lg font-medium font-rubik'>{title}</h3>
+        <p className='font-rubik text-slate-3'>{description}</p>
       </div>
-      <div className='text--center padding-horiz--md'>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
+    </Link>
   )
 }
 
 Feature.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
+  link: PropTypes.string,
   description: PropTypes.string,
   Svg: PropTypes.elementType
 }
