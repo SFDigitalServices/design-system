@@ -9,7 +9,7 @@ const editUrl = `${repoUrl}/tree/${defaultBranch}/docs`
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'SF Design System',
-  tagline: 'Helping anyone creating digital products for San Francisco.',
+  tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -19,7 +19,18 @@ const config = {
   projectName: repo, // Usually your repo name.
 
   plugins: [
-    '@docusaurus/theme-live-codeblock'
+    '@docusaurus/theme-live-codeblock',
+    async function myPlugin () {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss (postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'))
+          postcssOptions.plugins.push(require('autoprefixer'))
+          return postcssOptions
+        }
+      }
+    }
   ],
 
   presets: [
@@ -46,11 +57,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'San Francisco Design System',
-        // logo: {
-        //   alt: 'My Site Logo',
-        //   src: 'img/logo.svg',
-        // },
+        // title: 'San Francisco Design System',
+        logo: {
+          alt: 'San Francisco Design System',
+          src: 'img/logo.svg',
+          srcDark: 'img/logo-dark-mode.svg',
+          width: 199,
+          height: 56
+        },
         items: [
           {
             type: 'docSidebar',
@@ -102,15 +116,15 @@ const config = {
               {
                 label: 'Components',
                 to: '/docs/components'
+              },
+              {
+                label: 'Develop',
+                to: '/docs/develop'
+              },
+              {
+                label: 'Libraries',
+                to: '/docs/libraries'
               }
-              /* {
-                label: 'Content',
-                to: '/docs/content',
-              }, */
-              /* {
-                label: 'Forms',
-                to: '/docs/forms',
-              }, */
             ]
           },
           /* {
@@ -143,8 +157,8 @@ const config = {
               }
             ]
           }
-        ],
-        copyright: 'Built with Docusaurus.'
+        ]
+        // copyright: 'Built with Docusaurus.'
       },
       prism: {
         theme: lightCodeTheme,
