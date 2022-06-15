@@ -6,12 +6,16 @@ function DefaultNavbarItemDesktop ({
   isDropdownItem = false,
   ...props
 }) {
+  const topNav = 'navbar__item navbar__link text-slate-2 border-white border-1 border-solid mx-20 rounded-4 hocus:border-grey-3'
+  const topNavDropdown = 'dropdown__link text-slate-2'
+
   const element = (
     <NavbarNavLink
       className={clsx(
-        isDropdownItem ? 'dropdown__link text-slate-4' : 'navbar__item navbar__link text-slate-4',
+        isDropdownItem ? (topNavDropdown) : (topNav),
         className
       )}
+      style={{ paddingLeft: '8px 12px' }}
       isDropdownLink={isDropdownItem}
       {...props}
     />
@@ -34,13 +38,15 @@ export default function DefaultNavbarItem ({
   ...props
 }) {
   const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop
-  const activeClasses = 'bg-slate-2 text-grey-1 rounded-4'
+  const mobileActiveClasses = 'text-slate-4 bg-grey-1'
+  const activeClasses = 'text-slate-4 bg-grey-1'
+
   return (
     <Comp
       {...props}
       activeClassName={
         props.activeClassName ??
-        (mobile ? `menu__link--active ${activeClasses}` : `navbar__link--active ${activeClasses}`)
+        (mobile ? `menu__link--active ${mobileActiveClasses}` : `navbar__link--active ${activeClasses}`)
       }
     />
   )
