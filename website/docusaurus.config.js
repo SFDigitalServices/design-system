@@ -105,6 +105,13 @@ const config = {
       },
       footer: {
         style: 'dark',
+        logo: {
+          alt: 'Seal of the City &amp; County of San Francisco',
+          src: 'https://sf.gov/themes/custom/sfgovpl/logo-white.svg',
+          href: 'https://sf.gov',
+          width: 90,
+          height: 90
+        },
         links: [
           {
             title: 'Design System Documentation',
