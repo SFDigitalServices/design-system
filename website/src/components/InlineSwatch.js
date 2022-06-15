@@ -36,5 +36,5 @@ InlineSwatch.propTypes = {
 }
 
 function isColorValue (str) {
-  return typeof str === 'string' && /^(#[a-f0-9]{3,6}|(rgb|rgba|hsl|hsla)\()/.test(str)
+  return typeof str === 'string' && /^(#[a-fA-F0-9]{3,6}|(rgb|rgba|hsl|hsla)\()/.test(str)
 }
