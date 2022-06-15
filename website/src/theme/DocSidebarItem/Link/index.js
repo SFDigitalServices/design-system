@@ -16,6 +16,8 @@ export default function DocSidebarItemLink ({
   const { href, label, className } = item
   const isActive = isActiveSidebarItem(item, activePath)
   const isInternalLink = isInternalUrl(href)
+  const sideNav = 'menu__link font-regular text-slate-3 border-1 border-solid rounded-4 border-white hocus:border-grey-3 hocus:bg-none '
+  const sideNavActive = 'menu__link--active '
   return (
     <li
       className={clsx(
@@ -27,12 +29,9 @@ export default function DocSidebarItemLink ({
       key={label}>
       <Link
         className={clsx(
-          'menu__link',
-          'text-slate-4',
+          (sideNav),
           !isInternalLink && styles.menuExternalLink,
-          isActive && 'menu__link--active',
-          isActive && 'bg-slate-2',
-          isActive && 'text-grey-1'
+          isActive && (sideNavActive)
         )}
         aria-current={isActive ? 'page' : undefined}
         to={href}
