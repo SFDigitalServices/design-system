@@ -5,7 +5,12 @@ links:
     href: https://www.figma.com/file/PztEA9PIX00czGHf68Gsr5/SF-Colors?node-id=16%3A3
 ---
 
-import { ColorSwatch, InlineSwatch, LibraryRow } from "@site/src/components";
+import {
+  ColorSwatch,
+  InlineSwatch,
+  LibraryRow,
+  BigLink,
+} from "@site/src/components";
 import { colors } from "sfgov-design-system/src/tokens";
 import { MDXProvider } from "@mdx-js/react";
 
@@ -19,7 +24,10 @@ The diversity of color and the range of saturations is a reflection of the contr
 
 These are the primary brand colors, often used for backgrounds or for general content. Blue does not have an L3 because there are a variety of different blues in use. Black is a very dark gray to subtly soften the extreme contrast.
 
-[Primary color palette](../libraries/colorUiLibrary#primary-colors)
+<BigLink
+  link="../libraries/colorUiLibrary#primary-colors"
+  label="Primary color palette"
+/>
 
 ## Text colors
 
@@ -44,7 +52,10 @@ The broader secondary palette is used for highlighting and differentiating conte
 - The L3 color is the base shade of each color. Use it for focusing attention, such as on a header.
 - Use L4 sparingly for hover states or when a darker color must contrast with the L3 color.
 
-[Secondary color palette](../libraries/colorUiLibrary#secondary-colors)
+<BigLink
+  link="../libraries/colorUiLibrary#secondary-colors"
+  label="Secondary color palette"
+/>
 
 ## Recommended colors
 
@@ -95,7 +106,10 @@ The qualitative color palette could also be considered the primary color palette
 The first two colors, dark blue and orange, are the preferred color palette for the polygons/shapes in two-color data projects.
 The four remaining colors can be used when a more extensive palette is needed, and they are in no particular order of preference.
 
-[Qualitative color palette](../libraries/colorMapsChartsLibrary#qualitative-colors)
+<BigLink
+  link="../libraries/colorMapsChartsLibrary#qualitative-colors"
+  label="Qualitative color palette"
+/>
 
 ### Sequential
 
@@ -105,13 +119,19 @@ Keep in mind that color has meaning, so when assigning the colors at either end 
 
 The sequential palettes should always be used together and not individually in other settings.
 
-[Sequential color palette](../libraries/colorMapsChartsLibrary#sequential-colors)
+<BigLink
+  link="../libraries/colorMapsChartsLibrary#sequential-colors"
+  label="Sequential color palette"
+/>
 
 ### Divergent
 
 When the numeric variable has a meaningful central value, like zero, then you can use the diverging palette.
 
-[Divergent color palette](../libraries/colorMapsChartsLibrary#divergent-colors)
+<BigLink
+  link="../libraries/colorMapsChartsLibrary#divergent-colors"
+  label="Divergent color palette"
+/>
 
 ### Label colors
 
@@ -124,7 +144,10 @@ When the numeric variable has a meaningful central value, like zero, then you ca
   for secondary information.
 </p>
 
-[Label color palette](../libraries/colorMapsChartsLibrary#label-colors)
+<BigLink
+  link="../libraries/colorMapsChartsLibrary#label-colors"
+  label="Label color palette"
+/>
 
 ### Usage
 
