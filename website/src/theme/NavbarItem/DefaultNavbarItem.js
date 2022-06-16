@@ -15,7 +15,7 @@ function DefaultNavbarItemDesktop ({
         isDropdownItem ? (topNavDropdown) : (topNav),
         className
       )}
-      style={{ paddingLeft: '8px 12px' }}
+      style={{ padding: '8px 12px' }}
       isDropdownLink={isDropdownItem}
       {...props}
     />
