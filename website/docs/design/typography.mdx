@@ -1,0 +1,147 @@
+---
+title: Typography
+---
+
+import { FontSpecimen, TypeFontFamiles } from "@site/src/components";
+
+## Introduction
+
+Our typeface is [Rubik], which was designed by Hubert and Fischer in 2015 for
+Google. It is an open-source typeface that comes in 5 weights with Roman and
+Italic styles, and is available for free from [Google Fonts].
+
+We are primarily using only 3 of Rubik’s weights: Light, Regular, and
+Semibold.
+
+<TypeFontFamiles />
+
+```css
+font-family: Rubik, ui-sans-serif, sans-serif;
+font-family: Roboto mono, monospace;
+```
+
+## Text styles
+
+This set of standardized text styles should cover most needs, including
+headings and body copy.
+
+For some of the larger titles, there are special mobile styles that are sized
+down so that text will still fit on a smaller screen.
+
+### Bold
+
+Rubik Bold is very wide and heavy, so we use Rubik Semibold as our “bold”
+weight option. This is used in headers, but also any text that is `<strong>` or
+`<b>`. Rubik Bold should not be used.
+
+### Italic
+
+We try to avoid Italic text on SF.gov. It is difficult to read, especially for
+people with dyslexia or visual impairments. Try to differentiate your text
+using color, size, spacing, or other treatments instead.
+
+### Links
+
+We primarily use underlines to indicate clickable links. If a link is included
+in any of the text styles, it should be underlined. Note, color is also often
+used to differentiate the link text.
+
+<FontSpecimen styleName="Monospace" className="text-regular font-mono">
+  Use rarely. Monospace can help separate code or labels from natural language
+  text. In the future, another possible use is when proportionally spaced
+  characters would cause misalignment or jumping.
+</FontSpecimen>
+
+## Desktop text styles
+
+These styles are used on larger screens.
+
+### Display sizes
+
+<FontSpecimen
+  styleName="Large display"
+  className="text-display-lg-desktop font-light"
+/>
+<FontSpecimen
+  styleName="Small display"
+  className="text-display-sm-desktop font-light"
+/>
+
+### Page titles
+
+Use page titles to introduce and group sections of content. Ideally, page
+titles should be nested, from [x-large](#x-large-title) to
+[x-small](#x-small-title) sizes, but occasionally a title style is skipped for
+a greater size difference. Use either [x-large](#x-large-title) title (pages
+with color banner) or display [large](#large-title) (pages with no color
+banner) to style the one-time page title (`<h1>`).
+
+<FontSpecimen
+  styleName="X-Large Title"
+  className="text-title-xl-desktop font-medium"
+/>
+<FontSpecimen
+  styleName="Large Title"
+  className="text-title-lg-desktop font-medium"
+/>
+<FontSpecimen
+  styleName="Medium Title"
+  className="text-title-md-desktop font-medium"
+/>
+<FontSpecimen
+  styleName="Small Title"
+  className="text-title-sm-desktop font-medium"
+/>
+<FontSpecimen
+  styleName="X-Small Title"
+  className="text-title-xs-desktop font-medium"
+/>
+
+### Additional text styles
+
+<FontSpecimen
+  styleName="Big description"
+  className="text-big-desc-desktop font-regular"
+>
+  Use to draw attention to blocks of text, such as the page introduction
+  paragraph. This style is slightly larger in size and line height compared to
+  the regular body text style.
+</FontSpecimen>
+
+<FontSpecimen styleName="Body text" className="text-body font-regular">
+  Use for paragraph and list text. This style can be used in regular, bold and
+  link format.
+</FontSpecimen>
+
+<FontSpecimen styleName="Small text" className="text-small font-regular">
+  Use this style sparingly for text that is smaller than the regular body style
+  size, such as photo credits.
+</FontSpecimen>
+
+## Mobile text styles
+
+These styles follow the same guidelines as the desktop styles but are smaller in size for use on smaller screens.
+
+### Display sizes
+
+<FontSpecimen
+  styleName="Large display"
+  className="text-display-lg font-light"
+/>
+<FontSpecimen
+  styleName="Small display"
+  className="text-display-sm font-light"
+/>
+
+### Page titles
+
+<FontSpecimen styleName="X-Large Title" className="text-title-xl font-medium" />
+<FontSpecimen styleName="Large Title" className="text-title-lg font-medium" />
+<FontSpecimen styleName="Medium Title" className="text-title-md font-medium" />
+
+### Additional text styles
+
+<FontSpecimen
+  styleName="Big description"
+  className="text-big-desc font-light"
+/>
