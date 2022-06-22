@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
+import CodeBlock from '@theme/CodeBlock'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 
@@ -26,14 +27,15 @@ const FontSpecimen = ({ styleName, className, children }) => {
       <div>
         <p ref={sample} className={clsx('', className)}>The quick brown fox jumps over the lazy dog.</p>
       </div>
-      <pre className='w-full rounded-4 p-24 mb-24'>
-        <code >
-          <p className='m-0'>font-weight: {sampleFontWeight}</p>
-          <p className='m-0'>font-size: {sampleFontSize}</p>
-          <p className='m-0'>line-height: {sampleFontLH}</p>
-          <p className='m-0'>letter-spacing: {sampleFontLS}</p>
-        </code>
-      </pre>
+      <CodeBlock language='css' className='w-full p-8 mb-24'>
+
+          {`font-weight: ${sampleFontWeight}
+          font-size: ${sampleFontSize}
+          line-height: ${sampleFontLH}
+          letter-spacing: ${sampleFontLS}`}
+
+        </CodeBlock>
+
       <p className='m-0'>
         {children}
       </p>
