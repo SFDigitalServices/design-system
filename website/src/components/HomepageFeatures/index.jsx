@@ -8,38 +8,22 @@ const FeatureList = [
   {
     title: 'Design',
     link: 'design/color',
-    description: (
-      <>
-        Something about the what and whys about the SF Design System design decisions.
-      </>
-    )
+    description: 'Something about the what and whys about the SF Design System design decisions.'
   },
   {
     title: 'Components',
     link: 'components/buttons',
-    description: (
-      <>
-        See how we put foundational elements together into buttons, accordion details, and keyboard instructions.
-      </>
-    )
+    description: 'See how we put foundational elements together into buttons, accordion details, and keyboard instructions.'
   },
   {
     title: 'Develop',
     link: 'develop/css',
-    description: (
-      <>
-        Something about how to write great content the Digital Services way.
-      </>
-    )
+    description: 'Something about how to write great content the Digital Services way.'
   },
   {
     title: 'Libraries',
     link: 'libraries/colorMapsChartsLibrary',
-    description: (
-      <>
-        Something about writing great forms the Digital Services way.
-      </>
-    )
+    description: 'Something about writing great forms the Digital Services way.'
   }
 ]
 

@@ -47,7 +47,7 @@ const FontSpecimen = ({ styleName, className, children }) => {
 FontSpecimen.propTypes = {
   styleName: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.string
 }
 
 export default FontSpecimen
