@@ -10,7 +10,7 @@ This page documents the general guidelines that apply to most form field types. 
 
 |       |  |
 | ----------- | ----------- |
-| [Text field](/components/forms/text) | [Chips](/components/forms/#) |
+| [Text field](/components/forms/text) | [Chips](/components/forms/chip) |
 | [Radio button](/components/forms/radio) | [File upload](/components/forms/#) |
 | [Checkbox button](/components/forms/checkbox) | [Form alerts](/components/forms/#) |
 | [Dropdown](/components/forms/#) | [Form patterns](/components/forms/#) |
