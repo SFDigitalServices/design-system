@@ -5,6 +5,7 @@
     "build": "wireit",
     "clear": "docusaurus clear",
     "lint": "wireit",
+    "lint-docs": "wireit",
     "serve": "docusaurus serve",
     "start": "wireit",
     "swizzle": "docusaurus swizzle",
@@ -34,13 +35,20 @@
       ]
     },
     "lint": {
-      "command": "eslint --color --cache --cache-location=.eslintcache src lib *.js",
+      "command": "eslint --color --cache --cache-location=.eslintcache src lib *.js *.{md,mdx}",
       "files": [
         "src/**/*.{js,jsx}",
         "lin/**/*.js",
-        "*.js"
+        "*.js",
+        "docs/**/*.{md,mdx}"
       ],
       "output": []
+    },
+    "lint-docs": {
+      "command": "markdownlint --rules './lib/markdownlint/*.js' 'docs/**/*.{md,mdx}'",
+      "files": [
+        "docs/**/*.{md,mdx}"
+      ]
     }
   },
   "dependencies": {
@@ -74,9 +82,11 @@
     "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-mdx": "^2.0.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "markdownlint-cli": "^0.31.1",
     "prop-types": "^15.8.1"
   }
 }
