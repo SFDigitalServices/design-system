@@ -93,7 +93,8 @@ const UtilityItemSection = (props) => {
 */
 
 const UtilClassRow = ({ rowItem, key }) => {
-  const colorMatch = /^\B#([a-z0-9]{2,})(?![~!@#$%^&*()=+_`\-\|\\/'\[\]\{\}]|[?.,]*\w)$/i
+  const colorMatch = /^\B#([a-z0-9]{2,})(?![~!@#$%^&*()=+_`\-|\\/'[\]{}]|[?.,]*\w)$/i
+  // const colorMatch = 'hooch'
 
   return (
     <>
