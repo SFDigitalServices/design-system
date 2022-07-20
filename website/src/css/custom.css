@@ -6,11 +6,12 @@
  * work well for content-centric websites.
  */
 
+@import 'masonry-styles.css';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&family=Roboto+Mono&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&family=Roboto+Mono&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
