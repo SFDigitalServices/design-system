@@ -30,7 +30,36 @@ const config = {
           return postcssOptions
         }
       }
-    }
+    },
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/usage/icons',
+            to: '/components/icons'
+          },
+          {
+            from: '/resources/icon-library',
+            to: '/libraries/iconsLibrary'
+          },
+          {
+            from: '/components/fields-and-forms',
+            to: '/components/forms'
+          }
+        ],
+        createRedirects (existingPath) {
+          if (existingPath.includes('/design')) {
+            if (existingPath === '/design/layout') return '/foundations/spacing'
+
+            return existingPath.replace('/design', '/foundations')
+          } else if (existingPath.includes('/develop')) {
+            return existingPath.replace('/develop', '/usage')
+          }
+          return false // a falsy value = no redirect created
+        }
+      }
+    ]
   ],
 
   presets: [
@@ -40,6 +69,7 @@ const config = {
       ({
         debug: true,
         docs: {
+          routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl
         },
@@ -118,19 +148,19 @@ const config = {
             items: [
               {
                 label: 'Design',
-                to: '/docs/design'
+                to: '/design/color'
               },
               {
                 label: 'Components',
-                to: '/docs/components'
+                to: '/components/buttons'
               },
               {
                 label: 'Develop',
-                to: '/docs/develop'
+                to: '/develop/css'
               },
               {
                 label: 'Libraries',
-                to: '/docs/libraries'
+                to: '/libraries/color/colorInterfaceLibrary'
               }
             ]
           },
