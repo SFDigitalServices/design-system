@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import Masonry from 'react-masonry-css'
 
 import UtilityListItem from '@site/src/components/TailwindDoc/utilityList.js'
 import TwSearchBar from '@site/src/components/TailwindDoc/tailwindSearchBar.js'
-
-import Masonry from 'react-masonry-css'
 
 const TailwindView = ({ json }) => {
   const [tailwindClasses, setTailwindClasses] = useState(json)
