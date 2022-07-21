@@ -34,6 +34,18 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
+        fromExtensions: ['html'],
+        createRedirects (existingPath) {
+          console.log(existingPath)
+          if (existingPath.includes('/design')) {
+            if (existingPath === '/design/layout') return ['/foundations/spacing']
+
+            return [existingPath.replace('/design', '/foundations')]
+          } else if (existingPath.includes('/develop')) {
+            return [existingPath.replace('/develop', '/usage')]
+          }
+          return [] // a falsy value = no redirect created
+        },
         redirects: [
           {
             from: '/usage/icons',
@@ -47,17 +59,7 @@ const config = {
             from: '/components/fields-and-forms',
             to: '/components/forms'
           }
-        ],
-        createRedirects (existingPath) {
-          if (existingPath.includes('/design')) {
-            if (existingPath === '/design/layout') return '/foundations/spacing'
-
-            return existingPath.replace('/design', '/foundations')
-          } else if (existingPath.includes('/develop')) {
-            return existingPath.replace('/develop', '/usage')
-          }
-          return false // a falsy value = no redirect created
-        }
+        ]
       }
     ]
   ],
