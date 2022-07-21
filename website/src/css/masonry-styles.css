@@ -1,0 +1,15 @@
+/* Adds margins to the masonry layout for the tailwind list */
+
+@media (min-width: 420px) {
+  .my-masonry-grid {
+    margin-left: -20px; /* gutter size offset */
+  }
+
+  .my-masonry-grid_column {
+    padding-left: 20px; /* gutter size offset */
+  }
+
+  .my-masonry-grid_column > article {
+    margin-bottom: 24px; /* space between items */
+  }
+}
