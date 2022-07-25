@@ -2,6 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 
+/**
+ * Use the <DoDont> component to display "do" and "don't" examples with
+ * explanatory text for each:
+ *
+ * ```js
+ * <DoDont>
+ *  <Do reasons={['This is good', 'Another reason']}>
+ *    Your good example here
+ *  </Do>
+ *  <Dont reasons={['This is bad', 'And another thing']}>
+ *    Your bad example here
+ *  </Dont>
+ * </DoDont>
+ * ```
+ *
+ * @param {{ className: string }} props
+ * @returns {React.ReactElement}
+ */
 export default function DoDont ({ className, ...rest }) {
   return (
     <div className={clsx(`
