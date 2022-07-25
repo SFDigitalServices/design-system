@@ -36,7 +36,7 @@
     },
     "build-css": {
       "command": "postcss --verbose -d dist/css 'src/css/*.css'",
-      "clean": "if-file-deleted",
+      "clean": true,
       "files": [
         "src/css/**/*.css",
         "*.config.js"
@@ -47,7 +47,6 @@
     },
     "build-js": {
       "command": "rollup -c",
-      "clean": "if-file-deleted",
       "files": [
         "src/js/**/*.js",
         "*.config.js"
