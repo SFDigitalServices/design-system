@@ -55,8 +55,6 @@
 
 pre {
   @apply font-mono;
-
-  white-space: initial;
 }
 
 /* END typesetting */
