@@ -13,7 +13,10 @@ documentation](../design/icons). See the [component
 documentation](../components/icons) for web integration.
 
 <LibraryRow>
-  {Object.values(icons).map((icon) => (
-    <IconSample key={icon.id} iconInfo={icon.id} />
-  ))}
+  {Object.values(icons)
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .map((icon) => (
+      <IconSample key={icon.id} iconInfo={icon.id} />
+    ))
+  }
 </LibraryRow>
