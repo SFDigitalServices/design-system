@@ -19,7 +19,6 @@
     "build-css": "wireit",
     "build-js": "wireit",
     "build-manifest": "wireit",
-    "develop": "wireit",
     "lint": "wireit",
     "lint-css": "wireit",
     "lint-js": "wireit",
@@ -72,9 +71,6 @@
       "output": [
         "manifest.json"
       ]
-    },
-    "develop": {
-      "command": "npm run build watch"
     },
     "lint": {
       "dependencies": [
