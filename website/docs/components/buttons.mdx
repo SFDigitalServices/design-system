@@ -1,6 +1,11 @@
 ---
 title: Buttons
 ---
+
+import { InlineSwatch } from "@site/src/components";
+import { colors } from "sfgov-design-system/src/tokens";
+import DoDont, { Do, Dont } from '@site/src/components/DoDont'
+
 Use buttons for major actions.
 
 Buttons draw more attention than a simple text link. Because of their larger surface and color, they are visually more findable and easier to click or tap.
@@ -19,7 +24,7 @@ If the action should not be prompted, a text link may be a better option.
 
 ### Primary button
 
-This is the most common type of button. Use these to direct people to a clear primary action. To call out that these buttons are actionable, they are action blue (`{{ tokens.colors.action }}`).
+This is the most common type of button. Use these to direct people to a clear primary action. To call out that these buttons are actionable, they are action blue <InlineSwatch value={colors.action} />.
 
 ```html
 <button class="btn">
@@ -33,8 +38,8 @@ Try not to have more than 1 primary button on a page. Multiple primary buttons p
 
 On some backgrounds, the primary button color will not have sufficient contrast. In this case, use inverse buttons, which have a white fill.
 
-```html wrapper_class="bg-blue-dark p-20"
-<div class="bg-blue-dark">
+```html live
+<div class="bg-blue-dark p-20">
   <button class="btn btn-inverse">
     Do something
   </button>
@@ -43,7 +48,7 @@ On some backgrounds, the primary button color will not have sufficient contrast.
 
 ### Secondary button
 
-```html
+```html live
 <button class="btn btn-secondary">
   Do something
 </button>
@@ -53,7 +58,7 @@ Secondary buttons don’t have as much visual weight because they are outlined i
 
 Pair it side-by-side with a primary button to prompt toward the primary button’s action.
 
-```html id="buttons-side-by-side"
+```html live
 <div class="flex gap-20">
   <button class="btn btn-secondary">
     Cancel
@@ -70,7 +75,7 @@ Pair it side-by-side with a primary button to prompt toward the primary button�
 
 Block buttons stretch to fill the width of the screen or area instead of having a set width. They are often used on mobile layouts.
 
-```html
+```html live
 <div class="bg-blue-1 p-20 text-slate text-body">
   <div>COVID-19 vaccination appointments available only for San Francisco Health Network patients.</div>
   <button class="btn btn-block my-20">
@@ -86,7 +91,7 @@ Block buttons stretch to fill the width of the screen or area instead of having 
 
 Icons can be on the left or right of the text in a button. Do not use more than one icon in a button.
 
-```html
+```html live
 <div class="flex justify-around items-center gap-16 title-xs">
   <a href="#" class="btn btn-secondary flex gap-8">
     <sfgov-icon symbol="arrow-left"></sfgov-icon>
@@ -109,7 +114,7 @@ Icons should reinforce the meaning of the button’s text. In rare cases, an ico
 
 ## Appearance
 
-<img alt="" src="/static/images/button-specs.png" class="w-full" />
+<img alt="" src="/static/images/button-specs.png" className="w-full" />
 
 Buttons have:
 * corner radius of 8px
@@ -123,19 +128,46 @@ Buttons have:
 
 Buttons are typically left aligned with other content, not centered. For exceptions, see <a href="#block-buttons">block buttons</a>.
 
-| <img class="w-1/1" alt="Left aligned button with left aligned text" src="/static/images/alignment-correct.png" /> | <img class="w-1/1" alt="Center aligned button with left aligned text" src="/static/images/alignment-incorrect.png" /> |
-| ----------- | ----------- |
-| Yes      | No       |
-| Button is left aligned with other content | Button is centered |
+<DoDont>
+  <Do reasons={["Button is left aligned with other content"]}>
+    <div class="bg-blue-1 p-20 space-y-16">
+      <h3 class="text-title-lg">Be a DreamSF Fellow</h3>
+      <p>The DreamSF Fellowship is a paid leadership and civic engagement program for immigrant youth.</p>
+      <div>
+        <button class="btn">Apply now</button>
+      </div>
+    </div>
+  </Do>
+  <Dont reasons={["Button is centered"]}>
+    <div class="bg-blue-1 p-20 space-y-16">
+      <h3 class="text-title-lg">Be a DreamSF Fellow</h3>
+      <p>The DreamSF Fellowship is a paid leadership and civic engagement program for immigrant youth.</p>
+      <div class="text-center">
+        <button class="btn">Apply now</button>
+      </div>
+    </div>
+  </Dont>
+</DoDont>
 
 ### Arrangement of multiple buttons
 
 For 2 or more button options, place them side by side instead of on top of one another if possible. This reduces the chance of accidentally clicking the wrong one and avoids alignment issues.
 
-| <div class="flex gap-20"><button class="btn btn-secondary">Cancel</button><button class="btn">Continue</button></div> | <div><button class="btn btn-secondary mb-20">Cancel</button><br /><button class="btn mb-20">Continue</button></div> |
-| ----------- | ----------- |
-| Yes      | No       |
-| Choices are side by side | Choices are stacked |
+<DoDont>
+  <Do reasons={["Choices are side by side"]}>
+    <div class="flex gap-20 p-20">
+      <button class="btn btn-secondary">Cancel</button>
+      <button class="btn">Continue</button>
+    </div>
+  </Do>
+  <Dont reasons={["Choices are stacked"]}>
+    <div class="p-20">
+      <button class="btn btn-secondary mb-20">Cancel</button>
+      <br />
+      <button class="btn">Continue</button>
+    </div>
+  </Dont>
+</DoDont>
 
 ### Writing button text
 
@@ -145,15 +177,31 @@ Refer to the [button text library](https://sfgovdt.jira.com/wiki/spaces/SFGOV/pa
 
 Long button text is less legible, less impactful, and sometimes can even cause wrapping.
 
-| <button class="btn mb-48">Apply now</button> | <button class="btn mb-48">Apply now for your Small Business Grant</button> |
-| ----------- | ----------- |
-| Yes      | No       |
-| Button text is short | Button text is very long |
+<DoDont>
+  <Do reasons={['Button text is short']}>
+    <div className='p-20'>
+      <button class="btn">Apply now</button>
+    </div>
+  </Do>
+  <Dont reasons={['Button text is very long']}>
+    <div className='p-20'>
+      <button class="btn">Apply now for your Small Business Grant</button>
+    </div>
+  </Dont>
+</DoDont>
 
-| <button class="btn mb-20">Apply now</button> | <button class="btn mb-20">Apply now for your<br />Small Business Grant</button> |
-| ----------- | ----------- |
-| Yes      | No       |
-| Button text fits on one line | Button text wraps to fit |
+<DoDont>
+  <Do reasons={['Button text fits on one line']}>
+    <div className='p-20'>
+      <button class="btn">Apply now</button>
+    </div>
+  </Do>
+  <Dont reasons={['Button text wraps to fit']}>
+    <div className='p-20'>
+      <button class="btn">Apply now for your<br />Small Business Grant</button>
+    </div>
+  </Dont>
+</DoDont>
 
 ## HTML implementation
 
@@ -161,7 +209,7 @@ Buttons styles can be applied to both HTML links (`<a>` elements) and interactiv
 
 ### Link buttons
 
-```html
+```html live
 <a class="btn" href="#">
   This is a link
 </a>
@@ -169,7 +217,7 @@ Buttons styles can be applied to both HTML links (`<a>` elements) and interactiv
 
 ### Block link
 
-```html
+```html live
 <a class="btn btn-block" href="#">
   This is a block link
 </a>
@@ -177,7 +225,7 @@ Buttons styles can be applied to both HTML links (`<a>` elements) and interactiv
 
 ### HTML buttons
 
-```html
+```html live
 <button class="btn">
   This is a button
 </button>
@@ -185,7 +233,7 @@ Buttons styles can be applied to both HTML links (`<a>` elements) and interactiv
 
 ### Block button
 
-```html
+```html live
 <button class="btn btn-block">
   This is a block button
 </button>
