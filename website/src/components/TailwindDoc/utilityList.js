@@ -75,23 +75,6 @@ const UtilityItemSection = (props) => {
   )
 }
 
-/*
-{subEntry.title.toLowerCase() === 'background color' &&
-  <ColorSample color={subItem[1]} />
-}
-
-                        <BorderColor color={subItem[1]} />
-            <BorderWidth width={subItem[0]} />
-
-<td
-                    className='first:text-red-4 first:whitespace-nowrap border-0 font-mono'
-                    key={index}
-                  >
-                    {subEntry}
-                  </td>
-
-*/
-
 const UtilClassRow = ({ rowItem, key }) => {
   const colorMatch = /^\B#([a-z0-9]{2,})(?![~!@#$%^&*()=+_`\-|\\/'[\]{}]|[?.,]*\w)$/i
   // const colorMatch = 'hooch'
@@ -124,26 +107,5 @@ const ColorSample = ({ color, index }) => {
           style={{ backgroundColor: color }}
       />
     </td>
-  )
-}
-
-// Border color sample
-const BorderColor = ({ color }) => {
-  return (
-    <div
-      className={clsx('w-28 h-28 rounded-full border-4 border-solid')}
-    />
-  )
-}
-
-// Border width
-const BorderWidth = ({ width }) => {
-  return (
-    <div
-      className={clsx(
-        'w-28 h-28 rounded border-black border-solid bg-yellow-50',
-        width
-      )}
-    />
   )
 }
