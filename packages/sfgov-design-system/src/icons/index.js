@@ -65,10 +65,9 @@ export class SFGovIcon extends window.HTMLElement {
   }
 
   set svg (node) {
-    const child = this.svg
-    if (child?.parentNode === this) {
-      this.replaceChild(node, child)
-    } else if (node) {
+    try {
+      this.replaceChild(node, this.svg)
+    } catch (error) {
       this.appendChild(node)
     }
     this.__svg = node
@@ -105,3 +104,5 @@ function createElementTemplate (markup) {
     return clone
   }
 }
+
+SFGovIcon.render = render
