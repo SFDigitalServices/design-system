@@ -39,7 +39,7 @@ const TailwindView = ({ json }) => {
 
   return (
     <>
-      <TwSearchBar search={search} />
+      <TwSearchBar search={search}/>
       <section className='dark:bg-gray-900'>
         <Masonry
           breakpointCols={{
@@ -50,7 +50,7 @@ const TailwindView = ({ json }) => {
           columnClassName='my-masonry-grid_column'
         >
           {tailwindClasses.map((collection) => (
-            <UtilityListItem key={collection.title} collection={collection} />
+            <UtilityListItem key={collection.title} collection={collection}/>
           ))}
         </Masonry>
       </section>
