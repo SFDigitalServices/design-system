@@ -1,6 +1,28 @@
 import React from 'react'
 import clsx from 'clsx'
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink'
+
+export default function DefaultNavbarItem ({
+  mobile = false,
+  // eslint-disable-next-line no-unused-vars
+  position, // Need to destructure position from props so that it doesn't get passed on.
+  ...props
+}) {
+  const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop
+  const mobileActiveClasses = 'text-slate-4 bg-grey-1'
+  const activeClasses = 'text-slate-4 bg-grey-1'
+
+  return (
+    <Comp
+      {...props}
+      activeClassName={
+        props.activeClassName ??
+        (mobile ? `menu__link--active ${mobileActiveClasses}` : `navbar__link--active ${activeClasses}`)
+      }
+    />
+  )
+}
+
 function DefaultNavbarItemDesktop ({
   className,
   isDropdownItem = false,
@@ -25,29 +47,16 @@ function DefaultNavbarItemDesktop ({
   }
   return element
 }
-function DefaultNavbarItemMobile ({ className, isDropdownItem, ...props }) {
+
+function DefaultNavbarItemMobile ({
+  className,
+  // eslint-disable-next-line no-unused-vars
+  isDropdownItem,
+  ...props
+}) {
   return (
     <li className='menu__list-item'>
       <NavbarNavLink className={clsx('menu__link', className)} {...props} />
     </li>
-  )
-}
-export default function DefaultNavbarItem ({
-  mobile = false,
-  position, // Need to destructure position from props so that it doesn't get passed on.
-  ...props
-}) {
-  const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop
-  const mobileActiveClasses = 'text-slate-4 bg-grey-1'
-  const activeClasses = 'text-slate-4 bg-grey-1'
-
-  return (
-    <Comp
-      {...props}
-      activeClassName={
-        props.activeClassName ??
-        (mobile ? `menu__link--active ${mobileActiveClasses}` : `navbar__link--active ${activeClasses}`)
-      }
-    />
   )
 }

@@ -2,31 +2,16 @@
   "name": "design-system.sf.gov",
   "private": true,
   "scripts": {
-    "build": "wireit",
+    "build": "docusaurus build --out-dir public",
     "clear": "docusaurus clear",
     "lint": "wireit",
-    "serve": "docusaurus serve",
+    "serve": "docusaurus serve --dir public",
     "start": "wireit",
     "swizzle": "docusaurus swizzle",
     "write-heading-ids": "docusaurus write-heading-ids",
     "write-translations": "docusaurus write-translations"
   },
   "wireit": {
-    "build": {
-      "command": "docusaurus build --out-dir public",
-      "files": [
-        "*.js",
-        "docs/**/*",
-        "src/**/*",
-        "static/**/*"
-      ],
-      "output": [
-        "public/**/*"
-      ],
-      "dependencies": [
-        "../packages/sfgov-design-system:build"
-      ]
-    },
     "start": {
       "command": "docusaurus start",
       "dependencies": [

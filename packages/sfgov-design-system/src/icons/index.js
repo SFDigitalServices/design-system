@@ -60,21 +60,25 @@ export class SFGovIcon extends window.HTMLElement {
     this.setAttribute('symbol', value)
   }
 
+  get svg () {
+    return this.__svg
+  }
+
+  set svg (node) {
+    try {
+      this.replaceChild(node, this.svg)
+    } catch (error) {
+      this.appendChild(node)
+    }
+    this.__svg = node
+  }
+
   attributeChangedCallback (...args) {
     this.render()
   }
 
   render () {
-    const { props } = this
-    const svg = render(this.symbol, props)
-    if (svg) {
-      if (this.__svg) {
-        this.replaceChild(svg, this.__svg)
-      } else {
-        this.appendChild(svg)
-      }
-      this.__svg = svg
-    }
+    this.svg = render(this.symbol, this.props)
   }
 
   get props () {
@@ -100,3 +104,5 @@ function createElementTemplate (markup) {
     return clone
   }
 }
+
+SFGovIcon.render = render

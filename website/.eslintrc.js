@@ -29,5 +29,10 @@ module.exports = {
         allowWarningComments: true
       }
     ]
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }
