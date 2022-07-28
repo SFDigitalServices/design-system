@@ -6,8 +6,8 @@
     "website"
   ],
   "engines": {
-    "node": "14.x || 16.x",
-    "npm": "8.x"
+    "node": ">=14.x",
+    "npm": ">=8.x"
   },
   "scripts": {
     "build": "lerna run build",
