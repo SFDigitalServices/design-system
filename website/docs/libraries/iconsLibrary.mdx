@@ -6,17 +6,14 @@ tags: [icons]
 ---
 
 import { IconSample, LibraryRow } from '@site/src/components'
-import { icons } from 'sfgov-design-system/src/icons/data.json'
+import icons from '@site/src/icons'
 
 To learn more about icon design best practices, please visit our [icon
 documentation](../design/icons). See the [component
 documentation](../components/icons) for web integration.
 
 <LibraryRow>
-  {Object.values(icons)
-    .sort((a, b) => a.id.localeCompare(b.id))
-    .map((icon) => (
-      <IconSample key={icon.id} iconInfo={icon.id} />
-    ))
-  }
+  {icons.map((icon) => (
+    <IconSample key={icon.id} iconInfo={icon.id} />
+  ))}
 </LibraryRow>

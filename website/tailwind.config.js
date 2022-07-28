@@ -3,7 +3,7 @@ module.exports = {
     require('sfgov-design-system/tailwind.preset')
   ],
   content: [
-    'docs/**/*.{md,mdx}',
-    'src/**/*.{js,jsx,ts,tsx}'
+    './docs/**/*.{md,mdx}',
+    './src/**/*.{js,jsx}'
   ]
 }

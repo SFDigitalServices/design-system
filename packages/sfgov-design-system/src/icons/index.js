@@ -1,4 +1,5 @@
-import { icons } from './data.json'
+import data from './data.json'
+const { icons } = data
 
 const templates = {}
 
