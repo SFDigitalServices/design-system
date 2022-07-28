@@ -17,9 +17,6 @@ module.exports = {
   rules: {
     'import/no-unresolved': 0,
     'jsx-quotes': ['warn', 'prefer-single'],
-    'no-unused-vars': ['warn', {
-      varsIgnorePattern: '^@(site|theme)/'
-    }],
     'react/prop-types': ['warn', {
       skipUndeclared: true
     }],
