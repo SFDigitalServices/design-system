@@ -41,7 +41,7 @@ const ColorSample = ({ color, index }) => {
 }
 
 // TODO: Complete these and place them
-
+/*
 // Border color sample
 const BorderColor = ({ color }) => {
   return (
@@ -60,3 +60,4 @@ const BorderWidth = ({ width }) => {
     />
   )
 }
+*/
