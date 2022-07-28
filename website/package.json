@@ -43,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "clsx": "^1.1.1",
+    "dedent": "^0.7.0",
     "eslint-plugin-react": "^7.30.0",
     "filesize": "^8.0.7",
     "postcss": "^8.4.14",
