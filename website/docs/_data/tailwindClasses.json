@@ -3,16 +3,6 @@
     "title": "Layout",
     "content": [
       {
-        "title": "Aspect Ratio",
-        "docs": "https://tailwindcss.com/docs/aspect-ratio",
-        "description": "Utilities for controlling the aspect ratio of an element.",
-        "table": [
-          ["aspect-auto", "aspect-ratio: auto;", ""],
-          ["aspect-square", "aspect-ratio: 1 / 1;", ""],
-          ["aspect-video", "aspect-ratio: 16 / 9;", ""]
-        ]
-      },
-      {
         "title": "Container",
         "docs": "https://tailwindcss.com/docs/container",
         "description": "Sets the max-width to match the min-width of the current breakpoint.",
@@ -4882,21 +4872,8 @@
         "docs": "https://tailwindcss.com/docs/fonts",
         "description": "Sets the font family.",
         "table": [
-          [
-            "font-sans",
-            "font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";",
-            ""
-          ],
-          [
-            "font-serif",
-            "font-family: Georgia, Cambria, \"Times New Roman\", Times, serif;",
-            ""
-          ],
-          [
-            "font-mono",
-            "font-family: Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;",
-            ""
-          ]
+          ["font-rubik", "font-family: Rubik, ui-sans-serif, sans-serif;", ""],
+          ["font-mono", "font-family: Roboto mono, monospace !important;", ""]
         ]
       },
       {
@@ -4904,19 +4881,71 @@
         "docs": "https://tailwindcss.com/docs/text-sizing",
         "description": "Sets the font size.",
         "table": [
-          ["text-xs", "font-size: 0.75rem;\nline-height: 1rem;", "12px"],
-          ["text-sm", "font-size: 0.875rem;\nline-height: 1.25rem;", "14px"],
-          ["text-base", "font-size: 1rem;\nline-height: 1.5rem;", "16px"],
-          ["text-lg", "font-size: 1.125rem;\nline-height: 1.75rem;", "18px"],
-          ["text-xl", "font-size: 1.25rem;\nline-height: 1.75rem;", "20px"],
-          ["text-2xl", "font-size: 1.5rem;\nline-height: 2rem;", "24px"],
-          ["text-3xl", "font-size: 1.875rem;\nline-height: 2.25rem;", "30px"],
-          ["text-4xl", "font-size: 2.25rem;\nline-height: 2.5rem;", "36px"],
-          ["text-5xl", "font-size: 3rem;\nline-height: 1;", "48px"],
-          ["text-6xl", "font-size: 3.75rem;\nline-height: 1;", "64px"],
-          ["text-7xl", "font-size: 4.5rem;\nline-height: 1;", "72px"],
-          ["text-8xl", "font-size: 6rem;\nline-height: 1;", "80px"],
-          ["text-9xl", "font-size: 8rem;\nline-height: 1;", "96px"]
+          [
+            "text-display-lg-desktop",
+            "font-size: 72px;\nline-height: 76px;\nletter-spacing: -2px;",
+            "72px"
+          ],
+          [
+            "text-display-sm-desktop",
+            "font-size: 48px;\nline-height: 52px;\nletter-spacing: -1px;",
+            "48px"
+          ],
+          [
+            "text-title-xl-desktop",
+            "font-size: 60px;\nline-height: 64px;\nletter-spacing: -1px;",
+            "60px"
+          ],
+          [
+            "text-title-lg-desktop",
+            "font-size: 44px;\nline-height: 52px;\nletter-spacing: -1px;",
+            "44px"
+          ],
+          [
+            "text-title-md-desktop",
+            "font-size: 32px;\nline-height: 36px;",
+            "32px"
+          ],
+          [
+            "text-title-sm-desktop",
+            "font-size: 24px;\nline-height: 28px;",
+            "24px"
+          ],
+          [
+            "text-title-xs-desktop",
+            "font-size: 20px;\nline-height: 24px;",
+            "20px"
+          ],
+          [
+            "text-big-desc-desktop",
+            "font-size: 24px;\nline-height: 32px;",
+            "24px"
+          ],
+          ["text-body", "font-size: 16px;\nline-height: 24px;", "16px"],
+          ["text-small", "font-size: 14px;\nline-height: 1;", "14px"],
+
+          [
+            "text-display-lg",
+            "font-size: 44px;\nline-height: 48px;\nletter-spacing: -1px",
+            "44px"
+          ],
+          [
+            "text-display-sm",
+            "font-size: 36px;\nline-height: 40px;\nletter-spacing: -1px",
+            "36px"
+          ],
+          [
+            "text-title-xl",
+            "font-size: 32px;\nline-height: 36px;\nletter-spacing: -1px",
+            "32px"
+          ],
+          [
+            "text-title-lg",
+            "font-size: 28px;\nline-height: 32px;\nletter-spacing: -1px",
+            "28px"
+          ],
+          ["text-title-md", "font-size: 24px;\nline-height: 28px;", "24px"],
+          ["text-big-desc", "font-size: 20px;\nline-height: 28px;", "20px"]
         ]
       },
       {
@@ -5052,88 +5081,42 @@
         "table": [
           ["transparent", "text-transparent", "color: transparent;", ""],
           ["current color", "text-current", "color: currentColor;", ""],
-          ["rgb(0, 0, 0)", "text-black", "color: #000000;", ""],
-          ["rgb(255, 255, 255)", "text-white", "color: #ffffff;", ""],
-          ["rgb(249, 250, 251)", "text-gray-50", "color: #F9FAFB;", ""],
-          ["rgb(243, 244, 246)", "text-gray-100", "color: #F3F4F6;", ""],
-          ["rgb(229, 231, 235)", "text-gray-200", "color: #E5E7EB;", ""],
-          ["rgb(209, 213, 219)", "text-gray-300", "color: #D1D5DB;", ""],
-          ["rgb(156, 163, 175)", "text-gray-400", "color: #9CA3AF;", ""],
-          ["rgb(107, 114, 128)", "text-gray-500", "color: #6B7280;", ""],
-          ["rgb(75, 85, 99)", "text-gray-600", "color: #4B5563;", ""],
-          ["rgb(55, 65, 81)", "text-gray-700", "color: #374151;", ""],
-          ["rgb(31, 41, 55)", "text-gray-800", "color: #1F2937;", ""],
-          ["rgb(17, 24, 39)", "text-gray-900", "color: #111827;", ""],
-          ["rgb(254, 242, 242)", "text-red-50", "color: #FEF2F2;", ""],
-          ["rgb(254, 226, 226)", "text-red-100", "color: #FEE2E2;", ""],
-          ["rgb(254, 202, 202)", "text-red-200", "color: #FECACA;", ""],
-          ["rgb(252, 165, 165)", "text-red-300", "color: #FCA5A5;", ""],
-          ["rgb(248, 113, 113)", "text-red-400", "color: #F87171;", ""],
-          ["rgb(239, 68, 68)", "text-red-500", "color: #EF4444;", ""],
-          ["rgb(220, 38, 38)", "text-red-600", "color: #DC2626;", ""],
-          ["rgb(185, 28, 28)", "text-red-700", "color: #B91C1C;", ""],
-          ["rgb(153, 27, 27)", "text-red-800", "color: #991B1B;", ""],
-          ["rgb(127, 29, 29)", "text-red-900", "color: #7F1D1D;", ""],
-          ["rgb(255, 251, 235)", "text-yellow-50", "color: #FFFBEB;", ""],
-          ["rgb(254, 243, 199)", "text-yellow-100", "color: #FEF3C7;", ""],
-          ["rgb(253, 230, 138)", "text-yellow-200", "color: #FDE68A;", ""],
-          ["rgb(252, 211, 77)", "text-yellow-300", "color: #FCD34D;", ""],
-          ["rgb(251, 191, 36)", "text-yellow-400", "color: #FBBF24;", ""],
-          ["rgb(245, 158, 11)", "text-yellow-500", "color: #F59E0B;", ""],
-          ["rgb(217, 119, 6)", "text-yellow-600", "color: #D97706;", ""],
-          ["rgb(180, 83, 9)", "text-yellow-700", "color: #B45309;", ""],
-          ["rgb(146, 64, 14)", "text-yellow-800", "color: #92400E;", ""],
-          ["rgb(120, 53, 15)", "text-yellow-900", "color: #78350F;", ""],
-          ["rgb(236, 253, 245)", "text-green-50", "color: #ECFDF5;", ""],
-          ["rgb(209, 250, 229)", "text-green-100", "color: #D1FAE5;", ""],
-          ["rgb(167, 243, 208)", "text-green-200", "color: #A7F3D0;", ""],
-          ["rgb(110, 231, 183)", "text-green-300", "color: #6EE7B7;", ""],
-          ["rgb(52, 211, 153)", "text-green-400", "color: #34D399;", ""],
-          ["rgb(16, 185, 129)", "text-green-500", "color: #10B981;", ""],
-          ["rgb(5, 150, 105)", "text-green-600", "color: #059669;", ""],
-          ["rgb(4, 120, 87)", "text-green-700", "color: #047857;", ""],
-          ["rgb(6, 95, 70)", "text-green-800", "color: #065F46;", ""],
-          ["rgb(6, 78, 59)", "text-green-900", "color: #064E3B;", ""],
-          ["rgb(239, 246, 255)", "text-blue-50", "color: #EFF6FF;", ""],
-          ["rgb(219, 234, 254)", "text-blue-100", "color: #DBEAFE;", ""],
-          ["rgb(191, 219, 254)", "text-blue-200", "color: #BFDBFE;", ""],
-          ["rgb(147, 197, 253)", "text-blue-300", "color: #93C5FD;", ""],
-          ["rgb(96, 165, 250)", "text-blue-400", "color: #60A5FA;", ""],
-          ["rgb(59, 130, 246)", "text-blue-500", "color: #3B82F6;", ""],
-          ["rgb(37, 99, 235)", "text-blue-600", "color: #2563EB;", ""],
-          ["rgb(29, 78, 216)", "text-blue-700", "color: #1D4ED8;", ""],
-          ["rgb(30, 64, 175)", "text-blue-800", "color: #1E40AF;", ""],
-          ["rgb(30, 58, 138)", "text-blue-900", "color: #1E3A8A;", ""],
-          ["rgb(238, 242, 255)", "text-indigo-50", "color: #EEF2FF;", ""],
-          ["rgb(224, 231, 255)", "text-indigo-100", "color: #E0E7FF;", ""],
-          ["rgb(199, 210, 254)", "text-indigo-200", "color: #C7D2FE;", ""],
-          ["rgb(165, 180, 252)", "text-indigo-300", "color: #A5B4FC;", ""],
-          ["rgb(129, 140, 248)", "text-indigo-400", "color: #818CF8;", ""],
-          ["rgb(99, 102, 241)", "text-indigo-500", "color: #6366F1;", ""],
-          ["rgb(79, 70, 229)", "text-indigo-600", "color: #4F46E5;", ""],
-          ["rgb(67, 56, 202)", "text-indigo-700", "color: #4338CA;", ""],
-          ["rgb(55, 48, 163)", "text-indigo-800", "color: #3730A3;", ""],
-          ["rgb(49, 46, 129)", "text-indigo-900", "color: #312E81;", ""],
-          ["rgb(245, 243, 255)", "text-purple-50", "color: #F5F3FF;", ""],
-          ["rgb(237, 233, 254)", "text-purple-100", "color: #EDE9FE;", ""],
-          ["rgb(221, 214, 254)", "text-purple-200", "color: #DDD6FE;", ""],
-          ["rgb(196, 181, 253)", "text-purple-300", "color: #C4B5FD;", ""],
-          ["rgb(167, 139, 250)", "text-purple-400", "color: #A78BFA;", ""],
-          ["rgb(139, 92, 246)", "text-purple-500", "color: #8B5CF6;", ""],
-          ["rgb(124, 58, 237)", "text-purple-600", "color: #7C3AED;", ""],
-          ["rgb(109, 40, 217)", "text-purple-700", "color: #6D28D9;", ""],
-          ["rgb(91, 33, 182)", "text-purple-800", "color: #5B21B6;", ""],
-          ["rgb(76, 29, 149)", "text-purple-900", "color: #4C1D95;", ""],
-          ["rgb(253, 242, 248)", "text-pink-50", "color: #FDF2F8;", ""],
-          ["rgb(252, 231, 243)", "text-pink-100", "color: #FCE7F3;", ""],
-          ["rgb(251, 207, 232)", "text-pink-200", "color: #FBCFE8;", ""],
-          ["rgb(249, 168, 212)", "text-pink-300", "color: #F9A8D4;", ""],
-          ["rgb(244, 114, 182)", "text-pink-400", "color: #F472B6;", ""],
-          ["rgb(236, 72, 153)", "text-pink-500", "color: #EC4899;", ""],
-          ["rgb(219, 39, 119)", "text-pink-600", "color: #DB2777;", ""],
-          ["rgb(190, 24, 93)", "text-pink-700", "color: #BE185D;", ""],
-          ["rgb(157, 23, 77)", "text-pink-800", "color: #9D174D;", ""],
-          ["rgb(131, 24, 67)", "text-pink-900", "color: #831843;", ""]
+          ["#ffffff", "text-white", "color: #ffffff;", ""],
+          ["#212123", "text-black", "color: #212123;", ""],
+          ["#495ed4", "text-action", "color: #495ed4;", ""],
+          ["#edf4f7", "text-blue-1", "color: #edf4f7;", ""],
+          ["#a9d6ea", "text-blue-2", "color: #a9d6ea;", ""],
+          ["#0c1464", "text-blue-dark", "color: #0c1464;", ""],
+
+          ["#eff3f4", "text-slate-1", "color: #eff3f4;", ""],
+          ["#5a7a92", "text-slate-2", "color: #5a7a92;", ""],
+          ["#1d4d70", "text-slate-3", "color: #1d4d70;", ""],
+          ["#002b48", "text-slate-4", "color: #002b48;", ""],
+
+          ["#e9f7ec", "text-green-1", "color: #e9f7ec;", ""],
+          ["#c0e2c5", "text-green-2", "color: #c0e2c5;", ""],
+          ["#00866a", "text-green-3", "color: #00866a;", ""],
+          ["#1b674d", "text-green-4", "color: #1b674d;", ""],
+
+          ["#f5e9e5", "text-red-1", "color: #f5e9e5;", ""],
+          ["#efcabb", "text-red-2", "color: #efcabb;", ""],
+          ["#c55236", "text-red-3", "color: #c55236;", ""],
+          ["#9b3921", "bg-red-4", "color: #9b3921;", ""],
+
+          ["#edebf6", "text-purple-1", "color: #edebf6;", ""],
+          ["#cccced", "text-purple-2", "color: #cccced;", ""],
+          ["#7d61b3", "text-purple-3", "color: #7d61b3;", ""],
+          ["#543a89", "text-purple-4", "color: #543a89;", ""],
+
+          ["#f8f1df", "text-yellow-1", "color: #f8f1df;", ""],
+          ["#f9e3a3", "text-yellow-2", "color: #f9e3a3;", ""],
+          ["#f4c435", "text-yellow-3", "color: #f4c435;", ""],
+          ["#e0a81a", "text-yellow-4", "color: #e0a81a;", ""],
+
+          ["#f6f6f6", "text-grey-1", "color: #f6f6f6;", ""],
+          ["#e2e2e2", "text-grey-2", "color: #e2e2e2;", ""],
+          ["#c2c2c2", "text-grey-3", "color: #c2c2c2;", ""],
+          ["#a1a1a1", "text-grey-4", "color: #a1a1a1;", ""]
         ]
       },
       {
@@ -5337,35 +5320,35 @@
           ["#a9d6ea", "bg-blue-2", "background-color: #a9d6ea;", ""],
           ["#0c1464", "bg-blue-dark", "background-color: #0c1464;", ""],
 
-          ["", "bg-slate-1", "background-color: #eff3f4;", ""],
-          ["", "bg-slate-2", "background-color: #5a7a92;", ""],
-          ["", "bg-slate-3", "background-color: #1d4d70;", ""],
-          ["", "bg-slate-4", "background-color: #002b48;", ""],
+          ["#eff3f4", "bg-slate-1", "background-color: #eff3f4;", ""],
+          ["#5a7a92", "bg-slate-2", "background-color: #5a7a92;", ""],
+          ["#1d4d70", "bg-slate-3", "background-color: #1d4d70;", ""],
+          ["#002b48", "bg-slate-4", "background-color: #002b48;", ""],
 
-          ["", "bg-green-1", "background-color: #e9f7ec;", ""],
-          ["", "bg-green-2", "background-color: #c0e2c5;", ""],
-          ["", "bg-green-3", "background-color: #00866a;", ""],
-          ["", "bg-green-4", "background-color: #1b674d;", ""],
+          ["#e9f7ec", "bg-green-1", "background-color: #e9f7ec;", ""],
+          ["#c0e2c5", "bg-green-2", "background-color: #c0e2c5;", ""],
+          ["#00866a", "bg-green-3", "background-color: #00866a;", ""],
+          ["#1b674d", "bg-green-4", "background-color: #1b674d;", ""],
 
-          ["", "bg-red-1", "background-color: #f5e9e5;", ""],
-          ["", "bg-red-2", "background-color: #efcabb;", ""],
-          ["", "bg-red-3", "background-color: #c55236;", ""],
-          ["", "bg-red-4", "background-color: #9b3921;", ""],
+          ["#f5e9e5", "bg-red-1", "background-color: #f5e9e5;", ""],
+          ["#efcabb", "bg-red-2", "background-color: #efcabb;", ""],
+          ["#c55236", "bg-red-3", "background-color: #c55236;", ""],
+          ["#9b3921", "bg-red-4", "background-color: #9b3921;", ""],
 
-          ["", "bg-purple-1", "background-color: #edebf6;", ""],
-          ["", "bg-purple-2", "background-color: #cccced;", ""],
-          ["", "bg-purple-3", "background-color: #7d61b3;", ""],
-          ["", "bg-purple-4", "background-color: #543a89;", ""],
+          ["#edebf6", "bg-purple-1", "background-color: #edebf6;", ""],
+          ["#cccced", "bg-purple-2", "background-color: #cccced;", ""],
+          ["#7d61b3", "bg-purple-3", "background-color: #7d61b3;", ""],
+          ["#543a89", "bg-purple-4", "background-color: #543a89;", ""],
 
-          ["", "bg-yellow-1", "background-color: #f8f1df;", ""],
-          ["", "bg-yellow-2", "background-color: #f9e3a3;", ""],
-          ["", "bg-yellow-3", "background-color: #f4c435;", ""],
-          ["", "bg-yellow-4", "background-color: #e0a81a;", ""],
+          ["#f8f1df", "bg-yellow-1", "background-color: #f8f1df;", ""],
+          ["#f9e3a3", "bg-yellow-2", "background-color: #f9e3a3;", ""],
+          ["#f4c435", "bg-yellow-3", "background-color: #f4c435;", ""],
+          ["#e0a81a", "bg-yellow-4", "background-color: #e0a81a;", ""],
 
-          ["", "bg-grey-1", "background-color: #f6f6f6;", ""],
-          ["", "bg-grey-2", "background-color: #e2e2e2;", ""],
-          ["", "bg-grey-3", "background-color: #a1a1a1;", ""],
-          ["", "bg-grey-4", "background-color: #a1a1a1;", ""]
+          ["#f6f6f6", "bg-grey-1", "background-color: #f6f6f6;", ""],
+          ["#e2e2e2", "bg-grey-2", "background-color: #e2e2e2;", ""],
+          ["#c2c2c2", "bg-grey-3", "background-color: #c2c2c2;", ""],
+          ["#a1a1a1", "bg-grey-4", "background-color: #a1a1a1;", ""]
         ]
       },
       {
@@ -5485,1345 +5468,6 @@
             "background-image: background-image: linear-gradient(to top left, var(--tw-gradient-stops));",
             ""
           ]
-        ]
-      },
-      {
-        "title": "Gradient Color Stops",
-        "docs": "https://tailwindcss.com/docs/gradient-color-stops",
-        "description": "Utilities for controlling the color stops in background gradients.",
-        "table": [
-          [
-            "transparent",
-            "from-transparent",
-            "background-color: transparent;",
-            ""
-          ],
-          [
-            "current color",
-            "from-current",
-            "background-color: currentColor;",
-            ""
-          ],
-          ["rgb(0, 0, 0)", "from-black", "background-color: #000000;", ""],
-          [
-            "rgb(255, 255, 255)",
-            "from-white",
-            "background-color: #ffffff;",
-            ""
-          ],
-          [
-            "rgb(249, 250, 251)",
-            "from-gray-50",
-            "background-color: #F9FAFB;",
-            ""
-          ],
-          [
-            "rgb(243, 244, 246)",
-            "from-gray-100",
-            "background-color: #F3F4F6;",
-            ""
-          ],
-          [
-            "rgb(229, 231, 235)",
-            "from-gray-200",
-            "background-color: #E5E7EB;",
-            ""
-          ],
-          [
-            "rgb(209, 213, 219)",
-            "from-gray-300",
-            "background-color: #D1D5DB;",
-            ""
-          ],
-          [
-            "rgb(156, 163, 175)",
-            "from-gray-400",
-            "background-color: #9CA3AF;",
-            ""
-          ],
-          [
-            "rgb(107, 114, 128)",
-            "from-gray-500",
-            "background-color: #6B7280;",
-            ""
-          ],
-          [
-            "rgb(75, 85, 99)",
-            "from-gray-600",
-            "background-color: #6B7280;",
-            ""
-          ],
-          [
-            "rgb(55, 65, 81)",
-            "from-gray-700",
-            "background-color: #374151;",
-            ""
-          ],
-          [
-            "rgb(31, 41, 55)",
-            "from-gray-800",
-            "background-color: #1F2937;",
-            ""
-          ],
-          [
-            "rgb(17, 24, 39)",
-            "from-gray-900",
-            "background-color: #111827;",
-            ""
-          ],
-          [
-            "rgb(254, 242, 242)",
-            "from-red-50",
-            "background-color: #FEF2F2;",
-            ""
-          ],
-          [
-            "rgb(254, 226, 226)",
-            "from-red-100",
-            "background-color: #FEE2E2;",
-            ""
-          ],
-          [
-            "rgb(254, 202, 202)",
-            "from-red-200",
-            "background-color: #FECACA;",
-            ""
-          ],
-          [
-            "rgb(252, 165, 165)",
-            "from-red-300",
-            "background-color: #FCA5A5;",
-            ""
-          ],
-          [
-            "rgb(248, 113, 113)",
-            "from-red-400",
-            "background-color: #F87171;",
-            ""
-          ],
-          [
-            "rgb(239, 68, 68)",
-            "from-red-500",
-            "background-color: #EF4444;",
-            ""
-          ],
-          [
-            "rgb(220, 38, 38)",
-            "from-red-600",
-            "background-color: #DC2626;",
-            ""
-          ],
-          [
-            "rgb(185, 28, 28)",
-            "from-red-700",
-            "background-color: #B91C1C;",
-            ""
-          ],
-          [
-            "rgb(153, 27, 27)",
-            "from-red-800",
-            "background-color: #991B1B;",
-            ""
-          ],
-          [
-            "rgb(127, 29, 29)",
-            "from-red-900",
-            "background-color: #7F1D1D;",
-            ""
-          ],
-          [
-            "rgb(255, 251, 235)",
-            "from-yellow-50",
-            "background-color: #FFFBEB;",
-            ""
-          ],
-          [
-            "rgb(254, 243, 199)",
-            "from-yellow-100",
-            "background-color: #FEF3C7;",
-            ""
-          ],
-          [
-            "rgb(253, 230, 138)",
-            "from-yellow-200",
-            "background-color: #FDE68A;",
-            ""
-          ],
-          [
-            "rgb(252, 211, 77)",
-            "from-yellow-300",
-            "background-color: #FCD34D;",
-            ""
-          ],
-          [
-            "rgb(251, 191, 36)",
-            "from-yellow-400",
-            "background-color: #FBBF24;",
-            ""
-          ],
-          [
-            "rgb(245, 158, 11)",
-            "from-yellow-500",
-            "background-color: #F59E0B;",
-            ""
-          ],
-          [
-            "rgb(217, 119, 6)",
-            "from-yellow-600",
-            "background-color: #D97706;",
-            ""
-          ],
-          [
-            "rgb(180, 83, 9)",
-            "from-yellow-700",
-            "background-color: #B45309;",
-            ""
-          ],
-          [
-            "rgb(146, 64, 14)",
-            "from-yellow-800",
-            "background-color: #92400E;",
-            ""
-          ],
-          [
-            "rgb(120, 53, 15)",
-            "from-yellow-900",
-            "background-color: #78350F;",
-            ""
-          ],
-          [
-            "rgb(236, 253, 245)",
-            "from-green-50",
-            "background-color: #ECFDF5;",
-            ""
-          ],
-          [
-            "rgb(209, 250, 229)",
-            "from-green-100",
-            "background-color: #D1FAE5;",
-            ""
-          ],
-          [
-            "rgb(167, 243, 208)",
-            "from-green-200",
-            "background-color: #A7F3D0;",
-            ""
-          ],
-          [
-            "rgb(110, 231, 183)",
-            "from-green-300",
-            "background-color: #6EE7B7;",
-            ""
-          ],
-          [
-            "rgb(52, 211, 153)",
-            "from-green-400",
-            "background-color: #34D399;",
-            ""
-          ],
-          [
-            "rgb(16, 185, 129)",
-            "from-green-500",
-            "background-color: #10B981;",
-            ""
-          ],
-          [
-            "rgb(5, 150, 105)",
-            "from-green-600",
-            "background-color: #059669;",
-            ""
-          ],
-          [
-            "rgb(4, 120, 87)",
-            "from-green-700",
-            "background-color: #047857;",
-            ""
-          ],
-          [
-            "rgb(6, 95, 70)",
-            "from-green-800",
-            "background-color: #065F46;",
-            ""
-          ],
-          [
-            "rgb(6, 78, 59)",
-            "from-green-900",
-            "background-color: #064E3B;",
-            ""
-          ],
-          [
-            "rgb(239, 246, 255)",
-            "from-blue-50",
-            "background-color: #EFF6FF;",
-            ""
-          ],
-          [
-            "rgb(219, 234, 254)",
-            "from-blue-100",
-            "background-color: #DBEAFE;",
-            ""
-          ],
-          [
-            "rgb(191, 219, 254)",
-            "from-blue-200",
-            "background-color: #BFDBFE;",
-            ""
-          ],
-          [
-            "rgb(147, 197, 253)",
-            "from-blue-300",
-            "background-color: #93C5FD;",
-            ""
-          ],
-          [
-            "rgb(96, 165, 250)",
-            "from-blue-400",
-            "background-color: #60A5FA;",
-            ""
-          ],
-          [
-            "rgb(59, 130, 246)",
-            "from-blue-500",
-            "background-color: #3B82F6;",
-            ""
-          ],
-          [
-            "rgb(37, 99, 235)",
-            "from-blue-600",
-            "background-color: #2563EB;",
-            ""
-          ],
-          [
-            "rgb(29, 78, 216)",
-            "from-blue-700",
-            "background-color: #1D4ED8;",
-            ""
-          ],
-          [
-            "rgb(30, 64, 175)",
-            "from-blue-800",
-            "background-color: #1E40AF;",
-            ""
-          ],
-          [
-            "rgb(30, 58, 138)",
-            "from-blue-900",
-            "background-color: #1E3A8A;",
-            ""
-          ],
-          [
-            "rgb(238, 242, 255)",
-            "from-indigo-50",
-            "background-color: #EEF2FF;",
-            ""
-          ],
-          [
-            "rgb(224, 231, 255)",
-            "from-indigo-100",
-            "background-color: #E0E7FF;",
-            ""
-          ],
-          [
-            "rgb(199, 210, 254)",
-            "from-indigo-200",
-            "background-color: #C7D2FE;",
-            ""
-          ],
-          [
-            "rgb(165, 180, 252)",
-            "from-indigo-300",
-            "background-color: #A5B4FC;",
-            ""
-          ],
-          [
-            "rgb(129, 140, 248)",
-            "from-indigo-400",
-            "background-color: #818CF8;",
-            ""
-          ],
-          [
-            "rgb(99, 102, 241)",
-            "from-indigo-500",
-            "background-color: #6366F1;",
-            ""
-          ],
-          [
-            "rgb(79, 70, 229)",
-            "from-indigo-600",
-            "background-color: #4F46E5;",
-            ""
-          ],
-          [
-            "rgb(67, 56, 202)",
-            "from-indigo-700",
-            "background-color: #4338CA;",
-            ""
-          ],
-          [
-            "rgb(55, 48, 163)",
-            "from-indigo-800",
-            "background-color: #3730A3;",
-            ""
-          ],
-          [
-            "rgb(49, 46, 129)",
-            "from-indigo-900",
-            "background-color: #312E81;",
-            ""
-          ],
-          [
-            "rgb(245, 243, 255)",
-            "from-purple-50",
-            "background-color: #F5F3FF;",
-            ""
-          ],
-          [
-            "rgb(237, 233, 254)",
-            "from-purple-100",
-            "background-color: #EDE9FE;",
-            ""
-          ],
-          [
-            "rgb(221, 214, 254)",
-            "from-purple-200",
-            "background-color: #DDD6FE;",
-            ""
-          ],
-          [
-            "rgb(196, 181, 253)",
-            "from-purple-300",
-            "background-color: #C4B5FD;",
-            ""
-          ],
-          [
-            "rgb(167, 139, 250)",
-            "from-purple-400",
-            "background-color: #A78BFA;",
-            ""
-          ],
-          [
-            "rgb(139, 92, 246)",
-            "from-purple-500",
-            "background-color: #8B5CF6;",
-            ""
-          ],
-          [
-            "rgb(124, 58, 237)",
-            "from-purple-600",
-            "background-color: #7C3AED;",
-            ""
-          ],
-          [
-            "rgb(109, 40, 217)",
-            "from-purple-700",
-            "background-color: #6D28D9;",
-            ""
-          ],
-          [
-            "rgb(91, 33, 182)",
-            "from-purple-800",
-            "background-color: #5B21B6;",
-            ""
-          ],
-          [
-            "rgb(76, 29, 149)",
-            "from-purple-900",
-            "background-color: #4C1D95;",
-            ""
-          ],
-          [
-            "rgb(253, 242, 248)",
-            "from-pink-50",
-            "background-color: #FDF2F8;",
-            ""
-          ],
-          [
-            "rgb(252, 231, 243)",
-            "from-pink-100",
-            "background-color: #FCE7F3;",
-            ""
-          ],
-          [
-            "rgb(251, 207, 232)",
-            "from-pink-200",
-            "background-color: #FBCFE8;",
-            ""
-          ],
-          [
-            "rgb(249, 168, 212)",
-            "from-pink-300",
-            "background-color: #F9A8D4;",
-            ""
-          ],
-          [
-            "rgb(244, 114, 182)",
-            "from-pink-400",
-            "background-color: #F472B6;",
-            ""
-          ],
-          [
-            "rgb(236, 72, 153)",
-            "from-pink-500",
-            "background-color: #EC4899;",
-            ""
-          ],
-          [
-            "rgb(219, 39, 119)",
-            "from-pink-600",
-            "background-color: #DB2777;",
-            ""
-          ],
-          [
-            "rgb(190, 24, 93)",
-            "from-pink-700",
-            "background-color: #BE185D;",
-            ""
-          ],
-          [
-            "rgb(157, 23, 77)",
-            "from-pink-800",
-            "background-color: #9D174D;",
-            ""
-          ],
-          [
-            "rgb(131, 24, 67)",
-            "from-pink-900",
-            "background-color: #831843;",
-            ""
-          ],
-          [
-            "transparent",
-            "via-transparent",
-            "background-color: transparent;",
-            ""
-          ],
-          [
-            "current color",
-            "via-current",
-            "background-color: currentColor;",
-            ""
-          ],
-          ["rgb(0, 0, 0)", "via-black", "background-color: #000000;", ""],
-          ["rgb(255, 255, 255)", "via-white", "background-color: #ffffff;", ""],
-          [
-            "rgb(249, 250, 251)",
-            "via-gray-50",
-            "background-color: #F9FAFB;",
-            ""
-          ],
-          [
-            "rgb(243, 244, 246)",
-            "via-gray-100",
-            "background-color: #F3F4F6;",
-            ""
-          ],
-          [
-            "rgb(229, 231, 235)",
-            "via-gray-200",
-            "background-color: #E5E7EB;",
-            ""
-          ],
-          [
-            "rgb(209, 213, 219)",
-            "via-gray-300",
-            "background-color: #D1D5DB;",
-            ""
-          ],
-          [
-            "rgb(156, 163, 175)",
-            "via-gray-400",
-            "background-color: #9CA3AF;",
-            ""
-          ],
-          [
-            "rgb(107, 114, 128)",
-            "via-gray-500",
-            "background-color: #6B7280;",
-            ""
-          ],
-          ["rgb(75, 85, 99)", "via-gray-600", "background-color: #6B7280;", ""],
-          ["rgb(55, 65, 81)", "via-gray-700", "background-color: #374151;", ""],
-          ["rgb(31, 41, 55)", "via-gray-800", "background-color: #1F2937;", ""],
-          ["rgb(17, 24, 39)", "via-gray-900", "background-color: #111827;", ""],
-          [
-            "rgb(254, 242, 242)",
-            "via-red-50",
-            "background-color: #FEF2F2;",
-            ""
-          ],
-          [
-            "rgb(254, 226, 226)",
-            "via-red-100",
-            "background-color: #FEE2E2;",
-            ""
-          ],
-          [
-            "rgb(254, 202, 202)",
-            "via-red-200",
-            "background-color: #FECACA;",
-            ""
-          ],
-          [
-            "rgb(252, 165, 165)",
-            "via-red-300",
-            "background-color: #FCA5A5;",
-            ""
-          ],
-          [
-            "rgb(248, 113, 113)",
-            "via-red-400",
-            "background-color: #F87171;",
-            ""
-          ],
-          ["rgb(239, 68, 68)", "via-red-500", "background-color: #EF4444;", ""],
-          ["rgb(220, 38, 38)", "via-red-600", "background-color: #DC2626;", ""],
-          ["rgb(185, 28, 28)", "via-red-700", "background-color: #B91C1C;", ""],
-          ["rgb(153, 27, 27)", "via-red-800", "background-color: #991B1B;", ""],
-          ["rgb(127, 29, 29)", "via-red-900", "background-color: #7F1D1D;", ""],
-          [
-            "rgb(255, 251, 235)",
-            "via-yellow-50",
-            "background-color: #FFFBEB;",
-            ""
-          ],
-          [
-            "rgb(254, 243, 199)",
-            "via-yellow-100",
-            "background-color: #FEF3C7;",
-            ""
-          ],
-          [
-            "rgb(253, 230, 138)",
-            "via-yellow-200",
-            "background-color: #FDE68A;",
-            ""
-          ],
-          [
-            "rgb(252, 211, 77)",
-            "via-yellow-300",
-            "background-color: #FCD34D;",
-            ""
-          ],
-          [
-            "rgb(251, 191, 36)",
-            "via-yellow-400",
-            "background-color: #FBBF24;",
-            ""
-          ],
-          [
-            "rgb(245, 158, 11)",
-            "via-yellow-500",
-            "background-color: #F59E0B;",
-            ""
-          ],
-          [
-            "rgb(217, 119, 6)",
-            "via-yellow-600",
-            "background-color: #D97706;",
-            ""
-          ],
-          [
-            "rgb(180, 83, 9)",
-            "via-yellow-700",
-            "background-color: #B45309;",
-            ""
-          ],
-          [
-            "rgb(146, 64, 14)",
-            "via-yellow-800",
-            "background-color: #92400E;",
-            ""
-          ],
-          [
-            "rgb(120, 53, 15)",
-            "via-yellow-900",
-            "background-color: #78350F;",
-            ""
-          ],
-          [
-            "rgb(236, 253, 245)",
-            "via-green-50",
-            "background-color: #ECFDF5;",
-            ""
-          ],
-          [
-            "rgb(209, 250, 229)",
-            "via-green-100",
-            "background-color: #D1FAE5;",
-            ""
-          ],
-          [
-            "rgb(167, 243, 208)",
-            "via-green-200",
-            "background-color: #A7F3D0;",
-            ""
-          ],
-          [
-            "rgb(110, 231, 183)",
-            "via-green-300",
-            "background-color: #6EE7B7;",
-            ""
-          ],
-          [
-            "rgb(52, 211, 153)",
-            "via-green-400",
-            "background-color: #34D399;",
-            ""
-          ],
-          [
-            "rgb(16, 185, 129)",
-            "via-green-500",
-            "background-color: #10B981;",
-            ""
-          ],
-          [
-            "rgb(5, 150, 105)",
-            "via-green-600",
-            "background-color: #059669;",
-            ""
-          ],
-          [
-            "rgb(4, 120, 87)",
-            "via-green-700",
-            "background-color: #047857;",
-            ""
-          ],
-          ["rgb(6, 95, 70)", "via-green-800", "background-color: #065F46;", ""],
-          ["rgb(6, 78, 59)", "via-green-900", "background-color: #064E3B;", ""],
-          [
-            "rgb(239, 246, 255)",
-            "via-blue-50",
-            "background-color: #EFF6FF;",
-            ""
-          ],
-          [
-            "rgb(219, 234, 254)",
-            "via-blue-100",
-            "background-color: #DBEAFE;",
-            ""
-          ],
-          [
-            "rgb(191, 219, 254)",
-            "via-blue-200",
-            "background-color: #BFDBFE;",
-            ""
-          ],
-          [
-            "rgb(147, 197, 253)",
-            "via-blue-300",
-            "background-color: #93C5FD;",
-            ""
-          ],
-          [
-            "rgb(96, 165, 250)",
-            "via-blue-400",
-            "background-color: #60A5FA;",
-            ""
-          ],
-          [
-            "rgb(59, 130, 246)",
-            "via-blue-500",
-            "background-color: #3B82F6;",
-            ""
-          ],
-          [
-            "rgb(37, 99, 235)",
-            "via-blue-600",
-            "background-color: #2563EB;",
-            ""
-          ],
-          [
-            "rgb(29, 78, 216)",
-            "via-blue-700",
-            "background-color: #1D4ED8;",
-            ""
-          ],
-          [
-            "rgb(30, 64, 175)",
-            "via-blue-800",
-            "background-color: #1E40AF;",
-            ""
-          ],
-          [
-            "rgb(30, 58, 138)",
-            "via-blue-900",
-            "background-color: #1E3A8A;",
-            ""
-          ],
-          [
-            "rgb(238, 242, 255)",
-            "via-indigo-50",
-            "background-color: #EEF2FF;",
-            ""
-          ],
-          [
-            "rgb(224, 231, 255)",
-            "via-indigo-100",
-            "background-color: #E0E7FF;",
-            ""
-          ],
-          [
-            "rgb(199, 210, 254)",
-            "via-indigo-200",
-            "background-color: #C7D2FE;",
-            ""
-          ],
-          [
-            "rgb(165, 180, 252)",
-            "via-indigo-300",
-            "background-color: #A5B4FC;",
-            ""
-          ],
-          [
-            "rgb(129, 140, 248)",
-            "via-indigo-400",
-            "background-color: #818CF8;",
-            ""
-          ],
-          [
-            "rgb(99, 102, 241)",
-            "via-indigo-500",
-            "background-color: #6366F1;",
-            ""
-          ],
-          [
-            "rgb(79, 70, 229)",
-            "via-indigo-600",
-            "background-color: #4F46E5;",
-            ""
-          ],
-          [
-            "rgb(67, 56, 202)",
-            "via-indigo-700",
-            "background-color: #4338CA;",
-            ""
-          ],
-          [
-            "rgb(55, 48, 163)",
-            "via-indigo-800",
-            "background-color: #3730A3;",
-            ""
-          ],
-          [
-            "rgb(49, 46, 129)",
-            "via-indigo-900",
-            "background-color: #312E81;",
-            ""
-          ],
-          [
-            "rgb(245, 243, 255)",
-            "via-purple-50",
-            "background-color: #F5F3FF;",
-            ""
-          ],
-          [
-            "rgb(237, 233, 254)",
-            "via-purple-100",
-            "background-color: #EDE9FE;",
-            ""
-          ],
-          [
-            "rgb(221, 214, 254)",
-            "via-purple-200",
-            "background-color: #DDD6FE;",
-            ""
-          ],
-          [
-            "rgb(196, 181, 253)",
-            "via-purple-300",
-            "background-color: #C4B5FD;",
-            ""
-          ],
-          [
-            "rgb(167, 139, 250)",
-            "via-purple-400",
-            "background-color: #A78BFA;",
-            ""
-          ],
-          [
-            "rgb(139, 92, 246)",
-            "via-purple-500",
-            "background-color: #8B5CF6;",
-            ""
-          ],
-          [
-            "rgb(124, 58, 237)",
-            "via-purple-600",
-            "background-color: #7C3AED;",
-            ""
-          ],
-          [
-            "rgb(109, 40, 217)",
-            "via-purple-700",
-            "background-color: #6D28D9;",
-            ""
-          ],
-          [
-            "rgb(91, 33, 182)",
-            "via-purple-800",
-            "background-color: #5B21B6;",
-            ""
-          ],
-          [
-            "rgb(76, 29, 149)",
-            "via-purple-900",
-            "background-color: #4C1D95;",
-            ""
-          ],
-          [
-            "rgb(253, 242, 248)",
-            "via-pink-50",
-            "background-color: #FDF2F8;",
-            ""
-          ],
-          [
-            "rgb(252, 231, 243)",
-            "via-pink-100",
-            "background-color: #FCE7F3;",
-            ""
-          ],
-          [
-            "rgb(251, 207, 232)",
-            "via-pink-200",
-            "background-color: #FBCFE8;",
-            ""
-          ],
-          [
-            "rgb(249, 168, 212)",
-            "via-pink-300",
-            "background-color: #F9A8D4;",
-            ""
-          ],
-          [
-            "rgb(244, 114, 182)",
-            "via-pink-400",
-            "background-color: #F472B6;",
-            ""
-          ],
-          [
-            "rgb(236, 72, 153)",
-            "via-pink-500",
-            "background-color: #EC4899;",
-            ""
-          ],
-          [
-            "rgb(219, 39, 119)",
-            "via-pink-600",
-            "background-color: #DB2777;",
-            ""
-          ],
-          [
-            "rgb(190, 24, 93)",
-            "via-pink-700",
-            "background-color: #BE185D;",
-            ""
-          ],
-          [
-            "rgb(157, 23, 77)",
-            "via-pink-800",
-            "background-color: #9D174D;",
-            ""
-          ],
-          [
-            "rgb(131, 24, 67)",
-            "via-pink-900",
-            "background-color: #831843;",
-            ""
-          ],
-          [
-            "transparent",
-            "to-transparent",
-            "background-color: transparent;",
-            ""
-          ],
-          [
-            "current color",
-            "to-current",
-            "background-color: currentColor;",
-            ""
-          ],
-          ["rgb(0, 0, 0)", "to-black", "background-color: #000000;", ""],
-          ["rgb(255, 255, 255)", "to-white", "background-color: #ffffff;", ""],
-          [
-            "rgb(249, 250, 251)",
-            "to-gray-50",
-            "background-color: #F9FAFB;",
-            ""
-          ],
-          [
-            "rgb(243, 244, 246)",
-            "to-gray-100",
-            "background-color: #F3F4F6;",
-            ""
-          ],
-          [
-            "rgb(229, 231, 235)",
-            "to-gray-200",
-            "background-color: #E5E7EB;",
-            ""
-          ],
-          [
-            "rgb(209, 213, 219)",
-            "to-gray-300",
-            "background-color: #D1D5DB;",
-            ""
-          ],
-          [
-            "rgb(156, 163, 175)",
-            "to-gray-400",
-            "background-color: #9CA3AF;",
-            ""
-          ],
-          [
-            "rgb(107, 114, 128)",
-            "to-gray-500",
-            "background-color: #6B7280;",
-            ""
-          ],
-          ["rgb(75, 85, 99)", "to-gray-600", "background-color: #6B7280;", ""],
-          ["rgb(55, 65, 81)", "to-gray-700", "background-color: #374151;", ""],
-          ["rgb(31, 41, 55)", "to-gray-800", "background-color: #1F2937;", ""],
-          ["rgb(17, 24, 39)", "to-gray-900", "background-color: #111827;", ""],
-          ["rgb(254, 242, 242)", "to-red-50", "background-color: #FEF2F2;", ""],
-          [
-            "rgb(254, 226, 226)",
-            "to-red-100",
-            "background-color: #FEE2E2;",
-            ""
-          ],
-          [
-            "rgb(254, 202, 202)",
-            "to-red-200",
-            "background-color: #FECACA;",
-            ""
-          ],
-          [
-            "rgb(252, 165, 165)",
-            "to-red-300",
-            "background-color: #FCA5A5;",
-            ""
-          ],
-          [
-            "rgb(248, 113, 113)",
-            "to-red-400",
-            "background-color: #F87171;",
-            ""
-          ],
-          ["rgb(239, 68, 68)", "to-red-500", "background-color: #EF4444;", ""],
-          ["rgb(220, 38, 38)", "to-red-600", "background-color: #DC2626;", ""],
-          ["rgb(185, 28, 28)", "to-red-700", "background-color: #B91C1C;", ""],
-          ["rgb(153, 27, 27)", "to-red-800", "background-color: #991B1B;", ""],
-          ["rgb(127, 29, 29)", "to-red-900", "background-color: #7F1D1D;", ""],
-          [
-            "rgb(255, 251, 235)",
-            "to-yellow-50",
-            "background-color: #FFFBEB;",
-            ""
-          ],
-          [
-            "rgb(254, 243, 199)",
-            "to-yellow-100",
-            "background-color: #FEF3C7;",
-            ""
-          ],
-          [
-            "rgb(253, 230, 138)",
-            "to-yellow-200",
-            "background-color: #FDE68A;",
-            ""
-          ],
-          [
-            "rgb(252, 211, 77)",
-            "to-yellow-300",
-            "background-color: #FCD34D;",
-            ""
-          ],
-          [
-            "rgb(251, 191, 36)",
-            "to-yellow-400",
-            "background-color: #FBBF24;",
-            ""
-          ],
-          [
-            "rgb(245, 158, 11)",
-            "to-yellow-500",
-            "background-color: #F59E0B;",
-            ""
-          ],
-          [
-            "rgb(217, 119, 6)",
-            "to-yellow-600",
-            "background-color: #D97706;",
-            ""
-          ],
-          [
-            "rgb(180, 83, 9)",
-            "to-yellow-700",
-            "background-color: #B45309;",
-            ""
-          ],
-          [
-            "rgb(146, 64, 14)",
-            "to-yellow-800",
-            "background-color: #92400E;",
-            ""
-          ],
-          [
-            "rgb(120, 53, 15)",
-            "to-yellow-900",
-            "background-color: #78350F;",
-            ""
-          ],
-          [
-            "rgb(236, 253, 245)",
-            "to-green-50",
-            "background-color: #ECFDF5;",
-            ""
-          ],
-          [
-            "rgb(209, 250, 229)",
-            "to-green-100",
-            "background-color: #D1FAE5;",
-            ""
-          ],
-          [
-            "rgb(167, 243, 208)",
-            "to-green-200",
-            "background-color: #A7F3D0;",
-            ""
-          ],
-          [
-            "rgb(110, 231, 183)",
-            "to-green-300",
-            "background-color: #6EE7B7;",
-            ""
-          ],
-          [
-            "rgb(52, 211, 153)",
-            "to-green-400",
-            "background-color: #34D399;",
-            ""
-          ],
-          [
-            "rgb(16, 185, 129)",
-            "to-green-500",
-            "background-color: #10B981;",
-            ""
-          ],
-          [
-            "rgb(5, 150, 105)",
-            "to-green-600",
-            "background-color: #059669;",
-            ""
-          ],
-          ["rgb(4, 120, 87)", "to-green-700", "background-color: #047857;", ""],
-          ["rgb(6, 95, 70)", "to-green-800", "background-color: #065F46;", ""],
-          ["rgb(6, 78, 59)", "to-green-900", "background-color: #064E3B;", ""],
-          [
-            "rgb(239, 246, 255)",
-            "to-blue-50",
-            "background-color: #EFF6FF;",
-            ""
-          ],
-          [
-            "rgb(219, 234, 254)",
-            "to-blue-100",
-            "background-color: #DBEAFE;",
-            ""
-          ],
-          [
-            "rgb(191, 219, 254)",
-            "to-blue-200",
-            "background-color: #BFDBFE;",
-            ""
-          ],
-          [
-            "rgb(147, 197, 253)",
-            "to-blue-300",
-            "background-color: #93C5FD;",
-            ""
-          ],
-          [
-            "rgb(96, 165, 250)",
-            "to-blue-400",
-            "background-color: #60A5FA;",
-            ""
-          ],
-          [
-            "rgb(59, 130, 246)",
-            "to-blue-500",
-            "background-color: #3B82F6;",
-            ""
-          ],
-          ["rgb(37, 99, 235)", "to-blue-600", "background-color: #2563EB;", ""],
-          ["rgb(29, 78, 216)", "to-blue-700", "background-color: #1D4ED8;", ""],
-          ["rgb(30, 64, 175)", "to-blue-800", "background-color: #1E40AF;", ""],
-          ["rgb(30, 58, 138)", "to-blue-900", "background-color: #1E3A8A;", ""],
-          [
-            "rgb(238, 242, 255)",
-            "to-indigo-50",
-            "background-color: #EEF2FF;",
-            ""
-          ],
-          [
-            "rgb(224, 231, 255)",
-            "to-indigo-100",
-            "background-color: #E0E7FF;",
-            ""
-          ],
-          [
-            "rgb(199, 210, 254)",
-            "to-indigo-200",
-            "background-color: #C7D2FE;",
-            ""
-          ],
-          [
-            "rgb(165, 180, 252)",
-            "to-indigo-300",
-            "background-color: #A5B4FC;",
-            ""
-          ],
-          [
-            "rgb(129, 140, 248)",
-            "to-indigo-400",
-            "background-color: #818CF8;",
-            ""
-          ],
-          [
-            "rgb(99, 102, 241)",
-            "to-indigo-500",
-            "background-color: #6366F1;",
-            ""
-          ],
-          [
-            "rgb(79, 70, 229)",
-            "to-indigo-600",
-            "background-color: #4F46E5;",
-            ""
-          ],
-          [
-            "rgb(67, 56, 202)",
-            "to-indigo-700",
-            "background-color: #4338CA;",
-            ""
-          ],
-          [
-            "rgb(55, 48, 163)",
-            "to-indigo-800",
-            "background-color: #3730A3;",
-            ""
-          ],
-          [
-            "rgb(49, 46, 129)",
-            "to-indigo-900",
-            "background-color: #312E81;",
-            ""
-          ],
-          [
-            "rgb(245, 243, 255)",
-            "to-purple-50",
-            "background-color: #F5F3FF;",
-            ""
-          ],
-          [
-            "rgb(237, 233, 254)",
-            "to-purple-100",
-            "background-color: #EDE9FE;",
-            ""
-          ],
-          [
-            "rgb(221, 214, 254)",
-            "to-purple-200",
-            "background-color: #DDD6FE;",
-            ""
-          ],
-          [
-            "rgb(196, 181, 253)",
-            "to-purple-300",
-            "background-color: #C4B5FD;",
-            ""
-          ],
-          [
-            "rgb(167, 139, 250)",
-            "to-purple-400",
-            "background-color: #A78BFA;",
-            ""
-          ],
-          [
-            "rgb(139, 92, 246)",
-            "to-purple-500",
-            "background-color: #8B5CF6;",
-            ""
-          ],
-          [
-            "rgb(124, 58, 237)",
-            "to-purple-600",
-            "background-color: #7C3AED;",
-            ""
-          ],
-          [
-            "rgb(109, 40, 217)",
-            "to-purple-700",
-            "background-color: #6D28D9;",
-            ""
-          ],
-          [
-            "rgb(91, 33, 182)",
-            "to-purple-800",
-            "background-color: #5B21B6;",
-            ""
-          ],
-          [
-            "rgb(76, 29, 149)",
-            "to-purple-900",
-            "background-color: #4C1D95;",
-            ""
-          ],
-          [
-            "rgb(253, 242, 248)",
-            "to-pink-50",
-            "background-color: #FDF2F8;",
-            ""
-          ],
-          [
-            "rgb(252, 231, 243)",
-            "to-pink-100",
-            "background-color: #FCE7F3;",
-            ""
-          ],
-          [
-            "rgb(251, 207, 232)",
-            "to-pink-200",
-            "background-color: #FBCFE8;",
-            ""
-          ],
-          [
-            "rgb(249, 168, 212)",
-            "to-pink-300",
-            "background-color: #F9A8D4;",
-            ""
-          ],
-          [
-            "rgb(244, 114, 182)",
-            "to-pink-400",
-            "background-color: #F472B6;",
-            ""
-          ],
-          [
-            "rgb(236, 72, 153)",
-            "to-pink-500",
-            "background-color: #EC4899;",
-            ""
-          ],
-          [
-            "rgb(219, 39, 119)",
-            "to-pink-600",
-            "background-color: #DB2777;",
-            ""
-          ],
-          ["rgb(190, 24, 93)", "to-pink-700", "background-color: #BE185D;", ""],
-          ["rgb(157, 23, 77)", "to-pink-800", "background-color: #9D174D;", ""],
-          ["rgb(131, 24, 67)", "to-pink-900", "background-color: #831843;", ""]
         ]
       }
     ]
