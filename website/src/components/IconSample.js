@@ -17,7 +17,7 @@ export default function IconSample ({
   return (
     <div className={clsx('flex flex-wrap w-1/4')}>
       <div className={'h-100 w-full border-grey-2 border-1 border-solid flex items-center justify-center'}>
-      <sfgov-icon symbol={iconInfo}></sfgov-icon>
+        <sfgov-icon symbol={iconInfo}></sfgov-icon>
       </div>
       <div className='w-full'>
         <BrowserOnly>

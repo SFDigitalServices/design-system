@@ -5,8 +5,7 @@ tags: [icons]
 ---
 
 import { publishedUrl } from '@site/src/utils'
-import iconData from 'sfgov-design-system/src/icons/data.json'
-export const icons = Object.values(iconData.icons)
+import icons from '@site/src/icons'
 
 ## Custom element
 
@@ -32,7 +31,7 @@ The `<sfgov-icon>` element respects the following attributes:
 
 ### Icon color
 
-Use the `text-*` [color](../libraries/colorUiLibrary#primary-colors) to change the fill color of `<sfgov-icon>` shapes. This works because the
+Use the `text-*` [color](../libraries/color/colorInterfaceLibrary#primary-colors) to change the fill color of `<sfgov-icon>` shapes. This works because the
 custom element styles its SVG elements with `fill: currentColor`.
 
 ```html live
@@ -62,14 +61,14 @@ custom element styles its SVG elements with `fill: currentColor`.
     <th>SVG</th>
   </thead>
   <tbody>
-    {Object.entries(iconData.icons).map(([symbol, icon]) => (
-      <tr key={symbol} className='align-middle'>
+    {icons.map(({ id }) => (
+      <tr key={id} className='align-middle'>
         <td className='text-center'>
-          <sfgov-icon symbol={symbol} width={20} height={20} />
+          <sfgov-icon symbol={id} width={20} height={20} />
         </td>
-        <td><code className='block px-8 py-4'>{symbol}</code></td>
-        <td><code className='block px-8 py-4'>{`<sfgov-icon symbol="${symbol}"></sfgov-icon>`}</code></td>
-        <td><a href={publishedUrl(`dist/icons/${symbol}.svg`)}>{symbol}.svg</a></td>
+        <td><code className='block px-8 py-4'>{id}</code></td>
+        <td><code className='block px-8 py-4'>{`<sfgov-icon symbol="${id}"></sfgov-icon>`}</code></td>
+        <td><a href={publishedUrl(`dist/icons/${id}.svg`)}>{id}.svg</a></td>
       </tr>
     ))}
   </tbody>

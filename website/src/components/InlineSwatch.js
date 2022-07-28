@@ -12,8 +12,8 @@ export default function InlineSwatch ({ as: Comp = 'code', className, children, 
         {label}&nbsp;
       </span>
       <Comp className={clsx('inline-flex items-center px-4', className)} {...rest} style={{ borderRadius: '14px' }}>
-            <span className={`w-16 h-16 mr-4 block rounded ${addBorder ? 'border-solid border-1 border-grey-4' : ''}`} style={{ backgroundColor: value }} />
-            {value}
+        <span className={`w-16 h-16 mr-4 block rounded ${addBorder ? 'border-solid border-1 border-grey-4' : ''}`} style={{ backgroundColor: value }} />
+        {value}
       </Comp>
     </>
   )

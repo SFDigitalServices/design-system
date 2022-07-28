@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import CodeBlock from '@theme/CodeBlock'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import dedent from 'dedent'
 
 const FontSpecimen = ({ styleName, className, children }) => {
   const [sampleFontWeight, setSampleFontWeight] = useState('')
@@ -28,11 +29,12 @@ const FontSpecimen = ({ styleName, className, children }) => {
         <p ref={sample} className={clsx('', className)}>The quick brown fox jumps over the lazy dog.</p>
       </div>
       <CodeBlock language='css' className='w-full p-8 mb-24'>
-
-          {`font-weight: ${sampleFontWeight}
+        {dedent(`
+          font-weight: ${sampleFontWeight}
           font-size: ${sampleFontSize}
           line-height: ${sampleFontLH}
-          letter-spacing: ${sampleFontLS}`}
+          letter-spacing: ${sampleFontLS}
+        `)}
 
         </CodeBlock>
 

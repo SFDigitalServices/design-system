@@ -12,8 +12,8 @@ const config = {
   tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: owner, // Usually your GitHub org/user name.
   projectName: repo, // Usually your repo name.
@@ -30,7 +30,38 @@ const config = {
           return postcssOptions
         }
       }
-    }
+    },
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        fromExtensions: ['html'],
+        createRedirects (existingPath) {
+          console.log(existingPath)
+          if (existingPath.includes('/design')) {
+            if (existingPath === '/design/layout') return ['/foundations/spacing']
+
+            return [existingPath.replace('/design', '/foundations')]
+          } else if (existingPath.includes('/develop')) {
+            return [existingPath.replace('/develop', '/usage')]
+          }
+          return [] // a falsy value = no redirect created
+        },
+        redirects: [
+          {
+            from: '/usage/icons',
+            to: '/components/icons'
+          },
+          {
+            from: '/resources/icon-library',
+            to: '/libraries/iconsLibrary'
+          },
+          {
+            from: '/components/fields-and-forms',
+            to: '/components/forms'
+          }
+        ]
+      }
+    ]
   ],
 
   presets: [
@@ -40,6 +71,7 @@ const config = {
       ({
         debug: true,
         docs: {
+          routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl
         },
@@ -118,19 +150,19 @@ const config = {
             items: [
               {
                 label: 'Design',
-                to: '/docs/design'
+                to: '/design/color'
               },
               {
                 label: 'Components',
-                to: '/docs/components'
+                to: '/components/buttons'
               },
               {
                 label: 'Develop',
-                to: '/docs/develop'
+                to: '/develop/css'
               },
               {
                 label: 'Libraries',
-                to: '/docs/libraries'
+                to: '/libraries/color/colorInterfaceLibrary'
               }
             ]
           },

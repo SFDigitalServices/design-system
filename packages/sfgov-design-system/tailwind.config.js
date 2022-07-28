@@ -1,7 +1,8 @@
 module.exports = {
-  content: [
-    'docs/**/*.md?',
-    'src/**/*.{js,jsx,ts,tsx}'
+  presets: [
+    require('./tailwind.preset')
   ],
-  presets: [require('./tailwind.preset')]
+  content: [
+    'src/**/*.{js,jsx,ts,tsx}'
+  ]
 }

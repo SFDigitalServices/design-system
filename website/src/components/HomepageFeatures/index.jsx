@@ -22,14 +22,14 @@ const FeatureList = [
   },
   {
     title: 'Libraries',
-    link: 'libraries/colorMapsChartsLibrary',
+    link: 'libraries/color/colorInterfaceLibrary',
     description: 'Something about writing great forms the Digital Services way.'
   }
 ]
 
 function Feature ({ title, link, description, className, ...rest }) {
   return (
-    <Link to={`/docs/${link}`} className={clsx(className, 'col col--6 no-underline px-20 py-16 rounded-4 hover:bg-grey-1')} {...rest}>
+    <Link to={`/${link}`} className={clsx(className, 'col col--6 no-underline px-20 py-16 rounded-4 hover:bg-grey-1')} {...rest}>
       <div className='padding-horiz--md'>
         <h3 className='title-lg font-medium font-rubik'>{title}</h3>
         <p className='font-rubik text-slate-3'>{description}</p>

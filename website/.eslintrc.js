@@ -17,9 +17,6 @@ module.exports = {
   rules: {
     'import/no-unresolved': 0,
     'jsx-quotes': ['warn', 'prefer-single'],
-    'no-unused-vars': ['warn', {
-      varsIgnorePattern: '^@(site|theme)/'
-    }],
     'react/prop-types': ['warn', {
       skipUndeclared: true
     }],
@@ -29,6 +26,11 @@ module.exports = {
         allowWarningComments: true
       }
     ]
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
   /*
     This plugin (https://github.com/mdx-js/eslint-mdx) causes linting to hang indefinitely on .mdx files.
