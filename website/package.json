@@ -5,6 +5,7 @@
     "build": "docusaurus build --out-dir public | awk '{if (/^\\//) print >> \"build.log\"; else print }'",
     "clear": "docusaurus clear",
     "lint": "wireit",
+    "lint-docs": "wireit",
     "serve": "docusaurus serve --dir public",
     "start": "wireit",
     "swizzle": "docusaurus swizzle",
@@ -23,9 +24,16 @@
       "files": [
         "src/**/*.{js,jsx}",
         "lib/**/*.js",
-        "*.js"
+        "*.js",
+        "docs/**/*.{md,mdx}"
       ],
       "output": []
+    },
+    "lint-docs": {
+      "command": "markdownlint --rules './lib/markdownlint/*.js' 'docs/**/*.{md,mdx}'",
+      "files": [
+        "docs/**/*.{md,mdx}"
+      ]
     }
   },
   "dependencies": {
@@ -55,6 +63,23 @@
     "react-masonry-css": "^1.0.16",
     "sfgov-design-system": "2.3.1",
     "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "@docusaurus/eslint-plugin": "^2.0.0-beta.21",
+    "@types/eslint": "^8.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "markdownlint-cli": "^0.31.1",
+    "prop-types": "^15.8.1",
     "typescript": "^4.6.4",
     "use-bus": "^2.5.1"
   }
