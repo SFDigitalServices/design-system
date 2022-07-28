@@ -8,11 +8,5 @@
   ],
   "dependencies": {
     "semver": "7.3.7"
-  },
-  "devDependencies": {
-    "stylelint": "14.8.4"
-  },
-  "peerDependencies": {
-    "stylelint": ">=14.x"
   }
 }
