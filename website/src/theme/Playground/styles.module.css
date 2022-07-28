@@ -1,0 +1,23 @@
+/* stylelint-disable selector-class-pattern */
+
+.playgroundContainer {
+  @apply bg-grey-1;
+  @apply my-20 overflow-hidden border-1 border-black border-solid;
+}
+
+.playgroundHeader {
+  @apply px-20 py-8 font-medium !important;
+}
+
+.playgroundEditor {
+  @apply font-mono mx-12 mb-8 !important;
+}
+
+.playgroundEditor textarea {
+  @apply bg-none !important;
+}
+
+.playgroundPreview {
+  @apply bg-white;
+  @apply p-20 border-0 border-b-2 border-solid border-black;
+}
