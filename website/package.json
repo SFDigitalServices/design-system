@@ -2,7 +2,7 @@
   "name": "design-system.sf.gov",
   "private": true,
   "scripts": {
-    "build": "docusaurus build --out-dir public",
+    "build": "docusaurus build --out-dir public | awk '{if (/^\\//) print >> \"build.log\"; else print }'",
     "clear": "docusaurus clear",
     "lint": "wireit",
     "serve": "docusaurus serve --dir public",
