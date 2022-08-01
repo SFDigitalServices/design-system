@@ -8,7 +8,7 @@ const { landingDesc } = require('../../constants')
 function HomepageHeader () {
   const { siteConfig } = useDocusaurusContext()
   return (
-    <header className={clsx('hero')}>
+    <header className={clsx('hero col col--10 col--offset-1 mt-28')}>
       <div className='container'>
         {/* <h1 className='title-xl font-medium font-rubik'>{siteConfig.title}</h1> */}
         <h1 className='title-xl font-medium font-rubik'>
@@ -33,7 +33,7 @@ export default function Home () {
       title={`Welcome to the ${siteConfig.title}`}
       description='Description will go into a meta tag in <head />'>
       <HomepageHeader />
-      <main>
+      <main className='col col--10 col--offset-1'>
         <HomepageFeatures />
       </main>
     </Layout>
