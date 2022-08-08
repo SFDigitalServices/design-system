@@ -75,7 +75,6 @@ export function Do (props) {
       borderClass='border-green-3'
       iconSymbol='check'
       iconClass='text-green-3'
-      reasonsClass='bg-green-1'
       {...props}
     />
   )
@@ -89,7 +88,6 @@ export function Dont (props) {
       borderClass='border-red-3'
       iconSymbol='close'
       iconClass='text-red-3'
-      reasonsClass='bg-red-1'
       {...props}
     />
   )
