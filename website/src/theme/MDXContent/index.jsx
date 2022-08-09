@@ -4,10 +4,11 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 
 if (ExecutionEnvironment.canUseDOM) {
   require('sfgov-design-system')
+  // TODO inline sfgov-design-system stylesheet(s)
 }
 
 export default function MDXContentWrapper (props) {
-  // TODO: add components={ourComponents}?
+  // TODO override Docusaurus MDX components with: components={{ ... }}
   return (
     <MDXContent {...props} />
   )

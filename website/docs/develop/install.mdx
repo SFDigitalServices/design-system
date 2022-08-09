@@ -2,21 +2,21 @@
 title: Installation
 ---
 
-import { defaultPackage as pkg } from '@site/constants'
+import { designSystemPackage, designSystemVersion, repoUrl } from '@site/constants'
 import { PackageLink } from '@site/src/components'
 import { publishedUrl } from '@site/src/utils'
 import CodeBlock from '@theme/CodeBlock'
 
 ## npm
 
-<p>The design system CSS is published as <PackageLink>{pkg.name}</PackageLink> npm. You can
+<p>The design system CSS is published as <PackageLink>{designSystemPackage.name}</PackageLink> npm. You can
 install it in your project with:</p>
 
 <CodeBlock language='sh'>
-  npm install {pkg.name}
+  npm install {designSystemPackage.name}
 </CodeBlock>
 
-<p>The current version is <code>{pkg.version}</code>. See the <a href={`https://github.com/${pkg.repository}/releases`}>release history</a> for other
+<p>The current version is <code>{designSystemVersion}</code>. See the <a href={`${repoUrl}/releases`}>release history</a> for other
 available versions and release notes.</p>
 
 ## Versioning
