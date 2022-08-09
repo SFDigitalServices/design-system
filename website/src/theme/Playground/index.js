@@ -6,6 +6,7 @@ import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import BrowserOnly from '@docusaurus/BrowserOnly'
 import { usePrismTheme } from '@docusaurus/theme-common'
+import EncapsulatedStyleRoot from '../../components/EncapsulatedStyleRoot'
 import styles from './styles.module.css'
 
 function Header ({ as: Component = 'div', className, ...rest }) {
@@ -36,7 +37,9 @@ function ResultWithHeader ({ meta }) {
         <BrowserOnly fallback={<LivePreviewLoader />}>
           {() => (
             <>
-              <LivePreview />
+              <EncapsulatedStyleRoot>
+                <LivePreview />
+              </EncapsulatedStyleRoot>
               <LiveError />
             </>
           )}
