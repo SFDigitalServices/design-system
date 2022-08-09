@@ -32,3 +32,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - if: env.HEROKU_APP_NAME
+        run: |
+          version=$(npx fx packages/sfgov-design-system/package.json .version)
+          npm i -g heroku
+          heroku config:set -a $HEROKU_APP_NAME SFGOV_DESIGN_SYSTEM_VERSION="$version"
