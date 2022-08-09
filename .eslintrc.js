@@ -11,9 +11,7 @@ module.exports = {
     'unicorn/expiring-todo-comments': ['error', {
       allowWarningComments: true
     }],
-    'no-trailing-spaces': ['warn', {
-      ignoreComments: true
-    }],
+    'no-trailing-spaces': ['warn'],
     'padding-line-between-statements': [
       'warn',
       { blankLine: 'always', prev: '*', next: 'function' }
