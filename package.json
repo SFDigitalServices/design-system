@@ -26,6 +26,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-sfgov": "^2.0.0",
     "eslint-plugin-unicorn": "^42.0.0",
+    "fx": "^20.0.2",
     "shellcheck": "^1.1.0",
     "stylelint": "^14.8.4",
     "stylelint-config-standard": "^25.0.0",
