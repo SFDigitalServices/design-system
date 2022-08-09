@@ -7,7 +7,7 @@ const { owner, repo, repoUrl, defaultBranch } = require('./constants')
 const editUrl = `${repoUrl}/tree/${defaultBranch}/docs`
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+module.exports = {
   title: 'SF Design System',
   tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
@@ -208,5 +208,3 @@ const config = {
       }
     })
 }
-
-module.exports = config
