@@ -8,7 +8,7 @@ const FeatureList = [
   {
     section: 'dev',
     title: 'Tailwindcss',
-    link: 'develop/install',
+    link: 'develop/css/tailwind',
     description: 'Using Tailwindcss utility classes to style our UI quickly',
     img: 'img-landing-tailwind.png',
     altImg: 'img-landing-tailwind-hover.png'
@@ -16,7 +16,7 @@ const FeatureList = [
   {
     section: 'dev',
     title: 'Components',
-    link: 'design/color',
+    link: 'components',
     description:
       'Quickly build reliable and consistent products by including carefully crafted components',
     img: 'img-landing-components.png',
@@ -25,7 +25,7 @@ const FeatureList = [
   {
     section: 'dev',
     title: 'Tokens',
-    link: 'design/typography',
+    link: 'Color/colorInterfaceLibrary',
     description:
       'Implemented with tokens to allow for predictable implementation and maintenance',
     img: 'img-landing-tokens.png',
@@ -34,7 +34,7 @@ const FeatureList = [
   {
     section: 'design',
     title: 'Colors',
-    link: 'design/layout',
+    link: 'design/color',
     description:
       'A library of colors to design new, accessible interactions with ease',
     img: 'img-landing-color.png',
@@ -43,7 +43,7 @@ const FeatureList = [
   {
     section: 'design',
     title: 'Typography',
-    link: 'design/layout',
+    link: 'design/typography',
     description: 'Readability is a first-class consideration for SF DesSys',
     img: 'img-landing-type.png',
     altImg: 'img-landing-type-hover.png'

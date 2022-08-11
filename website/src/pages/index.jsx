@@ -17,7 +17,7 @@ function HomepageHeader () {
         </p>
       </div>
       <div className='w-full flex justify-center'>
-        <a href='#' className='btn flex gap-8 no-underline max-w-max hocus:text-white'>
+        <a href='develop/install' className='btn flex gap-8 no-underline max-w-max hocus:text-white'>
           <span>Get started</span>
           <sfgov-icon symbol='arrow-right'></sfgov-icon>
         </a>
