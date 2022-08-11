@@ -32,8 +32,8 @@ marker. You can still click the word "Summary" to hide and show "Details":
 We provide `open:` utility class variants so that you can conditionally
 show and hide elements within `<summary>` when their parent `<details>` element
 is open (whenever the `open` attribute is present).  This is how you would
-visually swap a <code>:icon[right arrow]{symbol=chevron-right}</code> when
-closed for a <code>:icon[down arrow]{symbol=chevron-down}</code> when open:
+visually swap a <sfgov-icon symbol='chevron-right' aria-label='right arrow' /> when
+closed for a <sfgov-icon symbol='chevron-down' aria-label='down arrow' /> when open:
 
 ```html live
 <details class="details-reset">
