@@ -89,7 +89,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        // title: 'San Francisco Design System',
         logo: {
           alt: 'San Francisco Design System',
           src: 'img/logo.svg',
@@ -110,12 +109,6 @@ const config = {
             sidebarId: 'componentsSidebar',
             label: 'Components'
           },
-          /* {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'formsSidebar',
-            label: 'Forms',
-          }, */
           {
             type: 'docSidebar',
             position: 'left',
@@ -130,8 +123,10 @@ const config = {
           },
           {
             href: `${repoUrl}/tree/main/`,
-            label: 'GitHub',
-            position: 'right'
+            label: ' ',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository'
           }
         ]
       },
@@ -166,30 +161,9 @@ const config = {
               }
             ]
           },
-          /* {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          }, */
           {
             title: 'More',
             items: [
-              /* {
-                label: 'Blog',
-                to: '/blog',
-              }, */
               {
                 label: 'GitHub',
                 href: repoUrl
@@ -197,7 +171,6 @@ const config = {
             ]
           }
         ]
-        // copyright: 'Built with Docusaurus.'
       },
       prism: {
         theme: lightCodeTheme,
