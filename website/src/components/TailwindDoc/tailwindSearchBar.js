@@ -13,7 +13,7 @@ const twSearchBar = (props) => {
           <sfgov-icon symbol='search' />
         </div>
         <input
-          className='rounded bg-slate-1 h-40 w-full px-40 border-2 border-solid border-slate-1 focus:bg-white hocus:border-slate-3'
+          className='rounded bg-slate-1 h-40 w-full px-40 border-2 border-solid border-slate-1 focus:bg-white hocus:border-slate-3 dark:text-black'
           ref={searchString}
           onChange={props.search}
         />

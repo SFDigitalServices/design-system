@@ -21,12 +21,12 @@ const UtilityItemSection = (props) => {
       id='class-section'
       className={clsx(
         'w-full flex flex-wrap mb-20 pb-12',
-        isOpen && 'bg-grey-1'
+        isOpen && 'bg-grey-1 dark:bg-grey-dark'
       )}
     >
       <div
         id='section-header'
-        className='w-full flex items-center py-8 px-12 hover:cursor-pointer hover:bg-grey-1'
+        className='w-full flex items-center py-8 px-12 hover:cursor-pointer hocus:bg-grey-1 dark:hover:bg-grey-dark dark:focus:bg-grey-dark'
       >
         <div className='w-full flex items-center' onClick={ToggleShow}>
           <h3 className='text-title-xs mb-0'>{subCollection.title}</h3>

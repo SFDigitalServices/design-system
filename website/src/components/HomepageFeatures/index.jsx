@@ -95,11 +95,11 @@ function Feature ({
         />
       </div>
       <div className='flex flex-wrap w-full' style={{ height: 'fit-content' }}>
-        <h3 className='text-title-md font-rubik text-slate-4 group-hocus:text-white w-full'>
+        <h3 className='text-title-md font-rubik text-slate-4 dark:text-slate-1 group-hocus:text-white w-full'>
           {title}
         </h3>
         {description !== '' && (
-          <p className='font-rubik text-slate-3 w-full group-hocus:text-white '>
+          <p className='font-rubik text-slate-3 dark:text-grey-2 w-full group-hocus:text-white '>
             {description}
           </p>
         )}
@@ -128,7 +128,7 @@ export default function HomepageFeatures () {
       <article className={styles.features}>
         <div className='col col--10 col--offset-1'>
           <div className='container pl-0'>
-            <h2 className='text-title-lg text-slate-4 mb-24'>
+            <h2 className='text-title-lg text-slate-4 dark:text-slate-1 mb-24'>
               Smarter development for our City
             </h2>
             <div className='row'>
@@ -141,10 +141,10 @@ export default function HomepageFeatures () {
         </div>
       </article>
 
-      <article className={clsx(styles.features, 'bg-grey-1 pb-96 ')}>
+      <article className={clsx(styles.features, 'bg-grey-1 dark:bg-black pb-96 ')}>
         <div className='col col--10 col--offset-1'>
           <div className='container pl-0'>
-            <h2 className='text-title-lg text-slate-4'>Design for everyone</h2>
+            <h2 className='text-title-lg text-slate-4 dark:text-slate-1'>Design for everyone</h2>
             <div className='row'>
               {FeatureList.map(
                 (props, idx) =>

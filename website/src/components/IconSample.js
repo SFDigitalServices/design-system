@@ -16,7 +16,7 @@ export default function IconSample ({
   }
   return (
     <div className={clsx('flex flex-wrap w-1/4')}>
-      <div className={'h-100 w-full border-grey-2 border-1 border-solid flex items-center justify-center'}>
+      <div className={'h-100 w-full border-grey-2 dark:border-grey-dark border-1 border-solid flex items-center justify-center'}>
         <sfgov-icon symbol={iconInfo}></sfgov-icon>
       </div>
       <div className='w-full'>
@@ -30,7 +30,7 @@ export default function IconSample ({
                 onFocus={() => setIsHover(true)}
                 onBlur={() => setIsHover(false)}
                 aria-iconInfo={ariaiconInfoText}
-                className='w-full button-reset text-slate-3 hocus:bg-slate-1 px-8 py-4 relative text-left'
+                className='w-full button-reset text-slate-3 dark:text-slate-1 dark:hover:text-slate-3 dark:focus:text-slate-3 hocus:bg-slate-1 px-8 py-4 relative text-left'
               >
                 <div className='flex justify-between items-center font-mono' style={{ textTransform: 'lowercase' }}>
                   {iconInfo}

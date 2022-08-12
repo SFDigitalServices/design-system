@@ -5,6 +5,10 @@
   @apply my-20 overflow-hidden border-1 border-black border-solid;
 }
 
+[data-theme='dark'] .playgroundContainer {
+  @apply bg-grey-dark;
+}
+
 .playgroundHeader {
   @apply px-20 py-8 font-medium !important;
 }
@@ -20,4 +24,8 @@
 .playgroundPreview {
   @apply bg-white;
   @apply p-20 border-0 border-b-2 border-solid border-black;
+}
+
+[data-theme='dark'] .playgroundPreview {
+  @apply bg-grey-2;
 }

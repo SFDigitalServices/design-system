@@ -14,7 +14,7 @@ const UtilClassRow = ({ rowItem, key }) => {
           )
         : (
         <td
-          className='first:text-red-4 first:whitespace-nowrap border-0 font-mono'
+          className='first:text-red-4 dark:first:text-red-2 first:whitespace-nowrap border-0 font-mono'
           key={key}
         >
           {rowItem}
