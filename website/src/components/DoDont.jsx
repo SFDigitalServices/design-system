@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import EncapsulatedStyleRoot from './EncapsulatedStyleRoot'
 
 /**
  * Use the <DoDont> component to display "do" and "don't" examples with
@@ -40,7 +41,9 @@ function Box ({ borderClass, iconSymbol, iconClass, children, reasons, reasonsCl
   return (
     <>
       <div className={clsx('relative border-0 border-solid border-b-2 overflow-hidden', borderClass, className)} {...props}>
-        {children}
+        <EncapsulatedStyleRoot>
+          {children}
+        </EncapsulatedStyleRoot>
         <div className={clsx(`
           absolute bottom-12 right-12
           w-40 h-40 rounded-full

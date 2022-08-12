@@ -13,7 +13,11 @@ module.exports = {
     }],
     'no-trailing-spaces': ['warn', {
       ignoreComments: true
-    }]
+    }],
+    'padding-line-between-statements': [
+      'warn',
+      { blankLine: 'always', prev: '*', next: 'function' }
+    ]
   },
   overrides: [
     {
