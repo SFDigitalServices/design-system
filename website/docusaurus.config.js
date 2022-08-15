@@ -3,8 +3,10 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const { spawnSync } = require('node:child_process')
 const { owner, repo, repoUrl, defaultBranch } = require('./constants')
-const editUrl = `${repoUrl}/tree/${defaultBranch}/docs`
+const currentBranch = getCurrentBranch() || defaultBranch
+const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
@@ -180,4 +182,12 @@ module.exports = {
         playgroundPosition: 'top'
       }
     })
+}
+
+function getCurrentBranch () {
+  try {
+    return spawnSync('git symbolic-ref --short HEAD', { encoding: 'utf8' }).stdout
+  } catch (error) {
+    return undefined
+  }
 }
