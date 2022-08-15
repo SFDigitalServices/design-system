@@ -186,7 +186,7 @@ module.exports = {
 
 function getCurrentBranch () {
   try {
-    return spawnSync('git symbolic-ref --short HEAD', { encoding: 'utf8' }).stdout
+    return spawnSync('git', ['symbolic-ref', '--short', 'HEAD'], { encoding: 'utf8' }).stdout
   } catch (error) {
     return undefined
   }
