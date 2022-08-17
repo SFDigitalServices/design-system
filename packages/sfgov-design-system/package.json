@@ -30,10 +30,10 @@
     "build": {
       "dependencies": [
         "build-css",
-        "build-css-manifest",
         "build-js",
         "build-icons",
-        "build-manifest"
+        "build-manifest",
+        "build-css-manifest"
       ]
     },
     "build-css": {
