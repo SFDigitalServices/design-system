@@ -8,7 +8,7 @@ export default function InlineSwatch ({ as: Comp = 'code', className, children, 
   }
   return (
     <>
-      <span className='inline-block font-medium text-slate-2'>
+      <span className='inline-block font-medium text-slate-2 dark:text-blue-2'>
         {label}&nbsp;
       </span>
       <Comp className={clsx('inline-flex items-center px-4', className)} {...rest} style={{ borderRadius: '14px' }}>

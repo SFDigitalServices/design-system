@@ -9,8 +9,8 @@ export default function DefaultNavbarItem ({
   ...props
 }) {
   const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop
-  const mobileActiveClasses = 'text-slate-4 bg-grey-1'
-  const activeClasses = 'text-slate-4 bg-grey-1'
+  const mobileActiveClasses = 'text-slate-4 bg-grey-1 dark:bg-grey-4'
+  const activeClasses = 'text-slate-4 bg-grey-1 dark:bg-grey-4'
 
   return (
     <Comp
@@ -28,7 +28,7 @@ function DefaultNavbarItemDesktop ({
   isDropdownItem = false,
   ...props
 }) {
-  const topNav = 'navbar__item navbar__link text-slate-2 border-white border-1 border-solid mx-20 rounded-4 hocus:border-grey-3'
+  const topNav = 'navbar__item navbar__link text-slate-2 dark:text-slate-1 border-white dark:border-black border-1 border-solid mx-20 rounded-4  hocus:border-grey-3 dark:hover:border-grey-4 dark:focus:border-grey-4'
   const topNavDropdown = 'dropdown__link text-slate-2'
 
   const element = (

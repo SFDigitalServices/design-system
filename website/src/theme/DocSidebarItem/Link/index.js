@@ -17,8 +17,8 @@ export default function DocSidebarItemLink ({
   const { href, label, className } = item
   const isActive = isActiveSidebarItem(item, activePath)
   const isInternalLink = isInternalUrl(href)
-  const sideNav = 'menu__link font-regular text-slate-3 border-1 border-solid rounded-4 border-white hocus:border-grey-3 hocus:bg-none '
-  const sideNavActive = 'menu__link--active '
+  const sideNav = 'menu__link font-regular text-slate-3 dark:text-slate-1 border-1 border-solid rounded-4 border-white dark:border-black hocus:border-grey-3 hocus:bg-none dark:hover:border-grey-4 dark:focus:border-grey-4'
+  const sideNavActive = 'menu__link--active dark:bg-grey-4'
   return (
     <li
       className={clsx(

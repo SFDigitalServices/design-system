@@ -19,7 +19,7 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
         style={{ backgroundColor: value }}
       />
       <div className='w-full'>
-        {label ? <div className='font-medium px-8 pt-4 text-slate-4'>{label}</div> : null}
+        {label ? <div className='font-medium px-8 pt-4 text-slate-4 dark:text-slate-1'>{label}</div> : null}
         <BrowserOnly>
           {() => (
             <CopyToClipboard text={value} onCopy={() => setCopied(true)}>
@@ -30,7 +30,7 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
                 onFocus={() => setIsHover(true)}
                 onBlur={() => setIsHover(false)}
                 aria-label={ariaLabelText}
-                className='w-full button-reset text-left text-slate-3 hocus:bg-slate-1 px-8 py-4 relative'
+                className='w-full button-reset text-left text-slate-3 dark:text-grey-2 hocus:bg-slate-1 dark:hover:text-slate-3 dark:focus:text-slate-3 px-8 py-4 relative'
               >
                 <div className='flex justify-between items-center font-mono'>
                   {value}

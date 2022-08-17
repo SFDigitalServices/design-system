@@ -6,21 +6,21 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures'
 const { landingDesc } = require('../../constants')
 
 function HomepageHeader () {
-  const { siteConfig } = useDocusaurusContext()
   return (
-    <header className={clsx('hero col col--10 col--offset-1 mt-28')}>
-      <div className='container'>
-        {/* <h1 className='title-xl font-medium font-rubik'>{siteConfig.title}</h1> */}
+    <header className={clsx('hero mt-28 text-center flex-wrap')}>
+      <div className='container w-full lg:w-3/4 max-w-lg '>
         <h1 className='title-xl font-medium font-rubik'>
-        <span className='title-lg font-medium font-rubik'>
-          San Francisco
-        </span>
-        <br />
-        <span className='title-xl font-medium font-rubik' style={{ textTransform: 'uppercase' }}>
-          Design System
-        </span>
+          Make digital products with San&nbsp;Francisco!
         </h1>
-        <p className='hero__subtitle font-rubik text-big-desc col col--10 px-0'>{landingDesc}</p>
+        <p className='hero__subtitle font-rubik text-big-desc px-0'>
+          {landingDesc}
+        </p>
+      </div>
+      <div className='w-full flex justify-center'>
+        <a href='develop/install' className='btn flex gap-8 no-underline max-w-max hocus:text-white'>
+          <span>Get started</span>
+          <sfgov-icon symbol='arrow-right'></sfgov-icon>
+        </a>
       </div>
     </header>
   )
@@ -31,9 +31,10 @@ export default function Home () {
   return (
     <Layout
       title={`Welcome to the ${siteConfig.title}`}
-      description='Description will go into a meta tag in <head />'>
+      description='Description will go into a meta tag in <head />'
+    >
       <HomepageHeader />
-      <main className='col col--10 col--offset-1'>
+      <main>
         <HomepageFeatures />
       </main>
     </Layout>

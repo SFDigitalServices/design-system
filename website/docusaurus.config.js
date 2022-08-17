@@ -3,11 +3,13 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const { spawnSync } = require('node:child_process')
 const { owner, repo, repoUrl, defaultBranch } = require('./constants')
-const editUrl = `${repoUrl}/tree/${defaultBranch}/docs`
+const currentBranch = getCurrentBranch() || defaultBranch
+const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+module.exports = {
   title: 'SF Design System',
   tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
@@ -89,7 +91,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        // title: 'San Francisco Design System',
         logo: {
           alt: 'San Francisco Design System',
           src: 'img/logo.svg',
@@ -110,12 +111,6 @@ const config = {
             sidebarId: 'componentsSidebar',
             label: 'Components'
           },
-          /* {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'formsSidebar',
-            label: 'Forms',
-          }, */
           {
             type: 'docSidebar',
             position: 'left',
@@ -130,8 +125,10 @@ const config = {
           },
           {
             href: `${repoUrl}/tree/main/`,
-            label: 'GitHub',
-            position: 'right'
+            label: ' ',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository'
           }
         ]
       },
@@ -166,30 +163,9 @@ const config = {
               }
             ]
           },
-          /* {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          }, */
           {
             title: 'More',
             items: [
-              /* {
-                label: 'Blog',
-                to: '/blog',
-              }, */
               {
                 label: 'GitHub',
                 href: repoUrl
@@ -197,7 +173,6 @@ const config = {
             ]
           }
         ]
-        // copyright: 'Built with Docusaurus.'
       },
       prism: {
         theme: lightCodeTheme,
@@ -209,4 +184,10 @@ const config = {
     })
 }
 
-module.exports = config
+function getCurrentBranch () {
+  try {
+    return spawnSync('git', ['symbolic-ref', '--short', 'HEAD'], { encoding: 'utf8' }).stdout
+  } catch (error) {
+    return undefined
+  }
+}
