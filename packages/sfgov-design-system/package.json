@@ -17,6 +17,7 @@
     "build": "wireit",
     "build-icons": "wireit",
     "build-css": "wireit",
+    "build-css-manifest": "wireit",
     "build-js": "wireit",
     "build-manifest": "wireit",
     "lint": "wireit",
@@ -29,6 +30,7 @@
     "build": {
       "dependencies": [
         "build-css",
+        "build-css-manifest",
         "build-js",
         "build-icons",
         "build-manifest"
@@ -43,6 +45,16 @@
       ],
       "output": [
         "dist/css/**/*.css"
+      ]
+    },
+    "build-css-manifest": {
+      "command": "scripts/build-css-manifest.js",
+      "files": [
+        "src/css/**/*.css",
+        "*.config.js"
+      ],
+      "output": [
+        "dist/css/css-manifest.json"
       ]
     },
     "build-js": {
@@ -130,6 +142,7 @@
     "hastscript": "^6.0.0",
     "js-yaml": "^3.14.1",
     "lodash.merge": "^4.6.2",
+    "lodash.startcase": "^4.4.0",
     "nodemon": "^2.0.7",
     "nunjucks": "^3.2.3",
     "outdent": "^0.8.0",
