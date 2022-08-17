@@ -32,8 +32,7 @@
         "build-css",
         "build-js",
         "build-icons",
-        "build-manifest",
-        "build-css-manifest"
+        "build-manifest"
       ]
     },
     "build-css": {
@@ -49,6 +48,7 @@
     },
     "build-css-manifest": {
       "command": "node ./scripts/build-css-manifest.js",
+      "dependencies": ["build"],
       "files": [
         "src/css/**/*.css",
         "*.config.js"
