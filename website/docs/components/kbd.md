@@ -1,5 +1,8 @@
 ---
 title: Keyboard
+links:
+  - rel: figma
+    href: https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=736%3A0
 ---
 
 The [`<kbd>` HTML element][kbd] HTML element represents computer keyboard
