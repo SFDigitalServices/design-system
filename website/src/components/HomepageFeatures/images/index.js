@@ -1,0 +1,6 @@
+export { default as SvgColor } from './svgColor'
+export { default as SvgToken } from './svgToken'
+export { default as SvgGrid } from './svgGrid'
+export { default as SvgTailwind } from './svgTailwind'
+export { default as SvgComponents } from './svgComponents'
+export { default as SvgType } from './svgType'
