@@ -1,40 +1,42 @@
-
 daemon off;
-worker_processes auto;
+# Heroku dynos have at least 4 cores.
+worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
 
 events {
-  use epoll;
-  accept_mutex on;
-  worker_connections 512;
+	use epoll;
+	accept_mutex on;
+	worker_connections <%= ENV['NGINX_WORKER_CONNECTIONS'] || 1024 %>;
 }
 
 http {
   gzip on;
   gzip_comp_level 6;
   gzip_min_length 512;
-  gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
   gzip_vary on;
   gzip_proxied any;
 
-  server_tokens off;
+	server_tokens off;
 
+	log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id';
   access_log logs/access.log;
   error_log stderr error;
 
-  include mime.types;
-  default_type application/octet-stream;
-  sendfile on;
 
-  # Must read the body in 5 seconds.
-  client_body_timeout 5;
+	include mime.types;
+	default_type application/octet-stream;
+	sendfile on;
 
-  server {
-    listen $PORT reuseport;
+	# Must read the body in 5 seconds.
+	client_body_timeout <%= ENV['NGINX_CLIENT_BODY_TIMEOUT'] || 5 %>;
+
+	server {
+		listen <%= ENV["PORT"] %>;
+		client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 1 %>M;
     charset UTF-8;
     port_in_redirect off;
     keepalive_timeout 5;
     root website/public;
-  
+
     location / {
       try_files $uri $uri/ /404.html;
     }
@@ -47,5 +49,5 @@ http {
     location @404 {
       return 404;
     }
-  }
+	}
 }
