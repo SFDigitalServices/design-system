@@ -40,7 +40,7 @@ DoDont.propTypes = {
 function Box ({ borderClass, iconSymbol, iconClass, children, reasons, reasonsClass, className, ...props }) {
   return (
     <>
-      <div className={clsx('relative border-0 border-solid border-b-2 overflow-hidden', borderClass, className)} {...props}>
+      <div className={clsx('relative border-1 border-solid border-grey-1 overflow-hidden', className)} {...props}>
         <EncapsulatedStyleRoot>
           {children}
         </EncapsulatedStyleRoot>
@@ -53,9 +53,9 @@ function Box ({ borderClass, iconSymbol, iconClass, children, reasons, reasonsCl
           {iconSymbol && <sfgov-icon symbol={iconSymbol} width={16} height={16} />}
         </div>
       </div>
-      <ul className={clsx('m-0 mb-20 lg:mb-0', reasonsClass)}>
+      <ul className={clsx('m-0 mb-20 pl-28 lg:mb-0 border-0 border-t-4 border-solid', borderClass, reasonsClass)}>
         {reasons?.map((reason, i) => (
-          <li key={i} className={clsx('p-8', i > 0 && 'border-solid border-0 border-t-1 border-grey-2')}>
+          <li key={i} className={clsx('p-8 pl-0', i > 0 && 'border-solid border-0 border-t-1 border-grey-2')}>
             {reason}
           </li>
         ))}
@@ -65,6 +65,7 @@ function Box ({ borderClass, iconSymbol, iconClass, children, reasons, reasonsCl
 }
 
 Box.propTypes = {
+  borderClass: PropTypes.string,
   className: PropTypes.string,
   iconSymbol: PropTypes.string,
   iconClass: PropTypes.string,
