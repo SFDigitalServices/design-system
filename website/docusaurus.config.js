@@ -32,38 +32,7 @@ module.exports = {
           return postcssOptions
         }
       }
-    },
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        fromExtensions: ['html'],
-        createRedirects (existingPath) {
-          console.log(existingPath)
-          if (existingPath.includes('/design')) {
-            if (existingPath === '/design/layout') return ['/foundations/spacing']
-
-            return [existingPath.replace('/design', '/foundations')]
-          } else if (existingPath.includes('/develop')) {
-            return [existingPath.replace('/develop', '/usage')]
-          }
-          return [] // a falsy value = no redirect created
-        },
-        redirects: [
-          {
-            from: '/usage/icons',
-            to: '/components/icons'
-          },
-          {
-            from: '/resources/icon-library',
-            to: '/libraries/iconsLibrary'
-          },
-          {
-            from: '/components/fields-and-forms',
-            to: '/components/forms'
-          }
-        ]
-      }
-    ]
+    }
   ],
 
   presets: [
