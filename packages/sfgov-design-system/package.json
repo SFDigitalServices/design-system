@@ -49,6 +49,9 @@
     },
     "build-css-manifest": {
       "command": "node ./scripts/build-css-manifest.js",
+      "dependencies": [
+        "build-css"
+      ],
       "files": [
         "src/css/**/*.css",
         "*.config.js"
