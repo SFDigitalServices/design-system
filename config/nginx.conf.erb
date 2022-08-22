@@ -1,11 +1,11 @@
 daemon off;
 # Heroku dynos have at least 4 cores.
-worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
+worker_processes 4;
 
 events {
 	use epoll;
 	accept_mutex on;
-	worker_connections <%= ENV['NGINX_WORKER_CONNECTIONS'] || 1024 %>;
+	worker_connections 1024;
 }
 
 http {
@@ -27,11 +27,12 @@ http {
 	sendfile on;
 
 	# Must read the body in 5 seconds.
-	client_body_timeout <%= ENV['NGINX_CLIENT_BODY_TIMEOUT'] || 5 %>;
+	client_body_timeout 5;
+
 
 	server {
 		listen <%= ENV["PORT"] %>;
-		client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 1 %>M;
+		client_max_body_size 1M;
     charset UTF-8;
     port_in_redirect off;
     keepalive_timeout 5;
@@ -43,6 +44,27 @@ http {
   
     if ($http_x_forwarded_proto != "https") {
       return 301 https://$host$request_uri;
+    }
+
+    map $uri $redirect_uri {
+      default "none";
+
+      # static redirects: from the left path to the right
+      /components/fields-and-forms/   /components/forms/;
+      /foundations/spacing/           /design/layout/;
+      /resources/icon-library/        /libraries/iconsLibrary/;
+      /usage/icons/                   /components/icons/;
+
+      # pattern-based redirects live here, in the form:
+      # ~{pattern} {path};
+      # where {pattern} is a regex and will probably contain capture groups,
+      # which will then be referenced in the {path} by their index: $1, $2, etc.
+      ~^/foundations/(\w+)/$          /design/$1;
+      ~^/usage/(\w+)/?$               /develop/$1;
+    }
+
+    if ($redirect_uri != "none") {
+      rewrite ^ $redirect_uri permanent;
     }  
 
     # need this b/c setting $fallback to =404 will try #{root}=404 instead of returning a 404
