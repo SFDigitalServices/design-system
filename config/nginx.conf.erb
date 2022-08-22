@@ -29,6 +29,24 @@ http {
 	# Must read the body in 5 seconds.
 	client_body_timeout 5;
 
+  # redirects need to live outside of the server block
+  map $uri $redirect_uri {
+    default "none";
+
+    # static redirects: from the left path to the right
+    /components/fields-and-forms/     /components/forms/;
+    /components/Forms%20and%20fields/ /components/forms/;
+    /foundations/spacing/             /design/layout/;
+    /resources/icon-library/          /libraries/iconsLibrary/;
+    /usage/icons/                     /components/icons/;
+
+    # pattern-based redirects live here, in the form:
+    # ~{pattern} {path};
+    # where {pattern} is a regex and will probably contain capture groups,
+    # which will then be referenced in the {path} by their index: $1, $2, etc.
+    ~^/foundations/(\w+)/$          /design/$1;
+    ~^/usage/(\w+)/?$               /develop/$1;
+  }
 
 	server {
 		listen <%= ENV["PORT"] %>;
@@ -44,23 +62,6 @@ http {
   
     if ($http_x_forwarded_proto != "https") {
       return 301 https://$host$request_uri;
-    }
-
-    map $uri $redirect_uri {
-      default "none";
-
-      # static redirects: from the left path to the right
-      /components/fields-and-forms/   /components/forms/;
-      /foundations/spacing/           /design/layout/;
-      /resources/icon-library/        /libraries/iconsLibrary/;
-      /usage/icons/                   /components/icons/;
-
-      # pattern-based redirects live here, in the form:
-      # ~{pattern} {path};
-      # where {pattern} is a regex and will probably contain capture groups,
-      # which will then be referenced in the {path} by their index: $1, $2, etc.
-      ~^/foundations/(\w+)/$          /design/$1;
-      ~^/usage/(\w+)/?$               /develop/$1;
     }
 
     if ($redirect_uri != "none") {
