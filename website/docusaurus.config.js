@@ -20,6 +20,10 @@ module.exports = {
   organizationName: owner, // Usually your GitHub org/user name.
   projectName: repo, // Usually your repo name.
 
+  clientModules: [
+    require.resolve('sfgov-design-system/dist/js/sfds.mjs')
+  ],
+
   plugins: [
     '@docusaurus/theme-live-codeblock',
     async function myPlugin () {
