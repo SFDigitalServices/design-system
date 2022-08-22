@@ -9,16 +9,18 @@ const prod = NODE_ENV === 'production'
 
 const commonPlugins = [
   resolve(),
-  json(),
+  json({
+    compact: true
+  }),
   babel({
     babelHelpers: 'bundled'
   }),
-  prod ? terser() : null
+  prod && terser()
 ].filter(Boolean)
 
 export default [
   target({ input: 'src/js/sfds.js', name: 'sfgov' }),
-  target({ input: 'src/js/icons.js', name: 'sfgovIcons' })
+  target({ input: 'src/js/icons.js', name: 'SFGovIcon' })
 ]
 
 function target ({ input, name, ...rest }) {
