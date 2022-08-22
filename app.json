@@ -1,4 +1,5 @@
 {
+  "stack": "heroku-22",
   "labs": [
     "runtime-dyno-metadata"
   ],
@@ -7,7 +8,7 @@
       "url": "heroku/nodejs"
     },
     {
-      "url": "https://github.com/heroku/heroku-buildpack-static"
+      "url": "heroku-community/nginx"
     }
   ],
   "env": {
