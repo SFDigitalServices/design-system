@@ -1,8 +1,5 @@
 {
   "stack": "heroku-22",
-  "labs": [
-    "runtime-dyno-metadata"
-  ],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
@@ -11,8 +8,21 @@
       "url": "heroku-community/nginx"
     }
   ],
+  "labs": [
+    "runtime-dyno-metadata"
+  ],
   "env": {
     "USE_NPM_INSTALL": "true",
     "NPM_CONFIG_PRODUCTION": "false"
+  },
+  "addons": [
+    "papertrail:choklad"
+  ],
+  "environments": {
+    "review": {
+      "addons": [
+        "papertrail:choklad"
+      ]
+    }
   }
 }
