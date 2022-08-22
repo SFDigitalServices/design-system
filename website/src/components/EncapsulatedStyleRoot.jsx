@@ -1,15 +1,14 @@
 import React from 'react'
 import root from 'react-shadow'
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import sfdsStyles from '!!raw-loader!sfgov-design-system/dist/css/sfds.css'
 
-// FIXME uggggh
-const { dependencies: { 'sfgov-design-system': sfdsVersion } } = require('../../package.json')
-
-/**
- */
 export default function EncapsulatedStyleRoot ({ children, ...props }) {
   return (
     <root.div {...props}>
-      <style type='text/css'>@import url(https://unpkg.com/sfgov-design-system@{sfdsVersion}/dist/css/sfds.css);</style>
+      <style>
+        {sfdsStyles}
+      </style>
       {children}
     </root.div>
   )
