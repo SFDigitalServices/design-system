@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/crcastle/schemastore/06174ef73fcaa1f9734e4aed8b7d40e6df586f76/src/schemas/json/app.json",
   "stack": "heroku-22",
   "buildpacks": [
     {
@@ -7,9 +8,6 @@
     {
       "url": "heroku-community/nginx"
     }
-  ],
-  "labs": [
-    "runtime-dyno-metadata"
   ],
   "env": {
     "USE_NPM_INSTALL": "true",
@@ -24,5 +22,8 @@
         "papertrail:choklad"
       ]
     }
-  }
+  },
+  "labs": [
+    "runtime-dyno-metadata"
+  ]
 }
