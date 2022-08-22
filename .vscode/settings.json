@@ -23,5 +23,8 @@
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     // we should not auto-format until we have decent MDX support
     "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "/config/*.conf{,.erb}": "nginx"
   }
 }
