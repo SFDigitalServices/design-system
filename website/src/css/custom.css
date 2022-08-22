@@ -6,8 +6,9 @@
  * work well for content-centric websites.
  */
 
+@import 'sfgov-design-system/dist/css/sfds.css';
+@import 'sfgov-design-system/dist/css/fonts.css';
 @import 'masonry-styles.css';
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&family=Roboto+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;

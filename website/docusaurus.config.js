@@ -83,7 +83,6 @@ module.exports = {
         },
         theme: {
           customCss: [
-            require.resolve('sfgov-design-system/dist/css/sfds.css'),
             require.resolve('./src/css/custom.css')
           ]
         }
