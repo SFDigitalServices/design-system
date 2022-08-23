@@ -2,7 +2,7 @@
   "name": "design-system.sf.gov",
   "private": true,
   "scripts": {
-    "build": "docusaurus build --out-dir public | awk '{if (/^\\//) print >> \"build.log\"; else print }'",
+    "build": "docusaurus build --out-dir public",
     "clear": "docusaurus clear",
     "lint": "wireit",
     "lint-docs": "wireit",
@@ -56,6 +56,7 @@
     "postcss": "^8.4.14",
     "prism-react-renderer": "^1.3.1",
     "prop-types": "^15.8.1",
+    "raw-loader": "^4.0.2",
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^17.0.2",

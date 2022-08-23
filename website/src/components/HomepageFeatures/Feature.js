@@ -4,10 +4,9 @@ import clsx from 'clsx'
 
 const Feature = (props) => {
   const [isHover, setIsHover] = useState(false)
-  const linkStyle = 'col col--4 flex flex-wrap w-full items-center no-underline px-20 py-16 rounded-4 hocus:bg-action group'
+  const linkStyle = 'col col--4 flex flex-wrap w-full items-center no-underline p-24 rounded-4 hocus:bg-action group'
 
   const { section, title, link, description, img: Img, altImg, className, ...rest } = props
-  console.log(isHover)
 
   return (
     <a href={`/${link}`} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={clsx(className, linkStyle)} {...rest}>

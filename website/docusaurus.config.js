@@ -20,6 +20,10 @@ module.exports = {
   organizationName: owner, // Usually your GitHub org/user name.
   projectName: repo, // Usually your repo name.
 
+  clientModules: [
+    require.resolve('./src/sfds')
+  ],
+
   plugins: [
     '@docusaurus/theme-live-codeblock',
     async function myPlugin () {
@@ -48,7 +52,6 @@ module.exports = {
         },
         theme: {
           customCss: [
-            require.resolve('sfgov-design-system/dist/css/sfds.css'),
             require.resolve('./src/css/custom.css')
           ]
         }

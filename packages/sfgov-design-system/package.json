@@ -4,6 +4,7 @@
   "repository": "SFDigitalServices/design-system",
   "author": "City & County of San Francisco, California",
   "license": "MIT",
+  "main": "dist/js/sfds.js",
   "browser": "dist/js/sfds.js",
   "module": "dist/js/sfds.mjs",
   "files": [
@@ -63,8 +64,9 @@
     "build-js": {
       "command": "rollup -c",
       "files": [
+        "package.json",
         "src/js/**/*.js",
-        "*.config.js"
+        "*.js"
       ],
       "output": [
         "dist/**/*.js",
@@ -79,6 +81,10 @@
     },
     "build-manifest": {
       "command": "../../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
+      "dependencies": [
+        "build-css",
+        "build-js"
+      ],
       "files": [
         "dist/**/*.{css,*js,svg}"
       ],

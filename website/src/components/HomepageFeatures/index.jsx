@@ -15,7 +15,7 @@ const FeatureList = [
   {
     section: 'dev',
     title: 'Components',
-    link: 'components',
+    link: 'components/Forms%20and%20fields',
     description:
       'Quickly build reliable and consistent products by including carefully crafted components',
     img: SvgComponents
@@ -23,7 +23,7 @@ const FeatureList = [
   {
     section: 'dev',
     title: 'Tokens',
-    link: 'Color/colorInterfaceLibrary',
+    link: 'libraries/iconsLibrary',
     description:
       'Implemented with tokens to allow for predictable implementation and maintenance',
     img: SvgToken

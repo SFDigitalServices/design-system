@@ -5,6 +5,7 @@ tags: [icons]
 ---
 
 import { publishedUrl } from '@site/src/utils'
+import { GitHubFileLink } from '@site/src/components'
 import icons from '@site/src/icons'
 
 ## Custom element
@@ -18,16 +19,25 @@ bundle](../develop/javascript/).
 <sfgov-icon symbol="alert"></sfgov-icon>
 ```
 
+:::info
+
+Both the `sfds.css` and `icons.css` [CSS bundles](../../develop/css/#bundles) style the
+`<sfgov-icon>` element by name. If you're not using either of these, you'll need to apply
+the <GitHubFileLink path='src/css/icons.css'>same CSS</GitHubFileLink> to get the
+expected positioning, alignment, and color.
+
+:::
+
 ### Attributes
 
 The `<sfgov-icon>` element respects the following attributes:
 
-| Attribute | Default | Notes                                                                                                                                       |
-| :-------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| `symbol`  |         | A valid [symbol ID](#symbols) (**required**).                                                                                               |
-| `height`  | `20`    | Sets the height of the `<svg>` element in pixels. The width is determined by the icon's [intrinsic size] unless `width` is also specified.  |
-| `width`   |         | Sets the width of the `<svg>` element in pixels. The height is determined by the icon's [intrinsic size] unless `height` is also specified. |
-| `role`    | `img`   | The [ARIA role] of the element.                                                                                                             |
+| Attribute | Default | Notes |
+| :-------- | :------ | :---- |
+| `symbol`  |         | A valid [symbol ID](#symbols) (**required**) |
+| `height`  | `20`    | The height of the `<svg>` element in pixels, determined by the icon's [intrinsic size] unless `width` is also specified |
+| `width`   |         | Tthe width of the `<svg>` element in pixels, determined by the icon's [intrinsic size] unless `height` is also specified |
+| `role`    | `img`   | The [ARIA role] of the element |
 
 ### Icon color
 
