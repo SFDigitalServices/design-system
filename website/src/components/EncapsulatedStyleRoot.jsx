@@ -1,16 +1,21 @@
 import React from 'react'
 import root from 'react-shadow'
+import useIsBrowser from '@docusaurus/useIsBrowser'
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import sfdsStyles from '!!raw-loader!sfgov-design-system/dist/css/sfds.css'
 
-// FIXME uggggh
-const { dependencies: { 'sfgov-design-system': sfdsVersion } } = require('../../package.json')
-
-/**
- */
 export default function EncapsulatedStyleRoot ({ children, ...props }) {
-  return (
-    <root.div {...props}>
-      <style type='text/css'>@import url(https://unpkg.com/sfgov-design-system@{sfdsVersion}/dist/css/sfds.css);</style>
-      {children}
-    </root.div>
-  )
+  const isBrowser = useIsBrowser()
+  if (isBrowser) {
+    return (
+      <root.div {...props}>
+        <style>
+          {sfdsStyles}
+        </style>
+        {children}
+      </root.div>
+    )
+  } else {
+    return children
+  }
 }
