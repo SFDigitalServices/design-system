@@ -4,6 +4,7 @@ module.exports = {
     2,
     4,
     8,
+    12,
     16,
     20,
     24, // TODO: deprecate @3
@@ -13,7 +14,7 @@ module.exports = {
     60,
     80,
     96,
-    100 // TODO: deprecate @3
+    100 // TODO [>=3]: deprecate in favor of 96
   ])
 }
 

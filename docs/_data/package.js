@@ -30,6 +30,6 @@ async function getPublishedStatusVersion () {
       console.warn('no published version status for %s', sha, statuses)
     }
   } catch (error) {
-    console.warn('unable to get published version status:', error)
+    console.warn('unable to get published version status:', error.message)
   }
 }

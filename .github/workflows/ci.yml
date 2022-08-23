@@ -10,8 +10,9 @@ jobs:
         with:
           node-version: 14
           cache: npm
-
       - run: npm ci
+
+      - uses: xt0rted/markdownlint-problem-matcher@v1
       - run: npm run lint
 
       # this sets NODE_ENV=production for all of the build scripts

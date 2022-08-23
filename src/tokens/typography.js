@@ -57,7 +57,7 @@ module.exports = {
     small: ['14px', '18px']
   },
   fontWeight,
-  // TODO: deprecate in 3.0.0
+  // TODO [>=3]: delete these
   letterSpacing: {
     0: '0',
     n1: '-1px',
