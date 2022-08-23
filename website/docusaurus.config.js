@@ -21,7 +21,7 @@ module.exports = {
   projectName: repo, // Usually your repo name.
 
   clientModules: [
-    require.resolve('sfgov-design-system/dist/js/sfds.mjs')
+    require.resolve('./src/sfds')
   ],
 
   plugins: [
@@ -60,10 +60,6 @@ module.exports = {
           {
             from: '/resources/icon-library',
             to: '/libraries/iconsLibrary'
-          },
-          {
-            from: '/components/fields-and-forms',
-            to: '/components/forms'
           }
         ]
       }
