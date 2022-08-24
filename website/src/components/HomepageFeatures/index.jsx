@@ -15,7 +15,7 @@ const FeatureList = [
   {
     section: 'dev',
     title: 'Components',
-    link: 'components/Forms%20and%20fields',
+    link: 'components/buttons',
     description:
       'Quickly build reliable and consistent products by including carefully crafted components',
     img: SvgComponents
