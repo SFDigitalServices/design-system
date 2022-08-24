@@ -29,6 +29,6 @@
     "shellcheck": "^1.1.0",
     "stylelint": "^14.8.4",
     "stylelint-config-standard": "^25.0.0",
-    "wireit": "^0.4.3"
+    "wireit": "^0.7.1"
   }
 }

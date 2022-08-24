@@ -30,7 +30,7 @@ export function render (symbol, props = {}) {
 
 const observedAttributes = ['symbol', 'width', 'height']
 
-export class SFGovIcon extends window.HTMLElement {
+export class SFGovIcon extends HTMLElement {
   static get observedAttributes () {
     return observedAttributes
   }
@@ -62,7 +62,7 @@ export class SFGovIcon extends window.HTMLElement {
   }
 
   get svg () {
-    return this.__svg
+    return this.__svg || this.querySelector('svg')
   }
 
   set svg (node) {

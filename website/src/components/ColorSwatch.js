@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import BrowserOnly from '@docusaurus/BrowserOnly'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import clsx from 'clsx'
+import SFGovIcon from './SFGovIcon'
 
 export default function ColorSwatch ({ value, label, addBorder, className, children, ...rest }) {
   const [copied, setCopied] = useState()
@@ -35,7 +36,7 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
                 <div className='flex justify-between items-center font-mono'>
                   {value}
                   <div className={isHover ? 'inherit' : 'text-white'}>
-                  <sfgov-icon symbol='clipboard'></sfgov-icon>
+                  <SFGovIcon symbol='clipboard' />
                   </div>
                 </div>
                 {children}

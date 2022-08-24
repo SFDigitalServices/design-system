@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import EncapsulatedStyleRoot from './EncapsulatedStyleRoot'
+import SFGovIcon from './SFGovIcon'
 
 /**
  * Use the <DoDont> component to display "do" and "don't" examples with
@@ -50,7 +51,7 @@ function Box ({ borderClass, iconSymbol, iconClass, children, reasons, reasonsCl
           bg-white border-2 border-solid
           flex items-center justify-center
         `, borderClass, iconClass)}>
-          {iconSymbol && <sfgov-icon symbol={iconSymbol} width={16} height={16} />}
+          {iconSymbol && <SFGovIcon symbol={iconSymbol} width={16} height={16} />}
         </div>
       </div>
       <ul className={clsx('m-0 mb-20 pl-28 lg:mb-0 border-0 border-t-4 border-solid', borderClass, reasonsClass)}>

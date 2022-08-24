@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import Layout from '@theme/Layout'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
+import SFGovIcon from '../components/SFGovIcon'
 const { landingDesc } = require('../../constants')
 
 function HomepageHeader () {
@@ -19,7 +20,7 @@ function HomepageHeader () {
       <div className='w-full flex justify-center'>
         <a href='develop/install' className='btn flex gap-8 no-underline max-w-max hocus:text-white'>
           <span>Get started</span>
-          <sfgov-icon symbol='arrow-right'></sfgov-icon>
+          <SFGovIcon symbol='arrow-right' />
         </a>
       </div>
     </header>

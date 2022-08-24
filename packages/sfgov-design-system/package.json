@@ -42,7 +42,7 @@
       "clean": true,
       "files": [
         "src/css/**/*.css",
-        "*.config.js"
+        "*.config.*"
       ],
       "output": [
         "dist/css/**/*.css"
@@ -53,30 +53,30 @@
       "dependencies": [
         "build-css"
       ],
-      "files": [
-        "src/css/**/*.css",
-        "*.config.js"
-      ],
       "output": [
         "dist/css/css-manifest.json"
       ]
     },
     "build-js": {
       "command": "rollup -c",
+      "clean": true,
       "files": [
         "package.json",
-        "src/js/**/*.js",
-        "*.js"
+        "src/**",
+        "*config.*"
       ],
       "output": [
         "dist/**/*.js",
-        "dist/js/**/*.mjs"
+        "dist/**/*.mjs"
       ]
     },
     "build-icons": {
       "command": "scripts/build-icons.js",
       "files": [
         "src/icons/**/*.{js,json,svg}"
+      ],
+      "output": [
+        "dist/icons/*.svg"
       ]
     },
     "build-manifest": {
