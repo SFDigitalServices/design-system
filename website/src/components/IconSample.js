@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import BrowserOnly from '@docusaurus/BrowserOnly'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import clsx from 'clsx'
+import SFGovIcon from './SFGovIcon'
 
 export default function IconSample ({
   iconInfo
@@ -17,7 +18,7 @@ export default function IconSample ({
   return (
     <div className={clsx('flex flex-wrap w-1/4')}>
       <div className={'h-100 w-full border-grey-2 dark:border-grey-dark border-1 border-solid flex items-center justify-center'}>
-        <sfgov-icon symbol={iconInfo}></sfgov-icon>
+        <SFGovIcon symbol={iconInfo} />
       </div>
       <div className='w-full'>
         <BrowserOnly>
@@ -35,7 +36,7 @@ export default function IconSample ({
                 <div className='flex justify-between items-center font-mono' style={{ textTransform: 'lowercase' }}>
                   {iconInfo}
                   <div className={isHover ? 'inherit' : 'text-white'}>
-                    <sfgov-icon symbol='clipboard'></sfgov-icon>
+                    <SFGovIcon symbol='clipboard' />
                   </div>
                 </div>
 

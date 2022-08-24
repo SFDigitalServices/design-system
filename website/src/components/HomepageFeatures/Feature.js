@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import SFGovIcon from '../SFGovIcon'
 
 const Feature = (props) => {
   const [isHover, setIsHover] = useState(false)
@@ -24,7 +25,7 @@ const Feature = (props) => {
         )}
       </div>
       <div className='w-full text-right text-action group-hocus:text-white'>
-        <sfgov-icon symbol='arrow-right' aria-hidden='true' role='img' />
+        <SFGovIcon symbol='arrow-right' aria-hidden='true' role='img' />
       </div>
     </a>
   )

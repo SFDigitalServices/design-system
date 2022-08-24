@@ -8,6 +8,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly'
 import { usePrismTheme } from '@docusaurus/theme-common'
 import EncapsulatedStyleRoot from '../../components/EncapsulatedStyleRoot'
 import styles from './styles.module.css'
+import SFGovIcon from '../../components/SFGovIcon'
 
 function Header ({ as: Component = 'div', className, ...rest }) {
   return <Component className={clsx(styles.playgroundHeader, className)} {...rest} />
@@ -71,7 +72,7 @@ function EditorWithHeader ({ open: defaultOpen = true }) {
           description='The live editor label of the live codeblocks'>
           Code editor
         </Translate>
-        <sfgov-icon
+        <SFGovIcon
           symbol={open ? 'chevron-down' : 'chevron-right'}
           width='16' height='16'
         />
