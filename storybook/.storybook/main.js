@@ -13,6 +13,17 @@ module.exports = {
   core: {
     builder: '@storybook/builder-webpack5'
   },
+
+  /**
+   * This is apparently how we set the base URL of the published storybook export,
+   * at least according to this well-loved comment:
+   *
+   * <https://github.com/storybookjs/storybook/issues/7775#issuecomment-968992047>
+   *
+   * @param {string} head
+   * @param {{ configType: string }} context
+   * @returns {string}
+   */
   managerHead (head, { configType }) {
     return configType === 'PRODUCTION'
       ? `${head}<base href="/storybook/">`
