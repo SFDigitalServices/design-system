@@ -5,7 +5,6 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        paths: ['**'],
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }
     },
@@ -46,7 +45,7 @@ module.exports = {
       sourceType: 'module'
     }
   }, {
-    files: '**/scripts/*.js',
+    files: 'scripts/*.js',
     rules: {
       'node/shebang': 0
     }
