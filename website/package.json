@@ -2,8 +2,9 @@
   "name": "design-system.sf.gov",
   "private": true,
   "scripts": {
-    "build": "docusaurus build --out-dir public",
+    "build": "wireit",
     "clear": "docusaurus clear",
+    "link-storybook": "ln -sf static/storybook ../storybook/public",
     "lint": "wireit",
     "lint-docs": "wireit",
     "serve": "docusaurus serve --dir public",
@@ -13,9 +14,17 @@
     "write-translations": "docusaurus write-translations"
   },
   "wireit": {
+    "build": {
+      "command": "docusaurus build --out-dir public",
+      "dependencies": [
+        "../storybook:build",
+        "link-storybook"
+      ]
+    },
     "start": {
       "command": "docusaurus start",
       "dependencies": [
+        "link-storybook",
         "../packages/sfgov-design-system:build"
       ]
     },
