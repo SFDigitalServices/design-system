@@ -2,6 +2,17 @@ module.exports = {
   parser: '@babel/eslint-parser',
   plugins: ['sfgov', 'unicorn'],
   extends: ['plugin:sfgov/recommended', 'plugin:storybook/recommended'],
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['**'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    },
+    react: {
+      version: 'detect'
+    }
+  },
   rules: {
     'unicorn/expiring-todo-comments': ['error', {
       allowWarningComments: true
