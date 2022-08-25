@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const { spawnSync } = require('node:child_process')
@@ -8,14 +7,27 @@ const { owner, repo, repoUrl, defaultBranch } = require('./constants')
 const currentBranch = getCurrentBranch() || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 
+/**
+ * It's important that we throw on broken links in both development and
+ * CI, but _not_ during deployment. So we set the reporting level to
+ * 'warn' if and only if $NODE_ENV is 'production' _and_ $CI is falsy.
+ */
+const {
+  CI,
+  NODE_ENV,
+  ON_BROKEN_LINKS = (NODE_ENV === 'production' && !CI) ? 'warn' : 'throw'
+} = process.env
+
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: 'SF Design System',
   tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  trailingSlash: true,
+  onBrokenLinks: ON_BROKEN_LINKS,
   onBrokenMarkdownLinks: 'throw',
+  onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: owner, // Usually your GitHub org/user name.
   projectName: repo, // Usually your repo name.
