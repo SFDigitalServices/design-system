@@ -56,7 +56,8 @@ module.exports = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        debug: true,
+        // uncomment this if you need to debug in production (when deployed)
+        // debug: true,
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
@@ -108,7 +109,12 @@ module.exports = {
             label: 'Libraries'
           },
           {
-            href: `${repoUrl}/tree/main/`,
+            label: 'Storybook',
+            position: 'left',
+            href: '/storybook/'
+          },
+          {
+            href: `${repoUrl}/tree/${currentBranch}/`,
             label: ' ',
             position: 'right',
             className: 'header-github-link',
