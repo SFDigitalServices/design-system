@@ -3,6 +3,7 @@
   "repository": "SFDigitalServices/design-system",
   "workspaces": [
     "packages/*",
+    "storybook",
     "website"
   ],
   "engines": {
@@ -11,8 +12,9 @@
   },
   "scripts": {
     "build": "lerna run build",
-    "start": "npm start -w website",
     "lint": "lerna run lint",
+    "start": "npm start -w website",
+    "storybook": "npm start -w storybook",
     "test": "lerna run test",
     "validate": "check-dependency-version-consistency ."
   },
@@ -25,6 +27,7 @@
     "eslint": "^8.15.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-sfgov": "^2.0.0",
+    "eslint-plugin-storybook": "^0.6.4",
     "eslint-plugin-unicorn": "^42.0.0",
     "shellcheck": "^1.1.0",
     "stylelint": "^14.8.4",
