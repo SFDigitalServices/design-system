@@ -109,11 +109,6 @@ module.exports = {
             label: 'Libraries'
           },
           {
-            label: 'Storybook',
-            position: 'left',
-            href: '/storybook/'
-          },
-          {
             href: `${repoUrl}/tree/${currentBranch}/`,
             label: ' ',
             position: 'right',
