@@ -4,8 +4,6 @@ const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const { spawnSync } = require('node:child_process')
 const { owner, repo, repoUrl, defaultBranch } = require('./constants')
-const currentBranch = getCurrentBranch() || defaultBranch
-const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 
 /**
  * It's important that we throw on broken links in both development and
@@ -14,9 +12,13 @@ const editUrl = `${repoUrl}/tree/${currentBranch}/website`
  */
 const {
   CI,
+  HEROKU_BRANCH,
   NODE_ENV,
   ON_BROKEN_LINKS = (NODE_ENV === 'production' && !CI) ? 'warn' : 'throw'
 } = process.env
+
+const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
+const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
