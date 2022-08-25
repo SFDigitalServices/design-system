@@ -2,7 +2,7 @@
   "private": true,
   "name": "@sfgov/storybook",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint --ext=.js,.jsx .",
     "start": "start-storybook -p 6006",
     "build": "build-storybook"
   },
