@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "eslint --ext=.js,.jsx .",
     "start": "start-storybook -p 6006",
-    "build": "build-storybook"
+    "build": "build-storybook -o public"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",

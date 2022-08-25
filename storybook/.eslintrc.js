@@ -3,7 +3,7 @@ module.exports = {
   parser: '@babel/eslint-parser',
   plugins: ['react'],
   ignorePatterns: [
-    'storybook-static/**'
+    'public/**'
   ],
   extends: [
     'plugin:sfgov/recommended',
