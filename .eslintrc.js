@@ -40,4 +40,4 @@ module.exports = {
       'node/shebang': 0
     }
   }]
-};
+}
