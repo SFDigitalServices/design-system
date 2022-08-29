@@ -1,8 +1,0 @@
-{% for script in assets.scripts %}
-  <script type="text/javascript"
-    {% if script.src %}src="{{ script.src }}"{% endif %}
-    {% if script.async %}async{% endif %}
-    {% if script.defer %}defer{% endif %}>
-    {{ script.content }}
-  </script>
-{% endfor %}

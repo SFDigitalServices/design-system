@@ -1,0 +1,51 @@
+---
+title: CSS
+tags: [tailwind]
+bundles:
+  - path: css/sfds.css
+    desc: Includes all of the bundles listed below, **except** `fonts.css`. Use this if you don't have any other CSS on your site.
+  - path: css/base.css
+    desc: Defines "base" styles, including global resets, focus, and placeholder styles.
+  - path: css/fonts.css
+    desc: Imports web fonts needed to display Latin and Traditional Chinese text.
+  - path: css/typography.css
+    desc: Defines global typography styles.
+  - path: bcss/utilities.css
+    desc: Includes all of the [Tailwind]-generated utility classes.
+---
+
+import manifest from 'sfgov-design-system/manifest.json'
+import CodeBlock from '@theme/CodeBlock'
+import { defaultPackage } from '@site/constants'
+import { publishedUrl } from '@site/src/utils'
+import { BundleTable } from '@site/src/components'
+export const bundles = BundleTable.decorate(manifest.files, frontMatter.bundles)
+
+## Bundles
+
+We distribute several CSS files, each of which "bundles"
+different parts of the system so that you can tailor it to your
+site without the need for a custom build process:
+
+<BundleTable files={bundles.filter(file => file.path.endsWith('.css'))}  />
+
+### All CSS and custom fonts
+
+<CodeBlock language='html'>
+{`<link rel="stylesheet" href="${publishedUrl('dist/css/sfds.css')}">
+<link rel="stylesheet" href="${publishedUrl('dist/css/fonts.css')}">`}
+</CodeBlock>
+
+### Only utilities
+
+<CodeBlock language='html'>
+{`<link rel="stylesheet" href="${publishedUrl('dist/css/utilities.css')}">`}
+</CodeBlock>
+
+:::tip
+
+<div>Replace <code>{defaultPackage.version}</code> in the above link <code>href</code> attributes with <code>latest</code> to get the latest version.</div>
+
+:::
+
+[tailwind]: https://tailwindcss.com/

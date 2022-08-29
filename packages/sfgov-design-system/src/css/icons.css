@@ -1,0 +1,7 @@
+sfgov-icon {
+  @apply inline-flex items-center;
+
+  svg {
+    fill: currentcolor;
+  }
+}

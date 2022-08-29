@@ -1,13 +1,29 @@
 {
-  "labs": [
-    "runtime-dyno-metadata"
-  ],
+  "$schema": "https://raw.githubusercontent.com/crcastle/schemastore/06174ef73fcaa1f9734e4aed8b7d40e6df586f76/src/schemas/json/app.json",
+  "stack": "heroku-22",
   "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
     {
-      "url": "https://github.com/heroku/heroku-buildpack-static"
+      "url": "heroku-community/nginx"
     }
+  ],
+  "env": {
+    "USE_NPM_INSTALL": "true",
+    "NPM_CONFIG_PRODUCTION": "false"
+  },
+  "addons": [
+    "papertrail:choklad"
+  ],
+  "environments": {
+    "review": {
+      "addons": [
+        "papertrail:choklad"
+      ]
+    }
+  },
+  "labs": [
+    "runtime-dyno-metadata"
   ]
 }

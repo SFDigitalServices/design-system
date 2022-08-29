@@ -8,29 +8,27 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: '16.x'
           cache: npm
-      - run: npm ci
 
+      - run: npm install
       - uses: xt0rted/markdownlint-problem-matcher@v1
-      - run: npm run lint
+      - run: npx lerna run lint
 
       # this sets NODE_ENV=production for all of the build scripts
-      # (`npm ci` doesn't install anything if it's set earlier)
-      - run: |
-          echo NODE_ENV=production >> $GITHUB_ENV
+      - run: echo NODE_ENV=production >> $GITHUB_ENV
 
       # run these separately so that it's easier to see what failed
-      - run: npm run build-assets
-      - run: npm run build-docs
+      - run: npm run build -w sfgov-design-system
 
       # run pre-publish checks
-      - run: npm run prepublishOnly
+      - run: npm run prepublishOnly -w sfgov-design-system --if-present
 
       - uses: primer/publish@v3.0.0
         with:
           npm_args: --unsafe-perm --allow-same-version
           default_branch: main
+          dir: packages/sfgov-design-system
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

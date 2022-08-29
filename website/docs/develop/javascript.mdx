@@ -1,0 +1,38 @@
+---
+title: JavaScript
+bundles:
+  - path: js/sfds
+    desc: The main bundle
+  - path: js/icons
+    desc: The <sfgov-icon> custom element implementation
+  - path: js/docs
+    hide: true
+---
+
+import manifest from 'sfgov-design-system/manifest.json'
+import { BundleTable } from '@site/src/components'
+export const bundles = BundleTable.decorate(manifest.files, frontMatter.bundles)
+
+## Browser bundles
+
+We distribute several JavaScript files, each of which "bundles" different parts
+of the system so that you can tailor it to your site without the need for a
+custom build process.
+
+Our browser bundles (with the `.js` filename extension) conform to the
+[Universal Module Definition (UMD)][umd] spec, and—barring availability of
+browser globals such as `window` and `document`—should run in both web browsers
+and Node.js.
+
+<BundleTable files={bundles.filter(b => b.path.includes('.js'))} />
+
+## ESM
+
+Each bundle is also available in the [ECMAScript Module (ESM)][esm] format with
+the `.mjs` extension:
+
+<BundleTable files={bundles.filter(b => b.path.endsWith('.mjs'))} />
+
+[custom element]: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
+[umd]: https://github.com/umdjs/umd
+[esm]: https://nodejs.org/api/esm.html#esm_introduction

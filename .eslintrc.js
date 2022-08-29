@@ -10,7 +10,14 @@ module.exports = {
   rules: {
     'unicorn/expiring-todo-comments': ['error', {
       allowWarningComments: true
-    }]
+    }],
+    'no-trailing-spaces': ['warn', {
+      ignoreComments: true
+    }],
+    'padding-line-between-statements': [
+      'warn',
+      { blankLine: 'always', prev: '*', next: 'function' }
+    ]
   },
   overrides: [
     {
@@ -36,7 +43,7 @@ module.exports = {
       }
     },
     {
-      files: 'scripts/*.js',
+      files: '**/scripts/*.js',
       rules: {
         'node/shebang': 0
       }
