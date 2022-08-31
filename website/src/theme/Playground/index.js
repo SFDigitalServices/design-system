@@ -9,6 +9,10 @@ import { usePrismTheme } from '@docusaurus/theme-common'
 import EncapsulatedStyleRoot from '../../components/EncapsulatedStyleRoot'
 import styles from './styles.module.css'
 import SFGovIcon from '../../components/SFGovIcon'
+import * as components from '../../components'
+import tokens from 'sfgov-design-system/src/tokens'
+
+const scopedGlobals = { ...components, tokens }
 
 function Header ({ as: Component = 'div', className, ...rest }) {
   return <Component className={clsx(styles.playgroundHeader, className)} {...rest} />
@@ -81,7 +85,7 @@ function EditorWithHeader ({ open: defaultOpen = true }) {
     </details>
   )
 }
-export default function Playground ({ children, transformCode, ...props }) {
+export default function Playground ({ children, transformCode, scope, ...props }) {
   const {
     siteConfig: { themeConfig }
   } = useDocusaurusContext()
@@ -99,7 +103,9 @@ export default function Playground ({ children, transformCode, ...props }) {
         noInline={metaStrings.includes('noInline')}
         transformCode={transformCode ?? ((code) => `${code};`)}
         theme={prismTheme}
-        {...props}>
+        scope={{ ...scope, ...scopedGlobals }}
+        {...props}
+      >
         {playgroundPosition === 'top'
           ? (
               <>
