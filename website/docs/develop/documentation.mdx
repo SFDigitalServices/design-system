@@ -1,0 +1,89 @@
+---
+title: Documentation
+---
+
+import tokens from 'sfgov-design-system/src/tokens'
+
+This page documents how we use [Docusaurus], modifications we've made,
+
+## Code playgrounds
+
+Markdown code blocks can be automatically turned into editable "playgrounds" with a
+live rendering of the HTML above the editor. (We've customized the
+[Docusaurus component][code blocks] to look and act a bit differently, but the
+underlying implementation is the same.)
+
+```html live
+<h1 class="display-lg">This text is editable</h1>
+```
+
+Just add the `live` keyword after the `html` or `jsx` language code in the code block
+header after the three backticks:
+
+<pre>{'```html live'}</pre>
+
+<pre>{'```jsx live'}</pre>
+
+For longer code samples you may choose to collapse the code editor by adding the
+`closed` keyword:
+
+<pre>{'```html live closed'}</pre>
+
+```html live closed
+<p>
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+</p>
+```
+
+## Globals
+
+All of the named exports in <GitHubFileLink>website/src/components</GitHubFileLink>
+are available in both the global MDX scope _and_ in [code playgrounds].
+
+The `tokens` global also allows you to access design tokens defined by the system
+in <GitHubFileLink>packages/sfgov-design-system/src/tokens</GitHubFileLink>.
+
+### Components
+
+#### DoDont
+
+Use the `<DoDont>`, `<Do>`, and `<Dont>` components to display side-by-side examples.
+The "do" example should come first (left), and the "don't" second (right).
+
+```jsx live
+<DoDont>
+  <Do reasons={['Titles should be big', 'Some people canʼt see well']}>
+    <h1 className='display-lg'>Big heading</h1>
+  </Do>
+  <Dont reasons={['Small text is bad']}>
+    <h1 className='text-body'>Small heading</h1>
+  </Dont>
+</DoDont>
+```
+
+#### InlineSwatch
+
+Use the `<InlineSwatch>` component to display color values within text.
+
+I dove into the <InlineSwatch value={tokens.colors.blue.bright} label='bright blue' /> water.
+
+```jsx live
+<>
+  I dove into the <InlineSwatch value={tokens.colors.blue.bright} label='bright blue' /> water.
+</>
+```
+
+
+[code playgrounds]: #code-playgrounds
+[docusaurus]: https://docusaurus.io/
+[mdx]: https://docusaurus.io/docs/next/markdown-features/react
+[code blocks]: https://docusaurus.io/docs/next/markdown-features/code-blocks
