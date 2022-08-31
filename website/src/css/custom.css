@@ -24,6 +24,13 @@
   --ifm-color-primary-lighter: #215981;
   --ifm-color-primary-lightest: #266492;
   --ifm-heading-font-family: theme('fontFamily.rubik');
+
+  /* revert <code> styles */
+  --ifm-code-background: none;
+  --ifm-code-border-radius: 0;
+  --ifm-code-font-size: theme('fontSize.small');
+  --ifm-code-padding-horizontal: 0;
+  --ifm-code-padding-vertical: 0;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -55,8 +62,13 @@
   @apply font-rubik;
 }
 
+code,
 pre {
   @apply font-mono;
+}
+
+code:not([class]) {
+  border: none !important;
 }
 
 /* END typesetting */
