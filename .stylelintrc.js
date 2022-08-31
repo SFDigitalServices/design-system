@@ -1,23 +1,14 @@
 module.exports = {
   extends: [
-    'stylelint-config-standard'
+    'stylelint-config-standard',
+    'stylelint-config-tailwindcss'
   ],
-  plugins: [
-    './lib/stylelint/expiring-todo-comments'
-  ],
+  plugins: ['stylelint-expiring-todo-comments'],
   rules: {
-    'at-rule-no-unknown': [true, {
-      ignoreAtRules: [
-        'apply',
-        'layer',
-        'responsive',
-        'screen',
-        'tailwind',
-        'variants'
-      ]
+    'function-no-unknown': [true, {
+      ignoreFunctions: ['theme']
     }],
-    'local/expiring-todo-comments': [true, {
-    }],
+    'sfgov/expiring-todo-comments': [true, {}],
     'string-quotes': 'single'
   }
 }

@@ -1,0 +1,17 @@
+---
+title: React
+tags: [tailwind]
+---
+
+import { GitHubFileLink } from '@site/src/components'
+
+<p>We do not yet **officially** support React. However, partial support should be
+possible with CSS-in-JS tools that support Tailwind (such as{' '}
+<a href='https://npmjs.com/package/tailwind-styled-components'>tailwind-styled-components</a>)
+by importing{' '}<GitHubFileLink path='packages/sfgov-design-system/tailwind.config.js'>our
+Tailwind configuration</GitHubFileLink> in your own Tailwind config:</p>
+
+```js
+// e.g. tailwind.config.js
+module.exports = require('sfgov-design-system/tailwind.config')
+```

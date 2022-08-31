@@ -1,0 +1,4 @@
+/// <reference types="react" />
+import type { Props } from '@theme/NavbarItem/DefaultNavbarItem';
+export default function DefaultNavbarItem({ mobile, position, // Need to destructure position from props so that it doesn't get passed on.
+...props }: Props): JSX.Element;

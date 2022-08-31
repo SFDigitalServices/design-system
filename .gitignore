@@ -1,6 +1,7 @@
-**/.*.sw?
-*.tgz
-.env
-dist/
-node_modules/
-public/
+**/.DS_Store
+**/.eslintcache
+**/.wireit
+**/build
+**/dist
+**/manifest.json
+**/node_modules
