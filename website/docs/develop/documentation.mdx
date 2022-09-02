@@ -44,45 +44,158 @@ For longer code samples you may choose to collapse the code editor by adding the
 </p>
 ```
 
+All of the [globals](#globals) available in MDX, including our
+[documentation components](#documentation-components), are available in the playground
+JSX scope.
+
 ## Globals
 
 All of the named exports in <GitHubFileLink>website/src/components</GitHubFileLink>
-are available in both the global MDX scope _and_ in [code playgrounds].
+are available in both the global [MDX scope] and in [code playgrounds].
 
 The `tokens` global also allows you to access design tokens defined by the system
 in <GitHubFileLink>packages/sfgov-design-system/src/tokens</GitHubFileLink>.
 
-### Components
+## Documentation components
 
-#### DoDont
+All of these components are available in the global [MDX scope].
+
+### DoDont
 
 Use the `<DoDont>`, `<Do>`, and `<Dont>` components to display side-by-side examples.
 The "do" example should come first (left), and the "don't" second (right).
 
 ```jsx live
 <DoDont>
-  <Do reasons={['Titles should be big', 'Some people canʼt see well']}>
-    <h1 className='display-lg'>Big heading</h1>
+  <Do reasons={['Titles should be large', 'Some people canʼt see well']}>
+    <h1 className='title-lg m-0 p-16'>Large heading</h1>
   </Do>
   <Dont reasons={['Small text is bad']}>
-    <h1 className='text-body'>Small heading</h1>
+    <h1 className='text-body font-regular m-0 p-16'>Small heading</h1>
   </Dont>
 </DoDont>
 ```
 
-#### InlineSwatch
+### InlineSwatch
 
 Use the `<InlineSwatch>` component to display color values within text. Please use
-color tokens (`tokens.color...`) instead of literal values.
+color tokens (`tokens.color...`) instead of literal values. The label can be passed
+either as a string via the `label` prop or as children.
 
 ```jsx live
 <>
-  I dove into the <InlineSwatch value={tokens.colors.blue.bright} label='bright blue' /> water.
+  The pool water was <InlineSwatch value={tokens.colors.blue.bright} label='blue' />,
+  but somehow my hair turned <InlineSwatch value={tokens.colors.green[2]}>green</InlineSwatch>.
 </>
 ```
 
+## Markdown
 
+Markdown components are [styled by Docusaurus][docusaurus styling] out of the box, but
+can be overridden in <GitHubFileLink>website/src/theme/MDXComponents.jsx</GitHubFileLink>.
+You can see how some common "prose" elements are rendered below.
+
+- Unordered list item
+- Unordered list item
+
+1. Ordered list item
+1. Ordered list item
+
+A paragraph with some **strong text** (i.e. bold) and _emphasized text_ (which should not
+be italicized), and [a link](/) for good measure.
+
+> This is a block quote.
+>
+> This is the second paragraph in the block quote.
+
+```
+This is a preformatted block without a language identifier.
+
+These
+words
+should
+appear
+on
+separate
+lines.
+```
+
+```html
+<!-- HTML -->
+<p class="m-0">This is a paragraph.</p>
+```
+
+```css
+/** CSS */
+html {
+  font-size: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+```
+
+```js
+// JavaScript
+;(async () => {
+  for (const [key, value] of global.whatever) {
+    console.log(`Heyo: ${key} = ${value}!`)
+  }
+})
+```
+
+```jsx
+/* JSX is cool, too */
+<SomeAwesomeComponent>
+  {({ renderProp }) => JSON.stringify(renderProp)}
+</SomeAwesomeComponent>
+```
+
+### Admonitions
+
+Admonitions are [Markdown directives], which are written like so:
+
+```markdown
+:::{type}
+Your content here, including **Markdown**, [links](https://example.com), etc.
+:::
+```
+
+...where `{type}` is one of `note`, `tip`, `info`, `caution`, or `danger` (`warning` also works).
+See [the Docusaurus docs](https://docusaurus.io/docs/markdown-features/admonitions) for more info
+about the built-in component.
+
+#### Admonition types
+
+:::note
+This is a `note` block with [a link in it](/).
+:::
+
+:::tip
+This is a `tip` directive with [a link in it](/).
+:::
+
+:::info
+This is an `info` directive with [a link in it](/).
+:::
+
+:::caution
+This is a `caution` with [a link in it](/).
+:::
+
+:::warning
+This is a `warning` block with [a link in it](/).
+:::
+
+:::danger
+This is a `danger` block with [a link in it](/).
+:::
+
+[code blocks]: https://docusaurus.io/docs/next/markdown-features/code-blocks
 [code playgrounds]: #code-playgrounds
 [docusaurus]: https://docusaurus.io/
+[docusaurus styling]: https://docusaurus.io/docs/styling-layout
+[markdown directives]: https://talk.commonmark.org/t/generic-directives-plugins-syntax/444
 [mdx]: https://docusaurus.io/docs/next/markdown-features/react
-[code blocks]: https://docusaurus.io/docs/next/markdown-features/code-blocks
+[mdx scope]: https://docusaurus.io/docs/next/markdown-features/react#mdx-component-scope
