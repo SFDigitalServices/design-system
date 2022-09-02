@@ -10,5 +10,8 @@ export function InlineCode ({ className, rounded = true, ...props }) {
 
 export const mdxComponents = {
   inlineCode: InlineCode,
-  h2: props => <h2 className='title-md my-32' {...props} />
+  // NB: we don't do <h1> in Markdown, so there's no need to style them here
+  h2: props => <h2 className='title-md my-32' {...props} />,
+  // don't italicize _this_
+  em: props => <em className='font-medium not-italic' {...props} />
 }
