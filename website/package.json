@@ -1,6 +1,9 @@
 {
   "name": "design-system.sf.gov",
   "private": true,
+  "config": {
+    "port": 3000
+  },
   "scripts": {
     "build": "wireit",
     "clear": "docusaurus clear",
@@ -22,7 +25,7 @@
       ]
     },
     "start": {
-      "command": "docusaurus start",
+      "command": "docusaurus start --port=$npm_package_config_port",
       "dependencies": [
         "link-storybook",
         "../packages/sfgov-design-system:build"
