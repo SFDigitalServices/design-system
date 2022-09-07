@@ -25,29 +25,34 @@ module.exports = {
       next: 'function'
     }]
   },
-  overrides: [{
-    files: ['src/**/*.js'],
-    env: {
-      browser: true
+  overrides: [
+    {
+      files: ['src/**/*.js'],
+      env: {
+        browser: true
+      },
+      parserOptions: {
+        sourceType: 'module'
+      }
     },
-    parserOptions: {
-      sourceType: 'module'
+    {
+      files: 'lib/**/*.js',
+      extends: ['plugin:sfgov/node'],
+      env: {
+        node: true
+      }
+    },
+    {
+      files: 'rollup.config.js',
+      parserOptions: {
+        sourceType: 'module'
+      }
+    },
+    {
+      files: 'scripts/*.js',
+      rules: {
+        'node/shebang': 0
+      }
     }
-  }, {
-    files: 'lib/**/*.js',
-    extends: ['plugin:sfgov/node'],
-    env: {
-      node: true
-    }
-  }, {
-    files: 'rollup.config.js',
-    parserOptions: {
-      sourceType: 'module'
-    }
-  }, {
-    files: 'scripts/*.js',
-    rules: {
-      'node/shebang': 0
-    }
-  }]
+  ]
 }

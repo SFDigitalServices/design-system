@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const { spawnSync } = require('node:child_process')
@@ -19,7 +20,7 @@ const {
   ON_BROKEN_LINKS = (NODE_ENV === 'production' && !CI) ? 'warn' : 'throw'
 } = process.env
 
-const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
+const currentBranch = getCurrentBranch() || HEROKU_BRANCH || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 const storybookUrl = HEROKU_APP_NAME
   ? '/storybook/'
@@ -31,7 +32,6 @@ module.exports = {
   tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
-  trailingSlash: true,
   onBrokenLinks: ON_BROKEN_LINKS,
   onBrokenMarkdownLinks: ON_BROKEN_LINKS,
   onDuplicateRoutes: 'throw',
@@ -63,8 +63,7 @@ module.exports = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        // uncomment this if you need to debug in production (when deployed)
-        // debug: true,
+        debug: true,
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
@@ -121,7 +120,7 @@ module.exports = {
             position: 'right'
           },
           {
-            href: `${repoUrl}/tree/${currentBranch}/`,
+            href: `${repoUrl}/tree/main/`,
             label: ' ',
             position: 'right',
             className: 'header-github-link',
