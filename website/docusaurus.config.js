@@ -4,6 +4,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const { spawnSync } = require('node:child_process')
 const { owner, repo, repoUrl, defaultBranch } = require('./constants')
+const { config: storybookConfig } = require('../storybook/package.json')
 
 /**
  * It's important that we throw on broken links in both development and
@@ -12,6 +13,7 @@ const { owner, repo, repoUrl, defaultBranch } = require('./constants')
  */
 const {
   CI,
+  HEROKU_APP_NAME,
   HEROKU_BRANCH,
   NODE_ENV,
   ON_BROKEN_LINKS = (NODE_ENV === 'production' && !CI) ? 'warn' : 'throw'
@@ -19,6 +21,9 @@ const {
 
 const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
+const storybookUrl = HEROKU_APP_NAME
+  ? '/storybook/'
+  : `http://localhost:${storybookConfig.port}/`
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
@@ -28,7 +33,7 @@ module.exports = {
   baseUrl: '/',
   trailingSlash: true,
   onBrokenLinks: ON_BROKEN_LINKS,
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenMarkdownLinks: ON_BROKEN_LINKS,
   onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: owner, // Usually your GitHub org/user name.
@@ -109,6 +114,11 @@ module.exports = {
             position: 'left',
             sidebarId: 'librariesSidebar',
             label: 'Libraries'
+          },
+          {
+            href: storybookUrl,
+            label: 'Storybook',
+            position: 'right'
           },
           {
             href: `${repoUrl}/tree/${currentBranch}/`,
