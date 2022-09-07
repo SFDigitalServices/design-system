@@ -23,7 +23,7 @@ const {
 const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 const storybookUrl = HEROKU_APP_NAME
-  ? '/storybook/'
+  ? 'pathname:///storybook/'
   : `http://localhost:${storybookConfig.port}/`
 
 /** @type {import('@docusaurus/types').Config} */
