@@ -20,7 +20,7 @@ const {
   ON_BROKEN_LINKS = (NODE_ENV === 'production' && !CI) ? 'warn' : 'throw'
 } = process.env
 
-const currentBranch = getCurrentBranch() || HEROKU_BRANCH || defaultBranch
+const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 const storybookUrl = HEROKU_APP_NAME
   ? '/storybook/'
@@ -32,6 +32,7 @@ module.exports = {
   tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
+  trailingSlash: true,
   onBrokenLinks: ON_BROKEN_LINKS,
   onBrokenMarkdownLinks: ON_BROKEN_LINKS,
   onDuplicateRoutes: 'throw',
@@ -63,7 +64,8 @@ module.exports = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        debug: true,
+        // don't build the debug views in CI
+        debug: !CI,
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
@@ -120,7 +122,7 @@ module.exports = {
             position: 'right'
           },
           {
-            href: `${repoUrl}/tree/main/`,
+            href: `${repoUrl}/tree/${currentBranch}/`,
             label: ' ',
             position: 'right',
             className: 'header-github-link',
