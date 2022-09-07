@@ -14,10 +14,19 @@
     "build": "lerna run build",
     "lint": "lerna run lint",
     "postbuild": "cp -rf storybook/public/ website/public/storybook/",
-    "start": "npm start -w website",
+    "start": "wireit",
     "storybook": "npm start -w storybook",
     "test": "lerna run test",
-    "validate": "check-dependency-version-consistency ."
+    "validate": "check-dependency-version-consistency .",
+    "website": "npm start -w website"
+  },
+  "wireit": {
+    "start": {
+      "dependencies": [
+        "website",
+        "storybook"
+      ]
+    }
   },
   "dependencies": {
     "@lerna-lite/cli": "^1.3.0",
