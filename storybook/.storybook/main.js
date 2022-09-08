@@ -1,3 +1,5 @@
+const { NODE_ENV } = process.env
+
 /** @type {import('@storybook/core-common').StorybookConfig} */
 module.exports = {
   stories: [
@@ -13,6 +15,11 @@ module.exports = {
   core: {
     builder: '@storybook/builder-webpack5'
   },
+
+  env: config => ({
+    ...config,
+    NODE_ENV
+  }),
 
   /**
    * This is apparently how we set the base URL of the published storybook export,
