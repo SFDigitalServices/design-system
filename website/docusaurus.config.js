@@ -14,7 +14,6 @@ const { config: storybookConfig } = require('../storybook/package.json')
  */
 const {
   CI,
-  HEROKU_APP_NAME,
   HEROKU_BRANCH,
   NODE_ENV,
   ON_BROKEN_LINKS = (NODE_ENV === 'production' && !CI) ? 'warn' : 'throw'
@@ -22,7 +21,7 @@ const {
 
 const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
-const storybookUrl = HEROKU_APP_NAME
+const storybookUrl = NODE_ENV === 'production'
   ? 'pathname:///storybook/'
   : `http://localhost:${storybookConfig.port}/`
 
