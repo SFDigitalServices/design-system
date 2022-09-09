@@ -3,7 +3,6 @@ import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 
-// eslint-disable-next-line no-undef
 const { NODE_ENV = 'development' } = process.env
 const prod = NODE_ENV === 'production'
 
