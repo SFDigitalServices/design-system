@@ -1,0 +1,199 @@
+---
+title: Documentation
+---
+
+import tokens from 'sfgov-design-system/src/tokens'
+
+This page documents how we use [Docusaurus], modifications we've made,
+
+## Code playgrounds
+
+Markdown code blocks can be automatically turned into editable "playgrounds" with a
+live rendering of the HTML above the editor. (We've customized the
+[Docusaurus component][code blocks] to look and act a bit differently, but the
+underlying implementation is the same.)
+
+```html live
+<h1 class="display-lg">This text is editable</h1>
+```
+
+Just add the `live` keyword after the `html` or `jsx` language code in the code block
+header after the three backticks:
+
+<pre>{'```html live'}</pre>
+
+<pre>{'```jsx live'}</pre>
+
+For longer code samples you may choose to collapse the code editor by adding the
+`closed` keyword:
+
+<pre>{'```html live closed'}</pre>
+
+```html live closed
+<p>
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+</p>
+```
+
+All of the [globals](#globals) available in MDX, including our
+[documentation components](#documentation-components), are available in the playground
+JSX scope.
+
+## Globals
+
+All of the named exports in <GitHubFileLink>website/src/components</GitHubFileLink>
+are available in both the global [MDX scope] and in [code playgrounds].
+
+The `tokens` global also allows you to access design tokens defined by the system
+in <GitHubFileLink>packages/sfgov-design-system/src/tokens</GitHubFileLink>.
+
+## Documentation components
+
+All of these components are available in the global [MDX scope].
+
+### DoDont
+
+Use the `<DoDont>`, `<Do>`, and `<Dont>` components to display side-by-side examples.
+The "do" example should come first (left), and the "don't" second (right).
+
+```jsx live
+<DoDont>
+  <Do reasons={['Titles should be large', 'Some people canʼt see well']}>
+    <h1 className='title-lg m-0 p-16'>Large heading</h1>
+  </Do>
+  <Dont reasons={['Small text is bad']}>
+    <h1 className='text-body font-regular m-0 p-16'>Small heading</h1>
+  </Dont>
+</DoDont>
+```
+
+### InlineSwatch
+
+Use the `<InlineSwatch>` component to display color values within text. Please use
+color tokens (`tokens.color...`) instead of literal values. The label can be passed
+either as a string via the `label` prop or as children.
+
+```jsx live
+<>
+  The pool water was <InlineSwatch value={tokens.colors.blue.bright} label='blue' />,
+  but somehow my hair turned <InlineSwatch value={tokens.colors.green[2]}>green</InlineSwatch>.
+</>
+```
+
+## Markdown
+
+Markdown components are [styled by Docusaurus][docusaurus styling] out of the box, but
+can be overridden in <GitHubFileLink>website/src/theme/MDXComponents.jsx</GitHubFileLink>.
+You can see how some common "prose" elements are rendered below.
+
+- Unordered list item
+- Unordered list item
+
+1. Ordered list item
+1. Ordered list item
+
+A paragraph with some **strong text** (i.e. bold) and _emphasized text_ (which should not
+be italicized), and [a link](/) for good measure.
+
+> This is a block quote.
+>
+> This is the second paragraph in the block quote.
+
+```
+This is a preformatted block without a language identifier.
+
+These
+words
+should
+appear
+on
+separate
+lines.
+```
+
+```html
+<!-- HTML -->
+<p class="m-0">This is a paragraph.</p>
+```
+
+```css
+/** CSS */
+html {
+  font-size: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+```
+
+```js
+// JavaScript
+for (let i = 1; i <= 100; i++) {
+  console.log(`Hello, world #${i}!`)
+}
+```
+
+```jsx
+/* JSX is cool, too */
+<SomeAwesomeComponent>
+  {({ renderProp }) => JSON.stringify(renderProp)}
+</SomeAwesomeComponent>
+```
+
+### Admonitions
+
+Admonitions are [Markdown directives], which are written like so:
+
+```markdown
+:::{type}
+Your content here, including **Markdown**, [links](https://example.com), etc.
+:::
+```
+
+...where `{type}` is one of `note`, `tip`, `info`, `caution`, or `danger` (`warning` also works).
+See [the Docusaurus docs](https://docusaurus.io/docs/markdown-features/admonitions) for more info
+about the built-in component.
+
+#### Admonition types
+
+:::note
+This is a `note` block with [a link in it](/).
+:::
+
+:::tip
+This is a `tip` directive with [a link in it](/).
+:::
+
+:::info
+This is an `info` directive with [a link in it](/).
+:::
+
+:::caution
+This is a `caution` with [a link in it](/).
+:::
+
+:::warning
+This is a `warning` block with [a link in it](/).
+:::
+
+:::danger
+This is a `danger` block with [a link in it](/).
+:::
+
+[code blocks]: https://docusaurus.io/docs/next/markdown-features/code-blocks
+[code playgrounds]: #code-playgrounds
+[docusaurus]: https://docusaurus.io/
+[docusaurus styling]: https://docusaurus.io/docs/styling-layout
+[markdown directives]: https://talk.commonmark.org/t/generic-directives-plugins-syntax/444
+[mdx]: https://docusaurus.io/docs/next/markdown-features/react
+[mdx scope]: https://docusaurus.io/docs/next/markdown-features/react#mdx-component-scope

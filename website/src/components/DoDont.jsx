@@ -9,6 +9,8 @@ import SFGovIcon from './SFGovIcon'
  * explanatory text for each:
  *
  * ```js
+ * import DoDont, { Do, Dont } from '@site/src/components/DoDont'
+ * 
  * <DoDont>
  *  <Do reasons={['This is good', 'Another reason']}>
  *    Your good example here

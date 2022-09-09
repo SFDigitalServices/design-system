@@ -1,3 +1,4 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@babel/eslint-parser',
   plugins: ['sfgov', 'unicorn'],
@@ -25,6 +26,7 @@ module.exports = {
       next: 'function'
     }]
   },
+  reportUnusedDisableDirectives: true,
   overrides: [
     {
       files: ['src/**/*.js'],
