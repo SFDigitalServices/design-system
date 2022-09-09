@@ -1,3 +1,4 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@babel/eslint-parser',
   plugins: [
@@ -19,6 +20,7 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'function' }
     ]
   },
+  reportUnusedDisableDirectives: true,
   overrides: [
     {
       files: ['src/**/*.js'],
