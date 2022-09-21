@@ -49,6 +49,7 @@ module.exports = {
     'margin',
     'maxWidth',
     'opacity',
+    'order',
     'overflow',
     'padding',
     'pointerEvents',
@@ -84,7 +85,8 @@ module.exports = {
       'hover',
       'hocus',
       'group-hocus',
-      'details'
+      'details',
+      'odd'
     ],
     // TODO [^3]: nix 'focus' + 'hover'
     borderColor: ['focus', 'hover', 'hocus', 'group-hocus', 'details'],
