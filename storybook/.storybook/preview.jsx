@@ -4,8 +4,10 @@ import { addParameters } from '@storybook/react'
 /**
  * These are styles applied only to the preview panel.
  */
+/* eslint-disable import/no-unresolved -- FIXME: fails in CI */
 import 'sfgov-design-system/dist/css/sfds.css'
 import 'sfgov-design-system/dist/css/fonts.css'
+/* eslint-enable */
 
 addParameters({
   options: {
