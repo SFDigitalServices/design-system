@@ -9,6 +9,9 @@
     "start": "start-storybook --port=$npm_package_config_port",
     "build": "build-storybook -o public"
   },
+  "dependencies": {
+    "sfgov-design-system": "2.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@storybook/addon-actions": "^6.5.10",
