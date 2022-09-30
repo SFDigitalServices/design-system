@@ -7,6 +7,7 @@
   "scripts": {
     "lint": "eslint --ext=.js,.jsx . .storybook",
     "start": "start-storybook --port=$npm_package_config_port",
+    "prebuild": "rm -rf public && mkdir public",
     "build": "build-storybook -o public"
   },
   "dependencies": {
