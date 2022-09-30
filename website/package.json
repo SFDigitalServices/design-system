@@ -6,6 +6,7 @@
   },
   "scripts": {
     "build": "wireit",
+    "postbuild": "curl -O https://sf.gov/favicon.ico --output-dir public",
     "clear": "docusaurus clear",
     "link-storybook": "ln -sf static/storybook ../storybook/public",
     "lint": "wireit",
