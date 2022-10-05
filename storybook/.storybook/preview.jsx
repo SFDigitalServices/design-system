@@ -16,6 +16,9 @@ addParameters({
       method: 'alphabetical'
     }
   },
+  design: {
+    name: 'Figma'
+  },
   docs: {
     components: {
       wrapper: props => <div className='text-body responsive-container' {...props} />,
