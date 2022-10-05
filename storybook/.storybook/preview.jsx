@@ -8,6 +8,7 @@ import 'sfgov-design-system'
 /* eslint-disable import/no-unresolved -- FIXME: fails in CI */
 import 'sfgov-design-system/dist/css/sfds.css'
 import 'sfgov-design-system/dist/css/fonts.css'
+import { withClasses } from '../src/utils'
 /* eslint-enable */
 
 addParameters({
@@ -21,14 +22,14 @@ addParameters({
   },
   docs: {
     components: {
-      wrapper: props => <div className='text-body responsive-container' {...props} />,
-      h1: props => <h1 className='title-lg mt-0 mb-24' {...props} />,
-      h2: props => <h2 className='title-md mt-0 mb-24' {...props} />,
-      p: props => <p className='my-24' {...props} />,
-      ol: props => <ol className='my-24 pl-24 space-y-8 text-inherit' {...props} />,
-      ul: props => <ul className='my-24 pl-24 space-y-8 text-inherit' {...props} />,
-      li: props => <li className='m-0 p-0 text-inherit' {...props} />,
-      a: props => <a {...props} />
+      wrapper: withClasses('div', 'text-body responsive-container'),
+      h1: withClasses('h1', 'title-lg mt-0 mb-24'),
+      h2: withClasses('h2', 'title-md mt-0 mb-24'),
+      p: withClasses('p', 'my-24'),
+      ol: withClasses('ol', 'my-24 pl-24 space-y-8 text-inherit'),
+      ul: withClasses('ul', 'my-24 pl-24 space-y-8 text-inherit'),
+      li: withClasses('li', 'm-0 p-0 text-inherit'),
+      a: withClasses('a', '')
     }
   }
 })
