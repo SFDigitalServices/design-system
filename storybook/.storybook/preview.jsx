@@ -1,5 +1,6 @@
 import React from 'react'
 import { addParameters } from '@storybook/react'
+import 'sfgov-design-system'
 
 /**
  * These are styles applied only to the preview panel.
@@ -12,14 +13,7 @@ import 'sfgov-design-system/dist/css/fonts.css'
 addParameters({
   options: {
     storySort: {
-      method: 'alphabetical',
-      order: [
-        '*',
-        'Components',
-        'Experiments',
-        'Internal',
-        'Docusaurus'
-      ]
+      method: 'alphabetical'
     }
   },
   docs: {
