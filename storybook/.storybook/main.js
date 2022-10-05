@@ -3,16 +3,21 @@ const { NODE_ENV } = process.env
 /** @type {import('@storybook/core-common').StorybookConfig} */
 module.exports = {
   stories: [
-    '../@(docs|stories)/**/*.stories.@(js|jsx|mdx|ts|tsx)'
+    '../docs/**/*.stories.md{,x}',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)'
   ],
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-webpack5'
   },
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false
+      }
+    },
+    'storybook-addon-designs'
   ],
 
   env: config => ({
