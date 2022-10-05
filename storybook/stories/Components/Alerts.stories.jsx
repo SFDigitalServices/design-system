@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React, { useRef } from 'react'
 import Icon from '../../src/Icon'
-import { mergeProps, variantArgType, withClasses, withVariants } from '../../src/utils'
+import { withClasses, withVariants } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
