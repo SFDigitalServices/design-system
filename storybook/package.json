@@ -11,6 +11,7 @@
     "build": "build-storybook -o public"
   },
   "dependencies": {
+    "clsx": "^1.1.0",
     "sfgov-design-system": "2.5.0"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
-    "babel-loader": "^8.2.5"
+    "babel-loader": "^8.2.5",
+    "storybook-addon-designs": "^6.3.1"
   }
 }
