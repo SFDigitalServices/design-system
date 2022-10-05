@@ -1,13 +1,18 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@babel/eslint-parser',
-  plugins: [
-    'sfgov',
-    'unicorn'
-  ],
-  extends: [
-    'plugin:sfgov/recommended'
-  ],
+  plugins: ['sfgov', 'unicorn'],
+  extends: ['plugin:sfgov/recommended', 'plugin:storybook/recommended'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    },
+    react: {
+      version: 'detect'
+    }
+  },
   rules: {
     'unicorn/expiring-todo-comments': ['error', {
       allowWarningComments: true
@@ -15,10 +20,11 @@ module.exports = {
     'no-trailing-spaces': ['warn', {
       ignoreComments: true
     }],
-    'padding-line-between-statements': [
-      'warn',
-      { blankLine: 'always', prev: '*', next: 'function' }
-    ]
+    'padding-line-between-statements': ['warn', {
+      blankLine: 'always',
+      prev: '*',
+      next: 'function'
+    }]
   },
   reportUnusedDisableDirectives: true,
   overrides: [
@@ -45,7 +51,7 @@ module.exports = {
       }
     },
     {
-      files: '**/scripts/*.js',
+      files: 'scripts/*.js',
       rules: {
         'node/shebang': 0
       }

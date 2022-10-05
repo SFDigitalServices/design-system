@@ -4,7 +4,7 @@ import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink'
 
 export default function DefaultNavbarItem ({
   mobile = false,
-  // eslint-disable-next-line no-unused-vars
+
   position, // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }) {
@@ -50,7 +50,7 @@ function DefaultNavbarItemDesktop ({
 
 function DefaultNavbarItemMobile ({
   className,
-  // eslint-disable-next-line no-unused-vars
+
   isDropdownItem,
   ...props
 }) {

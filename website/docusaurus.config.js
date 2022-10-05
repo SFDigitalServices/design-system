@@ -5,8 +5,25 @@ const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const { spawnSync } = require('node:child_process')
 const { owner, repo, repoUrl, defaultBranch } = require('./constants')
-const currentBranch = getCurrentBranch() || defaultBranch
+const { config: storybookConfig } = require('../storybook/package.json')
+
+/**
+ * It's important that we throw on broken links in both development and
+ * CI, but _not_ during deployment. So we set the reporting level to
+ * 'warn' if and only if $NODE_ENV is 'production' _and_ $CI is falsy.
+ */
+const {
+  CI,
+  HEROKU_BRANCH,
+  NODE_ENV,
+  ON_BROKEN_LINKS = (NODE_ENV === 'production' && !CI) ? 'warn' : 'throw'
+} = process.env
+
+const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
+const storybookUrl = NODE_ENV === 'production'
+  ? 'pathname:///storybook/'
+  : `http://localhost:${storybookConfig.port}/`
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
@@ -14,8 +31,10 @@ module.exports = {
   tagline: 'The design system for sf.gov',
   url: 'https://design-system.sf.gov/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  trailingSlash: true,
+  onBrokenLinks: ON_BROKEN_LINKS,
+  onBrokenMarkdownLinks: ON_BROKEN_LINKS,
+  onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: owner, // Usually your GitHub org/user name.
   projectName: repo, // Usually your repo name.
@@ -44,7 +63,8 @@ module.exports = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        debug: true,
+        // don't build the debug views in CI
+        debug: !CI,
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
@@ -96,7 +116,12 @@ module.exports = {
             label: 'Libraries'
           },
           {
-            href: `${repoUrl}/tree/main/`,
+            href: storybookUrl,
+            label: 'Storybook',
+            position: 'right'
+          },
+          {
+            href: `${repoUrl}/tree/${currentBranch}/`,
             label: ' ',
             position: 'right',
             className: 'header-github-link',
