@@ -9,11 +9,6 @@ import 'sfgov-design-system/dist/css/sfds.css'
 import 'sfgov-design-system/dist/css/fonts.css'
 
 addParameters({
-  options: {
-    storySort: {
-      method: 'alphabetical'
-    }
-  },
   design: {
     name: 'Figma'
   },
@@ -27,6 +22,11 @@ addParameters({
       ul: withClasses('ul', 'my-24 pl-24 space-y-8 text-inherit'),
       li: withClasses('li', 'm-0 p-0 text-inherit'),
       a: withClasses('a', '')
+    }
+  },
+  options: {
+    storySort: {
+      method: 'alphabetical'
     }
   }
 })
