@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { icons } from 'sfgov-design-system/src/icons/data.json'
 import clsx from 'clsx'
 
-export const symbols = Object.keys(icons)
+export const symbols = Object.keys(icons).sort()
 
 export default function Icon ({ size, width = size, height = size, className, class: svgClassName, ...rest }) {
   return (
