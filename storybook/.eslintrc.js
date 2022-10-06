@@ -10,6 +10,7 @@ module.exports = {
     'plugin:react/recommended'
   ],
   rules: {
-    'react/no-unescaped-entities': ['warn']
+    'react/no-unescaped-entities': ['warn'],
+    'react/prop-types': ['off']
   }
 }
