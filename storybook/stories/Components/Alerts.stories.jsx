@@ -71,11 +71,11 @@ export const BannerAlert = withVariants(function ({ className, ...props }, conte
 }, {
   info: {
     label: 'Information',
-    className: 'bg-blue-2 text-slate'
+    className: 'bg-blue-2 text-slate-4'
   },
   warning: {
     label: 'Warning',
-    className: 'bg-yellow-3 text-slate'
+    className: 'bg-yellow-3 text-slate-4'
   },
   critical: {
     label: 'Critical',
@@ -100,11 +100,12 @@ BannerAlert.parameters = {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const FormAlert = (() => {
-  const Container = withClasses('div', 'flex flex-col content-start md:flex-row text-slate')
+  const Container = withClasses('div', 'flex flex-col content-start md:flex-row text-slate-4')
   const IconContainer = withClasses('div', 'flex px-28 py-12 rounded-t md:rounded-l md:rounded-t-0 md:py-28 md:px-8')
   const AlertMessage = withClasses('div', 'px-28 py-12 rounded-b md:rounded-r md:rounded-l-0 md:p-28')
-  
+
   function FormAlert ({ icon, alert, message, className, ...props }) {
     const [children, rest] = useBannerContent(props)
     return (
@@ -124,13 +125,13 @@ export const FormAlert = (() => {
       $label: 'Information',
       icon: 'info',
       alert: { className: 'bg-blue-2' },
-      message: { className: 'bg-blue-1'}
+      message: { className: 'bg-blue-1' }
     },
     success: {
       $label: 'Success',
       icon: 'check',
       alert: { className: 'bg-green-3 text-white' },
-      message: { className: 'bg-green-1'}
+      message: { className: 'bg-green-1' }
     },
     failure: {
       $label: 'Failure',
@@ -164,13 +165,13 @@ export const Callout = withVariants(function ({ className, ...props }) {
       </div>
     </div>
   )
-  }, {
+}, {
   default: {
-    className: 'bg-grey-1 text-slate'
+    className: 'bg-grey-1 text-slate-4'
   },
   alt: {
     $label: 'Alt',
-    className: 'bg-blue-1 text-slate'
+    className: 'bg-blue-1 text-slate-4'
   }
 })
 
