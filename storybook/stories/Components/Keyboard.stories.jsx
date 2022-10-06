@@ -19,6 +19,8 @@ export const Kbd = withClasses(({ text, children = text, ...rest }) => (
   <kbd {...rest}>{children}</kbd>
 ), 'bg-blue-1 text-slate-4')
 
+Kbd.storyName = '<kbd>'
+
 Kbd.args = {
   text: 'Enter'
 }
