@@ -1,15 +1,12 @@
-import React from 'react'
 import { addParameters } from '@storybook/react'
-import 'sfgov-design-system'
+import { withClasses } from '../src/utils'
 
 /**
  * These are styles applied only to the preview panel.
  */
-/* eslint-disable import/no-unresolved -- FIXME: fails in CI */
+import 'sfgov-design-system'
 import 'sfgov-design-system/dist/css/sfds.css'
 import 'sfgov-design-system/dist/css/fonts.css'
-import { withClasses } from '../src/utils'
-/* eslint-enable */
 
 addParameters({
   options: {

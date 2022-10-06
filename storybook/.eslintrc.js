@@ -3,7 +3,8 @@ module.exports = {
   parser: '@babel/eslint-parser',
   plugins: ['react'],
   ignorePatterns: [
-    'public/**'
+    'public/**',
+    '!.storybook/**'
   ],
   extends: [
     'plugin:sfgov/recommended',
@@ -11,6 +12,7 @@ module.exports = {
   ],
   rules: {
     'react/no-unescaped-entities': ['warn'],
-    'react/prop-types': ['off']
+    'react/prop-types': ['off'],
+    'import/no-unresolved': ['warn']
   }
 }
