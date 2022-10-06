@@ -1,3 +1,4 @@
+import React from 'react'
 import IconComponent, { symbols } from '../../src/Icon'
 
 /** @type {import('@storybook/addons').StoryContext} */
@@ -31,10 +32,12 @@ export default {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const Icon = (args, context) => <IconComponent {...context} {...args} />
 
+/** @type {import('@storybook/addons').DecoratorFunction} */
 function withMultipleSizes (Story, { parameters: { sizes } }) {
   return <div className='flex items-start gap-20'>
-    {sizes.map(size => <Story size={size} />)}
+    {sizes.map(size => <Story key={size} size={size} />)}
   </div>
 }

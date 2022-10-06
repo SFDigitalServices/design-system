@@ -39,12 +39,15 @@ export default {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const Button = withClasses(({ text, element: Component, ...rest }) => <Component {...rest}>{text}</Component>, 'btn')
 
 Button.storyName = 'Primary'
 
+/** @type {import('@storybook/react').Story} */
 export const Secondary = withClasses(Button, 'btn-secondary')
 
+/** @type {import('@storybook/react').Story} */
 export const Inverse = withClasses(Button, 'btn-inverse')
 
 Inverse.parameters = {
@@ -54,7 +57,7 @@ Inverse.parameters = {
 }
 
 /** @type {import('@storybook/addons').DecoratorFunction} */
-function withButtonTable (Story, { args, parameters: { container } }) {
+function withButtonTable (Story, { parameters: { container } }) {
   const rows = [
     {
       label: 'Default'

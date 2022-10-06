@@ -1,6 +1,3 @@
-import React from 'react'
-import { withClasses } from '../../src/utils'
-
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
@@ -11,6 +8,7 @@ export default {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const PageTitle = () => 'TODO: Page title'
 
 PageTitle.parameters = {
@@ -19,6 +17,7 @@ PageTitle.parameters = {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const CampaignBlock = () => 'TODO: Campaign block'
 
 CampaignBlock.parameters = {
@@ -27,6 +26,7 @@ CampaignBlock.parameters = {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const PrimarySpotlight = () => 'TODO: Primary spotlight'
 
 PrimarySpotlight.parameters = {
@@ -35,6 +35,7 @@ PrimarySpotlight.parameters = {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const SecondarySpotlight = () => 'TODO: Secondary spotlight'
 
 SecondarySpotlight.parameters = {

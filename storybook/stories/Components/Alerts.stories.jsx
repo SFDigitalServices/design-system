@@ -1,5 +1,4 @@
-import clsx from 'clsx'
-import React, { useRef } from 'react'
+import React from 'react'
 import Icon from '../../src/Icon'
 import { withClasses, withVariants } from '../../src/utils'
 
@@ -23,6 +22,7 @@ export default {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export function Banner ({ className, ...props }) {
   const [children, rest] = useBannerContent(props)
   return (
@@ -57,6 +57,7 @@ Banner.parameters = {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const BannerAlert = withVariants(function ({ className, ...props }, context) {
   const [children, rest] = useBannerContent(props)
   return (
@@ -180,6 +181,26 @@ Callout.parameters = {
   }
 }
 
+/**
+ * Destructures the `text`, `href`, `linkText`, and `children` props and returns
+ * a two-element array containging:
+ *
+ * - either `children` or the text and a hyperlink
+ * - the remaining props after destructuring
+ *
+ * This function will work with either `children` _or_ `text` with optional
+ * `link` and `linkText` props:
+ * 
+ * ```jsx
+ * function Banner (props) {
+ *   const [children, rest] = useBannerProps(props)
+ *   return <header {...rest}>{children}</header>
+ * }
+ * ```
+ *
+ * @param {*} param0 
+ * @returns 
+ */
 function useBannerContent ({ text, href, linkText, children, ...rest }) {
   return [
     children || <>{text}{' '}<a href={href} className='text-inherit'>{linkText}</a></>,
