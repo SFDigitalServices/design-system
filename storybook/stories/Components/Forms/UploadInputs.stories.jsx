@@ -1,6 +1,6 @@
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Forms / Upload fields',
+  title: 'Components / Forms / Upload Inputs',
   parameters: {
     design: {
       type: 'figma',
@@ -21,9 +21,9 @@ export const UploadedFileList = () => 'TODO'
 /** @type {import('@storybook/react').Story} */
 export const SingleFileUploadInput = () => 'TODO'
 
-SingleFileUploadInput.storyName = 'Upload input (single file)'
+SingleFileUploadInput.storyName = 'Upload (single file)'
 
 /** @type {import('@storybook/react').Story} */
 export const MultiFileUploadInput = () => 'TODO'
 
-MultiFileUploadInput.storyName = 'Upload input (multi-file)'
+MultiFileUploadInput.storyName = 'Upload (multi-file)'
