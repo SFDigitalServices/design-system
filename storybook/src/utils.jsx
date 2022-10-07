@@ -59,6 +59,15 @@ export function withPropsTransform (Component, transform) {
 }
 
 /**
+ * @param {string | React.Component}
+ * @param {React.PropsWithChildren?}
+ * @returns {React.FC}
+ */
+export function polymorphic (defaultComponent, defaultProps) {
+  return ({ as: Component = defaultComponent, ...rest }) => <Component {...mergeProps(defaultProps, rest)} />
+}
+
+/**
  * @param {React.FC<React.PropsWithChildren & { content: React.ReactElement }>} Component 
  * @returns {React.FC<Omit<React.PropsWithChildren, 'content'>>}
  */
