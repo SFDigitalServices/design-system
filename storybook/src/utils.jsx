@@ -53,8 +53,8 @@ export const withClasses = (Component, ...classes) => {
  * @returns {React.FC}
  */
 export function withPropsTransform (Component, transform) {
-  return function ComponentWithPropsTransform (props) {
-    return <Component {...transform(props)} />
+  return function ComponentWithPropsTransform (props, context) {
+    return <Component {...transform(props, context)} />
   }
 }
 
