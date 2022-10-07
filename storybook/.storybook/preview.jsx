@@ -10,7 +10,8 @@ import 'sfgov-design-system/dist/css/fonts.css'
 
 addParameters({
   design: {
-    name: 'Figma'
+    name: 'Figma',
+    type: 'figma'
   },
   docs: {
     components: {
