@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import { mergeProps, withClasses } from '../../src/utils'
+import { withClasses } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -39,18 +39,18 @@ export default {
   }
 }
 
-/** @type {import('@storybook/react').Story} */
-export const Button = withClasses(({ text, element: Component, ...rest }) => <Component {...rest}>{text}</Component>, 'btn')
-
-Button.storyName = 'Primary'
+const Button = withClasses(({ text, element: Component, ...rest }) => <Component {...rest}>{text}</Component>, 'btn')
 
 /** @type {import('@storybook/react').Story} */
-export const Secondary = withClasses(Button, 'btn-secondary')
+export const PrimaryButton = Button.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const Inverse = withClasses(Button, 'btn-inverse')
+export const SecondaryButton = withClasses(Button, 'btn-secondary')
 
-Inverse.parameters = {
+/** @type {import('@storybook/react').Story} */
+export const InverseButton = withClasses(Button, 'btn-inverse')
+
+InverseButton.parameters = {
   container: {
     className: 'text-white bg-blue-dark'
   }
@@ -60,24 +60,20 @@ Inverse.parameters = {
 function withButtonTable (Story, { parameters: { container } }) {
   const rows = [
     {
-      label: 'Default'
+      $label: 'Default'
     },
     {
-      label: 'Full width',
-      storyProps: {
-        className: 'btn-block'
-      }
+      $label: 'Full width',
+      className: 'btn-block'
     }
   ]
   const cols = [
     {
-      label: 'Rest'
+      $label: 'Rest'
     },
     {
-      label: 'Hover/Focus',
-      storyProps: {
-        className: 'hover focus'
-      }
+      $label: 'Hover/Focus',
+      className: 'hover focus'
     }
   ]
   return (
@@ -85,16 +81,16 @@ function withButtonTable (Story, { parameters: { container } }) {
       <thead className='bg-white text-grey-dark'>
         <tr>
           <td style={{ width: '10em' }}></td>
-          {cols.map(({ label }) => <th key={label} className='text-left p-8'>{label}</th>)}
+          {cols.map(({ $label }) => <th key={$label} className='text-left p-8'>{$label}</th>)}
         </tr>
       </thead>
       <tbody>
-        {rows.map(({ label, ...row }) => (
-          <tr key={label}>
-            <th scope='row' className='text-right p-8'>{label}</th>
-            {cols.map(col => (
-              <td key={col.label} {...mergeProps({ className: 'text-left p-8' }, row.cellProps, col.cellProps)}>
-                <Story {...mergeProps(row.storyProps, col.storyProps)} wtf={true} />
+        {rows.map(({ $label, ...rowProps }) => (
+          <tr key={$label}>
+            <th scope='row' className='text-right p-8'>{$label}</th>
+            {cols.map(({ $label, ...colProps }) => (
+              <td key={$label} className='text-left p-8'>
+                <Story className={clsx(rowProps.className, colProps.className)} />
               </td>
             ))}
           </tr>
