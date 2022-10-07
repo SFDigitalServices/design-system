@@ -204,7 +204,7 @@ Callout.parameters = {
  */
 function useBannerContent ({ text, href, linkText, children, ...rest }) {
   return [
-    children || <>{text}{' '}<a href={href} className='text-inherit'>{linkText}</a></>,
+    children || <div>{text}{' '}<a href={href} className='text-inherit'>{linkText}</a></div>,
     rest
   ]
 }
