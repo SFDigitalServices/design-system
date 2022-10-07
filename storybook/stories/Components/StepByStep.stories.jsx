@@ -139,7 +139,7 @@ StepWordLabel.argTypes = {
 
 /** @type {import('@storybook/react').Story} */
 export const OptionalStepLabel = withPropsTransform(
-    polymorphic('div', {
+  polymorphic('div', {
     className: 'inline-flex text-small bg-yellow-2 px-12 py-4 text-slate-4'
   }),
   ({ text, children, ...rest }) => ({ children: text || children, ...rest })
