@@ -1,5 +1,3 @@
-import { polymorphic } from '../../src/utils'
-
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
