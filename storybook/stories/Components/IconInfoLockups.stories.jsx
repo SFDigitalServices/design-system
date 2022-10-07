@@ -2,7 +2,7 @@ import React from 'react'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Icon and Information Lockup',
+  title: 'Components / Icon + Information Lockups',
   parameters: {
     design: {
       type: 'figma',
