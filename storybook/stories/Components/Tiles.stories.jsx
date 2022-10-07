@@ -140,7 +140,7 @@ function BigDateDisplay ({ month, day, className, ...rest }) {
       style={{ minHeight: TILE_SIZE_SMALL }}
       {...rest}
     >
-      <span className='text-title-xl font-regular' style={{ opacity: '65%'}}>{month}</span>
+      <span className='text-title-xl font-regular' style={{ opacity: '65%' }}>{month}</span>
       {/* FIXME: need a text style for this? */}
       <span style={{ fontSize: '64px', lineHeight: '1', opacity: '65%' }}>{day}</span>
     </div>

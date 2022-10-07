@@ -1,3 +1,4 @@
+import React from 'react'
 import IconComponent, { symbols } from '../../src/Icon'
 
 /** @type {import('@storybook/addons').StoryContext} */

@@ -64,7 +64,9 @@ export function withPropsTransform (Component, transform) {
  * @returns {React.FC}
  */
 export function polymorphic (defaultComponent, defaultProps) {
-  return ({ as: Component = defaultComponent, ...rest }) => <Component {...mergeProps(defaultProps, rest)} />
+  return function Polymorphic ({ as: Component = defaultComponent, ...rest }) {
+    return <Component {...mergeProps(defaultProps, rest)} />
+  }
 }
 
 /**
