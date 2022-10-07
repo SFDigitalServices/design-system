@@ -2,6 +2,7 @@
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Components / Locator Maps',
   parameters: {
     design: {
       type: 'figma',
@@ -11,7 +12,9 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const MapView = () => 'TODO'
+export const LocatorMap = () => 'TODO'
 
 /** @type {import('@storybook/react').Story} */
 export const AddressWithLocatorMap = () => 'TODO'
+
+AddressWithLocatorMap.storyName = 'Address + Locator Map'
