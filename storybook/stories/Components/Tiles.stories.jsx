@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import Icon from '../../src/Icon'
 import { polymorphic, withClasses } from '../../src/utils'
 
+/** @type {import('@storybook/addons').StoryContext} */
 export default {
   args: {
     title: 'Hello, world!',
@@ -146,6 +147,7 @@ function BigDateDisplay ({ month, day, className, ...rest }) {
   )
 }
 
+/** @type {import('@storybook/react').Story} */
 export const NewsTile = withClasses(({
   as: Component = 'div',
   title,
@@ -201,6 +203,7 @@ const TextTile = ({
   </TileBody>
 )
 
+/** @type {import('@storybook/react').Story} */
 export const FeatureTile = withClasses(({ image, imagePosition, ...rest }) => (
   image
     ? imagePosition === 'left'
@@ -212,6 +215,7 @@ export const FeatureTile = withClasses(({ image, imagePosition, ...rest }) => (
 FeatureTile.args = {
 }
 
+/** @type {import('@storybook/react').Story} */
 export const ContentTile = withClasses(({
   title,
   href,
@@ -230,6 +234,7 @@ export const ContentTile = withClasses(({
   </TileBody>
 ), 'rounded border-solid border-grey-2 border-3 bg-white')
 
+/** @type {import('@storybook/react').Story} */
 export const QuickLink = withClasses(({
   title,
   description,
@@ -258,6 +263,7 @@ QuickLink.decorators = [
   Story => <div style={{ maxWidth: '350px' }}>{Story()}</div>
 ]
 
+/** @type {import('@storybook/react').Story} */
 export const TopicTile = withClasses(({
   as: Component = 'a',
   title,
