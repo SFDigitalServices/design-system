@@ -13,6 +13,11 @@ addParameters({
     name: 'Figma',
     type: 'figma'
   },
+  previewTabs: {
+    'storybook/docs/panel': {
+      hidden: true
+    }
+  },
   docs: {
     components: {
       wrapper: withClasses('div', 'text-body responsive-container'),
