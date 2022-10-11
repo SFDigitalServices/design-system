@@ -1,0 +1,39 @@
+---
+title: All components
+components:
+  - name: Buttons
+    href: /components/buttons/
+    story:
+      path: /story/components-buttons--primary-button
+  - name: Keyboard
+    href: /components/kbd/
+    story:
+      name: '<kbd>'
+      path: /story/components-keyboard--kbd
+  - name: Icons
+    href: ../icons/
+    story:
+      path: /story/components-icons--icon
+  - name: Details
+    href: /components/details/
+    story:
+      name: Accordion
+      path: /story/components-controls--accordion
+---
+
+<table>
+  <thead>
+    <tr>
+      <th>Documentation</th>
+      <th>Storybook</th>
+    </tr>
+  </thead>
+  <tbody>
+    {frontMatter.components.map(({ name, href, story }) => (
+      <tr key={name}>
+        <td><a href={href}>{name}</a></td>
+        <td><StorybookLink name={name} {...story} /></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
