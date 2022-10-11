@@ -11,6 +11,7 @@
     "build": "build-storybook -o public"
   },
   "dependencies": {
+    "@storybook/addon-storysource": "^6.5.12",
     "clsx": "^1.1.0",
     "sfgov-design-system": "2.5.0"
   },
