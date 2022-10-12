@@ -6,12 +6,12 @@ module.exports = {
   stories: [
     '../docs/**/*.stories.md{,x}',
     {
-      directory: '../stories/components',
+      directory: '../stories/Components',
       titlePrefix: 'Components/',
       files: storiesGlob
     },
     {
-      directory: '../stories/experiments',
+      directory: '../stories/Experiments',
       titlePrefix: 'Experiments/',
       files: storiesGlob
     }
