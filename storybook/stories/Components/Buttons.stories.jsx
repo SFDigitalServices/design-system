@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import { withClasses } from '../../src/utils'
+import { polymorphic, withClasses, withPropsTransform } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -9,10 +9,11 @@ export default {
   ],
   args: {
     text: 'Do something',
-    element: 'button'
+    as: 'button',
+    href: 'javascript:void(0)'
   },
   argTypes: {
-    element: {
+    as: {
       name: 'Element',
       options: [
         'button',
@@ -29,6 +30,15 @@ export default {
     text: {
       name: 'Text',
       type: 'string'
+    },
+    href: {
+      name: 'URL (href)',
+      type: 'string',
+      // only show the href control if (as === 'a')
+      if: {
+        arg: 'as',
+        eq: 'a'
+      }
     }
   },
   parameters: {
@@ -40,16 +50,20 @@ export default {
   }
 }
 
-const Button = withClasses(({ text, element: Component, ...rest }) => <Component {...rest}>{text}</Component>, 'btn')
+/** @type {import('@storybook/react').Story} */
+export const PrimaryButton = withClasses(
+  withPropsTransform(
+    polymorphic('button'),
+    ({ text, children = text, ...rest }) => ({ children, ...rest })
+  ),
+  'btn'
+)
 
 /** @type {import('@storybook/react').Story} */
-export const PrimaryButton = Button.bind({})
+export const SecondaryButton = withClasses(PrimaryButton, 'btn-secondary')
 
 /** @type {import('@storybook/react').Story} */
-export const SecondaryButton = withClasses(Button, 'btn-secondary')
-
-/** @type {import('@storybook/react').Story} */
-export const InverseButton = withClasses(Button, 'btn-inverse')
+export const InverseButton = withClasses(PrimaryButton, 'btn-inverse')
 
 InverseButton.parameters = {
   container: {
