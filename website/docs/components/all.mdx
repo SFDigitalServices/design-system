@@ -24,15 +24,17 @@ components:
 <table>
   <thead>
     <tr>
-      <th>Documentation</th>
+      <th>Docs</th>
       <th>Storybook</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
-    {frontMatter.components.map(({ name, href, story }) => (
+    {frontMatter.components.map(({ name, href, story, status }) => (
       <tr key={name}>
         <td><a href={href}>{name}</a></td>
         <td><StorybookLink name={name} {...story} /></td>
+        <td>{status || '?'}</td>
       </tr>
     ))}
   </tbody>
