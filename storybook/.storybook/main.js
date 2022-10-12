@@ -21,6 +21,7 @@ module.exports = {
     builder: '@storybook/builder-webpack5'
   },
   addons: [
+    'storybook-source-link',
     '@storybook/addon-storysource',
     {
       name: '@storybook/addon-essentials',

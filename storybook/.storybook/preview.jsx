@@ -1,5 +1,5 @@
 import { addParameters } from '@storybook/react'
-import { withClasses } from '../src/utils'
+import { withClasses, getDocsBaseUrl } from '../src/utils'
 
 /**
  * These are styles applied only to the preview panel.
@@ -13,6 +13,7 @@ addParameters({
     name: 'Figma',
     type: 'figma'
   },
+  sourceLinkPrefix: getDocsBaseUrl(),
   previewTabs: {
     'storybook/docs/panel': {
       hidden: true

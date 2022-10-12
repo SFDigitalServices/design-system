@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import websitePackageJson from '../../website/package.json'
 
 /**
  * Merge the `className` and `style` keys of one or more prop objects.
@@ -131,4 +132,10 @@ export function withVariants (Component, variants, defaultVariant = 'default') {
   }
 
   return VariantComponent
+}
+
+export function getDocsBaseUrl () {
+  return process.env.NODE_ENV === 'production'
+    ? ''
+    : `http://localhost:${websitePackageJson.config.port}`
 }
