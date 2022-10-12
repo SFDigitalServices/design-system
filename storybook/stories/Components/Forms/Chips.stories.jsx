@@ -1,3 +1,5 @@
+import { Stub } from '../../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
@@ -9,10 +11,10 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const EnteredChip = () => 'TODO'
+export const EnteredChip = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const FilterChip = () => 'TODO'
+export const FilterChip = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const SelectChip = () => 'TODO'
+export const SelectChip = Stub.bind({})

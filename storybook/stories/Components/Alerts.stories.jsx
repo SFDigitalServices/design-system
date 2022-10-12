@@ -1,3 +1,4 @@
+import { Stub } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -11,13 +12,13 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const Banner = () => 'TODO'
+export const Banner = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const BannerAlert = () => 'TODO'
+export const BannerAlert = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const FormAlert = () => 'TODO'
+export const FormAlert = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const Callout = () => 'TODO'
+export const Callout = Stub.bind({})

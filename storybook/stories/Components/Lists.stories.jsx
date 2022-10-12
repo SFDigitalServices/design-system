@@ -1,3 +1,5 @@
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
@@ -9,13 +11,13 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const BulletedList = () => 'TODO'
+export const BulletedList = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const UnstyledList = () => 'TODO'
+export const UnstyledList = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const DepartmentList = () => 'TODO'
+export const DepartmentList = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const SocialMediaLinks = () => 'TODO'
+export const SocialMediaLinks = Stub.bind({})

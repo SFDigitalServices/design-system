@@ -1,4 +1,4 @@
-import { polymorphic } from '../../../src/utils'
+import { Stub } from '../../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -12,13 +12,13 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const RadioButton = () => 'TODO'
+export const RadioButton = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const RadioButtonSet = polymorphic('fieldset', { children: 'TODO' })
+export const RadioButtonSet = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const SmallRadioButton = () => 'TODO'
+export const SmallRadioButton = Stub.bind({})
 
 SmallRadioButton.parameters = {
   design: {
@@ -27,7 +27,7 @@ SmallRadioButton.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const SmallRadioButtonSet = () => 'TODO'
+export const SmallRadioButtonSet = Stub.bind({})
 
 SmallRadioButtonSet.parameters = {
   design: {

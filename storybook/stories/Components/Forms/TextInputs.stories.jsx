@@ -1,3 +1,5 @@
+import { Stub } from '../../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   title: 'Forms/Text Inputs',
@@ -10,13 +12,13 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const TextInput = () => 'TODO'
+export const TextInput = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const TextInputButton = () => 'TODO'
+export const TextInputButton = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const MaskedTextInput = () => 'TODO'
+export const MaskedTextInput = Stub.bind({})
 
 MaskedTextInput.parameters = {
   design: {
@@ -25,4 +27,4 @@ MaskedTextInput.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const TextArea = () => 'TODO'
+export const TextArea = Stub.bind({})

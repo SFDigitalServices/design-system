@@ -1,3 +1,5 @@
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   title: 'Step by Step',
@@ -10,4 +12,4 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const StepByStep = () => 'TODO: Step by step'
+export const StepByStep = Stub.bind({})

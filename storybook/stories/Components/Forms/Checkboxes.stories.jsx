@@ -1,4 +1,4 @@
-import { polymorphic } from '../../../src/utils'
+import { Stub } from '../../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -11,13 +11,13 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const Checkbox = () => 'TODO'
+export const Checkbox = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const CheckboxSet = polymorphic('fieldset', { children: 'TODO' })
+export const CheckboxSet = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const SmallCheckbox = () => 'TODO'
+export const SmallCheckbox = Stub.bind({})
 
 SmallCheckbox.parameters = {
   design: {
@@ -26,7 +26,7 @@ SmallCheckbox.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const SmallCheckboxSet = () => 'TODO'
+export const SmallCheckboxSet = Stub.bind({})
 
 SmallCheckboxSet.parameters = {
   design: {

@@ -23,6 +23,10 @@ export function mergeProps (...items) {
   })
 }
 
+export function Stub ({ text = 'TODO' }) {
+  return <div className='bg-action text-white p-40'>{text}</div>
+}
+
 /**
  * Wrap a component in such a way that the received `className` prop merges the
  * provided static classes with the render-time `className` prop so that:

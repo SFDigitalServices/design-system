@@ -1,5 +1,7 @@
 // import React from 'react'
 
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
@@ -11,7 +13,7 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const HeroPerson = () => 'TODO'
+export const HeroPerson = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const Person = () => 'TODO'
+export const Person = Stub.bind({})
