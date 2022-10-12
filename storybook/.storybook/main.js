@@ -1,10 +1,20 @@
 const { NODE_ENV } = process.env
+const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
 
 /** @type {import('@storybook/core-common').StorybookConfig} */
 module.exports = {
   stories: [
     '../docs/**/*.stories.md{,x}',
-    '../stories/**/*.stories.@(js|jsx|ts|tsx)'
+    {
+      directory: '../stories/components',
+      titlePrefix: 'Components/',
+      files: storiesGlob
+    },
+    {
+      directory: '../stories/experiments',
+      titlePrefix: 'Experiments/',
+      files: storiesGlob
+    }
   ],
   framework: '@storybook/react',
   core: {
