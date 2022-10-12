@@ -1,6 +1,6 @@
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Forms / Text Inputs',
+  title: 'Forms/Text Inputs',
   parameters: {
     design: {
       type: 'figma',

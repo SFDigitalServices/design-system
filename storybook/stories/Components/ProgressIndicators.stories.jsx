@@ -1,6 +1,6 @@
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Progress Indicators',
+  title: 'Progress Indicators',
   parameters: {
     design: {
       type: 'figma',

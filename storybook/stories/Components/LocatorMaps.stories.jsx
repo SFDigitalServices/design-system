@@ -2,7 +2,7 @@
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Locator Maps',
+  title: 'Locator Maps',
   parameters: {
     design: {
       type: 'figma',

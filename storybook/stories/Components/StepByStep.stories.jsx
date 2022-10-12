@@ -1,9 +1,6 @@
-import React from 'react'
-import { polymorphic, withClasses, withPropsTransform } from '../../src/utils'
-
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Step by Step',
+  title: 'Step by Step',
   parameters: {
     design: {
       type: 'figma',

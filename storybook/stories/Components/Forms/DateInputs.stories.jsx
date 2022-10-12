@@ -1,6 +1,6 @@
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Forms / Date inputs',
+  title: 'Forms/Date inputs',
   parameters: {
     design: {
       type: 'figma',

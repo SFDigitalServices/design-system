@@ -2,7 +2,7 @@
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Icon + Information Lockups',
+  title: 'Icon + Information Lockups',
   parameters: {
     design: {
       type: 'figma',

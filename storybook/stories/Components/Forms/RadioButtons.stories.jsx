@@ -2,7 +2,7 @@ import { polymorphic } from '../../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Forms / Radio buttons',
+  title: 'Forms/Radio buttons',
   parameters: {
     design: {
       type: 'figma',

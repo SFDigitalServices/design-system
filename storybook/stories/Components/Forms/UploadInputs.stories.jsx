@@ -1,6 +1,6 @@
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Forms / Upload Inputs',
+  title: 'Forms/Upload Inputs',
   parameters: {
     design: {
       type: 'figma',
