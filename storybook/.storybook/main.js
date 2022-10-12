@@ -3,6 +3,7 @@ const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
 
 /** @type {import('@storybook/core-common').StorybookConfig} */
 module.exports = {
+  framework: '@storybook/react',
   stories: [
     '../docs/**/*.stories.md{,x}',
     {
@@ -16,7 +17,6 @@ module.exports = {
       files: storiesGlob
     }
   ],
-  framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-webpack5'
   },
