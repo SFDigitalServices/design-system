@@ -29,7 +29,8 @@ module.exports = {
         actions: false
       }
     },
-    'storybook-addon-designs'
+    'storybook-addon-designs',
+    '../src/addons/dox/preset.js'
   ],
 
   env: config => ({
