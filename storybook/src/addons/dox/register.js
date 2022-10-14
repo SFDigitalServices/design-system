@@ -1,6 +1,6 @@
 import React from 'react'
 import { addons, types } from '@storybook/addons'
-import { AddonPanel, P, Code, Div } from '@storybook/components'
+import { AddonPanel, Code } from '@storybook/components'
 import { components as allComponents } from '../../../../website/components'
 import { getDocsBaseUrl } from '../../utils'
 import minimatch from 'minimatch'
@@ -47,18 +47,20 @@ addons.register(ADDON_ID, (api) => {
       )
     }
   })
-  
+
   /**
    * @param {StoryOrGroup} story
    * @returns {ComponentMeta | undefined}
    */
   function getComponentFromStory (story) {
-    return story ? components.find(comp => {
-      return [story.id, story.componentId]
-        .some(path => path && minimatch(path, comp.story.path))
-    }) : undefined
+    return story
+      ? components.find(comp => {
+        return [story.id, story.componentId]
+          .some(path => path && minimatch(path, comp.story.path))
+      })
+      : undefined
   }
-  
+
   /**
    * 
    * @param {{ component: ComponentMeta, story: StoryOrGroup }} props
@@ -69,18 +71,20 @@ addons.register(ADDON_ID, (api) => {
       See the <a href={href}>{component.name} documentation</a> for more info.
     </>
   }
-  
+
   /**
    * @param {{ story: StoryOrGroup }} props
    * @returns {JSX.Element}
    */
   function NoComponentDocs ({ story }) {
     const restartMessage = process.env.NODE_ENV === 'production' ? '' : ', then restart Storybook if developing locally'
-    return story ? <>
+    return story
+      ? <>
       <b>No docs are linked to this story.</b>
       <br /><br />
-      Set one of the component definitions' <Code>story.path</Code> to <Code>{story.id}</Code> or <Code>{story.componentId}</Code>
+      Set one of the component definitions&rsquo; <Code>story.path</Code> to <Code>{story.id}</Code> or <Code>{story.componentId}</Code>
       in <Code>website/components.js</Code> to link it{restartMessage}.
-    </> : null
+    </>
+      : null
   }
 })
