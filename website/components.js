@@ -3,10 +3,15 @@
  *  id?: string,
  *  name: string,
  *  href: string,
- *  story: {
+ *  status?: 'production' | 'development' | 'experiment' | 'design',
+ *  story?: {
  *    id?: string,
  *    name?: string,
  *    path?: string
+ *  },
+ *  design?: {
+ *    name?: string,
+ *    href?: string
  *  }
  * }} ComponentMeta
  */
