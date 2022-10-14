@@ -2,25 +2,6 @@
 title: All components
 ---
 
-import components from '../../components'
+import { ComponentsList } from '@site/src/components'
 
-<table>
-  <thead>
-    <tr>
-      <th>Docs</th>
-      <th>Storybook</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    {components
-      .map(({ name, href, story, status }) => (
-        <tr key={name}>
-          <td><a href={href}>{name}</a></td>
-          <td><StorybookLink name={name} {...story} /></td>
-          <td>{status || '?'}</td>
-        </tr>
-      ))
-    }
-  </tbody>
-</table>
+<ComponentsList />

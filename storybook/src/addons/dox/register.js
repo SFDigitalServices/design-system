@@ -6,16 +6,7 @@ import { getDocsBaseUrl } from '../../utils'
 import minimatch from 'minimatch'
 
 /**
- * @typedef {{
- *  id?: string,
- *  name: string,
- *  href: string,
- *  story: {
- *    id?: string,
- *    name?: string,
- *    path?: string
- *  }
- * }} ComponentMeta
+ * @typedef {import('../../../../website/components').ComponentMeta} ComponentMeta
  * @typedef {
  *  import('@storybook/api').Story | 
  *  import('@storybook/api').Group

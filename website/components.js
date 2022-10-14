@@ -1,5 +1,5 @@
 /**
- * @type {{
+ * @typedef {{
  *  id?: string,
  *  name: string,
  *  href: string,
@@ -8,9 +8,13 @@
  *    name?: string,
  *    path?: string
  *  }
- * }[]}
+ * }} ComponentMeta
  */
-export const components = [
+
+/**
+ * @type {ComponentMeta[]}
+ */
+const components = [
   {
     name: 'Button',
     href: '/components/buttons/',
@@ -41,11 +45,17 @@ export const components = [
       path: 'components-controls--accordion'
     }
   }
-].sort((a, b) => a.name.localeCompare(b.name))
+]
 
 /**
  * @param {string} path
+ * @returns {ComponentMeta}
  */
-export function getComponentByPath (path) {
+function getComponentByPath (path) {
   return path ? components.find(comp => comp.path === path || path.startsWith(comp.pathPrefix)) : undefined
+}
+
+module.exports = {
+  components,
+  getComponentByPath
 }

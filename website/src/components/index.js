@@ -1,6 +1,7 @@
 export { default as BigLink } from './BigLink'
 export { default as BundleTable } from './BundleTable'
 export { default as ColorSwatch } from './ColorSwatch'
+export { default as ComponentsList } from './ComponentsList'
 export { default as DoDont, Do, Dont } from './DoDont'
 export { default as IconSample } from './IconSample'
 export { default as InlineSwatch } from './InlineSwatch'
