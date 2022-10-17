@@ -20,7 +20,7 @@ module.exports = {
       directory: '../stories/Department Page',
       titlePrefix: 'Department Page/',
       files: storiesGlob
-    },
+    }
   ],
   core: {
     builder: '@storybook/builder-webpack5'
