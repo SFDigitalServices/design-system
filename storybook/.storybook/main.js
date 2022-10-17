@@ -7,7 +7,7 @@ module.exports = {
   stories: [
     '../docs/**/*.stories.md{,x}',
     {
-      directory: '../stories/components',
+      directory: '../stories/Components',
       titlePrefix: 'Components/',
       files: storiesGlob
     },
@@ -15,7 +15,12 @@ module.exports = {
       directory: '../stories/experiments',
       titlePrefix: 'Experiments/',
       files: storiesGlob
-    }
+    },
+    {
+      directory: '../stories/Department Page',
+      titlePrefix: 'Department Page/',
+      files: storiesGlob
+    },
   ],
   core: {
     builder: '@storybook/builder-webpack5'

@@ -1,6 +1,8 @@
-import React from "react"
-import { Header } from "./Header.stories";
-import tw from "tailwind-styled-components"
+import React from 'react'
+import { Header } from './Header.stories'
+import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
+import BigDescription from '../../src/BigDescription'
+import tw from 'tailwind-styled-components'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -24,29 +26,6 @@ export default {
 
 const ResponsiveContainer = tw.div`
   responsive-container
-`
-
-const DepartmentPageTitle = tw.p`
-  text-display-lg
-  text-black
-  lg:text-display-lg-desktop
-  font-light
-`
-
-const BigDescription = tw.p`
-  text-big-desc
-  lg:text-big-desc-desktop
-`
-
-const DepartmentPageSubtitle = tw(BigDescription)`
-  text-black
-`
-
-const AnchorLinks = tw.ul`
-  inline-flex
-  list-none
-  space-x-40
-  underline
 `
 
 const Title = tw.p`
@@ -201,32 +180,27 @@ const ContactSection = tw.div`
   items-start
 `
 
-export const DepartmentPage = () => 
-<div className="text-slate">
+export const DepartmentPage = () =>
+<div className='text-slate'>
   <Header />
 
-  <ResponsiveContainer className="border-0 border-t-3 border-grey-2 border-solid">
-    <DepartmentPageTitle>City Administrator</DepartmentPageTitle>
-    <DepartmentPageSubtitle>With integrity, the Office of the City Administrator serves all San Franciscans and its visitors.</DepartmentPageSubtitle>
-    <div className="flex">
-      <p className="font-medium">In this page:</p>
-      <AnchorLinks>
-        <li><a>News</a></li>
-        <li><a>Resources</a></li>
-        <li><a>Contact</a></li>
-      </AnchorLinks>
-    </div>
+  <ResponsiveContainer className='border-0 border-t-3 border-grey-2 border-solid'>
+    <DepartmentTitleBanner
+      title='City Administrator'
+      subtitle='With integrity, the Office of the City Administrator serves all San Franciscans and its visitors.'
+      links={[{ text: 'News', href: '' }, { text: 'Resources', href: '' }, { text: 'Contact', href: '' }]}
+    />
   </ResponsiveContainer>
 
   <SpotlightSection>
-    <SpotlightContent className="bg-grey-2"></SpotlightContent>
+    <SpotlightContent className='bg-grey-2'></SpotlightContent>
     <SpotlightContent>
       <Title>This is a spotlight title</Title>
       <BigDescription>This is the spotlight description text</BigDescription>
       <Button>A primary button</Button>
     </SpotlightContent>
   </SpotlightSection>
-  
+
   <ResponsiveContainer>
     <CardContainer>
       {[...Array(3)].map((x, i) =>
@@ -238,21 +212,21 @@ export const DepartmentPage = () =>
           <QuickLinkSubtitle>
             Here's the subtitle for the above quick link. Written in sentence form!
           </QuickLinkSubtitle>
-          <sfgov-icon symbol="arrow-right" class="flex justify-end items-end text-action group-hocus:text-white" />
+          <sfgov-icon symbol='arrow-right' class='flex justify-end items-end text-action group-hocus:text-white' />
         </QuickLink>
       )}
     </CardContainer>
-    <SpotlightSectionFloating backgroundColor="bg-purple-3">
-      <SpotlightContentFloating isTitlePanel="true">
+    <SpotlightSectionFloating backgroundColor='bg-purple-3'>
+      <SpotlightContentFloating isTitlePanel='true'>
         <Title>This is a spotlight title</Title>
         <BigDescription>This is the spotlight description text</BigDescription>
         <InverseButton>An inverse button</InverseButton>
       </SpotlightContentFloating>
-      <SpotlightContentFloating className="bg-grey-2 text-center pt-96">An image will go here</SpotlightContentFloating>
+      <SpotlightContentFloating className='bg-grey-2 text-center pt-96'>An image will go here</SpotlightContentFloating>
     </SpotlightSectionFloating>
   </ResponsiveContainer>
 
-  <section className="bg-yellow-1 mt-60 py-80">
+  <section className='bg-yellow-1 mt-60 py-80'>
     <ResponsiveContainer>
       <SectionTitle>News</SectionTitle>
       <CardContainer>
@@ -267,10 +241,10 @@ export const DepartmentPage = () =>
     </ResponsiveContainer>
   </section>
 
-  <section className="bg-blue-1 py-80">
+  <section className='bg-blue-1 py-80'>
     <ResponsiveContainer>
       <SectionTitle>Resources</SectionTitle>
-      <CardContainer className="lg:grid-cols-2">
+      <CardContainer className='lg:grid-cols-2'>
         {[...Array(9)].map((x, i) =>
           <ResourceCard key={i}>
             <ResourceCardTitle>Here is a resource card. This is the title of the resource card.</ResourceCardTitle>
@@ -281,26 +255,26 @@ export const DepartmentPage = () =>
     </ResponsiveContainer>
   </section>
 
-  <section className="bg-blue-dark text-white py-80">
+  <section className='bg-blue-dark text-white py-80'>
     <ResponsiveContainer>
       <Title>About</Title>
-      <div className="grid grid-cols-1 lg:grid-cols-3">
-        <BigDescription className="col-span-2 mb-24 lg:mb-60 lg:mr-60">The Office of the City Administrator comprises 27 departments, divisions, and programs that provide a broad range of services to other City departments and the public. </BigDescription>
-        <div className="col-span-1">
+      <div className='grid grid-cols-1 lg:grid-cols-3'>
+        <BigDescription className='col-span-2 mb-24 lg:mb-60 lg:mr-60'>The Office of the City Administrator comprises 27 departments, divisions, and programs that provide a broad range of services to other City departments and the public. </BigDescription>
+        <div className='col-span-1'>
           <CallToAction>Here is a call to action related to this section.</CallToAction>
           <InverseButton>Here is the call to action button</InverseButton>
         </div>
-        <div className="col-span-full mb-60">
+        <div className='col-span-full mb-60'>
           <InverseButton>Learn more about us</InverseButton>
         </div>
-        <div className="col-span-2">
-          <div className="text-title-xs font-medium mb-24">
+        <div className='col-span-2'>
+          <div className='text-title-xs font-medium mb-24'>
             Divisions
           </div>
-          <ul className="flex flex-wrap p-0 m-0 mb-40 list-none">
+          <ul className='flex flex-wrap p-0 m-0 mb-40 list-none'>
             {[...Array(19)].map((x, i) =>
-              <li className="mb-20 w-full lg:w-1/2 lg:pr-8" key={i}>
-                <a className="text-white underline">These are department divisions</a>
+              <li className='mb-20 w-full lg:w-1/2 lg:pr-8' key={i}>
+                <a className='text-white underline'>These are department divisions</a>
               </li>
             )}
           </ul>
@@ -309,62 +283,62 @@ export const DepartmentPage = () =>
     </ResponsiveContainer>
   </section>
 
-  <ResponsiveContainer className="my-80">
+  <ResponsiveContainer className='my-80'>
     <SectionTitle>Contact</SectionTitle>
     <CardContainer>
       <ContactSection>
-        <sfgov-icon symbol="location" class="pr-20" />
+        <sfgov-icon symbol='location' class='pr-20' />
         <div>
-          <h3 className="mt-0">City Administrator</h3>
+          <h3 className='mt-0'>City Administrator</h3>
           <div>1 Dr. Carlton B. Goodlett Place</div>
           <div>City Hall Room 362</div>
           <div>San Francisco, CA 94102</div>
-          <div class="bg-grey-2 h-100 w-100 mt-40 mb-20 p-20 rounded text-center">A map will go here</div>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1+Dr.+Carlton+B.+Goodlett+Place%2CCity+Hall+Room+362%2C+San+Francisco%2CCA+94102" target="_blank" rel="noopener">Get directions</a>
+          <div className='bg-grey-2 h-100 w-100 mt-40 mb-20 p-20 rounded text-center'>A map will go here</div>
+          <a href='https://www.google.com/maps/dir/?api=1&amp;destination=1+Dr.+Carlton+B.+Goodlett+Place%2CCity+Hall+Room+362%2C+San+Francisco%2CCA+94102' target='_blank' rel='noreferrer'>Get directions</a>
         </div>
       </ContactSection>
       <ContactSection>
-        <sfgov-icon symbol="phone" class="pr-20"/>
+        <sfgov-icon symbol='phone' class='pr-20'/>
         <div>
-          <h3 className="mt-0">City Administrator</h3>
-          <a href="tel:999-999-9999">999-999-9999</a>
+          <h3 className='mt-0'>City Administrator</h3>
+          <a href='tel:999-999-9999'>999-999-9999</a>
         </div>
       </ContactSection>
       <ContactSection>
-        <sfgov-icon symbol="mail" class="pr-20"/>
+        <sfgov-icon symbol='mail' class='pr-20'/>
         <div>
-          <h3 className="mt-0">City Administrator</h3>
-          <a href="mailto:somedepartment@sfgov.org">somedepartment@sfgov.org</a>
+          <h3 className='mt-0'>City Administrator</h3>
+          <a href='mailto:somedepartment@sfgov.org'>somedepartment@sfgov.org</a>
         </div>
       </ContactSection>
     </CardContainer>
-    <div className="p-40 lg:flex lg:space-x-20 rounded bg-blue-1">
+    <div className='p-40 lg:flex lg:space-x-20 rounded bg-blue-1'>
       <div>
         <h3>Request public record</h3>
-        <p><a href="mailto:admsunshinerequests@sfgov.org">Email admsunshinerequests@sfgov.org</a> to submit a request.</p>
+        <p><a href='mailto:admsunshinerequests@sfgov.org'>Email admsunshinerequests@sfgov.org</a> to submit a request.</p>
       </div>
       <div>
         <h3>Archived website</h3>
-        <p><a target="_blank" href="https://wayback.archive-it.org/19767/3/https://sfgsa.org/office-city-administrator" rel="noopener">See previous website</a> archived August 2022.</p>
+        <p><a target='_blank' href='https://wayback.archive-it.org/19767/3/https://sfgsa.org/office-city-administrator' rel='noreferrer'>See previous website</a> archived August 2022.</p>
       </div>
     </div>
   </ResponsiveContainer>
 
-  <div class="bg-grey-dark text-white py-20 mt-60">
-    <div class="responsive-container">
-      <div class="flex items-center flex-wrap gap-20">
-        <form class="flex-auto flex items-center gap-20">
+  <div className='bg-grey-dark text-white py-20 mt-60'>
+    <div className='responsive-container'>
+      <div className='flex items-center flex-wrap gap-20'>
+        <form className='flex-auto flex items-center gap-20'>
           <span>Was this page helpful?</span>
-          <button class="btn btn-inverse">Yes</button>
-          <button class="btn btn-inverse">No</button>
+          <button className='btn btn-inverse'>Yes</button>
+          <button className='btn btn-inverse'>No</button>
         </form>
-        <div class="">
-          <a href="#" class="text-white hover:text-white">Report something wrong with this page</a>
+        <div className=''>
+          <a href='#' className='text-white hover:text-white'>Report something wrong with this page</a>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="bg-black text-white py-60">
+  <footer className='bg-black text-white py-60'>
   </footer>
 </div>

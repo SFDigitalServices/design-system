@@ -1,11 +1,14 @@
-import React from "react"
-import tw from "tailwind-styled-components"
+import React from 'react'
+import BigDescription from '../../src/BigDescription'
+import tw from 'tailwind-styled-components'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   title: 'Department Page Title',
   args: {
-    text: 'A very extreme and urgent thing is about to happen in San Francisco.'
+    title: 'Office of Generic Text',
+    subtitle: 'This is a made up department that specializes in the cultivation of generic text.',
+    links: [{ text: 'News', href: '' }, { text: 'Resources', href: '' }, { text: 'Contact', href: '' }]
   },
   argTypes: {
     // text: {
@@ -21,16 +24,34 @@ export default {
   }
 }
 
-export const DepartmentTitleBanner = () =>
+const DepartmentPageTitle = tw.p`
+  text-display-lg
+  text-black
+  lg:text-display-lg-desktop
+  font-light
+`
+
+const DepartmentPageSubtitle = tw(BigDescription)`
+  text-black
+`
+
+const AnchorLinks = tw.ul`
+  inline-flex
+  list-none
+  space-x-40
+  underline
+`
+
+export const DepartmentTitleBanner = ({ title, subtitle, links }) =>
   <div>
-    <DepartmentPageTitle>City Administrator</DepartmentPageTitle>
-    <DepartmentPageSubtitle>With integrity, the Office of the City Administrator serves all San Franciscans and its visitors.</DepartmentPageSubtitle>
-    <div className="flex">
-      <p className="font-medium">In this page:</p>
+    <DepartmentPageTitle>{ title }</DepartmentPageTitle>
+    <DepartmentPageSubtitle>{ subtitle }</DepartmentPageSubtitle>
+    <div className='flex'>
+      <p className='font-medium'>In this page:</p>
       <AnchorLinks>
-        <li><a>News</a></li>
-        <li><a>Resources</a></li>
-        <li><a>Contact</a></li>
+        {links.map(link =>
+          <li key={link.href}><a>{ link.text }</a></li>
+        )}
       </AnchorLinks>
     </div>
   </div>
