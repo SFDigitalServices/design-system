@@ -1,14 +1,16 @@
 {
   "private": true,
-  "name": "@sfgov/storybook",
+  "name": "storybook",
   "config": {
-    "port": 3001
+    "port": 3001,
+    "outdir": "public"
   },
   "scripts": {
+    "build": "build-storybook -o $npm_package_config_outdir",
+    "clean": "rm -rf $npm_package_config_outdir",
     "lint": "eslint --ext=.js,.jsx . .storybook",
-    "start": "start-storybook --port=$npm_package_config_port",
-    "prebuild": "rm -rf public; mkdir public",
-    "build": "build-storybook -o public"
+    "prebuild": "rm -rf $npm_package_config_outdir; mkdir -p $npm_package_config_outdir",
+    "start": "start-storybook --port=$npm_package_config_port"
   },
   "dependencies": {
     "sfgov-design-system": "2.5.0"

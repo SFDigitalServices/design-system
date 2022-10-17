@@ -1,53 +1,23 @@
 {
-  "name": "design-system.sf.gov",
   "private": true,
+  "name": "website",
   "config": {
-    "port": 3000
+    "port": 3000,
+    "outdir": "public"
   },
   "scripts": {
-    "build": "wireit",
-    "postbuild": "curl -O https://sf.gov/favicon.ico --output-dir public",
+    "build": "docusaurus build --out-dir $npm_package_config_outdir",
+    "postbuild": "curl -O https://sf.gov/favicon.ico --output-dir $npm_package_config_outdir",
+    "clean": "rm -rf $npm_package_config_outdir",
     "clear": "docusaurus clear",
-    "link-storybook": "ln -sf static/storybook ../storybook/public",
-    "lint": "wireit",
-    "lint-docs": "wireit",
-    "serve": "docusaurus serve --dir public",
-    "start": "wireit",
+    "link-storybook": "ln -sf $npm_package_config_outdir/storybook ../storybook/public",
+    "lint": "eslint src lib *.js",
+    "lint-docs": "markdownlint --rules './lib/markdownlint/*.js' 'docs/**/*.{md,mdx}'",
+    "serve": "docusaurus serve --dir $npm_package_config_outdir",
+    "start": "docusaurus start --port=$npm_package_config_port",
     "swizzle": "docusaurus swizzle",
     "write-heading-ids": "docusaurus write-heading-ids",
     "write-translations": "docusaurus write-translations"
-  },
-  "wireit": {
-    "build": {
-      "command": "docusaurus build --out-dir public",
-      "dependencies": [
-        "../storybook:build",
-        "link-storybook"
-      ]
-    },
-    "start": {
-      "command": "docusaurus start --port=$npm_package_config_port",
-      "dependencies": [
-        "link-storybook",
-        "../packages/sfgov-design-system:build"
-      ]
-    },
-    "lint": {
-      "command": "eslint --color --cache --cache-location=.eslintcache src lib *.js",
-      "files": [
-        "src/**/*.{js,jsx}",
-        "lib/**/*.js",
-        "*.js",
-        "docs/**/*.{md,mdx}"
-      ],
-      "output": []
-    },
-    "lint-docs": {
-      "command": "markdownlint --rules './lib/markdownlint/*.js' 'docs/**/*.{md,mdx}'",
-      "files": [
-        "docs/**/*.{md,mdx}"
-      ]
-    }
   },
   "dependencies": {
     "@babel/core": "^7.19.3",

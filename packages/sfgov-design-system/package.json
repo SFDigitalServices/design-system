@@ -15,116 +15,21 @@
     "tailwind.*.js"
   ],
   "scripts": {
-    "build": "wireit",
-    "build-icons": "wireit",
-    "build-css": "wireit",
-    "build-css-manifest": "wireit",
-    "build-js": "wireit",
-    "build-manifest": "wireit",
-    "lint": "wireit",
-    "lint-css": "wireit",
-    "lint-js": "wireit",
-    "lint-scripts": "wireit",
-    "prepublishOnly": "scripts/prepublish-checks.sh"
-  },
-  "wireit": {
-    "build": {
-      "dependencies": [
-        "build-css",
-        "build-css-manifest",
-        "build-js",
-        "build-icons",
-        "build-manifest"
-      ]
-    },
-    "build-css": {
-      "command": "postcss --verbose -d dist/css 'src/css/*.css'",
-      "clean": true,
-      "files": [
-        "src/css/**/*.css",
-        "*.config.*"
-      ],
-      "output": [
-        "dist/css/**/*.css"
-      ]
-    },
-    "build-css-manifest": {
-      "command": "node ./scripts/build-css-manifest.js",
-      "dependencies": [
-        "build-css"
-      ],
-      "output": [
-        "dist/css/css-manifest.json"
-      ]
-    },
-    "build-js": {
-      "command": "rollup -c",
-      "clean": true,
-      "files": [
-        "package.json",
-        "src/**",
-        "*config.*"
-      ],
-      "output": [
-        "dist/**/*.js",
-        "dist/**/*.mjs"
-      ]
-    },
-    "build-icons": {
-      "command": "scripts/build-icons.js",
-      "files": [
-        "src/icons/**/*.{js,json,svg}"
-      ],
-      "output": [
-        "dist/icons/*.svg"
-      ]
-    },
-    "build-manifest": {
-      "command": "../../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
-      "dependencies": [
-        "build-css",
-        "build-js"
-      ],
-      "files": [
-        "dist/**/*.{css,*js,svg}"
-      ],
-      "output": [
-        "manifest.json"
-      ]
-    },
-    "lint": {
-      "dependencies": [
-        "lint-css",
-        "lint-js",
-        "lint-scripts"
-      ]
-    },
-    "lint-js": {
-      "command": "eslint --color --cache --cache-location=.eslintcache src lib '*.js' 'scripts/*.js'",
-      "files": [
-        "src/**/*.js",
-        "*.js",
-        "lib/**/*.js",
-        "scripts/*.js",
-        ".eslint*",
-        "../../.eslint*"
-      ],
-      "output": []
-    },
-    "lint-css": {
-      "command": "stylelint 'src/css/**/*.css'",
-      "files": [
-        "src/css/**/*.css",
-        ".stylelint*",
-        "../../.stylelint*"
-      ]
-    },
-    "lint-scripts": {
-      "command": "shellcheck scripts/*.sh",
-      "files": [
-        "scripts/*.sh"
-      ]
-    }
+    "build": "echo 'building sfgov-design-system...'",
+    "build-css": "postcss --verbose -d dist/css 'src/css/*.css'",
+    "build-css-manifest": "node ./scripts/build-css-manifest.js",
+    "build-icons": "scripts/build-icons.js",
+    "build-js": "rollup -c",
+    "build-manifest": "../../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
+    "clean": "rm -rf dist manifest.json",
+    "lint-css": "stylelint 'src/css/**/*.css'",
+    "lint-js": "eslint src lib '*.js' 'scripts/*.js'",
+    "lint-scripts": "shellcheck scripts/*.sh",
+    "postbuild": "npm run build-manifest",
+    "prepublishOnly": "scripts/prepublish-checks.sh",
+    "watch-css": "npm run build-css -- --watch",
+    "watch-js": "npm run build-js -- --watch",
+    "watch-icons": "watchy -w src/icons -- npm run build-icons"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -151,6 +56,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "stylelint-config-tailwindcss": "^0.0.3",
     "tailwindcss": "^2.2.19",
-    "tailwindcss-interaction-variants": "^5.0.0"
+    "tailwindcss-interaction-variants": "^5.0.0",
+    "watchy": "^0.10.0"
   }
 }
