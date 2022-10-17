@@ -184,7 +184,7 @@ Callout.parameters = {
 
 /**
  * Destructures the `text`, `href`, `linkText`, and `children` props and returns
- * a two-element array containging:
+ * a two-element array containing:
  *
  * - either `children` or the text and a hyperlink
  * - the remaining props after destructuring

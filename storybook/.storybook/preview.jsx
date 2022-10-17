@@ -25,6 +25,7 @@ addParameters({
       a: withClasses('a', '')
     }
   },
+  // layout: 'fullscreen',
   options: {
     storySort: {
       method: 'alphabetical'

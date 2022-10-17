@@ -25,6 +25,7 @@
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
-    "storybook-addon-designs": "^6.3.1"
+    "storybook-addon-designs": "^6.3.1",
+    "tailwind-styled-components": "^2.2.0"
   }
 }
