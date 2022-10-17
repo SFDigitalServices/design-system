@@ -1,0 +1,128 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "cache": true,
+      "dependsOn": [
+        "^build",
+        "build-js",
+        "build-css",
+        "build-icons"
+      ],
+      "inputs": [
+        "src/**",
+        "static/**",
+        "*.config.*"
+      ],
+      "outputs": [
+        "dist/**",
+        "public/**"
+      ]
+    },
+    "build-css": {
+      "cache": true,
+      "inputs": [
+        "src/**"
+      ],
+      "outputs": [
+        "dist/css/**"
+      ]
+    },
+    "build-icons": {
+      "cache": true,
+      "inputs": [
+        "src/**"
+      ],
+      "outputs": [
+        "dist/icons/**"
+      ]
+    },
+    "build-js": {
+      "cache": true,
+      "inputs": [
+        "src/**"
+      ],
+      "outputs": [
+        "dist/js/**"
+      ]
+    },
+    "build-manifest": {
+      "cache": true,
+      "dependsOn": [
+        "build"
+      ],
+      "inputs": [
+        "dist/**"
+      ],
+      "outputs": [
+        "manifest.json"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "dependsOn": [
+        "start",
+        "watch"
+      ]
+    },
+    "lint": {
+      "cache": false,
+      "outputs": [],
+      "dependsOn": [
+        "lint-css",
+        "lint-js",
+        "lint-scripts"
+      ]
+    },
+    "lint-css": {
+      "cache": false
+    },
+    "lint-js": {
+      "cache": false
+    },
+    "lint-scripts": {
+      "cache": false
+    },
+    "start": {
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    },
+    "watch": {
+      "cache": false,
+      "dependsOn": [
+        "watch-css",
+        "watch-js",
+        "watch-icons"
+      ]
+    },
+    "watch-css": {
+      "cache": false
+    },
+    "watch-js": {
+      "cache": false
+    },
+    "watch-icons": {
+      "cache": false
+    },
+    "sfgov-design-system#build-css-manifest": {
+      "cache": true,
+      "dependsOn": [
+        "build-css"
+      ],
+      "inputs": [
+        "src/css/**"
+      ],
+      "outputs": [
+        "dist/css/css-manfiest.json"
+      ]
+    },
+    "website#build": {
+      "cache": false,
+      "dependsOn": [
+        "sfgov-design-system#build-css-manifest"
+      ]
+    }
+  }
+}
