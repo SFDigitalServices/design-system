@@ -10,6 +10,13 @@ module.exports = {
     'plugin:react/recommended'
   ],
   rules: {
-    'react/no-unescaped-entities': ['warn']
+    'react/no-unescaped-entities': ['warn'],
+    'import/no-unresolved': ['error', {
+      ignore: [
+        // XXX: we have to ignore these so that we can lint the project before
+        // building, which is what creates all of the importable paths
+        '^sfgov-design-system'
+      ]
+    }]
   }
 }
