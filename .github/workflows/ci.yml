@@ -13,7 +13,7 @@ jobs:
 
       - run: npm install
       - uses: xt0rted/markdownlint-problem-matcher@v1
-      - run: npx lerna run lint
+      - run: npm run lint
 
       # this sets NODE_ENV=production for all of the build scripts
       - run: echo NODE_ENV=production >> $GITHUB_ENV
