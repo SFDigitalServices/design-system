@@ -1,5 +1,8 @@
+// See: <https://sfgovdt.jira.com/browse/DESSYS-133?focusedCommentId=72274>
 module.exports = {
-  md: '420px',
-  lg: '768px',
-  xl: '1090px'
+  xs: '375px',
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px'
 }
