@@ -11,7 +11,6 @@ export default {
       name: 'Size',
       type: 'number',
       description: 'Width and height, in pixels',
-      defaultValue: 20,
       control: {
         type: 'number',
         min: 16,
@@ -32,6 +31,10 @@ export default {
 
 /** @type {import('@storybook/react').Story} */
 export const Icon = IconComponent.bind({})
+
+Icon.args = {
+  size: 20
+}
 
 Icon.argTypes = {
   symbol: {

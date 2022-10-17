@@ -1,3 +1,5 @@
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
@@ -9,7 +11,7 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const Table = () => 'TODO'
+export const Table = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const QueueTable = () => 'TODO'
+export const QueueTable = Stub.bind({})

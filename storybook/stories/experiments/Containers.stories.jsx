@@ -1,5 +1,5 @@
 import React from 'react'
-import { withClasses } from '../../src/utils'
+import { withClasses, Stub } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -32,6 +32,6 @@ export const PullQuote = withClasses(({ text, children = text, ...rest }) => (
 ), 'rounded p-40 bg-yellow-2 text-slate-4')
 
 /** @type {import('@storybook/react').Story} */
-export const NeedToKnow = () => 'TODO: Need to know'
+export const NeedToKnow = Stub.bind({})
 
 NeedToKnow.storyName = 'Need to know'

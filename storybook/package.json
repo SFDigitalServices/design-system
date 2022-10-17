@@ -20,12 +20,14 @@
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
+    "@storybook/addon-storysource": "^6.5.12",
     "@storybook/builder-webpack5": "^6.5.10",
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "storybook-addon-designs": "^6.3.1",
+    "storybook-source-link": "^2.0.1",
     "tailwind-styled-components": "^2.2.0"
   }
 }

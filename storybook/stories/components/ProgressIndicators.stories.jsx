@@ -1,6 +1,8 @@
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Progress Indicators',
+  title: 'Progress Indicators',
   parameters: {
     design: {
       type: 'figma',
@@ -10,4 +12,4 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const LoadingSpinner = () => 'TODO'
+export const LoadingSpinner = Stub.bind({})

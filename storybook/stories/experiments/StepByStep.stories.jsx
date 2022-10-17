@@ -3,7 +3,7 @@ import { polymorphic, withClasses, withPropsTransform } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Step by Step',
+  title: 'Step by Step',
   parameters: {
     design: {
       type: 'figma',
@@ -55,6 +55,22 @@ StepList.args = {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     }
   ]
+}
+
+StepList.parameters = {
+  controls: {
+    expanded: true
+  }
+}
+
+StepList.argTypes = {
+  steps: {
+    name: 'Steps',
+    description: 'Steps data',
+    table: {
+      type: '{ step: number | string }[]'
+    }
+  }
 }
 
 /** @type {import('@storybook/react').Story} */
@@ -142,9 +158,12 @@ export const OptionalStepLabel = withPropsTransform(
   polymorphic('div', {
     className: 'inline-flex text-small bg-yellow-2 px-12 py-4 text-slate-4'
   }),
-  ({ text, children, ...rest }) => ({ children: text || children, ...rest })
+  ({ text, children, ...rest }) => ({ children: text || children || 'Optional step', ...rest })
 )
 
-OptionalStepLabel.defaultProps = {
-  text: 'Optional step'
+OptionalStepLabel.argTypes = {
+  text: {
+    name: 'Text',
+    type: 'string'
+  }
 }

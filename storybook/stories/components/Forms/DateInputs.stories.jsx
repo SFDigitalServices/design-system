@@ -1,6 +1,8 @@
+import { Stub } from '../../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Forms / Date inputs',
+  title: 'Forms/Date inputs',
   parameters: {
     design: {
       type: 'figma',
@@ -10,7 +12,7 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const DateField = () => 'TODO'
+export const DateField = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const DateRangeField = () => 'TODO'
+export const DateRangeField = Stub.bind({})

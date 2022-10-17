@@ -1,3 +1,5 @@
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
@@ -9,7 +11,7 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const PageTitle = () => 'TODO: Page title'
+export const PageTitle = Stub.bind({})
 
 PageTitle.parameters = {
   design: {
@@ -18,7 +20,7 @@ PageTitle.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const CampaignBlock = () => 'TODO: Campaign block'
+export const CampaignBlock = Stub.bind({})
 
 CampaignBlock.parameters = {
   design: {
@@ -27,7 +29,7 @@ CampaignBlock.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const PrimarySpotlight = () => 'TODO: Primary spotlight'
+export const PrimarySpotlight = Stub.bind({})
 
 PrimarySpotlight.parameters = {
   design: {
@@ -36,7 +38,7 @@ PrimarySpotlight.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const SecondarySpotlight = () => 'TODO: Secondary spotlight'
+export const SecondarySpotlight = Stub.bind({})
 
 SecondarySpotlight.parameters = {
   design: {

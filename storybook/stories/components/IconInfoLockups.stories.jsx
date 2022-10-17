@@ -1,8 +1,10 @@
 // import React from 'react'
 
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Icon + Information Lockups',
+  title: 'Icon + Information Lockups',
   parameters: {
     design: {
       type: 'figma',
@@ -12,16 +14,16 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const EmailAddress = () => 'TODO'
+export const EmailAddress = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const PhoneNumbers = () => 'TODO'
+export const PhoneNumbers = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const MailingAddress = () => 'TODO'
+export const MailingAddress = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const DocumentLink = () => 'TODO'
+export const DocumentLink = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const Timestamp = () => 'TODO'
+export const Timestamp = Stub.bind({})

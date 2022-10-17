@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import websitePackageJson from '../../website/package.json'
 
 /**
  * Merge the `className` and `style` keys of one or more prop objects.
@@ -21,6 +22,10 @@ export function mergeProps (...items) {
     className: clsx(classes),
     style: styles
   })
+}
+
+export function Stub ({ text = 'TODO' }) {
+  return <div className='bg-action text-white p-40'>{text}</div>
 }
 
 /**
@@ -127,4 +132,10 @@ export function withVariants (Component, variants, defaultVariant = 'default') {
   }
 
   return VariantComponent
+}
+
+export function getDocsBaseUrl () {
+  return process.env.NODE_ENV === 'production'
+    ? ''
+    : `http://localhost:${websitePackageJson.config.port}`
 }

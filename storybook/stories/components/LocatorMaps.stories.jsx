@@ -1,8 +1,10 @@
 // import React from 'react'
 
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Locator Maps',
+  title: 'Locator Maps',
   parameters: {
     design: {
       type: 'figma',
@@ -12,9 +14,9 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const LocatorMap = () => 'TODO'
+export const LocatorMap = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const AddressWithLocatorMap = () => 'TODO'
+export const AddressWithLocatorMap = Stub.bind({})
 
 AddressWithLocatorMap.storyName = 'Address + Locator Map'

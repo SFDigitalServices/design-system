@@ -1,6 +1,8 @@
+import { Stub } from '../../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Forms / Upload Inputs',
+  title: 'Forms/Upload Inputs',
   parameters: {
     design: {
       type: 'figma',
@@ -10,20 +12,20 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const UploadDropArea = () => 'TODO'
+export const UploadDropArea = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const UploadProgressMeter = () => 'TODO'
+export const UploadProgressMeter = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const UploadedFileList = () => 'TODO'
+export const UploadedFileList = Stub.bind({})
 
 /** @type {import('@storybook/react').Story} */
-export const SingleFileUploadInput = () => 'TODO'
+export const SingleFileUploadInput = Stub.bind({})
 
 SingleFileUploadInput.storyName = 'Upload (single file)'
 
 /** @type {import('@storybook/react').Story} */
-export const MultiFileUploadInput = () => 'TODO'
+export const MultiFileUploadInput = Stub.bind({})
 
 MultiFileUploadInput.storyName = 'Upload (multi-file)'

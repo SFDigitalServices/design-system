@@ -4,7 +4,7 @@ import { withClasses, withVariants } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: 'Components / Alerts & Banners',
+  title: 'Alerts & Banners',
   args: {
     text: 'A very extreme and urgent thing is about to happen in San Francisco.'
   },
@@ -155,6 +155,7 @@ FormAlert.parameters = {
   }
 }
 
+/** @type {import('@storybook/react').Story} */
 export const Callout = withVariants(function ({ className, ...props }) {
   const [children, rest] = useBannerContent(props)
   return (

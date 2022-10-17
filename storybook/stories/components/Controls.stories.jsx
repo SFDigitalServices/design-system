@@ -1,3 +1,5 @@
+import { Stub } from '../../src/utils'
+
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   parameters: {
@@ -7,16 +9,17 @@ export default {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const Accordion = () => 'TODO'
+export const Accordion = Stub.bind({})
 
 Accordion.parameters = {
+  sourceLink: '/components/details/',
   design: {
     url: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=3217%3A230'
   }
 }
 
 /** @type {import('@storybook/react').Story} */
-export const Pagination = () => 'TODO'
+export const Pagination = Stub.bind({})
 
 Pagination.parameters = {
   design: {
@@ -25,7 +28,7 @@ Pagination.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const SegmentedBar = () => 'TODO'
+export const SegmentedBar = Stub.bind({})
 
 SegmentedBar.parameters = {
   design: {
@@ -34,7 +37,7 @@ SegmentedBar.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const Toggle = () => 'TODO'
+export const Toggle = Stub.bind({})
 
 Toggle.parameters = {
   design: {
@@ -43,7 +46,7 @@ Toggle.parameters = {
 }
 
 /** @type {import('@storybook/react').Story} */
-export const ShowMoreLess = () => 'TODO'
+export const ShowMoreLess = Stub.bind({})
 
 ShowMoreLess.storyName = 'Show more/less'
 
