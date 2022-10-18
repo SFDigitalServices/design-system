@@ -1,18 +1,35 @@
 const { NODE_ENV } = process.env
+const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
 
 /** @type {import('@storybook/core-common').StorybookConfig} */
 module.exports = {
-  stories: [
-    '../@(docs|stories)/**/*.stories.@(js|jsx|mdx|ts|tsx)'
-  ],
   framework: '@storybook/react',
+  stories: [
+    '../docs/**/*.stories.md{,x}',
+    {
+      directory: '../stories/components',
+      titlePrefix: 'Components/',
+      files: storiesGlob
+    },
+    {
+      directory: '../stories/experiments',
+      titlePrefix: 'Experiments/',
+      files: storiesGlob
+    }
+  ],
   core: {
     builder: '@storybook/builder-webpack5'
   },
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    'storybook-source-link',
+    '@storybook/addon-storysource',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false
+      }
+    },
+    'storybook-addon-designs'
   ],
 
   env: config => ({
