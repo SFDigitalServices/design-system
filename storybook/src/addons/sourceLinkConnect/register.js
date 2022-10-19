@@ -33,7 +33,7 @@ addons.register(ADDON_ID, api => {
       const Story = api.getCurrentStoryData()
       if (!Story) return null
       const comp = getComponentFromStory(Story)
-      if (comp || comp.parameters?.sourceLink) return null
+      if (!comp || comp.parameters?.sourceLink) return null
 
       if (!Story.parameters) Story.parameters = {}
       Story.parameters.sourceLink = comp.href
