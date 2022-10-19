@@ -30,7 +30,7 @@ module.exports = {
       }
     },
     'storybook-addon-designs',
-    '../src/addons/dox/preset.js'
+    '../src/addons/sourceLinkConnect/preset.js'
   ],
 
   env: config => ({
