@@ -7,7 +7,7 @@ module.exports = {
   stories: [
     '../docs/**/*.stories.md{,x}',
     {
-      directory: '../stories/Components',
+      directory: '../stories/components',
       titlePrefix: 'Components/',
       files: storiesGlob
     },
