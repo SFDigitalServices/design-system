@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "ci:build": "npx turbo run build --no-deps --scope sfgov-design-system",
+    "ci:build": "turbo run build --no-deps --scope sfgov-design-system",
     "clean": "npm run -ws --if-present clean",
     "lint": "turbo run lint",
     "postbuild": "cp -rf storybook/public/ website/public/storybook/",
