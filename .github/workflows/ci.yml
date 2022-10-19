@@ -15,8 +15,7 @@ jobs:
 
       # allow package scripts to run when installing as root
       - run: npm config set unsafe-perm true
-
-      - run: npm install --include=dev --no-fund
+      - run: npm install --include=dev --include=optional --no-fund
       - uses: xt0rted/markdownlint-problem-matcher@v1
       - run: npm run lint
 
