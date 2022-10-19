@@ -15,7 +15,6 @@
     "tailwind.*.js"
   ],
   "scripts": {
-    "build": "echo 'building sfgov-design-system...'",
     "build-css": "postcss --verbose -d dist/css 'src/css/*.css'",
     "build-css-manifest": "node ./scripts/build-css-manifest.js",
     "build-icons": "scripts/build-icons.js",
