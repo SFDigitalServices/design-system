@@ -2,6 +2,7 @@ import { Stub } from '../../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Forms/Fieldsets',
   parameters: {
     design: {
       type: 'figma',

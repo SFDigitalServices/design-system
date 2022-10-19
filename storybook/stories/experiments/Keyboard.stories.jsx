@@ -6,6 +6,7 @@ import clsx from 'clsx'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Keyboard',
   parameters: {
     design: {
       type: 'figma',

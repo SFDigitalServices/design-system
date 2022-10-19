@@ -2,12 +2,8 @@ import { Stub } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Icons',
   parameters: {
-    sourceLink: '/components/icons/',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Assets?node-id=38%3A8'
-    }
   }
 }
 

@@ -5,6 +5,7 @@ import { polymorphic, withClasses } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Tiles',
   args: {
     title: 'Hello, world!',
     description: 'This is the description'

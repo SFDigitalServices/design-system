@@ -3,6 +3,7 @@ import { withClasses, Stub } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Containers',
   args: {
     text: 'This is the text content. It is not too long, and not too short. Please keep sentences short and legible.'
   },

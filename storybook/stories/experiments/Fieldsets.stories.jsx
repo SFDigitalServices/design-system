@@ -3,6 +3,7 @@ import { mergeProps, polymorphic, withPropsTransform } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Fieldsets',
   parameters: {
     design: {
       type: 'figma',

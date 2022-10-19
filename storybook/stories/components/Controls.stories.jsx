@@ -2,20 +2,13 @@ import { Stub } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Controls',
   parameters: {
-    design: {
-    }
   }
 }
 
 /** @type {import('@storybook/react').Story} */
 export const Accordion = Stub.bind({})
-
-Accordion.parameters = {
-  design: {
-    url: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=3217%3A230'
-  }
-}
 
 /** @type {import('@storybook/react').Story} */
 export const Pagination = Stub.bind({})

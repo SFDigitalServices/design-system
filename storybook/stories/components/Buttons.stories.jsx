@@ -4,6 +4,7 @@ import { polymorphic, withClasses, withPropsTransform } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Buttons',
   decorators: [
     withButtonTable
   ],
@@ -39,12 +40,6 @@ export default {
         arg: 'as',
         eq: 'a'
       }
-    }
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=5895%3A3285'
     }
   }
 }

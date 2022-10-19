@@ -3,6 +3,7 @@ import IconComponent, { symbols } from '../../src/Icon'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'Icons',
   args: {
     symbol: 'info'
   },

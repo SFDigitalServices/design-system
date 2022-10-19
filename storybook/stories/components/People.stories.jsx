@@ -4,6 +4,7 @@ import { Stub } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
+  title: 'People',
   parameters: {
     design: {
       type: 'figma',
