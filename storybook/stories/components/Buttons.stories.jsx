@@ -42,7 +42,6 @@ export default {
     }
   },
   parameters: {
-    sourceLink: '/components/buttons/',
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=5895%3A3285'

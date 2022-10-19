@@ -12,7 +12,6 @@ export default {
 export const Accordion = Stub.bind({})
 
 Accordion.parameters = {
-  sourceLink: '/components/details/',
   design: {
     url: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=3217%3A230'
   }
