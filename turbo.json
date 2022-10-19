@@ -7,7 +7,8 @@
         "^build",
         "build-js",
         "build-css",
-        "build-icons"
+        "build-icons",
+        "build-manfest"
       ],
       "inputs": [
         "src/**",
@@ -48,9 +49,6 @@
     },
     "build-manifest": {
       "cache": true,
-      "dependsOn": [
-        "build"
-      ],
       "inputs": [
         "dist/**"
       ],
