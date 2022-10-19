@@ -4,6 +4,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -11,19 +13,22 @@ jobs:
           node-version: '16.x'
           cache: npm
 
-      - run: npm install
+      # allow package scripts to run when installing as root
+      - run: npm config set unsafe-perm true
+
+      - run: npm install --include=dev --no-fund
       - uses: xt0rted/markdownlint-problem-matcher@v1
       - run: npm run lint
 
-      # this sets NODE_ENV=production for all of the build scripts
-      - run: echo NODE_ENV=production >> $GITHUB_ENV
+      # build the design system
       - run: npm run ci:build
+
       # run pre-publish checks
       - run: npm run prepublishOnly -w sfgov-design-system --if-present
 
       - uses: primer/publish@v3.0.0
         with:
-          npm_args: --unsafe-perm --allow-same-version
+          npm_args: --allow-same-version
           default_branch: main
           dir: packages/sfgov-design-system
         env:
