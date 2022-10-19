@@ -9,10 +9,11 @@
  *    name?: string,
  *    path?: string
  *  },
- *  design?: {
+ *  designs?: {
  *    name?: string,
- *    href?: string
- *  }
+ *    href?: string,
+ *    type?: string
+ *  }[]
  * }} ComponentMeta
  */
 
@@ -25,7 +26,10 @@ const components = [
     href: '/components/buttons/',
     story: {
       path: 'components-buttons*'
-    }
+    },
+    designs: [{
+      href: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=5895%3A3285'
+    }]
   },
   {
     name: 'Keyboard',
@@ -33,14 +37,20 @@ const components = [
     story: {
       name: '<kbd>',
       path: 'components-keyboard*'
-    }
+    },
+    designs: [{
+      href: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=736%3A0'
+    }]
   },
   {
     name: 'Icons',
     href: '/components/icons/',
     story: {
       path: 'components-icons*'
-    }
+    },
+    designs: [{
+      href: 'https://www.figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Assets?node-id=38%3A8'
+    }]
   },
   {
     name: 'Details',
@@ -48,7 +58,10 @@ const components = [
     story: {
       name: 'Accordion',
       path: 'components-controls--accordion'
-    }
+    },
+    designs: [{
+      href: 'https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=3217%3A230'
+    }]
   }
 ]
 

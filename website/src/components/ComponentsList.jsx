@@ -14,12 +14,14 @@ export default function ComponentsList (props) {
         </tr>
       </thead>
       <tbody>
-        {components?.map(({ name, href, story, status, design }) => (
+        {components?.map(({ name, href, story, status, designs }) => (
           <tr key={name}>
             <td><a href={href}>{name}</a></td>
             <td>{status}</td>
             <td><StorybookLink name={name} {...story} /></td>
-            <td>{design?.href && <a href={design.href}>{design.name || name}</a>}</td>
+            <td>{designs?.map(design => (
+              <><a href={design.href}>{design.name || 'Figma'}</a>{' '}</>
+            ))}</td>
           </tr>
         ))}
       </tbody>
