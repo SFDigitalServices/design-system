@@ -38,6 +38,10 @@ module.exports = {
     NODE_ENV
   }),
 
+  features: {
+    buildStoriesJson: true
+  },
+
   /**
    * This is apparently how we set the base URL of the published storybook export,
    * at least according to this well-loved comment:
