@@ -41,6 +41,10 @@ http {
     /usage/docs/                      /develop/documentation/;
     /usage/icons/                     /components/icons/;
 
+    ~^/libraries/[Cc]olor/colorInterfaceLibrary/$   /libraries/color/interface/;
+    ~^/libraries/[Cc]olor/colorMapsChartsLibrary/$  /libraries/color/charts-maps/;
+    ~^/libraries/iconsLibrary/                      /libraries/icons/;
+
     # pattern-based redirects live here, in the form:
     # ~{pattern} {path};
     # where {pattern} is a regex and will probably contain capture groups,
