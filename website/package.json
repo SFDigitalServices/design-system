@@ -6,11 +6,13 @@
   },
   "scripts": {
     "build": "wireit",
-    "postbuild": "curl -O https://sf.gov/favicon.ico --output-dir public",
+    "build-favicon": "curl -O https://sf.gov/favicon.ico --output-dir public",
+    "build-index": "find public -name index.html | perl -pe 's#^public(.*)/index.html#$1/#' | sort > public/index.txt",
     "clear": "docusaurus clear",
     "link-storybook": "ln -sf static/storybook ../storybook/public",
     "lint": "wireit",
     "lint-docs": "wireit",
+    "postbuild": "wireit",
     "serve": "docusaurus serve --dir public",
     "start": "wireit",
     "swizzle": "docusaurus swizzle",
@@ -23,6 +25,12 @@
       "dependencies": [
         "../storybook:build",
         "link-storybook"
+      ]
+    },
+    "postbuild": {
+      "dependencies": [
+        "build-favicon",
+        "build-index"
       ]
     },
     "start": {
