@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "clsx": "^1.1.0",
-    "sfgov-design-system": "2.5.0"
+    "sfgov-design-system": "2.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
