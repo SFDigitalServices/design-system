@@ -5,7 +5,7 @@ see_also:
     href: /usage/css/utilities/
 ---
 
-We use [Tailwind] to build our CSS (specifically the [utility classes](../../libraries/tailwindClasses)), and we encourage consumers of the design system to use it too.
+We use [Tailwind] to build our CSS (specifically the [utility classes](/libraries/tailwindClasses)), and we encourage consumers of the design system to use it too.
 
 :::info
 
