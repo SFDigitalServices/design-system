@@ -7,7 +7,8 @@
   "scripts": {
     "build": "wireit",
     "build-favicon": "curl -O https://sf.gov/favicon.ico --output-dir public",
-    "build-index": "find public -name index.html | perl -pe 's#^public(.*)/index.html#$1/#' | sort > public/index.txt",
+    "build-index": "rm -f public/{index,urls}.txt; find public -type f | perl -pe 's#^public/#/#' | sort > public/index.txt",
+    "build-urls": "wireit",
     "clear": "docusaurus clear",
     "link-storybook": "ln -sf static/storybook ../storybook/public",
     "lint": "wireit",
@@ -30,6 +31,12 @@
     "postbuild": {
       "dependencies": [
         "build-favicon",
+        "build-urls"
+      ]
+    },
+    "build-urls": {
+      "command": "egrep '\\.html$' public/index.txt | perl -pe 's#/index.html#/#; s#^$#/#' | sort > public/urls.txt",
+      "dependencies": [
         "build-index"
       ]
     },
