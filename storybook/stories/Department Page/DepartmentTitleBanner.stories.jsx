@@ -50,7 +50,7 @@ export const DepartmentTitleBanner = ({ title, subtitle, links }) =>
       <p className='font-medium'>In this page:</p>
       <AnchorLinks>
         {links.map(link =>
-          <li key={link.href}><a>{ link.text }</a></li>
+          <li key={link.text}><a>{ link.text }</a></li>
         )}
       </AnchorLinks>
     </div>

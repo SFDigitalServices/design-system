@@ -1,0 +1,856 @@
+{
+  "href": "https://test-sfgov.pantheonsite.io/departments/city-administrator?_format=hal_json",
+  "nid": 785,
+  "uuid": "17420048-4678-4f0a-83f9-7207043b7b74",
+  "vid": 77999,
+  "langcode": "en",
+  "type": {
+    "target_id": "department"
+  },
+  "revision_timestamp": "2022-10-13T17:35:31+00:00",
+  "status": true,
+  "title": "City Administrator",
+  "created": "2020-02-29T16:03:44+00:00",
+  "changed": "2022-10-13T17:35:31+00:00",
+  "promote": false,
+  "sticky": false,
+  "default_langcode": true,
+  "revision_translation_affected": true,
+  "moderation_state": "published",
+  "metatag": {
+    "canonical_url": "https://test-sfgov.pantheonsite.io/departments/city-administrator",
+    "google": "8etBKQyyqG3GiT-xNuZVwr27VA0zgbwiyVFTLJBv_jE",
+    "title": "City Administrator | San Francisco",
+    "description": "With integrity, the Office of the City Administrator serves all San Franciscans and its visitors."
+  },
+  "path": {
+    "alias": "/departments/city-administrator",
+    "pid": 1393,
+    "langcode": "en",
+    "lang": "en"
+  },
+  "content_translation_source": null,
+  "content_translation_outdated": false,
+  "about_or_description": "The Office of the City Administrator comprises 27 departments, divisions, and programs that provide a broad range of services to other City departments and the public.\r\n",
+  "archive_date": "2022-10-01",
+  "archive_url": {
+    "uri": "https://wayback.archive-it.org/20107/3/https://sfgov.org/bdappeal/",
+    "title": "",
+    "options": []
+  },
+  "description": "With integrity, the Office of the City Administrator serves all San Franciscans and its visitors.",
+  "go_to_current_url": false,
+  "req_public_records": "Email",
+  "req_public_records_email": "boardofappeals@sfgov.org",
+  "req_public_records_phone": "628-652-1150",
+  "spotlight_sections": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/spotlight_cool/13952?_format=hal_json",
+      "id": 13952,
+      "uuid": "f0bac5de-9578-4523-bdcc-f1ff2843969d",
+      "revision_id": 803920,
+      "langcode": "en",
+      "type": {
+        "target_id": "department_service_section"
+      },
+      "status": true,
+      "created": "2021-09-16T18:55:14+00:00",
+      "image": null,
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_department_services",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2021-09-16T18:55:14+00:00",
+      "variant": {
+        "primary": true,
+        "color": null,
+        "imageAlign": "left"
+      },
+      "spotlight_button": {
+        "primary": true,
+        "content": "A primary button"
+      },
+      "spotlight_section_description": "This is the spotlight description text",
+      "spotlight_section_title": "This is a spotlight title"
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/spotlight_cool/13952?_format=hal_json",
+      "id": 13952,
+      "uuid": "f0bac5de-9578-4523-bdcc-f1ff2843969d",
+      "revision_id": 803920,
+      "langcode": "en",
+      "type": {
+        "target_id": "department_service_section"
+      },
+      "status": true,
+      "created": "2021-09-16T18:55:14+00:00",
+      "image": null,
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_department_services",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2021-09-16T18:55:14+00:00",
+      "variant": {
+        "primary": false,
+        "color": null,
+        "imageAlign": "left"
+      },
+      "spotlight_button": {
+        "primary": false,
+        "content": "An inverse button"
+      },
+      "spotlight_section_description": "This is the spotlight description text",
+      "spotlight_section_title": "This is a spotlight title"
+    }
+  ],
+  "url": {
+    "uri": "https://sfgov.org/bdappeal/",
+    "title": "",
+    "options": [],
+    "lang": "en"
+  },
+  "contact": {
+    "address": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/location/177?_format=hal_json",
+        "id": 177,
+        "uuid": "00774fc8-f1c8-47d8-8fda-918de1a449b8",
+        "langcode": "en",
+        "type": {
+          "target_id": "physical"
+        },
+        "created": "2021-05-18T21:13:06+00:00",
+        "changed": "2021-06-24T17:44:23+00:00",
+        "status": true,
+        "default_langcode": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2021-06-24T17:44:23+00:00",
+        "address": {
+          "langcode": "",
+          "country_code": "US",
+          "administrative_area": "CA",
+          "locality": "San Francisco",
+          "dependent_locality": null,
+          "postal_code": "94102",
+          "sorting_code": null,
+          "address_line1": "1 Dr. Carlton B. Goodlett Place",
+          "address_line2": "City Hall Room 362",
+          "organization": "",
+          "given_name": null,
+          "additional_name": null,
+          "family_name": null,
+          "addressee": "",
+          "location_name": null,
+          "lang": "en"
+        },
+        "operating_hours": {
+          "day": 1,
+          "starthours": 800,
+          "endhours": 1700,
+          "comment": "",
+          "lang": "en"
+        },
+        "text": null
+      }
+    ],
+    "email": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/2277?_format=hal_json",
+        "id": 2277,
+        "uuid": "9cdc149b-7aee-4d45-a60d-f5c0015d7f39",
+        "revision_id": 803921,
+        "langcode": "en",
+        "type": {
+          "target_id": "email"
+        },
+        "status": true,
+        "created": "2020-02-29T16:04:06+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_email",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2021-05-18T21:16:07+00:00",
+        "email": "somedepartment@sfgov.org"
+      }
+    ],
+    "phone_numbers": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/9598?_format=hal_json",
+        "id": 9598,
+        "uuid": "57e242f5-b5fa-42cc-af4b-ff5251f099cb",
+        "revision_id": 803932,
+        "langcode": "en",
+        "type": {
+          "target_id": "phone"
+        },
+        "status": true,
+        "created": "2021-05-18T21:13:10+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_phone_numbers",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2021-05-18T21:13:10+00:00",
+        "owner": "City Administrator",
+        "tel": "628-652-1150"
+      }
+    ]
+  },
+  "featured_items": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44882?_format=hal_json",
+      "id": 44882,
+      "uuid": "c0df9f2e-b528-423a-a949-0c30405171a8",
+      "revision_id": 803922,
+      "langcode": "en",
+      "type": {
+        "target_id": "featured_item"
+      },
+      "status": true,
+      "created": "2022-08-18T17:39:45+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_featured_items",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here's the subtitle for the above quick link. Written in sentence form!",
+      "feature_link": {
+        "uri": "entity:node/1965",
+        "title": "",
+        "options": [],
+        "lang": "en"
+      },
+      "feature_title": "Here's one quick link about this department"
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44882?_format=hal_json",
+      "id": 44883,
+      "uuid": "c0df9f2e-b528-423a-a949-0c30405171a8",
+      "revision_id": 803922,
+      "langcode": "en",
+      "type": {
+        "target_id": "featured_item"
+      },
+      "status": true,
+      "created": "2022-08-18T17:39:45+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_featured_items",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here's the subtitle for the above quick link. Written in sentence form!",
+      "feature_link": {
+        "uri": "entity:node/1965",
+        "title": "",
+        "options": [],
+        "lang": "en"
+      },
+      "feature_title": "Here's one quick link about this department"
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44882?_format=hal_json",
+      "id": 44884,
+      "uuid": "c0df9f2e-b528-423a-a949-0c30405171a8",
+      "revision_id": 803922,
+      "langcode": "en",
+      "type": {
+        "target_id": "featured_item"
+      },
+      "status": true,
+      "created": "2022-08-18T17:39:45+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_featured_items",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here's the subtitle for the above quick link. Written in sentence form!",
+      "feature_link": {
+        "uri": "entity:node/1965",
+        "title": "",
+        "options": [],
+        "lang": "en"
+      },
+      "feature_title": "Here's one quick link about this department"
+    }
+  ],
+  "news": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 448831,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "posted_date": "October 13, 2022",
+      "title": "Here is a news card. This is the title of the news card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 448832,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "posted_date": "October 13, 2022",
+      "title": "Here is a news card. This is the title of the news card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 448833,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "posted_date": "October 13, 2022",
+      "title": "Here is a news card. This is the title of the news card."
+    }
+  ],
+  "about": {
+    "call_to_action": {
+      "title": "Here is a call to action related to this section.",
+      "button": {
+        "primary": false,
+        "content": "Here is the call to action button"
+      }
+    },
+    "social_media": {},
+    "divisions": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45111,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45112,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45113,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45114,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45115,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45116,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45117,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45118,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      },
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45119,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "These are department divisions",
+          "options": [],
+          "lang": "en"
+        }
+      }
+    ]
+  },
+  "resources": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488331,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488332,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488333,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488334,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488335,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488336,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488337,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 4488338,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    }
+  ],
+  "topics": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/topics/building-permits?_format=hal_json",
+      "nid": 199,
+      "uuid": "2d54dd25-f309-4186-9898-b54ca5306b7d",
+      "vid": 55020,
+      "langcode": "en",
+      "type": {
+        "target_id": "topic"
+      },
+      "revision_timestamp": "2022-07-01T13:25:54+00:00",
+      "revision_log": "Adding pre-plan check step.",
+      "status": true,
+      "title": "Building permits",
+      "created": "2019-03-19T16:37:58+00:00",
+      "changed": "2022-07-01T13:25:54+00:00",
+      "promote": false,
+      "sticky": false,
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "moderation_state": "published",
+      "metatag": {
+        "canonical_url": "https://test-sfgov.pantheonsite.io/topics/building-permits",
+        "google": "8etBKQyyqG3GiT-xNuZVwr27VA0zgbwiyVFTLJBv_jE",
+        "title": "Building permits | San Francisco",
+        "description": "Building code, permits, and inspections."
+      },
+      "path": {
+        "alias": "/topics/building-permits",
+        "pid": 290,
+        "langcode": "en",
+        "lang": "en"
+      },
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "description": "Building code, permits, and inspections.",
+      "page_design": "1",
+      "top_level_topic": false
+    }
+  ]
+}
