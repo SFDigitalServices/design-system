@@ -1,6 +1,7 @@
 import React from 'react'
 import { Header } from './Header.stories'
 import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
+import { QuickLink } from '../components/QuickLink.stories'
 import BigDescription from '../../src/BigDescription'
 import tw from 'tailwind-styled-components'
 import startCase from 'lodash.startcase'
@@ -94,56 +95,6 @@ const CardContainer = tw.div`
   mb-60
 `
 
-// we should probably enable word-break in tailwind for below
-const QuickLink = tw.a`
-  group
-  flex
-  flex-col
-  no-underline
-  border-solid
-  border-3 border-grey-2
-  py-16
-  px-24
-  rounded
-  lg:p-24
-  hocus:bg-action
-  hocus:border-white
-`
-
-const QuickLinkTitle = tw.p`
-  text-title-md
-  text-action
-  font-medium
-  mb-8
-  lg:mb-16
-  lg:text-title-md-desktop
-  group-hocus:text-white
-`
-
-const QuickLinkDivider = tw.div`
-  h-8
-  mb-8
-  w-100
-  bg-blue-bright
-  lg:mb-16
-  group-hocus:bg-white
-`
-
-const QuickLinkSubtitle = tw.p`
-  text-body
-  text-black
-  flex-auto
-  group-hocus:text-white
-`
-
-// const QuickLinkArrowIcon = tw.sfgov-icon`
-//   flex
-//   justify-end
-//   items-end
-//   text-action
-//   group-hocus:text-white
-// `
-
 const SectionTitle = tw.h2`
   title-xl
   mt-0
@@ -225,17 +176,8 @@ export const DepartmentPage = ({ department }) => {
       <ResponsiveContainer>
         {!!department.featured_items?.length && (
           <CardContainer>
-            {department.featured_items.map(quickLink =>
-              <QuickLink key={quickLink.id}>
-                <QuickLinkTitle>
-                  {quickLink.feature_title}
-                </QuickLinkTitle>
-                <QuickLinkDivider />
-                <QuickLinkSubtitle>
-                  {quickLink.description}
-                </QuickLinkSubtitle>
-                <sfgov-icon symbol='arrow-right' class='flex justify-end items-end text-action group-hocus:text-white' />
-              </QuickLink>
+            {department.featured_items.map(({ id, feature_title: title, description }) =>
+              <QuickLink key={id} data={{ title, description }} />
             )}
           </CardContainer>
         )}
