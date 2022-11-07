@@ -156,7 +156,7 @@ module.exports = {
               },
               {
                 label: 'Libraries',
-                to: '/libraries/color/colorInterfaceLibrary'
+                to: '/libraries/color/interface'
               }
             ]
           },
