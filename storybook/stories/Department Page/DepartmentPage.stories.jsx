@@ -1,6 +1,8 @@
 import React from 'react'
 import { Header } from './Header.stories'
 import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
+import { Spotlight } from '../components/Spotlight.stories'
+import Title from '../../src/Title'
 import BigDescription from '../../src/BigDescription'
 import tw from 'tailwind-styled-components'
 import startCase from 'lodash.startcase'
@@ -39,43 +41,6 @@ export default {
 
 const ResponsiveContainer = tw.div`
   responsive-container
-`
-
-const Title = tw.p`
-  text-title-lg
-  lg:text-title-lg-desktop
-  font-medium
-  my-0
-`
-
-const SpotlightSection = tw.div`
-  bg-grey-1
-  px-20
-  py-40
-  mb-60
-  lg:py-60
-  lg:flex
-  lg:gap-28
-`
-
-const SpotlightContent = tw.div`
-  lg:w-1/2
-`
-
-const SpotlightSectionFloating = tw(SpotlightSection)`
-  ${props => props.backgroundColor}
-  rounded
-  px-0
-  py-0
-  lg:py-0
-  lg:gap-0
-`
-
-const SpotlightContentFloating = tw(SpotlightContent)`
-  ${props => !!props.isTitlePanel && 'text-white py-40 px-20 lg:py-60 lg:px-40'}
-  rounded-b
-  lg:rounded-r
-  lg:rounded-bl-0
 `
 
 const Button = tw.button`
@@ -212,14 +177,12 @@ export const DepartmentPage = ({ department }) => {
       </ResponsiveContainer>
 
       {!!department.spotlight_sections?.length && (
-        <SpotlightSection>
-          <SpotlightContent className='bg-grey-2'></SpotlightContent>
-          <SpotlightContent>
-            <Title>{department.spotlight_sections[0].spotlight_section_title}</Title>
-            <BigDescription>{department.spotlight_sections[0].spotlight_section_description}</BigDescription>
-            <Button>{department.spotlight_sections[0].spotlight_button.content}</Button>
-          </SpotlightContent>
-        </SpotlightSection>
+        <Spotlight
+          title={department.spotlight_sections[0].spotlight_section_title}
+          body={department.spotlight_sections[0].spotlight_section_description}
+          buttonContent={department.spotlight_sections[0].spotlight_button.content}
+          image={department.spotlight_sections[0].image}
+        />
       )}
 
       <ResponsiveContainer>
@@ -240,17 +203,15 @@ export const DepartmentPage = ({ department }) => {
           </CardContainer>
         )}
         {department.spotlight_sections?.[1] && !department.spotlight_sections?.[1].variant.primary && (
-          <SpotlightSectionFloating backgroundColor='bg-purple-3'>
-            <SpotlightContentFloating isTitlePanel='true'>
-              <Title>{department.spotlight_sections[1].spotlight_section_title}</Title>
-              <BigDescription>{department.spotlight_sections[1].spotlight_section_description}</BigDescription>
-              {department.spotlight_sections[1].spotlight_button.primary
-                ? <Button>{department.spotlight_sections[1].spotlight_button.content}</Button>
-                : <InverseButton>{department.spotlight_sections[1].spotlight_button.content}</InverseButton>
-              }
-            </SpotlightContentFloating>
-            <SpotlightContentFloating className='bg-grey-2 text-center pt-96'>An image will go here</SpotlightContentFloating>
-          </SpotlightSectionFloating>
+          <Spotlight
+            title={department.spotlight_sections[1].spotlight_section_title}
+            body={department.spotlight_sections[1].spotlight_section_description}
+            buttonContent={department.spotlight_sections[1].spotlight_button.content}
+            image={department.spotlight_sections[1].image}
+            backgroundColor='bg-purple-3'
+            primary={false}
+            isTitleFirst={true}
+          />
         )}
       </ResponsiveContainer>
 
