@@ -1,6 +1,5 @@
 {
   "private": true,
-  "repository": "SFDigitalServices/design-system",
   "workspaces": [
     "packages/*",
     "storybook",
