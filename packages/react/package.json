@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "wireit",
