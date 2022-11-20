@@ -35,16 +35,30 @@ export default [
         file: 'dist/index.mjs',
         format: 'esm',
         sourcemap
+      },
+      {
+        file: 'dist/index.js',
+        format: 'commonjs',
+        sourcemap
       }
     ]
   },
   {
     input: 'src/index.tsx',
     plugins: commonPlugins,
+    external: [
+      'react',
+      'react-dom'
+    ],
     output: [
       {
         file: 'dist/bundled.mjs',
         format: 'esm',
+        sourcemap
+      },
+      {
+        file: 'dist/bundled.js',
+        format: 'commonjs',
         sourcemap
       }
     ]

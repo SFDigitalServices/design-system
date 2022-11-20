@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "wireit",
     "build:js": "wireit",
+    "prebuild": "rm -rf dist",
     "postbuild": "du -h dist/*.*js"
   },
   "wireit": {
@@ -17,9 +21,7 @@
     "build:js": {
       "command": "rollup -c",
       "clean": true,
-      "dependencies": [
-        "../sfgov-design-system:build"
-      ],
+      "dependencies": [],
       "files": [
         "src/**/*",
         "*.config.*js"
@@ -51,9 +53,7 @@
   },
   "peerDependencies": {
     "@emotion/react": ">= 11",
-    "react": ">= 18"
-  },
-  "optionalDependencies": {
+    "react": ">= 18",
     "theme-ui": "^0.15.4"
   }
 }
