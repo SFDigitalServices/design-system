@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react'
 import SFGovIcon from '../SFGovIcon'
 import FigmaLogo from './img/figma_logo'
 import StorybookLogo from './img/storybook_logo'
+import IconExternalLink from '@theme/Icon/ExternalLink'
+
+// https://design-system.sf.gov/storybook/iframe.html?args=&id=components-buttons--primary-button&viewMode=story
+
+// https://www.figma.com/file/nCDNClTAztpLol9l74QWSP/Design-System-Components?node-id=3647%3A1504&t=Rvw9KsvFxlstnv3g-4
 
 const FileEmbed = ({ embedURL }) => {
   const [hoverState, updateHoverState] = useState(false)
@@ -11,7 +16,7 @@ const FileEmbed = ({ embedURL }) => {
 
   const storybookRegex = /story/i
 
-  const embedLink = (embedURL) => {
+  const checkLink = (embedURL) => {
     if (figmaRegex.test(embedURL)) {
       updateLinkType('figma')
     } else if (storybookRegex.test(embedURL)) {
@@ -22,8 +27,28 @@ const FileEmbed = ({ embedURL }) => {
   }
 
   useEffect(() => {
-    embedLink(embedURL)
+    checkLink(embedURL)
   }, [])
+
+  const whichServiceIcon = () => {
+    if (linkType === 'storybook') {
+      return <StorybookLogo />
+    } else if (linkType === 'figma') {
+      return <FigmaLogo />
+    } else {
+      return <IconExternalLink />
+    }
+  }
+
+  const whichServiceLabel = () => {
+    if (linkType === 'storybook') {
+      return 'Storybook'
+    } else if (linkType === 'figma') {
+      return 'Figma'
+    } else {
+      return 'External link'
+    }
+  }
 
   const hoverStyle = {
     backgroundImage: hoverState && 'linear-gradient(0deg, #f2f2f2, transparent',
@@ -57,12 +82,12 @@ const FileEmbed = ({ embedURL }) => {
         onMouseLeave={() => mouseLeave(false)} rel='noreferrer'
       >
         <div className='w-20 h-20'>
-          {linkType === 'storybook' ? <StorybookLogo /> : <FigmaLogo />}
+          { whichServiceIcon() }
         </div>
         {hoverState && (
           <div className='ml-4 items-center flex w-full '>
             <span className='mr-8'>
-            {linkType === 'storybook' ? 'Storybook' : 'Figma' }
+            { whichServiceLabel() }
             </span>
             <SFGovIcon symbol='chevron-right' />
           </div>
