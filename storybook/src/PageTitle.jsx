@@ -1,10 +1,10 @@
 import tw from 'tailwind-styled-components'
 
-const Title = tw.p`
+const PageTitle = tw.h2`
   text-title-lg
   lg:text-title-lg-desktop
   font-medium
   my-0
 `
 
-export default Title
+export default PageTitle

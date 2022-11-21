@@ -2,7 +2,7 @@ import React from 'react'
 import { Header } from './Header.stories'
 import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
 import { Spotlight } from '../components/Spotlight.stories'
-import Title from '../../src/Title'
+import PageTitle from '../../src/PageTitle'
 import BigDescription from '../../src/BigDescription'
 import tw from 'tailwind-styled-components'
 import startCase from 'lodash.startcase'
@@ -250,7 +250,7 @@ export const DepartmentPage = ({ department }) => {
 
       <section className='bg-blue-dark text-white py-80'>
         <ResponsiveContainer>
-          <Title>About</Title>
+          <PageTitle>About</PageTitle>
           <div className='grid grid-cols-1 lg:grid-cols-3'>
             <BigDescription className='col-span-2 mb-24 lg:mb-60 lg:mr-60'>{department.about_or_description}</BigDescription>
             <div className='col-span-1'>
