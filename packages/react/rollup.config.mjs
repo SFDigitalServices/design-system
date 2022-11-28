@@ -10,6 +10,7 @@ const production = process.env.NODE_ENV === 'production'
 const sourcemap = !production
 
 const commonPlugins = [
+  peerDepsExternal(),
   resolve(),
   json({
     compact: true
@@ -17,7 +18,9 @@ const commonPlugins = [
   typescript(),
   commonjs(),
   babel({
-    babelHelpers: 'bundled'
+    babelHelpers: 'bundled',
+    // see: <https://github.com/rollup/rollup-plugin-babel/issues/254>
+    exclude: ['**/core-js/**']
   }),
   terser()
 ]
@@ -26,10 +29,7 @@ const commonPlugins = [
 export default [
   {
     input: 'src/index.tsx',
-    plugins: [
-      ...commonPlugins,
-      peerDepsExternal()
-    ],
+    plugins: commonPlugins,
     output: [
       {
         file: 'dist/index.mjs',
@@ -38,26 +38,6 @@ export default [
       },
       {
         file: 'dist/index.js',
-        format: 'commonjs',
-        sourcemap
-      }
-    ]
-  },
-  {
-    input: 'src/index.tsx',
-    plugins: commonPlugins,
-    external: [
-      'react',
-      'react-dom'
-    ],
-    output: [
-      {
-        file: 'dist/bundled.mjs',
-        format: 'esm',
-        sourcemap
-      },
-      {
-        file: 'dist/bundled.js',
         format: 'commonjs',
         sourcemap
       }
