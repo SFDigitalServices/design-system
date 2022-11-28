@@ -1,7 +1,7 @@
 import type { ResponsiveStyleValue } from 'theme-ui'
 import type { BreakpointName } from './types'
 
-const breakpointsByName: Record<BreakpointName, string> = {
+export const breakpointsByName: Record<BreakpointName, string> = {
   xs: '375px',
   sm: '640px',
   md: '768px',
