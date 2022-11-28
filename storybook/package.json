@@ -11,10 +11,12 @@
     "build": "build-storybook -o public"
   },
   "dependencies": {
+    "@sfgov/react": "0.0.1",
     "clsx": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sfgov-design-system": "2.5.1"
+    "sfgov-design-system": "2.5.1",
+    "theme-ui": "^0.15.4"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
