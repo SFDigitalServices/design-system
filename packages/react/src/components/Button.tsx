@@ -1,10 +1,13 @@
-import React from 'react'
-import { Button, ButtonProps, ThemeUIStyleObject } from 'theme-ui'
-import { HOCUS } from '../constants'
+import clsx from 'clsx'
+import React, { ComponentType } from 'react'
+import { Button as ThemeUIButton, ButtonProps as BaseButtonProps, ThemeUIStyleObject } from 'theme-ui'
+import { FOCUS, HOCUS, HOCUS_CLASS } from '../constants'
 import { withStyles } from '../utils'
+import { focusStyles } from '../styles'
 
-export type BlockButtonProps = ButtonProps & {
+export type ButtonProps = BaseButtonProps & {
   $block?: boolean
+  $hocus?: boolean
 }
 
 const baseButtonStyles: ThemeUIStyleObject = {
@@ -12,6 +15,7 @@ const baseButtonStyles: ThemeUIStyleObject = {
   display: 'inline-flex',
   alignItems: 'center',
   justifyItems: 'center',
+  justifyContent: 'center',
   borderRadius: 8,
   px: 20,
   py: 8,
@@ -26,7 +30,8 @@ const baseButtonStyles: ThemeUIStyleObject = {
   fontWeight: 'bold',
   textAlign: 'center',
   textDecoration: 'none',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
+  [FOCUS]: focusStyles
 }
 
 const blockProps: ThemeUIStyleObject = {
@@ -34,12 +39,12 @@ const blockProps: ThemeUIStyleObject = {
   width: '100%'
 }
 
-function BaseButton ({ $block, sx, ...rest }: BlockButtonProps) {
-  return <Button {...rest} sx={{
+function BaseButton ({ $block, $hocus, sx, className, ...rest }: ButtonProps) {
+  return <ThemeUIButton {...rest} sx={{
     ...baseButtonStyles,
     ...($block ? blockProps : null),
     ...sx
-  }} />
+  }} className={clsx(className, $hocus && HOCUS_CLASS)} />
 }
 
 export const PrimaryButton = withStyles(BaseButton, {
@@ -62,7 +67,25 @@ export const SecondaryButton = withStyles(InverseButton, {
   borderColor: 'currentcolor'
 })
 
-export const LinkButton = withStyles(PrimaryButton, {
+export const LinkButton = withStyles(InverseButton, {
   backgroundColor: 'transparent',
   textDecoration: 'underline'
 })
+
+export type ButtonVariant = 'primary' | 'secondary' | 'inverse' | 'link'
+
+export type GenericButtonProps = ButtonProps & {
+  variant?: ButtonVariant
+}
+
+const variantMap: Record<ButtonVariant, ComponentType<ButtonProps>> = {
+  primary: PrimaryButton,
+  secondary: SecondaryButton,
+  inverse: InverseButton,
+  link: LinkButton
+}
+
+export function Button ({ variant, ...props }: GenericButtonProps) {
+  const Component = variantMap[variant] || PrimaryButton
+  return <Component {...props} />
+}
