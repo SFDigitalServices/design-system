@@ -10,7 +10,7 @@
     "npm": "8.x"
   },
   "scripts": {
-    "build": "lerna run build",
+    "build": "wireit",
     "lint": "lerna run lint",
     "postbuild": "cp -rf storybook/public/ website/public/storybook/",
     "start": "wireit",
@@ -20,10 +20,16 @@
     "website": "npm start -w website"
   },
   "wireit": {
+    "build": {
+      "dependencies": [
+        "./website:build",
+        "./storybook:build"
+      ]
+    },
     "start": {
       "dependencies": [
-        "website",
-        "storybook"
+        "./website:start",
+        "./storybook:start"
       ]
     }
   },
