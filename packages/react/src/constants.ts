@@ -1,7 +1,7 @@
-export const HOVER_CLASS = '__hover__'
-export const FOCUS_CLASS = '__focus__'
-export const HOCUS_CLASS = '__hocus__'
+export const SIMULATED_HOVER_CLASS = '__hover__'
+export const SIMULATED_FOCUS_CLASS = '__focus__'
+export const SIMULATED_HOCUS_CLASS = '__hocus__'
 
-export const HOVER = `&:hover, &.${HOVER_CLASS}`
-export const FOCUS = `&:focus, &.${FOCUS_CLASS}`
-export const HOCUS = `&:hover, &:focus, &.${HOCUS_CLASS}`
+export const HOVER = `&:hover, &.${SIMULATED_HOVER_CLASS}, &.${SIMULATED_HOCUS_CLASS}`
+export const FOCUS = `&:focus, &.${SIMULATED_FOCUS_CLASS}, &.${SIMULATED_HOCUS_CLASS}`
+export const HOCUS = `&:hover, &:focus, &.${SIMULATED_HOVER_CLASS}, &.${SIMULATED_FOCUS_CLASS}, &.${SIMULATED_HOCUS_CLASS}`
