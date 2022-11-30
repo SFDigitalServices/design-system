@@ -10,7 +10,8 @@ import {
   PrimaryButton,
   SecondaryButton,
   InverseButton,
-  LinkButton
+  LinkButton,
+  GenericButtonProps
 } from '@sfgov/react'
 
 type ButtonArgs = {
@@ -85,7 +86,7 @@ Inverse.parameters = {
 
 export const Link = createButtonStory(LinkButton)
 
-export const Generic = createButtonStory(Button)
+export const Generic = createButtonStory<GenericButtonProps>(Button)
 
 Generic.argTypes = {
   variant: {
@@ -133,14 +134,14 @@ type LabelProps = ButtonProps & {
 }
 const cols: LabelProps[] = [
   { $label: 'Rest' },
-  { $label: 'Hover/focus', $hocus: true }
+  { $label: 'Hover/focus', __simulatedHocus: true }
 ]
 const rows: LabelProps[] = [
   { $label: 'Inline' },
   { $label: 'Block', $block: true, cellStyle: { minWidth: '300px' } }
 ]
 
-function createButtonStory (Component: ComponentType<ButtonProps>) {
+function createButtonStory<P extends ButtonProps = ButtonProps> (Component: ComponentType<P>) {
   const derp = <Button variant='primary' />
   return (({ text, ...rest}: ButtonArgs) => {
     return (
