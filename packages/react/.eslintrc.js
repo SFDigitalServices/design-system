@@ -17,9 +17,16 @@ module.exports = {
   },
   rules: {
     'react/no-unescaped-entities': ['warn'],
-    'react/prop-types': ['off'],
-    'no-undef': ['warn'],
-    // this is not needed for TypeScript
-    'import/named': ['off']
-  }
+    'react/prop-types': ['off']
+  },
+  overrides: [
+    {
+      files: ['**/*.ts{,x}'],
+      // these are not needed in TypeScript
+      rules: {
+        'no-undef': ['off'],
+        'import/named': ['off']
+      }
+    }
+  ]
 }
