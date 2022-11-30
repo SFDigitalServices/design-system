@@ -1,13 +1,14 @@
-import clsx from 'clsx'
+import clsx, { ClassValue } from 'clsx'
 import React, { ComponentType } from 'react'
-import { Button as ThemeUIButton, ButtonProps as BaseButtonProps, ThemeUIStyleObject } from 'theme-ui'
-import { FOCUS, HOCUS, HOCUS_CLASS } from '../constants'
+import { Button as ThemeUIButton, ButtonProps as ThemeUIButtonProps, ThemeUIStyleObject } from 'theme-ui'
+import { FOCUS, HOCUS, SIMULATED_HOCUS_CLASS } from '../constants'
 import { withStyles } from '../utils'
 import { focusStyles } from '../styles'
 
-export type ButtonProps = BaseButtonProps & {
+export type ButtonProps = ThemeUIButtonProps & {
+  className?: string | ClassValue
   $block?: boolean
-  $hocus?: boolean
+  __simulatedHocus?: boolean
 }
 
 const baseButtonStyles: ThemeUIStyleObject = {
@@ -39,12 +40,12 @@ const blockProps: ThemeUIStyleObject = {
   width: '100%'
 }
 
-function BaseButton ({ $block, $hocus, sx, className, ...rest }: ButtonProps) {
+function BaseButton ({ $block, __simulatedHocus, sx, className, ...rest }: ButtonProps) {
   return <ThemeUIButton {...rest} sx={{
     ...baseButtonStyles,
     ...($block ? blockProps : null),
     ...sx
-  }} className={clsx(className, $hocus && HOCUS_CLASS)} />
+  }} className={__simulatedHocus ? clsx(className, SIMULATED_HOCUS_CLASS) : className} />
 }
 
 export const PrimaryButton = withStyles(BaseButton, {
