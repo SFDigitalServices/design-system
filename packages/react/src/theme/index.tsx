@@ -41,8 +41,7 @@ export const theme: Theme = {
   },
   grids: {
     responsive: {
-      gap: responsive(20, { md: 28 }),
-      columns: 6
+      gap: responsive(20, { md: 28 })
     }
   }
 }
