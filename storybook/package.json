@@ -5,10 +5,19 @@
     "port": 3001
   },
   "scripts": {
-    "lint": "eslint --ext=.js,.jsx . .storybook",
+    "lint": "eslint --ext js,jsx,ts,tsx . .storybook",
     "start": "start-storybook --port=$npm_package_config_port",
     "prebuild": "rm -rf public; mkdir public",
-    "build": "build-storybook -o public"
+    "build": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "command": "build-storybook -o public",
+      "dependencies": [
+        "../packages/sfgov-design-system:build",
+        "../packages/react:build"
+      ]
+    }
   },
   "dependencies": {
     "@sfgov/react": "0.0.1",
