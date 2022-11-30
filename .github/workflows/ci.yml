@@ -32,3 +32,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - uses: primer/publish@v3.0.0
+        with:
+          npm_args: --unsafe-perm --allow-same-version
+          default_branch: main
+          dir: packages/react
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
