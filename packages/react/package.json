@@ -22,14 +22,13 @@
     },
     "build:js": {
       "command": "rollup -c",
-      "clean": true,
       "dependencies": [],
       "files": [
         "src/**/*",
         "*.config.*js"
       ],
       "outputs": [
-        "dist/*"
+        "dist/*.*js"
       ]
     }
   },
