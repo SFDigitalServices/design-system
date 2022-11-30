@@ -13,14 +13,14 @@ export function withProps<P extends object = {}> (
   defaultProps: ComponentProps<typeof Component>,
   merge: PropsMerger<ComponentProps<typeof Component>> = defaultPropsMerger
 ) {
-  return (props: ComponentProps<typeof Component>) => (
-    <Component {...merge(defaultProps, props)} />
-  )
+  return function ComponentWithProps (props: ComponentProps<typeof Component>) {
+    return <Component {...merge(defaultProps, props)} />
+  }
 }
 
 type AsProp = { as?: ElementType<any> }
 
-export function withComponent <P extends AsProp = AsProp>(
+export function withComponent <P extends AsProp = AsProp> (
   Component: ComponentType<P>,
   as: ElementType
 ) {
@@ -35,7 +35,9 @@ export function withComponent <P extends AsProp = AsProp>(
 }
 
 export function withStyles<P extends SxProp> (Component: ComponentType<P>, styles: ThemeUIStyleObject) {
-  return (props: P) => <Component {...props} sx={{ ...styles, ...props.sx }}  />
+  return function ComponentWithStyles (props: P) {
+    return <Component {...props} sx={{ ...styles, ...props.sx }} />
+  }
 }
 
 export function pxMap (values: number[]): Record<number, string> {

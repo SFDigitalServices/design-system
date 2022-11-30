@@ -1,3 +1,4 @@
+/** eslint-disable */
 import type { TextProps, Theme, ThemeUICSSProperties, ThemeUIStyleObject } from 'theme-ui'
 
 export const FONT_WEIGHT_LIGHT = 300
@@ -9,6 +10,7 @@ export type TextStyleVariantName = 'desktop'
 export type TextStyleWithVariants = {
   default: ThemeUIStyleObject
 } & {
+  // eslint-disable-next-line no-unused-vars
   [key in TextStyleVariantName]?: ThemeUIStyleObject
 }
 
@@ -146,7 +148,7 @@ export const textStyles = Object.fromEntries(
     [name, style.default],
     [`${name}Desktop`, style.desktop]
   ])
-  .filter(([name, value]) => value)
+    .filter(([name, value]) => value)
 )
 
 const textStylePropNames: (keyof ThemeUICSSProperties)[] = ['fontSize', 'fontWeight', 'lineHeight', 'letterSpacing']

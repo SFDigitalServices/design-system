@@ -1,4 +1,4 @@
-import { Theme, ThemeUICSSObject } from "theme-ui"
+import { Theme } from 'theme-ui'
 
 export const RUBIK_SANS = 'Rubik, ui-sans-serif, sans-serif'
 export const ROBOTO_MONO = 'Roboto mono, ui-monospace, monospace'
@@ -8,7 +8,6 @@ export const fonts: Theme['fonts'] = {
   body: RUBIK_SANS,
   mono: ROBOTO_MONO
 }
-
 
 export const textStyles: Theme['text'] = {
   body: {
