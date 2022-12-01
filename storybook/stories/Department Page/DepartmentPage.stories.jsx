@@ -2,9 +2,16 @@ import React from 'react'
 import { Header } from './Header.stories'
 import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
 import { QuickLink } from '../components/QuickLink.stories'
+import { Spotlight } from '../components/Spotlight.stories'
+import PageTitle from '../../src/PageTitle'
 import BigDescription from '../../src/BigDescription'
 import tw from 'tailwind-styled-components'
 import startCase from 'lodash.startcase'
+import Section from '../../src/Section'
+import SectionTitle from '../../src/SectionTitle'
+import { AboutSection } from './AboutSection.stories'
+import { ContactSection } from '../../src/ContactSection'
+import { ContentTile, NewsTile, TileSection } from '../../src/Tile'
 
 import CityAdministrator from './city-admininistrator.json'
 import BoardOfAppeals from './board-appeals.json'
@@ -40,43 +47,6 @@ export default {
 
 const ResponsiveContainer = tw.div`
   responsive-container
-`
-
-const Title = tw.p`
-  text-title-lg
-  lg:text-title-lg-desktop
-  font-medium
-  my-0
-`
-
-const SpotlightSection = tw.div`
-  bg-grey-1
-  px-20
-  py-40
-  mb-60
-  lg:py-60
-  lg:flex
-  lg:gap-28
-`
-
-const SpotlightContent = tw.div`
-  lg:w-1/2
-`
-
-const SpotlightSectionFloating = tw(SpotlightSection)`
-  ${props => props.backgroundColor}
-  rounded
-  px-0
-  py-0
-  lg:py-0
-  lg:gap-0
-`
-
-const SpotlightContentFloating = tw(SpotlightContent)`
-  ${props => !!props.isTitlePanel && 'text-white py-40 px-20 lg:py-60 lg:px-40'}
-  rounded-b
-  lg:rounded-r
-  lg:rounded-bl-0
 `
 
 const Button = tw.button`
@@ -163,14 +133,12 @@ export const DepartmentPage = ({ department }) => {
       </ResponsiveContainer>
 
       {!!department.spotlight_sections?.length && (
-        <SpotlightSection>
-          <SpotlightContent className='bg-grey-2'></SpotlightContent>
-          <SpotlightContent>
-            <Title>{department.spotlight_sections[0].spotlight_section_title}</Title>
-            <BigDescription>{department.spotlight_sections[0].spotlight_section_description}</BigDescription>
-            <Button>{department.spotlight_sections[0].spotlight_button.content}</Button>
-          </SpotlightContent>
-        </SpotlightSection>
+        <Spotlight
+          title={department.spotlight_sections[0].spotlight_section_title}
+          body={department.spotlight_sections[0].spotlight_section_description}
+          buttonContent={department.spotlight_sections[0].spotlight_button.content}
+          image={department.spotlight_sections[0].image}
+        />
       )}
 
       <ResponsiveContainer>
@@ -182,129 +150,55 @@ export const DepartmentPage = ({ department }) => {
           </CardContainer>
         )}
         {department.spotlight_sections?.[1] && !department.spotlight_sections?.[1].variant.primary && (
-          <SpotlightSectionFloating backgroundColor='bg-purple-3'>
-            <SpotlightContentFloating isTitlePanel='true'>
-              <Title>{department.spotlight_sections[1].spotlight_section_title}</Title>
-              <BigDescription>{department.spotlight_sections[1].spotlight_section_description}</BigDescription>
-              {department.spotlight_sections[1].spotlight_button.primary
-                ? <Button>{department.spotlight_sections[1].spotlight_button.content}</Button>
-                : <InverseButton>{department.spotlight_sections[1].spotlight_button.content}</InverseButton>
-              }
-            </SpotlightContentFloating>
-            <SpotlightContentFloating className='bg-grey-2 text-center pt-96'>An image will go here</SpotlightContentFloating>
-          </SpotlightSectionFloating>
+          <Spotlight
+            title={department.spotlight_sections[1].spotlight_section_title}
+            body={department.spotlight_sections[1].spotlight_section_description}
+            buttonContent={department.spotlight_sections[1].spotlight_button.content}
+            image={department.spotlight_sections[1].image}
+            backgroundColor='bg-purple-3'
+            primary={false}
+            isTitleFirst={true}
+          />
         )}
       </ResponsiveContainer>
 
       {department.news?.length && (
-        <section className='bg-yellow-1 mt-60 py-80'>
-          <ResponsiveContainer>
-            <SectionTitle>News</SectionTitle>
-            <CardContainer>
-              {department.news.map(newsItem =>
-                <NewsCard key={newsItem.id}>
-                  <NewsCardTitle>{newsItem.title}</NewsCardTitle>
-                  <p>{newsItem.posted_date}</p>
-                </NewsCard>
-              )}
-            </CardContainer>
-            <Button>See more news</Button>
-          </ResponsiveContainer>
-        </section>
+        <Section variant='yellow'>
+          <SectionTitle>News</SectionTitle>
+          <TileSection>
+            {department.news.map(newsItem =>
+              <NewsTile key={newsItem.id} title={newsItem.title} body={newsItem.posted_date} />
+            )}
+          </TileSection>
+        </Section>
       )}
 
       {department.resources?.length && (
-        <section className='bg-blue-1 py-80'>
-          <ResponsiveContainer>
-            <SectionTitle>Resources</SectionTitle>
-            <CardContainer className='lg:grid-cols-2'>
-              {department.resources.map(resource =>
-                <ResourceCard key={resource.id}>
-                  <ResourceCardTitle>{resource.title}</ResourceCardTitle>
-                  <p>{resource.description}</p>
-                </ResourceCard>
-              )}
-            </CardContainer>
-          </ResponsiveContainer>
-        </section>
+        <Section variant='lightblue'>
+          <SectionTitle>Resources</SectionTitle>
+          <TileSection>
+            {department.resources.map(resource =>
+              <ContentTile key={resource.id} title={resource.title} body={resource.description} />
+            )}
+          </TileSection>
+        </Section>
       )}
 
-      <section className='bg-blue-dark text-white py-80'>
-        <ResponsiveContainer>
-          <Title>About</Title>
-          <div className='grid grid-cols-1 lg:grid-cols-3'>
-            <BigDescription className='col-span-2 mb-24 lg:mb-60 lg:mr-60'>{department.about_or_description}</BigDescription>
-            <div className='col-span-1'>
-              <CallToAction>{department.about.call_to_action.title}</CallToAction>
-              <InverseButton>{department.about.call_to_action.button.content}</InverseButton>
-            </div>
-            <div className='col-span-full mb-60'>
-              <InverseButton>Learn more about us</InverseButton>
-            </div>
-            <div className='col-span-2'>
-              {!!department.about?.public_bodies?.length && (
-                <>
-                  <div className='text-title-xs font-medium mb-24'>
-                    Public bodies
-                  </div>
-                  <ul className='flex flex-wrap p-0 m-0 mb-40 list-none'>
-                    {department.about.public_bodies.map(publicBody =>
-                      <li className='mb-20 w-full lg:w-1/2 lg:pr-8' key={publicBody.id}>
-                        <a className='text-white underline'>{publicBody.link.title}</a>
-                      </li>
-                    )}
-                  </ul>
-                </>
-              )}
-              {!!department.about?.divisions?.length && (
-                <>
-                  <div className='text-title-xs font-medium mb-24'>
-                    Divisions
-                  </div>
-                  <ul className='flex flex-wrap p-0 m-0 mb-40 list-none'>
-                    {department.about.divisions.map(division =>
-                      <li className='mb-20 w-full lg:w-1/2 lg:pr-8' key={division.id}>
-                        <a className='text-white underline'>{division.link.title}</a>
-                      </li>
-                    )}
-                  </ul>
-                </>
-              )}
-            </div>
-          </div>
-        </ResponsiveContainer>
-      </section>
+      <AboutSection
+        about={department.about_or_description}
+        ctaTitle={department.about.call_to_action.title}
+        ctaButton={department.about.call_to_action.button.content}
+        publicBodies={department.about.public_bodies}
+        divisions={department.about.divisions}
+      />
 
-      <ResponsiveContainer className='my-80'>
-        <SectionTitle>Contact</SectionTitle>
-        <CardContainer>
-          <ContactSection>
-            <sfgov-icon symbol='location' class='pr-20' />
-            <div>
-              <h3 className='mt-0'>{department.title}</h3>
-              <div>{department.contact.address[0].address.address_line1}</div>
-              <div>{department.contact.address[0].address.address_line2}</div>
-              <div>{`${department.contact.address[0].address.locality}, ${department.contact.address[0].address.administrative_area} ${department.contact.address[0].address.postal_code}`}</div>
-              <div className='bg-grey-2 h-100 w-100 mt-40 mb-20 p-20 rounded text-center'>A map will go here</div>
-              <a href='https://www.google.com/maps/dir/?api=1&amp;destination=1+Dr.+Carlton+B.+Goodlett+Place%2CCity+Hall+Room+362%2C+San+Francisco%2CCA+94102' target='_blank' rel='noreferrer'>Get directions</a>
-            </div>
-          </ContactSection>
-          <ContactSection>
-            <sfgov-icon symbol='phone' class='pr-20'/>
-            <div>
-              <h3 className='mt-0'>Phone</h3>
-              <div>{department.contact.phone_numbers[0].owner}</div>
-              <a href={`tel:${department.contact.phone_numbers[0].tel}`}>{department.contact.phone_numbers[0].tel}</a>
-            </div>
-          </ContactSection>
-          <ContactSection>
-            <sfgov-icon symbol='mail' class='pr-20'/>
-            <div>
-              <h3 className='mt-0'>Email</h3>
-              <a href={`mailto:${department.contact.email[0].email}`}>{department.contact.email[0].email}</a>
-            </div>
-          </ContactSection>
-        </CardContainer>
+      <ContactSection
+        address={department.contact.address[0].address}
+        phone={department.contact.phone_numbers}
+        email={department.contact.email[0]}
+      />
+
+      <ResponsiveContainer>
         <div className='p-40 lg:flex lg:space-x-20 rounded bg-blue-1'>
           <div>
             <h3>Request public record</h3>
