@@ -7,7 +7,8 @@
     "silvenon.mdx",
     "stylelint.vscode-stylelint",
     "DavidAnson.vscode-markdownlint",
-    "william-voyek.vscode-nginx"
+    "william-voyek.vscode-nginx",
+    "ban.spellright"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
