@@ -1,19 +1,40 @@
 import React from 'react'
 import { Header } from './Header.stories'
 import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
+import { QuickLink } from '../components/QuickLink.stories'
+import { Spotlight } from '../components/Spotlight.stories'
+import PageTitle from '../../src/PageTitle'
 import BigDescription from '../../src/BigDescription'
 import tw from 'tailwind-styled-components'
+import startCase from 'lodash.startcase'
+import Section from '../../src/Section'
+import SectionTitle from '../../src/SectionTitle'
+import { AboutSection } from './AboutSection.stories'
+import { ContactSection } from '../../src/ContactSection'
+import { ContentTile, NewsTile, TileSection } from '../../src/Tile'
+
+import CityAdministrator from './city-admininistrator.json'
+import BoardOfAppeals from './board-appeals.json'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
   title: 'Department Page',
   args: {
-    text: 'A very extreme and urgent thing is about to happen in San Francisco.'
+    department: CityAdministrator
   },
   argTypes: {
-    text: {
-      name: 'Text',
-      type: 'string'
+    department: {
+      options: ['BoardOfAppeals', 'CityAdministrator'],
+      mapping: {
+        BoardOfAppeals,
+        CityAdministrator
+      },
+      control: {
+        labels: {
+          BoardOfAppeals: 'Board of Appeals',
+          CityAdministrator: 'City Administrator'
+        }
+      }
     }
   },
   parameters: {
@@ -26,43 +47,6 @@ export default {
 
 const ResponsiveContainer = tw.div`
   responsive-container
-`
-
-const Title = tw.p`
-  text-title-lg
-  lg:text-title-lg-desktop
-  font-medium
-  my-0
-`
-
-const SpotlightSection = tw.div`
-  bg-grey-1
-  px-20
-  py-40
-  mb-60
-  lg:py-60
-  lg:flex
-  lg:gap-28
-`
-
-const SpotlightContent = tw.div`
-  lg:w-1/2
-`
-
-const SpotlightSectionFloating = tw(SpotlightSection)`
-  ${props => props.backgroundColor}
-  rounded
-  px-0
-  py-0
-  lg:py-0
-  lg:gap-0
-`
-
-const SpotlightContentFloating = tw(SpotlightContent)`
-  ${props => !!props.isTitlePanel && 'text-white py-40 px-20 lg:py-60 lg:px-40'}
-  rounded-b
-  lg:rounded-r
-  lg:rounded-bl-0
 `
 
 const Button = tw.button`
@@ -80,56 +64,6 @@ const CardContainer = tw.div`
   gap-20
   mb-60
 `
-
-// we should probably enable word-break in tailwind for below
-const QuickLink = tw.a`
-  group
-  flex
-  flex-col
-  no-underline
-  border-solid
-  border-3 border-grey-2
-  py-16
-  px-24
-  rounded
-  lg:p-24
-  hocus:bg-action
-  hocus:border-white
-`
-
-const QuickLinkTitle = tw.p`
-  text-title-md
-  text-action
-  font-medium
-  mb-8
-  lg:mb-16
-  lg:text-title-md-desktop
-  group-hocus:text-white
-`
-
-const QuickLinkDivider = tw.div`
-  h-8
-  mb-8
-  w-100
-  bg-blue-bright
-  lg:mb-16
-  group-hocus:bg-white
-`
-
-const QuickLinkSubtitle = tw.p`
-  text-body
-  text-black
-  flex-auto
-  group-hocus:text-white
-`
-
-// const QuickLinkArrowIcon = tw.sfgov-icon`
-//   flex
-//   justify-end
-//   items-end
-//   text-action
-//   group-hocus:text-white
-// `
 
 const SectionTitle = tw.h2`
   title-xl
@@ -180,165 +114,120 @@ const ContactSection = tw.div`
   items-start
 `
 
-export const DepartmentPage = () =>
-<div className='text-slate'>
-  <Header />
+export const DepartmentPage = ({ department }) => {
+  const links = Object.keys(department).flatMap(field =>
+    field === 'services' || field === 'news' || field === 'resources' || field === 'contact'
+      ? [{ text: startCase(field), href: `/#${field}` }]
+      : []
+  )
+  return (
+    <div className='text-slate'>
+      <Header />
 
-  <ResponsiveContainer className='border-0 border-t-3 border-grey-2 border-solid'>
-    <DepartmentTitleBanner
-      title='City Administrator'
-      subtitle='With integrity, the Office of the City Administrator serves all San Franciscans and its visitors.'
-      links={[{ text: 'News', href: '' }, { text: 'Resources', href: '' }, { text: 'Contact', href: '' }]}
-    />
-  </ResponsiveContainer>
+      <ResponsiveContainer className='border-0 border-t-3 border-grey-2 border-solid'>
+        <DepartmentTitleBanner
+          title={department.title}
+          subtitle={department.description}
+          links={links}
+        />
+      </ResponsiveContainer>
 
-  <SpotlightSection>
-    <SpotlightContent className='bg-grey-2'></SpotlightContent>
-    <SpotlightContent>
-      <Title>This is a spotlight title</Title>
-      <BigDescription>This is the spotlight description text</BigDescription>
-      <Button>A primary button</Button>
-    </SpotlightContent>
-  </SpotlightSection>
-
-  <ResponsiveContainer>
-    <CardContainer>
-      {[...Array(3)].map((x, i) =>
-        <QuickLink key={i}>
-          <QuickLinkTitle>
-            Here's one quick link about this department
-          </QuickLinkTitle>
-          <QuickLinkDivider />
-          <QuickLinkSubtitle>
-            Here's the subtitle for the above quick link. Written in sentence form!
-          </QuickLinkSubtitle>
-          <sfgov-icon symbol='arrow-right' class='flex justify-end items-end text-action group-hocus:text-white' />
-        </QuickLink>
+      {!!department.spotlight_sections?.length && (
+        <Spotlight
+          title={department.spotlight_sections[0].spotlight_section_title}
+          body={department.spotlight_sections[0].spotlight_section_description}
+          buttonContent={department.spotlight_sections[0].spotlight_button.content}
+          image={department.spotlight_sections[0].image}
+        />
       )}
-    </CardContainer>
-    <SpotlightSectionFloating backgroundColor='bg-purple-3'>
-      <SpotlightContentFloating isTitlePanel='true'>
-        <Title>This is a spotlight title</Title>
-        <BigDescription>This is the spotlight description text</BigDescription>
-        <InverseButton>An inverse button</InverseButton>
-      </SpotlightContentFloating>
-      <SpotlightContentFloating className='bg-grey-2 text-center pt-96'>An image will go here</SpotlightContentFloating>
-    </SpotlightSectionFloating>
-  </ResponsiveContainer>
 
-  <section className='bg-yellow-1 mt-60 py-80'>
-    <ResponsiveContainer>
-      <SectionTitle>News</SectionTitle>
-      <CardContainer>
-        {[...Array(3)].map((x, i) =>
-          <NewsCard key={i}>
-            <NewsCardTitle>Here is a news card. This is the title of the news card.</NewsCardTitle>
-            <p>October 13, 2022</p>
-          </NewsCard>
-        )}
-      </CardContainer>
-      <Button>See more news</Button>
-    </ResponsiveContainer>
-  </section>
-
-  <section className='bg-blue-1 py-80'>
-    <ResponsiveContainer>
-      <SectionTitle>Resources</SectionTitle>
-      <CardContainer className='lg:grid-cols-2'>
-        {[...Array(9)].map((x, i) =>
-          <ResourceCard key={i}>
-            <ResourceCardTitle>Here is a resource card. This is the title of the resource card.</ResourceCardTitle>
-            <p>Here is the description of the resource card.</p>
-          </ResourceCard>
-        )}
-      </CardContainer>
-    </ResponsiveContainer>
-  </section>
-
-  <section className='bg-blue-dark text-white py-80'>
-    <ResponsiveContainer>
-      <Title>About</Title>
-      <div className='grid grid-cols-1 lg:grid-cols-3'>
-        <BigDescription className='col-span-2 mb-24 lg:mb-60 lg:mr-60'>The Office of the City Administrator comprises 27 departments, divisions, and programs that provide a broad range of services to other City departments and the public. </BigDescription>
-        <div className='col-span-1'>
-          <CallToAction>Here is a call to action related to this section.</CallToAction>
-          <InverseButton>Here is the call to action button</InverseButton>
-        </div>
-        <div className='col-span-full mb-60'>
-          <InverseButton>Learn more about us</InverseButton>
-        </div>
-        <div className='col-span-2'>
-          <div className='text-title-xs font-medium mb-24'>
-            Divisions
-          </div>
-          <ul className='flex flex-wrap p-0 m-0 mb-40 list-none'>
-            {[...Array(19)].map((x, i) =>
-              <li className='mb-20 w-full lg:w-1/2 lg:pr-8' key={i}>
-                <a className='text-white underline'>These are department divisions</a>
-              </li>
+      <ResponsiveContainer>
+        {!!department.featured_items?.length && (
+          <CardContainer>
+            {department.featured_items.map(({ id, feature_title: title, description }) =>
+              <QuickLink key={id} data={{ title, description }} />
             )}
-          </ul>
-        </div>
-      </div>
-    </ResponsiveContainer>
-  </section>
+          </CardContainer>
+        )}
+        {department.spotlight_sections?.[1] && !department.spotlight_sections?.[1].variant.primary && (
+          <Spotlight
+            title={department.spotlight_sections[1].spotlight_section_title}
+            body={department.spotlight_sections[1].spotlight_section_description}
+            buttonContent={department.spotlight_sections[1].spotlight_button.content}
+            image={department.spotlight_sections[1].image}
+            backgroundColor='bg-purple-3'
+            primary={false}
+            isTitleFirst={true}
+          />
+        )}
+      </ResponsiveContainer>
 
-  <ResponsiveContainer className='my-80'>
-    <SectionTitle>Contact</SectionTitle>
-    <CardContainer>
-      <ContactSection>
-        <sfgov-icon symbol='location' class='pr-20' />
-        <div>
-          <h3 className='mt-0'>City Administrator</h3>
-          <div>1 Dr. Carlton B. Goodlett Place</div>
-          <div>City Hall Room 362</div>
-          <div>San Francisco, CA 94102</div>
-          <div className='bg-grey-2 h-100 w-100 mt-40 mb-20 p-20 rounded text-center'>A map will go here</div>
-          <a href='https://www.google.com/maps/dir/?api=1&amp;destination=1+Dr.+Carlton+B.+Goodlett+Place%2CCity+Hall+Room+362%2C+San+Francisco%2CCA+94102' target='_blank' rel='noreferrer'>Get directions</a>
+      {department.news?.length && (
+        <Section variant='yellow'>
+          <SectionTitle>News</SectionTitle>
+          <TileSection>
+            {department.news.map(newsItem =>
+              <NewsTile key={newsItem.id} title={newsItem.title} body={newsItem.posted_date} />
+            )}
+          </TileSection>
+        </Section>
+      )}
+
+      {department.resources?.length && (
+        <Section variant='lightblue'>
+          <SectionTitle>Resources</SectionTitle>
+          <TileSection>
+            {department.resources.map(resource =>
+              <ContentTile key={resource.id} title={resource.title} body={resource.description} />
+            )}
+          </TileSection>
+        </Section>
+      )}
+
+      <AboutSection
+        about={department.about_or_description}
+        ctaTitle={department.about.call_to_action.title}
+        ctaButton={department.about.call_to_action.button.content}
+        publicBodies={department.about.public_bodies}
+        divisions={department.about.divisions}
+      />
+
+      <ContactSection
+        address={department.contact.address[0].address}
+        phone={department.contact.phone_numbers}
+        email={department.contact.email[0]}
+      />
+
+      <ResponsiveContainer>
+        <div className='p-40 lg:flex lg:space-x-20 rounded bg-blue-1'>
+          <div>
+            <h3>Request public record</h3>
+            <p><a href='mailto:admsunshinerequests@sfgov.org'>Email admsunshinerequests@sfgov.org</a> to submit a request.</p>
+          </div>
+          <div>
+            <h3>Archived website</h3>
+            <p><a target='_blank' href='https://wayback.archive-it.org/19767/3/https://sfgsa.org/office-city-administrator' rel='noreferrer'>See previous website</a> archived August 2022.</p>
+          </div>
         </div>
-      </ContactSection>
-      <ContactSection>
-        <sfgov-icon symbol='phone' class='pr-20'/>
-        <div>
-          <h3 className='mt-0'>City Administrator</h3>
-          <a href='tel:999-999-9999'>999-999-9999</a>
+      </ResponsiveContainer>
+
+      <div className='bg-grey-dark text-white py-20 mt-60'>
+        <div className='responsive-container'>
+          <div className='flex items-center flex-wrap gap-20'>
+            <form className='flex-auto flex items-center gap-20'>
+              <span>Was this page helpful?</span>
+              <button className='btn btn-inverse'>Yes</button>
+              <button className='btn btn-inverse'>No</button>
+            </form>
+            <div className=''>
+              <a href='#' className='text-white hover:text-white'>Report something wrong with this page</a>
+            </div>
+          </div>
         </div>
-      </ContactSection>
-      <ContactSection>
-        <sfgov-icon symbol='mail' class='pr-20'/>
-        <div>
-          <h3 className='mt-0'>City Administrator</h3>
-          <a href='mailto:somedepartment@sfgov.org'>somedepartment@sfgov.org</a>
-        </div>
-      </ContactSection>
-    </CardContainer>
-    <div className='p-40 lg:flex lg:space-x-20 rounded bg-blue-1'>
-      <div>
-        <h3>Request public record</h3>
-        <p><a href='mailto:admsunshinerequests@sfgov.org'>Email admsunshinerequests@sfgov.org</a> to submit a request.</p>
       </div>
-      <div>
-        <h3>Archived website</h3>
-        <p><a target='_blank' href='https://wayback.archive-it.org/19767/3/https://sfgsa.org/office-city-administrator' rel='noreferrer'>See previous website</a> archived August 2022.</p>
-      </div>
+
+      <footer className='bg-black text-white py-60'>
+      </footer>
     </div>
-  </ResponsiveContainer>
-
-  <div className='bg-grey-dark text-white py-20 mt-60'>
-    <div className='responsive-container'>
-      <div className='flex items-center flex-wrap gap-20'>
-        <form className='flex-auto flex items-center gap-20'>
-          <span>Was this page helpful?</span>
-          <button className='btn btn-inverse'>Yes</button>
-          <button className='btn btn-inverse'>No</button>
-        </form>
-        <div className=''>
-          <a href='#' className='text-white hover:text-white'>Report something wrong with this page</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer className='bg-black text-white py-60'>
-  </footer>
-</div>
+  )
+}
