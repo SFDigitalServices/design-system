@@ -25,6 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sfgov-design-system": "2.5.1",
+    "tailwind-styled-components": "^2.2.0",
     "theme-ui": "^0.15.4"
   },
   "devDependencies": {
@@ -40,9 +41,7 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "lodash.startcase": "^4.4.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "storybook-addon-designs": "^6.3.1",
-    "storybook-source-link": "^2.0.3"
+    "storybook-source-link": "^2.0.4"
   }
 }
