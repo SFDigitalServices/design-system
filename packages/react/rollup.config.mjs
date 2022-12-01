@@ -10,7 +10,6 @@ const production = process.env.NODE_ENV === 'production'
 const sourcemap = !production
 
 const commonPlugins = [
-  peerDepsExternal(),
   resolve(),
   json({
     compact: true
@@ -25,11 +24,13 @@ const commonPlugins = [
   terser()
 ]
 
+const externalDepsPlugins = [...commonPlugins, peerDepsExternal()]
+
 /** @type {import('rollup').RollupOptions[]} */
 export default [
   {
     input: 'src/index.tsx',
-    plugins: commonPlugins,
+    plugins: externalDepsPlugins,
     output: [
       {
         file: 'dist/index.mjs',
@@ -39,6 +40,17 @@ export default [
       {
         file: 'dist/index.js',
         format: 'commonjs',
+        sourcemap
+      }
+    ]
+  },
+  {
+    input: 'src/index.tsx',
+    plugins: commonPlugins,
+    output: [
+      {
+        file: 'dist/bundled.mjs',
+        format: 'esm',
         sourcemap
       }
     ]
