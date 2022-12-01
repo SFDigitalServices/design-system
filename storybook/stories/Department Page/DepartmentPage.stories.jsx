@@ -3,8 +3,6 @@ import { Header } from './Header.stories'
 import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
 import { QuickLink } from '../components/QuickLink.stories'
 import { Spotlight } from '../components/Spotlight.stories'
-import PageTitle from '../../src/PageTitle'
-import BigDescription from '../../src/BigDescription'
 import tw from 'tailwind-styled-components'
 import startCase from 'lodash.startcase'
 import Section from '../../src/Section'
@@ -49,69 +47,12 @@ const ResponsiveContainer = tw.div`
   responsive-container
 `
 
-const Button = tw.button`
-  btn
-`
-
-const InverseButton = tw(Button)`
-  btn-inverse
-`
-
 const CardContainer = tw.div`
   grid
   grid-cols-1
   lg:grid-cols-3
   gap-20
   mb-60
-`
-
-const SectionTitle = tw.h2`
-  title-xl
-  mt-0
-  mb-40
-`
-
-const NewsCard = tw.a`
-  text-slate
-  bg-yellow-3
-  hover:bg-yellow-4
-  rounded
-  p-20
-`
-
-const NewsCardTitle = tw.a`
-  block
-  text-slate
-  font-medium
-  mb-20
-`
-
-const ResourceCard = tw.a`
-bg-white
-  border-solid
-  border-3 
-  border-grey-2
-  rounded
-  p-20
-  hocus:border-action
-  text-slate
-`
-
-const ResourceCardTitle = tw.a`
-  block
-  font-medium
-  underline
-  mb-20
-`
-
-const CallToAction = tw.p`
-  text-title-xs
-  font-medium
-`
-
-const ContactSection = tw.div`
-  flex
-  items-start
 `
 
 export const DepartmentPage = ({ department }) => {
