@@ -1,6 +1,7 @@
 import React from 'react'
 import { Header } from './Header.stories'
 import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
+import { QuickLink } from '../components/QuickLink.stories'
 import { Spotlight } from '../components/Spotlight.stories'
 import PageTitle from '../../src/PageTitle'
 import BigDescription from '../../src/BigDescription'
@@ -64,46 +65,53 @@ const CardContainer = tw.div`
   mb-60
 `
 
-// we should probably enable word-break in tailwind for below
-const QuickLink = tw.a`
-  group
-  flex
-  flex-col
-  no-underline
-  border-solid
-  border-3 border-grey-2
-  py-16
-  px-24
+const SectionTitle = tw.h2`
+  title-xl
+  mt-0
+  mb-40
+`
+
+const NewsCard = tw.a`
+  text-slate
+  bg-yellow-3
+  hover:bg-yellow-4
   rounded
-  lg:p-24
-  hocus:bg-action
-  hocus:border-white
+  p-20
 `
 
-const QuickLinkTitle = tw.p`
-  text-title-md
-  text-action
+const NewsCardTitle = tw.a`
+  block
+  text-slate
   font-medium
-  mb-8
-  lg:mb-16
-  lg:text-title-md-desktop
-  group-hocus:text-white
+  mb-20
 `
 
-const QuickLinkDivider = tw.div`
-  h-8
-  mb-8
-  w-100
-  bg-blue-bright
-  lg:mb-16
-  group-hocus:bg-white
+const ResourceCard = tw.a`
+bg-white
+  border-solid
+  border-3 
+  border-grey-2
+  rounded
+  p-20
+  hocus:border-action
+  text-slate
 `
 
-const QuickLinkSubtitle = tw.p`
-  text-body
-  text-black
-  flex-auto
-  group-hocus:text-white
+const ResourceCardTitle = tw.a`
+  block
+  font-medium
+  underline
+  mb-20
+`
+
+const CallToAction = tw.p`
+  text-title-xs
+  font-medium
+`
+
+const ContactSection = tw.div`
+  flex
+  items-start
 `
 
 export const DepartmentPage = ({ department }) => {
@@ -136,17 +144,8 @@ export const DepartmentPage = ({ department }) => {
       <ResponsiveContainer>
         {!!department.featured_items?.length && (
           <CardContainer>
-            {department.featured_items.map(quickLink =>
-              <QuickLink key={quickLink.id}>
-                <QuickLinkTitle>
-                  {quickLink.feature_title}
-                </QuickLinkTitle>
-                <QuickLinkDivider />
-                <QuickLinkSubtitle>
-                  {quickLink.description}
-                </QuickLinkSubtitle>
-                <sfgov-icon symbol='arrow-right' class='flex justify-end items-end text-action group-hocus:text-white' />
-              </QuickLink>
+            {department.featured_items.map(({ id, feature_title: title, description }) =>
+              <QuickLink key={id} data={{ title, description }} />
             )}
           </CardContainer>
         )}
