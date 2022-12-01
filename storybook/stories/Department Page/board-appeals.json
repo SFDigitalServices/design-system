@@ -1,0 +1,378 @@
+{
+  "href": "https://test-sfgov.pantheonsite.io/departments/board-appeals?_format=hal_json",
+  "nid": 785,
+  "uuid": "17420048-4678-4f0a-83f9-7207043b7b74",
+  "vid": 77999,
+  "langcode": "en",
+  "type": {
+    "target_id": "department"
+  },
+  "revision_timestamp": "2022-10-13T17:35:31+00:00",
+  "status": true,
+  "title": "Board of Appeals",
+  "created": "2020-02-29T16:03:44+00:00",
+  "changed": "2022-10-13T17:35:31+00:00",
+  "promote": false,
+  "sticky": false,
+  "default_langcode": true,
+  "revision_translation_affected": true,
+  "moderation_state": "published",
+  "metatag": {
+    "canonical_url": "https://test-sfgov.pantheonsite.io/departments/board-appeals",
+    "google": "8etBKQyyqG3GiT-xNuZVwr27VA0zgbwiyVFTLJBv_jE",
+    "title": "Board of Appeals | San Francisco",
+    "description": "We provide a final administrative review process for appeals on a range of City determinations."
+  },
+  "path": {
+    "alias": "/departments/board-appeals",
+    "pid": 1393,
+    "langcode": "en",
+    "lang": "en"
+  },
+  "content_translation_source": null,
+  "content_translation_outdated": false,
+  "about_or_description": "As a quasi-judicial body, we provide a final review process for a wide range of City permitting. We aim to provide an efficient, fair and expeditious review of the City's permit issuance process before an impartial panel.\r\n\r\nThe City Charter of 1932 created the Board of Appeals.\r\n",
+  "archive_date": "2022-10-01",
+  "archive_url": {
+    "uri": "https://wayback.archive-it.org/20107/3/https://sfgov.org/bdappeal/",
+    "title": "",
+    "options": []
+  },
+  "description": "We provide a final administrative review process for appeals on a range of City determinations.",
+  "go_to_current_url": false,
+  "req_public_records": "Email",
+  "req_public_records_email": "boardofappeals@sfgov.org",
+  "req_public_records_phone": "628-652-1150",
+  "url": {
+    "uri": "https://sfgov.org/bdappeal/",
+    "title": "",
+    "options": [],
+    "lang": "en"
+  },
+  "contact": {
+    "address": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/location/177?_format=hal_json",
+        "id": 177,
+        "uuid": "00774fc8-f1c8-47d8-8fda-918de1a449b8",
+        "langcode": "en",
+        "type": {
+          "target_id": "physical"
+        },
+        "created": "2021-05-18T21:13:06+00:00",
+        "changed": "2021-06-24T17:44:23+00:00",
+        "status": true,
+        "default_langcode": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2021-06-24T17:44:23+00:00",
+        "address": {
+          "title": "Board of Appeals",
+          "langcode": "",
+          "country_code": "US",
+          "administrative_area": "CA",
+          "locality": "San Francisco",
+          "dependent_locality": null,
+          "postal_code": "94103",
+          "sorting_code": null,
+          "address_line1": "49 South Van Ness",
+          "address_line2": "Suite 1475 (14th Floor)",
+          "organization": "",
+          "given_name": null,
+          "additional_name": null,
+          "family_name": null,
+          "addressee": "",
+          "location_name": "Permit Center",
+          "lang": "en"
+        },
+        "operating_hours": {
+          "day": 1,
+          "starthours": 800,
+          "endhours": 1700,
+          "comment": "",
+          "lang": "en"
+        },
+        "text": "You must make an appointment to visit the office. "
+      }
+    ],
+    "email": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/2277?_format=hal_json",
+        "id": 2277,
+        "uuid": "9cdc149b-7aee-4d45-a60d-f5c0015d7f39",
+        "revision_id": 803921,
+        "langcode": "en",
+        "type": {
+          "target_id": "email"
+        },
+        "status": true,
+        "created": "2020-02-29T16:04:06+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_email",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2021-05-18T21:16:07+00:00",
+        "email": "boardofappeals@sfgov.org"
+      }
+    ],
+    "phone_numbers": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/9598?_format=hal_json",
+        "id": 9598,
+        "uuid": "57e242f5-b5fa-42cc-af4b-ff5251f099cb",
+        "revision_id": 803932,
+        "langcode": "en",
+        "type": {
+          "target_id": "phone"
+        },
+        "status": true,
+        "created": "2021-05-18T21:13:10+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_phone_numbers",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2021-05-18T21:13:10+00:00",
+        "owner": "Board of Appeals",
+        "tel": "628-652-1150"
+      }
+    ]
+  },
+  "services": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/13952?_format=hal_json",
+      "id": 13952,
+      "uuid": "f0bac5de-9578-4523-bdcc-f1ff2843969d",
+      "revision_id": 803920,
+      "langcode": "en",
+      "type": {
+        "target_id": "department_service_section"
+      },
+      "status": true,
+      "created": "2021-09-16T18:55:14+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_department_services",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2021-09-16T18:55:14+00:00",
+      "dept_service_section_title": "Appeals"
+    }
+  ],
+  "news": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 448831,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "posted_date": "October 13, 2022",
+      "title": "Here is a news card. This is the title of the news card."
+    }
+  ],
+  "featured_items": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44882?_format=hal_json",
+      "id": 44882,
+      "uuid": "c0df9f2e-b528-423a-a949-0c30405171a8",
+      "revision_id": 803922,
+      "langcode": "en",
+      "type": {
+        "target_id": "featured_item"
+      },
+      "status": true,
+      "created": "2022-08-18T17:39:45+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_featured_items",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Hearings, agendas and minutes ",
+      "feature_link": {
+        "uri": "entity:node/1965",
+        "title": "",
+        "options": [],
+        "lang": "en"
+      },
+      "feature_title": "Board of Appeals Hearings"
+    }
+  ],
+  "people": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/47383?_format=hal_json",
+      "id": 47383,
+      "uuid": "7b596928-b412-4072-8ed3-febe7fadc916",
+      "revision_id": 803928,
+      "langcode": "en",
+      "type": {
+        "target_id": "profile_group"
+      },
+      "status": true,
+      "created": "2022-09-08T21:42:24+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_people",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-15T21:58:35+00:00",
+      "title": "Commissioners"
+    },
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45110?_format=hal_json",
+      "id": 45110,
+      "uuid": "8d62008f-f171-44fe-97df-8affc8140682",
+      "revision_id": 803931,
+      "langcode": "en",
+      "type": {
+        "target_id": "profile_group"
+      },
+      "status": true,
+      "created": "2022-08-19T18:32:59+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_people",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-08T21:43:49+00:00",
+      "title": "Staff"
+    }
+  ],
+  "about": {
+    "call_to_action": {
+      "title": "Here is a call to action related to this section.",
+      "button": {
+        "primary": false,
+        "content": "Here is the call to action button"
+      }
+    },
+    "social_media": {},
+    "public_bodies": [
+      {
+        "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
+        "id": 45111,
+        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
+        "revision_id": 803933,
+        "langcode": "en",
+        "type": {
+          "target_id": "link"
+        },
+        "status": true,
+        "created": "2022-08-19T18:32:22+00:00",
+        "parent_id": "785",
+        "parent_type": "node",
+        "parent_field_name": "field_public_bodies",
+        "behavior_settings": [],
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "content_translation_source": null,
+        "content_translation_outdated": false,
+        "content_translation_changed": "2022-09-29T17:09:54+00:00",
+        "link": {
+          "uri": "entity:node/1965",
+          "title": "Board of Appeals meetings",
+          "options": [],
+          "lang": "en"
+        }
+      }
+    ]
+  },
+  "resources": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/44883?_format=hal_json",
+      "id": 44883,
+      "uuid": "c440184b-ee65-43a3-b189-039ef610bbbe",
+      "revision_id": 803937,
+      "langcode": "en",
+      "type": {
+        "target_id": "other_info_card"
+      },
+      "status": true,
+      "created": "2022-08-18T17:40:52+00:00",
+      "parent_id": "785",
+      "parent_type": "node",
+      "parent_field_name": "field_resources",
+      "behavior_settings": [],
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "content_translation_changed": "2022-09-29T17:09:54+00:00",
+      "description": "Here is the description of the resource card.",
+      "title": "Here is a resource card. This is the title of the resource card."
+    }
+  ],
+  "topics": [
+    {
+      "href": "https://test-sfgov.pantheonsite.io/topics/building-permits?_format=hal_json",
+      "nid": 199,
+      "uuid": "2d54dd25-f309-4186-9898-b54ca5306b7d",
+      "vid": 55020,
+      "langcode": "en",
+      "type": {
+        "target_id": "topic"
+      },
+      "revision_timestamp": "2022-07-01T13:25:54+00:00",
+      "revision_log": "Adding pre-plan check step.",
+      "status": true,
+      "title": "Building permits",
+      "created": "2019-03-19T16:37:58+00:00",
+      "changed": "2022-07-01T13:25:54+00:00",
+      "promote": false,
+      "sticky": false,
+      "default_langcode": true,
+      "revision_translation_affected": true,
+      "moderation_state": "published",
+      "metatag": {
+        "canonical_url": "https://test-sfgov.pantheonsite.io/topics/building-permits",
+        "google": "8etBKQyyqG3GiT-xNuZVwr27VA0zgbwiyVFTLJBv_jE",
+        "title": "Building permits | San Francisco",
+        "description": "Building code, permits, and inspections."
+      },
+      "path": {
+        "alias": "/topics/building-permits",
+        "pid": 290,
+        "langcode": "en",
+        "lang": "en"
+      },
+      "content_translation_source": null,
+      "content_translation_outdated": false,
+      "description": "Building code, permits, and inspections.",
+      "page_design": "1",
+      "top_level_topic": false
+    }
+  ]
+}

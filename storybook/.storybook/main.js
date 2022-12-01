@@ -15,6 +15,11 @@ module.exports = {
       directory: '../stories/experiments',
       titlePrefix: 'Experiments/',
       files: storiesGlob
+    },
+    {
+      directory: '../stories/Department Page',
+      titlePrefix: 'Department Page/',
+      files: storiesGlob
     }
   ],
   core: {
