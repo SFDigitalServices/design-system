@@ -4,6 +4,11 @@ import { DepartmentTitleBanner } from './DepartmentTitleBanner.stories'
 import BigDescription from '../../src/BigDescription'
 import tw from 'tailwind-styled-components'
 import startCase from 'lodash.startcase'
+import Section from '../../src/Section'
+import SectionTitle from '../../src/SectionTitle'
+import { AboutSection } from './AboutSection.stories'
+import { ContactSection } from '../../src/ContactSection'
+import { ContentTile, NewsTile, TileSection } from '../../src/Tile'
 
 import CityAdministrator from './city-admininistrator.json'
 import BoardOfAppeals from './board-appeals.json'
@@ -136,63 +141,6 @@ const QuickLinkSubtitle = tw.p`
   group-hocus:text-white
 `
 
-// const QuickLinkArrowIcon = tw.sfgov-icon`
-//   flex
-//   justify-end
-//   items-end
-//   text-action
-//   group-hocus:text-white
-// `
-
-const SectionTitle = tw.h2`
-  title-xl
-  mt-0
-  mb-40
-`
-
-const NewsCard = tw.a`
-  text-slate
-  bg-yellow-3
-  hover:bg-yellow-4
-  rounded
-  p-20
-`
-
-const NewsCardTitle = tw.a`
-  block
-  text-slate
-  font-medium
-  mb-20
-`
-
-const ResourceCard = tw.a`
-bg-white
-  border-solid
-  border-3 
-  border-grey-2
-  rounded
-  p-20
-  hocus:border-action
-  text-slate
-`
-
-const ResourceCardTitle = tw.a`
-  block
-  font-medium
-  underline
-  mb-20
-`
-
-const CallToAction = tw.p`
-  text-title-xs
-  font-medium
-`
-
-const ContactSection = tw.div`
-  flex
-  items-start
-`
-
 export const DepartmentPage = ({ department }) => {
   const links = Object.keys(department).flatMap(field =>
     field === 'services' || field === 'news' || field === 'resources' || field === 'contact'
@@ -255,114 +203,42 @@ export const DepartmentPage = ({ department }) => {
       </ResponsiveContainer>
 
       {department.news?.length && (
-        <section className='bg-yellow-1 mt-60 py-80'>
-          <ResponsiveContainer>
-            <SectionTitle>News</SectionTitle>
-            <CardContainer>
-              {department.news.map(newsItem =>
-                <NewsCard key={newsItem.id}>
-                  <NewsCardTitle>{newsItem.title}</NewsCardTitle>
-                  <p>{newsItem.posted_date}</p>
-                </NewsCard>
-              )}
-            </CardContainer>
-            <Button>See more news</Button>
-          </ResponsiveContainer>
-        </section>
+        <Section variant='yellow'>
+          <SectionTitle>News</SectionTitle>
+          <TileSection>
+            {department.news.map(newsItem =>
+              <NewsTile key={newsItem.id} title={newsItem.title} body={newsItem.posted_date} />
+            )}
+          </TileSection>
+        </Section>
       )}
 
       {department.resources?.length && (
-        <section className='bg-blue-1 py-80'>
-          <ResponsiveContainer>
-            <SectionTitle>Resources</SectionTitle>
-            <CardContainer className='lg:grid-cols-2'>
-              {department.resources.map(resource =>
-                <ResourceCard key={resource.id}>
-                  <ResourceCardTitle>{resource.title}</ResourceCardTitle>
-                  <p>{resource.description}</p>
-                </ResourceCard>
-              )}
-            </CardContainer>
-          </ResponsiveContainer>
-        </section>
+        <Section variant='lightblue'>
+          <SectionTitle>Resources</SectionTitle>
+          <TileSection>
+            {department.resources.map(resource =>
+              <ContentTile key={resource.id} title={resource.title} body={resource.description} />
+            )}
+          </TileSection>
+        </Section>
       )}
 
-      <section className='bg-blue-dark text-white py-80'>
-        <ResponsiveContainer>
-          <Title>About</Title>
-          <div className='grid grid-cols-1 lg:grid-cols-3'>
-            <BigDescription className='col-span-2 mb-24 lg:mb-60 lg:mr-60'>{department.about_or_description}</BigDescription>
-            <div className='col-span-1'>
-              <CallToAction>{department.about.call_to_action.title}</CallToAction>
-              <InverseButton>{department.about.call_to_action.button.content}</InverseButton>
-            </div>
-            <div className='col-span-full mb-60'>
-              <InverseButton>Learn more about us</InverseButton>
-            </div>
-            <div className='col-span-2'>
-              {!!department.about?.public_bodies?.length && (
-                <>
-                  <div className='text-title-xs font-medium mb-24'>
-                    Public bodies
-                  </div>
-                  <ul className='flex flex-wrap p-0 m-0 mb-40 list-none'>
-                    {department.about.public_bodies.map(publicBody =>
-                      <li className='mb-20 w-full lg:w-1/2 lg:pr-8' key={publicBody.id}>
-                        <a className='text-white underline'>{publicBody.link.title}</a>
-                      </li>
-                    )}
-                  </ul>
-                </>
-              )}
-              {!!department.about?.divisions?.length && (
-                <>
-                  <div className='text-title-xs font-medium mb-24'>
-                    Divisions
-                  </div>
-                  <ul className='flex flex-wrap p-0 m-0 mb-40 list-none'>
-                    {department.about.divisions.map(division =>
-                      <li className='mb-20 w-full lg:w-1/2 lg:pr-8' key={division.id}>
-                        <a className='text-white underline'>{division.link.title}</a>
-                      </li>
-                    )}
-                  </ul>
-                </>
-              )}
-            </div>
-          </div>
-        </ResponsiveContainer>
-      </section>
+      <AboutSection
+        about={department.about_or_description}
+        ctaTitle={department.about.call_to_action.title}
+        ctaButton={department.about.call_to_action.button.content}
+        publicBodies={department.about.public_bodies}
+        divisions={department.about.divisions}
+      />
 
-      <ResponsiveContainer className='my-80'>
-        <SectionTitle>Contact</SectionTitle>
-        <CardContainer>
-          <ContactSection>
-            <sfgov-icon symbol='location' class='pr-20' />
-            <div>
-              <h3 className='mt-0'>{department.title}</h3>
-              <div>{department.contact.address[0].address.address_line1}</div>
-              <div>{department.contact.address[0].address.address_line2}</div>
-              <div>{`${department.contact.address[0].address.locality}, ${department.contact.address[0].address.administrative_area} ${department.contact.address[0].address.postal_code}`}</div>
-              <div className='bg-grey-2 h-100 w-100 mt-40 mb-20 p-20 rounded text-center'>A map will go here</div>
-              <a href='https://www.google.com/maps/dir/?api=1&amp;destination=1+Dr.+Carlton+B.+Goodlett+Place%2CCity+Hall+Room+362%2C+San+Francisco%2CCA+94102' target='_blank' rel='noreferrer'>Get directions</a>
-            </div>
-          </ContactSection>
-          <ContactSection>
-            <sfgov-icon symbol='phone' class='pr-20'/>
-            <div>
-              <h3 className='mt-0'>Phone</h3>
-              <div>{department.contact.phone_numbers[0].owner}</div>
-              <a href={`tel:${department.contact.phone_numbers[0].tel}`}>{department.contact.phone_numbers[0].tel}</a>
-            </div>
-          </ContactSection>
-          <ContactSection>
-            <sfgov-icon symbol='mail' class='pr-20'/>
-            <div>
-              <h3 className='mt-0'>Email</h3>
-              <a href={`mailto:${department.contact.email[0].email}`}>{department.contact.email[0].email}</a>
-            </div>
-          </ContactSection>
-        </CardContainer>
+      <ContactSection
+        address={department.contact.address[0].address}
+        phone={department.contact.phone_numbers}
+        email={department.contact.email[0]}
+      />
+
+      <ResponsiveContainer>
         <div className='p-40 lg:flex lg:space-x-20 rounded bg-blue-1'>
           <div>
             <h3>Request public record</h3>
