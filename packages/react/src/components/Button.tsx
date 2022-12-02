@@ -4,7 +4,7 @@ import { HOCUS_SELECTOR } from '../constants'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'inverse' | 'link'
 
-export const baseButtonStyles: CSS = {
+const baseButtonStyles: CSS = {
   // layout
   display: 'inline-flex',
   alignItems: 'center',
@@ -29,7 +29,7 @@ export const baseButtonStyles: CSS = {
   whiteSpace: 'nowrap'
 }
 
-export const primaryButtonStyles: CSS = {
+const primaryButtonStyles: CSS = {
   color: '$white',
   backgroundColor: '$action',
   [HOCUS_SELECTOR]: {
@@ -37,7 +37,7 @@ export const primaryButtonStyles: CSS = {
   }
 }
 
-export const inverseButtonStyles: CSS = {
+const inverseButtonStyles: CSS = {
   color: '$action',
   backgroundColor: '$white',
   [HOCUS_SELECTOR]: {
@@ -45,12 +45,12 @@ export const inverseButtonStyles: CSS = {
   }
 }
 
-export const secondaryButtonStyles: CSS = {
+const secondaryButtonStyles: CSS = {
   ...inverseButtonStyles,
   borderColor: 'currentcolor'
 }
 
-export const linkButtonStyles: CSS = {
+const linkButtonStyles: CSS = {
   ...inverseButtonStyles,
   backgroundColor: 'transparent',
   textDecoration: 'underline'
