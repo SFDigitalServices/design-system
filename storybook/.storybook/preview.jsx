@@ -5,20 +5,21 @@ import { Box, breakpoints } from '@sfgov/react'
 import { getDocsBaseUrl } from '../src/utils'
 
 import 'sfgov-design-system/dist/css/fonts.css'
-import 'sfgov-design-system/dist/css/sfds.css'
+// import 'sfgov-design-system/dist/css/sfds.css'
 
 const breakpointViewports = Object.fromEntries(
-  Object.entries(breakpoints).map(([name, width]) => [name, {
-    name: `Breakpoint: ${name}`,
-    styles: {
-      width,
-      height: '640px'
-    }
-  }])
+  Object.entries(breakpoints)
+    .map(([name, value]) => [name, {
+      name: `Breakpoint: ${name}`,
+      styles: {
+        width: value,
+        height: '640px'
+      }
+    }])
 )
 
 addDecorator((Story, { parameters }) => (
-  <Box css={{ p: 20, ...parameters.container }}>
+  <Box css={{ p: 20, fontFamily: '$body', ...parameters.container }}>
     {Story()}
   </Box>
 ))
