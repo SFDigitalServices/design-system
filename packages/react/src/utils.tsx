@@ -3,7 +3,6 @@ export function identity (v: any) {
   return v
 }
 
-
 export function pxMap (values: number[]): Record<number, string> {
   return values.reduce((o, n) => Object.assign(o, { [n]: px(n) }), {})
 }
