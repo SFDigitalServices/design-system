@@ -1,17 +1,10 @@
-import clsx, { ClassValue } from 'clsx'
-import React, { ComponentType } from 'react'
-import { Button as ThemeUIButton, ButtonProps as ThemeUIButtonProps, ThemeUIStyleObject } from 'theme-ui'
-import { FOCUS, HOCUS, SIMULATED_HOCUS_CLASS } from '../constants'
-import { withStyles } from '../utils'
-import { focusStyles } from '../styles'
+import React from 'react'
+import { styled, CSS } from '../stitches.config'
+import { HOCUS_SELECTOR } from '../constants'
 
-export type ButtonProps = ThemeUIButtonProps & {
-  className?: string | ClassValue
-  $block?: boolean
-  __simulatedHocus?: boolean
-}
+export type ButtonVariant = 'primary' | 'secondary' | 'inverse' | 'link'
 
-const baseButtonStyles: ThemeUIStyleObject = {
+export const baseButtonStyles: CSS = {
   // layout
   display: 'inline-flex',
   alignItems: 'center',
@@ -27,66 +20,74 @@ const baseButtonStyles: ThemeUIStyleObject = {
   // cursor
   cursor: 'pointer',
   // typography
-  fontFamily: 'body',
-  fontWeight: 'bold',
+  fontFamily: '$body',
+  fontSize: '$body',
+  lineHeight: '$body',
+  fontWeight: '$bold',
   textAlign: 'center',
   textDecoration: 'none',
-  whiteSpace: 'nowrap',
-  [FOCUS]: focusStyles
+  whiteSpace: 'nowrap'
 }
 
-const blockProps: ThemeUIStyleObject = {
-  display: 'flex',
-  width: '100%'
-}
-
-function BaseButton ({ $block, __simulatedHocus, sx, className, ...rest }: ButtonProps) {
-  return <ThemeUIButton {...rest} sx={{
-    ...baseButtonStyles,
-    ...($block ? blockProps : null),
-    ...sx
-  }} className={__simulatedHocus ? clsx(className, SIMULATED_HOCUS_CLASS) : className} />
-}
-
-export const PrimaryButton = withStyles(BaseButton, {
-  color: 'white',
-  backgroundColor: 'action',
-  [HOCUS]: {
-    backgroundColor: 'blue.dark'
+export const primaryButtonStyles: CSS = {
+  color: '$white',
+  backgroundColor: '$action',
+  [HOCUS_SELECTOR]: {
+    backgroundColor: '$blueDark'
   }
-})
+}
 
-export const InverseButton = withStyles(BaseButton, {
-  color: 'action',
-  backgroundColor: 'white',
-  [HOCUS]: {
-    color: 'blue.dark'
+export const inverseButtonStyles: CSS = {
+  color: '$action',
+  backgroundColor: '$white',
+  [HOCUS_SELECTOR]: {
+    color: '$blueDark'
   }
-})
+}
 
-export const SecondaryButton = withStyles(InverseButton, {
+export const secondaryButtonStyles: CSS = {
+  ...inverseButtonStyles,
   borderColor: 'currentcolor'
-})
+}
 
-export const LinkButton = withStyles(InverseButton, {
+export const linkButtonStyles: CSS = {
+  ...inverseButtonStyles,
   backgroundColor: 'transparent',
   textDecoration: 'underline'
+}
+
+export const Button = styled('button', {
+  ...baseButtonStyles,
+  variants: {
+    variant: {
+      primary: primaryButtonStyles,
+      secondary: secondaryButtonStyles,
+      inverse: inverseButtonStyles,
+      link: linkButtonStyles
+    },
+    block: {
+      true: {
+        display: 'flex',
+        width: '100%'
+      }
+    }
+  },
+  defaultVariants: {
+    variant: 'primary'
+  }
 })
 
-export type ButtonVariant = 'primary' | 'secondary' | 'inverse' | 'link'
+Button.className = 'Button'
 
-export type GenericButtonProps = ButtonProps & {
-  variant?: ButtonVariant
-}
+export type ButtonProps = React.ComponentPropsWithRef<typeof Button>
 
-const variantMap: Record<ButtonVariant, ComponentType<ButtonProps>> = {
-  primary: PrimaryButton,
-  secondary: SecondaryButton,
-  inverse: InverseButton,
-  link: LinkButton
-}
+export const PrimaryButton = extractVariant('primary')
+export const SecondaryButton = extractVariant('secondary')
+export const InverseButton = extractVariant('inverse')
+export const LinkButton = extractVariant('link')
 
-export function Button ({ variant, ...props }: GenericButtonProps) {
-  const Component = variantMap[variant] || PrimaryButton
-  return <Component {...props} />
+function extractVariant (variant: ButtonVariant) {
+  return function ButtonVariant (props: Omit<ButtonProps, 'variant'>) {
+    return <Button variant={variant} {...props} />
+  }
 }

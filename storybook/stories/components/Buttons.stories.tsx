@@ -2,8 +2,9 @@ import React, { ComponentType } from 'react'
 import { ComponentMeta, Story } from '@storybook/react'
 import { StrictArgTypes } from '@storybook/csf'
 import {
+  CSS,
   Box,
-  BoxOwnProps,
+  BoxProps,
   Button,
   ButtonProps,
   ButtonVariant,
@@ -11,7 +12,7 @@ import {
   SecondaryButton,
   InverseButton,
   LinkButton,
-  GenericButtonProps
+  Flex
 } from '@sfgov/react'
 
 type ButtonArgs = {
@@ -19,7 +20,7 @@ type ButtonArgs = {
   variant?: ButtonVariant
   block?: boolean
   hocus?: boolean
-  as?: ButtonProps['as']
+  as?: string
   href?: string
 }
 
@@ -79,14 +80,19 @@ export const Secondary = createButtonStory(SecondaryButton)
 export const Inverse = createButtonStory(InverseButton)
 Inverse.parameters = {
   container: {
-    bg: 'blue.dark',
-    color: 'white'
-  } as BoxOwnProps
+    bg: '$blueDark',
+    fg: '$white'
+  } as CSS
 }
 
 export const Link = createButtonStory(LinkButton)
+Link.parameters = {
+  container: {
+    bg: '$blueL1'
+  } as CSS
+}
 
-export const Generic = createButtonStory<GenericButtonProps>(Button)
+export const Generic = createButtonStory(Button)
 
 Generic.argTypes = {
   variant: {
@@ -114,35 +120,34 @@ Generic.args = {
 }
 
 export const Alignment: Story<ButtonArgs> = (args: ButtonArgs) => (
-  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 20 }}>
+  <Flex css={{ flexWrap: 'wrap', gap: 20 }}>
     <PrimaryButton {...args}>Primary</PrimaryButton>
     <SecondaryButton {...args}>Secondary</SecondaryButton>
     <InverseButton {...args}>Inverse</InverseButton>
     <LinkButton {...args}>Link</LinkButton>
-  </Box>
+  </Flex>
 )
 
 Alignment.parameters = {
   container: {
-    bg: 'blue.1'
-  }
+    bg: '$blueL1'
+  } as CSS
 }
 
 type LabelProps = ButtonProps & {
   $label: string,
-  cellStyle?: BoxOwnProps['sx']
+  cellStyle?: CSS
 }
 const cols: LabelProps[] = [
-  { $label: 'Rest' },
-  { $label: 'Hover/focus', __simulatedHocus: true }
+  { $label: 'Rest' }
+  // { $label: 'Hover/focus' }
 ]
 const rows: LabelProps[] = [
   { $label: 'Inline' },
-  { $label: 'Block', $block: true, cellStyle: { minWidth: '300px' } }
+  { $label: 'Block', block: true, cellStyle: { minWidth: '$xs' } }
 ]
 
-function createButtonStory<P extends ButtonProps = ButtonProps> (Component: ComponentType<P>) {
-  const derp = <Button variant='primary' />
+function createButtonStory(Component: ComponentType<Partial<ButtonProps>>) {
   return (({ text, ...rest}: ButtonArgs) => {
     return (
       <table>
@@ -160,7 +165,7 @@ function createButtonStory<P extends ButtonProps = ButtonProps> (Component: Comp
               <th scope='row' className='p-8 text-right'>{$label}</th>
               {cols.map(({ $label: columnLabel, cellStyle: colStyle, ...col }) => (
                 <td key={columnLabel} className='p-8 text-left'>
-                  <Box sx={{ ...rowStyle, ...colStyle }}>
+                  <Box css={{ ...rowStyle, ...colStyle }}>
                     <Component {...row} {...col} {...rest}>{text}</Component>
                   </Box>
                 </td>

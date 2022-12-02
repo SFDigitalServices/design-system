@@ -1,68 +1,36 @@
-import { ColorModesScale } from 'theme-ui'
-
-const blue = {
-  1: '#edf4f7',
-  2: '#a9d6ea',
-  bright: '#495ed4',
-  dark: '#0c1464'
-}
-
-const slate = {
-  1: '#eff3f4',
-  2: '#5a7a92',
-  3: '#1d4d70',
-  4: '#002b48'
-}
-
-const grey = {
-  1: '#f6f6f6',
-  2: '#e2e2e2',
-  3: '#c2c2c2',
-  4: '#a1a1a1',
-  dark: '#424244'
-}
-
-export default {
+export const colors = flatten({
   white: '#fff',
   black: '#212123',
-  transparent: 'transparent',
-  text: {
-    secondary: '#59595c'
-  },
-  action: blue.bright,
-  blue,
-  slate: {
-    ...slate,
-    light: slate[2]
-  },
-  green: {
-    1: '#e9f7ec',
-    2: '#c0e2c5',
-    3: '#00866a',
-    4: '#1b674d'
-  },
-  red: {
-    1: '#f5e9e5',
-    2: '#efcabb',
-    3: '#c55236',
-    4: '#9b3921'
-  },
-  purple: {
-    1: '#edebf6',
-    2: '#cccced',
-    3: '#7d61b3',
-    4: '#543a89'
-  },
-  yellow: {
-    1: '#f8f1df',
-    2: '#f9e3a3',
-    3: '#f4c435',
-    4: '#e0a81a'
-  },
-  grey: {
-    ...grey,
-    focus: grey[4]
-  },
+  action: '$blueBright',
+  blueL1: '#edf4f7',
+  blueL2: '#a9d6ea',
+  blueBright: '#495ed4',
+  blueDark: '#0c1464',
+  greenL1: '#e9f7ec',
+  greenL2: '#c0e2c5',
+  greenL3: '#00866a',
+  greenL4: '#1b674d',
+  greyL1: '#f6f6f6',
+  greyL2: '#e2e2e2',
+  greyL3: '#c2c2c2',
+  greyL4: '#a1a1a1',
+  greyDark: '#424244',
+  redL1: '#f5e9e5',
+  redL2: '#efcabb',
+  redL3: '#c55236',
+  redL4: '#9b3921',
+  purpleL1: '#edebf6',
+  purpleL2: '#cccced',
+  purpleL3: '#7d61b3',
+  purpleL4: '#543a89',
+  slateL1: '#eff3f4',
+  slateL2: '#5a7a92',
+  slateL3: '#1d4d70',
+  slateL4: '#002b48',
+  yellowL1: '#f8f1df',
+  yellowL2: '#f9e3a3',
+  yellowL3: '#f4c435',
+  yellowL4: '#e0a81a',
   sequential: {
     darkBlue: {
       1: '#9389ad',
@@ -122,4 +90,18 @@ export default {
       0: '#c6c6c6'
     }
   }
-} as ColorModesScale
+})
+
+type KeyLike = string | number | symbol
+type ValueOrMap <T, K extends KeyLike = string> = T | Record<K, T | Record<string, T>>
+type NestedMap <T, K extends KeyLike = string> = Record<K, T | ValueOrMap<T, K>>
+
+function flatten <T = any> (values: NestedMap<T>) {
+  return Object.fromEntries(
+    Object.entries(values).map(([name, value]) => {
+      return (value instanceof Object)
+        ? [name, flatten(value)]
+        : [name, value]
+    })
+  )
+}

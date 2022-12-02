@@ -1,15 +1,14 @@
-import { Theme } from 'theme-ui'
-
 export const RUBIK_SANS = 'Rubik, ui-sans-serif, sans-serif'
 export const ROBOTO_MONO = 'Roboto mono, ui-monospace, monospace'
 
-export const fonts: Theme['fonts'] = {
+export const fonts = {
   rubik: RUBIK_SANS,
-  body: RUBIK_SANS,
-  mono: ROBOTO_MONO
+  roboto: ROBOTO_MONO,
+  body: '$rubik',
+  monospace: '$roboto'
 }
 
-export const textStyles: Theme['text'] = {
+export const textStyles = {
   body: {
     fontSize: '16px',
     lineHeight: '24px'
@@ -84,15 +83,15 @@ export const textStyles: Theme['text'] = {
   }
 }
 
-export const fontWeights: Theme['fontWeights'] = {
+export const fontWeights = {
   light: 300,
   normal: 400,
   bold: 600
 }
 
-export const fontSizes: Theme['fontSizes'] = collect('fontSize')
-export const lineHeights: Theme['lineHeights'] = collect('lineHeight')
-export const letterSpacings: Theme['letterSpacings'] = collect('letterSpacing')
+export const fontSizes = collect('fontSize')
+export const lineHeights = collect('lineHeight')
+export const letterSpacings = collect('letterSpacing')
 
 Object.assign(fontWeights, collect('fontWeight'))
 
