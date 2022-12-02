@@ -1,6 +1,6 @@
 import { colors } from './colors'
 import { BreakpointName, breakpoints, media } from './breakpoints'
-import { fontSizes, fontWeights, lineHeights, letterSpacings, textStyles } from './typography'
+import { fonts, fontSizes, fontWeights, lineHeights, letterSpacings, textStyles } from './typography'
 import { space } from './space'
 import { pxMap } from '../utils'
 
@@ -20,9 +20,9 @@ export const theme = {
       1,
       2,
       3
-    ]),
-    button: '$3'
+    ])
   },
+  fonts,
   fontSizes,
   fontWeights,
   lineHeights,
