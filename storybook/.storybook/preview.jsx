@@ -5,7 +5,7 @@ import { Box, breakpoints } from '@sfgov/react'
 import { getDocsBaseUrl } from '../src/utils'
 
 import 'sfgov-design-system/dist/css/fonts.css'
-// import 'sfgov-design-system/dist/css/sfds.css'
+import 'sfgov-design-system/dist/css/sfds.css'
 
 const breakpointViewports = Object.fromEntries(
   Object.entries(breakpoints)
