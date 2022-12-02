@@ -16,7 +16,7 @@ export const baseButtonStyles: CSS = {
   // border
   borderColor: 'transparent',
   borderStyle: 'solid',
-  borderWidth: '3px',
+  borderWidth: 3,
   // cursor
   cursor: 'pointer',
   // typography

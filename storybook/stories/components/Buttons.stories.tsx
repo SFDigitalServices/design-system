@@ -12,7 +12,8 @@ import {
   SecondaryButton,
   InverseButton,
   LinkButton,
-  Flex
+  Flex,
+  styled
 } from '@sfgov/react'
 
 type ButtonArgs = {
@@ -147,28 +148,31 @@ const rows: LabelProps[] = [
   { $label: 'Block', block: true, cellStyle: { minWidth: '$xs' } }
 ]
 
+const TD = styled('td', { p: 8 })
+const TH = styled('th', { p: 8 })
+
 function createButtonStory(Component: ComponentType<Partial<ButtonProps>>) {
   return (({ text, ...rest}: ButtonArgs) => {
     return (
       <table>
         <thead>
           <tr>
-            <td></td>
+            <TD />
             {cols.map(({ $label }) => (
-              <th key={$label} className='p-8 text-left'>{$label}</th>
+              <TH key={$label} align='left'>{$label}</TH>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map(({ $label, cellStyle: rowStyle, ...row }) => (
             <tr key={$label}>
-              <th scope='row' className='p-8 text-right'>{$label}</th>
+              <TH scope='row' align='right'>{$label}</TH>
               {cols.map(({ $label: columnLabel, cellStyle: colStyle, ...col }) => (
-                <td key={columnLabel} className='p-8 text-left'>
+                <TD key={columnLabel} align='left'>
                   <Box css={{ ...rowStyle, ...colStyle }}>
                     <Component {...row} {...col} {...rest}>{text}</Component>
                   </Box>
-                </td>
+                </TD>
               ))}
             </tr>
           ))}
