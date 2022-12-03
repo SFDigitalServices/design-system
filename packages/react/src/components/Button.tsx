@@ -1,6 +1,7 @@
 import React from 'react'
 import { styled, CSS } from '../stitches.config'
 import { HOCUS_SELECTOR } from '../constants'
+import { withFixedProps } from '../utils'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'inverse' | 'link'
 
@@ -81,13 +82,11 @@ Button.className = 'Button'
 
 export type ButtonProps = React.ComponentPropsWithRef<typeof Button>
 
-export const PrimaryButton = extractVariant('primary')
-export const SecondaryButton = extractVariant('secondary')
-export const InverseButton = extractVariant('inverse')
-export const LinkButton = extractVariant('link')
+export const PrimaryButton = createVariant('primary')
+export const SecondaryButton = createVariant('secondary')
+export const InverseButton = createVariant('inverse')
+export const LinkButton = createVariant('link')
 
-function extractVariant (variant: ButtonVariant) {
-  return function ButtonVariant (props: Omit<ButtonProps, 'variant'>) {
-    return <Button variant={variant} {...props} />
-  }
+function createVariant (variant: ButtonVariant) {
+  return withFixedProps(Button, { variant })
 }
