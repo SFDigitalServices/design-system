@@ -4,7 +4,6 @@ import { StrictArgTypes } from '@storybook/csf'
 import {
   CSS,
   Box,
-  BoxProps,
   Button,
   ButtonProps,
   ButtonVariant,
@@ -152,32 +151,30 @@ const TD = styled('td', { p: 8 })
 const TH = styled('th', { p: 8 })
 
 function createButtonStory(Component: ComponentType<Partial<ButtonProps>>) {
-  return (({ text, ...rest}: ButtonArgs) => {
-    return (
-      <table>
-        <thead>
-          <tr>
-            <TD />
-            {cols.map(({ $label }) => (
-              <TH key={$label} align='left'>{$label}</TH>
+  return (({ text, ...rest}: ButtonArgs) => (
+    <table>
+      <thead>
+        <tr>
+          <TD />
+          {cols.map(({ $label }) => (
+            <TH key={$label} align='left'>{$label}</TH>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map(({ $label, cellStyle: rowStyle, ...row }) => (
+          <tr key={$label}>
+            <TH scope='row' align='right'>{$label}</TH>
+            {cols.map(({ $label: columnLabel, cellStyle: colStyle, ...col }) => (
+              <TD key={columnLabel} align='left'>
+                <Box css={{ ...rowStyle, ...colStyle }}>
+                  <Component {...row} {...col} {...rest}>{text}</Component>
+                </Box>
+              </TD>
             ))}
           </tr>
-        </thead>
-        <tbody>
-          {rows.map(({ $label, cellStyle: rowStyle, ...row }) => (
-            <tr key={$label}>
-              <TH scope='row' align='right'>{$label}</TH>
-              {cols.map(({ $label: columnLabel, cellStyle: colStyle, ...col }) => (
-                <TD key={columnLabel} align='left'>
-                  <Box css={{ ...rowStyle, ...colStyle }}>
-                    <Component {...row} {...col} {...rest}>{text}</Component>
-                  </Box>
-                </TD>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    )
-  }) as Story<ButtonArgs>
+        ))}
+      </tbody>
+    </table>
+  )) as Story<ButtonArgs>
 }
