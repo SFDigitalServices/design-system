@@ -2,7 +2,7 @@
   "name": "design-system.sf.gov",
   "private": true,
   "config": {
-    "port": 3000
+    "port": 3002
   },
   "scripts": {
     "build": "wireit",
@@ -41,7 +41,7 @@
       ]
     },
     "start": {
-      "command": "docusaurus start --port=$npm_package_config_port",
+      "command": "docusaurus start --port=3002",
       "dependencies": [
         "link-storybook",
         "../packages/sfgov-design-system:build"

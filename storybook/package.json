@@ -6,11 +6,17 @@
   },
   "scripts": {
     "lint": "eslint --ext .js,.jsx . .storybook",
-    "start": "start-storybook --port=$npm_package_config_port",
+    "start": "wireit",
     "prebuild": "rm -rf public; mkdir public",
     "build": "wireit"
   },
   "wireit": {
+    "start": {
+      "command": "start-storybook --port=3001",
+      "dependencies": [
+        "../packages/react:build"
+      ]
+    },
     "build": {
       "command": "build-storybook -o public",
       "dependencies": [

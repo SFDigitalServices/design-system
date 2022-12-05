@@ -22,8 +22,9 @@
   "wireit": {
     "start": {
       "dependencies": [
-        "website",
-        "storybook"
+        "./website:start",
+        "./storybook:start",
+        "./packages/react:watch"
       ]
     }
   },
