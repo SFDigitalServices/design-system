@@ -24,7 +24,9 @@ module.exports = {
       files: ['**/*.ts{,x}'],
       // these are not needed in TypeScript
       rules: {
+        'no-redeclare': ['off'],
         'no-undef': ['off'],
+        'no-unused-vars': ['off'],
         'import/named': ['off']
       }
     }
