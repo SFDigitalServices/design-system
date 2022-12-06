@@ -1,17 +1,33 @@
-import React from 'react'
+/* eslint-disable import/namespace */
+import React, { ComponentPropsWithoutRef, ComponentType } from 'react'
+import * as components from '@sfgov/icons'
+import { components as iconsIndex } from '@sfgov/icons/generated/index.json'
 import { styled } from '../stitches.config'
 
-type IconSymbol = 'plus' | 'minus'
+export type SVGProps = ComponentPropsWithoutRef<'svg'>
+export type IconName = keyof typeof iconsIndex
 
-type IconProps = React.ComponentPropsWithoutRef<'svg'> & {
-  symbol: IconSymbol
+export { iconsIndex }
+
+export const iconsByName = Object.fromEntries(
+  Object.entries(iconsIndex)
+    .map(([id, { component }]) => [id, components[component]])
+) as Record<IconName, ComponentType<SVGProps>>
+
+function getComponent (name: IconName | string): ComponentType<SVGProps> {
+  return iconsByName[name] || 'svg'
+}
+
+export type IconProps = SVGProps & {
+  symbol: IconName
 }
 
 export const Icon = styled(function IconImpl ({ symbol, ...rest }: IconProps) {
-  return <svg viewBox='0 0 20 20' data-symbol={symbol} {...rest}>
-    {/* TODO */}
-    <circle r='10' cx='10' cy='10' />
-  </svg>
+  const Component = getComponent(symbol)
+  return <Component {...rest} />
 }, {
-  fill: 'currentcolor'
+  fill: 'currentcolor',
+  '[stroke-width]': {
+    stroke: 'currentcolor'
+  }
 })
