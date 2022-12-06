@@ -1,6 +1,5 @@
 import React, { ComponentType } from 'react'
 import { ComponentMeta, Story } from '@storybook/react'
-import { StrictArgTypes } from '@storybook/csf'
 import {
   CSS,
   Box,
@@ -63,7 +62,7 @@ export default {
         eq: 'a'
       }
     }
-  } as StrictArgTypes<ButtonArgs>,
+  },
   parameters: {
     sourceLink: '/components/buttons/',
     design: {

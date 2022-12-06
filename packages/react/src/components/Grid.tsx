@@ -3,9 +3,10 @@ import { Box } from './Box'
 
 export const Grid = styled(Box, {
   display: 'grid',
-  cols: 6,
+  gridTemplateColumns: 'repeat(6, minmax(0, 1fr))',
+  gap: 20,
   '@md': {
-    cols: 12,
+    gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
     gap: 28
   }
 })
