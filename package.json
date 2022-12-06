@@ -34,7 +34,7 @@
     "@lerna-lite/run": "^1.3.0",
     "@sfgov/react": "^0.0.1",
     "@types/eslint": "^8.4.2",
-    "@types/node": "^16.11.32",
+    "@types/node": "^16.18.6",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.7",
