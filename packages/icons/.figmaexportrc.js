@@ -39,13 +39,19 @@ module.exports = {
           getDirname: ({ dirname }) => dirname,
           getBasename: ({ componentName }) => `${normalizeIconName(componentName)}.svg`
         }),
+        outputSVGIndex({
+          output: './generated/svg/index.json'
+        }),
         outputAsReact({
           output: './generated/jsx',
           getDirname: ({ dirname }) => dirname,
           getComponentName: ({ componentName }) => normalizeComponentName(componentName),
           getComponentFilename: ({ componentName }) => normalizeIconName(componentName)
         }),
-        outputJSONIndex({
+        outputReactIndex({
+          output: './generated/jsx/index.json'
+        }),
+        outputGeneralIndex({
           output: './generated/index.json'
         })
       ]
@@ -68,28 +74,79 @@ function normalizeComponentName (name) {
 }
 
 /**
- * 
  * @param {{ output: string }} options 
  * @returns {import('@figma-export/types').ComponentOutputter}
  */
-function outputJSONIndex ({ output }) {
+function outputSVGIndex ({ output }) {
   return async pages => {
-    const components = pages.flatMap(page => page.components.map(component => ({ component, page })))
+    const components = gatherComponents(pages)
     const index = {
-      generated: {
-        date: Date.now()
-
-      },
-      components: components.reduce((map, { page, component: { id, name, svg } }) => {
-        map[normalizeIconName(name)] = {
-          name,
-          svg,
-          component: normalizeComponentName(name),
-          href: `https://figma.com/file/${fileId}/${page.name}?node-id=${id}`
-        }
-        return map
-      }, {})
+      generated: Date.now(),
+      components: components.map(({ page, component: { id, name, svg } }) => ({
+        id: normalizeIconName(name),
+        name,
+        file: `${normalizeIconName(name)}.svg`,
+        href: `https://figma.com/file/${fileId}/${page.name}?node-id=${id}`
+      }))
     }
     await writeFile(output, JSON.stringify(index, null, 2))
   }
+}
+
+/**
+ * @param {{ output: string }} options 
+ * @returns {import('@figma-export/types').ComponentOutputter}
+ */
+function outputReactIndex ({ output }) {
+  return async pages => {
+    const components = gatherComponents(pages)
+    const index = {
+      generated: Date.now(),
+      components: components.map(({ page, component: { id, name } }) => ({
+        id: normalizeIconName(name),
+        name,
+        component: normalizeComponentName(name),
+        file: `${normalizeComponentName(name)}.jsx`,
+        href: getFigmaHref(page, id)
+      }))
+    }
+    await writeFile(output, JSON.stringify(index, null, 2))
+  }
+}
+
+/**
+ * @param {{ output: string }} options 
+ * @returns {import('@figma-export/types').ComponentOutputter}
+ */
+function outputGeneralIndex ({ output }) {
+  return async pages => {
+    const components = gatherComponents(pages)
+    const index = {
+      generated: Date.now(),
+      components: components.map(({ page, component: { id, name, svg } }) => ({
+        id: normalizeIconName(name),
+        name,
+        component: normalizeComponentName(name),
+        href: getFigmaHref(page, id),
+        files: {
+          svg: `svg/${normalizeIconName(name)}.svg`,
+          jsx: `jsx/${normalizeComponentName(name)}.jsx`
+        }
+      }))
+    }
+    await writeJSON(output, index)
+  }
+}
+
+function gatherComponents (pages) {
+  return pages.flatMap(page => page.components.map(component => ({ component, page })))
+}
+
+function getFigmaHref (page, nodeId) {
+  const qs = nodeId ? `?node-id=${nodeId}` : ''
+  return `https://figma.com/file/${fileId}/${page.name}${qs}`
+}
+
+async function writeJSON (output, data) {
+  return writeFile(output, JSON.stringify(data, null, 2))
 }

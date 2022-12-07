@@ -10,7 +10,8 @@ module.exports = {
     'plugin:react/recommended'
   ],
   ignorePatterns: [
-    'dist/**'
+    'dist/**',
+    '**/*.json'
   ],
   globals: {
     JSX: true

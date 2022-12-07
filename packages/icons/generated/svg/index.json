@@ -1,0 +1,191 @@
+{
+  "generated": 1670372551472,
+  "components": [
+    {
+      "name": "Alert",
+      "id": "alert",
+      "file": "alert.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:179"
+    },
+    {
+      "name": "Arrow down",
+      "id": "arrow-down",
+      "file": "arrow-down.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:180"
+    },
+    {
+      "name": "Arrow left",
+      "id": "arrow-left",
+      "file": "arrow-left.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:181"
+    },
+    {
+      "name": "Arrow right",
+      "id": "arrow-right",
+      "file": "arrow-right.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:182"
+    },
+    {
+      "name": "Arrow up",
+      "id": "arrow-up",
+      "file": "arrow-up.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:183"
+    },
+    {
+      "name": "Building",
+      "id": "building",
+      "file": "building.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:184"
+    },
+    {
+      "name": "Check",
+      "id": "check",
+      "file": "check.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:185"
+    },
+    {
+      "name": "Chevron down",
+      "id": "chevron-down",
+      "file": "chevron-down.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:186"
+    },
+    {
+      "name": "Chevron left",
+      "id": "chevron-left",
+      "file": "chevron-left.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:187"
+    },
+    {
+      "name": "Chevron right",
+      "id": "chevron-right",
+      "file": "chevron-right.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:188"
+    },
+    {
+      "name": "Chevron up",
+      "id": "chevron-up",
+      "file": "chevron-up.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:189"
+    },
+    {
+      "name": "Clock",
+      "id": "clock",
+      "file": "clock.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:190"
+    },
+    {
+      "name": "Close",
+      "id": "close",
+      "file": "close.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:191"
+    },
+    {
+      "name": "Document",
+      "id": "document",
+      "file": "document.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:192"
+    },
+    {
+      "name": "Globe",
+      "id": "globe",
+      "file": "globe.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:193"
+    },
+    {
+      "name": "Info",
+      "id": "info",
+      "file": "info.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:194"
+    },
+    {
+      "name": "Location",
+      "id": "location",
+      "file": "location.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:195"
+    },
+    {
+      "name": "Mail",
+      "id": "mail",
+      "file": "mail.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:196"
+    },
+    {
+      "name": "Pencil",
+      "id": "pencil",
+      "file": "pencil.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:197"
+    },
+    {
+      "name": "Phone",
+      "id": "phone",
+      "file": "phone.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:198"
+    },
+    {
+      "name": "Search",
+      "id": "search",
+      "file": "search.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:199"
+    },
+    {
+      "name": "Calendar",
+      "id": "calendar",
+      "file": "calendar.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=351:95"
+    },
+    {
+      "name": "Accessibility",
+      "id": "accessibility",
+      "file": "accessibility.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=681:5"
+    },
+    {
+      "name": "Archive",
+      "id": "archive",
+      "file": "archive.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=971:220"
+    },
+    {
+      "name": "Caution",
+      "id": "caution",
+      "file": "caution.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=971:226"
+    },
+    {
+      "name": "WIP",
+      "id": "wip",
+      "file": "wip.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1972:110"
+    },
+    {
+      "name": "Chart",
+      "id": "chart",
+      "file": "chart.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1086:57"
+    },
+    {
+      "name": "Question",
+      "id": "question",
+      "file": "question.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1092:48"
+    },
+    {
+      "name": "Hamburger button",
+      "id": "hamburger-button",
+      "file": "hamburger-button.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1519:27"
+    },
+    {
+      "name": "Minus",
+      "id": "minus",
+      "file": "minus.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=368:28"
+    },
+    {
+      "name": "Plus",
+      "id": "plus",
+      "file": "plus.svg",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=368:27"
+    }
+  ]
+}

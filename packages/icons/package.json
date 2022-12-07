@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "fetch": "scripts/fetch.sh",
-    "postfetch": "eslint --fix generated/jsx --ext js,jsx",
+    "postfetch": "eslint --fix generated/jsx --ext jsx",
     "build": "echo 'no build step necessary!'",
-    "lint": "eslint --ext js,jsx,mjs,ts,tsx ."
+    "lint": "eslint --ext js,jsx,mjs ."
   },
   "devDependencies": {
     "@figma-export/cli": "^4.5.0",
