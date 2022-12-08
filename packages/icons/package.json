@@ -1,7 +1,7 @@
 {
   "name": "@sfgov/icons",
   "version": "1.0.0",
-  "main": "generated/jsx/index.js",
+  "main": "react/index.js",
   "files": [
     "dist",
     "generated",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "fetch": "scripts/fetch.sh",
-    "postfetch": "eslint --fix generated/jsx --ext jsx",
+    "postfetch": "eslint --fix --ext js,jsx react",
     "build": "echo 'no build step necessary!'",
     "lint": "eslint --ext js,jsx,mjs ."
   },

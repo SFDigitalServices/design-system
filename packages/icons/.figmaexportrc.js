@@ -4,6 +4,8 @@ const outputAsReact = require('@figma-export/output-components-as-svgr')
 const { writeFile } = require('node:fs/promises')
 
 const fileId = process.env.FIGMA_ICONS_FILE
+const svgDir = './svg'
+const jsxDir = './react'
 
 /** @type {import('@figma-export/types').FigmaExportRC} */
 module.exports = {
@@ -35,24 +37,24 @@ module.exports = {
       ],
       outputters: [
         outputAsSVG({
-          output: './generated/svg',
+          output: svgDir,
           getDirname: ({ dirname }) => dirname,
           getBasename: ({ componentName }) => `${normalizeIconName(componentName)}.svg`
         }),
         outputSVGIndex({
-          output: './generated/svg/index.json'
+          output: `${svgDir}/index.json`
         }),
         outputAsReact({
-          output: './generated/jsx',
+          output: jsxDir,
           getDirname: ({ dirname }) => dirname,
           getComponentName: ({ componentName }) => normalizeComponentName(componentName),
           getComponentFilename: ({ componentName }) => normalizeIconName(componentName)
         }),
         outputReactIndex({
-          output: './generated/jsx/index.json'
+          output: `${jsxDir}/index.json`
         }),
-        outputGeneralIndex({
-          output: './generated/index.json'
+        outputMainIndex({
+          output: 'index.json'
         })
       ]
     }]
@@ -118,7 +120,7 @@ function outputReactIndex ({ output }) {
  * @param {{ output: string }} options 
  * @returns {import('@figma-export/types').ComponentOutputter}
  */
-function outputGeneralIndex ({ output }) {
+function outputMainIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
