@@ -1,15 +1,18 @@
 import React, { ComponentType } from 'react'
-import { Icon, IconName, iconsIndex, Monospace, styled, theme } from '@sfgov/react'
+import { Icon, IconSymbol, icons, Monospace, styled, theme, Flex } from '@sfgov/react'
+import * as components from '@sfgov/icons/react'
 import { ComponentMeta, Story } from '@storybook/react'
 
 type IconArgs = {
-  symbol: IconName
+  symbol: IconSymbol
   color: string
+  bg: string
   width?: number
   height?: number
 }
 
-const sortedKeys = Object.keys(iconsIndex).sort() as IconName[]
+const sortedKeys = Object.keys(icons).sort()
+// const 
 
 const colorKeys = Object.keys(theme.colors)
 const colorMapping = Object.fromEntries(
@@ -19,8 +22,9 @@ const colorMapping = Object.fromEntries(
 export default {
   component: Icon,
   args: {
-    symbol: 'accessibility',
+    symbol: sortedKeys[0],
     color: 'slateL4',
+    bg: 'white',
     width: 20
   },
   argTypes: {
@@ -38,6 +42,21 @@ export default {
       control: {
         type: 'select'
       }
+    },
+    bg: {
+      name: 'Background',
+      options: colorKeys,
+      mapping: colorMapping,
+      control: {
+        type: 'select'
+      }
+    },
+    width: {
+      name: 'Size',
+      control: {
+        type: 'number',
+        min: 1
+      }
     }
   },
   parameters: {
@@ -49,40 +68,48 @@ export default {
   }
 } as ComponentMeta<ComponentType<IconArgs>>
 
-export const SingleIcon: Story<IconArgs> = ({ color, ...rest }: IconArgs) => <Icon css={{ color }} {...rest} />
+export const IconComponent: Story<IconArgs> = ({ symbol, color, bg, ...rest }: IconArgs) => (
+  <Flex inline css={{ p: 8, bg }}>
+    <Icon symbol={components[symbol]} css={{ color }} {...rest} />
+  </Flex>
+)
 
-const TD = styled('td', { p: 8 })
-const TH = styled('th', { p: 8 })
+const Table = styled('table', {
+  'th, td': {
+    p: 8
+  }
+})
 
 export const AllIcons: Story<Omit<IconArgs, 'symbol'>> = args => {
-  const jsxProps = [
-    args.color && `css={{ color: '${args.color}' }}`,
-    ...['width', 'height'].map(p => args[p] && `${p}={${args[p]}}`)
-  ].filter(Boolean)
   return (
-    <table>
+    <Table>
       <thead>
         <tr>
-          <TH align='center'>Icon</TH>
-          <TH align='left'>Name</TH>
-          <TH align='left'>JSX</TH>
-          <TH align='left'>Figma</TH>
+          <th align='center'>Icon</th>
+          <th align='left'>Name</th>
+          <th align='left'>JSX</th>
+          <th align='left'>Figma</th>
         </tr>
       </thead>
       <tbody>
         {sortedKeys.map(symbol => {
-          const { name, href } = iconsIndex[symbol]
+          const { name, href } = icons[symbol]
           return (
             <tr key={symbol}>
-              <TD align='center'><SingleIcon {...args} symbol={symbol} /></TD>
-              <TD align='left'><Monospace>{symbol}</Monospace></TD>
-              <TD align='left'><Monospace>{`<Icon symbol='${symbol}' ${jsxProps.join(' ')} />`}</Monospace></TD>
-              <TD align='left'><a href={href}>{name}</a></TD>
+              <td align='center'><IconComponent {...args} symbol={symbol} /></td>
+              <td align='left'><Monospace>{symbol}</Monospace></td>
+              <td align='left'>
+                <Monospace as='pre'>
+                  {`import { Icon, ${symbol} } from '@sfgov/react'\n`}
+                  {`<Icon symbol={${symbol}} />`}
+                </Monospace>
+              </td>
+              <td align='left'><a href={href}>{name}</a></td>
             </tr>
           )
         })}
       </tbody>
-    </table>
+    </Table>
   )
 }
 
