@@ -26,7 +26,6 @@
     }
   },
   "dependencies": {
-    "@sfgov/icons": "1.0.0",
     "@sfgov/react": "0.0.1",
     "clsx": "^1.1.0",
     "react": "^18.2.0",
