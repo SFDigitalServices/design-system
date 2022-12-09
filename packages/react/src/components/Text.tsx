@@ -1,4 +1,4 @@
-import React from 'react'
+import { PropsWithRef } from 'react'
 import { textStyles } from '../theme/typography'
 import { CSS, styled } from '../stitches.config'
 import { withFixedProps } from '../utils'
@@ -57,7 +57,7 @@ export const Text = styled('div', {
   }
 })
 
-export type TextProps = React.ComponentProps<typeof Text>
+export type TextProps = PropsWithRef<typeof Text>
 
 export const BodyText = createVariant('body')
 export const SmallText = createVariant('small')
