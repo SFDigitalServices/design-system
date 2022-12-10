@@ -1,17 +1,16 @@
 import React, { ComponentType } from 'react'
-import { Icon, IconSymbol, icons, Monospace, styled, theme, Flex } from '@sfgov/react'
-import * as components from '@sfgov/icons/react'
+import { Icon, Icons, Monospace, styled, theme, Flex } from '@sfgov/react'
 import { ComponentMeta, Story } from '@storybook/react'
 
 type IconArgs = {
-  symbol: IconSymbol
+  symbol: keyof typeof Icons
   color: string
   bg: string
   width?: number
   height?: number
 }
 
-const sortedKeys = Object.keys(icons).sort()
+const sortedKeys = Object.keys(Icons).sort()
 // const 
 
 const colorKeys = Object.keys(theme.colors)
@@ -70,7 +69,7 @@ export default {
 
 export const IconComponent: Story<IconArgs> = ({ symbol, color, bg, ...rest }: IconArgs) => (
   <Flex inline css={{ p: 8, bg }}>
-    <Icon symbol={components[symbol]} css={{ color }} {...rest} />
+    <Icon as={Icons[symbol].component} css={{ color }} {...rest} />
   </Flex>
 )
 
@@ -93,7 +92,7 @@ export const AllIcons: Story<Omit<IconArgs, 'symbol'>> = args => {
       </thead>
       <tbody>
         {sortedKeys.map(symbol => {
-          const { name, href } = icons[symbol]
+          const { name, href } = Icons[symbol]
           return (
             <tr key={symbol}>
               <td align='center'><IconComponent {...args} symbol={symbol} /></td>

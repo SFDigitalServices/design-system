@@ -1,17 +1,15 @@
-import React, { ComponentProps, ComponentType } from 'react'
+import type { ComponentProps, ComponentType } from 'react'
 import { styled } from '../stitches.config'
 
 export type SVGProps = ComponentProps<'svg'>
-export type IconProps = SVGProps & {
-  symbol: ComponentType<SVGProps>
-}
 
-export const Icon = styled(function IconImpl ({ symbol, ...rest }: IconProps) {
-  const Component = symbol || 'svg'
-  return <Component {...rest} />
-}, {
+export const Icon = styled('svg', {
   fill: 'currentcolor',
   '[stroke-width]': {
     stroke: 'currentcolor'
   }
 })
+
+export type IconProps = SVGProps & {
+  as: ComponentType<SVGProps>
+}
