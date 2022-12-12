@@ -31,7 +31,13 @@ module.exports = {
             },
             'removeUselessDefs',
             'removeXMLNS',
-            'collapseGroups'
+            'collapseGroups',
+            {
+              name: 'addAttributesToSVGElement',
+              params: {
+                attributes: ['fill="currentcolor"']
+              }
+            }
           ]
         })
       ],
