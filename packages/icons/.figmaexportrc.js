@@ -76,9 +76,9 @@ function normalizeIconName (name) {
 }
 
 function normalizeComponentName (name) {
-  return name
+  return `${name
     .replace(/(^[a-z])|( [a-z])/g, substr => substr.toUpperCase())
-    .replace(/ /g, '')
+    .replace(/ /g, '')}Icon`
 }
 
 /**
