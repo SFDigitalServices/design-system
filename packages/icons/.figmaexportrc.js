@@ -89,7 +89,7 @@ function outputSVGIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
-      generated: Date.now(),
+      generated: timestamp(),
       components: components.map(({ page, component: { id, name, svg } }) => ({
         id: normalizeIconName(name),
         name,
@@ -109,7 +109,7 @@ function outputReactIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
-      generated: Date.now(),
+      generated: timestamp(),
       components: components.map(({ page, component: { id, name } }) => ({
         id: normalizeIconName(name),
         name,
@@ -130,7 +130,7 @@ function outputMainIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
-      generated: Date.now(),
+      generated: timestamp(),
       components: components.map(({ page, component: { id, name, svg } }) => ({
         id: normalizeIconName(name),
         name,
@@ -157,4 +157,8 @@ function getFigmaHref (page, nodeId) {
 
 async function writeJSON (output, data) {
   return writeFile(output, JSON.stringify(data, null, 2))
+}
+
+function timestamp () {
+  return new Date().toISOString()
 }
