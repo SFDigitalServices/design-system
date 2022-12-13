@@ -27,7 +27,8 @@
       "dependencies": [],
       "files": [
         "src/**/*",
-        "*.config.*js"
+        "*.config.*js",
+        "tsconfig.json"
       ],
       "outputs": [
         "dist/*.*js"
