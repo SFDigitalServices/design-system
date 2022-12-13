@@ -1,6 +1,7 @@
 const transformSVGO = require('@figma-export/transform-svg-with-svgo')
 const outputAsSVG = require('@figma-export/output-components-as-svg')
 const outputAsReact = require('@figma-export/output-components-as-svgr')
+const svgoConfig = require('./svgo.config')
 const { writeFile } = require('node:fs/promises')
 
 const fileId = process.env.FIGMA_ICONS_FILE
@@ -14,32 +15,7 @@ module.exports = {
       fileId,
       onlyFromPages: ['Icons'],
       transformers: [
-        transformSVGO({
-          multipass: true,
-          js2svg: {
-            pretty: true,
-            indent: 2
-          },
-          plugins: [
-            'removeDimensions',
-            { name: 'removeViewBox', active: false },
-            {
-              name: 'removeAttrs',
-              params: {
-                attrs: ['fill', 'stroke', 'id', 'clipPath', 'clip-path', 'clipRule']
-              }
-            },
-            'removeUselessDefs',
-            'removeXMLNS',
-            'collapseGroups',
-            {
-              name: 'addAttributesToSVGElement',
-              params: {
-                attributes: ['fill="currentcolor"']
-              }
-            }
-          ]
-        })
+        transformSVGO(svgoConfig)
       ],
       outputters: [
         outputAsSVG({
