@@ -29,4 +29,4 @@ jobs:
         run: lerna publish --yes prerelease --dist-tag pre
         id: publishPre
       - if: ${{ !steps.publishMain && !steps.publishPre }}
-        run: lerna publish --yes --canary --dist-tag canary
+        run: lerna publish --yes --dist-tag canary "0.0.0-${GITHUB_SHA::7}"
