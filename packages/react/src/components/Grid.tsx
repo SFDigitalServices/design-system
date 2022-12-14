@@ -1,3 +1,4 @@
+import { VariantProps } from '@stitches/react'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
 
@@ -10,3 +11,5 @@ export const Grid = styled(Box, {
     gap: 28
   }
 })
+
+export type GridProps = VariantProps<typeof Grid>
