@@ -1,35 +1,38 @@
 import React, { ComponentType } from 'react'
-import { Icon, Icons, Monospace, styled, theme, Flex } from '@sfgov/react'
+import iconMeta from '@sfgov/icons/react/index.json'
+import { Monospace, styled, theme, Flex } from '@sfgov/react'
+import * as allSymbols from '@sfgov/react'
 import { ComponentMeta, Story } from '@storybook/react'
 
 type IconArgs = {
-  symbol: keyof typeof Icons
-  color: string
-  bg: string
+  symbol: string
+  color?: string
+  bg?: string
   width?: number
-  height?: number
 }
 
-const sortedKeys = Object.keys(Icons).sort()
-// const 
+const symbolNames = iconMeta.components.map(c => c.component).sort()
+const iconsBySymbolName = Object.fromEntries(
+  iconMeta.components.map(c => [c.component, c])
+)
 
-const colorKeys = Object.keys(theme.colors)
+const colorKeys = [''].concat(Object.keys(theme.colors))
 const colorMapping = Object.fromEntries(
-  colorKeys.map(key => [key, `$${key}`])
+  colorKeys.map(key => key ? [key, `$${key}`] : ['', undefined])
 )
 
 export default {
-  component: Icon,
   args: {
-    symbol: sortedKeys[0],
-    color: 'slateL4',
-    bg: 'white',
-    width: 20
+    symbol: symbolNames[0],
+    color: undefined,
+    bg: undefined,
+    width: undefined,
+    height: undefined
   },
   argTypes: {
     symbol: {
       name: 'Symbol',
-      options: sortedKeys,
+      options: symbolNames,
       control: {
         type: 'select'
       }
@@ -51,10 +54,10 @@ export default {
       }
     },
     width: {
-      name: 'Size',
+      name: 'Width',
       control: {
         type: 'number',
-        min: 1
+        min: 8
       }
     }
   },
@@ -67,11 +70,14 @@ export default {
   }
 } as ComponentMeta<ComponentType<IconArgs>>
 
-export const IconComponent: Story<IconArgs> = ({ symbol, color, bg, ...rest }: IconArgs) => (
-  <Flex inline css={{ p: 8, bg }}>
-    <Icon as={Icons[symbol].component} css={{ color }} {...rest} />
-  </Flex>
-)
+export const SingleIcon: Story<IconArgs> = ({ symbol, color, bg, ...rest }: IconArgs) => {
+  const Component = allSymbols[symbol] || 'svg'
+  return (
+    <Flex inline css={{ p: 8, bg }}>
+      <Component css={{ color }} {...rest} />
+    </Flex>
+  )
+}
 
 const Table = styled('table', {
   'th, td': {
@@ -80,30 +86,26 @@ const Table = styled('table', {
 })
 
 export const AllIcons: Story<Omit<IconArgs, 'symbol'>> = args => {
+  const propsString = getPropsString(args)
   return (
     <Table>
       <thead>
         <tr>
           <th align='center'>Icon</th>
-          <th align='left'>Name</th>
-          <th align='left'>JSX</th>
           <th align='left'>Figma</th>
+          <th align='left'>Import</th>
+          <th align='left'>Code</th>
         </tr>
       </thead>
       <tbody>
-        {sortedKeys.map(symbol => {
-          const { name, href } = Icons[symbol]
+        {symbolNames.map(symbol => {
+          const { name, href } = iconsBySymbolName[symbol]
           return (
             <tr key={symbol}>
-              <td align='center'><IconComponent {...args} symbol={symbol} /></td>
-              <td align='left'><Monospace>{symbol}</Monospace></td>
-              <td align='left'>
-                <Monospace as='pre'>
-                  {`import { Icon, ${symbol} } from '@sfgov/react'\n`}
-                  {`<Icon symbol={${symbol}} />`}
-                </Monospace>
-              </td>
+              <td align='center'><SingleIcon {...args} symbol={symbol} /></td>
               <td align='left'><a href={href}>{name}</a></td>
+              <td align='left'><Monospace>{symbol}</Monospace></td>
+              <td align='left'><Monospace>{`<${symbol} ${propsString} />`}</Monospace></td>
             </tr>
           )
         })}
@@ -116,4 +118,15 @@ AllIcons.parameters = {
   controls: {
     exclude: ['symbol']
   }
+}
+
+function getPropsString (args: Partial<IconArgs>) {
+  const cssString = ['bg', 'color']
+    .filter(k => args[k])
+    .reduce((list, k) => list.concat(`${k}: '${args[k]}'`), [] as string[])
+    .join(', ')
+  return [
+    cssString && `css={{ ${cssString} }}`,
+    args.width && `width={${args.width}}`
+  ].filter(Boolean).join(' ')
 }
