@@ -28,5 +28,9 @@ jobs:
       - if: startsWith(github.ref, 'refs/heads/release-')
         run: lerna publish --yes prerelease --dist-tag next
         id: publishPre
-      - if: ${{ !steps.publishMain && !steps.publishPre }}
+      - name: debug github steps
+        run: echo "$STEPS_JSON"
+        env:
+          STEPS_JSON: ${{ toJSON(steps) }}
+      - if: ${{ !steps.publishMain.conclusion && !steps.publishPre.conclusion }}
         run: lerna publish --yes --dist-tag canary "0.0.0-${GITHUB_SHA::7}"
