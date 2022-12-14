@@ -4,11 +4,18 @@ const outputAsReact = require('@figma-export/output-components-as-svgr')
 const svgoConfig = require('./svgo.config')
 const { writeFile } = require('node:fs/promises')
 
+/**
+ * @typedef {import('@figma-export/types').ComponentNode} ComponentNode
+ * @typedef {import('@figma-export/types').ComponentOutputter} ComponentOutputter
+ * @typedef {import('@figma-export/types').FigmaExportRC} FigmaExportRC
+ * @typedef {import('@figma-export/types').PageNode} PageNode
+*/
+
 const fileId = process.env.FIGMA_ICONS_FILE
 const svgDir = './svg'
 const jsxDir = './react'
 
-/** @type {import('@figma-export/types').FigmaExportRC} */
+/** @type {FigmaExportRC} */
 module.exports = {
   commands: [
     ['components', {
@@ -66,10 +73,11 @@ function outputSVGIndex ({ output }) {
     const components = gatherComponents(pages)
     const index = {
       generated: timestamp(),
-      components: components.map(({ page, component: { id, name, svg } }) => ({
+      components: components.map(({ page, component: { id, name, ...rest } }) => ({
         id: normalizeIconName(name),
         name,
         file: `${normalizeIconName(name)}.svg`,
+        size: getSize(rest),
         href: `https://figma.com/file/${fileId}/${page.name}?node-id=${id}`
       }))
     }
@@ -79,18 +87,19 @@ function outputSVGIndex ({ output }) {
 
 /**
  * @param {{ output: string }} options 
- * @returns {import('@figma-export/types').ComponentOutputter}
+ * @returns {ComponentOutputter}
  */
 function outputReactIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
       generated: timestamp(),
-      components: components.map(({ page, component: { id, name } }) => ({
+      components: components.map(({ page, component: { id, name, ...rest } }) => ({
         id: normalizeIconName(name),
         name,
         component: normalizeComponentName(name),
         file: `${normalizeComponentName(name)}.jsx`,
+        size: getSize(rest),
         href: getFigmaHref(page, id)
       }))
     }
@@ -100,18 +109,19 @@ function outputReactIndex ({ output }) {
 
 /**
  * @param {{ output: string }} options 
- * @returns {import('@figma-export/types').ComponentOutputter}
+ * @returns {ComponentOutputter}
  */
 function outputMainIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
       generated: timestamp(),
-      components: components.map(({ page, component: { id, name, svg } }) => ({
+      components: components.map(({ page, component: { id, name, ...rest } }) => ({
         id: normalizeIconName(name),
         name,
         component: normalizeComponentName(name),
         href: getFigmaHref(page, id),
+        size: getSize(rest),
         files: {
           svg: `svg/${normalizeIconName(name)}.svg`,
           jsx: `jsx/${normalizeComponentName(name)}.jsx`
@@ -122,10 +132,20 @@ function outputMainIndex ({ output }) {
   }
 }
 
+/**
+ * @param {PageNode[]} pages
+ * @returns {{ page: PageNode, component: ComponentNode }[]}
+ */
 function gatherComponents (pages) {
   return pages.flatMap(page => page.components.map(component => ({ component, page })))
 }
 
+/**
+ * 
+ * @param {PageNode} page 
+ * @param {string} nodeId 
+ * @returns {string}
+ */
 function getFigmaHref (page, nodeId) {
   const qs = nodeId ? `?node-id=${nodeId}` : ''
   return `https://figma.com/file/${fileId}/${page.name}${qs}`
@@ -137,4 +157,14 @@ async function writeJSON (output, data) {
 
 function timestamp () {
   return new Date().toISOString()
+}
+
+/**
+ * @param {Partial<ComponentNode>} component 
+ */
+function getSize ({ absoluteBoundingBox: { width, height } }) {
+  return {
+    width: Number(width),
+    height: Number(height)
+  }
 }
