@@ -2,7 +2,7 @@
   "name": "stylelint-expiring-todo-comments",
   "description": "Lint your CSS for expiring TODO comments, a la eslint-plugin-unicorn",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.0.0-foo",
   "keywords": [
     "stylelint-plugin"
   ],
