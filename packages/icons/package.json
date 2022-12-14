@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "react/index.js",
   "files": [
-    "dist",
-    "generated",
-    "src"
+    "index.json",
+    "react",
+    "svg",
+    "svgo.config.js"
   ],
   "scripts": {
     "build": "echo 'no build step necessary!'",
