@@ -21,16 +21,16 @@ jobs:
       - run: npm run build -w sfgov-design-system
       - run: npm run build -w @sfgov/icons
       - run: npm run build -w @sfgov/react
+
       - run: echo "NPM_AUTH_TOKEN=${{ secrets.NPM_AUTH_TOKEN }}" >> $GITHUB_ENV
-      - if: github.ref == 'refs/heads/main'
+      - name: Publish latest (from 'main' branch)
+        if: github.ref == 'refs/heads/main'
         run: lerna publish --yes
         id: publishMain
-      - if: startsWith(github.ref, 'refs/heads/release-')
+      - name: Publish prerelease (pull requests)
+        if: startsWith(github.ref, 'refs/heads/release-')
         run: lerna publish --yes prerelease --dist-tag next
         id: publishPre
-      - name: debug github steps
-        run: echo "$STEPS_JSON"
-        env:
-          STEPS_JSON: ${{ toJSON(steps) }}
-      - if: ${{ !steps.publishMain.conclusion && !steps.publishPre.conclusion }}
+      - name: Publish canary release (all other commits)
+        if: ${{ steps.publishMain.outcome == 'skipped' && steps.publishPre.outcome == 'skipped' }}
         run: lerna publish --yes --dist-tag canary "0.0.0-${GITHUB_SHA::7}"
