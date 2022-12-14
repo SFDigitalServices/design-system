@@ -19,29 +19,14 @@ jobs:
       - run: echo NODE_ENV=production >> $GITHUB_ENV
 
       - run: npm run build -w sfgov-design-system
-      - run: npm run prepublishOnly -w sfgov-design-system
-      - uses: primer/publish@v3.0.0
-        with:
-          default_branch: main
-          dir: packages/sfgov-design-system
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
-      - run: npm run build -w @sfgov/react
-      - uses: primer/publish@v3.0.0
-        with:
-          default_branch: main
-          dir: packages/react
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
       - run: npm run build -w @sfgov/icons
-      - uses: primer/publish@v3.0.0
-        with:
-          default_branch: main
-          dir: packages/icons
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - run: npm run build -w @sfgov/react
+      - run: echo "NPM_AUTH_TOKEN=${{ secrets.NPM_AUTH_TOKEN }}" >> $GITHUB_ENV
+      - if: github.ref == 'refs/heads/main'
+        run: lerna publish --yes
+        id: publishMain
+      - if: startsWith(github.ref, 'refs/heads/release-')
+        run: lerna publish --yes prerelease --dist-tag pre
+        id: publishPre
+      - if: ${{ !steps.publishMain && !steps.publishPre }}
+        run: lerna publish --yes --canary --dist-tag canary
