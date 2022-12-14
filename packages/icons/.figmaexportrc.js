@@ -52,9 +52,9 @@ function normalizeIconName (name) {
 }
 
 function normalizeComponentName (name) {
-  return `${name
+  return `Icon${name
     .replace(/(^[a-z])|( [a-z])/g, substr => substr.toUpperCase())
-    .replace(/ /g, '')}Icon`
+    .replace(/ /g, '')}`
 }
 
 /**
