@@ -1,6 +1,6 @@
 {
   "name": "@sfgov/react",
-  "version": "0.0.0-foo",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -37,7 +37,7 @@
     }
   },
   "dependencies": {
-    "@sfgov/icons": "^0.0.0-foo"
+    "@sfgov/icons": "1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",

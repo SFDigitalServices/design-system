@@ -1,6 +1,6 @@
 {
   "name": "@sfgov/icons",
-  "version": "0.0.0-foo",
+  "version": "1.0.0",
   "main": "react/index.js",
   "files": [
     "index.json",
