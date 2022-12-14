@@ -1,4 +1,4 @@
-import type { PropsWithRef } from 'react'
+import { VariantProps } from '@stitches/react'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
 
@@ -13,4 +13,4 @@ export const Flex = styled(Box, {
   }
 })
 
-export type FlexProps = PropsWithRef<typeof Flex>
+export type FlexVariant = VariantProps<typeof Flex>
