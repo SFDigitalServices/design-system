@@ -1,17 +1,17 @@
 {
   "name": "@sfgov/icons",
   "version": "1.0.0",
-  "main": "generated/jsx/index.js",
+  "main": "react/index.js",
   "files": [
     "dist",
     "generated",
     "src"
   ],
   "scripts": {
-    "fetch": "scripts/fetch.sh",
-    "postfetch": "eslint --fix generated/jsx --ext jsx",
     "build": "echo 'no build step necessary!'",
-    "lint": "eslint --ext js,jsx,mjs ."
+    "fetch": "env-cmd -f ../../.env figma-export use-config",
+    "lint": "eslint --ext js,jsx,mjs .",
+    "postfetch": "eslint --fix --ext js,jsx react"
   },
   "devDependencies": {
     "@figma-export/cli": "^4.5.0",
@@ -19,7 +19,9 @@
     "@figma-export/output-components-as-svgr": "^4.5.0",
     "@figma-export/transform-svg-with-svgo": "^4.5.0",
     "@figma-export/types": "^4.5.0",
-    "react": "^18.2.0"
+    "dedent": "^0.7.0",
+    "react": "^18.2.0",
+    "svgo": "^3.0.2"
   },
   "peerDependencies": {
     "react": "^18.2.0"

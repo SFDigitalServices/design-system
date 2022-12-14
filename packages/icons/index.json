@@ -1,0 +1,315 @@
+{
+  "generated": "2022-12-14T04:29:55.967Z",
+  "components": [
+    {
+      "id": "alert",
+      "name": "Alert",
+      "component": "IconAlert",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:179",
+      "files": {
+        "svg": "svg/alert.svg",
+        "jsx": "jsx/IconAlert.jsx"
+      }
+    },
+    {
+      "id": "arrow-down",
+      "name": "Arrow down",
+      "component": "IconArrowDown",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:180",
+      "files": {
+        "svg": "svg/arrow-down.svg",
+        "jsx": "jsx/IconArrowDown.jsx"
+      }
+    },
+    {
+      "id": "arrow-left",
+      "name": "Arrow left",
+      "component": "IconArrowLeft",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:181",
+      "files": {
+        "svg": "svg/arrow-left.svg",
+        "jsx": "jsx/IconArrowLeft.jsx"
+      }
+    },
+    {
+      "id": "arrow-right",
+      "name": "Arrow right",
+      "component": "IconArrowRight",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:182",
+      "files": {
+        "svg": "svg/arrow-right.svg",
+        "jsx": "jsx/IconArrowRight.jsx"
+      }
+    },
+    {
+      "id": "arrow-up",
+      "name": "Arrow up",
+      "component": "IconArrowUp",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:183",
+      "files": {
+        "svg": "svg/arrow-up.svg",
+        "jsx": "jsx/IconArrowUp.jsx"
+      }
+    },
+    {
+      "id": "building",
+      "name": "Building",
+      "component": "IconBuilding",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:184",
+      "files": {
+        "svg": "svg/building.svg",
+        "jsx": "jsx/IconBuilding.jsx"
+      }
+    },
+    {
+      "id": "check",
+      "name": "Check",
+      "component": "IconCheck",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:185",
+      "files": {
+        "svg": "svg/check.svg",
+        "jsx": "jsx/IconCheck.jsx"
+      }
+    },
+    {
+      "id": "chevron-down",
+      "name": "Chevron down",
+      "component": "IconChevronDown",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:186",
+      "files": {
+        "svg": "svg/chevron-down.svg",
+        "jsx": "jsx/IconChevronDown.jsx"
+      }
+    },
+    {
+      "id": "chevron-left",
+      "name": "Chevron left",
+      "component": "IconChevronLeft",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:187",
+      "files": {
+        "svg": "svg/chevron-left.svg",
+        "jsx": "jsx/IconChevronLeft.jsx"
+      }
+    },
+    {
+      "id": "chevron-right",
+      "name": "Chevron right",
+      "component": "IconChevronRight",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:188",
+      "files": {
+        "svg": "svg/chevron-right.svg",
+        "jsx": "jsx/IconChevronRight.jsx"
+      }
+    },
+    {
+      "id": "chevron-up",
+      "name": "Chevron up",
+      "component": "IconChevronUp",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:189",
+      "files": {
+        "svg": "svg/chevron-up.svg",
+        "jsx": "jsx/IconChevronUp.jsx"
+      }
+    },
+    {
+      "id": "clock",
+      "name": "Clock",
+      "component": "IconClock",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:190",
+      "files": {
+        "svg": "svg/clock.svg",
+        "jsx": "jsx/IconClock.jsx"
+      }
+    },
+    {
+      "id": "close",
+      "name": "Close",
+      "component": "IconClose",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:191",
+      "files": {
+        "svg": "svg/close.svg",
+        "jsx": "jsx/IconClose.jsx"
+      }
+    },
+    {
+      "id": "document",
+      "name": "Document",
+      "component": "IconDocument",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:192",
+      "files": {
+        "svg": "svg/document.svg",
+        "jsx": "jsx/IconDocument.jsx"
+      }
+    },
+    {
+      "id": "globe",
+      "name": "Globe",
+      "component": "IconGlobe",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:193",
+      "files": {
+        "svg": "svg/globe.svg",
+        "jsx": "jsx/IconGlobe.jsx"
+      }
+    },
+    {
+      "id": "info",
+      "name": "Info",
+      "component": "IconInfo",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:194",
+      "files": {
+        "svg": "svg/info.svg",
+        "jsx": "jsx/IconInfo.jsx"
+      }
+    },
+    {
+      "id": "location",
+      "name": "Location",
+      "component": "IconLocation",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:195",
+      "files": {
+        "svg": "svg/location.svg",
+        "jsx": "jsx/IconLocation.jsx"
+      }
+    },
+    {
+      "id": "mail",
+      "name": "Mail",
+      "component": "IconMail",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:196",
+      "files": {
+        "svg": "svg/mail.svg",
+        "jsx": "jsx/IconMail.jsx"
+      }
+    },
+    {
+      "id": "pencil",
+      "name": "Pencil",
+      "component": "IconPencil",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:197",
+      "files": {
+        "svg": "svg/pencil.svg",
+        "jsx": "jsx/IconPencil.jsx"
+      }
+    },
+    {
+      "id": "phone",
+      "name": "Phone",
+      "component": "IconPhone",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:198",
+      "files": {
+        "svg": "svg/phone.svg",
+        "jsx": "jsx/IconPhone.jsx"
+      }
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "component": "IconSearch",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:199",
+      "files": {
+        "svg": "svg/search.svg",
+        "jsx": "jsx/IconSearch.jsx"
+      }
+    },
+    {
+      "id": "calendar",
+      "name": "Calendar",
+      "component": "IconCalendar",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=351:95",
+      "files": {
+        "svg": "svg/calendar.svg",
+        "jsx": "jsx/IconCalendar.jsx"
+      }
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility",
+      "component": "IconAccessibility",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=681:5",
+      "files": {
+        "svg": "svg/accessibility.svg",
+        "jsx": "jsx/IconAccessibility.jsx"
+      }
+    },
+    {
+      "id": "archive",
+      "name": "Archive",
+      "component": "IconArchive",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=971:220",
+      "files": {
+        "svg": "svg/archive.svg",
+        "jsx": "jsx/IconArchive.jsx"
+      }
+    },
+    {
+      "id": "caution",
+      "name": "Caution",
+      "component": "IconCaution",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=971:226",
+      "files": {
+        "svg": "svg/caution.svg",
+        "jsx": "jsx/IconCaution.jsx"
+      }
+    },
+    {
+      "id": "wip",
+      "name": "WIP",
+      "component": "IconWIP",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1972:110",
+      "files": {
+        "svg": "svg/wip.svg",
+        "jsx": "jsx/IconWIP.jsx"
+      }
+    },
+    {
+      "id": "chart",
+      "name": "Chart",
+      "component": "IconChart",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1086:57",
+      "files": {
+        "svg": "svg/chart.svg",
+        "jsx": "jsx/IconChart.jsx"
+      }
+    },
+    {
+      "id": "question",
+      "name": "Question",
+      "component": "IconQuestion",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1092:48",
+      "files": {
+        "svg": "svg/question.svg",
+        "jsx": "jsx/IconQuestion.jsx"
+      }
+    },
+    {
+      "id": "hamburger-button",
+      "name": "Hamburger button",
+      "component": "IconHamburgerButton",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1519:27",
+      "files": {
+        "svg": "svg/hamburger-button.svg",
+        "jsx": "jsx/IconHamburgerButton.jsx"
+      }
+    },
+    {
+      "id": "minus",
+      "name": "Minus",
+      "component": "IconMinus",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=368:28",
+      "files": {
+        "svg": "svg/minus.svg",
+        "jsx": "jsx/IconMinus.jsx"
+      }
+    },
+    {
+      "id": "plus",
+      "name": "Plus",
+      "component": "IconPlus",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=368:27",
+      "files": {
+        "svg": "svg/plus.svg",
+        "jsx": "jsx/IconPlus.jsx"
+      }
+    }
+  ]
+}

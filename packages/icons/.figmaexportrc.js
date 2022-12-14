@@ -1,9 +1,12 @@
 const transformSVGO = require('@figma-export/transform-svg-with-svgo')
 const outputAsSVG = require('@figma-export/output-components-as-svg')
 const outputAsReact = require('@figma-export/output-components-as-svgr')
+const svgoConfig = require('./svgo.config')
 const { writeFile } = require('node:fs/promises')
 
 const fileId = process.env.FIGMA_ICONS_FILE
+const svgDir = './svg'
+const jsxDir = './react'
 
 /** @type {import('@figma-export/types').FigmaExportRC} */
 module.exports = {
@@ -12,47 +15,28 @@ module.exports = {
       fileId,
       onlyFromPages: ['Icons'],
       transformers: [
-        transformSVGO({
-          multipass: true,
-          js2svg: {
-            pretty: true,
-            indent: 2
-          },
-          plugins: [
-            'removeDimensions',
-            { name: 'removeViewBox', active: false },
-            {
-              name: 'removeAttrs',
-              params: {
-                attrs: ['fill', 'stroke', 'id', 'clipPath', 'clip-path', 'clipRule']
-              }
-            },
-            'removeUselessDefs',
-            'removeXMLNS',
-            'collapseGroups'
-          ]
-        })
+        transformSVGO(svgoConfig)
       ],
       outputters: [
         outputAsSVG({
-          output: './generated/svg',
+          output: svgDir,
           getDirname: ({ dirname }) => dirname,
           getBasename: ({ componentName }) => `${normalizeIconName(componentName)}.svg`
         }),
         outputSVGIndex({
-          output: './generated/svg/index.json'
+          output: `${svgDir}/index.json`
         }),
         outputAsReact({
-          output: './generated/jsx',
+          output: jsxDir,
           getDirname: ({ dirname }) => dirname,
           getComponentName: ({ componentName }) => normalizeComponentName(componentName),
           getComponentFilename: ({ componentName }) => normalizeIconName(componentName)
         }),
         outputReactIndex({
-          output: './generated/jsx/index.json'
+          output: `${jsxDir}/index.json`
         }),
-        outputGeneralIndex({
-          output: './generated/index.json'
+        outputMainIndex({
+          output: 'index.json'
         })
       ]
     }]
@@ -68,9 +52,9 @@ function normalizeIconName (name) {
 }
 
 function normalizeComponentName (name) {
-  return name
+  return `Icon${name
     .replace(/(^[a-z])|( [a-z])/g, substr => substr.toUpperCase())
-    .replace(/ /g, '')
+    .replace(/ /g, '')}`
 }
 
 /**
@@ -81,7 +65,7 @@ function outputSVGIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
-      generated: Date.now(),
+      generated: timestamp(),
       components: components.map(({ page, component: { id, name, svg } }) => ({
         id: normalizeIconName(name),
         name,
@@ -101,7 +85,7 @@ function outputReactIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
-      generated: Date.now(),
+      generated: timestamp(),
       components: components.map(({ page, component: { id, name } }) => ({
         id: normalizeIconName(name),
         name,
@@ -118,11 +102,11 @@ function outputReactIndex ({ output }) {
  * @param {{ output: string }} options 
  * @returns {import('@figma-export/types').ComponentOutputter}
  */
-function outputGeneralIndex ({ output }) {
+function outputMainIndex ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
     const index = {
-      generated: Date.now(),
+      generated: timestamp(),
       components: components.map(({ page, component: { id, name, svg } }) => ({
         id: normalizeIconName(name),
         name,
@@ -149,4 +133,8 @@ function getFigmaHref (page, nodeId) {
 
 async function writeJSON (output, data) {
   return writeFile(output, JSON.stringify(data, null, 2))
+}
+
+function timestamp () {
+  return new Date().toISOString()
 }

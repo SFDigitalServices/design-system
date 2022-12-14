@@ -1,32 +1,38 @@
 import React, { ComponentType } from 'react'
-import { Icon, IconName, iconsIndex, Monospace, styled, theme } from '@sfgov/react'
+import iconMeta from '@sfgov/icons/react/index.json'
+import { Monospace, styled, theme, Flex } from '@sfgov/react'
+import * as allSymbols from '@sfgov/react'
 import { ComponentMeta, Story } from '@storybook/react'
 
 type IconArgs = {
-  symbol: IconName
-  color: string
+  symbol: string
+  color?: string
+  bg?: string
   width?: number
-  height?: number
 }
 
-const sortedKeys = Object.keys(iconsIndex).sort() as IconName[]
+const symbolNames = iconMeta.components.map(c => c.component).sort()
+const iconsBySymbolName = Object.fromEntries(
+  iconMeta.components.map(c => [c.component, c])
+)
 
-const colorKeys = Object.keys(theme.colors)
+const colorKeys = [''].concat(Object.keys(theme.colors))
 const colorMapping = Object.fromEntries(
-  colorKeys.map(key => [key, `$${key}`])
+  colorKeys.map(key => key ? [key, `$${key}`] : ['', undefined])
 )
 
 export default {
-  component: Icon,
   args: {
-    symbol: 'accessibility',
-    color: 'slateL4',
-    width: 20
+    symbol: symbolNames[0],
+    color: undefined,
+    bg: undefined,
+    width: undefined,
+    height: undefined
   },
   argTypes: {
     symbol: {
       name: 'Symbol',
-      options: sortedKeys,
+      options: symbolNames,
       control: {
         type: 'select'
       }
@@ -37,6 +43,21 @@ export default {
       mapping: colorMapping,
       control: {
         type: 'select'
+      }
+    },
+    bg: {
+      name: 'Background',
+      options: colorKeys,
+      mapping: colorMapping,
+      control: {
+        type: 'select'
+      }
+    },
+    width: {
+      name: 'Width',
+      control: {
+        type: 'number',
+        min: 8
       }
     }
   },
@@ -49,40 +70,47 @@ export default {
   }
 } as ComponentMeta<ComponentType<IconArgs>>
 
-export const SingleIcon: Story<IconArgs> = ({ color, ...rest }: IconArgs) => <Icon css={{ color }} {...rest} />
+export const SingleIcon: Story<IconArgs> = ({ symbol, color, bg, ...rest }: IconArgs) => {
+  const Component = allSymbols[symbol] || 'svg'
+  return (
+    <Flex inline css={{ p: 8, bg }}>
+      <Component css={{ color }} {...rest} />
+    </Flex>
+  )
+}
 
-const TD = styled('td', { p: 8 })
-const TH = styled('th', { p: 8 })
+const Table = styled('table', {
+  'th, td': {
+    p: 8
+  }
+})
 
 export const AllIcons: Story<Omit<IconArgs, 'symbol'>> = args => {
-  const jsxProps = [
-    args.color && `css={{ color: '${args.color}' }}`,
-    ...['width', 'height'].map(p => args[p] && `${p}={${args[p]}}`)
-  ].filter(Boolean)
+  const propsString = getPropsString(args)
   return (
-    <table>
+    <Table>
       <thead>
         <tr>
-          <TH align='center'>Icon</TH>
-          <TH align='left'>Name</TH>
-          <TH align='left'>JSX</TH>
-          <TH align='left'>Figma</TH>
+          <th align='center'>Icon</th>
+          <th align='left'>Figma</th>
+          <th align='left'>Import</th>
+          <th align='left'>Code</th>
         </tr>
       </thead>
       <tbody>
-        {sortedKeys.map(symbol => {
-          const { name, href } = iconsIndex[symbol]
+        {symbolNames.map(symbol => {
+          const { name, href } = iconsBySymbolName[symbol]
           return (
             <tr key={symbol}>
-              <TD align='center'><SingleIcon {...args} symbol={symbol} /></TD>
-              <TD align='left'><Monospace>{symbol}</Monospace></TD>
-              <TD align='left'><Monospace>{`<Icon symbol='${symbol}' ${jsxProps.join(' ')} />`}</Monospace></TD>
-              <TD align='left'><a href={href}>{name}</a></TD>
+              <td align='center'><SingleIcon {...args} symbol={symbol} /></td>
+              <td align='left'><a href={href}>{name}</a></td>
+              <td align='left'><Monospace>{symbol}</Monospace></td>
+              <td align='left'><Monospace>{`<${symbol} ${propsString} />`}</Monospace></td>
             </tr>
           )
         })}
       </tbody>
-    </table>
+    </Table>
   )
 }
 
@@ -90,4 +118,15 @@ AllIcons.parameters = {
   controls: {
     exclude: ['symbol']
   }
+}
+
+function getPropsString (args: Partial<IconArgs>) {
+  const cssString = ['bg', 'color']
+    .filter(k => args[k])
+    .reduce((list, k) => list.concat(`${k}: '${args[k]}'`), [] as string[])
+    .join(', ')
+  return [
+    cssString && `css={{ ${cssString} }}`,
+    args.width && `width={${args.width}}`
+  ].filter(Boolean).join(' ')
 }

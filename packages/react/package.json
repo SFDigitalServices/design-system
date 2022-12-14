@@ -13,6 +13,7 @@
     "build:js": "wireit",
     "lint": "eslint --ext js,jsx,mjs,ts,tsx .",
     "prebuild": "rm -rf dist",
+    "prebuild:js": "node scripts/wrap-icons.mjs",
     "postbuild": "du -h dist/*.*js",
     "watch": "rollup -c --watch"
   },
@@ -27,12 +28,16 @@
       "dependencies": [],
       "files": [
         "src/**/*",
-        "*.config.*js"
+        "*.config.*js",
+        "tsconfig.json"
       ],
       "outputs": [
         "dist/*.*js"
       ]
     }
+  },
+  "dependencies": {
+    "@sfgov/icons": "1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",

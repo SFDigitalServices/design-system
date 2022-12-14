@@ -1,0 +1,222 @@
+{
+  "generated": "2022-12-14T04:29:55.966Z",
+  "components": [
+    {
+      "id": "alert",
+      "name": "Alert",
+      "component": "IconAlert",
+      "file": "IconAlert.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:179"
+    },
+    {
+      "id": "arrow-down",
+      "name": "Arrow down",
+      "component": "IconArrowDown",
+      "file": "IconArrowDown.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:180"
+    },
+    {
+      "id": "arrow-left",
+      "name": "Arrow left",
+      "component": "IconArrowLeft",
+      "file": "IconArrowLeft.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:181"
+    },
+    {
+      "id": "arrow-right",
+      "name": "Arrow right",
+      "component": "IconArrowRight",
+      "file": "IconArrowRight.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:182"
+    },
+    {
+      "id": "arrow-up",
+      "name": "Arrow up",
+      "component": "IconArrowUp",
+      "file": "IconArrowUp.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:183"
+    },
+    {
+      "id": "building",
+      "name": "Building",
+      "component": "IconBuilding",
+      "file": "IconBuilding.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:184"
+    },
+    {
+      "id": "check",
+      "name": "Check",
+      "component": "IconCheck",
+      "file": "IconCheck.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:185"
+    },
+    {
+      "id": "chevron-down",
+      "name": "Chevron down",
+      "component": "IconChevronDown",
+      "file": "IconChevronDown.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:186"
+    },
+    {
+      "id": "chevron-left",
+      "name": "Chevron left",
+      "component": "IconChevronLeft",
+      "file": "IconChevronLeft.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:187"
+    },
+    {
+      "id": "chevron-right",
+      "name": "Chevron right",
+      "component": "IconChevronRight",
+      "file": "IconChevronRight.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:188"
+    },
+    {
+      "id": "chevron-up",
+      "name": "Chevron up",
+      "component": "IconChevronUp",
+      "file": "IconChevronUp.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:189"
+    },
+    {
+      "id": "clock",
+      "name": "Clock",
+      "component": "IconClock",
+      "file": "IconClock.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:190"
+    },
+    {
+      "id": "close",
+      "name": "Close",
+      "component": "IconClose",
+      "file": "IconClose.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:191"
+    },
+    {
+      "id": "document",
+      "name": "Document",
+      "component": "IconDocument",
+      "file": "IconDocument.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:192"
+    },
+    {
+      "id": "globe",
+      "name": "Globe",
+      "component": "IconGlobe",
+      "file": "IconGlobe.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:193"
+    },
+    {
+      "id": "info",
+      "name": "Info",
+      "component": "IconInfo",
+      "file": "IconInfo.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:194"
+    },
+    {
+      "id": "location",
+      "name": "Location",
+      "component": "IconLocation",
+      "file": "IconLocation.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:195"
+    },
+    {
+      "id": "mail",
+      "name": "Mail",
+      "component": "IconMail",
+      "file": "IconMail.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:196"
+    },
+    {
+      "id": "pencil",
+      "name": "Pencil",
+      "component": "IconPencil",
+      "file": "IconPencil.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:197"
+    },
+    {
+      "id": "phone",
+      "name": "Phone",
+      "component": "IconPhone",
+      "file": "IconPhone.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:198"
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "component": "IconSearch",
+      "file": "IconSearch.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=64:199"
+    },
+    {
+      "id": "calendar",
+      "name": "Calendar",
+      "component": "IconCalendar",
+      "file": "IconCalendar.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=351:95"
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility",
+      "component": "IconAccessibility",
+      "file": "IconAccessibility.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=681:5"
+    },
+    {
+      "id": "archive",
+      "name": "Archive",
+      "component": "IconArchive",
+      "file": "IconArchive.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=971:220"
+    },
+    {
+      "id": "caution",
+      "name": "Caution",
+      "component": "IconCaution",
+      "file": "IconCaution.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=971:226"
+    },
+    {
+      "id": "wip",
+      "name": "WIP",
+      "component": "IconWIP",
+      "file": "IconWIP.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1972:110"
+    },
+    {
+      "id": "chart",
+      "name": "Chart",
+      "component": "IconChart",
+      "file": "IconChart.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1086:57"
+    },
+    {
+      "id": "question",
+      "name": "Question",
+      "component": "IconQuestion",
+      "file": "IconQuestion.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1092:48"
+    },
+    {
+      "id": "hamburger-button",
+      "name": "Hamburger button",
+      "component": "IconHamburgerButton",
+      "file": "IconHamburgerButton.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=1519:27"
+    },
+    {
+      "id": "minus",
+      "name": "Minus",
+      "component": "IconMinus",
+      "file": "IconMinus.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=368:28"
+    },
+    {
+      "id": "plus",
+      "name": "Plus",
+      "component": "IconPlus",
+      "file": "IconPlus.jsx",
+      "href": "https://figma.com/file/P0usvPQSAKOzqcH5mPFf1u/Icons?node-id=368:27"
+    }
+  ]
+}
