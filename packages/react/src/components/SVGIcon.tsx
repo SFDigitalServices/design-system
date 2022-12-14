@@ -19,6 +19,8 @@ export type SVGIconProps = SVGProps & {
   as: ComponentType<SVGProps>
 }
 
+type Size = { width: number, height: number }
+
 /**
  * Create a styled icon component from an unstyled SVG component by wrapping it
  * in a function that renders `<SVGIcon>` with `as={component}`.
@@ -28,13 +30,13 @@ export type SVGIconProps = SVGProps & {
  *   of the SVG, e.g. `[0, 0, 20, 20]`. This sets the default `width` prop, which
  *   establishes a proportional height according to browser intrinsic aspect ratio rules.
  */
-export function createStyledIcon (IconComponent: ComponentType<SVGProps>, viewBox?: number[]) {
+export function createStyledIcon (IconComponent: ComponentType<SVGProps>, size?: Size) {
   const Icon = withFixedProps(SVGIcon, { as: IconComponent })
   return Object.assign(Icon, {
     displayName: IconComponent.displayName || IconComponent.name,
-    viewBox,
-    defaultProps: viewBox?.[2]
-      ? { width: viewBox[2] }
+    size,
+    defaultProps: size
+      ? { width: size.width }
       : {}
   })
 }
