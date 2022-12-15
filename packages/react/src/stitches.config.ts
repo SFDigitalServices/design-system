@@ -4,14 +4,15 @@ import { theme as inputTheme, media } from './theme'
 import { identity } from './utils'
 
 export const {
-  styled,
+  config,
   css,
-  globalCss,
+  createTheme,
   keyframes,
   getCssText,
-  theme,
-  createTheme,
-  config
+  globalCss,
+  reset,
+  styled,
+  theme
 } = createStitches({
   prefix: 'sfgov',
   theme: inputTheme,
