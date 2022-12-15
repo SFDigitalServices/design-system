@@ -5,7 +5,9 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import typescript from '@rollup/plugin-typescript'
-import pkgJson from './package.json' assert { type: 'json' }
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+const pkgJson = require('./package.json')
 
 const production = process.env.NODE_ENV === 'production'
 const sourcemap = !production
