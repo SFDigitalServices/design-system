@@ -1,4 +1,4 @@
-const { getGoogleFontsURL } = require('@sfgov/react')
+const { SSRStyle } = require('@sfgov/react')
 
 const { NODE_ENV } = process.env
 const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
@@ -69,12 +69,31 @@ module.exports = {
    * @returns 
    */
   previewHead (head) {
-    const googleFontsUrl = getGoogleFontsURL()
+    const links = SSRStyle.getPreloadLinks()
     return `
       ${head}
-      <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-      <link rel='preload' as='style' href='${googleFontsUrl}'>
-      <link rel='stylesheet' href='${googleFontsUrl}'>
+      ${links.map(attrs => tag('link', attrs)).join('\n')}
     `
   }
+}
+
+/**
+ * 
+ * @param {string} name 
+ * @param {Record<string, string>} attrs 
+ * @returns 
+ */
+function tag (name, attrs) {
+  const attrString = attrs
+    ? Object.entries(attrs)
+        .map(([name, value]) => ` ${name}="${escapeAttrValue(value)}"`)
+        .join('')
+    : ''
+  return `<${name}${attrString}>`
+}
+
+function escapeAttrValue (str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
 }
