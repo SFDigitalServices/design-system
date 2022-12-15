@@ -11,87 +11,103 @@ export const fonts = {
 
 export const textStyles: Record<string, CSS> = {
   body: {
+    fontFamily: '$body',
     fontSize: '16px',
     fontWeight: '$normal',
     lineHeight: '24px'
   },
   small: {
+    fontFamily: '$body',
     fontSize: '14px',
     lineHeight: '18px'
   },
   bigDesc: {
+    fontFamily: '$body',
     fontSize: '20px',
     fontWeight: '$bold',
     lineHeight: '28px'
   },
   bigDescDesktop: {
+    fontFamily: '$body',
     fontSize: '24px',
     fontWeight: '$bold',
     lineHeight: '32px'
   },
   titleXs: {
+    fontFamily: '$body',
     fontSize: '20px',
     fontWeight: '$bold',
     lineHeight: '24px'
   },
   titleSm: {
+    fontFamily: '$body',
     fontSize: '24px',
     fontWeight: '$bold',
     lineHeight: '28px'
   },
   titleMd: {
+    fontFamily: '$body',
     fontSize: '24px',
     fontWeight: '$bold',
     lineHeight: '28px'
   },
   titleLg: {
+    fontFamily: '$body',
     fontSize: '28px',
     fontWeight: '$bold',
     lineHeight: '32px',
     letterSpacing: '-1px'
   },
   titleXl: {
+    fontFamily: '$body',
     fontSize: '32px',
     fontWeight: '$bold',
     lineHeight: '36px',
     letterSpacing: '-1px'
   },
   displaySm: {
+    fontFamily: '$body',
     fontSize: '36px',
     fontWeight: '$light',
     lineHeight: '40px',
     letterSpacing: '-1px'
   },
   displayLg: {
+    fontFamily: '$body',
     fontSize: '44px',
     fontWeight: '$light',
     lineHeight: '48px',
     letterSpacing: '-1px'
   },
   titleMdDesktop: {
+    fontFamily: '$body',
     fontSize: '32px',
     fontWeight: '$bold',
     lineHeight: '36px'
   },
   titleLgDesktop: {
+    fontFamily: '$body',
     fontSize: '44px',
     fontWeight: '$bold',
     lineHeight: '52px',
     letterSpacing: '-1px'
   },
   titleXlDesktop: {
+    fontFamily: '$body',
     fontSize: '60px',
     fontWeight: '$bold',
     lineHeight: '64px',
     letterSpacing: '-1px'
   },
   displaySmDesktop: {
+    fontFamily: '$body',
     fontSize: '48px',
     fontWeight: '$light',
     lineHeight: '52px',
     letterSpacing: '-1px'
   },
   displayLgDesktop: {
+    fontFamily: '$body',
     fontSize: '72px',
     fontWeight: '$light',
     lineHeight: '76px',
