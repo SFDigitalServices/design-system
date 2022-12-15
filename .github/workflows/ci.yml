@@ -33,7 +33,7 @@ jobs:
       - run: echo "NPM_AUTH_TOKEN=${{ secrets.NPM_AUTH_TOKEN }}" >> $GITHUB_ENV
       - name: Publish latest (from 'main' branch)
         if: github.ref == 'refs/heads/main'
-        run: lerna publish --yes
+        run: lerna publish --yes from-package
         id: publishMain
       - name: Publish prerelease (pull requests)
         if: startsWith(github.ref, 'refs/heads/release-')
