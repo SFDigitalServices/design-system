@@ -44,6 +44,7 @@ module.exports = {
   ],
 
   plugins: [
+    require('./src/plugins/sfgov'),
     '@docusaurus/theme-live-codeblock',
     async function myPlugin () {
       return {
