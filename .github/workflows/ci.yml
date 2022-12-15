@@ -22,6 +22,14 @@ jobs:
       - run: npm run build -w @sfgov/icons
       - run: npm run build -w @sfgov/react
 
+      - name: Git identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - run: echo "NPM_AUTH_TOKEN=${{ secrets.NPM_AUTH_TOKEN }}" >> $GITHUB_ENV
       - name: Publish latest (from 'main' branch)
         if: github.ref == 'refs/heads/main'
