@@ -17,17 +17,34 @@ export type SSRStyleProps = Omit<ComponentProps<'style'>, 'dangerouslySetInnerHT
  * 3. It renders a <style> element with the critical path CSS and passes
  *    along any additional props.
  * 
+ * The objects can also be used to generate static HTML outside of React.
  * @param props
  * @returns a fragment suitable for use in <head>, Helmet, next/head, etc.
  */
-export function SSRStyle ({ googleFonts = DEFAULT_GOOGLE_FONTS, ...rest }: SSRStyleProps) {
+export function SSRStyle ({ googleFonts, ...rest }: SSRStyleProps) {
   const css = getCssText()
   reset()
-  const googleFontsUrl = getGoogleFontsURL(googleFonts)
+  const links = SSRStyle.getPreloadLinks({ googleFonts })
   return <>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
-    <link rel='preload' as='style' href={googleFontsUrl} />
-    <link rel='stylesheet' href={googleFontsUrl} />
+    {links.map((props, i) => <link key={i} {...props} />)}
     <style id='sfgov-ssr-css' {...rest} dangerouslySetInnerHTML={{ __html: css }} />
   </>
+}
+
+/**
+ * This function returns an array of <link> element attributes (or React props)
+ * that should be included in the <head> of server-rendered documents to preload
+ * Google Fonts CSS for optimal performance and display.
+ * 
+ * @param props An optional object containing a Google Fonts spec in `googleFonts`
+ *   listing the fonts to be loaded.
+ * @returns an array of <link> attribute/props objects
+ */
+SSRStyle.getPreloadLinks = (props?: SSRStyleProps) => {
+  const googleFontsUrl = getGoogleFontsURL(props?.googleFonts || DEFAULT_GOOGLE_FONTS)
+  return [
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+    { rel: 'preload', as: 'style', href: googleFontsUrl },
+    { rel: 'stylesheet', href: googleFontsUrl }
+  ] as ComponentProps<'link'>[]
 }
