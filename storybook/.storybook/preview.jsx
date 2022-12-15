@@ -1,7 +1,7 @@
 import React from 'react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { addParameters, addDecorator } from '@storybook/react'
-import { Box, breakpoints, GlobalStyle } from '@sfgov/react'
+import { Box, breakpoints } from '@sfgov/react'
 import { getDocsBaseUrl } from '../src/utils'
 
 const breakpointViewports = Object.fromEntries(
@@ -18,7 +18,6 @@ const breakpointViewports = Object.fromEntries(
 addDecorator((Story, { parameters }) => (
   <Box css={{ p: 20, fontFamily: '$body', ...parameters.container }}>
     {Story()}
-    <GlobalStyle />
   </Box>
 ))
 

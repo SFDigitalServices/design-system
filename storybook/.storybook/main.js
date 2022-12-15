@@ -1,3 +1,5 @@
+const { getGoogleFontsURL } = require('@sfgov/react')
+
 const { NODE_ENV } = process.env
 const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
 
@@ -56,5 +58,23 @@ module.exports = {
     return configType === 'PRODUCTION'
       ? `${head}<base href="/storybook/">`
       : head
+  },
+
+  /**
+   * This mimics the <SSRStyle> component's output, which is official Google Fonts(tm)
+   * way of making sure that the fonts load as early in the page load as possible to
+   * prevent a FOUC.
+   * 
+   * @param {string} head 
+   * @returns 
+   */
+  previewHead (head) {
+    const googleFontsUrl = getGoogleFontsURL()
+    return `
+      ${head}
+      <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+      <link rel='preload' as='style' href='${googleFontsUrl}'>
+      <link rel='stylesheet' href='${googleFontsUrl}'>
+    `
   }
 }
