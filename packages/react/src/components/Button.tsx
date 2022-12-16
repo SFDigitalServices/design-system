@@ -13,6 +13,7 @@ const baseButtonStyles: CSS = {
   justifyItems: 'center',
   justifyContent: 'center',
   borderRadius: 8,
+  gap: 8,
   px: 20,
   py: 8,
   // border
