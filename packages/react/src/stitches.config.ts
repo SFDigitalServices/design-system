@@ -30,9 +30,17 @@ export const {
     gapY: alias('rowGap'),
     // spacing
     m: alias('margin'),
+    mt: alias('marginTop'),
+    mr: alias('marginRight'),
+    mb: alias('marginBottom'),
+    ml: alias('marginLeft'),
     mx: alias(['marginLeft', 'marginRight']),
     my: alias(['marginTop', 'marginBottom']),
     p: alias('padding'),
+    pt: alias('paddingTop'),
+    pr: alias('paddingRight'),
+    pb: alias('paddingBottom'),
+    pl: alias('paddingLeft'),
     px: alias(['paddingLeft', 'paddingRight']),
     py: alias(['paddingTop', 'paddingBottom'])
   }
