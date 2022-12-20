@@ -86,8 +86,8 @@ module.exports = {
 function tag (name, attrs) {
   const attrString = attrs
     ? Object.entries(attrs)
-        .map(([name, value]) => ` ${name}="${escapeAttrValue(value)}"`)
-        .join('')
+      .map(([name, value]) => ` ${name}="${escapeAttrValue(value)}"`)
+      .join('')
     : ''
   return `<${name}${attrString}>`
 }
