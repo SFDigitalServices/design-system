@@ -1,6 +1,7 @@
 import React, { ComponentProps } from 'react'
-import { GlobalCSSProps, getGoogleFontsURL, DEFAULT_GOOGLE_FONTS } from './GlobalStyle'
+import { getGooglePreloadLinks, GoogleFontsPreloadStyles } from './GoogleFonts'
 import { getCssText, reset } from '../stitches.config'
+import type { GlobalCSSProps } from '../types'
 
 export type SSRStyleProps = Omit<ComponentProps<'style'>, 'dangerouslySetInnerHTML'> & GlobalCSSProps
 
@@ -21,14 +22,19 @@ export type SSRStyleProps = Omit<ComponentProps<'style'>, 'dangerouslySetInnerHT
  * @param props
  * @returns a fragment suitable for use in <head>, Helmet, next/head, etc.
  */
-export function SSRStyle ({ googleFonts, ...rest }: SSRStyleProps) {
+export function SSRStyle ({ fonts, ...rest }: SSRStyleProps) {
   const css = getCssText()
   reset()
-  const links = SSRStyle.getPreloadLinks({ googleFonts })
   return <>
-    {links.map((props, i) => <link key={i} {...props} />)}
+    <GoogleFontsPreloadStyles fonts={fonts} />
     <style id='sfgov-ssr-css' {...rest} dangerouslySetInnerHTML={{ __html: css }} />
   </>
+}
+
+function getPreloadLinks (props?: SSRStyleProps) {
+  return [
+    ...getGooglePreloadLinks(props?.fonts)
+  ]
 }
 
 /**
@@ -40,11 +46,4 @@ export function SSRStyle ({ googleFonts, ...rest }: SSRStyleProps) {
  *   listing the fonts to be loaded.
  * @returns an array of <link> attribute/props objects
  */
-SSRStyle.getPreloadLinks = (props?: SSRStyleProps) => {
-  const googleFontsUrl = getGoogleFontsURL(props?.googleFonts || DEFAULT_GOOGLE_FONTS)
-  return [
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
-    { rel: 'preload', as: 'style', href: googleFontsUrl },
-    { rel: 'stylesheet', href: googleFontsUrl }
-  ] as ComponentProps<'link'>[]
-}
+SSRStyle.getPreloadLinks = getPreloadLinks

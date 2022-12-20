@@ -1,41 +1,35 @@
 import React, { ComponentProps } from 'react'
-
-export type GoogleFontsSpec = Record<string, string>
-
-export type GlobalCSSProps = {
-  googleFonts?: GoogleFontsSpec
-}
+import { getGoogleFontsCss } from './GoogleFonts'
+import type { GlobalCSSProps } from '../types'
+import { SSRStyle } from './SSRStyle'
 
 export type GlobalStyleProps = Omit<ComponentProps<'style'>, 'dangerouslySetInnerHTML'> & GlobalCSSProps
 
-export const DEFAULT_GOOGLE_FONTS: GoogleFontsSpec = {
-  Rubik: 'wght@300;400;600',
-  'Noto Sans TC': 'wght@300;400;500',
-  'Roboto Mono': 'wght@400'
-}
-
-export function getDefaultGlobalCss ({ googleFonts = DEFAULT_GOOGLE_FONTS }: GlobalCSSProps) {
-  return `
-    @import url('${getGoogleFontsURL(googleFonts)}');
-  `.trim()
-}
-
-export function GlobalStyle ({ googleFonts = DEFAULT_GOOGLE_FONTS, ...rest }: GlobalStyleProps) {
-  return <style id='sfgov-global-css' dangerouslySetInnerHTML={{
-    __html: getDefaultGlobalCss({ googleFonts })
+/**
+ * This component renders a <style> tag that pulls in static
+ * global CSS, including Google Fonts CSS imports. For critical CSS rendered
+ * server-side, use <SSRStyle>.
+ * 
+ * @see {SSRStyle}
+ * @see {getGlobalStaticCss}
+ * @param props 
+ * @returns a global <style> "singleton"
+ */
+export function GlobalStaticStyles ({ fonts, ...rest }: GlobalStyleProps) {
+  return <style id='sfgov-global-css' {...rest} dangerouslySetInnerHTML={{
+    __html: getStaticGlobalCss({ fonts })
   }} />
 }
 
-export function getGoogleFontsURL (fonts: GoogleFontsSpec = DEFAULT_GOOGLE_FONTS) {
-  if (!fonts || typeof fonts !== 'object' || Array.isArray(fonts)) {
-    throw new Error(`Expected a Google Fonts object spec, but got ${typeof fonts}`)
-  }
-  const families = Object.entries(fonts)
-    .map(([family, args]) => `family=${escape(family)}${args ? `:${args}` : ''}`)
-    .join('&')
-  return `https://fonts.googleapis.com/css2?${families}&display=swap`
-}
-
-function escape (str: string) {
-  return str.replace(/ /g, '+')
+/**
+ * For static and non-React environments, use this function to generate CSS
+ * content for a global <style> element.
+ * 
+ * @param props 
+ * @returns 
+ */
+export function getStaticGlobalCss (props?: GlobalCSSProps): string {
+  return [
+    getGoogleFontsCss(props?.fonts)
+  ].join('')
 }

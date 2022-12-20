@@ -3,8 +3,8 @@ const { SSRStyle } = require('@sfgov/react')
 /** @type {import('@docusaurus/types').PluginModule} */
 module.exports = context => ({
   injectHtmlTags ({ content }) {
+    // FIXME: do something with `content` here?
     const links = SSRStyle.getPreloadLinks()
-    console.log('content:', content)
     return {
       name: 'sfgov-design-system',
       headTags: [
