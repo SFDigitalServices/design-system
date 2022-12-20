@@ -23,3 +23,9 @@ export type FontSpec = {
   weights: FixedFontWeightMap
   googleFont?: GoogleFontOptions
 }
+
+export type FontSpecProps = {
+  fonts?: FontSpec[]
+}
+
+export type GlobalCSSProps = FontSpecProps

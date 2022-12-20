@@ -1,5 +1,40 @@
-import type { FontSpec, LinkProps } from '../types'
+import React, { ComponentProps } from 'react'
 import { defaultFonts } from '../constants'
+import type { FontSpec, FontSpecProps, LinkProps } from '../types'
+
+/**
+ * Render a <style> tag that imports the necessary Google Fonts for our typography.
+ * This can be used for client-side rendering, but will cause a flash of unstyled
+ * typography. If you have the ability to render server-side, please use
+ * {@link GoogleFontsPreloadStyles} or {@link SSRStyle} instead.
+ * 
+ * @param props <style> props and FontSpecProps (including the `fonts` prop), plus
+ * additional CSS text as children (strings)
+ */
+export function GoogleFontsStylesheet ({ fonts, children, ...rest }: ComponentProps<'style'> & FontSpecProps) {
+  const url = getGoogleFontsURL(fonts)
+  return url
+    ? <style {...rest}>{`@import url(${url});`}{children}</style>
+    : null
+}
+
+export function GoogleFontsPreloadStyles (props: FontSpecProps) {
+  return <>
+    {getGooglePreloadLinks(props.fonts).map((props, i) => (
+      <link key={i} {...props} />
+    ))}
+  </>
+}
+
+export function getGooglePreloadLinks (fonts?: FontSpec[]): LinkProps[] {
+  const url = getGoogleFontsURL(fonts || defaultFonts)
+  if (!url) return []
+  return [
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+    { rel: 'preload', as: 'style', href: url },
+    { rel: 'stylesheet', href: url }
+  ]
+}
 
 export function getGoogleFontsCss (fonts?: FontSpec[]) {
   return `@import url('${getGoogleFontsURL(fonts)}');`
@@ -14,16 +49,6 @@ export function getGoogleFontsURL (fonts?: FontSpec[]) {
     .map(([family, args]) => `family=${escape(family)}${args ? `:${args}` : ''}`)
     .join('&')
   return `https://fonts.googleapis.com/css2?${families}&display=swap`
-}
-
-export function getPreloadLinks (fonts?: FontSpec[]): LinkProps[] {
-  const url = getGoogleFontsURL(fonts || defaultFonts)
-  if (!url) return []
-  return [
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
-    { rel: 'preload', as: 'style', href: url },
-    { rel: 'stylesheet', href: url }
-  ]
 }
 
 function formatFontWeights (font: FontSpec) {

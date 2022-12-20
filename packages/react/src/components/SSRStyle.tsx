@@ -1,8 +1,7 @@
 import React, { ComponentProps } from 'react'
-import type { GlobalCSSProps } from './GlobalStyle'
-import { getPreloadLinks as getGooglePreloadLinks } from './GoogleFonts'
+import { getGooglePreloadLinks, GoogleFontsPreloadStyles } from './GoogleFonts'
 import { getCssText, reset } from '../stitches.config'
-import { FontSpec } from '../types'
+import type { GlobalCSSProps } from '../types'
 
 export type SSRStyleProps = Omit<ComponentProps<'style'>, 'dangerouslySetInnerHTML'> & GlobalCSSProps
 
@@ -26,9 +25,8 @@ export type SSRStyleProps = Omit<ComponentProps<'style'>, 'dangerouslySetInnerHT
 export function SSRStyle ({ fonts, ...rest }: SSRStyleProps) {
   const css = getCssText()
   reset()
-  const links = getPreloadLinks({ fonts })
   return <>
-    {links.map((props, i) => <link key={i} {...props} />)}
+    <GoogleFontsPreloadStyles fonts={fonts} />
     <style id='sfgov-ssr-css' {...rest} dangerouslySetInnerHTML={{ __html: css }} />
   </>
 }
