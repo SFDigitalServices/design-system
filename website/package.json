@@ -44,6 +44,7 @@
       "command": "docusaurus start --port=3002",
       "dependencies": [
         "link-storybook",
+        "../packages/react:build",
         "../packages/sfgov-design-system:build"
       ]
     },
