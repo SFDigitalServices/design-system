@@ -1,4 +1,5 @@
 import React from 'react'
+import { VariantProps } from '@stitches/react'
 import { styled, CSS } from '../stitches.config'
 import { HOCUS_SELECTOR } from '../constants'
 import { withFixedProps } from '../utils'
@@ -78,9 +79,7 @@ export const Button = styled('button', {
   }
 })
 
-Button.className = 'Button'
-
-export type ButtonProps = React.ComponentPropsWithRef<typeof Button>
+export type ButtonProps = VariantProps<typeof Button>
 
 export const PrimaryButton = createVariant('primary')
 export const SecondaryButton = createVariant('secondary')

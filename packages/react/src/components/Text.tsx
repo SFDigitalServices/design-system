@@ -1,4 +1,5 @@
-import { PropsWithRef } from 'react'
+import type { VariantProps } from '@stitches/react'
+import type { ComponentType } from 'react'
 import { textStyles } from '../theme/typography'
 import { CSS, styled } from '../stitches.config'
 import { withFixedProps } from '../utils'
@@ -9,6 +10,7 @@ export type TextVariant =
   'displaySm' | 'displayLg' | 'mono'
 
 export const Text = styled('div', {
+  fontFamily: '$body',
   m: 0,
   // Chinese text should be rendered in Noto Sans TC,
   // with bold font weights at 500 (not 600)
@@ -57,7 +59,7 @@ export const Text = styled('div', {
   }
 })
 
-export type TextProps = PropsWithRef<typeof Text>
+export type TextProps = VariantProps<typeof Text>
 
 export const BodyText = createVariant('body')
 export const SmallText = createVariant('small')
@@ -72,5 +74,6 @@ export const DisplayLg = createVariant('displayLg')
 export const Monospace = createVariant('mono')
 
 function createVariant (variant: TextVariant) {
-  return withFixedProps(Text, { variant })
+  const Variant = withFixedProps(Text, { variant })
+  return Variant as ComponentType<VariantProps<typeof Variant>>
 }
