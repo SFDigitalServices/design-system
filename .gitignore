@@ -6,3 +6,4 @@
 **/dist
 **/manifest.json
 **/node_modules
+**/*.log
