@@ -63,7 +63,7 @@ export const BannerAlert = withVariants(function ({ className, ...props }, conte
   return (
     <div className={className}>
       <div className='responsive-container py-20 lg:py-28 flex gap-20 justify-center items-center' {...rest}>
-        <Icon symbol='alert' />
+        {/* <Icon symbol='alert' /> */}
         <div>{children}</div>
       </div>
     </div>
