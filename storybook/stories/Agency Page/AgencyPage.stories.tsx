@@ -107,13 +107,14 @@ export const AgencyPage = ({ agency }) => {
 
       {agency.news?.length && (
         <Section>
-          <SectionTitle>News</SectionTitle>
+          <SectionTitle title="News" type="news" hasMore />
           <TileSection>
             {agency.news.map((newsItem) => (
               <NewsTile
                 key={newsItem.id}
                 title={newsItem.title}
                 body={newsItem.posted_date}
+                href="#"
               />
             ))}
           </TileSection>
@@ -122,13 +123,14 @@ export const AgencyPage = ({ agency }) => {
 
       {agency.resources?.length && (
         <Section>
-          <SectionTitle>Resources</SectionTitle>
+          <SectionTitle title="Resources" type="resources" hasMore />
           <TileSection>
             {agency.resources.map((resource) => (
               <ContentTile
                 key={resource.id}
                 title={resource.title}
                 body={resource.description}
+                href="#"
               />
             ))}
           </TileSection>
