@@ -8,8 +8,5 @@ module.exports = {
       },
       useBuiltIns: 'usage'
     }]
-  ],
-  plugins: [
-    '@emotion/babel-plugin'
   ]
 }
