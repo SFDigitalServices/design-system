@@ -280,33 +280,11 @@
       }
     },
     "social_media": {},
-    "public_bodies": [
+    "related_divisions": [
       {
         "href": "https://test-sfgov.pantheonsite.io/entity/paragraph/45111?_format=hal_json",
         "id": 45111,
-        "uuid": "3018400a-2e51-4325-8069-fca58120a96e",
-        "revision_id": 803933,
-        "langcode": "en",
-        "type": {
-          "target_id": "link"
-        },
-        "status": true,
-        "created": "2022-08-19T18:32:22+00:00",
-        "parent_id": "785",
-        "parent_type": "node",
-        "parent_field_name": "field_public_bodies",
-        "behavior_settings": [],
-        "default_langcode": true,
-        "revision_translation_affected": true,
-        "content_translation_source": null,
-        "content_translation_outdated": false,
-        "content_translation_changed": "2022-09-29T17:09:54+00:00",
-        "link": {
-          "uri": "entity:node/1965",
-          "title": "Board of Appeals meetings",
-          "options": [],
-          "lang": "en"
-        }
+        "title": "Board of Appeals meetings"
       }
     ]
   },

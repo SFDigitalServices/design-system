@@ -1,11 +1,12 @@
 import React from 'react'
 import {
   ContentTile as ContentTileComponent,
-  FeatureTile as FeatureTileComponent,
-  NewsTile as NewsTileComponent
-} from '../../src/Tile'
+  EventTile as EventTileComponent,
+  NewsTile as NewsTileComponent,
+  QuickLink as QuickLinkComponent
+} from '@sfgov/react'
 
-const imgSrc = 'https://sf.gov/sites/default/files/styles/default/public/2021-10/san-francisco-street-day-time.jpg?itok=5QqBW-AZ'
+// const imgSrc = 'https://sf.gov/sites/default/files/styles/default/public/2021-10/san-francisco-street-day-time.jpg?itok=5QqBW-AZ'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
@@ -21,29 +22,32 @@ export default {
 /** @type {import('@storybook/react').Story} */
 export const NewsTile = NewsTileComponent.bind({})
 NewsTile.args = {
-  title: 'news!',
+  title: 'News!',
   body: 'Monday, April 28',
-  img: imgSrc
+  href: '/#'
 }
 
 /** @type {import('@storybook/react').Story} */
-export const FeatureTile = FeatureTileComponent.bind({})
-FeatureTile.args = {
-  title: 'feature tile',
-  body: 'This is a feature tile body'
+export const QuickLink = QuickLinkComponent.bind({})
+QuickLink.args = {
+  title: 'Quick Link',
+  body: 'This is a quick link body',
+  href: '/#'
 }
 
 /** @type {import('@storybook/react').Story} */
 export const ContentTile = ContentTileComponent.bind({})
 ContentTile.args = {
-  title: 'content tile',
-  body: 'This is a content tile body'
+  title: 'Content Tile',
+  body: 'This is a content tile body',
+  href: '/#'
 }
 
-// /** @type {import('@storybook/react').Story} */
-// export const QuickLink = TileTemplate.bind({})
-// QuickLink.args = { ...EventTile.args, body: 'This is a feature tile body', variant: 'Feature' }
-
-// /** @type {import('@storybook/react').Story} */
-// export const TopicTile = TileTemplate.bind({})
-// TopicTile.args = { ...EventTile.args, body: 'This is a feature tile body', variant: 'Feature' }
+/** @type {import('@storybook/react').Story} */
+export const EventTile = EventTileComponent.bind({})
+EventTile.args = {
+  title: 'Event Tile',
+  body: 'This is an event tile body',
+  href: '/#',
+  eventType: 'Event type'
+}
