@@ -5,9 +5,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import typescript from '@rollup/plugin-typescript'
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-const pkgJson = require('./package.json')
 
 const production = process.env.NODE_ENV === 'production'
 const sourcemap = !production
@@ -25,7 +22,7 @@ const commonPlugins = [
     // see: <https://github.com/rollup/rollup-plugin-babel/issues/254>
     exclude: ['**/core-js/**']
   }),
-  terser()
+  production && terser()
 ]
 
 /** @type {import('rollup').RollupOptions[]} */
@@ -35,12 +32,12 @@ export default [
     plugins: commonPlugins,
     output: [
       {
-        file: pkgJson.module,
+        file: 'dist/index.mjs',
         format: 'esm',
         sourcemap
       },
       {
-        file: pkgJson.main,
+        file: 'dist/index.js',
         format: 'commonjs',
         sourcemap
       }
