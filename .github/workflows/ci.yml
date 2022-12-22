@@ -41,4 +41,4 @@ jobs:
         id: publishPre
       - name: Publish canary release (all other commits)
         if: ${{ steps.publishMain.outcome == 'skipped' && steps.publishPre.outcome == 'skipped' }}
-        run: lerna publish --canary --dist-tag canary --force-publish --preid canary --yes
+        run: lerna publish --canary --dist-tag canary --force-publish --preid $(git rev-parse HEAD) --yes
