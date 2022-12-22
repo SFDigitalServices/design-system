@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Flex } from '../Flex'
 import { Grid } from '../Grid'
-import { Icon } from '../Icon'
 import { Section, SectionTitle } from './Section'
 import { SmallText, TitleLg, TitleMd, TitleXs } from '../Text'
 import { styled } from '../../stitches.config'

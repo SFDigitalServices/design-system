@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container } from '../Container'
 import { Flex } from '../Flex'
-import { Icon } from '../Icon'
 import { TitleXs, TitleXl } from '../Text'
 import { styled } from '../../stitches.config'
+import { IconChevronRight } from '../../icons'
 
 type SectionTitleProps = {
   title: string;
@@ -25,7 +25,7 @@ export const SectionTitle = ({ title, type, hasMore }: SectionTitleProps) => (
     {hasMore && (
       <Flex as="a" css={{ color: '$slateL3' }}>
         <TitleXs>More {type}</TitleXs>
-        <Icon symbol="chevron-right" />
+        <IconChevronRight />
       </Flex>
     )}
   </Flex>

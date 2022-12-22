@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react'
 import { Flex } from './Flex'
 import { Grid } from './Grid'
-import { Icon } from './Icon'
 import { SmallText, TitleLg, TitleMd, TitleXs } from './Text'
 import { styled } from '../stitches.config'
+import { IconArrowRight, IconCalendar, IconDocument } from '../icons'
 
 type TileProps = {
   title: string;
@@ -14,10 +14,6 @@ type TileProps = {
 interface EventTileProps extends TileProps {
   imgSrc?: string;
   eventType: string;
-}
-
-const linkStyles = {
-  textDecorationLine: 'none'
 }
 
 export const TileSection = styled(Grid, {
@@ -64,16 +60,16 @@ export const ContentTile = ({ title, body, href }: TileProps) => (
   <BaseTile href={href}>
     <TileTitle>{title}</TileTitle>
     <div>{body}</div>
-    <Icon symbol="arrow-right" />
+    <IconArrowRight />
   </BaseTile>
 )
 
 export const QuickLink = ({ title, body, href }: TileProps) => (
   <BaseTile href={href}>
-    <Icon symbol="document" />
+    <IconDocument />
     <TitleLg css={{ my: 12 }}>{title}</TitleLg>
     <div>{body}</div>
-    <Icon symbol="arrow-right" />
+    <IconArrowRight />
   </BaseTile>
 )
 
@@ -88,7 +84,7 @@ export const EventTile = ({
     {/* <img src={imgSrc ? imgSrc : placeholder} /> */}
     <div>an image will go here</div>
     <Flex>
-      <Icon symbol="document" />
+      <IconCalendar />
       <SmallText>{eventType}</SmallText>
     </Flex>
     <TitleMd css={{ my: 12 }}>{title}</TitleMd>
