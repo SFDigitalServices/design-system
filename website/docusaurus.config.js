@@ -1,9 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const { spawnSync } = require('node:child_process')
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-const { spawnSync } = require('node:child_process')
 const { owner, repo, repoUrl, defaultBranch } = require('./constants')
 const { config: storybookConfig } = require('../storybook/package.json')
 
@@ -45,17 +45,7 @@ module.exports = {
 
   plugins: [
     '@docusaurus/theme-live-codeblock',
-    async function myPlugin () {
-      return {
-        name: 'docusaurus-tailwindcss',
-        configurePostCss (postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'))
-          postcssOptions.plugins.push(require('autoprefixer'))
-          return postcssOptions
-        }
-      }
-    }
+    require('./src/plugins/sfgov')
   ],
 
   presets: [

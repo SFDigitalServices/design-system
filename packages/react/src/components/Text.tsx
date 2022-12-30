@@ -10,7 +10,6 @@ export type TextVariant =
   'displaySm' | 'displayLg' | 'mono'
 
 export const Text = styled('div', {
-  fontFamily: '$body',
   m: 0,
   // Chinese text should be rendered in Noto Sans TC,
   // with bold font weights at 500 (not 600)

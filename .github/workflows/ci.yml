@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
@@ -41,4 +43,4 @@ jobs:
         id: publishPre
       - name: Publish canary release (all other commits)
         if: ${{ steps.publishMain.outcome == 'skipped' && steps.publishPre.outcome == 'skipped' }}
-        run: lerna publish --canary --dist-tag canary --force-publish --preid $(git rev-parse --short HEAD) --yes
+        run: lerna publish --canary --dist-tag canary --preid canary --yes

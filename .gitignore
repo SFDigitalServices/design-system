@@ -1,8 +1,9 @@
 **/.DS_Store
+**/.env
 **/.eslintcache
+**/*.log
 **/.wireit
 **/build
 **/dist
 **/manifest.json
 **/node_modules
-**/.env
