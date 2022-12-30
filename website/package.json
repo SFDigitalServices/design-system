@@ -44,6 +44,7 @@
       "command": "docusaurus start --port=3002",
       "dependencies": [
         "link-storybook",
+        "../packages/react:build",
         "../packages/sfgov-design-system:build"
       ]
     },
@@ -70,10 +71,12 @@
     "@babel/preset-react": "^7.18.6",
     "@docusaurus/core": "^2.2.0",
     "@docusaurus/eslint-plugin": "^2.2.0",
+    "@docusaurus/module-type-aliases": "^2.2.0",
     "@docusaurus/plugin-client-redirects": "^2.2.0",
     "@docusaurus/preset-classic": "^2.2.0",
     "@docusaurus/theme-live-codeblock": "^2.2.0",
     "@mdx-js/react": "^1.6.22",
+    "@tsconfig/docusaurus": "^1.0.6",
     "clsx": "^1.1.1",
     "dedent": "^0.7.0",
     "eslint-plugin-html": "^6.2.0",
