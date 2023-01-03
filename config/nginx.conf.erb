@@ -42,11 +42,15 @@ http {
     /usage/icons/                     /components/icons/;
 
     # pattern-based redirects live here, in the form:
-    # ~{pattern} {path};
+    # ~{pattern}  {path};
+    # ~*{pattern} {path}; # case-insensitive match
     # where {pattern} is a regex and will probably contain capture groups,
     # which will then be referenced in the {path} by their index: $1, $2, etc.
-    ~^/foundations/(\w+)/$          /design/$1;
-    ~^/usage/(\w+)/?$               /develop/$1;
+    ~^/foundations/(\w+)/$                        /design/$1;
+    ~*^/libraries/color/colorInterfaceLibrary/$    /libraries/color/interface/;
+    ~*^/libraries/color/colorMapsChartsLibrary/$   /libraries/color/maps-charts/;
+    ~^/libraries/iconsLibrary/                    /libraries/icons/;
+    ~^/usage/(\w+)/?$                             /develop/$1;
   }
 
 	server {

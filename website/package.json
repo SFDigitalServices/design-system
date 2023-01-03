@@ -6,11 +6,14 @@
   },
   "scripts": {
     "build": "wireit",
-    "postbuild": "curl -O https://sf.gov/favicon.ico --output-dir public",
+    "build-favicon": "curl -O https://sf.gov/favicon.ico --output-dir public",
+    "build-index": "rm -f public/{index,urls}.txt; find public -type f | perl -pe 's#^public/#/#' | sort > public/index.txt",
+    "build-urls": "wireit",
     "clear": "docusaurus clear",
     "link-storybook": "ln -sf static/storybook ../storybook/public",
     "lint": "wireit",
     "lint-docs": "wireit",
+    "postbuild": "wireit",
     "serve": "docusaurus serve --dir public",
     "start": "wireit",
     "swizzle": "docusaurus swizzle",
@@ -23,6 +26,18 @@
       "dependencies": [
         "../storybook:build",
         "link-storybook"
+      ]
+    },
+    "postbuild": {
+      "dependencies": [
+        "build-favicon",
+        "build-urls"
+      ]
+    },
+    "build-urls": {
+      "command": "egrep '\\.html$' public/index.txt | perl -pe 's#/index.html#/#; s#^$#/#' | sort > public/urls.txt",
+      "dependencies": [
+        "build-index"
       ]
     },
     "start": {
@@ -53,10 +68,10 @@
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.18.9",
     "@babel/preset-react": "^7.18.6",
-    "@docusaurus/core": "^2.0.1",
-    "@docusaurus/plugin-client-redirects": "^2.0.1",
-    "@docusaurus/preset-classic": "^2.0.1",
-    "@docusaurus/theme-live-codeblock": "^2.0.1",
+    "@docusaurus/core": "^2.1.0",
+    "@docusaurus/plugin-client-redirects": "^2.1.0",
+    "@docusaurus/preset-classic": "^2.1.0",
+    "@docusaurus/theme-live-codeblock": "^2.1.0",
     "@mdx-js/react": "^1.6.22",
     "@types/eslint": "^8.4.2",
     "@types/node": "^16.11.32",
@@ -75,13 +90,13 @@
     "react-dom": "^17.0.2",
     "react-masonry-css": "^1.0.16",
     "react-shadow": "^19.0.3",
-    "sfgov-design-system": "2.5.0",
+    "sfgov-design-system": "2.5.1",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.17.0",
-    "@docusaurus/eslint-plugin": "^2.0.1",
+    "@docusaurus/eslint-plugin": "^2.1.0",
     "@types/eslint": "^8.4.2",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
