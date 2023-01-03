@@ -22,24 +22,14 @@ const FileEmbed = ({ embedURL }) => {
     linkType = 'storybook'
   }
 
-  const whichServiceIcon = () => {
-    if (linkType === 'storybook') {
-      return <StorybookLogo />
-    } else if (linkType === 'figma') {
-      return <FigmaLogo />
-    } else {
-      return <IconExternalLink />
-    }
-  }
+  const service = { icon: <IconExternalLink />, label: 'External link' }
 
-  const whichServiceLabel = () => {
-    if (linkType === 'storybook') {
-      return 'Storybook'
-    } else if (linkType === 'figma') {
-      return 'Figma'
-    } else {
-      return 'External link'
-    }
+  if (linkType === 'storybook') {
+    service.icon =  <StorybookLogo />
+    service.label = 'Storybook'
+  } else if (linkType === 'figma') {
+    service.icon = <FigmaLogo />
+    service.label = 'Figma'
   }
 
   const hoverStyle = {
