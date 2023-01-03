@@ -10,25 +10,17 @@ import IconExternalLink from '@theme/Icon/ExternalLink'
 
 const FileEmbed = ({ embedURL }) => {
   const [hoverState, updateHoverState] = useState(false)
-  const [linkType, updateLinkType] = useState(false)
+  let linkType = null
 
   const figmaRegex = /https:\/\/([\w\.-]+\.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?$/
 
   const storybookRegex = /story/i
 
-  const checkLink = (embedURL) => {
-    if (figmaRegex.test(embedURL)) {
-      updateLinkType('figma')
-    } else if (storybookRegex.test(embedURL)) {
-      updateLinkType('storybook')
-    } else {
-      updateLinkType(null)
-    }
+  if (figmaRegex.test(embedURL)) {
+    linkType = 'figma'
+  } else if (storybookRegex.test(embedURL)) {
+    linkType = 'storybook'
   }
-
-  useEffect(() => {
-    checkLink(embedURL)
-  }, [])
 
   const whichServiceIcon = () => {
     if (linkType === 'storybook') {
