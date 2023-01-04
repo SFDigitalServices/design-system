@@ -1,6 +1,6 @@
 
 import * as icons from '@sfgov/icons/react'
-import { createStyledIcon as wrap } from '../src/components/SVGIcon'
+import { createStyledIcon as wrap } from './components/SVGIcon'
 
 export const IconAccessibility = wrap(icons.IconAccessibility, { width: 20, height: 20 })
 export const IconAlert = wrap(icons.IconAlert, { width: 20, height: 20 })

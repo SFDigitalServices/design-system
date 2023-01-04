@@ -40,7 +40,7 @@ const ContentWrapper = styled('div', {
 })
 
 const TileTitle = styled(TitleXs, {
-  marginBottom: 20
+  mb: 20
 })
 
 const BaseTile = ({ href, children }) => (
