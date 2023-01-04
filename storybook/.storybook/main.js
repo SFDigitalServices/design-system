@@ -19,8 +19,8 @@ module.exports = {
       files: storiesGlob
     },
     {
-      directory: '../stories/Department Page',
-      titlePrefix: 'Department Page/',
+      directory: '../stories/Agency Page',
+      titlePrefix: 'Agency Page/',
       files: storiesGlob
     }
   ],

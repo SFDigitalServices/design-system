@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '../../src/Icon'
+// import Icon from '../../src/Icon'
 import { withClasses } from '../../src/utils'
 import clsx from 'clsx'
 
@@ -93,7 +93,7 @@ export const KeyboardHelp = ({
 }) => (
   <div className='rounded bg-blue-1 text-slate-4 p-20 md:p-40 flex items-start gap-20'>
     {/* FIXME: use accessibility icon */}
-    <Icon symbol='info' className='pt-4' />
+    {/* <Icon symbol='info' className='pt-4' /> */}
     <div className='space-y-20'>
       {title && <h2 className='title-sm m-0'>{title}</h2>}
       {children}

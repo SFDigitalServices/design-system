@@ -26,6 +26,7 @@ export const Text = styled('div', {
         ...textStyles.bigDesc,
         '@lg': textStyles.bigDescDesktop
       },
+      titleXs: textStyles.titleXs,
       titleSm: textStyles.titleSm,
       titleMd: {
         ...textStyles.titleMd,
