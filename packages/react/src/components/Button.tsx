@@ -13,6 +13,7 @@ const baseButtonStyles: CSS = {
   justifyItems: 'center',
   justifyContent: 'center',
   borderRadius: 8,
+  gap: 8,
   px: 20,
   py: 8,
   // border
@@ -35,6 +36,7 @@ const primaryButtonStyles: CSS = {
   color: '$white',
   backgroundColor: '$action',
   [HOCUS_SELECTOR]: {
+    color: '$white',
     backgroundColor: '$blueDark'
   }
 }
@@ -43,7 +45,8 @@ const inverseButtonStyles: CSS = {
   color: '$action',
   backgroundColor: '$white',
   [HOCUS_SELECTOR]: {
-    color: '$blueDark'
+    color: '$blueDark',
+    backgroundColor: '$white'
   }
 }
 
