@@ -19,7 +19,8 @@ const commonPlugins = [
 
 export default [
   target({ input: 'src/js/sfds.js', name: 'sfgov' }),
-  target({ input: 'src/js/icons.js', name: 'SFGovIcon' })
+  target({ input: 'src/js/icons.js', name: 'SFGovIcon' }),
+  target({ input: 'src/tokens/style-dictionary/colors.js', name: 'sfgov-tokens' })
 ]
 
 function target ({ input, name, ...rest }) {

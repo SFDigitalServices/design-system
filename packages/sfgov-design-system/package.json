@@ -20,6 +20,7 @@
     "build-icons": "wireit",
     "build-css": "wireit",
     "build-css-manifest": "wireit",
+    "build-tokens": "wireit",
     "build-js": "wireit",
     "build-manifest": "wireit",
     "lint": "wireit",
@@ -33,6 +34,7 @@
       "dependencies": [
         "build-css",
         "build-css-manifest",
+        "build-tokens",
         "build-js",
         "build-icons",
         "build-manifest"
@@ -58,8 +60,17 @@
         "dist/css/css-manifest.json"
       ]
     },
+    "build-tokens": {
+      "command": "style-dictionary build",
+      "output": [
+        "dist/tokens/style-dictionary/*.js"
+      ]
+    },
     "build-js": {
       "command": "rollup -c",
+      "dependencies": [
+        "build-tokens"
+      ],
       "clean": true,
       "files": [
         "package.json",
@@ -150,6 +161,7 @@
     "prettysize": "^2.0.0",
     "rollup": "^2.50.2",
     "rollup-plugin-terser": "^7.0.2",
+    "style-dictionary": "^3.7.2",
     "stylelint-config-tailwindcss": "^0.0.3",
     "tailwindcss": "^2.2.19",
     "tailwindcss-interaction-variants": "^5.0.0"
