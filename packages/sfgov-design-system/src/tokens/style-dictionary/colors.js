@@ -1,8 +1,3 @@
-/**
- * Do not edit directly
- * Generated on Fri, 06 Jan 2023 19:21:17 GMT
- */
-
 export const colorBaseWhite = "#fff";
 export const colorBaseBlack = "#212123";
 export const colorBaseBlue100 = "#edf4f7";
