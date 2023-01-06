@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['src/tokens/style-dictionary/*'],
   overrides: [
     {
       files: ['src/**/*.js'],
