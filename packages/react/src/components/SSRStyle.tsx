@@ -31,7 +31,6 @@ export function SSRStyle ({ fonts, ...rest }: SSRStyleProps) {
   </>
 }
 
-
 /**
  * This function returns an array of <link> element attributes (or React props)
  * that should be included in the <head> of server-rendered documents to preload
