@@ -36,7 +36,7 @@ export const ContainerInBox: Story<BoxArgs> = (args: BoxArgs) => (
   <Box css={args.css}>
     <Container
       css={{
-        borderColor: "$black",
+        borderColor: "$colorBaseBlack",
         borderStyle: "dotted",
         borderWidth: 1,
       }}
@@ -47,7 +47,7 @@ export const ContainerInBox: Story<BoxArgs> = (args: BoxArgs) => (
 );
 
 ContainerInBox.args = {
-  css: { backgroundColor: "$greyL1", py: 8 },
+  css: { backgroundColor: "$colorBaseGrey100", py: 8 },
 };
 ContainerInBox.parameters = {
   container: {

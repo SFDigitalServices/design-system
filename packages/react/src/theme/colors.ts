@@ -1,34 +1,5 @@
+import * as colorTokens from 'sfgov-design-system/src/tokens/style-dictionary/colors'
+
 export const colors = {
-  white: '#fff',
-  black: '#212123',
-  action: '$blueBright',
-  blueL1: '#edf4f7',
-  blueL2: '#a9d6ea',
-  blueBright: '#495ed4',
-  blueDark: '#0c1464',
-  greenL1: '#e9f7ec',
-  greenL2: '#c0e2c5',
-  greenL3: '#00866a',
-  greenL4: '#1b674d',
-  greyL1: '#f6f6f6',
-  greyL2: '#e2e2e2',
-  greyL3: '#c2c2c2',
-  greyL4: '#a1a1a1',
-  greyDark: '#424244',
-  purpleL1: '#edebf6',
-  purpleL2: '#cccced',
-  purpleL3: '#7d61b3',
-  purpleL4: '#543a89',
-  redL1: '#f5e9e5',
-  redL2: '#efcabb',
-  redL3: '#c55236',
-  redL4: '#9b3921',
-  slateL1: '#eff3f4',
-  slateL2: '#5a7a92',
-  slateL3: '#1d4d70',
-  slateL4: '#002b48',
-  yellowL1: '#f8f1df',
-  yellowL2: '#f9e3a3',
-  yellowL3: '#f4c435',
-  yellowL4: '#e0a81a'
+  ...colorTokens
 }

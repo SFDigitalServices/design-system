@@ -33,20 +33,20 @@ const baseButtonStyles: CSS = {
 }
 
 const primaryButtonStyles: CSS = {
-  color: '$white',
-  backgroundColor: '$action',
+  color: '$colorBaseWhite',
+  backgroundColor: '$colorBaseAction',
   [HOCUS_SELECTOR]: {
-    color: '$white',
-    backgroundColor: '$blueDark'
+    color: '$colorBaseWhite',
+    backgroundColor: '$colorBaseBlueDark'
   }
 }
 
 const inverseButtonStyles: CSS = {
-  color: '$action',
-  backgroundColor: '$white',
+  color: '$colorBaseAction',
+  backgroundColor: '$colorBaseWhite',
   [HOCUS_SELECTOR]: {
-    color: '$blueDark',
-    backgroundColor: '$white'
+    color: '$colorBaseBlueDark',
+    backgroundColor: '$colorBaseWhite'
   }
 }
 

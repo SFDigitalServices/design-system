@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<ComponentType<FlexArgs>>;
 
 const borderStyles = {
-  borderColor: "$black",
+  borderColor: "$colorBaseBlack",
   borderStyle: "dotted",
   borderWidth: 1,
 };

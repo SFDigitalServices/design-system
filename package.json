@@ -24,7 +24,8 @@
       "dependencies": [
         "./website:start",
         "./storybook:start",
-        "./packages/react:watch"
+        "./packages/react:watch",
+        "./packages/sfgov-design-system:watch"
       ]
     }
   },

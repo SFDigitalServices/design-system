@@ -48,8 +48,8 @@ export function bind (Component) {
  */
 export const Stub = ({ children, css, ...rest }) => (
   <Box css={{
-    bg: '$action',
-    fg: '$white',
+    bg: '$colorBaseAction',
+    fg: '$colorBaseWhite',
     p: 40,
     ...css
   }} {...rest}>{children || 'TODO'}</Box>

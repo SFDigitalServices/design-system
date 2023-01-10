@@ -15,7 +15,7 @@ export default {
 
 const GridOverlay = ({ showOverlay }) => {
   const overlayCss = {
-    backgroundColor: "$redL2",
+    backgroundColor: "$colorBaseRed200",
   };
   const gridCss = {
     position: "fixed",
@@ -47,7 +47,7 @@ const GridOverlay = ({ showOverlay }) => {
 
 export const GridStory: Story<GridArgs> = (args: GridArgs) => {
   const borderStyles = {
-    borderColor: "$black",
+    borderColor: "$colorBaseBlack",
     borderStyle: "dotted",
     borderWidth: 1,
   };

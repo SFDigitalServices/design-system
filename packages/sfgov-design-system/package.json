@@ -27,7 +27,8 @@
     "lint-css": "wireit",
     "lint-js": "wireit",
     "lint-scripts": "wireit",
-    "prepublishOnly": "scripts/prepublish-checks.sh"
+    "prepublishOnly": "scripts/prepublish-checks.sh",
+    "watch": "npm run build-tokens && chokidar  \"src/tokens/style-dictionary/**/*.json\" -c \"npm run build-tokens\""
   },
   "wireit": {
     "build": {
@@ -146,6 +147,7 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
+    "chokidar-cli": "^1.2.0",
     "cssnano": "^5.0.6",
     "dotenv": "^10.0.0",
     "fs-extra": "^10.0.0",

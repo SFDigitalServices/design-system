@@ -1,5 +1,5 @@
 const buildPath = 'src/tokens/style-dictionary/'
-const options = { showFileHeader: false }
+const options = { outputReferences: true, showFileHeader: false }
 /* Since style-dictionary generates a timestamp, and there is a timing
  * gap between local push and CI, Lerna publish will complain about uncommitted
  * changes during CI. The option above is a workaround.

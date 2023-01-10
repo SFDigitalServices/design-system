@@ -1,5 +1,6 @@
 export const colorBaseWhite = "#fff";
 export const colorBaseBlack = "#212123";
+export const colorBaseAction = "#495ed4";
 export const colorBaseBlue100 = "#edf4f7";
 export const colorBaseBlue200 = "#a9d6ea";
 export const colorBaseBlueBright = "#495ed4";

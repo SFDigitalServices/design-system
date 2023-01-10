@@ -3,6 +3,7 @@
     "base": {
       "white": { "value": "#fff" },
       "black": { "value": "#212123" },
+      "action": { "value": "{color.base.blue.bright.value}" },
       "blue": {
         "100": { "value": "#edf4f7" },
         "200": { "value": "#a9d6ea" },

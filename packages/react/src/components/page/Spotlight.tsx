@@ -14,7 +14,7 @@ export type SpotlightProps = {
 };
 
 const SpotlightContainer = styled(Container, {
-  bg: '$greyL1',
+  bg: '$colorBaseGrey100',
   display: 'flex',
   flexDirection: 'column',
   marginBottom: 60,
