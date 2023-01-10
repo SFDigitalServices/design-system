@@ -1,14 +1,12 @@
-import data from './data.json'
-const { icons } = data
+// @ts-check
+import data from '../../icons/svg/index.json'
+const icons = data.components
 
 const templates = {}
 
-for (const [id, { aliases = [], svg }] of Object.entries(icons)) {
+for (const [id, { svg }] of Object.entries(icons)) {
   const template = createElementTemplate(svg)
   templates[id] = template
-  for (const alias of aliases) {
-    templates[alias] = template
-  }
 }
 
 const defaultProps = {
@@ -45,7 +43,7 @@ export class SFGovIcon extends HTMLElement {
 
   connectedCallback () {
     if (!this.hasAttribute('aria-hidden')) {
-      this.setAttribute('aria-hidden', true)
+      this.setAttribute('aria-hidden', 'true')
     }
     if (!this.hasAttribute('role')) {
       this.setAttribute('role', 'img')
@@ -96,10 +94,12 @@ export class SFGovIcon extends HTMLElement {
 function createElementTemplate (markup) {
   let template = document.createElement('div')
   template.innerHTML = markup
+  // @ts-expect-error
   template = template.firstElementChild
   return (attrs = {}) => {
     const clone = template.cloneNode(true)
     for (const [name, value] of Object.entries(attrs)) {
+      // @ts-expect-error
       clone.setAttribute(name, value)
     }
     return clone

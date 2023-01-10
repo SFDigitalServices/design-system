@@ -1,6 +1,6 @@
-import { VariantProps } from '@stitches/react'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
+import type { VariantProps } from '../utils'
 
 export const Grid = styled(Box, {
   display: 'grid',

@@ -11,8 +11,7 @@ export const {
   getCssText,
   globalCss,
   reset,
-  styled,
-  theme
+  styled
 } = createStitches({
   prefix: 'sfgov',
   theme: inputTheme,

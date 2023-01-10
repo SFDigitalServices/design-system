@@ -1,6 +1,12 @@
 const postcss = require('postcss')
+const { version: tailwindVersion } = require('tailwindcss/package.json')
+
 const { readFileSync, writeFileSync } = require('fs')
 const startCase = require('lodash.startcase')
+
+const baseURL = tailwindVersion.startsWith('2.')
+  ? 'https://v2.tailwindcss.com/docs'
+  : 'https://tailwindcss.com/docs'
 
 const UTILITY_SELECTOR_PATTERN = /^\.[-:\w]+$/
 const tailwindCategories = [
@@ -59,10 +65,10 @@ const tailwindCategories = [
 ]
 
 const utilities = [
-  getUtilities('dist/css/utilities.css').byProperty
+  getUtilities('css/dist/utilities.css').byProperty
 ]
 const manifest = buildManifest(utilities)
-writeFileSync('dist/css/css-manifest.json', JSON.stringify(manifest, null, 2), 'utf8')
+writeFileSync('css/dist/utilities.json', JSON.stringify(manifest, null, 2), 'utf8')
 
 function buildManifest (utilities) {
   const manifest = tailwindCategories
@@ -130,7 +136,6 @@ function groupBy (list /** @type [any] */, keyFunction /** type Function */) {
 }
 
 function getEntry (category) {
-  const baseURL = 'https://tailwindcss.com/docs'
   const entry = {
     title: startCase(category),
     docs: `${baseURL}/${category}`,

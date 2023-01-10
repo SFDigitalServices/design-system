@@ -21,3 +21,5 @@ export function withFixedProps (
     return <Component {...fixed} {...props} />
   }
 }
+
+export type VariantProps<T, P extends {} = T extends ComponentType ? ComponentProps<T> : T> = T & JSX.IntrinsicAttributes

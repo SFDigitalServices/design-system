@@ -1,6 +1,7 @@
 const transformSVGO = require('@figma-export/transform-svg-with-svgo')
 const outputAsSVG = require('@figma-export/output-components-as-svg')
 const outputAsReact = require('@figma-export/output-components-as-svgr')
+const dedent = require('dedent')
 const svgoConfig = require('./svgo.config')
 const { writeFile } = require('node:fs/promises')
 
@@ -12,8 +13,8 @@ const { writeFile } = require('node:fs/promises')
 */
 
 const fileId = process.env.FIGMA_ICONS_FILE
-const svgDir = './svg'
-const jsxDir = './react'
+const svgDir = './icons/svg'
+const reactDir = './react/src'
 
 /** @type {FigmaExportRC} */
 module.exports = {
@@ -34,16 +35,16 @@ module.exports = {
           output: `${svgDir}/index.json`
         }),
         outputAsReact({
-          output: jsxDir,
+          output: `${reactDir}/icons`,
           getDirname: ({ dirname }) => dirname,
           getComponentName: ({ componentName }) => normalizeComponentName(componentName),
-          getComponentFilename: ({ componentName }) => normalizeIconName(componentName)
+          getComponentFilename: ({ componentName }) => normalizeComponentName(componentName)
+        }),
+        outputReactIcons({
+          output: `${reactDir}/icons.tsx`
         }),
         outputReactIndex({
-          output: `${jsxDir}/index.json`
-        }),
-        outputMainIndex({
-          output: 'index.json'
+          output: `${reactDir}/icons/index.json`
         })
       ]
     }]
@@ -73,15 +74,16 @@ function outputSVGIndex ({ output }) {
     const components = gatherComponents(pages)
     const index = {
       generated: timestamp(),
-      components: components.map(({ page, component: { id, name, ...rest } }) => ({
+      components: components.map(({ page, component: { id, name, svg, ...rest } }) => ({
         id: normalizeIconName(name),
         name,
         file: `${normalizeIconName(name)}.svg`,
         size: getSize(rest),
-        href: `https://figma.com/file/${fileId}/${page.name}?node-id=${id}`
+        href: `https://figma.com/file/${fileId}/${page.name}?node-id=${id}`,
+        svg
       }))
     }
-    await writeFile(output, JSON.stringify(index, null, 2))
+    await writeJSON(output, index)
   }
 }
 
@@ -103,7 +105,7 @@ function outputReactIndex ({ output }) {
         href: getFigmaHref(page, id)
       }))
     }
-    await writeFile(output, JSON.stringify(index, null, 2))
+    await writeJSON(output, index)
   }
 }
 
@@ -111,24 +113,19 @@ function outputReactIndex ({ output }) {
  * @param {{ output: string }} options 
  * @returns {ComponentOutputter}
  */
-function outputMainIndex ({ output }) {
+function outputReactIcons ({ output }) {
   return async pages => {
     const components = gatherComponents(pages)
-    const index = {
-      generated: timestamp(),
-      components: components.map(({ page, component: { id, name, ...rest } }) => ({
-        id: normalizeIconName(name),
-        name,
-        component: normalizeComponentName(name),
-        href: getFigmaHref(page, id),
-        size: getSize(rest),
-        files: {
-          svg: `svg/${normalizeIconName(name)}.svg`,
-          jsx: `jsx/${normalizeComponentName(name)}.jsx`
-        }
-      }))
-    }
-    await writeJSON(output, index)
+    const wrapped = dedent`
+      import * as icons from './icons/index.js'
+      import { createStyledIcon as wrap } from './components'
+
+      ${components.map(({ component }) => {
+        const name = normalizeComponentName(component.name)
+        return `export const ${name} = wrap(icons.${name})`
+      }).join('\n')}
+    `
+    await writeFile(output, `${wrapped}\n`)
   }
 }
 

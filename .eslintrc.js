@@ -1,12 +1,24 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@babel/eslint-parser',
-  plugins: ['sfgov', 'unicorn'],
-  extends: ['plugin:sfgov/recommended', 'plugin:storybook/recommended'],
+  plugins: [
+    'sfgov',
+    'react',
+    'unicorn',
+    '@typescript-eslint/eslint-plugin'
+  ],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:sfgov/recommended',
+    'plugin:storybook/recommended'
+  ],
   settings: {
+    'import/ignore': [
+      '@sfgov/design-system/*'
+    ],
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx']
       }
     },
     react: {
@@ -24,17 +36,36 @@ module.exports = {
       blankLine: 'always',
       prev: '*',
       next: 'function'
-    }]
+    }],
+    'react/no-unescaped-entities': ['warn'],
+    'react/prop-types': ['off']
   },
   reportUnusedDisableDirectives: true,
+  ignorePatterns: [
+    '**/dist/**'
+  ],
+  globals: {
+    JSX: true
+  },
   overrides: [
     {
-      files: ['src/**/*.js'],
+      files: ['*/src/**/*.js'],
       env: {
         browser: true
       },
       parserOptions: {
         sourceType: 'module'
+      }
+    },
+    {
+      files: ['**/*.ts{,x}'],
+      parser: '@typescript-eslint/parser',
+      // these are not needed in TypeScript
+      rules: {
+        'no-redeclare': ['off'],
+        'no-undef': ['off'],
+        'no-unused-vars': ['off'],
+        'import/named': ['off']
       }
     },
     {
@@ -45,13 +76,13 @@ module.exports = {
       }
     },
     {
-      files: 'rollup.config.js',
+      files: '**/*.mjs',
       parserOptions: {
         sourceType: 'module'
       }
     },
     {
-      files: 'scripts/*.js',
+      files: '**/scripts/*.js',
       rules: {
         'node/shebang': 0
       }

@@ -4,7 +4,8 @@ import { fonts, fontSizes, fontWeights, lineHeights, letterSpacings, textStyles 
 import { space } from './space'
 import { pxMap } from '../utils'
 
-export { BreakpointName, breakpoints, media, textStyles }
+export type { BreakpointName }
+export { breakpoints, media, textStyles }
 
 export const theme = {
   colors,

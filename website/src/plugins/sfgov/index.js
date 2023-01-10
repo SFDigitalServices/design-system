@@ -1,4 +1,4 @@
-const { getPreloadLinks } = require('@sfgov/react')
+const { getPreloadLinks } = require('@sfgov/design-system/react')
 
 /** @type {import('@docusaurus/types').PluginModule} */
 module.exports = context => ({

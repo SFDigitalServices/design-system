@@ -1,5 +1,5 @@
 {
-  "name": "design-system.sf.gov",
+  "name": "website",
   "private": true,
   "config": {
     "port": 3002
@@ -44,8 +44,7 @@
       "command": "docusaurus start --port=3002",
       "dependencies": [
         "link-storybook",
-        "../packages/react:build",
-        "../packages/sfgov-design-system:build"
+        "..:build"
       ]
     },
     "lint": {
@@ -59,16 +58,13 @@
       "output": []
     },
     "lint-docs": {
-      "command": "markdownlint --rules './lib/markdownlint/*.js' 'docs/**/*.{md,mdx}'",
+      "command": "",
       "files": [
         "docs/**/*.{md,mdx}"
       ]
     }
   },
   "dependencies": {
-    "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.18.9",
-    "@babel/preset-react": "^7.18.6",
     "@docusaurus/core": "^2.2.0",
     "@docusaurus/eslint-plugin": "^2.2.0",
     "@docusaurus/module-type-aliases": "^2.2.0",
@@ -78,21 +74,13 @@
     "@mdx-js/react": "^1.6.22",
     "@tsconfig/docusaurus": "^1.0.6",
     "clsx": "^1.1.1",
-    "dedent": "^0.7.0",
-    "eslint-plugin-html": "^6.2.0",
-    "eslint-plugin-import": "^2.26.0",
-    "filesize": "^8.0.7",
-    "markdownlint-cli": "^0.31.1",
     "postcss": "^8.4.14",
     "prism-react-renderer": "^1.3.1",
     "prop-types": "^15.8.1",
     "raw-loader": "^4.0.2",
-    "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "^18.2.0",
     "react-masonry-css": "^1.0.16",
     "react-shadow": "^19.0.3",
-    "sfgov-design-system": "2.5.1",
     "tailwindcss": "^3.0.24",
     "use-bus": "^2.5.1"
   }

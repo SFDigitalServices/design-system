@@ -1,6 +1,6 @@
-import React from "react";
-import { Header } from "./Header.stories";
-import { AgencyHeader } from "./AgencyHeader.stories";
+import React from 'react'
+import { Header } from './Header.stories'
+import { AgencyHeader } from './AgencyHeader.stories'
 import {
   AboutSection,
   ArchiveInformation,
@@ -12,40 +12,40 @@ import {
   QuickLink,
   Section,
   SectionTitle,
-  Spotlight,
-} from "@sfgov/react";
+  Spotlight
+} from '@sfgov/design-system/react'
 
-import CityAdministrator from "./city-admininistrator.json";
-import BoardOfAppeals from "./board-appeals.json";
+import CityAdministrator from './city-admininistrator.json'
+import BoardOfAppeals from './board-appeals.json'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
-  title: "Agency Page",
+  title: 'Agency Page',
   args: {
-    agency: CityAdministrator,
+    agency: CityAdministrator
   },
   argTypes: {
     agency: {
-      options: ["BoardOfAppeals", "CityAdministrator"],
+      options: ['BoardOfAppeals', 'CityAdministrator'],
       mapping: {
         BoardOfAppeals,
-        CityAdministrator,
+        CityAdministrator
       },
       control: {
         labels: {
-          BoardOfAppeals: "Board of Appeals",
-          CityAdministrator: "City Administrator",
-        },
-      },
-    },
+          BoardOfAppeals: 'Board of Appeals',
+          CityAdministrator: 'City Administrator'
+        }
+      }
+    }
   },
   parameters: {
     design: {
-      type: "figma",
-      url: "https://www.figma.com/file/Ssyjx39mPsBSbqy7FDWwBk/Wireframes---Corey?node-id=1%3A10765&t=aOZrbzRCBt9KKM0B-0",
-    },
-  },
-};
+      type: 'figma',
+      url: 'https://www.figma.com/file/Ssyjx39mPsBSbqy7FDWwBk/Wireframes---Corey?node-id=1%3A10765&t=aOZrbzRCBt9KKM0B-0'
+    }
+  }
+}
 
 export const AgencyPage = ({ agency }) => (
   <div className="text-slate">
@@ -56,13 +56,13 @@ export const AgencyPage = ({ agency }) => (
         title={agency.title}
         subtitle={agency.description}
         parentAgencies={[
-          { id: 1, title: "News", href: "" },
-          { id: 2, title: "Resources", href: "" },
-          { id: 3, title: "Contact", href: "" },
+          { id: 1, title: 'News', href: '' },
+          { id: 2, title: 'Resources', href: '' },
+          { id: 3, title: 'Contact', href: '' }
         ]}
         contact={{
           address: agency.contact.address[0].address.address_line1,
-          phone: agency.contact.phone_numbers[0].tel,
+          phone: agency.contact.phone_numbers[0].tel
         }}
       />
     </Container>
@@ -97,7 +97,7 @@ export const AgencyPage = ({ agency }) => (
             }
             image={agency.spotlight_sections[1].image}
           />
-        )}
+      )}
     </Container>
 
     {agency.news?.length && (
@@ -171,4 +171,4 @@ export const AgencyPage = ({ agency }) => (
 
     <footer className="bg-black text-white py-60"></footer>
   </div>
-);
+)

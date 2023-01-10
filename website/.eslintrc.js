@@ -14,8 +14,11 @@ module.exports = {
     'plugin:sfgov/recommended',
     'plugin:react/recommended'
   ],
+  ignorePatterns: [
+    'public/**'
+  ],
   rules: {
-    'import/no-unresolved': 0,
+    'import/no-unresolved': ['warn'],
     'jsx-quotes': ['warn', 'prefer-single'],
     'react/prop-types': ['warn', {
       skipUndeclared: true

@@ -1,4 +1,4 @@
-const { getPreloadLinks } = require('@sfgov/react')
+const { getPreloadLinks } = require('@sfgov/design-system/react')
 
 const { NODE_ENV } = process.env
 const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'

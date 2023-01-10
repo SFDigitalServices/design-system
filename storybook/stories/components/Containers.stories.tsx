@@ -1,6 +1,6 @@
-import React, { ComponentType } from "react";
-import { ComponentMeta, Story } from "@storybook/react";
-import { CSS, Box, Container } from "@sfgov/react";
+import React, { ComponentType } from 'react'
+import { ComponentMeta, Story } from '@storybook/react'
+import { CSS, Box, Container } from '@sfgov/design-system/react'
 
 type ContainerArgs = {
   content: string;
@@ -10,34 +10,34 @@ type ContainerArgs = {
 export default {
   component: Container,
   args: {
-    content: "Lorem ipsum blah blah",
-    css: {},
+    content: 'Lorem ipsum blah blah',
+    css: {}
   },
   argTypes: {
     content: {
-      name: "Content",
-      type: "string",
+      name: 'Content',
+      type: 'string'
     },
     css: {
-      name: "CSS prop",
+      name: 'CSS prop',
       type: {
-        name: "object"
-      },
-    },
-  },
-} as ComponentMeta<ComponentType<ContainerArgs>>;
+        name: 'object'
+      }
+    }
+  }
+} as ComponentMeta<ComponentType<ContainerArgs>>
 
 export const ContainerStory: Story<ContainerArgs> = (args: ContainerArgs) => (
   <Container css={args.css}>
     <Box
       css={{
-        borderColor: "$black",
-        borderStyle: "dotted",
-        borderWidth: 1,
+        borderColor: '$black',
+        borderStyle: 'dotted',
+        borderWidth: 1
       }}
     >
       {args.content}
     </Box>
   </Container>
-);
-ContainerStory.storyName = "Generic Container";
+)
+ContainerStory.storyName = 'Generic Container'

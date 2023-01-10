@@ -12,7 +12,7 @@ import {
   LinkButton,
   Flex,
   styled
-} from '@sfgov/react'
+} from '@sfgov/design-system/react'
 
 type ButtonArgs = {
   text: string
@@ -149,8 +149,8 @@ const rows: LabelProps[] = [
 const TD = styled('td', { p: 8 })
 const TH = styled('th', { p: 8 })
 
-function createButtonStory(Component: ComponentType<Partial<ButtonProps>>) {
-  return (({ text, ...rest}: ButtonArgs) => (
+function createButtonStory (Component: ComponentType<Partial<ButtonProps>>) {
+  return (({ text, ...rest }: ButtonArgs) => (
     <table>
       <thead>
         <tr>

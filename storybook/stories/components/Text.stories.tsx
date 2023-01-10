@@ -1,5 +1,5 @@
 import React, { ComponentType } from 'react'
-import { styled, Text as T, TextProps, TextVariant } from '@sfgov/react'
+import { styled, Text as T, TextProps, TextVariant } from '@sfgov/design-system/react'
 import { ComponentMeta, Story } from '@storybook/react'
 import { StrictArgTypes } from '@storybook/csf'
 
@@ -78,7 +78,7 @@ export const Text = createTextStory(T)
 const Cell = styled('td', { p: 8 })
 
 export const AllStyles = ({ content, ...rest }: Omit<TextArgs, 'variant'>) => (
-  <table>    
+  <table>
     {variants.map(variant => (
       <tr key={variant}>
         <Cell as='th' scope='row' align='right'><T variant='mono'>{variant}</T></Cell>

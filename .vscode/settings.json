@@ -26,10 +26,5 @@
   },
   "files.associations": {
     "/config/*.conf{,.erb}": "nginx"
-  },
-  "eslint.workingDirectories": [
-    "packages/*",
-    "storybook",
-    "website"
-  ]
+  }
 }

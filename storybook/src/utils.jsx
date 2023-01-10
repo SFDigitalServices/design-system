@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import websitePackageJson from '../../website/package.json'
-import { Box } from '@sfgov/react'
+import { Box } from '@sfgov/design-system/react'
 
 /**
  * Merge the `className` and `style` keys of one or more prop objects.

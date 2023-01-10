@@ -1,4 +1,4 @@
-const theme = require('./src/theme')
+const theme = require('./css/src/theme')
 
 module.exports = {
   theme,
@@ -123,6 +123,6 @@ module.exports = {
 
   plugins: [
     require('tailwindcss-interaction-variants'),
-    require('./lib/tailwind/details')
+    require('./css/lib/tailwind/details')
   ]
 }

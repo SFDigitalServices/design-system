@@ -1,8 +1,7 @@
-import type { VariantProps } from '@stitches/react'
-import type { ComponentType } from 'react'
+import type { ComponentProps, ComponentType } from 'react'
 import { textStyles } from '../theme/typography'
 import { CSS, styled } from '../stitches.config'
-import { withFixedProps } from '../utils'
+import { withFixedProps, VariantProps } from '../utils'
 
 export type TextVariant =
   'body' | 'small' | 'bigDesc' |
@@ -59,7 +58,8 @@ export const Text = styled('div', {
   }
 })
 
-export type TextProps = VariantProps<typeof Text>
+export type TextProps = VariantProps<ComponentProps<typeof Text>>
+type TextPropsNoVariant = Omit<TextProps, 'variant'>
 
 export const BodyText = createVariant('body')
 export const SmallText = createVariant('small')
@@ -74,6 +74,5 @@ export const DisplayLg = createVariant('displayLg')
 export const Monospace = createVariant('mono')
 
 function createVariant (variant: TextVariant) {
-  const Variant = withFixedProps(Text, { variant })
-  return Variant as ComponentType<VariantProps<typeof Variant>>
+  return withFixedProps(Text, { variant }) as ComponentType<TextPropsNoVariant>
 }

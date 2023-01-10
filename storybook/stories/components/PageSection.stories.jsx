@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentTile, ContactSection as ContactSectionComponent, EventTile, NewsTile, QuickLink, Section, SectionTitle, TitleLg, TileSection } from '@sfgov/react'
+import { ContentTile, ContactSection as ContactSectionComponent, EventTile, NewsTile, QuickLink, Section, SectionTitle, TitleLg, TileSection } from '@sfgov/design-system/react'
 
 // const imgSrc = 'https://sf.gov/sites/default/files/styles/default/public/2021-10/san-francisco-street-day-time.jpg?itok=5QqBW-AZ'
 

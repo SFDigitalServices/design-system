@@ -15,30 +15,15 @@ jobs:
 
       - run: npm install
       - uses: xt0rted/markdownlint-problem-matcher@v1
-      - run: npx lerna run lint
+      - run: npm run lint
 
       # this sets NODE_ENV=production for all of the build scripts
       - run: echo NODE_ENV=production >> $GITHUB_ENV
+      - run: npm run build:ci
 
-      - run: npm run build -w sfgov-design-system
-      - run: npm run build -w @sfgov/icons
-      - run: npm run build -w @sfgov/react
-
-      - name: Git identity
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY"
+      - uses: primer/publish@v3
+        with:
+          default_branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: echo "NPM_AUTH_TOKEN=${{ secrets.NPM_AUTH_TOKEN }}" >> $GITHUB_ENV
-      - name: Publish latest (from 'main' branch)
-        if: github.ref == 'refs/heads/main'
-        run: |
-          lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
-          lerna publish from-package --yes
-        id: publish
-      - name: Publish canary release (all other commits)
-        if: ${{ steps.publish.outcome == 'skipped' }}
-        run: lerna publish --canary --dist-tag canary --preid canary --yes
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
