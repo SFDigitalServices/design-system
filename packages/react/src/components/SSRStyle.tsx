@@ -31,12 +31,6 @@ export function SSRStyle ({ fonts, ...rest }: SSRStyleProps) {
   </>
 }
 
-function getPreloadLinks (props?: SSRStyleProps) {
-  return [
-    ...getGooglePreloadLinks(props?.fonts)
-  ]
-}
-
 /**
  * This function returns an array of <link> element attributes (or React props)
  * that should be included in the <head> of server-rendered documents to preload
@@ -46,4 +40,8 @@ function getPreloadLinks (props?: SSRStyleProps) {
  *   listing the fonts to be loaded.
  * @returns an array of <link> attribute/props objects
  */
-SSRStyle.getPreloadLinks = getPreloadLinks
+export function getPreloadLinks (props?: SSRStyleProps) {
+  return [
+    ...getGooglePreloadLinks(props?.fonts)
+  ]
+}

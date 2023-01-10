@@ -1,4 +1,4 @@
-const { SSRStyle } = require('@sfgov/react')
+const { getPreloadLinks } = require('@sfgov/react')
 
 const { NODE_ENV } = process.env
 const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
@@ -69,7 +69,7 @@ module.exports = {
    * @returns 
    */
   previewHead (head) {
-    const links = SSRStyle.getPreloadLinks()
+    const links = getPreloadLinks()
     return `
       ${head}
       ${links.map(attrs => tag('link', attrs)).join('\n')}
