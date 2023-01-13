@@ -1,4 +1,4 @@
-import { colors } from './colors'
+import * as colors from 'sfgov-design-system/src/tokens/style-dictionary/colors'
 import { BreakpointName, breakpoints, media } from './breakpoints'
 import { fonts, fontSizes, fontWeights, lineHeights, letterSpacings, textStyles } from './typography'
 import { space } from './space'
