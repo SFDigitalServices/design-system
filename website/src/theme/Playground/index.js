@@ -11,6 +11,7 @@ import styles from './styles.module.css'
 import SFGovIcon from '../../components/SFGovIcon'
 import * as components from '../../components'
 import tokens from 'sfgov-design-system/src/tokens'
+// import { Monospace } from '@sfgov/react'
 
 const scopedGlobals = { ...components, tokens }
 
@@ -63,6 +64,11 @@ function ThemedLiveEditor () {
       key={String(isBrowser)}
       className={styles.playgroundEditor}
     />
+    // <Monospace
+    //   as={LiveEditor}
+    //   css={{ bg: 'transparent', mx: 12, mb: 8 }}
+    //   key={String(isBrowser)}
+    // />
   )
 }
 
@@ -70,7 +76,7 @@ function EditorWithHeader ({ open: defaultOpen = true }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
     <details className='details-reset' open={open} onToggle={e => setOpen(e.target.open)}>
-      <Header as='summary' className='flex gap-x-8 align-center cursor-pointer'>
+      <Header as='summary' className='flex gap-x-8 items-center cursor-pointer'>
         <Translate
           id='theme.Playground.liveEditor'
           description='The live editor label of the live codeblocks'>
