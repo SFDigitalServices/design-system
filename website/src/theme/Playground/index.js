@@ -11,7 +11,6 @@ import styles from './styles.module.css'
 import SFGovIcon from '../../components/SFGovIcon'
 import * as components from '../../components'
 import tokens from 'sfgov-design-system/src/tokens'
-// import { Monospace } from '@sfgov/react'
 
 const scopedGlobals = { ...components, tokens }
 
@@ -64,11 +63,6 @@ function ThemedLiveEditor () {
       key={String(isBrowser)}
       className={styles.playgroundEditor}
     />
-    // <Monospace
-    //   as={LiveEditor}
-    //   css={{ bg: 'transparent', mx: 12, mb: 8 }}
-    //   key={String(isBrowser)}
-    // />
   )
 }
 
