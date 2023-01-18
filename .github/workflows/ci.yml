@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
@@ -18,17 +20,25 @@ jobs:
       # this sets NODE_ENV=production for all of the build scripts
       - run: echo NODE_ENV=production >> $GITHUB_ENV
 
-      # run these separately so that it's easier to see what failed
       - run: npm run build -w sfgov-design-system
+      - run: npm run build -w @sfgov/icons
+      - run: npm run build -w @sfgov/react
 
-      # run pre-publish checks
-      - run: npm run prepublishOnly -w sfgov-design-system --if-present
-
-      - uses: primer/publish@v3.0.0
-        with:
-          npm_args: --unsafe-perm --allow-same-version
-          default_branch: main
-          dir: packages/sfgov-design-system
+      - name: Git identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY"
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: echo "NPM_AUTH_TOKEN=${{ secrets.NPM_AUTH_TOKEN }}" >> $GITHUB_ENV
+      - name: Publish latest (from 'main' branch)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
+          lerna publish from-package --yes
+        id: publish
+      - name: Publish canary release (all other commits)
+        if: ${{ steps.publish.outcome == 'skipped' }}
+        run: lerna publish --canary --dist-tag canary --preid canary --yes

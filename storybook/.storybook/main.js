@@ -1,3 +1,5 @@
+const { getPreloadLinks } = require('@sfgov/react')
+
 const { NODE_ENV } = process.env
 const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
 
@@ -14,6 +16,11 @@ module.exports = {
     {
       directory: '../stories/experiments',
       titlePrefix: 'Experiments/',
+      files: storiesGlob
+    },
+    {
+      directory: '../stories/Agency Page',
+      titlePrefix: 'Agency Page/',
       files: storiesGlob
     }
   ],
@@ -51,5 +58,42 @@ module.exports = {
     return configType === 'PRODUCTION'
       ? `${head}<base href="/storybook/">`
       : head
+  },
+
+  /**
+   * This mimics the <SSRStyle> component's output, which is official Google Fonts(tm)
+   * way of making sure that the fonts load as early in the page load as possible to
+   * prevent a FOUC.
+   * 
+   * @param {string} head 
+   * @returns 
+   */
+  previewHead (head) {
+    const links = getPreloadLinks()
+    return `
+      ${head}
+      ${links.map(attrs => tag('link', attrs)).join('\n')}
+    `
   }
+}
+
+/**
+ * 
+ * @param {string} name 
+ * @param {Record<string, string>} attrs 
+ * @returns 
+ */
+function tag (name, attrs) {
+  const attrString = attrs
+    ? Object.entries(attrs)
+      .map(([name, value]) => ` ${name}="${escapeAttrValue(value)}"`)
+      .join('')
+    : ''
+  return `<${name}${attrString}>`
+}
+
+function escapeAttrValue (str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
 }

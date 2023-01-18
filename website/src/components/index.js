@@ -1,4 +1,5 @@
-export { default as BigLink } from './BigLink'
+export * from '@sfgov/react'
+export { default as DocsBigLink } from './DocsBigLink'
 export { default as BundleTable } from './BundleTable'
 export { default as ColorSwatch } from './ColorSwatch'
 export { default as DoDont, Do, Dont } from './DoDont'

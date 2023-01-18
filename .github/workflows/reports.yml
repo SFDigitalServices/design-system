@@ -9,5 +9,5 @@ jobs:
       - uses: preactjs/compressed-size-action@v2
         with:
           repo-token: ${{ github.token }}
-          pattern: 'packages/sfgov-design-system/dist/**/*.{css,*js}'
-          build-script: build -w sfgov-design-system
+          pattern: 'packages/*/dist/**/*.{js,mjs,css,svg}'
+          build-script: build -w sfgov-design-system -w @sfgov/react

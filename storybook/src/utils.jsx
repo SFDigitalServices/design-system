@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import websitePackageJson from '../../website/package.json'
+import { Box } from '@sfgov/react'
 
 /**
  * Merge the `className` and `style` keys of one or more prop objects.
@@ -24,9 +25,35 @@ export function mergeProps (...items) {
   })
 }
 
-export function Stub ({ text = 'TODO' }) {
-  return <div className='bg-action text-white p-40'>{text}</div>
+/**
+ * Utility function for "binding" (essentially cloning) a React component,
+ * accounting for the possiblity that the component is not a function (with
+ * a `.bind()` method). Always returns a function that can be re-bound.
+ * 
+ * @param {React.ComponentType<any>} Component
+ * @returns {React.FC}
+ */
+export function bind (Component) {
+  if ('bind' in Component) {
+    return Component.bind({})
+  } else {
+    return function BoundComponent (props) {
+      return <Component {...props} />
+    }
+  }
 }
+
+/**
+ * A placeholder for unimplemented components.
+ */
+export const Stub = ({ children, css, ...rest }) => (
+  <Box css={{
+    bg: '$action',
+    fg: '$white',
+    p: 40,
+    ...css
+  }} {...rest}>{children || 'TODO'}</Box>
+)
 
 /**
  * Wrap a component in such a way that the received `className` prop merges the

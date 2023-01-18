@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import Icon from '../../src/Icon'
+// import Icon from '../../src/Icon'
 import { polymorphic, withClasses } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
@@ -243,7 +243,7 @@ export const QuickLink = withClasses(({
 }) => (
   <TileBody as='a' style={{ minHeight: '250px', ...style }} {...rest}>
     <div className='absolute bottom-24 right-24 flex'>
-      <Icon symbol='arrow-right' />
+      {/* <Icon symbol='arrow-right' /> */}
     </div>
     <div className='relative flex flex-col gap-12'>
       <div className='title-md m-0'>{title}</div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../../src/Icon'
+// import Icon from '../../src/Icon'
 import { withClasses, withVariants } from '../../src/utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
@@ -63,7 +63,7 @@ export const BannerAlert = withVariants(function ({ className, ...props }, conte
   return (
     <div className={className}>
       <div className='responsive-container py-20 lg:py-28 flex gap-20 justify-center items-center' {...rest}>
-        <Icon symbol='alert' />
+        {/* <Icon symbol='alert' /> */}
         <div>{children}</div>
       </div>
     </div>
@@ -111,7 +111,7 @@ export const FormAlert = (() => {
     return (
       <Container {...rest}>
         <IconContainer {...alert}>
-          <Icon symbol={icon} class='flex items-start' />
+          {/* <Icon symbol={icon} class='flex items-start' /> */}
         </IconContainer>
         <AlertMessage {...message}>
           {children}
@@ -161,7 +161,7 @@ export const Callout = withVariants(function ({ className, ...props }) {
   return (
     <div className={className}>
       <div className='responsive-container py-20 lg:py-28 flex gap-20 justify-center items-center' {...rest}>
-        <Icon symbol='alert' />
+        {/* <Icon symbol='alert' /> */}
         <div>{children}</div>
       </div>
     </div>
@@ -185,7 +185,7 @@ Callout.parameters = {
 
 /**
  * Destructures the `text`, `href`, `linkText`, and `children` props and returns
- * a two-element array containging:
+ * a two-element array containing:
  *
  * - either `children` or the text and a hyperlink
  * - the remaining props after destructuring

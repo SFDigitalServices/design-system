@@ -14,7 +14,7 @@
 }
 
 .playgroundEditor {
-  @apply font-mono mx-12 mb-8 !important;
+  @apply font-rubik mx-12 mb-8 !important;
 }
 
 .playgroundEditor textarea {

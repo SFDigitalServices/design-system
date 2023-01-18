@@ -70,7 +70,7 @@ function EditorWithHeader ({ open: defaultOpen = true }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
     <details className='details-reset' open={open} onToggle={e => setOpen(e.target.open)}>
-      <Header as='summary' className='flex gap-x-8 align-center cursor-pointer'>
+      <Header as='summary' className='flex gap-x-8 items-center cursor-pointer'>
         <Translate
           id='theme.Playground.liveEditor'
           description='The live editor label of the live codeblocks'>
