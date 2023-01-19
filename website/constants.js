@@ -1,4 +1,4 @@
-const defaultPackage = require('sfgov-design-system/package.json')
+const defaultPackage = require('@sfgov/design-system/css/package.json')
 const defaultBranch = 'main'
 const { repository } = defaultPackage
 const [owner, repo] = repository.split('/')

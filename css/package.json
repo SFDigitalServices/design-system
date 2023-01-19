@@ -81,7 +81,7 @@
       ]
     },
     "build-manifest": {
-      "command": "../../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
+      "command": "../scripts/manifest.js 'dist/**/*.{css,*js,svg}' > manifest.json",
       "dependencies": [
         "build-css",
         "build-js"

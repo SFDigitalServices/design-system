@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss/types').Config} */
 module.exports = {
   presets: [
-    require('sfgov-design-system/tailwind.preset')
+    require('@sfgov/design-system/css/tailwind.preset')
   ],
   darkMode: ['class', '[data-theme="dark"]'],
   corePlugins: {

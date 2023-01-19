@@ -2,7 +2,7 @@
  * This is a common interface into the raw icons data, which includes
  * this SVG. The default export is an array of icon objects.
  */
-import data from 'sfgov-design-system/src/icons/data.json'
+import data from '@sfgov/design-system/css/src/icons/data.json'
 
 /**
  * @typedef {{

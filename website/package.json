@@ -44,8 +44,8 @@
       "command": "docusaurus start --port=3002",
       "dependencies": [
         "link-storybook",
-        "../packages/react:build",
-        "../packages/sfgov-design-system:build"
+        "../react:build",
+        "../css:build"
       ]
     },
     "lint": {
@@ -92,7 +92,7 @@
     "react-dom": "^18.2.0",
     "react-masonry-css": "^1.0.16",
     "react-shadow": "^19.0.3",
-    "sfgov-design-system": "2.5.1",
+    "@sfgov/design-system": "0.0.1",
     "tailwindcss": "^3.0.24",
     "use-bus": "^2.5.1"
   }

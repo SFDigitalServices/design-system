@@ -14,14 +14,14 @@
     "start": {
       "command": "start-storybook --port=3001",
       "dependencies": [
-        "../packages/react:build"
+        "../react:build"
       ]
     },
     "build": {
       "command": "build-storybook -o public",
       "dependencies": [
-        "../packages/sfgov-design-system:build",
-        "../packages/react:build"
+        "../css:build",
+        "../react:build"
       ]
     }
   },
@@ -30,7 +30,7 @@
     "clsx": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sfgov-design-system": "2.5.1",
+    "@sfgov/design-system": "0.0.1",
     "tailwind-styled-components": "^2.2.0"
   },
   "devDependencies": {

@@ -2,7 +2,7 @@ const { getPreloadLinks } = require('@sfgov/react')
 
 /** @type {import('@docusaurus/types').PluginModule} */
 module.exports = context => ({
-  name: 'sfgov-design-system',
+  name: '@sfgov/design-system/css',
   injectHtmlTags ({ content }) {
     // FIXME: do something with `content` here?
     const links = getPreloadLinks()

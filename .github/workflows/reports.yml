@@ -10,4 +10,4 @@ jobs:
         with:
           repo-token: ${{ github.token }}
           pattern: 'packages/*/dist/**/*.{js,mjs,css,svg}'
-          build-script: build -w sfgov-design-system -w @sfgov/react
+          build-script: build -w css -w react
