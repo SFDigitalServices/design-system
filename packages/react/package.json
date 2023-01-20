@@ -37,8 +37,7 @@
     }
   },
   "dependencies": {
-    "@sfgov/icons": "1.0.0",
-    "sfgov-design-system": "2.5.1"
+    "@sfgov/icons": "1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
