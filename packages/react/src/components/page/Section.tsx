@@ -18,12 +18,12 @@ export const SectionTitle = ({ title, type, hasMore }: SectionTitleProps) => (
       marginBottom: 32,
       justifyContent: 'space-between',
       alignItems: 'flex-end',
-      borderBottom: '1px solid $slateL3'
+      borderBottom: '1px solid $colorBaseSlate300'
     }}
   >
     <TitleXl>{title}</TitleXl>
     {hasMore && (
-      <Flex as="a" css={{ color: '$slateL3' }}>
+      <Flex as="a" css={{ color: '$colorBaseSlate300' }}>
         <TitleXs>More {type}</TitleXs>
         <IconChevronRight />
       </Flex>
@@ -33,12 +33,12 @@ export const SectionTitle = ({ title, type, hasMore }: SectionTitleProps) => (
 
 const SectionContainer = styled('section', {
   py: 80,
-  backgroundColor: '$white',
-  color: '$slateL3',
+  backgroundColor: '$colorBaseWhite',
+  color: '$colorBaseSlate300',
   variants: {
     variant: {
       grey: {
-        backgroundColor: '$greyL1'
+        backgroundColor: '$colorBaseGrey100'
       }
     }
   }

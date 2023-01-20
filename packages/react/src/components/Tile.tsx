@@ -28,7 +28,7 @@ const TileContainer = styled(Flex, {
   justifyContent: 'space-between',
   overflow: 'hidden',
   flexDirection: 'column',
-  color: '$slateL3',
+  color: '$colorBaseSlate300',
   textDecorationLine: 'none',
   '@md': {
     flexDirection: 'row'

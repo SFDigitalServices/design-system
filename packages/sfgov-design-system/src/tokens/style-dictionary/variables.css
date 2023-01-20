@@ -1,0 +1,34 @@
+:root {
+  --color-base-yellow-400: #e0a81a;
+  --color-base-yellow-300: #f4c435;
+  --color-base-yellow-200: #f9e3a3;
+  --color-base-yellow-100: #f8f1df;
+  --color-base-slate-400: #002b48;
+  --color-base-slate-300: #1d4d70;
+  --color-base-slate-200: #5a7a92;
+  --color-base-slate-100: #eff3f4;
+  --color-base-red-400: #c0e2c5;
+  --color-base-red-300: #c55236;
+  --color-base-red-200: #efcabb;
+  --color-base-red-100: #f5e9e5;
+  --color-base-purple-400: #543a89;
+  --color-base-purple-300: #7d61b3;
+  --color-base-purple-200: #cccced;
+  --color-base-purple-100: #edebf6;
+  --color-base-grey-dark: #424244;
+  --color-base-grey-400: #a1a1a1;
+  --color-base-grey-300: #c2c2c2;
+  --color-base-grey-200: #e2e2e2;
+  --color-base-grey-100: #f6f6f6;
+  --color-base-green-400: #1b674d;
+  --color-base-green-300: #00866a;
+  --color-base-green-200: #c0e2c5;
+  --color-base-green-100: #e9f7ec;
+  --color-base-blue-dark: #0c1464;
+  --color-base-blue-bright: #495ed4;
+  --color-base-blue-200: #a9d6ea;
+  --color-base-blue-100: #edf4f7;
+  --color-base-black: #212123;
+  --color-base-white: #ffffff;
+  --color-base-action: var(--color-base-blue-bright);
+}

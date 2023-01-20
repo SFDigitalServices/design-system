@@ -31,7 +31,7 @@ export const ContainerStory: Story<ContainerArgs> = (args: ContainerArgs) => (
   <Container css={args.css}>
     <Box
       css={{
-        borderColor: "$black",
+        borderColor: "$colorBaseBlack",
         borderStyle: "dotted",
         borderWidth: 1,
       }}

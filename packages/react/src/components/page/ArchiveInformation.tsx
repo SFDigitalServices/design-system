@@ -14,7 +14,7 @@ export const ArchiveInformation = ({
   email,
   archiveURL
 }: ArchiveInformationProps) => (
-  <Container css={{ bg: '$greyL1', p: 40 }}>
+  <Container css={{ bg: '$colorBaseGrey100', p: 40 }}>
     <Flex css={{ gap: 20 }}>
       <div>
         <TitleMd>Request public record</TitleMd>
