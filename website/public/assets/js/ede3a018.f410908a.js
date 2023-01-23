@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_sfgov_design_system=self.webpackChunk_sfgov_design_system||[]).push([[127],{2507:function(e,t,n){n.r(t),n.d(t,{default:function(){return u}});var s=n(7294),l=n(8084),a=n(2566),r=n(4493);function u(){var e=(0,l.ZP)();return s.createElement(a.Z,null,s.createElement("h2",null,"Global data"),s.createElement(r.Z,{src:e,collapseDepth:3}))}}}]);
