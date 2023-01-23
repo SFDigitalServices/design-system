@@ -2,11 +2,6 @@ default: false
 heading-increment: true
 heading-style:
   style: atx
-first-heading-h1:
-  level: 2
-front-matter:
-  required_keys:
-    - title
 line-length: false
 links: true
 list-indent: true
