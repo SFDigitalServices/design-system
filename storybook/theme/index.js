@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming'
-import website from '../../website/package.json'
+import packageJson from '../../package.json'
 import brandImage from '../../website/static/img/logo.svg'
 
 export default create({
@@ -8,5 +8,5 @@ export default create({
   brandImage,
   brandUrl: process.env.NODE_ENV === 'production'
     ? '/'
-    : `http://localhost:${website.config.port}`
+    : `http://localhost:${packageJson.config.website_port}`
 })

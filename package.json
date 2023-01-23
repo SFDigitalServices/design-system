@@ -126,7 +126,7 @@
       ]
     },
     "build:storybook": {
-      "command": "build-storybook -c storybook -o public/storybook",
+      "command": "build-storybook -o public/storybook",
       "clean": true,
       "files": [
         "public/storybook"
@@ -173,7 +173,7 @@
       "service": true
     },
     "start:storybook": {
-      "command": "start-storybook -c storybook --port=$npm_config_storybook_port",
+      "command": "start-storybook --port=$npm_config_storybook_port",
       "service": true
     },
     "watch": {
