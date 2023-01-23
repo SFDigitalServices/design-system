@@ -1,8 +1,7 @@
 /** @type {import('eslint').ESLint.ConfigData} */
 module.exports = {
   ignorePatterns: [
-    'public/**',
-    '**/dist/**',
+    'public',
     '!.storybook/**'
   ],
   rules: {

@@ -2,8 +2,11 @@
 module.exports = {
   parser: '@babel/eslint-parser',
   ignorePatterns: [
-    'dist/**',
-    '!**/.*.js'
+    'dist',
+    '*/public',
+    '**/.wireit',
+    '!.*.{js,mjs}',
+    '!.storybook'
   ],
   plugins: [
     'sfgov',

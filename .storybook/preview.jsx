@@ -1,7 +1,7 @@
 import React from 'react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { addParameters, addDecorator } from '@storybook/react'
-import { Box, breakpoints } from '@sfgov/design-system/react'
+import { Box, breakpoints } from '../dist/react'
 import { getDocsBaseUrl } from '../storybook/src/utils'
 
 const breakpointViewports = Object.fromEntries(

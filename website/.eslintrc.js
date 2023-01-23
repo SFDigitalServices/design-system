@@ -1,6 +1,10 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: '../.eslintrc.js',
+  plugins: ['@docusaurus/eslint-plugin'],
+  extends: ['../.eslintrc.js', 'plugin:@docusaurus/recommended'],
+  rules: {
+    'import/no-unresolved': ['warn']
+  },
   overrides: [
     /*
       This plugin (https://github.com/mdx-js/eslint-mdx) causes linting to hang indefinitely on .mdx files.
