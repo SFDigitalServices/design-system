@@ -19,7 +19,7 @@ npm install @sfgov/design-system react
 
 ## Usage
 
-Our styling library, [Stitches], exposes the `css` prop on our React components. 
+Our styling library, [Stitches], exposes the `css` prop on our React components.
 
 ```jsx
 import { ThemeProvider } from '@sfgov/design-system/react'
