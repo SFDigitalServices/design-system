@@ -52,7 +52,7 @@ const BodiesSection = ({ sectionTitle, divisions }) => (
 
 export const AboutSection = (args: AboutSectionProps) => (
   <Section>
-    <SectionTitle title="About" />
+    <SectionTitle title='About' />
     <AboutContent {...args} />
   </Section>
 )
@@ -80,10 +80,10 @@ const AboutContent = ({
     </FlexColumn>
     <FlexColumn>
       {!!divisions?.length && (
-        <BodiesSection sectionTitle="Divisions" divisions={divisions} />
+        <BodiesSection sectionTitle='Divisions' divisions={divisions} />
       )}
       {!!relatedDivisions?.length && (
-        <BodiesSection sectionTitle="Related" divisions={relatedDivisions} />
+        <BodiesSection sectionTitle='Related' divisions={relatedDivisions} />
       )}
     </FlexColumn>
   </AboutContainer>

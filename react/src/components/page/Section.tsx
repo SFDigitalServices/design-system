@@ -23,7 +23,7 @@ export const SectionTitle = ({ title, type, hasMore }: SectionTitleProps) => (
   >
     <TitleXl>{title}</TitleXl>
     {hasMore && (
-      <Flex as="a" css={{ color: '$slateL3' }}>
+      <Flex as='a' css={{ color: '$slateL3' }}>
         <TitleXs>More {type}</TitleXs>
         <IconChevronRight />
       </Flex>

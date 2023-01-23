@@ -15,7 +15,7 @@ type ContactContentProps = {
 
 export const ContactSection = (args) => (
   <Section>
-    <SectionTitle title="Contact" />
+    <SectionTitle title='Contact' />
     <ContactContent {...args} />
   </Section>
 )
@@ -44,9 +44,9 @@ const ContactContent = ({
           <div>{address.address_line2}</div>
           <div>{`${address.locality}, ${address.administrative_area} ${address.postal_code}`}</div>
           <a
-            href="https://www.google.com/maps/dir/?api=1&amp;destination=1+Dr.+Carlton+B.+Goodlett+Place%2CCity+Hall+Room+362%2C+San+Francisco%2CCA+94102"
-            target="_blank"
-            rel="noreferrer"
+            href='https://www.google.com/maps/dir/?api=1&amp;destination=1+Dr.+Carlton+B.+Goodlett+Place%2CCity+Hall+Room+362%2C+San+Francisco%2CCA+94102'
+            target='_blank'
+            rel='noreferrer'
           >
             Get directions
           </a>

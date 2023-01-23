@@ -44,7 +44,7 @@ const TileTitle = styled(TitleXs, {
 })
 
 const BaseTile = ({ href, children }) => (
-  <TileContainer as="a" href={href}>
+  <TileContainer as='a' href={href}>
     <ContentWrapper>{children}</ContentWrapper>
   </TileContainer>
 )

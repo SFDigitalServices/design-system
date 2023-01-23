@@ -29,9 +29,9 @@ export const ArchiveInformation = ({
         <TitleMd>Archived website</TitleMd>
         <p>
           <a
-            target="_blank"
+            target='_blank'
             href={archiveURL}
-            rel="noreferrer"
+            rel='noreferrer'
           >
             See previous website
           </a>{' '}
