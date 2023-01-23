@@ -3,7 +3,16 @@ module.exports = {
   plugins: ['@docusaurus/eslint-plugin'],
   extends: ['../.eslintrc.js', 'plugin:@docusaurus/recommended'],
   rules: {
-    'import/no-unresolved': ['warn']
+    'import/no-unresolved': ['warn', {
+      ignore: [
+        '^@docusaurus/',
+        '^@sfgov/design-system/',
+        '^@site/',
+        '^@theme/',
+        '^@theme-original/',
+        '^!!raw-loader!'
+      ]
+    }]
   },
   overrides: [
     /*

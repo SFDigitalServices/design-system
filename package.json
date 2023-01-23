@@ -33,7 +33,7 @@
     "figma-export": "env-cmd -f .env figma-export use-config",
     "lint": "wireit",
     "lint:css": "stylelint '**/src/*.css'",
-    "lint:js": "eslint --ext js,jsx,mjs,ts,tsx css elements icons react scripts storybook website '*.{js,mjs}'",
+    "lint:js": "eslint --ext js,jsx,mjs,ts,tsx css elements icons react '*.{js,mjs}'",
     "lint:docs": "markdownlint --rules './lib/markdownlint/*.js' --ignore '**/node_modules/**' '**/*.md'",
     "lint:scripts": "shellcheck scripts/*.sh",
     "lint:storybook": "eslint --ext js,jsx,ts,tsx storybook .storybook",
@@ -158,7 +158,8 @@
         "lint:js",
         "lint:docs",
         "lint:scripts",
-        "lint:website"
+        "lint:website",
+        "lint:storybook"
       ]
     },
     "start": {
