@@ -1,4 +1,8 @@
-# @sfgov/design-system/react
+---
+title: React
+---
+
+## @sfgov/design-system/react
 
 This package provides the [SF.gov Design System's][website] React components.
 

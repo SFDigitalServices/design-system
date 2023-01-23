@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_sfgov_design_system=self.webpackChunk_sfgov_design_system||[]).push([[121],{5056:function(s){s.exports=JSON.parse('[{"label":"icons","permalink":"/tags/icons","count":3},{"label":"tailwind","permalink":"/tags/tailwind","count":2}]')}}]);

@@ -33,16 +33,16 @@ const commonPlugins = [
 /** @type {RollupOptions[]} */
 export default [
   {
-    input: 'elements/src/index.js',
+    input: './elements/src/index.js',
     plugins: commonPlugins,
     output: [
       {
-        file: 'elements/dist/index.mjs',
+        file: 'dist/elements/index.mjs',
         format: 'esm',
         sourcemap
       },
       {
-        file: 'elements/dist/index.js',
+        file: 'dist/elements/index.js',
         format: 'umd',
         name: 'sfgov.elements',
         sourcemap
@@ -54,12 +54,12 @@ export default [
     plugins: commonPlugins,
     output: [
       {
-        file: 'react/dist/index.mjs',
+        file: 'dist/react/index.mjs',
         format: 'esm',
         sourcemap
       },
       {
-        file: 'react/dist/index.js',
+        file: 'dist/react/index.js',
         format: 'umd',
         name: 'sfgov.react',
         sourcemap,

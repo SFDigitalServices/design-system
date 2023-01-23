@@ -1,7 +1,11 @@
 #!/usr/bin/env node
-const globby = require('globby')
-const { statSync } = require('fs')
+import { globby } from 'globby'
+import { statSync, writeFileSync } from 'node:fs'
+import { ensureDirSync, ensureDir } from 'fs-extra'
+
 const globs = process.argv.slice(2)
+
+ensureDirSync('dist')
 
 // eslint-disable-next-line promise/catch-or-return
 globby([...globs, '!**/manifest.json'])
@@ -27,6 +31,8 @@ globby([...globs, '!**/manifest.json'])
       }
     }
 
-    console.log(JSON.stringify(manifest, null, 2))
-    return undefined
+    // eslint-disable-next-line promise/no-nesting, promise/always-return
+    return ensureDir('dist').then(() => {
+      writeFileSync('dist/manifest.json', JSON.stringify(manifest, null, 2), 'utf8')
+    })
   })

@@ -19,7 +19,7 @@ We publish a [Tailwind preset][presets] so that you can use it in your own `tail
 
 ```js title="tailwind.config.js"
 module.exports = {
-  presets: ["sfgov-design-system/tailwind.preset"],
+  presets: ["@sfgov/design-system/tailwind.preset"],
   theme: {
     extend: {
       // your theme extensions here
@@ -33,7 +33,7 @@ module.exports = {
 If you don't want or need all of the plugins provided by our preset, you can import the theme directly:
 
 ```js filename="tailwind.config.js"
-const theme = require('sfgov-design-system/src/theme')
+const theme = require('@sfgov/design-system/css/src/theme')
 module.exports = {
   theme,
   // your plugins, etc.
@@ -44,7 +44,7 @@ If you need to extend the theme, you'll need to merge it manually, e.g.:
 
 ```js filename="tailwind.config.js"
 const merge = require('merge-deep')
-const theme = require('sfgov-design-system/src/theme')
+const theme = require('@sfgov/design-system/css/src/theme')
 module.exports = {
   theme: merge(theme, {
     // your theme extensions here

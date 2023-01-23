@@ -9,5 +9,5 @@ jobs:
       - uses: preactjs/compressed-size-action@v2
         with:
           repo-token: ${{ github.token }}
-          pattern: 'packages/*/dist/**/*.{js,mjs,css,svg}'
+          pattern: 'dist/**/*.{css,js,mjs,svg}'
           build-script: build:ci

@@ -1,6 +1,10 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@babel/eslint-parser',
+  ignorePatterns: [
+    'dist/**',
+    '!**/.*.js'
+  ],
   plugins: [
     'sfgov',
     'react',
@@ -13,9 +17,6 @@ module.exports = {
     'plugin:storybook/recommended'
   ],
   settings: {
-    'import/ignore': [
-      '@sfgov/design-system/*'
-    ],
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx']
@@ -26,6 +27,7 @@ module.exports = {
     }
   },
   rules: {
+    'jsx-quotes': ['warn', 'prefer-single'],
     'unicorn/expiring-todo-comments': ['error', {
       allowWarningComments: true
     }],
@@ -38,28 +40,24 @@ module.exports = {
       next: 'function'
     }],
     'react/no-unescaped-entities': ['warn'],
-    'react/prop-types': ['off']
+    'react/prop-types': ['warn', {
+      skipUndeclared: true
+    }]
   },
   reportUnusedDisableDirectives: true,
-  ignorePatterns: [
-    '**/dist/**'
-  ],
-  globals: {
-    JSX: true
-  },
   overrides: [
     {
-      files: ['*/src/**/*.js'],
+      files: ['**/*.browser.{js,jsx,mjs,ts,tsx'],
       env: {
         browser: true
-      },
-      parserOptions: {
-        sourceType: 'module'
       }
     },
     {
       files: ['**/*.ts{,x}'],
       parser: '@typescript-eslint/parser',
+      globals: {
+        JSX: true
+      },
       // these are not needed in TypeScript
       rules: {
         'no-redeclare': ['off'],
@@ -82,9 +80,9 @@ module.exports = {
       }
     },
     {
-      files: '**/scripts/*.js',
+      files: '**/scripts/*.{,m}js',
       rules: {
-        'node/shebang': 0
+        'node/shebang': ['off']
       }
     }
   ]

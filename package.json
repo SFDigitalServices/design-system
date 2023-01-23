@@ -1,47 +1,56 @@
 {
   "name": "@sfgov/design-system",
   "version": "0.0.1",
-  "workspaces": [
-    "storybook",
-    "website"
-  ],
   "engines": {
     "node": "16.x",
     "npm": "8.x"
   },
+  "config": {
+    "website_port": 3002,
+    "storybook_port": 3001
+  },
+  "repository": "SFDigitalServices/design-system",
   "files": [
-    "*/dist/**",
-    "**/*.{js,mjs,json,svg}",
-    "css/lib/tailwind",
-    "!**/*.{config.*,rc}",
+    "dist",
+    "lib",
+    "tailwind.*",
+    "*.{config.*,rc}",
     "!website/**",
     "!storybook/**"
   ],
   "scripts": {
     "build": "wireit",
     "build:ci": "wireit",
-    "build:css": "postcss --verbose -d css/dist 'css/src/*.css'",
+    "build:css": "wireit",
     "build:css-manifest": "node scripts/build-css-manifest.js",
-    "build:js": "rollup -c",
+    "build:docs": "wireit",
+    "build:favicon": "mkdir -p public && curl -O https://sf.gov/favicon.ico --output-dir public",
+    "build:js": "wireit",
     "build:manifest": "wireit",
+    "build:storybook": "wireit",
+    "build:urls": "wireit",
+    "build:website": "wireit",
     "figma-export": "env-cmd -f .env figma-export use-config",
     "lint": "wireit",
     "lint:css": "stylelint '**/src/*.css'",
     "lint:js": "eslint --ext js,jsx,mjs,ts,tsx css elements icons react scripts storybook website '*.{js,mjs}'",
     "lint:markdown": "markdownlint --rules './lib/markdownlint/*.js' --ignore '**/node_modules/**' '**/*.md'",
     "lint:scripts": "shellcheck scripts/*.sh",
-    "postbuild": "cp -rf storybook/public/ website/public/storybook/",
+    "lint:storybook": "eslint --ext .js,.jsx storybook storybook/.storybook",
+    "lint:website": "eslint website/{src,lib,*.js}",
+    "postbuild:website": "scripts/run-website-checks.sh",
     "postbuild:css": "npm run build:css-manifest",
     "postfigma-export": "eslint --fix react/src/icons",
     "prepublishOnly": "scripts/prepublish-checks.sh",
+    "serve:docs": "docusaurus serve website --dir public",
     "start": "wireit",
-    "storybook": "npm start -w storybook",
-    "test": "wireit",
+    "start:website": "wireit",
+    "start:storybook": "wireit",
+    "swizzle": "docusaurus swizzle",
     "watch": "wireit",
     "watch:css": "echo '(watch css)'",
     "watch:js": "rollup -c --watch",
-    "watch:icons": "echo 'watch icons (noop)'",
-    "website": "npm start -w website"
+    "watch:icons": "echo 'watch icons (noop)'"
   },
   "wireit": {
     "build": {
@@ -49,8 +58,7 @@
         "build:css",
         "build:js",
         "build:manifest",
-        "./storybook:build",
-        "./website:build"
+        "build:website"
       ]
     },
     "build:ci": {
@@ -59,11 +67,89 @@
         "build:js"
       ]
     },
+    "build:css": {
+      "command": "postcss --verbose -d dist/css 'css/src/*.css'",
+      "files": [
+        "css/**",
+        "postcss.config.js"
+      ],
+      "output": [
+        "dist/**/*.css{,.map}"
+      ]
+    },
+    "build:docs": {
+      "command": "docusaurus build website --out-dir public",
+      "dependencies": [
+        "build:css",
+        "build:js",
+        "build:manifest"
+      ],
+      "files": [
+        "website/**"
+      ],
+      "output": [
+        "public"
+      ]
+    },
+    "build:js": {
+      "command": "rollup -c",
+      "files": [
+        "{elements,icons,react}/src/**",
+        "*.config.*"
+      ],
+      "output": [
+        "dist/**/*.{js,mjs}{,.map}"
+      ]
+    },
+    "build:website-index": {
+      "command": "find public -type f | egrep -v '^storybook/' | perl -pe 's#^public/#/#' | sort > public/index.txt",
+      "dependencies": [
+        "build:docs"
+      ],
+      "clean": true,
+      "files": [
+        "public/**",
+        "!public/storybook"
+      ],
+      "output": [
+        "public/index.txt"
+      ]
+    },
     "build:manifest": {
-      "command": "scripts/manifest.js '{css,elements,icons,react}/dist/*.{css,*js,svg}' > dist/manifest.json",
+      "command": "scripts/manifest.mjs 'dist/**/*.{css,js,mjs,svg}'",
       "dependencies": [
         "build:css",
         "build:js"
+      ],
+      "output": [
+        "dist/manifest.json"
+      ]
+    },
+    "build:storybook": {
+      "command": "build-storybook -c storybook -o public/storybook",
+      "clean": true,
+      "files": [
+        "public/storybook"
+      ]
+    },
+    "build:urls": {
+      "command": "egrep '\\.html$' public/index.txt | perl -pe 's#/index.html#/#; s#^$#/#' | sort > public/urls.txt",
+      "files": [
+        "public/index.txt"
+      ],
+      "output": [
+        "public/urls.txt"
+      ],
+      "dependencies": [
+        "build:docs"
+      ]
+    },
+    "build:website": {
+      "dependencies": [
+        "build:docs",
+        "build:storybook",
+        "build:urls",
+        "build:favicon"
       ]
     },
     "lint": {
@@ -71,7 +157,8 @@
         "lint:css",
         "lint:js",
         "lint:markdown",
-        "lint:scripts"
+        "lint:scripts",
+        "lint:website"
       ]
     },
     "start": {
@@ -80,6 +167,14 @@
         "./storybook:start",
         "./website:start"
       ]
+    },
+    "start:website": {
+      "command": "docusaurus start website --port=$npm_config_website_port",
+      "service": true
+    },
+    "start:storybook": {
+      "command": "start-storybook -c storybook --port=$npm_config_storybook_port",
+      "service": true
     },
     "watch": {
       "dependencies": [
@@ -111,22 +206,41 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@docusaurus/core": "^2.2.0",
+    "@docusaurus/eslint-plugin": "^2.2.0",
+    "@docusaurus/module-type-aliases": "^2.2.0",
+    "@docusaurus/plugin-client-redirects": "^2.2.0",
+    "@docusaurus/preset-classic": "^2.2.0",
+    "@docusaurus/theme-live-codeblock": "^2.2.0",
     "@figma-export/cli": "^4.5.0",
     "@figma-export/output-components-as-svg": "^4.5.0",
     "@figma-export/output-components-as-svgr": "^4.5.0",
     "@figma-export/transform-svg-with-svgo": "^4.5.0",
     "@figma-export/types": "^4.5.0",
+    "@mdx-js/react": "^1.6.22",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@stitches/react": "^1.2.8",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/addon-storysource": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
+    "@tsconfig/docusaurus": "^1.0.6",
     "@types/eslint": "^8.4.2",
     "@types/node": "^16.18.6",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
     "check-dependency-version-consistency": "^3.0.0",
+    "clsx": "^1.1.0",
     "core-js": "^3.27.1",
     "cssnano": "^5.1.14",
     "dedent": "^0.7.0",
@@ -147,27 +261,37 @@
     "js-yaml": "^4.1.0",
     "lodash.startcase": "^4.4.0",
     "markdownlint-cli": "^0.31.1",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.14",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.0",
     "prettysize": "^2.0.0",
+    "prism-react-renderer": "^1.3.1",
+    "prop-types": "^15.8.1",
+    "raw-loader": "^4.0.2",
     "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
+    "react-masonry-css": "^1.0.16",
+    "react-shadow": "^19.0.3",
     "rollup": "^3.9.1",
     "rollup-cache": "^1.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-ts": "^3.1.1",
     "shellcheck": "^1.1.0",
+    "storybook-addon-designs": "^6.3.1",
+    "storybook-source-link": "^2.0.4",
     "stylelint": "^14.8.4",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-tailwindcss": "^0.0.7",
     "stylelint-expiring-todo-comments": "^0.0.1",
     "svgo": "^3.0.2",
+    "tailwind-styled-components": "^2.2.0",
     "tailwindcss": "^2.2.19",
     "tailwindcss-interaction-variants": "^5.0.0",
     "typescript": "^4.9.3",
+    "use-bus": "^2.5.1",
     "wireit": "^0.9.3"
   }
 }

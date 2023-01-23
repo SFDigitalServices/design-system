@@ -5,7 +5,7 @@ const { spawnSync } = require('node:child_process')
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const { owner, repo, repoUrl, defaultBranch } = require('./constants')
-const { config: storybookConfig } = require('../storybook/package.json')
+const packageJson = require('../package.json')
 
 /**
  * It's important that we throw on broken links in both development and
@@ -23,7 +23,7 @@ const currentBranch = HEROKU_BRANCH || getCurrentBranch() || defaultBranch
 const editUrl = `${repoUrl}/tree/${currentBranch}/website`
 const storybookUrl = NODE_ENV === 'production'
   ? 'pathname:///storybook/'
-  : `http://localhost:${storybookConfig.port}/`
+  : `http://localhost:${packageJson.config.storybook_port}/`
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {

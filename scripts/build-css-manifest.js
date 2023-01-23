@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const postcss = require('postcss')
 const { version: tailwindVersion } = require('tailwindcss/package.json')
 
@@ -65,10 +66,10 @@ const tailwindCategories = [
 ]
 
 const utilities = [
-  getUtilities('css/dist/utilities.css').byProperty
+  getUtilities('dist/css/utilities.css').byProperty
 ]
 const manifest = buildManifest(utilities)
-writeFileSync('css/dist/utilities.json', JSON.stringify(manifest, null, 2), 'utf8')
+writeFileSync('dist/css/utilities.json', JSON.stringify(manifest, null, 2), 'utf8')
 
 function buildManifest (utilities) {
   const manifest = tailwindCategories

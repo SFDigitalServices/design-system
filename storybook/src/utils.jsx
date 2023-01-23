@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
-import websitePackageJson from '../../website/package.json'
-import { Box } from '@sfgov/design-system/react'
+import packageJson from '../../package.json'
+import { Box } from '../../react/dist'
 
 /**
  * Merge the `className` and `style` keys of one or more prop objects.
@@ -164,5 +164,5 @@ export function withVariants (Component, variants, defaultVariant = 'default') {
 export function getDocsBaseUrl () {
   return process.env.NODE_ENV === 'production'
     ? ''
-    : `http://localhost:${websitePackageJson.config.port}`
+    : `http://localhost:${packageJson.config.website_port}`
 }

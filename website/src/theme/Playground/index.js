@@ -10,7 +10,7 @@ import EncapsulatedStyleRoot from '../../components/EncapsulatedStyleRoot'
 import styles from './styles.module.css'
 import SFGovIcon from '../../components/SFGovIcon'
 import * as components from '../../components'
-import tokens from 'sfgov-design-system/src/tokens'
+import tokens from '../../../../css/src/tokens'
 
 const scopedGlobals = { ...components, tokens }
 

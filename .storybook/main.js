@@ -1,4 +1,4 @@
-const { getPreloadLinks } = require('@sfgov/design-system/react')
+const { getPreloadLinks } = require('../react/dist')
 
 const { NODE_ENV } = process.env
 const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
@@ -9,17 +9,17 @@ module.exports = {
   stories: [
     '../docs/**/*.stories.md{,x}',
     {
-      directory: '../stories/components',
+      directory: 'stories/components',
       titlePrefix: 'Components/',
       files: storiesGlob
     },
     {
-      directory: '../stories/experiments',
+      directory: 'stories/experiments',
       titlePrefix: 'Experiments/',
       files: storiesGlob
     },
     {
-      directory: '../stories/Agency Page',
+      directory: 'stories/Agency Page',
       titlePrefix: 'Agency Page/',
       files: storiesGlob
     }
