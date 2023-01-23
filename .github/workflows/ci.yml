@@ -21,7 +21,7 @@ jobs:
       - run: echo NODE_ENV=production >> $GITHUB_ENV
       - run: npm run build:ci
 
-      - uses: primer/publish@v3
+      - uses: primer/publish@v3.0.0
         with:
           default_branch: main
         env:
