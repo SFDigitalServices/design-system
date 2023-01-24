@@ -22,7 +22,7 @@
     "build": "wireit",
     "build:ci": "wireit",
     "build:css": "wireit",
-    "build:css-manifest": "node scripts/build-css-manifest.js",
+    "build:css-manifest": "wireit",
     "build:docs": "wireit",
     "build:favicon": "mkdir -p public && curl -O https://sf.gov/favicon.ico --output-dir public",
     "build:js": "wireit",
@@ -48,8 +48,8 @@
     "start:storybook": "wireit",
     "swizzle": "docusaurus swizzle",
     "watch": "wireit",
-    "watch:css": "npm run build:css -- --watch",
-    "watch:js": "rollup -c --watch",
+    "watch:css": "wireit",
+    "watch:js": "wireit",
     "watch:icons": "echo 'watch icons (noop)'"
   },
   "wireit": {
@@ -58,13 +58,15 @@
         "build:css",
         "build:js",
         "build:manifest",
-        "build:website"
+        "build:website",
+        "build:storybook"
       ]
     },
     "build:ci": {
       "dependencies": [
         "build:css",
-        "build:js"
+        "build:js",
+        "build:manifest"
       ]
     },
     "build:css": {
@@ -75,6 +77,16 @@
       ],
       "output": [
         "dist/**/*.css{,.map}"
+      ]
+    },
+    "build:css-manifest": {
+      "command": "node scripts/build-css-manifest.js",
+      "output": [
+        "dist/css/utilties.json"
+      ],
+      "files": [
+        "dist/css",
+        "!dist/css/**/*.json"
       ]
     },
     "build:docs": {
@@ -119,7 +131,8 @@
       "command": "scripts/manifest.mjs 'dist/**/*.{css,js,mjs,svg}'",
       "dependencies": [
         "build:css",
-        "build:js"
+        "build:js",
+        "build:css-manifest"
       ],
       "output": [
         "dist/manifest.json"
@@ -130,6 +143,10 @@
       "clean": true,
       "files": [
         "public/storybook"
+      ],
+      "dependencies": [
+        "build:css",
+        "build:js"
       ]
     },
     "build:urls": {
@@ -170,18 +187,49 @@
       ]
     },
     "start:website": {
-      "command": "docusaurus start website --port=$npm_config_website_port",
-      "service": true
+      "command": "docusaurus start website --port=3002",
+      "service": true,
+      "files": [
+        "website/*.js",
+        "package.json"
+      ],
+      "dependencies": [
+        "build:css",
+        "build:js",
+        "build:manifest"
+      ]
     },
     "start:storybook": {
-      "command": "start-storybook --port=$npm_config_storybook_port",
-      "service": true
+      "command": "start-storybook --port=3001",
+      "service": true,
+      "files": [
+        ".storybook/*",
+        "package.json"
+      ],
+      "dependencies": [
+        "build:css",
+        "build:js"
+      ]
     },
     "watch": {
       "dependencies": [
         "watch:css",
-        "watch:js",
-        "watch:icons"
+        "watch:icons",
+        "watch:js"
+      ]
+    },
+    "watch:css": {
+      "command": "npm run build:css -- --watch",
+      "service": true,
+      "files": [
+        "postcss.config.js"
+      ]
+    },
+    "watch:js": {
+      "command": "rollup -c --watch",
+      "service": true,
+      "files": [
+        "rollup.config.*"
       ]
     }
   },
@@ -240,7 +288,6 @@
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
-    "check-dependency-version-consistency": "^3.0.0",
     "clsx": "^1.1.0",
     "core-js": "^3.27.1",
     "cssnano": "^5.1.14",
