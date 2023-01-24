@@ -11,6 +11,10 @@
   },
   "repository": "SFDigitalServices/design-system",
   "files": [
+    "css",
+    "elements",
+    "icons",
+    "react",
     "dist",
     "lib",
     "tailwind.*",
