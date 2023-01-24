@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 // import Icon from '../../src/Icon'
-import { polymorphic, withClasses } from '../../src/utils'
+import { polymorphic, withClasses } from '../utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

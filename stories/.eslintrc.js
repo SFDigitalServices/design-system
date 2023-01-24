@@ -1,14 +1,13 @@
 /** @type {import('eslint').ESLint.ConfigData} */
 module.exports = {
-  ignorePatterns: [
-    'public',
-    '!.storybook/**'
-  ],
   rules: {
     'react/no-unescaped-entities': ['warn'],
-    'react/prop-types': ['off'],
+    'react/prop-types': ['warn'],
     'import/no-unresolved': ['warn', {
-      commonjs: true
+      commonjs: true,
+      ignore: [
+        '^@sfgov/design-system/'
+      ]
     }]
   }
 }

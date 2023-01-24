@@ -1,5 +1,5 @@
 import React from 'react'
-import { mergeProps, polymorphic, withPropsTransform } from '../../src/utils'
+import { mergeProps, polymorphic, withPropsTransform } from '../utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

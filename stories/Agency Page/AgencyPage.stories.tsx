@@ -48,7 +48,7 @@ export default {
 }
 
 export const AgencyPage = ({ agency }) => (
-  <div className="text-slate">
+  <div className='text-slate'>
     <Header />
 
     <Container>
@@ -82,7 +82,7 @@ export const AgencyPage = ({ agency }) => (
         <TileSection>
           {agency.featured_items.map(
             ({ id, feature_title: title, description }) => (
-              <QuickLink key={id} title={title} body={description} href="/#" />
+              <QuickLink key={id} title={title} body={description} href='/#' />
             )
           )}
         </TileSection>
@@ -102,14 +102,14 @@ export const AgencyPage = ({ agency }) => (
 
     {agency.news?.length && (
       <Section>
-        <SectionTitle title="News" type="news" hasMore />
+        <SectionTitle title='News' type='news' hasMore />
         <TileSection>
           {agency.news.map((newsItem) => (
             <NewsTile
               key={newsItem.id}
               title={newsItem.title}
               body={newsItem.posted_date}
-              href="#"
+              href='#'
             />
           ))}
         </TileSection>
@@ -118,14 +118,14 @@ export const AgencyPage = ({ agency }) => (
 
     {agency.resources?.length && (
       <Section>
-        <SectionTitle title="Resources" type="resources" hasMore />
+        <SectionTitle title='Resources' type='resources' hasMore />
         <TileSection>
           {agency.resources.map((resource) => (
             <ContentTile
               key={resource.id}
               title={resource.title}
               body={resource.description}
-              href="#"
+              href='#'
             />
           ))}
         </TileSection>
@@ -149,19 +149,19 @@ export const AgencyPage = ({ agency }) => (
     <ArchiveInformation
       agencyName={agency.title}
       email={agency.contact.email[0].email}
-      archiveURL="#"
+      archiveURL='#'
     />
 
-    <div className="bg-grey-dark text-white py-20 mt-60">
-      <div className="responsive-container">
-        <div className="flex items-center flex-wrap gap-20">
-          <form className="flex-auto flex items-center gap-20">
+    <div className='bg-grey-dark text-white py-20 mt-60'>
+      <div className='responsive-container'>
+        <div className='flex items-center flex-wrap gap-20'>
+          <form className='flex-auto flex items-center gap-20'>
             <span>Was this page helpful?</span>
-            <button className="btn btn-inverse">Yes</button>
-            <button className="btn btn-inverse">No</button>
+            <button className='btn btn-inverse'>Yes</button>
+            <button className='btn btn-inverse'>No</button>
           </form>
-          <div className="">
-            <a href="#" className="text-white hover:text-white">
+          <div className=''>
+            <a href='#' className='text-white hover:text-white'>
               Report something wrong with this page
             </a>
           </div>
@@ -169,6 +169,6 @@ export const AgencyPage = ({ agency }) => (
       </div>
     </div>
 
-    <footer className="bg-black text-white py-60"></footer>
+    <footer className='bg-black text-white py-60'></footer>
   </div>
 )

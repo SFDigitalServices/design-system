@@ -1,5 +1,5 @@
 import React, { ComponentType } from 'react'
-import iconMeta from '@sfgov/icons/design-system/react/index.json'
+import iconMeta from '../../icons/index.json'
 import { Monospace, styled, theme, Flex } from '@sfgov/design-system/react'
 import * as allSymbols from '@sfgov/design-system/react'
 import { ComponentMeta, Story } from '@storybook/react'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { polymorphic, withClasses, withPropsTransform } from '../../src/utils'
+import { polymorphic, withClasses, withPropsTransform } from '../utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

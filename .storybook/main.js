@@ -7,7 +7,7 @@ const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
 module.exports = {
   framework: '@storybook/react',
   stories: [
-    '../docs/**/*.stories.md{,x}',
+    '../storybook/docs/**/*.stories.md{,x}',
     {
       directory: '../stories/components',
       titlePrefix: 'Components/',

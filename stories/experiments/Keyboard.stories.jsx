@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // import Icon from '../../src/Icon'
-import { withClasses } from '../../src/utils'
+import { withClasses } from '../utils'
 import clsx from 'clsx'
 
 /** @type {import('@storybook/addons').StoryContext} */
@@ -57,6 +57,11 @@ export const KeyCombo = ({ keys, children = keys, glue, className, ...rest }) =>
 
 KeyCombo.propTypes = {
   keys: PropTypes.arrayOf(PropTypes.string),
+  children: PropTypes.any,
+  className: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
   glue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element

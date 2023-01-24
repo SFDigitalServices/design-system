@@ -1,6 +1,6 @@
 import React from 'react'
 // import Icon from '../../src/Icon'
-import { withClasses, withVariants } from '../../src/utils'
+import { withClasses, withVariants } from '../utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

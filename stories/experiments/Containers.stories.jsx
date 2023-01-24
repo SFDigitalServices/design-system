@@ -1,5 +1,5 @@
 import React from 'react'
-import { withClasses, Stub } from '../../src/utils'
+import { withClasses, Stub } from '../utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

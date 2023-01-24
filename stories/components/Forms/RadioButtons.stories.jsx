@@ -1,4 +1,4 @@
-import { Stub } from '../../../src/utils'
+import { Stub } from '../../utils'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

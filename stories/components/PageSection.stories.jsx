@@ -10,7 +10,7 @@ export default {
 
 export const NewsSection = args =>
   <Section>
-    {args.title && <SectionTitle title={args.title} type="news" hasMore />}
+    {args.title && <SectionTitle title={args.title} type='news' hasMore />}
     <TileSection>
       {[...Array(3)].map((_, i) =>
         <NewsTile key={i} title='Some news is occurring' body='APRIL 20, 2022' href='/#' />
@@ -22,7 +22,7 @@ NewsSection.args = { title: 'News' }
 
 export const ServicesSection = args =>
   <Section>
-    {args.title && <SectionTitle title={args.title} type="services" hasMore />}
+    {args.title && <SectionTitle title={args.title} type='services' hasMore />}
     <TitleLg>Types of services</TitleLg>
     <TileSection>
       {[...Array(3)].map((_, i) =>
@@ -44,7 +44,7 @@ export const QuickLinksSection = () =>
 
 export const EventsSection = args =>
   <Section>
-    {args.title && <SectionTitle title={args.title} type="events" hasMore />}
+    {args.title && <SectionTitle title={args.title} type='events' hasMore />}
     <TileSection>
       {[...Array(3)].map((_, i) =>
         <EventTile key={i} title='Here is an event' body='Thursday, April 10' href='/#' imgSrc={null} eventType='Music' />
