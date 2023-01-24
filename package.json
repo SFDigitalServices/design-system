@@ -16,7 +16,6 @@
     "icons",
     "react",
     "dist",
-    "lib",
     "tailwind.*",
     "svgo.config.*",
     "!website/**",
