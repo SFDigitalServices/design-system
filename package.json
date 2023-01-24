@@ -36,7 +36,7 @@
     "lint:js": "eslint --ext js,jsx,mjs,ts,tsx css elements icons react '*.{js,mjs}'",
     "lint:docs": "markdownlint --rules './lib/markdownlint/*.js' --ignore '**/node_modules/**' '**/*.md'",
     "lint:scripts": "shellcheck scripts/*.sh",
-    "lint:storybook": "eslint --ext js,jsx,ts,tsx storybook .storybook",
+    "lint:storybook": "eslint --ext js,jsx,ts,tsx stories .storybook",
     "lint:website": "npx eslint --ext js,jsx,ts,tsx website",
     "postbuild:website": "scripts/run-website-checks.sh",
     "postbuild:css": "npm run build:css-manifest",
@@ -87,6 +87,9 @@
       "files": [
         "dist/css",
         "!dist/css/**/*.json"
+      ],
+      "dependencies": [
+        "build:css"
       ]
     },
     "build:docs": {
@@ -114,7 +117,7 @@
       ]
     },
     "build:website-index": {
-      "command": "find public -type f | egrep -v '^storybook/' | perl -pe 's#^public/#/#' | sort > public/index.txt",
+      "command": "find public -type f | grep -v '^storybook/' | perl -pe 's#^public/#/#' | sort > public/index.txt",
       "dependencies": [
         "build:docs"
       ],
