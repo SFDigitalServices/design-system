@@ -20,7 +20,8 @@
     "tailwind.*",
     "svgo.config.*",
     "!website/**",
-    "!storybook/**"
+    "!storybook/**",
+    "!**/.eslint*"
   ],
   "scripts": {
     "build": "wireit",
