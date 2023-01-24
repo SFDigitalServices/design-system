@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react'
 import { ComponentMeta, Story } from '@storybook/react'
-import { Spotlight as SpotlightComponent, SpotlightProps } from '@sfgov/design-system/react'
+import { Spotlight as SpotlightComponent, SpotlightProps } from '../../react'
 
 const imgSrc =
   'https://sf.gov/sites/default/files/styles/default/public/2021-10/san-francisco-street-day-time.jpg?itok=5QqBW-AZ'

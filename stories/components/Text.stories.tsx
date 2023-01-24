@@ -1,5 +1,5 @@
 import React, { ComponentType } from 'react'
-import { styled, Text as T, TextProps, TextVariant } from '@sfgov/design-system/react'
+import { styled, Text as T, TextProps, TextVariant } from '../../react'
 import { ComponentMeta, Story } from '@storybook/react'
 import { StrictArgTypes } from '@storybook/csf'
 

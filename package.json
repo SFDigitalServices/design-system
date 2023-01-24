@@ -48,7 +48,7 @@
     "start:storybook": "wireit",
     "swizzle": "docusaurus swizzle",
     "watch": "wireit",
-    "watch:css": "echo '(watch css)'",
+    "watch:css": "npm run build:css -- --watch",
     "watch:js": "rollup -c --watch",
     "watch:icons": "echo 'watch icons (noop)'"
   },
@@ -165,8 +165,8 @@
     "start": {
       "dependencies": [
         "watch",
-        "./storybook:start",
-        "./website:start"
+        "start:website",
+        "start:storybook"
       ]
     },
     "start:website": {

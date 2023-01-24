@@ -12,7 +12,7 @@ import {
   LinkButton,
   Flex,
   styled
-} from '@sfgov/design-system/react'
+} from '../../react'
 
 type ButtonArgs = {
   text: string

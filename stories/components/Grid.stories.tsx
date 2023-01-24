@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react'
 import { ComponentMeta, Story } from '@storybook/react'
-import { Box, Grid } from '@sfgov/design-system/react'
+import { Box, Grid } from '../../react'
 
 type GridArgs = {
   showOverlay: boolean;

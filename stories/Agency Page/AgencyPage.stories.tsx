@@ -13,7 +13,7 @@ import {
   Section,
   SectionTitle,
   Spotlight
-} from '@sfgov/design-system/react'
+} from '../../react'
 
 import CityAdministrator from './city-admininistrator.json'
 import BoardOfAppeals from './board-appeals.json'

@@ -4,7 +4,7 @@ import {
   AboutSection as AboutSectionComponent,
   AboutSectionProps,
   Button
-} from '@sfgov/design-system/react'
+} from '../../react'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

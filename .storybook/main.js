@@ -1,4 +1,4 @@
-const { getPreloadLinks } = require('../dist/react')
+const { getPreloadLinks } = require('../react')
 
 const { NODE_ENV } = process.env
 const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
@@ -7,7 +7,7 @@ const storiesGlob = '**/*.stories.@(js|jsx|ts|tsx)'
 module.exports = {
   framework: '@storybook/react',
   stories: [
-    '../storybook/docs/**/*.stories.md{,x}',
+    '../stories/*.stories.md{,x}',
     {
       directory: '../stories/components',
       titlePrefix: 'Components/',

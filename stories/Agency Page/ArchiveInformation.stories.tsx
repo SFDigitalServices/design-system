@@ -3,7 +3,7 @@ import { ComponentMeta, Story } from '@storybook/react'
 import {
   ArchiveInformation as ArchiveInformationComponent,
   ArchiveInformationProps
-} from '@sfgov/design-system/react'
+} from '../../react'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {

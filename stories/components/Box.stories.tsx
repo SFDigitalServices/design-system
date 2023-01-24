@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react'
 import { ComponentMeta, Story } from '@storybook/react'
-import { Box, Container } from '@sfgov/design-system/react'
+import { Box, Container } from '../../react'
 
 type BoxArgs = {
   content: string;

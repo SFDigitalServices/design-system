@@ -3,7 +3,7 @@ import { ComponentMeta, Story } from '@storybook/react'
 import {
   AgencyHeader as AgencyHeaderComponent,
   AgencyHeaderProps
-} from '@sfgov/design-system/react'
+} from '../../react'
 
 /** @type {import('@storybook/addons').StoryContext} */
 export default {
