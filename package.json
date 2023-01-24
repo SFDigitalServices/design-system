@@ -133,7 +133,7 @@
       ]
     },
     "build:urls": {
-      "command": "egrep '\\.html$' public/index.txt | perl -pe 's#/index.html#/#; s#^$#/#' | sort > public/urls.txt",
+      "command": "scripts/build-urls.sh",
       "files": [
         "public/index.txt"
       ],
