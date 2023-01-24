@@ -1,4 +1,8 @@
-const { getPreloadLinks } = require('@sfgov/react')
+const { join } = require('path')
+const { getPreloadLinks } = require('../../../../dist/react')
+const aliases = {
+  '@sfgov/design-system': join(__dirname, '../../../..') + '/'
+}
 
 /** @type {import('@docusaurus/types').PluginModule} */
 module.exports = context => ({
@@ -20,5 +24,12 @@ module.exports = context => ({
     postcssOptions.plugins.push(require('tailwindcss'))
     postcssOptions.plugins.push(require('autoprefixer'))
     return postcssOptions
+  },
+  configureWebpack () {
+    return {
+      resolve: {
+        alias: aliases
+      }
+    }
   }
 })

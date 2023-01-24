@@ -1,4 +1,4 @@
-const theme = require('./src/theme')
+const theme = require('./css/src/theme')
 
 module.exports = {
   theme,

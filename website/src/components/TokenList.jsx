@@ -1,5 +1,5 @@
 import React from 'react'
-import tokens from 'sfgov-design-system/src/tokens'
+import tokens from '@sfgov/design-system/css/src/tokens'
 
 /**
  * 

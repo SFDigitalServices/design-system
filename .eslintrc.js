@@ -1,12 +1,28 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   parser: '@babel/eslint-parser',
-  plugins: ['sfgov', 'unicorn'],
-  extends: ['plugin:sfgov/recommended', 'plugin:storybook/recommended'],
+  ignorePatterns: [
+    'dist',
+    '*/public',
+    '**/.wireit',
+    '!.*.{js,mjs}',
+    '!.storybook'
+  ],
+  plugins: [
+    'sfgov',
+    'react',
+    'unicorn',
+    '@typescript-eslint/eslint-plugin'
+  ],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:sfgov/recommended',
+    'plugin:storybook/recommended'
+  ],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx']
       }
     },
     react: {
@@ -14,9 +30,12 @@ module.exports = {
     }
   },
   rules: {
-    'unicorn/expiring-todo-comments': ['error', {
-      allowWarningComments: true
+    'import/no-unresolved': ['error', {
+      ignore: [
+        '.*/dist/'
+      ]
     }],
+    'jsx-quotes': ['warn', 'prefer-single'],
     'no-trailing-spaces': ['warn', {
       ignoreComments: true
     }],
@@ -24,17 +43,35 @@ module.exports = {
       blankLine: 'always',
       prev: '*',
       next: 'function'
+    }],
+    'react/no-unescaped-entities': ['warn'],
+    'react/prop-types': ['warn', {
+      skipUndeclared: true
+    }],
+    'unicorn/expiring-todo-comments': ['error', {
+      allowWarningComments: true
     }]
   },
   reportUnusedDisableDirectives: true,
   overrides: [
     {
-      files: ['src/**/*.js'],
+      files: ['**/*.browser.{js,jsx,mjs,ts,tsx'],
       env: {
         browser: true
+      }
+    },
+    {
+      files: ['**/*.ts{,x}'],
+      parser: '@typescript-eslint/parser',
+      globals: {
+        JSX: true
       },
-      parserOptions: {
-        sourceType: 'module'
+      // these are not needed in TypeScript
+      rules: {
+        'no-redeclare': ['off'],
+        'no-undef': ['off'],
+        'no-unused-vars': ['off'],
+        'import/named': ['off']
       }
     },
     {
@@ -45,15 +82,15 @@ module.exports = {
       }
     },
     {
-      files: 'rollup.config.js',
+      files: '**/*.mjs',
       parserOptions: {
         sourceType: 'module'
       }
     },
     {
-      files: 'scripts/*.js',
+      files: '**/scripts/*.{,m}js',
       rules: {
-        'node/shebang': 0
+        'node/shebang': ['off']
       }
     }
   ]

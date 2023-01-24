@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import useIsBrowser from '@docusaurus/useIsBrowser'
-import { styled } from '@sfgov/react'
+import { styled } from '@sfgov/design-system/react'
 
 // tell React that there's an <sfgov-icon> custom element
 // with the "symbol" attribute

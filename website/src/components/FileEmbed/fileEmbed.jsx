@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import SFGovIcon from '../SFGovIcon'
 import FigmaLogo from './img/figma_logo'
 import StorybookLogo from './img/storybook_logo'
@@ -12,7 +12,7 @@ const FileEmbed = ({ embedURL }) => {
   const [hoverState, updateHoverState] = useState(false)
   let linkType = null
 
-  const figmaRegex = /https:\/\/([\w\.-]+\.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?$/
+  const figmaRegex = /https:\/\/([\w-.]+\.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?$/
 
   const storybookRegex = /story/i
 
@@ -25,7 +25,7 @@ const FileEmbed = ({ embedURL }) => {
   const service = { icon: <IconExternalLink />, label: 'External link' }
 
   if (linkType === 'storybook') {
-    service.icon =  <StorybookLogo />
+    service.icon = <StorybookLogo />
     service.label = 'Storybook'
   } else if (linkType === 'figma') {
     service.icon = <FigmaLogo />
@@ -64,13 +64,11 @@ const FileEmbed = ({ embedURL }) => {
         onMouseLeave={() => mouseLeave(false)} rel='noreferrer'
       >
         <div className='w-20 h-20'>
-          { whichServiceIcon() }
+          {service.icon}
         </div>
         {hoverState && (
           <div className='ml-4 items-center flex w-full '>
-            <span className='mr-8'>
-            { whichServiceLabel() }
-            </span>
+            <span className='mr-8'>{service.label}</span>
             <SFGovIcon symbol='chevron-right' />
           </div>
         )}

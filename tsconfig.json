@@ -1,0 +1,38 @@
+{
+  "files": [
+    "./elements/src/index.js",
+    "./react/src/index.ts"
+  ],
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/*.config.*",
+    "**/scripts/*.js"
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationMap": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@sfgov/design-system/css/*": [
+        "./css/*"
+      ],
+      "@sfgov/design-system/elements/*": [
+        "./elements/*"
+      ],
+      "@sfgov/design-system/icons/*": [
+        "./icons/*"
+      ],
+      "@sfgov/design-system/react/*": [
+        "./react/*"
+      ],
+    }
+  }
+}

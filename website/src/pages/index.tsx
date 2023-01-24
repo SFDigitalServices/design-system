@@ -3,7 +3,7 @@ import Layout from '@theme/Layout'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
 import SFGovIcon from '../components/SFGovIcon'
-import { BigDesc, Box, Button, Container, Flex, TitleLg } from '@sfgov/react'
+import { BigDesc, Box, Button, Container, Flex, TitleLg } from '@sfgov/design-system/react'
 
 export default function Home () {
   const { siteConfig } = useDocusaurusContext()

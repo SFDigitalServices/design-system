@@ -4,7 +4,7 @@ import filesize from 'filesize'
 import PublishedFileLink from './PublishedFileLink'
 
 export default function BundleTable ({ files = [], pkg, ...rest }) {
-  const hasDesc = files.some(file => file.desc)
+  const hasDesc = files?.some(file => file.desc)
   return (
     <table {...rest}>
       <thead>
@@ -23,7 +23,7 @@ export default function BundleTable ({ files = [], pkg, ...rest }) {
                   {path}
                 </PublishedFileLink>
               </td>
-              <td>{filesize(size)}</td>
+              <td>{filesize(size || 0)}</td>
               {hasDesc ? <td>{desc || null}</td> : null}
             </tr>
           )
