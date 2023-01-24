@@ -20,9 +20,7 @@ jobs:
       # this sets NODE_ENV=production for all of the build scripts
       - run: echo NODE_ENV=production >> $GITHUB_ENV
 
-      - run: npm run build -w sfgov-design-system
-      - run: npm run build -w @sfgov/icons
-      - run: npm run build -w @sfgov/react
+      - run: npm run build:ci
 
       - name: Git identity
         run: |

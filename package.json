@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "lerna run build",
+    "build:ci": "npm run -w sfgov-design-system -w @sfgov/react",
     "lint": "lerna run lint",
     "postbuild": "cp -rf storybook/public/ website/public/storybook/",
     "start": "wireit",
