@@ -30,10 +30,12 @@ module.exports = {
     }
   },
   rules: {
-    'jsx-quotes': ['warn', 'prefer-single'],
-    'unicorn/expiring-todo-comments': ['error', {
-      allowWarningComments: true
+    'import/no-unresolved': ['error', {
+      ignore: [
+        '.*/dist/'
+      ]
     }],
+    'jsx-quotes': ['warn', 'prefer-single'],
     'no-trailing-spaces': ['warn', {
       ignoreComments: true
     }],
@@ -45,6 +47,9 @@ module.exports = {
     'react/no-unescaped-entities': ['warn'],
     'react/prop-types': ['warn', {
       skipUndeclared: true
+    }],
+    'unicorn/expiring-todo-comments': ['error', {
+      allowWarningComments: true
     }]
   },
   reportUnusedDisableDirectives: true,
