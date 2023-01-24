@@ -123,6 +123,6 @@ module.exports = {
 
   plugins: [
     require('tailwindcss-interaction-variants'),
-    require('./css/lib/tailwind/details')
+    require('./lib/tailwind/details')
   ]
 }
