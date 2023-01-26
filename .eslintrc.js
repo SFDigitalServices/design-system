@@ -2,10 +2,15 @@
 module.exports = {
   parser: '@babel/eslint-parser',
   ignorePatterns: [
-    'dist',
-    '*/public',
-    '**/.wireit',
+    // built files
+    'elements/index.*',
+    'react/index.*',
+    'public/**',
+    // caches, etc.
+    '.wireit/**',
+    // do _not_ ignore root JS configs
     '!.*.{js,mjs}',
+    // do _not_ ignore Storybook configs
     '!.storybook'
   ],
   plugins: [
@@ -55,7 +60,7 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   overrides: [
     {
-      files: ['**/*.browser.{js,jsx,mjs,ts,tsx'],
+      files: ['elements/src/**/*.js'],
       env: {
         browser: true
       }
