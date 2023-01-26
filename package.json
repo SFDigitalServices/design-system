@@ -35,6 +35,7 @@
     "build:storybook": "wireit",
     "build:urls": "wireit",
     "build:website": "wireit",
+    "build:website-index": "wireit",
     "figma-export": "env-cmd -f .env figma-export use-config",
     "lint": "wireit",
     "lint:css": "stylelint '**/src/*.css'",
@@ -47,6 +48,7 @@
     "postbuild:css": "npm run build:css-manifest",
     "postfigma-export": "eslint --fix react/src/icons",
     "prepublishOnly": "scripts/prepublish-checks.sh",
+    "public-dir": "mkdir -p public",
     "serve:docs": "docusaurus serve website --dir public",
     "start": "wireit",
     "start:website": "wireit",
@@ -98,7 +100,7 @@
       ]
     },
     "build:docs": {
-      "command": "docusaurus build website --out-dir public",
+      "command": "docusaurus build website --out-dir $(pwd)/public",
       "dependencies": [
         "build:css",
         "build:js",
@@ -108,7 +110,9 @@
         "website/**"
       ],
       "output": [
-        "public"
+        "public",
+        "!public/{index,urls}.txt",
+        "!public/storybook"
       ]
     },
     "build:js": {
@@ -153,6 +157,7 @@
         "public/storybook"
       ],
       "dependencies": [
+        "public-dir",
         "build:css",
         "build:js"
       ]
@@ -166,7 +171,7 @@
         "public/urls.txt"
       ],
       "dependencies": [
-        "build:docs"
+        "build:website-index"
       ]
     },
     "build:website": {
