@@ -1,10 +1,19 @@
+# etc.
 **/.DS_Store
-**/.env
-**/.eslintcache
 **/*.log
-**/.wireit
-**/build
-**/dist
+
+# secrets
+/.env
+
+# caches
+**/.eslintcache
+/.wireit/
+/node_modules/
+
+# built files
+/css/*.css*
+/css/*.json
+/elements/index.*
+/react/index.*
+/public/
 **/manifest.json
-node_modules/
-public/
