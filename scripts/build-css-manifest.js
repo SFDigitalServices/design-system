@@ -66,10 +66,10 @@ const tailwindCategories = [
 ]
 
 const utilities = [
-  getUtilities('dist/css/utilities.css').byProperty
+  getUtilities('css/utilities.css').byProperty
 ]
 const manifest = buildManifest(utilities)
-writeFileSync('dist/css/utilities.json', JSON.stringify(manifest, null, 2), 'utf8')
+writeFileSync('css/utilities.json', JSON.stringify(manifest, null, 2), 'utf8')
 
 function buildManifest (utilities) {
   const manifest = tailwindCategories
