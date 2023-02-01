@@ -4,6 +4,7 @@ const icons = data.components
 
 const templates = {}
 
+// eslint-disable-next-line no-unused-vars
 for (const [_, { id, svg }] of Object.entries(icons)) {
   const template = createElementTemplate(svg)
   templates[id] = template
