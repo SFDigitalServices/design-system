@@ -4,7 +4,7 @@ const icons = data.components
 
 const templates = {}
 
-for (const [id, { svg }] of Object.entries(icons)) {
+for (const [_, { id, svg }] of Object.entries(icons)) {
   const template = createElementTemplate(svg)
   templates[id] = template
 }

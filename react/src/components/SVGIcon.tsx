@@ -31,6 +31,9 @@ type Size = { width: number, height: number }
  *   establishes a proportional height according to browser intrinsic aspect ratio rules.
  */
 export function createStyledIcon (IconComponent: ComponentType<SVGProps>, size?: Size) {
+  if (!IconComponent) {
+    throw new Error(`expected an IconComponent but got ${typeof IconComponent}`)
+  }
   const Icon = withFixedProps(SVGIcon, { as: IconComponent })
   return Object.assign(Icon, {
     displayName: IconComponent.displayName || IconComponent.name,
