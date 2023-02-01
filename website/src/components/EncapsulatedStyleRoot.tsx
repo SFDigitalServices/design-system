@@ -2,7 +2,7 @@ import React from 'react'
 import root from 'react-shadow'
 import useIsBrowser from '@docusaurus/useIsBrowser'
 // eslint-disable-next-line import/no-webpack-loader-syntax
-import sfdsStyles from '!!raw-loader!@sfgov/design-system/dist/css/sfds.css'
+import sfdsStyles from '!!raw-loader!@sfgov/design-system/css/sfds.css'
 import { getCssText, GlobalStaticStyles } from '@sfgov/design-system/react'
 
 export default function EncapsulatedStyleRoot ({ children, ...props }) {

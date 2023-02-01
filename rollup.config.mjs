@@ -37,12 +37,12 @@ export default [
     plugins: commonPlugins,
     output: [
       {
-        file: 'dist/elements/index.mjs',
+        file: 'elements/index.mjs',
         format: 'esm',
         sourcemap
       },
       {
-        file: 'dist/elements/index.js',
+        file: 'elements/index.js',
         format: 'umd',
         name: 'sfgov.elements',
         sourcemap
@@ -54,12 +54,12 @@ export default [
     plugins: commonPlugins,
     output: [
       {
-        file: 'dist/react/index.mjs',
+        file: 'react/index.mjs',
         format: 'esm',
         sourcemap
       },
       {
-        file: 'dist/react/index.js',
+        file: 'react/index.js',
         format: 'umd',
         name: 'sfgov.react',
         sourcemap,

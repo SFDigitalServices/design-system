@@ -1,6 +1,7 @@
 import React from 'react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { addParameters, addDecorator } from '@storybook/react'
+// eslint-disable-next-line import/no-unresolved
 import { Box, breakpoints } from '../react'
 import { getDocsBaseUrl } from '../stories/utils'
 

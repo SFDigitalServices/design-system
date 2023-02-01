@@ -1,10 +1,10 @@
 {
   "files": [
-    "./elements/src/index.js",
-    "./react/src/index.ts"
+    "react/src/index.ts"
   ],
   "exclude": [
-    "**/dist/**",
+    "elements/index.{js,mjs}",
+    "react/index.{js,mjs}",
     "**/node_modules/**",
     "**/*.config.*",
     "**/scripts/*.js"

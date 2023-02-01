@@ -18,11 +18,11 @@ function assert_exists () {
 
 echo "Checking for expected files..."
 assert_exists \
-  dist/css/{sfds,base,components,typography,utilities}.css \
-  elements/index.{js,mjs} dist/elements/index.{js,mjs} \
+  css/{sfds,base,components,typography,utilities}.css \
+  elements/index.{js,mjs,d.ts} \
   icons/index.json icons/svg/{accessibility,plus,minus}.svg \
-  react/index.{js,mjs} dist/react/index.{js,mjs} \
-  dist/manifest.json \
+  react/index.{js,mjs,d.ts} \
+  manifest.json \
 || exit 1
 
 echo "🚀 Good to go!"

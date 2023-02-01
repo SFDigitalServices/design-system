@@ -77,23 +77,23 @@
       ]
     },
     "build:css": {
-      "command": "postcss --verbose -d dist/css 'css/src/*.css'",
+      "command": "postcss --verbose -d css 'css/src/*.css'",
       "files": [
-        "css/**",
-        "postcss.config.js"
+        "css/src/**",
+        "postcss.config.js",
+        "package.json"
       ],
       "output": [
-        "dist/**/*.css{,.map}"
+        "css/*.css{,.map,.json}"
       ]
     },
     "build:css-manifest": {
       "command": "node scripts/build-css-manifest.js",
       "output": [
-        "dist/css/utilties.json"
+        "css/utilties.json"
       ],
       "files": [
-        "dist/css",
-        "!dist/css/**/*.json"
+        "css/*.css"
       ],
       "dependencies": [
         "build:css"
@@ -118,11 +118,12 @@
     "build:js": {
       "command": "rollup -c",
       "files": [
-        "{elements,icons,react}/src/**",
-        "*.config.*"
+        "{elements,react}/src/**",
+        "*.config.*",
+        "package.json"
       ],
       "output": [
-        "dist/**/*.{js,mjs}{,.map}"
+        "{elements,react}/*.{js,mjs,ts}{,.map}"
       ]
     },
     "build:website-index": {
@@ -140,14 +141,14 @@
       ]
     },
     "build:manifest": {
-      "command": "scripts/manifest.mjs 'dist/**/*.{css,js,mjs,svg}'",
+      "command": "scripts/manifest.mjs 'css/*.css' '{elements,react}/*.{js,mjs}' 'icons/svg/*.svg'",
       "dependencies": [
         "build:css",
         "build:js",
         "build:css-manifest"
       ],
       "output": [
-        "dist/manifest.json"
+        "manifest.json"
       ]
     },
     "build:storybook": {
