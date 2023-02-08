@@ -36,7 +36,7 @@ export default function ColorSwatch ({ value, label, addBorder, className, child
                 <div className='flex justify-between items-center font-mono'>
                   {value}
                   <div className={isHover ? 'inherit' : 'text-white'}>
-                  <SFGovIcon symbol='clipboard' />
+                  <SFGovIcon symbol='document' />
                   </div>
                 </div>
                 {children}

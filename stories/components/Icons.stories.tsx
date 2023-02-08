@@ -26,7 +26,7 @@ export default {
     symbol: symbolNames[0],
     color: undefined,
     bg: undefined,
-    width: undefined,
+    width: 20,
     height: undefined
   },
   argTypes: {
@@ -55,6 +55,13 @@ export default {
     },
     width: {
       name: 'Width',
+      control: {
+        type: 'number',
+        min: 8
+      }
+    },
+    height: {
+      name: 'Height',
       control: {
         type: 'number',
         min: 8

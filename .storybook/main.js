@@ -22,6 +22,11 @@ module.exports = {
       directory: '../stories/Agency Page',
       titlePrefix: 'Agency Page/',
       files: storiesGlob
+    },
+    {
+      directory: '../stories/Pages',
+      titlePrefix: 'Pages/',
+      files: storiesGlob
     }
   ],
   core: {

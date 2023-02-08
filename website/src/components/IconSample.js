@@ -36,7 +36,7 @@ export default function IconSample ({
                 <div className='flex justify-between items-center font-mono' style={{ textTransform: 'lowercase' }}>
                   {iconInfo}
                   <div className={isHover ? 'inherit' : 'text-white'}>
-                    <SFGovIcon symbol='clipboard' />
+                    <SFGovIcon symbol='document' />
                   </div>
                 </div>
 
