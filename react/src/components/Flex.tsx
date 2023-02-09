@@ -13,4 +13,7 @@ export const Flex = styled(Box, {
   }
 })
 
-export type FlexVariant = VariantProps<typeof Flex>
+export type FlexProps = VariantProps<typeof Flex>
+
+// FIXME[1.0]: remove this alias
+export type FlexVariant = FlexProps
