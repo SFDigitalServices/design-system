@@ -6,7 +6,7 @@
  * work well for content-centric websites.
  */
 
-@import '../../../dist/css/utilities.css';
+@import '../../../css/utilities.css';
 @import 'masonry-styles.css';
 
 @tailwind base;

@@ -33,6 +33,6 @@ globby([...globs, '!**/manifest.json'])
 
     // eslint-disable-next-line promise/no-nesting, promise/always-return
     return ensureDir('dist').then(() => {
-      writeFileSync('dist/manifest.json', JSON.stringify(manifest, null, 2), 'utf8')
+      writeFileSync('manifest.json', JSON.stringify(manifest, null, 2), 'utf8')
     })
   })

@@ -1,5 +1,5 @@
 const { join } = require('path')
-const { getPreloadLinks } = require('../../../../dist/react')
+const { getPreloadLinks } = require('../../../../react')
 const aliases = {
   '@sfgov/design-system': join(__dirname, '../../../..') + '/'
 }

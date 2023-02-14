@@ -59,7 +59,7 @@ http {
     charset UTF-8;
     port_in_redirect off;
     keepalive_timeout 5;
-    root website/public;
+    root public;
 
     location / {
       try_files $uri $uri/ /404.html;
