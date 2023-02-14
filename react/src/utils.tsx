@@ -1,4 +1,8 @@
-import React, { Component, ComponentProps, ComponentType } from 'react'
+import React, { ComponentProps, ComponentType } from 'react'
+
+// XXX: export type { VariantProps } from '@stitches/react'
+
+export type VariantProps<T> = JSX.IntrinsicAttributes & (T extends ComponentType ? ComponentProps<T> : T)
 
 export function identity (v: any) {
   return v
@@ -21,5 +25,3 @@ export function withFixedProps (
     return <Component {...fixed} {...props} />
   }
 }
-
-export type VariantProps<T, P extends {} = T extends ComponentType ? ComponentProps<T> : T> = T & JSX.IntrinsicAttributes
