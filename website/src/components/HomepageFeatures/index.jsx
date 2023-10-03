@@ -23,7 +23,7 @@ const FeatureList = [
   {
     section: 'dev',
     title: 'Tokens',
-    link: 'libraries/iconsLibrary',
+    link: 'libraries/tokens',
     description:
       'Implemented with tokens to allow for predictable implementation and maintenance',
     img: SvgToken
