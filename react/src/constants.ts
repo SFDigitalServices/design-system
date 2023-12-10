@@ -44,5 +44,14 @@ export const defaultFonts: FontSpec[] = [
     weights: {
       normal: 400
     }
+  },
+  {
+    name: 'Rubik',
+    fallbacks: ['ui-sans-serif', 'san-serif'],
+    weights: {
+      light: 300,
+      normal: 400,
+      bold: 600
+    }
   }
 ]

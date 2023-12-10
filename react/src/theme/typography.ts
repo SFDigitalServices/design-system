@@ -3,8 +3,8 @@ import { defaultFonts } from '../constants'
 
 export const fonts = {
   body: '$sans',
-  sans: '$RobotoFlex',
-  slab: '$RobotoSlab',
+  sans: '$Rubik',
+  slab: '$Rubik',
   monospace: '$RobotoMono',
   chinese: '$NotoSansTC',
   ...Object.fromEntries(
