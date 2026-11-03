@@ -1,0 +1,98 @@
+{
+    "_id": "66902d1ca4fde4075251ba2d",
+    "title": "Honeypot",
+    "name": "honeypot",
+    "path": "honeypot",
+    "type": "form",
+    "display": "wizard",
+    "tags": [],
+    "owner": "611c28f158fe8c727ee90c31",
+    "components": [
+        {
+            "title": "About you",
+            "collapsible": false,
+            "key": "aboutYou",
+            "tags": [
+                "shared"
+            ],
+            "type": "panel",
+            "label": "About you",
+            "breadcrumbClickable": true,
+            "buttonSettings": {
+                "previous": true,
+                "cancel": true,
+                "next": true
+            },
+            "navigateOnEnter": false,
+            "saveOnEnter": false,
+            "scrollToTop": false,
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "Name",
+                    "tableView": true,
+                    "validate": {
+                        "required": false,
+                        "customMessage": "Enter a name.",
+                        "maxLength": 50
+                    },
+                    "errorLabel": "You must enter a name.",
+                    "errors": {
+                        "pattern": "Your name includes invalid characters"
+                    },
+                    "key": "fullName",
+                    "type": "textfield",
+                    "input": true
+                },
+                {
+                    "label": "Email",
+                    "tableView": true,
+                    "validate": {
+                        "required": false,
+                        "customMessage": "Enter a valid email address."
+                    },
+                    "errorLabel": "You must enter a valid email address.",
+                    "key": "email",
+                    "type": "email",
+                    "input": true
+                }
+            ],
+            "lockKey": true,
+            "source": "6247369655627e0ba58291fd",
+            "isNew": true
+        },
+        {
+            "title": "More stuff",
+            "collapsible": false,
+            "key": "page2",
+            "type": "panel",
+            "label": "Page 2",
+            "components": [
+                {
+                    "label": "Phone number",
+                    "inputMask": "999-999-9999",
+                    "tableView": true,
+                    "validate": {
+                        "customMessage": "Enter a valid phone number."
+                    },
+                    "errorLabel": "You must enter a valid phone number.",
+                    "key": "phoneNumber",
+                    "type": "phoneNumber",
+                    "input": true
+                }
+            ],
+            "input": false,
+            "tableView": false
+        }
+    ],
+    "properties": {},
+    "project": "60da60c968de9779841a38ab",
+    "controller": "",
+    "revisions": "",
+    "submissionRevisions": "",
+    "_vid": 0,
+    "created": "2024-07-11T19:06:04.478Z",
+    "modified": "2024-07-25T21:19:45.455Z",
+    "machineName": "dev-ruehbbakcoznmcf:honeypot"
+}

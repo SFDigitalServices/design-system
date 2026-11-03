@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconClipboard = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M12 2C13.3062 2 14.4175 2.83481 14.8293 4H17V5H20V22H4V5H7V4H9.17071C9.58254 2.83481 10.6938 2 12 2ZM11 5C11 4.44772 11.4477 4 12 4C12.5523 4 13 4.44772 13 5V6H15V7H9V6H11V5ZM7 7H6V20H18V7H17V9H7V7Z" /></svg>;
+export default IconClipboard;

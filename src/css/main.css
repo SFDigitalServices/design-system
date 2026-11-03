@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ol,
+  ul {
+    @apply mx-0 my-16 pl-40;
+  }
+
+  /* Wagtail UI only allows for 5-layers deep of nesting. */
+  ol {
+    list-style: decimal;
+
+    ol {
+      list-style: lower-alpha;
+      ol {
+        list-style: lower-roman;
+        ol {
+          list-style: decimal;
+          ol {
+            list-style: lower-alpha;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  a {
+    @apply underline text-primary500;
+  }
+
+  h2 {
+    @apply text-desktop-heading-xxl;
+  }
+
+  input::placeholder {
+    @apply text-neutral600;
+  }
+
+  :focus-visible {
+    @apply rounded-4 outline-focus;
+  }
+
+  .skip-to-main-content:focus {
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+    z-index: 60 !important;
+  }
+
+  /* Calendar styles */
+  .available-times-focus-heading {
+    position: relative;
+  }
+
+  .available-times-focus-heading:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .available-times-focus-heading:focus-visible::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 0.2em;
+    width: 4px;
+    height: 1em;
+    background: currentColor;
+    border-radius: 2px;
+  }
+
+  .day-today {
+    position: relative !important;
+  }
+  .day-today::after {
+    content: var(--tw-content) !important;
+    position: absolute !important;
+    bottom: -6px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: theme(colors.neutral500);
+    border-radius: 9999px !important;
+    width: 6px !important;
+    height: 6px !important;
+  }
+}

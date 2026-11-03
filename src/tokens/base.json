@@ -1,0 +1,1599 @@
+{
+  "Primary": {
+    "50": {
+      "value": "#e9f1fe",
+      "type": "color",
+      "description": "some shade of color with some percentage of lightness"
+    },
+    "100": {
+      "value": "#dfebfd",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#afccf7",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#83aceb",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#5a8dd9",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#386ebf",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#1b519e",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#043578",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#001d4e",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#000925",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#1b52a1",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Secondary": {
+    "100": {
+      "value": "#daeff0",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#a2d5d8",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#6ababf",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#2b9ea5",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#008189",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#00646c",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#00464e",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#002a30",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#001013",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#15a5ad",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Accent": {
+    "100": {
+      "value": "#fde4d7",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#f6bc9b",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#e79362",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#d26d28",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#b64a00",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#942a00",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#6f0f00",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#470000",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#200000",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#e97727",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Information": {
+    "100": {
+      "value": "#daebff",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#a3ccff",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#6faaff",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#4088fd",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#1066e5",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#0046c2",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#002996",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#001264",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#000331",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#1168e8",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Success": {
+    "100": {
+      "value": "#def1d6",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#aed998",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#80bf5b",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#55a30f",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#2d8600",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#026800",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#004a00",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#002c00",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#001100",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#6cc627",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Warning": {
+    "50": {
+      "value": "#faefe1",
+      "type": "color",
+      "description": "Shade color with some percentage of lightness"
+    },
+    "100": {
+      "value": "#f7e7d3",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#e8c492",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#d69f50",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#bf7d00",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#a35d00",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#843f00",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#612600",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#3e1200",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#1b0400",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#efa315",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Danger": {
+    "100": {
+      "value": "#ffe0d9",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#ffb0a2",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#ff7f6e",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#ec4e3e",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#d0110b",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#ac0000",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#810000",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#550000",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#280000",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#d81c14",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Neutral": {
+    "10": {
+      "value": "#f7f8f8",
+      "type": "color",
+      "description": "This is used exclusively for zebra-striping lists."
+    },
+    "50": {
+      "value": "#eff0f0",
+      "type": "color",
+      "description": "This color is the background color for containers only"
+    },
+    "100": {
+      "value": "#e9eaea",
+      "type": "color",
+      "description": "Shade color with 93.6% of lightness"
+    },
+    "200": {
+      "value": "#c9caca",
+      "type": "color",
+      "description": "Shade color with 83.9% of lightness"
+    },
+    "300": {
+      "value": "#aaabab",
+      "type": "color",
+      "description": "Shade color with 74% of lightness"
+    },
+    "400": {
+      "value": "#8b8d8d",
+      "type": "color",
+      "description": "Shade color with 64.1% of lightness"
+    },
+    "500": {
+      "value": "#6e7070",
+      "type": "color",
+      "description": "Shade color with 54.3% of lightness"
+    },
+    "600": {
+      "value": "#535454",
+      "type": "color",
+      "description": "Shade color with 44.4% of lightness"
+    },
+    "700": {
+      "value": "#383939",
+      "type": "color",
+      "description": "Shade color with 34.5% of lightness"
+    },
+    "800": {
+      "value": "#202121",
+      "type": "color",
+      "description": "Shade color with 24.7% of lightness"
+    },
+    "900": {
+      "value": "#0b0b0b",
+      "type": "color",
+      "description": "Shade color with 14.9% of lightness"
+    },
+    "source": {
+      "value": "#0b0c0c",
+      "type": "color",
+      "description": "Source color"
+    }
+  },
+  "Black-White": {
+    "White": {
+      "value": "#fcfcfc",
+      "type": "color"
+    },
+    "Black": {
+      "value": "#0b0c0c",
+      "type": "color"
+    }
+  },
+  "External Brands": {
+    "X-Twitter": {
+      "value": "#000000",
+      "type": "color"
+    },
+    "Mastodon": {
+      "value": "#6364ff",
+      "type": "color"
+    },
+    "Facebook": {
+      "value": "#1877f2",
+      "type": "color"
+    },
+    "Instagram": {
+      "value": "#ff0076",
+      "type": "color"
+    },
+    "Threads": {
+      "value": "#000000",
+      "type": "color"
+    },
+    "Linkedin": {
+      "value": "#0077b5",
+      "type": "color"
+    },
+    "Tiktok": {
+      "value": "#000000",
+      "type": "color"
+    },
+    "YouTube": {
+      "value": "#ff0000",
+      "type": "color"
+    }
+  },
+  "Primitive": {
+    "0": {
+      "value": "0",
+      "type": "number"
+    },
+    "1": {
+      "value": "4",
+      "type": "number"
+    },
+    "2": {
+      "value": "8",
+      "type": "number"
+    },
+    "3": {
+      "value": "12",
+      "type": "number"
+    },
+    "4": {
+      "value": "16",
+      "type": "number"
+    },
+    "5": {
+      "value": "20",
+      "type": "number"
+    },
+    "6": {
+      "value": "24",
+      "type": "number"
+    },
+    "7": {
+      "value": "28",
+      "type": "number"
+    },
+    "8": {
+      "value": "32",
+      "type": "number"
+    },
+    "9": {
+      "value": "36",
+      "type": "number"
+    },
+    "10": {
+      "value": "40",
+      "type": "number"
+    },
+    "11": {
+      "value": "44",
+      "type": "number"
+    },
+    "12": {
+      "value": "48",
+      "type": "number"
+    },
+    "13": {
+      "value": "52",
+      "type": "number"
+    },
+    "14": {
+      "value": "56",
+      "type": "number"
+    },
+    "15": {
+      "value": "60",
+      "type": "number"
+    }
+  },
+  "none": {
+    "value": "{Primitive.0}",
+    "type": "spacing"
+  },
+  "space-xs": {
+    "value": "{Primitive.3}",
+    "type": "spacing"
+  },
+  "space-sm": {
+    "value": "{Primitive.4}",
+    "type": "spacing"
+  },
+  "space-md": {
+    "value": "{Primitive.5}",
+    "type": "spacing"
+  },
+  "space-lg": {
+    "value": "{Primitive.7}",
+    "type": "spacing"
+  },
+  "space-xl": {
+    "value": "{Primitive.8}",
+    "type": "spacing"
+  },
+  "space-xxl": {
+    "value": "{Primitive.9}",
+    "type": "spacing"
+  },
+  "spacing-3xl": {
+    "value": "{Primitive.7}",
+    "type": "spacing"
+  },
+  "Inset": {
+    "square": {
+      "default": {
+        "value": "{Primitive.5} {Primitive.5}",
+        "type": "spacing"
+      },
+      "narrow": {
+        "value": "{Primitive.3} {Primitive.3}",
+        "type": "spacing"
+      },
+      "wide": {
+        "value": "{Primitive.7} {Primitive.7}",
+        "type": "spacing"
+      }
+    },
+    "squish": {
+      "default": {
+        "value": "{Primitive.3} {Primitive.5}",
+        "type": "spacing"
+      },
+      "narrow": {
+        "value": "{Primitive.2} {Primitive.3}",
+        "type": "spacing"
+      },
+      "wide": {
+        "value": "{Primitive.5} {Primitive.7}",
+        "type": "spacing"
+      }
+    },
+    "stretch": {
+      "default": {
+        "value": "{Primitive.5} {Primitive.3}",
+        "type": "spacing"
+      },
+      "narrow": {
+        "value": "{Primitive.3} {Primitive.2}",
+        "type": "spacing"
+      },
+      "wide": {
+        "value": "{Primitive.7} {Primitive.5}",
+        "type": "spacing"
+      }
+    }
+  },
+  "lineHeights": {
+    "0": {
+      "value": "56",
+      "type": "lineHeights"
+    },
+    "1": {
+      "value": "32",
+      "type": "lineHeights"
+    },
+    "2": {
+      "value": "52",
+      "type": "lineHeights"
+    },
+    "3": {
+      "value": "44",
+      "type": "lineHeights"
+    },
+    "4": {
+      "value": "28",
+      "type": "lineHeights"
+    },
+    "5": {
+      "value": "24",
+      "type": "lineHeights"
+    },
+    "6": {
+      "value": "20",
+      "type": "lineHeights"
+    },
+    "7": {
+      "value": "48",
+      "type": "lineHeights"
+    },
+    "8": {
+      "value": "40",
+      "type": "lineHeights"
+    },
+    "9": {
+      "value": "40",
+      "type": "lineHeights"
+    }
+  },
+  "fontWeights": {
+    "roboto-slab-0": {
+      "value": "SemiBold",
+      "type": "fontWeights"
+    },
+    "roboto-flex-1": {
+      "value": "Regular",
+      "type": "fontWeights"
+    },
+    "roboto-slab-2": {
+      "value": "Medium",
+      "type": "fontWeights"
+    },
+    "roboto-flex-3": {
+      "value": "SemiBold",
+      "type": "fontWeights"
+    },
+    "roboto-flex-4": {
+      "value": "Bold",
+      "type": "fontWeights"
+    },
+    "roboto-flex-5": {
+      "value": "ExtraBold",
+      "type": "fontWeights"
+    },
+    "roboto-flex-6": {
+      "value": "Italic",
+      "type": "fontWeights"
+    },
+    "roboto-flex-7": {
+      "value": "Medium",
+      "type": "fontWeights"
+    },
+    "roboto-flex-8": {
+      "value": "Italic",
+      "type": "fontWeights"
+    },
+    "roboto-slab-4": {
+      "value": "Bold",
+      "type": "fontWeights"
+    },
+    "roboto-mono-8": {
+      "value": "Regular",
+      "type": "fontWeights"
+    }
+  },
+  "fontSize": {
+    "0": {
+      "value": "14",
+      "type": "fontSizes"
+    },
+    "1": {
+      "value": "16",
+      "type": "fontSizes"
+    },
+    "2": {
+      "value": "20",
+      "type": "fontSizes"
+    },
+    "3": {
+      "value": "24",
+      "type": "fontSizes"
+    },
+    "4": {
+      "value": "32",
+      "type": "fontSizes"
+    },
+    "5": {
+      "value": "40",
+      "type": "fontSizes"
+    },
+    "6": {
+      "value": "46",
+      "type": "fontSizes"
+    },
+    "7": {
+      "value": "46",
+      "type": "fontSizes"
+    }
+  },
+  "letterSpacing": {
+    "0": {
+      "value": "0%",
+      "type": "letterSpacing"
+    },
+    "1": {
+      "value": "1%",
+      "type": "letterSpacing"
+    },
+    "2": {
+      "value": "0",
+      "type": "letterSpacing"
+    }
+  },
+  "paragraphSpacing": {
+    "0": {
+      "value": "0",
+      "type": "paragraphSpacing"
+    }
+  },
+  "Desktop": {
+    "Display": {
+      "XXXL": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.0}",
+          "fontSize": "{fontSize.6}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 46/56, Semibold"
+      },
+      "Lg": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-1}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 24/32, Regular"
+      }
+    },
+    "Heading": {
+      "XXL": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-2}",
+          "lineHeight": "{lineHeights.2}",
+          "fontSize": "{fontSize.5}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 40/52, Medium"
+      },
+      "XL-Serif": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.3}",
+          "fontSize": "{fontSize.4}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 32/44, SemiBold"
+      },
+      "XL-Serif-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.3}",
+          "fontSize": "{fontSize.4}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Desktop, Roboto Slab, 32/44, SemiBold"
+      },
+      "XL-Sans": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.3}",
+          "fontSize": "{fontSize.4}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 32/44, SemiBold"
+      },
+      "XL-Sans-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.3}",
+          "fontSize": "{fontSize.4}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Desktop, Roboto Flex, 32/44, SemiBold, Underline"
+      },
+      "Lg": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-2}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 24/32, Medium"
+      },
+      "M": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-4}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 20/28, Bold"
+      },
+      "M-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-4}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/28, Bold, Link"
+      },
+      "S": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-5}",
+          "lineHeight": "{lineHeights.5}",
+          "fontSize": "{fontSize.1}",
+          "letterSpacing": "{letterSpacing.1}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.uppercase}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 16/24, ExtraBold"
+      },
+      "XS": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-1}",
+          "lineHeight": "{lineHeights.6}",
+          "fontSize": "{fontSize.0}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 14/20, Light"
+      },
+      "Lg List Item": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 24/32, Semibold"
+      }
+    }
+  },
+  "Tablet": {
+    "Display": {
+      "XXXL": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.7}",
+          "fontSize": "{fontSize.5}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 40/48, Semibold"
+      },
+      "Lg": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-1}",
+          "lineHeight": "{lineHeights.5}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/24, Regular"
+      }
+    },
+    "Heading": {
+      "XXL": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-2}",
+          "lineHeight": "{lineHeights.3}",
+          "fontSize": "{fontSize.4}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 32/44, Medium"
+      },
+      "XL-Serif": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 24/32, SemiBold"
+      },
+      "XL-Serif-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 24/32, SemiBold, Underline"
+      },
+      "XL-Sans": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 24/32, SemiBold"
+      },
+      "XL-Sans-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 24/32, SemiBold, Underline"
+      },
+      "Lg": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-2}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 20/28, Medium"
+      },
+      "M": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-4}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 24/32, Medium"
+      },
+      "M-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-4}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/28, Bold, Underline"
+      },
+      "S": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-5}",
+          "lineHeight": "{lineHeights.5}",
+          "fontSize": "{fontSize.1}",
+          "letterSpacing": "{letterSpacing.1}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.uppercase}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 16/24, ExtraBold"
+      },
+      "XS": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-1}",
+          "lineHeight": "{lineHeights.6}",
+          "fontSize": "{fontSize.0}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 14/20, Light"
+      },
+      "Lg List Item": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/28, Semibold"
+      }
+    }
+  },
+  "Mobile": {
+    "Display": {
+      "XXXL": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.8}",
+          "fontSize": "{fontSize.4}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 32/40, Semibold"
+      },
+      "Lg": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-1}",
+          "lineHeight": "{lineHeights.5}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/24, Regular"
+      }
+    },
+    "Heading": {
+      "XXL": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-2}",
+          "lineHeight": "{lineHeights.1}",
+          "fontSize": "{fontSize.3}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 24/32, Medium"
+      },
+      "XL-Serif": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 20/28, SemiBold"
+      },
+      "XL-Serif-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-0}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 20/28, SemiBold, Underline"
+      },
+      "XL-Sans": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/28, SemiBold"
+      },
+      "XL-Sans-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/28, SemiBold, Underline"
+      },
+      "Lg": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-slab}",
+          "fontWeight": "{fontWeights.roboto-slab-2}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Slab, 20/28, Medium"
+      },
+      "M": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-4}",
+          "lineHeight": "{lineHeights.5}",
+          "fontSize": "{fontSize.1}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 16/24, Bold"
+      },
+      "M-Link": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-4}",
+          "lineHeight": "{lineHeights.5}",
+          "fontSize": "{fontSize.1}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.underline}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 16/24, Bold"
+      },
+      "S": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-5}",
+          "lineHeight": "{lineHeights.5}",
+          "fontSize": "{fontSize.1}",
+          "letterSpacing": "{letterSpacing.1}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.uppercase}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 16/24, ExtraBold"
+      },
+      "XS": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-1}",
+          "lineHeight": "{lineHeights.6}",
+          "fontSize": "{fontSize.0}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 14/20, Light"
+      },
+      "Lg List Item": {
+        "value": {
+          "fontFamily": "{fontFamilies.roboto-flex}",
+          "fontWeight": "{fontWeights.roboto-flex-3}",
+          "lineHeight": "{lineHeights.4}",
+          "fontSize": "{fontSize.2}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography",
+        "description": "Roboto Flex, 20/28, Semibold"
+      }
+    }
+  },
+  "Body": {
+    "Regular": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-1}",
+        "lineHeight": "{lineHeights.5}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 16/24, Regular"
+    },
+    "Bold": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-4}",
+        "lineHeight": "{lineHeights.5}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 16/24, Bold"
+    },
+    "Italic": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-6}",
+        "lineHeight": "{lineHeights.5}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 16/24, Italic"
+    },
+    "Link": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-1}",
+        "lineHeight": "{lineHeights.5}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.underline}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 16/24, Regular"
+    }
+  },
+  "Label": {
+    "Regular": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-1}",
+        "lineHeight": "{lineHeights.6}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 14/20, Regular"
+    },
+    "Link": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-1}",
+        "lineHeight": "{lineHeights.6}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.underline}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 14/20, Regular, Underline"
+    },
+    "M Button": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-4}",
+        "lineHeight": "{lineHeights.4}",
+        "fontSize": "{fontSize.2}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 20/28 (Cap height to baseline), Bold"
+    },
+    "S Button": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-7}",
+        "lineHeight": "{lineHeights.5}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 16/24 (Cap height to baseline), Medium"
+    },
+    "XS Button": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-flex}",
+        "fontWeight": "{fontWeights.roboto-flex-7}",
+        "lineHeight": "{lineHeights.6}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Flex, 14/20, Medium"
+    },
+    "XS Mono": {
+      "value": {
+        "fontFamily": "{fontFamilies.roboto-mono}",
+        "fontWeight": "{fontWeights.roboto-mono-8}",
+        "lineHeight": "{lineHeights.6}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "type": "typography",
+      "description": "Roboto Mono, 14/20, Regular"
+    }
+  },
+  "textCase": {
+    "none": {
+      "value": "none",
+      "type": "textCase"
+    },
+    "uppercase": {
+      "value": "uppercase",
+      "type": "textCase"
+    }
+  },
+  "textDecoration": {
+    "none": {
+      "value": "none",
+      "type": "textDecoration"
+    },
+    "underline": {
+      "value": "underline",
+      "type": "textDecoration"
+    }
+  },
+  "paragraphIndent": {
+    "0": {
+      "value": "0px",
+      "type": "dimension"
+    }
+  },
+  "fontFamilies": {
+    "roboto-slab": {
+      "value": "Roboto Slab",
+      "type": "fontFamilies"
+    },
+    "roboto-flex": {
+      "value": "Roboto Flex",
+      "type": "fontFamilies"
+    },
+    "roboto-mono": {
+      "value": "Roboto Mono",
+      "type": "fontFamilies"
+    }
+  },
+  "default": {
+    "value": "{Primitive.1}",
+    "type": "borderRadius"
+  },
+  "medium": {
+    "value": "{Primitive.2}",
+    "type": "borderRadius"
+  },
+  "space-body": {
+    "value": "{space-xs}",
+    "type": "spacing"
+  },
+  "space-label": {
+    "value": "{Primitive.1}",
+    "type": "spacing"
+  },
+  "space-tablet-xxl": {
+    "value": "{Primitive.10}",
+    "type": "spacing"
+  },
+  "space-desktop-md": {
+    "value": "{Primitive.6}",
+    "type": "spacing"
+  },
+  "space-desktop-lg": {
+    "value": "{Primitive.8}",
+    "type": "spacing"
+  },
+  "space-desktop-xl": {
+    "value": "{Primitive.11}",
+    "type": "spacing"
+  },
+  "space-desktop-xxl": {
+    "value": "{Primitive.15}",
+    "type": "spacing"
+  }
+}

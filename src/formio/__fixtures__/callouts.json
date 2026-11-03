@@ -1,0 +1,77 @@
+{
+  "components": [
+    {
+      "label": "Informational Alert",
+      "tag": "div",
+      "className": "flex flex-items-start bg-blue-1 p-40 mt-40 mb-100",
+      "attrs": [
+        {
+          "attr": "role",
+          "value": "alert"
+        }
+      ],
+      "content": "<span class=\"d-none d-flex fg-blue-4 mr-2\" data-icon=\"alert\"><!-- no text here --></span>\n<span><strong>Projects in plan review use Bluebeam </strong>\n<p>If your application is already in plan review, and you are responding to plan check comments, do not use this form. You should:&nbsp;</p>\n<ul>\n    <li>Add your updated documents directly to the Bluebeam session, or</li>\n    <li><a href=\"https://www.sf.gov/resubmit-plans-building-permit-application\" target=\"_blank\" rel=\"noopener noreferrer\">Follow these instructions to upload revisions</a>, if you do not have access to Bluebeam.</li>\n</ul></span>",
+      "refreshOnChange": false,
+      "key": "alertInformational1",
+      "tags": ["shared"],
+      "type": "htmlelement",
+      "input": false,
+      "tableView": false,
+      "lockKey": true,
+      "source": "646e921c441c66b7bca2c2fd",
+      "isNew": true
+    },
+    {
+      "label": "Success alert",
+      "tag": "div",
+      "className": "flex flex-items-start bg-green-1 p-40 mt-40 mb-100",
+      "attrs": [
+        {
+          "attr": "role",
+          "value": "alert"
+        }
+      ],
+      "content": "<span class=\"fg-green-4 mr-2\" data-icon=\"check\"><!-- no text here --></span>\n<span><strong>Projects in plan review use Bluebeam </strong>\n<p>If your application is already in plan review, and you are responding to plan check comments, do not use this form. You should:&nbsp;</p>\n<ul>\n    <li>Add your updated documents directly to the Bluebeam session, or</li>\n    <li><a href=\"https://www.sf.gov/resubmit-plans-building-permit-application\" target=\"_blank\" rel=\"noopener noreferrer\">Follow these instructions to upload revisions</a>, if you do not have access to Bluebeam.</li>\n</ul></span>",
+      "refreshOnChange": false,
+      "key": "alertSuccess",
+      "tags": ["shared"],
+      "type": "htmlelement",
+      "input": false,
+      "tableView": false
+    },
+    {
+      "label": "Ineligible alert",
+      "tag": "div",
+      "className": "flex flex-items-start bg-red-1 p-40 mt-40 mb-100",
+      "attrs": [
+        {
+          "attr": "role",
+          "value": "alert"
+        }
+      ],
+      "content": "<span class=\"fg-red-4 mr-2\" data-icon=\"delete\"><!-- no text here --></span>\n<span><strong>Projects in plan review use Bluebeam </strong>\n<p>If your application is already in plan review, and you are responding to plan check comments, do not use this form. You should:&nbsp;</p>\n<ul>\n    <li>Add your updated documents directly to the Bluebeam session, or</li>\n    <li><a href=\"https://www.sf.gov/resubmit-plans-building-permit-application\" target=\"_blank\" rel=\"noopener noreferrer\">Follow these instructions to upload revisions</a>, if you do not have access to Bluebeam.</li>\n</ul></span>",
+      "refreshOnChange": false,
+      "key": "alertIneligible",
+      "tags": ["shared"],
+      "type": "htmlelement",
+      "input": false,
+      "tableView": false
+    },
+    {
+      "label": "No className or content test",
+      "tag": "div",
+      "attrs": [
+        {
+          "attr": "role",
+          "value": "alert"
+        }
+      ],
+      "refreshOnChange": false,
+      "key": "alertIneligible",
+      "tags": ["shared"],
+      "type": "htmlelement",
+      "input": false,
+      "tableView": false
+    }
+  ]
+}
