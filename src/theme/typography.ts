@@ -1,29 +1,33 @@
-const { pxMap } = require('./utils')
+import type { ThemeConfig } from 'tailwindcss/types/config'
+import { pxMap } from './utils'
 
-const fontFamily = {
+/**
+ * TODO: move the values to tokens
+ */
+
+export const fontFamily: ThemeConfig['fontFamily'] = {
   body: 'var(--font-sans)',
-  sans: 'var(--font-sans)',
-  slab: 'var(--font-slab)',
-  monospace: 'var(--font-mono)',
-  chinese: 'var(--font-chinese)'
+  sans: 'Roboto Flex',
+  slab: 'Roboto Slab',
+  chinese: 'Noto Sans TC'
 }
 
-const lineHeight = {
-  auto: 'AUTO',
+export const lineHeight: ThemeConfig['lineHeight'] = {
+  auto: 'auto',
   ...pxMap([56, 52, 48, 44, 40, 36, 32, 28, 24, 20, 16])
 }
 
-const fontWeight = {
-  light: 300,
-  normal: 400,
-  medium: 500,
-  semibold: 600,
-  bold: 700,
-  extrabold: 800,
-  boldChinese: 500
+export const fontWeight: ThemeConfig['fontWeight'] = {
+  light: '300',
+  normal: '400',
+  medium: '500',
+  semibold: '600',
+  bold: '700',
+  extrabold: '800',
+  boldChinese: '500'
 }
 
-const fontSize = {
+export const fontSize: ThemeConfig['fontSize'] = {
   small: ['14px', '24px'],
   h1: ['36px', '24px'],
   h2: ['32px', '24px'],
@@ -206,11 +210,4 @@ const fontSize = {
       fontWeight: fontWeight.normal
     }
   ]
-}
-
-module.exports = {
-  fontFamily,
-  fontSize,
-  fontWeight,
-  lineHeight
-}
+} as const

@@ -1,9 +1,10 @@
-const { colors } = require('./colors')
-const { breakpoints } = require('./breakpoints')
-const { ...typography } = require('./typography')
-const { spacing } = require('./space')
-const widths = require('./widths')
-const { pxMap } = require('./utils')
+import type { ThemeConfig } from 'tailwindcss/types/config'
+import { colors } from './colors'
+import { screens } from './screens'
+import * as typography from './typography'
+import spacing from './space'
+import width from './width'
+import { pxMap } from './utils'
 
 // available column grid templates
 const gridColumns = [1, 2, 3, 4, 6, 12]
@@ -14,9 +15,9 @@ const gridRows = [1, 2, 3]
 // possible per-row spans
 const gridRowSpans = gridRows
 
-module.exports = {
+const theme: Partial<ThemeConfig> = {
   colors,
-  screens: breakpoints,
+  screens,
   spacing, // TODO [>=3]: add line heights to spacing scale
   ...typography,
   borderColor: {
@@ -72,9 +73,7 @@ module.exports = {
     auto: 'auto',
     ...spacing
   },
-  maxWidth: (theme) => ({
-    ...theme('width')
-  }),
+  maxWidth: width,
   width: {
     auto: 'auto',
     '1/1': '100%',
@@ -88,7 +87,9 @@ module.exports = {
     '3/4': '75%',
     '4/4': '100%',
     full: '100%',
-    ...widths,
+    ...width,
     ...spacing
   }
 }
+
+export default theme

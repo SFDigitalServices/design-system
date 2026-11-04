@@ -1,5 +1,4 @@
 // istanbul ignore file
-import colors from './colors'
-import spacing from './spacing'
-
-export { colors, spacing }
+export { default as colors } from './colors'
+export { default as spacing } from './spacing'
+export { default as widths } from './widths'

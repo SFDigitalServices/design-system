@@ -53,6 +53,16 @@
         "types": "./dist/tailwind-preset/index.d.ts",
         "default": "./dist/tailwind-preset/index.js"
       }
+    },
+    "./tokens": {
+      "import": {
+        "types": "./dist/tokens/index.d.mts",
+        "default": "./dist/tokens/index.mjs"
+      },
+      "require": {
+        "types": "./dist/tokens/index.d.ts",
+        "default": "./dist/tokens/index.js"
+      }
     }
   },
   "typesVersions": {
@@ -65,6 +75,9 @@
       ],
       "tailwind-preset": [
         "./dist/tailwind-preset/index.d.ts"
+      ],
+      "tokens": [
+        "./dist/tokens/index.d.ts"
       ]
     }
   },
