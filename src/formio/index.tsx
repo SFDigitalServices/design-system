@@ -25,6 +25,8 @@ import { getConsole, hook, isFormSurvey } from './utils'
 
 export * from './types'
 
+export { FormFactory } from './factories'
+
 // this is our "fixed" version of @formio/react's Form component props type with
 // more precise/accurate types for callbacks, options, etc. We use Override here
 // instead of `&` because we want our type declarations to supersede theirs.

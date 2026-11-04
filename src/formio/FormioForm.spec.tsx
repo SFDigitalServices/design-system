@@ -11,14 +11,16 @@ import type {
   RadioComponent
 } from '.'
 import {
+  FormioForm,
   disableRadioUncheck,
-  rewriteLibraryUrl,
   modifyComponentClassname,
   modifyHTMLElementClassname,
-  FormioForm
+  rewriteLibraryUrl
 } from '.'
-import { FORM_CLASS } from './constants.mjs'
+import basicFormJson from './__fixtures__/basic.json'
+import callouts from './__fixtures__/callouts.json'
 import * as formioComponents from './components/schema'
+import { FORM_CLASS } from './constants.mjs'
 import {
   CheckboxFactory,
   ColumnsFactory,
@@ -32,8 +34,6 @@ import {
   SelectFactory,
   WizardFactory
 } from './factories'
-import basicFormJson from './__fixtures__/basic.json'
-import callouts from './__fixtures__/callouts.json'
 
 const basicForm = basicFormJson as FormSchema
 
