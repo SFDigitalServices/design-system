@@ -12,6 +12,10 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier'
   ],
+  ignorePatterns: [
+    // TODO: remove this when stories have been colocated
+    '/stories/'
+  ],
   rules: {
     'prefer-arrow-callback': [
       'error',
