@@ -146,7 +146,6 @@ export function form({ t, ...ctx }: FileContext) {
                     <div className="col-md-2">
                       <select className="file-type" ref="fileType">
                         {ctx.component.fileTypes?.map((type) => (
-                          // eslint-disable-next-line react/jsx-key
                           <option
                             className="test"
                             value={type.value}

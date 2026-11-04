@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import type { ComponentSchema, ValidateOptions } from 'formiojs'
 import type { Override } from './utils'
 import type { Options as ChoicesOptions } from '@formio/choices.js'
@@ -221,9 +220,7 @@ export type FileSchema = TypedComponentSchema<
  */
 export type HiddenSchema = TypedComponentSchema<
   'hidden',
-  {
-    // TODO
-  },
+  Record<string, unknown>,
   TextFieldSchema
 >
 

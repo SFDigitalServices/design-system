@@ -54,7 +54,6 @@ export function form({ ...ctx }: WizardRenderContext) {
           <div
             className="flex-1 p-space-sm text-heading-md text-left"
             dangerouslySetInnerHTML={{
-              // eslint-disable-next-line max-len
               __html: `Section ${currentPage} of ${numPages}: ${ctx.panels[currentPage].title}`
             }}
           />

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
 import containerQueries from '@tailwindcss/container-queries'

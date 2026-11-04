@@ -1,6 +1,5 @@
 import type { ComponentType, ElementType } from 'react'
 
-// eslint-disable-next-line
 import type * as Classed from '@tw-classed/react'
 
 export type { Classed }

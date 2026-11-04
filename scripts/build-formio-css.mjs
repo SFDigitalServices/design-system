@@ -11,7 +11,7 @@ import atImport from "postcss-import"
 import importUrls from 'postcss-import-url'
 import prefixSelector from "postcss-prefix-selector"
 import { format } from 'prettier'
-import { FORM_CLASS } from '../formio/constants.mjs'
+import { FORM_CLASS } from '../src/formio/constants.mjs'
 
 main('formio/bootstrap.css')
 

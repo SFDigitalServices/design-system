@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-internal-modules
 import { createClassed } from '@tw-classed/react'
 import type { ReactElement } from 'react'
 import { cloneElement } from 'react'
@@ -73,6 +72,7 @@ export function classify(
   if (!classNames.flat().some(Boolean)) {
     return element
   }
+  // eslint-disable-next-line @eslint-react/no-clone-element
   return cloneElement(element, {
     className: classes(element.props.className, ...classNames)
   })

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import plugin from 'tailwindcss/plugin'
 
 type IconProps = { size?: number; color: string }

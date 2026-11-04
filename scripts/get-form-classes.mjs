@@ -27,7 +27,6 @@ async function main() {
   for await (const page of getFormPages()) {
     const { components } = page.schema
     eachComponent(components, (comp) => {
-      // eslint-disable-next-line max-len
       for (const classString of [comp.customClass, comp.className].filter(Boolean)) {
         addAll(classString)
       }

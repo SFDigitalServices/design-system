@@ -417,7 +417,6 @@ export function validateDayGrid({
 
   if (adjacentTimes || overlappingTimes) {
     const sorted = input.slice().sort((a, b) => a.start.localeCompare(b.start))
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     let { end } = sorted.shift()!
     for (const next of sorted) {
       if (adjacentTimes && next.start === end) {

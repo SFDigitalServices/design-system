@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import type { Components, ComponentSchema, Form, Formio } from 'formiojs'
 import type { EventEmitter } from 'formiojs/types/eventEmitter'
 import type { i18n } from 'i18next'

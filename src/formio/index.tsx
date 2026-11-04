@@ -87,6 +87,7 @@ export function useFormio(isDev = false) {
   const console = getConsole(isDev)
 
   once(Formio, () => {
+    // eslint-disable-next-line @eslint-react/rules-of-hooks -- Formio's plugin registration API is not a React hook.
     Formio.use(plugin)
     // TODO: override this interface in ambient declarations so we don't have to
     // type it explicitly
@@ -188,6 +189,7 @@ export function useFormio(isDev = false) {
         upgradeSchemaOnce(originalSchema as FormSchema)
         return originalSchema
       }
+      // eslint-disable-next-line @eslint-react/exhaustive-deps
     }, [
       // use the form's ID as the dependency ("cache key") rather than the
       // schema itself, because we're mutating it
@@ -264,7 +266,9 @@ export type FormioFormProps = FormProps & {
 }
 
 export function FormioForm({ isDev, ...rest }: FormioFormProps) {
+  // eslint-disable-next-line @eslint-react/static-components
   const { FormioForm } = useFormio(isDev)
+  // eslint-disable-next-line @eslint-react/static-components
   return <FormioForm {...rest} />
 }
 
@@ -287,6 +291,7 @@ export function rewriteLibraryUrl(url: string) {
   const parsed = new URL(url)
 
   if (parsed.hostname === 'cdn.form.io') {
+    // eslint-disable-next-line prefer-const
     let [pkg, ...path] = parsed.pathname.slice(1).split('/')
     if (/^\d/.test(path[0])) {
       pkg = `${pkg}@${path.shift()}`

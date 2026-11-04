@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable testing-library/no-node-access */
 /* eslint-disable testing-library/no-container */
 import { Components, Formio } from '@formio/react'
@@ -11,14 +10,15 @@ import type {
   InputComponentSchema,
   RadioComponent
 } from '.'
-import { disableRadioUncheck, rewriteLibraryUrl } from '.'
-import { FORM_CLASS } from './constants.mjs'
-import * as formioComponents from './components/schema'
 import {
+  disableRadioUncheck,
+  rewriteLibraryUrl,
   modifyComponentClassname,
   modifyHTMLElementClassname,
   FormioForm
-} from './index'
+} from '.'
+import { FORM_CLASS } from './constants.mjs'
+import * as formioComponents from './components/schema'
 import {
   CheckboxFactory,
   ColumnsFactory,
