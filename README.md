@@ -19,8 +19,23 @@ The `@sfgov/design-system` package requires [Tailwind CSS v3] for styling and
 install them with:
 
 ```sh
-npm install tailwindcss@3 react react-dom
+npm install tailwindcss@3 react@18 react-dom@18
 ```
+
+## Entrypoints
+
+The package provides the following entrypoints:
+
+- `@sfgov/design-system` exports the `react` and `tokens` namespaces.
+- `@sfgov/design-system/react` exports the React components and helpers,
+  including `classed()`.
+- `@sfgov/design-system/tailwind-preset` is the [Tailwind preset](#tailwind).
+- `@sfgov/design-system/tokens` exports the design tokens: `breakpoints`,
+  `colors`, `spacing`, and `widths`.
+- `@sfgov/design-system/formio` exports the `FormioForm` React component and
+  other support code.
+- `@sfgov/design-system/formio/factories` exports form.io-specific test
+  factories like `FormFactory` that are used by sf.gov's `FormPage` tests.
 
 ## React components
 
@@ -54,19 +69,22 @@ export const FancyButton = classed(Button, 'fancy')
 
 The `@sfgov/design-system` package includes a [Tailwind preset] that you can use
 in your own configuration. In order for Tailwind to include styles for the
-included React components, you'll also need to add the package directory to your
-configuration's [content sources]:
+included React components, you'll also need to add an entry to the [content
+sources] option that tells Tailwind to look for class names in _this_ package:
 
 ```js
-// tailwind.config.js (or .ts)
-import sfgov from '@sfgov/design-system/tailwind-preset'
+// tailwind.config.js
+const sfgov = require('@sfgov/design-system/tailwind-preset')
+const { dirname } = require('node:path')
+
+const designSystemDist = dirname(require.resolve('@sfgov/design-system'))
 
 /** @type {import('tailwindcss').Config} */
-export {
+module.exports = {
   presets: [sfgov],
   content: [
     './src/**/*.tsx',
-    './node_modules/@sfgov/design-system/**/*',
+    `${designSystemDist}/**/*.{js,mjs}`
   ]
 }
 ```
