@@ -22,6 +22,7 @@ export default defineConfig([
       index: 'src/index.ts',
       'react/index': 'src/react/index.ts',
       'formio/index': 'src/formio/index.tsx',
+      'formio/factories/index': 'src/formio/factories.ts',
       'tokens/index': 'src/tokens/index.ts'
     },
     outDir: 'dist'

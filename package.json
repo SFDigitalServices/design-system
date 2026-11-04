@@ -44,6 +44,16 @@
         "default": "./dist/formio/index.js"
       }
     },
+    "./formio/factories": {
+      "import": {
+        "types": "./dist/formio/factories/index.d.mts",
+        "default": "./dist/formio/factories/index.mjs"
+      },
+      "require": {
+        "types": "./dist/formio/factories/index.d.ts",
+        "default": "./dist/formio/factories/index.js"
+      }
+    },
     "./tailwind-preset": {
       "import": {
         "types": "./dist/tailwind-preset/index.d.mts",
@@ -72,6 +82,9 @@
       ],
       "formio": [
         "./dist/formio/index.d.ts"
+      ],
+      "formio/factories": [
+        "./dist/formio/factories/index.d.ts"
       ],
       "tailwind-preset": [
         "./dist/tailwind-preset/index.d.ts"
