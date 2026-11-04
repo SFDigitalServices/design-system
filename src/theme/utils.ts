@@ -3,7 +3,7 @@ export function px(n: string | number) {
 }
 
 export function pxMap(values: Array<string | number>): Record<string, string> {
-  return Object.fromEntries(values.map((o, n) => [o, px(n)]))
+  return Object.fromEntries(values.map((value) => [value, px(value)]))
 }
 
 export function tokenMap(tokens: Record<string, { value: string }>) {

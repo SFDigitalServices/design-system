@@ -5,11 +5,12 @@ import { pxMap } from './utils'
  * TODO: move the values to tokens
  */
 
+const sansFontFamily = '"Roboto Flex", ui-sans, sans'
+
 export const fontFamily: ThemeConfig['fontFamily'] = {
-  body: 'var(--font-sans)',
-  sans: 'Roboto Flex',
-  slab: 'Roboto Slab',
-  chinese: 'Noto Sans TC'
+  body: sansFontFamily,
+  sans: sansFontFamily,
+  slab: '"Roboto Slab", ui-sans-serif, sans-serif'
 }
 
 export const lineHeight: ThemeConfig['lineHeight'] = {
