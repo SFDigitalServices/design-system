@@ -82,20 +82,19 @@
     }
   },
   "scripts": {
-    "build": "npm run clean && tsup",
     "build-formio-css": "./scripts/build-formio-css.mjs",
     "build-tokens": "style-dictionary build --config ./sd.config.js",
+    "build": "npm run clean && tsup",
     "clean": "rm -rf dist/",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit --incremental false",
     "figma-export": "figma-export use-config",
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint .",
     "postfigma-export": "eslint --fix src/react/icons",
     "prepublishOnly": "npm run build && npm run verify",
     "test": "jest --coverage",
-    "watch": "npm run build-tokens && chokidar 'tokens/**/*.json' -c 'npm run build-tokens'",
-    "watch-formio-css": "chokidar scripts/build-formio-css.mjs -c 'npm run build-formio-css'",
-    "verify": "publint --strict && attw --pack"
+    "typecheck": "tsc --noEmit --incremental false",
+    "verify": "publint --strict && attw --pack",
+    "watch": "chokidar --initial src '*.config.*' -c 'npm run build'"
   },
   "dependencies": {
     "@formio/react": "5.3.0",
