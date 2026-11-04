@@ -13,6 +13,7 @@ module.exports = {
     'prettier'
   ],
   ignorePatterns: [
+    '/dist/',
     // TODO: remove this when stories have been colocated
     '/stories/'
   ],
