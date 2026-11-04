@@ -33,7 +33,9 @@ TypeScript declarations in `dist/`. The following [export maps] are available:
 - `@sfgov/design-system/react` exports the React components and helpers,
   including `classed()`
 - `@sfgov/design-system/formio` exports the `FormioForm` React component and
-other support code.
+  other support code.
+- `@sfgov/design-system/formio/factories` exports form.io-specific test
+  factories like `FormFactory` that are used by sf.gov's `FormPage` tests.
 
 Run `npm run verify` after building to check the packed package with [publint] and
 [Are the Types Wrong]. `npm publish` runs both steps automatically through
