@@ -6,6 +6,20 @@
 - Code changes that break the contract are either mistakes to be fixed or
   breaking changes that require documentation updates.
 
+## Linting and type checking
+
+Run `npm run lint` for ESLint's recommended JavaScript and TypeScript rules,
+React and Testing Library checks, and unresolved import checks. Run
+`npm run lint:fix` to apply automatic fixes. Formatting is handled by Prettier.
+
+The flat configuration in [eslint.config.mjs](./eslint.config.mjs) explicitly
+includes TypeScript and TSX files. Generated output and the archived stories
+are ignored. VS Code uses the same configuration for editor diagnostics.
+
+Run `npm run typecheck` to check types and invalid named imports. ESLint does
+not replace the TypeScript compiler; the TypeScript recommended import preset
+intentionally leaves named-export validation to TypeScript.
+
 ## Building and publishing
 
 Run `npm run build` to generate CommonJS and ES module bundles and their
