@@ -1,5 +1,5 @@
 import { classed } from './utils'
-import type { AnyComponent, ComponentProps } from '../types'
+import type { AnyComponent, ComponentProps } from './types'
 
 export const StackedContainer = classed('div' as AnyComponent, {
   base: 'flex flex-col md:flex-row w-full gap-16'

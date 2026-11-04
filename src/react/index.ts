@@ -1,3 +1,4 @@
+export type * from './types'
 export * from './Button'
 export * from './Container'
 export * from './Grid'

@@ -1,6 +1,6 @@
 import { HeadingLg } from './Text'
 import { classed } from './utils'
-import type { ComponentProps, ComponentType } from '../types'
+import type { ComponentProps, ComponentType } from './types'
 
 const StyledItem = classed(
   'div',

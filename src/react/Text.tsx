@@ -1,5 +1,5 @@
 import { classed } from './utils'
-import type { AnyComponent, ComponentProps } from '../types'
+import type { AnyComponent, ComponentProps } from './types'
 
 /**
  * These are the Tailwind classes necessary for each of our distinct text styles
