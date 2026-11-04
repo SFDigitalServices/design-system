@@ -1,15 +1,22 @@
 import { jest as jestRef } from '@jest/globals'
 
+type MatchMedia = typeof window.matchMedia
+type MatchesListener = (arg: { matches: string }) => void
+
 export function mockMatchMedia(matches = false) {
-  const listeners = new Set()
+  const listeners = new Set<MatchesListener>()
 
-  const addEventListener = jestRef.fn((eventName, listener) => {
-    if (eventName === 'change') listeners.add(listener)
-  })
+  const addEventListener = jestRef.fn(
+    (eventName: string, listener: MatchesListener) => {
+      if (eventName === 'change') listeners.add(listener)
+    }
+  )
 
-  const removeEventListener = jestRef.fn((eventName, listener) => {
-    if (eventName === 'change') listeners.delete(listener)
-  })
+  const removeEventListener = jestRef.fn(
+    (eventName: string, listener: MatchesListener) => {
+      if (eventName === 'change') listeners.delete(listener)
+    }
+  )
 
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
@@ -24,7 +31,7 @@ export function mockMatchMedia(matches = false) {
   })
 
   return {
-    change(nextMatches) {
+    change(nextMatches: string) {
       window.matchMedia = jestRef.fn().mockImplementation(() => ({
         matches: nextMatches,
         media: '',
@@ -32,7 +39,7 @@ export function mockMatchMedia(matches = false) {
         addEventListener,
         removeEventListener,
         dispatchEvent: jestRef.fn()
-      }))
+      })) as MatchMedia
 
       listeners.forEach((listener) => listener({ matches: nextMatches }))
     },

@@ -18,6 +18,10 @@
     "outDir": "dist",
     "resolveJsonModule": true,
   },
+  "files": [
+    "src/react/index.ts",
+    "src/formio/index.tsx"
+  ],
   "include": [
     "lib/**/*",
     "src/**/*",

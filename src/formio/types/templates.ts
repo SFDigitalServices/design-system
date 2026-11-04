@@ -16,7 +16,7 @@ export interface ComponentInstance<T extends object = AnyComponentSchema> {
   checkValidity(data?: unknown, dirty?: boolean, row?: unknown): boolean
 }
 
-export interface ComponentContext<T extends object> {
+export interface ComponentContext<T extends object = AnyComponentSchema> {
   id: string
   key: string
   nestedKey: string
