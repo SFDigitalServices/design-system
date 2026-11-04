@@ -20,6 +20,10 @@ Run `npm run typecheck` to check types and invalid named imports. ESLint does
 not replace the TypeScript compiler; the TypeScript recommended import preset
 intentionally leaves named-export validation to TypeScript.
 
+> [!NOTE]
+> The `src/formio/` directory is excluded from type checking because it's
+> scheduled for deletion.
+
 ## Building and publishing
 
 Run `npm run build` to generate CommonJS and ES module bundles and their
