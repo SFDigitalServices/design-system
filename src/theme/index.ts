@@ -73,7 +73,6 @@ const theme: Partial<ThemeConfig> = {
     auto: 'auto',
     ...spacing
   },
-  maxWidth: width,
   width: {
     auto: 'auto',
     '1/1': '100%',
@@ -89,7 +88,12 @@ const theme: Partial<ThemeConfig> = {
     full: '100%',
     ...width,
     ...spacing
-  }
+  },
+  // this uses the theme() helper so we don't have to declare the shared width
+  // values first; it just copies the values we inlined into `width` above.
+  maxWidth: ({ theme }) => ({
+    ...theme('width')
+  })
 }
 
 export default theme

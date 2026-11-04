@@ -1,8 +1,7 @@
 import type { ThemeConfig } from 'tailwindcss/types/config'
 import { widths } from '../tokens'
-import { pxMap, tokenMap } from './utils'
+import { tokenMap } from './utils'
 
 export default {
-  ...tokenMap(widths),
-  ...pxMap([80])
+  ...tokenMap(widths)
 } satisfies ThemeConfig['width']
