@@ -89,7 +89,10 @@ module.exports = {
 }
 ```
 
+[content sources]: https://v3.tailwindcss.com/docs/upgrade-guide#configure-content-sources
+[npm]: https://www.npmjs.com/
+[pnpm]: https://pnpm.io/
 [react]: https://react.dev/
 [tailwind css v3]: https://v3.tailwindcss.com/
 [tailwind preset]: https://v3.tailwindcss.com/docs/presets
-[content sources]: https://v3.tailwindcss.com/docs/upgrade-guide#configure-content-sources
+[yarn]: https://yarnpkg.com/
