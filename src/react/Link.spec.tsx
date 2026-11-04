@@ -7,5 +7,6 @@ describe('Link', () => {
 
     const link = screen.getByRole('link')
     expect(link).toHaveTextContent('Hello')
+    expect(link).toHaveAttribute('href', '/test')
   })
 })

@@ -18,9 +18,13 @@ export default {
     '!**/*.d.ts',
     // not covering the tailwind preset for now
     '!**/tailwind-preset.ts',
+    '!**/tailwind-plugin.ts',
     // FIXME: remove this when we bring back our formio templates
-    '!**/formio/templates/**',
-    '!**/formio/components/*.ts'
+    '!**/formio/templates/**/*.tsx',
+    '!**/formio/components/*.ts',
+    // not covered
+    '!**/theme/**/*.ts',
+    '!**/tokens/**/*.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'jest-environment-jsdom',
