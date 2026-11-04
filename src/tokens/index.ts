@@ -1,3 +1,4 @@
+// istanbul ignore file
 import colors from './colors'
 import spacing from './spacing'
 
