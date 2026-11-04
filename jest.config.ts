@@ -1,7 +1,8 @@
+import type { Config } from 'jest'
+
 const CI = !!process.env.CI
 
-/** @type {import('jest').Config} */
-module.exports = {
+export default {
   ci: CI,
   coverageThreshold: {
     global: {
@@ -29,4 +30,4 @@ module.exports = {
     '^.+\\.(t|j)sx?$': 'ts-jest',
     '.*\\.mjs$': 'babel-jest'
   }
-}
+} satisfies Config
