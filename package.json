@@ -58,6 +58,14 @@
         "default": "./dist/formio/factories/index.js"
       }
     },
+    "./formio/formio.css": {
+      "import": {
+        "default": "./dist/formio/formio.css"
+      },
+      "require": {
+        "default": "./dist/formio/formio.css"
+      }
+    },
     "./tailwind-preset": {
       "import": {
         "types": "./dist/tailwind-preset/index.d.mts",
@@ -99,9 +107,10 @@
     }
   },
   "scripts": {
+    "build-css": "node scripts/build-formio-tailwind.mjs",
     "build-formio-css": "./scripts/build-formio-css.mjs",
     "build-tokens": "style-dictionary build --config ./sd.config.js",
-    "build": "npm run clean && tsup",
+    "build": "npm run clean && tsup && npm run build-css",
     "clean": "rm -rf dist/",
     "figma-export": "figma-export use-config",
     "lint:fix": "eslint . --fix",
