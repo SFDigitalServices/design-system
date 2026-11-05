@@ -163,6 +163,7 @@
     "@types/ungap__structured-clone": "^1.2.0",
     "@types/vhtml": "^2.2.9",
     "auto": "^11.3.6",
+    "autoprefixer": "^10.6.2",
     "babel-jest": "^29.7.0",
     "babel-plugin-inline-import": "^3.0.0",
     "chokidar-cli": "^3.0.0",
