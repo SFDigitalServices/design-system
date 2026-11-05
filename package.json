@@ -1,10 +1,14 @@
 {
   "name": "@sfgov/design-system",
-  "version": "3.0.0",
+  "version": "1.0.0",
+  "repository": "SFDigitalServices/design-system",
   "license": "MIT",
   "author": {
     "name": "sfds-bot",
     "url": "https://github.com/sfds-bot"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -123,6 +127,9 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
+    "@auto-it/conventional-commits": "^11.3.6",
+    "@auto-it/npm": "^11.3.6",
+    "@auto-it/omit-commits": "^11.3.6",
     "@babel/core": "^7.29.6",
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
@@ -146,6 +153,7 @@
     "@types/testing-library__jest-dom": "^5.14.5",
     "@types/ungap__structured-clone": "^1.2.0",
     "@types/vhtml": "^2.2.9",
+    "auto": "^11.3.6",
     "babel-jest": "^29.7.0",
     "babel-plugin-inline-import": "^3.0.0",
     "chokidar-cli": "^3.0.0",
