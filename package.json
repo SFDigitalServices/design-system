@@ -58,14 +58,7 @@
         "default": "./dist/formio/factories/index.js"
       }
     },
-    "./formio/formio.css": {
-      "import": {
-        "default": "./dist/formio/formio.css"
-      },
-      "require": {
-        "default": "./dist/formio/formio.css"
-      }
-    },
+    "./formio/formio.css": "./dist/formio/formio.css",
     "./tailwind-preset": {
       "import": {
         "types": "./dist/tailwind-preset/index.d.mts",
@@ -119,7 +112,7 @@
     "prepublishOnly": "npm run build && npm run verify",
     "test": "jest --coverage",
     "typecheck": "tsc --noEmit --incremental false",
-    "verify": "publint --strict && attw --pack",
+    "verify": "publint --strict && attw --pack --exclude-entrypoints ./formio/formio.css",
     "watch": "chokidar --initial src '*.config.*' -c 'npm run build'"
   },
   "dependencies": {
