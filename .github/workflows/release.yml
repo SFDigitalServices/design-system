@@ -12,7 +12,8 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
 
     runs-on: ubuntu-latest
-    environment: release # required reviewers gate the OIDC token; npm trusted publisher must name this environment
+    # npm trusted publisher must name this environment
+    environment: release
     permissions:
       contents: write # auto shipit: tags, releases
       pull-requests: write # auto shipit: PR comments for canary
