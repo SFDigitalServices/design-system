@@ -10,7 +10,8 @@ const sansFontFamily = '"Roboto Flex", ui-sans, sans'
 export const fontFamily: ThemeConfig['fontFamily'] = {
   body: sansFontFamily,
   sans: sansFontFamily,
-  slab: '"Roboto Slab", ui-sans-serif, sans-serif'
+  slab: '"Roboto Slab", ui-sans-serif, sans-serif',
+  monospace: '"Roboto Mono", ui-monospace, monospace'
 }
 
 export const lineHeight: ThemeConfig['lineHeight'] = {
