@@ -1,10 +1,14 @@
 {
   "name": "@sfgov/design-system",
   "version": "3.0.0",
+  "repository": "SFDigitalServices/design-system",
   "license": "MIT",
   "author": {
     "name": "sfds-bot",
     "url": "https://github.com/sfds-bot"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
