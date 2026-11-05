@@ -46,6 +46,11 @@ export default defineConfig(
     }
   },
   {
+    files: ['tailwind.formio.config.mjs'],
+    // Imports built output; dist is gitignored and CI lints before building.
+    rules: { 'import-x/no-unresolved': 'off' }
+  },
+  {
     files: ['**/*.{spec,test}.{js,jsx,ts,tsx}', 'jest.setup.ts'],
     languageOptions: { globals: globals.jest }
   },
