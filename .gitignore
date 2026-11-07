@@ -1,4 +1,6 @@
+.env
 **/.DS_Store
 **/*.log
 **/node_modules/
-/.env
+coverage/
+dist/

@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconCash = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M10.5 13C11.8807 13 13 11.8807 13 10.5C13 9.11929 11.8807 8 10.5 8C9.11929 8 8 9.11929 8 10.5C8 11.8807 9.11929 13 10.5 13ZM10.5 11C10.7761 11 11 10.7761 11 10.5C11 10.2239 10.7761 10 10.5 10C10.2239 10 10 10.2239 10 10.5C10 10.7761 10.2239 11 10.5 11Z" /><path d="M4.5 10H6.5V8H4.5V10Z" /><path d="M14 11H16V13H14V11Z" /><path fillRule="evenodd" clipRule="evenodd" d="M2 16V5H19V16H2ZM4 7H17V14H4V7Z" /><path d="M7 18V17H5V20H22V9H20V18H7Z" /></svg>;
+export default IconCash;

@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconNotification = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M13.5351 5C14.2267 3.8044 15.5194 3 17 3C19.2091 3 21 4.79086 21 7C21 8.48056 20.1956 9.77325 19 10.4649V21H3V5H13.5351ZM19 7C19 8.10457 18.1046 9 17 9C15.8954 9 15 8.10457 15 7C15 5.89543 15.8954 5 17 5C18.1046 5 19 5.89543 19 7ZM17 11C14.7909 11 13 9.20914 13 7H5V19H17V11Z" /></svg>;
+export default IconNotification;

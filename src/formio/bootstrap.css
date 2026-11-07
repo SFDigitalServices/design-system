@@ -1,0 +1,2698 @@
+@import url("https://cdn.jsdelivr.net/npm/font-awesome@^4.7.0/css/font-awesome.min.css");
+/*!
+ * Bootstrap v4.6.2 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+.Formio input,
+.Formio select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+.Formio input {
+  overflow: visible;
+}
+.Formio select {
+  text-transform: none;
+  word-wrap: normal;
+}
+.Formio input[type="checkbox"],
+.Formio input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.Formio .h1,
+.Formio .h2,
+.Formio .h3,
+.Formio .h4,
+.Formio .h5,
+.Formio .h6 {
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.Formio .h1 {
+  font-size: 2.5rem;
+}
+.Formio .h2 {
+  font-size: 2rem;
+}
+.Formio .h3 {
+  font-size: 1.75rem;
+}
+.Formio .h4 {
+  font-size: 1.5rem;
+}
+.Formio .h5 {
+  font-size: 1.25rem;
+}
+.Formio .h6 {
+  font-size: 1rem;
+}
+.Formio .lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.Formio .small {
+  font-size: 0.875em;
+  font-weight: 400;
+}
+.Formio .mark {
+  background-color: #fcf8e3;
+  padding: 0.2em;
+}
+.Formio .list-inline {
+  list-style: none;
+  padding-left: 0;
+}
+.Formio .list-inline-item {
+  display: inline-block;
+}
+.Formio .list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+.Formio .blockquote {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.Formio .figure {
+  display: inline-block;
+}
+.Formio .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .Formio .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .Formio .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .Formio .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .Formio .container {
+    max-width: 1140px;
+  }
+}
+.Formio .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.Formio .col,
+.Formio .col-md-1,
+.Formio .col-md-10,
+.Formio .col-md-12,
+.Formio .col-md-2,
+.Formio .col-md-3,
+.Formio .col-sm-10,
+.Formio .col-sm-12,
+.Formio .col-sm-2,
+.Formio .col-sm-3,
+.Formio .col-sm-6,
+.Formio .col-sm-7,
+.Formio .col-sm-9 {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%;
+}
+.Formio .col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+@media (min-width: 576px) {
+  .Formio .col-sm-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  .Formio .col-sm-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .Formio .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .Formio .col-sm-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+  .Formio .col-sm-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .Formio .col-sm-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  .Formio .col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .Formio .col-md-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+  .Formio .col-md-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  .Formio .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .Formio .col-md-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  .Formio .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+.Formio .table {
+  color: #212529;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.Formio .table td,
+.Formio .table th {
+  border-top: 1px solid #dee2e6;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+.Formio .table thead th {
+  border-bottom: 2px solid #dee2e6;
+  vertical-align: bottom;
+}
+.Formio .table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+.Formio .table-sm td,
+.Formio .table-sm th {
+  padding: 0.3rem;
+}
+.Formio .table-bordered,
+.Formio .table-bordered td,
+.Formio .table-bordered th {
+  border: 1px solid #dee2e6;
+}
+.Formio .table-bordered thead td,
+.Formio .table-bordered thead th {
+  border-bottom-width: 2px;
+}
+.Formio .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.Formio .table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+  color: #212529;
+}
+.Formio .table-responsive {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.Formio .table-responsive > .table-bordered {
+  border: 0;
+}
+.Formio .form-control {
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  color: #495057;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  height: calc(1.5em + 0.75rem + 2px);
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .Formio .form-control {
+    transition: none;
+  }
+}
+.Formio .form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+.Formio .form-control:focus {
+  background-color: #fff;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  color: #495057;
+  outline: 0;
+}
+.Formio .form-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.Formio .form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.Formio .form-control:disabled,
+.Formio .form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+.Formio input[type="date"].form-control,
+.Formio input[type="datetime-local"].form-control,
+.Formio input[type="month"].form-control,
+.Formio input[type="time"].form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.Formio select.form-control:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #495057;
+}
+.Formio select.form-control:focus::-ms-value {
+  background-color: #fff;
+  color: #495057;
+}
+.Formio .col-form-label {
+  font-size: inherit;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding-bottom: calc(0.375rem + 1px);
+  padding-top: calc(0.375rem + 1px);
+}
+.Formio select.form-control[multiple],
+.Formio select.form-control[size],
+.Formio textarea.form-control {
+  height: auto;
+}
+.Formio .form-group {
+  margin-bottom: 1rem;
+}
+.Formio .form-text {
+  display: block;
+  margin-top: 0.25rem;
+}
+.Formio .form-check {
+  display: block;
+  padding-left: 1.25rem;
+  position: relative;
+}
+.Formio .form-check-input {
+  margin-left: -1.25rem;
+  margin-top: 0.3rem;
+  position: absolute;
+}
+.Formio .form-check-input:disabled ~ .form-check-label,
+.Formio .form-check-input[disabled] ~ .form-check-label {
+  color: #6c757d;
+}
+.Formio .form-check-label {
+  margin-bottom: 0;
+}
+.Formio .invalid-feedback {
+  color: #dc3545;
+  display: none;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+  width: 100%;
+}
+.Formio .is-invalid ~ .invalid-feedback {
+  display: block;
+}
+.Formio .form-control.is-invalid {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3E%3Ccircle cx='6' cy='6' r='4.5'/%3E%3Cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3E%3Ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3E%3C/svg%3E");
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-repeat: no-repeat;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  border-color: #dc3545;
+  padding-right: calc(1.5em + 0.75rem) !important;
+}
+.Formio .form-control.is-invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+.Formio select.form-control.is-invalid {
+  background-position: right 1.5rem center;
+  padding-right: 3rem !important;
+}
+.Formio textarea.form-control.is-invalid {
+  background-position: top calc(0.375em + 0.1875rem) right
+    calc(0.375em + 0.1875rem);
+  padding-right: calc(1.5em + 0.75rem);
+}
+.Formio .form-check-input.is-invalid ~ .form-check-label {
+  color: #dc3545;
+}
+.Formio .form-check-input.is-invalid ~ .invalid-feedback {
+  display: block;
+}
+.Formio .btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #212529;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+}
+@media (prefers-reduced-motion: reduce) {
+  .Formio .btn {
+    transition: none;
+  }
+}
+.Formio .btn:hover {
+  color: #212529;
+  text-decoration: none;
+}
+.Formio .btn.focus,
+.Formio .btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: 0;
+}
+.Formio .btn.disabled,
+.Formio .btn:disabled {
+  opacity: 0.65;
+}
+.Formio .btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.Formio a.btn.disabled,
+.Formio fieldset:disabled a.btn {
+  pointer-events: none;
+}
+.Formio .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+.Formio .btn-primary.focus,
+.Formio .btn-primary:focus,
+.Formio .btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  color: #fff;
+}
+.Formio .btn-primary.focus,
+.Formio .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+.Formio .btn-primary.disabled,
+.Formio .btn-primary:disabled {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+.Formio .btn-primary:not(:disabled):not(.disabled).active,
+.Formio .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #0062cc;
+  border-color: #005cbf;
+  color: #fff;
+}
+.Formio .btn-primary:not(:disabled):not(.disabled).active:focus,
+.Formio .btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+.Formio .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+.Formio .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+  color: #fff;
+}
+.Formio .btn-secondary.focus,
+.Formio .btn-secondary:focus {
+  background-color: #5a6268;
+  border-color: #545b62;
+  box-shadow: 0 0 0 0.2rem hsla(208, 6%, 54%, 0.5);
+  color: #fff;
+}
+.Formio .btn-secondary.disabled,
+.Formio .btn-secondary:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+.Formio .btn-secondary:not(:disabled):not(.disabled).active,
+.Formio .btn-secondary:not(:disabled):not(.disabled):active {
+  background-color: #545b62;
+  border-color: #4e555b;
+  color: #fff;
+}
+.Formio .btn-secondary:not(:disabled):not(.disabled).active:focus,
+.Formio .btn-secondary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem hsla(208, 6%, 54%, 0.5);
+}
+.Formio .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+.Formio .btn-success.focus,
+.Formio .btn-success:focus,
+.Formio .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  color: #fff;
+}
+.Formio .btn-success.focus,
+.Formio .btn-success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+.Formio .btn-success.disabled,
+.Formio .btn-success:disabled {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+.Formio .btn-success:not(:disabled):not(.disabled).active,
+.Formio .btn-success:not(:disabled):not(.disabled):active {
+  background-color: #1e7e34;
+  border-color: #1c7430;
+  color: #fff;
+}
+.Formio .btn-success:not(:disabled):not(.disabled).active:focus,
+.Formio .btn-success:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+.Formio .btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+}
+.Formio .btn-warning.focus,
+.Formio .btn-warning:focus,
+.Formio .btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+  color: #212529;
+}
+.Formio .btn-warning.focus,
+.Formio .btn-warning:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
+}
+.Formio .btn-warning.disabled,
+.Formio .btn-warning:disabled {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+}
+.Formio .btn-warning:not(:disabled):not(.disabled).active,
+.Formio .btn-warning:not(:disabled):not(.disabled):active {
+  background-color: #d39e00;
+  border-color: #c69500;
+  color: #212529;
+}
+.Formio .btn-warning:not(:disabled):not(.disabled).active:focus,
+.Formio .btn-warning:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
+}
+.Formio .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+.Formio .btn-danger.focus,
+.Formio .btn-danger:focus,
+.Formio .btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  color: #fff;
+}
+.Formio .btn-danger.focus,
+.Formio .btn-danger:focus {
+  box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+}
+.Formio .btn-danger.disabled,
+.Formio .btn-danger:disabled {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+.Formio .btn-danger:not(:disabled):not(.disabled).active,
+.Formio .btn-danger:not(:disabled):not(.disabled):active {
+  background-color: #bd2130;
+  border-color: #b21f2d;
+  color: #fff;
+}
+.Formio .btn-danger:not(:disabled):not(.disabled).active:focus,
+.Formio .btn-danger:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+}
+.Formio .btn-light {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  color: #212529;
+}
+.Formio .btn-light.focus,
+.Formio .btn-light:focus,
+.Formio .btn-light:hover {
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+  color: #212529;
+}
+.Formio .btn-light.focus,
+.Formio .btn-light:focus {
+  box-shadow: 0 0 0 0.2rem hsla(220, 4%, 85%, 0.5);
+}
+.Formio .btn-light.disabled,
+.Formio .btn-light:disabled {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  color: #212529;
+}
+.Formio .btn-light:not(:disabled):not(.disabled).active,
+.Formio .btn-light:not(:disabled):not(.disabled):active {
+  background-color: #dae0e5;
+  border-color: #d3d9df;
+  color: #212529;
+}
+.Formio .btn-light:not(:disabled):not(.disabled).active:focus,
+.Formio .btn-light:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem hsla(220, 4%, 85%, 0.5);
+}
+.Formio .btn-sm {
+  border-radius: 0.2rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.25rem 0.5rem;
+}
+.Formio .btn-block {
+  display: block;
+  width: 100%;
+}
+.Formio .btn-block + .btn-block {
+  margin-top: 0.5rem;
+}
+.Formio input[type="button"].btn-block,
+.Formio input[type="reset"].btn-block,
+.Formio input[type="submit"].btn-block {
+  width: 100%;
+}
+.Formio .fade {
+  transition: opacity 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .Formio .fade {
+    transition: none;
+  }
+}
+.Formio .fade:not(.show) {
+  opacity: 0;
+}
+.Formio .collapse:not(.show) {
+  display: none;
+}
+.Formio .dropdown {
+  position: relative;
+}
+.Formio .btn-group {
+  display: inline-flex;
+  position: relative;
+  vertical-align: middle;
+}
+.Formio .btn-group > .btn {
+  flex: 1 1 auto;
+  position: relative;
+}
+.Formio .btn-group > .btn.active,
+.Formio .btn-group > .btn:active,
+.Formio .btn-group > .btn:focus,
+.Formio .btn-group > .btn:hover {
+  z-index: 1;
+}
+.Formio .btn-group > .btn-group:not(:first-child),
+.Formio .btn-group > .btn:not(:first-child) {
+  margin-left: -1px;
+}
+.Formio .btn-group > .btn-group:not(:last-child) > .btn,
+.Formio .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.Formio .btn-group > .btn-group:not(:first-child) > .btn,
+.Formio .btn-group > .btn:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.Formio .input-group {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: stretch;
+  width: 100%;
+}
+.Formio .input-group > .form-control {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  min-width: 0;
+  position: relative;
+  width: 1%;
+}
+.Formio .input-group > .form-control + .form-control {
+  margin-left: -1px;
+}
+.Formio .input-group > .form-control:focus {
+  z-index: 3;
+}
+.Formio .input-group > .form-control:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.Formio .input-group:not(.has-validation) > .form-control:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.Formio .input-group-append,
+.Formio .input-group-prepend {
+  display: flex;
+}
+.Formio .input-group-append .btn,
+.Formio .input-group-prepend .btn {
+  position: relative;
+  z-index: 2;
+}
+.Formio .input-group-append .btn:focus,
+.Formio .input-group-prepend .btn:focus {
+  z-index: 3;
+}
+.Formio .input-group-append .btn + .btn,
+.Formio .input-group-append .btn + .input-group-text,
+.Formio .input-group-append .input-group-text + .btn,
+.Formio .input-group-append .input-group-text + .input-group-text,
+.Formio .input-group-prepend .btn + .btn,
+.Formio .input-group-prepend .btn + .input-group-text,
+.Formio .input-group-prepend .input-group-text + .btn,
+.Formio .input-group-prepend .input-group-text + .input-group-text {
+  margin-left: -1px;
+}
+.Formio .input-group-prepend {
+  margin-right: -1px;
+}
+.Formio .input-group-append {
+  margin-left: -1px;
+}
+.Formio .input-group-text {
+  display: flex;
+  align-items: center;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.Formio .input-group-text input[type="checkbox"],
+.Formio .input-group-text input[type="radio"] {
+  margin-top: 0;
+}
+.Formio
+  .input-group:not(.has-validation)
+  > .input-group-append:not(:last-child)
+  > .btn,
+.Formio
+  .input-group:not(.has-validation)
+  > .input-group-append:not(:last-child)
+  > .input-group-text,
+.Formio
+  .input-group
+  > .input-group-append:last-child
+  > .btn:not(:last-child):not(.dropdown-toggle),
+.Formio
+  .input-group
+  > .input-group-append:last-child
+  > .input-group-text:not(:last-child),
+.Formio .input-group > .input-group-prepend > .btn,
+.Formio .input-group > .input-group-prepend > .input-group-text {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.Formio .input-group > .input-group-append > .btn,
+.Formio .input-group > .input-group-append > .input-group-text,
+.Formio
+  .input-group
+  > .input-group-prepend:first-child
+  > .btn:not(:first-child),
+.Formio
+  .input-group
+  > .input-group-prepend:first-child
+  > .input-group-text:not(:first-child),
+.Formio .input-group > .input-group-prepend:not(:first-child) > .btn,
+.Formio
+  .input-group
+  > .input-group-prepend:not(:first-child)
+  > .input-group-text {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.Formio .nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.Formio .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+.Formio .nav-link:focus,
+.Formio .nav-link:hover {
+  text-decoration: none;
+}
+.Formio .nav-link.disabled {
+  color: #6c757d;
+  cursor: default;
+  pointer-events: none;
+}
+.Formio .nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+.Formio .nav-tabs .nav-link {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  margin-bottom: -1px;
+}
+.Formio .nav-tabs .nav-link:focus,
+.Formio .nav-tabs .nav-link:hover {
+  border-color: #e9ecef #e9ecef #dee2e6;
+  isolation: isolate;
+}
+.Formio .nav-tabs .nav-link.disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #6c757d;
+}
+.Formio .nav-tabs .nav-item.show .nav-link,
+.Formio .nav-tabs .nav-link.active {
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+  color: #495057;
+}
+.Formio .tab-content > .tab-pane {
+  display: none;
+}
+.Formio .tab-content > .active {
+  display: block;
+}
+.Formio .card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  word-wrap: break-word;
+  background-clip: border-box;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.Formio .card > hr {
+  margin-left: 0;
+  margin-right: 0;
+}
+.Formio .card > .list-group {
+  border-bottom: inherit;
+  border-top: inherit;
+}
+.Formio .card > .list-group:first-child {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-width: 0;
+}
+.Formio .card > .list-group:last-child {
+  border-bottom-left-radius: calc(0.25rem - 1px);
+  border-bottom-right-radius: calc(0.25rem - 1px);
+  border-bottom-width: 0;
+}
+.Formio .card > .card-header + .list-group {
+  border-top: 0;
+}
+.Formio .card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+.Formio .card-title {
+  margin-bottom: 0.75rem;
+}
+.Formio .card-header {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 0;
+  padding: 0.75rem 1.25rem;
+}
+.Formio .card-header:first-child {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+.Formio .card-header-tabs {
+  border-bottom: 0;
+  margin-bottom: -0.75rem;
+  margin-left: -0.625rem;
+  margin-right: -0.625rem;
+}
+.Formio .accordion {
+  overflow-anchor: none;
+}
+.Formio .accordion > .card {
+  overflow: hidden;
+}
+.Formio .accordion > .card:not(:last-of-type) {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.Formio .accordion > .card:not(:first-of-type) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.Formio .accordion > .card > .card-header {
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+.Formio .breadcrumb {
+  background-color: #e9ecef;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+}
+.Formio .breadcrumb,
+.Formio .pagination {
+  border-radius: 0.25rem;
+  display: flex;
+  list-style: none;
+}
+.Formio .pagination {
+  padding-left: 0;
+}
+.Formio .page-link {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  color: #007bff;
+  display: block;
+  line-height: 1.25;
+  margin-left: -1px;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+}
+.Formio .page-link:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  color: #0056b3;
+  text-decoration: none;
+  z-index: 2;
+}
+.Formio .page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: 0;
+  z-index: 3;
+}
+.Formio .page-item:first-child .page-link {
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  margin-left: 0;
+}
+.Formio .page-item:last-child .page-link {
+  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.Formio .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  z-index: 3;
+}
+.Formio .page-item.disabled .page-link {
+  background-color: #fff;
+  border-color: #dee2e6;
+  color: #6c757d;
+  cursor: auto;
+  pointer-events: none;
+}
+.Formio .badge {
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.25em 0.4em;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .Formio .badge {
+    transition: none;
+  }
+}
+.Formio a.badge:focus,
+.Formio a.badge:hover {
+  text-decoration: none;
+}
+.Formio .badge:empty {
+  display: none;
+}
+.Formio .btn .badge {
+  position: relative;
+  top: -1px;
+}
+.Formio .badge-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+.Formio a.badge-primary:focus,
+.Formio a.badge-primary:hover {
+  background-color: #0062cc;
+  color: #fff;
+}
+.Formio a.badge-primary.focus,
+.Formio a.badge-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  outline: 0;
+}
+.Formio .badge-success {
+  background-color: #28a745;
+  color: #fff;
+}
+.Formio a.badge-success:focus,
+.Formio a.badge-success:hover {
+  background-color: #1e7e34;
+  color: #fff;
+}
+.Formio a.badge-success.focus,
+.Formio a.badge-success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+  outline: 0;
+}
+.Formio .badge-info {
+  background-color: #17a2b8;
+  color: #fff;
+}
+.Formio a.badge-info:focus,
+.Formio a.badge-info:hover {
+  background-color: #117a8b;
+  color: #fff;
+}
+.Formio a.badge-info.focus,
+.Formio a.badge-info:focus {
+  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+  outline: 0;
+}
+.Formio .alert {
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+}
+.Formio .alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+.Formio .alert-success hr {
+  border-top-color: #b1dfbb;
+}
+.Formio .alert-info {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+.Formio .alert-info hr {
+  border-top-color: #abdde5;
+}
+.Formio .alert-warning {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+.Formio .alert-warning hr {
+  border-top-color: #ffe8a1;
+}
+.Formio .alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+.Formio .alert-danger hr {
+  border-top-color: #f1b0b7;
+}
+.Formio .progress {
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  height: 1rem;
+  line-height: 0;
+}
+.Formio .progress,
+.Formio .progress-bar {
+  display: flex;
+  overflow: hidden;
+}
+.Formio .progress-bar {
+  flex-direction: column;
+  -ms-flex-pack: center;
+  background-color: #007bff;
+  color: #fff;
+  justify-content: center;
+  text-align: center;
+  transition: width 0.6s ease;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .Formio .progress-bar {
+    transition: none;
+  }
+}
+.Formio .media {
+  display: flex;
+  align-items: flex-start;
+}
+.Formio .list-group {
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.Formio .list-group-item {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  display: block;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+}
+.Formio .list-group-item:first-child {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.Formio .list-group-item:last-child {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+.Formio .list-group-item.disabled,
+.Formio .list-group-item:disabled {
+  background-color: #fff;
+  color: #6c757d;
+  pointer-events: none;
+}
+.Formio .list-group-item.active {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  z-index: 2;
+}
+.Formio .list-group-item + .list-group-item {
+  border-top-width: 0;
+}
+.Formio .list-group-item + .list-group-item.active {
+  border-top-width: 1px;
+  margin-top: -1px;
+}
+.Formio .close {
+  color: #000;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.5;
+  text-shadow: 0 1px 0 #fff;
+}
+.Formio .close:hover {
+  color: #000;
+  text-decoration: none;
+}
+.Formio .close:not(:disabled):not(.disabled):focus,
+.Formio .close:not(:disabled):not(.disabled):hover {
+  opacity: 0.75;
+}
+.Formio button.close {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+.Formio a.close.disabled {
+  pointer-events: none;
+}
+.Formio .modal-open {
+  overflow: hidden;
+}
+.Formio .modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.Formio .modal {
+  display: none;
+  height: 100%;
+  left: 0;
+  outline: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+.Formio .tooltip {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.5;
+  margin: 0;
+  position: absolute;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  z-index: 5;
+  word-wrap: break-word;
+  opacity: 0;
+}
+.Formio .tooltip.show {
+  opacity: 0.9;
+}
+.Formio .tooltip .arrow {
+  display: block;
+  height: 0.4rem;
+  position: absolute;
+  width: 0.8rem;
+}
+.Formio .tooltip .arrow:before {
+  border-color: transparent;
+  border-style: solid;
+  content: "";
+  position: absolute;
+}
+.Formio .bg-primary {
+  background-color: #007bff !important;
+}
+.Formio a.bg-primary:focus,
+.Formio a.bg-primary:hover,
+.Formio button.bg-primary:focus,
+.Formio button.bg-primary:hover {
+  background-color: #0062cc !important;
+}
+.Formio .bg-success {
+  background-color: #28a745 !important;
+}
+.Formio a.bg-success:focus,
+.Formio a.bg-success:hover,
+.Formio button.bg-success:focus,
+.Formio button.bg-success:hover {
+  background-color: #1e7e34 !important;
+}
+.Formio .bg-info {
+  background-color: #17a2b8 !important;
+}
+.Formio a.bg-info:focus,
+.Formio a.bg-info:hover,
+.Formio button.bg-info:focus,
+.Formio button.bg-info:hover {
+  background-color: #117a8b !important;
+}
+.Formio .bg-light {
+  background-color: #f8f9fa !important;
+}
+.Formio a.bg-light:focus,
+.Formio a.bg-light:hover,
+.Formio button.bg-light:focus,
+.Formio button.bg-light:hover {
+  background-color: #dae0e5 !important;
+}
+.Formio .border {
+  border: 1px solid #dee2e6 !important;
+}
+.Formio .border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+.Formio .rounded {
+  border-radius: 0.25rem !important;
+}
+.Formio .flex-column {
+  flex-direction: column !important;
+}
+.Formio .flex-fill {
+  flex: 1 1 auto !important;
+}
+.Formio .justify-content-center {
+  justify-content: center !important;
+}
+.Formio .float-right {
+  float: right !important;
+}
+.Formio .sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+.Formio .shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.Formio .w-100 {
+  width: 100% !important;
+}
+.Formio .text-right {
+  text-align: right !important;
+}
+.Formio .text-center {
+  text-align: center !important;
+}
+.Formio .text-danger {
+  color: #dc3545 !important;
+}
+.Formio a.text-danger:focus,
+.Formio a.text-danger:hover {
+  color: #a71d2a !important;
+}
+.Formio .text-light {
+  color: #f8f9fa !important;
+}
+.Formio a.text-light:focus,
+.Formio a.text-light:hover {
+  color: #cbd3da !important;
+}
+.Formio .text-muted {
+  color: #6c757d !important;
+}
+.Formio .visible {
+  visibility: visible !important;
+}
+@media print {
+  .Formio a:not(.btn) {
+    text-decoration: underline;
+  }
+  @page {
+    size: a3;
+  }
+  .Formio .container {
+    min-width: 992px !important;
+  }
+  .Formio .badge {
+    border: 1px solid #000;
+  }
+  .Formio .table {
+    border-collapse: collapse !important;
+  }
+  .Formio .table td,
+  .Formio .table th {
+    background-color: #fff !important;
+  }
+  .Formio .table-bordered td,
+  .Formio .table-bordered th {
+    border: 1px solid #dee2e6 !important;
+  }
+}
+.Formio .choices {
+  font-size: 16px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  position: relative;
+}
+.Formio .choices:focus {
+  outline: none;
+}
+.Formio .choices:last-child {
+  margin-bottom: 0;
+}
+.Formio .choices.is-open {
+  overflow: visible;
+}
+.Formio .choices.is-disabled .choices__inner,
+.Formio .choices.is-disabled .choices__input {
+  background-color: #eaeaea;
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.Formio .choices.is-disabled .choices__item {
+  cursor: not-allowed;
+}
+.Formio .choices [hidden] {
+  display: none !important;
+}
+.Formio .choices[data-type*="select-one"] {
+  cursor: pointer;
+}
+.Formio .choices[data-type*="select-one"] .choices__inner {
+  padding-bottom: 7.5px;
+}
+.Formio .choices[data-type*="select-one"] .choices__input {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+.Formio .choices[data-type*="select-one"] .choices__button {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Im0yLjU5Mi4wNDQgMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NCAxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==");
+  background-size: 8px;
+  border-radius: 10em;
+  height: 20px;
+  margin-right: 25px;
+  margin-top: -10px;
+  opacity: 0.25;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20px;
+}
+.Formio .choices[data-type*="select-one"] .choices__button:focus,
+.Formio .choices[data-type*="select-one"] .choices__button:hover {
+  opacity: 1;
+}
+.Formio .choices[data-type*="select-one"] .choices__button:focus {
+  box-shadow: 0 0 0 2px #00bcd4;
+}
+.Formio .choices[data-type*="select-one"]:after {
+  border: 5px solid transparent;
+  border-top-color: #333;
+  content: "";
+  height: 0;
+  margin-top: -2.5px;
+  pointer-events: none;
+  position: absolute;
+  right: 11.5px;
+  top: 50%;
+  width: 0;
+}
+.Formio .choices[data-type*="select-one"].is-open:after {
+  border-color: transparent transparent #333;
+  margin-top: -7.5px;
+}
+.Formio .choices[data-type*="select-one"][dir="rtl"]:after {
+  left: 11.5px;
+  right: auto;
+}
+.Formio .choices[data-type*="select-one"][dir="rtl"] .choices__button {
+  left: 0;
+  margin-left: 25px;
+  margin-right: 0;
+  right: auto;
+}
+.Formio .choices[data-type*="select-multiple"] .choices__inner,
+.Formio .choices[data-type*="text"] .choices__inner {
+  cursor: text;
+}
+.Formio .choices[data-type*="select-multiple"] .choices__button,
+.Formio .choices[data-type*="text"] .choices__button {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Im0yLjU5Mi4wNDQgMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NCAxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==");
+  background-size: 8px;
+  border-left: 1px solid #008fa1;
+  border-radius: 0;
+  display: inline-block;
+  line-height: 1;
+  margin: 0 -4px 0 8px;
+  opacity: 0.75;
+  padding-left: 16px;
+  position: relative;
+  width: 8px;
+}
+.Formio .choices[data-type*="select-multiple"] .choices__button:focus,
+.Formio .choices[data-type*="select-multiple"] .choices__button:hover,
+.Formio .choices[data-type*="text"] .choices__button:focus,
+.Formio .choices[data-type*="text"] .choices__button:hover {
+  opacity: 1;
+}
+.Formio .choices__inner {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 2.5px;
+  display: inline-block;
+  font-size: 14px;
+  min-height: 44px;
+  overflow: hidden;
+  padding: 7.5px 7.5px 3.75px;
+  vertical-align: top;
+  width: 100%;
+}
+.Formio .is-focused .choices__inner,
+.Formio .is-open .choices__inner {
+  border-color: #b7b7b7;
+}
+.Formio .is-open .choices__inner {
+  border-radius: 2.5px 2.5px 0 0;
+}
+.Formio .is-flipped.is-open .choices__inner {
+  border-radius: 0 0 2.5px 2.5px;
+}
+.Formio .choices__list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.Formio .choices__list--single {
+  display: inline-block;
+  padding: 4px 16px 4px 4px;
+  width: 100%;
+}
+.Formio [dir="rtl"] .choices__list--single {
+  padding-left: 16px;
+  padding-right: 4px;
+}
+.Formio .choices__list--single .choices__item {
+  width: 100%;
+}
+.Formio .choices__list--multiple {
+  display: inline;
+}
+.Formio .choices__list--multiple .choices__item {
+  background-color: #00bcd4;
+  border: 1px solid #00a5bb;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 3.75px;
+  margin-right: 3.75px;
+  padding: 4px 10px;
+  vertical-align: middle;
+  word-break: break-all;
+}
+.Formio [dir="rtl"] .choices__list--multiple .choices__item {
+  margin-left: 3.75px;
+  margin-right: 0;
+}
+.Formio .choices__list--multiple .choices__item.is-highlighted {
+  background-color: #00a5bb;
+  border: 1px solid #008fa1;
+}
+.Formio .is-disabled .choices__list--multiple .choices__item {
+  background-color: #aaa;
+  border: 1px solid #919191;
+}
+.Formio .choices__list--dropdown,
+.Formio .choices__list[aria-expanded] {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 2.5px;
+  border-bottom-right-radius: 2.5px;
+  margin-top: -1px;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  visibility: hidden;
+  width: 100%;
+  will-change: visibility;
+  word-break: break-all;
+  z-index: 1;
+}
+.Formio .is-active.choices__list--dropdown,
+.Formio .is-active.choices__list[aria-expanded] {
+  visibility: visible;
+}
+.Formio .is-open .choices__list--dropdown,
+.Formio .is-open .choices__list[aria-expanded] {
+  border-color: #b7b7b7;
+}
+.Formio .is-flipped .choices__list--dropdown,
+.Formio .is-flipped .choices__list[aria-expanded] {
+  border-radius: 0.25rem 0.25rem 0 0;
+  bottom: 100%;
+  margin-bottom: -1px;
+  margin-top: 0;
+  top: auto;
+}
+.Formio .choices__list--dropdown .choices__list,
+.Formio .choices__list[aria-expanded] .choices__list {
+  max-height: 300px;
+  overflow: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+.Formio .choices__list--dropdown .choices__item,
+.Formio .choices__list[aria-expanded] .choices__item {
+  font-size: 14px;
+  padding: 10px;
+  position: relative;
+}
+.Formio [dir="rtl"] .choices__list--dropdown .choices__item,
+.Formio [dir="rtl"] .choices__list[aria-expanded] .choices__item {
+  text-align: right;
+}
+@media (min-width: 640px) {
+  .Formio .choices__list--dropdown .choices__item--selectable,
+  .Formio .choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 100px;
+  }
+  .Formio .choices__list--dropdown .choices__item--selectable:after,
+  .Formio .choices__list[aria-expanded] .choices__item--selectable:after {
+    content: attr(data-select-text);
+    font-size: 12px;
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .Formio [dir="rtl"] .choices__list--dropdown .choices__item--selectable,
+  .Formio [dir="rtl"] .choices__list[aria-expanded] .choices__item--selectable {
+    padding-left: 100px;
+    padding-right: 10px;
+    text-align: right;
+  }
+  .Formio [dir="rtl"] .choices__list--dropdown .choices__item--selectable:after,
+  .Formio
+    [dir="rtl"]
+    .choices__list[aria-expanded]
+    .choices__item--selectable:after {
+    left: 10px;
+    right: auto;
+  }
+}
+.Formio .choices__list--dropdown .choices__item--selectable.is-highlighted,
+.Formio
+  .choices__list[aria-expanded]
+  .choices__item--selectable.is-highlighted {
+  background-color: #f2f2f2;
+}
+.Formio
+  .choices__list--dropdown
+  .choices__item--selectable.is-highlighted:after,
+.Formio
+  .choices__list[aria-expanded]
+  .choices__item--selectable.is-highlighted:after {
+  opacity: 0.5;
+}
+.Formio .choices__item {
+  cursor: default;
+}
+.Formio .choices__item--selectable {
+  cursor: pointer;
+}
+.Formio .choices__item--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.Formio .choices__heading {
+  border-bottom: 1px solid #f7f7f7;
+  color: gray;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px;
+}
+.Formio .choices__button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+  text-indent: -9999px;
+}
+.Formio .choices__button:focus {
+  outline: none;
+}
+.Formio .choices__input {
+  background-color: #f9f9f9;
+  border: 0;
+  border-radius: 0;
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  max-width: 100%;
+  padding: 4px 0 4px 2px;
+  vertical-align: baseline;
+}
+.Formio .choices__input:focus {
+  outline: 0;
+}
+.Formio .choices__input::-webkit-search-cancel-button,
+.Formio .choices__input::-webkit-search-decoration,
+.Formio .choices__input::-webkit-search-results-button,
+.Formio .choices__input::-webkit-search-results-decoration {
+  display: none;
+}
+.Formio .choices__input::-ms-clear,
+.Formio .choices__input::-ms-reveal {
+  display: none;
+  height: 0;
+  width: 0;
+}
+.Formio [dir="rtl"] .choices__input {
+  padding-left: 0;
+  padding-right: 2px;
+}
+.Formio .choices__placeholder {
+  opacity: 0.5;
+}
+.Formio .tippy-box[data-animation="fade"][data-state="hidden"] {
+  opacity: 0;
+}
+.Formio [data-tippy-root] {
+  max-width: calc(100vw - 10px);
+}
+.Formio .tippy-box {
+  background-color: #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  outline: 0;
+  position: relative;
+  transition-property: transform, visibility, opacity;
+  white-space: normal;
+}
+.Formio .tippy-box[data-placement^="top"] > .tippy-arrow {
+  bottom: 0;
+}
+.Formio .tippy-box[data-placement^="top"] > .tippy-arrow:before {
+  border-top-color: initial;
+  border-width: 8px 8px 0;
+  bottom: -7px;
+  left: 0;
+  transform-origin: center top;
+}
+.Formio .tippy-box[data-placement^="bottom"] > .tippy-arrow {
+  top: 0;
+}
+.Formio .tippy-box[data-placement^="bottom"] > .tippy-arrow:before {
+  border-bottom-color: initial;
+  border-width: 0 8px 8px;
+  left: 0;
+  top: -7px;
+  transform-origin: center bottom;
+}
+.Formio .tippy-box[data-placement^="left"] > .tippy-arrow {
+  right: 0;
+}
+.Formio .tippy-box[data-placement^="left"] > .tippy-arrow:before {
+  border-left-color: initial;
+  border-width: 8px 0 8px 8px;
+  right: -7px;
+  transform-origin: center left;
+}
+.Formio .tippy-box[data-placement^="right"] > .tippy-arrow {
+  left: 0;
+}
+.Formio .tippy-box[data-placement^="right"] > .tippy-arrow:before {
+  border-right-color: initial;
+  border-width: 8px 8px 8px 0;
+  left: -7px;
+  transform-origin: center right;
+}
+.Formio .tippy-box[data-inertia][data-state="visible"] {
+  transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+.Formio .tippy-arrow {
+  color: #333;
+  height: 16px;
+  width: 16px;
+}
+.Formio .tippy-arrow:before {
+  border-color: transparent;
+  border-style: solid;
+  content: "";
+  position: absolute;
+}
+.Formio .tippy-content {
+  padding: 5px 9px;
+  position: relative;
+  z-index: 1;
+}
+.Formio dialog {
+  background: #fff;
+  border: solid;
+  color: #000;
+  display: block;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Formio dialog:not([open]) {
+  display: none;
+}
+.Formio dialog + .backdrop {
+  background: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.Formio dialog.fixed {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.Formio .formio-loader {
+  min-height: 60px;
+  position: relative;
+}
+.Formio .loader-wrapper {
+  background-color: transparent;
+  bottom: 0;
+  height: 120px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+.Formio .loader {
+  animation: a 2s linear infinite;
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top-color: #3498db;
+  display: inline-block;
+  height: 60px;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  z-index: 10000;
+}
+@keyframes a {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.Formio .formio-form {
+  min-height: 80px;
+  position: relative;
+}
+.Formio .formio-error-wrapper,
+.Formio .formio-warning-wrapper {
+  padding: 1em;
+}
+.Formio .formio-error-wrapper {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+.Formio .formio-error-wrapper .field-required:after,
+.Formio .formio-error-wrapper .formio-errors .error {
+  color: #c20000;
+}
+.Formio .formio-warning-wrapper {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+.Formio .builder-component.has-error .invalid-feedback,
+.Formio .formio-component-modal-wrapper.has-error .invalid-feedback,
+.Formio .formio-component-modal-wrapper.has-message .invalid-feedback,
+.Formio .formio-component.alert-danger .invalid-feedback,
+.Formio .formio-component.has-error .invalid-feedback,
+.Formio .formio-component.has-message .invalid-feedback {
+  color: inherit;
+  display: block;
+  margin-top: 4px;
+}
+.Formio .formio-errors .error {
+  color: #dc3545;
+}
+.Formio .formio-errors .warning {
+  color: #856404;
+}
+.Formio .formio-errors .info {
+  color: #004085;
+}
+.Formio .formio-form-group {
+  margin-bottom: 1rem;
+}
+.Formio .has-feedback .form-control {
+  padding-right: 10px;
+}
+.Formio .has-feedback .form-control[type="hidden"] {
+  padding-right: 0;
+}
+.Formio .ql-source:after {
+  content: "[source]";
+  white-space: nowrap;
+}
+.Formio .quill-source-code {
+  background: #1d1d1d;
+  border: none;
+  bottom: 0;
+  box-sizing: border-box;
+  color: #ccc;
+  display: none;
+  font-family: Consolas, Menlo, Monaco, Courier New, monospace;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0;
+  outline: none;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.Formio .field-required:after,
+.Formio .tab-error:after {
+  color: #eb0000;
+  content: " *";
+}
+.Formio .field-required:after {
+  position: relative;
+  z-index: 10;
+}
+.Formio .button-icon-right {
+  margin-left: 5px;
+}
+.Formio .card-vertical {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+.Formio .card-vertical .card-body,
+.Formio .tab,
+.Formio .tab-content {
+  flex-grow: 2;
+}
+.Formio .nav-tabs-vertical {
+  border-bottom: 0;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+.Formio .card-vertical > .card-body,
+.Formio .card-vertical > .tab,
+.Formio .card-vertical > .tab-content {
+  flex-basis: 85%;
+}
+.Formio .card-vertical ul > li > .nav-link-vertical {
+  border-radius: 4px 0 0 4px;
+  border-right-color: transparent;
+  margin-right: 0;
+}
+.Formio .card-vertical ul > li > .nav-link-vertical.active {
+  border-bottom-color: #ddd;
+  border-right-color: transparent;
+}
+.Formio .card-vertical ul > li > .nav-link-vertical.active:hover {
+  border-right-color: transparent;
+}
+.Formio .nav-tabs-vertical > li {
+  margin: 0 -1px 0 0;
+}
+.Formio td > .form-group,
+.Formio td > .formio-form-group {
+  margin-bottom: 0;
+}
+.Formio .signature-pad-body {
+  overflow: hidden;
+  position: relative;
+}
+.Formio .signature-pad-body .form-control-feedback {
+  font-size: 0.8rem;
+  position: absolute;
+  right: 3px;
+  top: 1px;
+}
+.Formio .signature-pad-canvas {
+  border: 1px solid #f4f4f4;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.02);
+}
+.Formio .btn.signature-pad-refresh {
+  left: 0;
+  line-height: 0;
+  padding: 3px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+.Formio [dir="rtl"] .btn.signature-pad-refresh {
+  left: unset;
+  right: 0;
+}
+.Formio .formio-component-multiple .choices__input {
+  width: 100%;
+}
+.Formio .formio-component-multiple .is-invalid {
+  border-color: #f04124;
+}
+.Formio .formio-component-multiple :not(.is-invalid) {
+  border-color: #ccc;
+}
+.Formio .choices__list--dropdown .choices__item--selectable {
+  padding-right: 0;
+}
+.Formio .signature-pad-refresh img {
+  height: 1.2em;
+}
+.Formio .signature-pad-footer {
+  color: #c3c3c3;
+  text-align: center;
+}
+.Formio .is-active.choices__list--dropdown {
+  z-index: 100;
+}
+.Formio .choices__list--multiple .choices__item {
+  border-radius: 0;
+  line-height: 1em;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+}
+.Formio .choices__list--single {
+  padding: 0;
+}
+.Formio .choices__item.choices__item--selectable {
+  overflow: hidden;
+  padding-right: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Formio .choices__input {
+  padding: 2px;
+}
+.Formio .choices[dir="rtl"] > * {
+  text-align: right;
+}
+@-moz-document url-prefix() {
+  .Formio .choices__button {
+    float: right;
+  }
+}
+.Formio .formio-component-file .fileSelector {
+  border: 2px dashed #ddd;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+}
+.Formio .formio-component-file .fileSelector .loader-wrapper {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.Formio .formio-component-file .fileSelector .loader-wrapper .loader {
+  height: 45px;
+  margin-left: -23px;
+  margin-top: -23px;
+  width: 45px;
+}
+.Formio .formio-component-file .fileSelector a {
+  text-decoration: underline;
+}
+.Formio .formio-component-file .fileSelector.fileDragOver {
+  border-color: #127abe;
+}
+.Formio .formio-component-file .fileSelector .fa,
+.Formio .formio-component-file .fileSelector .glyphicon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+.Formio [dir="rtl"] .formio-component-file .fileSelector .fa,
+.Formio [dir="rtl"] .formio-component-file .fileSelector .glyphicon {
+  margin-left: 5px;
+  margin-right: unset;
+}
+.Formio .formio-component-file .fileSelector .browse {
+  cursor: pointer;
+}
+@keyframes b {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Formio .formio-dialog {
+  box-sizing: border-box;
+  color: #666;
+  font-size: 0.8em;
+}
+.Formio .formio-dialog.formio-modaledit-dialog {
+  font-size: inherit;
+}
+.Formio .formio-dialog *,
+.Formio .formio-dialog :after,
+.Formio .formio-dialog :before {
+  box-sizing: inherit;
+}
+.Formio .formio-dialog {
+  overflow: auto;
+  position: fixed;
+  -webkit-overflow-scrolling: touch;
+  animation: b 0.5s;
+  background: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10000;
+}
+.Formio .formio-dialog.formio-dialog-disabled-animation,
+.Formio .formio-dialog.formio-dialog-disabled-animation .formio-dialog-content,
+.Formio .formio-dialog.formio-dialog-disabled-animation .formio-dialog-overlay {
+  animation: none !important;
+}
+.Formio .formio-dialog-overlay {
+  background: transparent;
+  bottom: 0;
+  left: 0;
+  margin-right: 15px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.Formio .formio-dialog-content,
+.Formio .formio-dialog-overlay {
+  animation: b 0.5s;
+  -webkit-backface-visibility: hidden;
+}
+.Formio .formio-dialog-content {
+  background: #fff;
+  overflow: auto;
+  pointer-events: all;
+}
+.Formio .formio-dialog-close:before {
+  content: "×";
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.Formio .formio-dialog .tab-content {
+  padding-top: 12px;
+}
+.Formio .formio-dialog-close {
+  z-index: 1000;
+}
+@keyframes c {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.Formio .formio-dialog.formio-dialog-theme-default {
+  padding-bottom: 160px;
+  padding-top: 160px;
+}
+.Formio .formio-dialog.formio-dialog-theme-default .component-edit-container {
+  padding: 0.5em;
+}
+.Formio .formio-dialog.formio-dialog-theme-default .formio-dialog-content {
+  animation: c 0.5s;
+  background: #f0f0f0;
+  border-radius: 5px;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+  width: 80%;
+}
+.Formio .formio-dialog.formio-dialog-theme-default .formio-dialog-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  z-index: 100;
+}
+.Formio .formio-clickable {
+  cursor: pointer;
+}
+.Formio .component-settings .nav > li > a {
+  padding: 8px 10px;
+}
+.Formio .formio-dialog.formio-dialog-theme-default .formio-dialog-close:before {
+  background: transparent;
+  color: #8a8a8a;
+  content: "×";
+  display: block;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 3px;
+  text-align: center;
+}
+.Formio
+  .formio-dialog.formio-dialog-theme-default
+  .formio-dialog-close:active:before,
+.Formio
+  .formio-dialog.formio-dialog-theme-default
+  .formio-dialog-close:hover:before {
+  color: #777;
+}
+.Formio .formio-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.Formio .formio-dialog.formio-dialog-theme-default .formio-dialog-buttons {
+  *zoom: 1;
+}
+.Formio
+  .formio-dialog.formio-dialog-theme-default
+  .formio-dialog-buttons:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.Formio .formio-dialog.formio-dialog-theme-default .formio-dialog-button {
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  float: right;
+  font-family: inherit;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  line-height: 1em;
+  margin: 0 0 0 0.5em;
+  padding: 0.75em 2em;
+  text-transform: uppercase;
+}
+.Formio .formio-dialog.formio-dialog-theme-default .formio-dialog-button:focus {
+  animation: formio-dialog-pulse 1.1s infinite;
+  outline: none;
+}
+@media (max-width: 568px) {
+  .Formio
+    .formio-dialog.formio-dialog-theme-default
+    .formio-dialog-button:focus {
+    animation: none;
+  }
+}
+.Formio .formio-dialog-content .panel {
+  margin: 0;
+}
+.Formio .formio-dialog-content [ref="dialogHeader"] {
+  padding-right: 15px;
+}
+.Formio .formio-dialog .formio-dialog-close {
+  cursor: pointer;
+}
+.Formio .formio-iframe {
+  border: none;
+  height: 1000px;
+  width: 100%;
+}
+.Formio .tooltip {
+  opacity: 1;
+}
+.Formio .formio-component-label-hidden {
+  position: relative;
+}
+.Formio .formio-hidden {
+  margin: 0;
+}
+.Formio .formio-removed {
+  display: none;
+}
+.Formio .control-label--hidden {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+}
+.Formio .editgrid-listgroup {
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+.Formio .formio-choices.form-group,
+.Formio .formio-choices.formio-form-group {
+  margin-bottom: 0;
+}
+.Formio .formio-choices[data-type="select-multiple"] .form-control {
+  height: auto;
+}
+.Formio .form-control.formio-multiple-mask-select {
+  width: 15%;
+  z-index: 4;
+}
+.Formio .form-control.formio-multiple-mask-input {
+  width: 85%;
+}
+.Formio .input-group.formio-multiple-mask-container {
+  width: 100%;
+}
+.Formio .formio-component .table {
+  margin-bottom: 0;
+  word-break: break-word;
+}
+.Formio .editgrid-table-container {
+  margin-bottom: 10px;
+  max-width: calc(100vw - 140px);
+}
+.Formio .editgrid-table-container .table-responsive {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.Formio .editgrid-table-column {
+  border: none;
+}
+.Formio .editgrid-table-head {
+  border: 1px solid #ddd;
+}
+.Formio .editgrid-table-body {
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+.Formio .is-disabled .choices__list--multiple .choices__item {
+  padding: 5px 10px;
+}
+.Formio .is-disabled .choices__list--multiple .choices__item .choices__button {
+  display: none;
+}
+.Formio .formio-collapse-icon {
+  cursor: pointer;
+  margin-right: 4px;
+}
+.Formio [dir="rtl"] .formio-collapse-icon {
+  margin-left: 4px;
+  margin-right: unset;
+}
+.Formio .datagrid-table > tbody > tr > td {
+  word-break: auto-phrase;
+}
+.Formio .formio-modaledit-dialog .formio-modaledit-close {
+  border-radius: 0;
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+.Formio .reset-margins a,
+.Formio .reset-margins abbr,
+.Formio .reset-margins acronym,
+.Formio .reset-margins address,
+.Formio .reset-margins article,
+.Formio .reset-margins aside,
+.Formio .reset-margins audio,
+.Formio .reset-margins b,
+.Formio .reset-margins big,
+.Formio .reset-margins blockquote,
+.Formio .reset-margins body,
+.Formio .reset-margins canvas,
+.Formio .reset-margins caption,
+.Formio .reset-margins center,
+.Formio .reset-margins cite,
+.Formio .reset-margins code,
+.Formio .reset-margins dd,
+.Formio .reset-margins del,
+.Formio .reset-margins details,
+.Formio .reset-margins dfn,
+.Formio .reset-margins div,
+.Formio .reset-margins dl,
+.Formio .reset-margins dt,
+.Formio .reset-margins em,
+.Formio .reset-margins embed,
+.Formio .reset-margins fieldset,
+.Formio .reset-margins figcaption,
+.Formio .reset-margins figure,
+.Formio .reset-margins footer,
+.Formio .reset-margins form,
+.Formio .reset-margins h1,
+.Formio .reset-margins h2,
+.Formio .reset-margins h3,
+.Formio .reset-margins h4,
+.Formio .reset-margins h5,
+.Formio .reset-margins h6,
+.Formio .reset-margins header,
+.Formio .reset-margins hgroup,
+.Formio .reset-margins html,
+.Formio .reset-margins i,
+.Formio .reset-margins iframe,
+.Formio .reset-margins img,
+.Formio .reset-margins ins,
+.Formio .reset-margins kbd,
+.Formio .reset-margins label,
+.Formio .reset-margins legend,
+.Formio .reset-margins li,
+.Formio .reset-margins mark,
+.Formio .reset-margins menu,
+.Formio .reset-margins nav,
+.Formio .reset-margins object,
+.Formio .reset-margins ol,
+.Formio .reset-margins output,
+.Formio .reset-margins p,
+.Formio .reset-margins pre,
+.Formio .reset-margins q,
+.Formio .reset-margins ruby,
+.Formio .reset-margins s,
+.Formio .reset-margins samp,
+.Formio .reset-margins section,
+.Formio .reset-margins small,
+.Formio .reset-margins span,
+.Formio .reset-margins strike,
+.Formio .reset-margins strong,
+.Formio .reset-margins sub,
+.Formio .reset-margins summary,
+.Formio .reset-margins sup,
+.Formio .reset-margins table,
+.Formio .reset-margins tbody,
+.Formio .reset-margins td,
+.Formio .reset-margins tfoot,
+.Formio .reset-margins th,
+.Formio .reset-margins thead,
+.Formio .reset-margins time,
+.Formio .reset-margins tr,
+.Formio .reset-margins tt,
+.Formio .reset-margins u,
+.Formio .reset-margins ul,
+.Formio .reset-margins var,
+.Formio .reset-margins video {
+  margin: 0;
+}
+.Formio .datagrid-group-label.collapsed > td {
+  display: none;
+}
+.Formio .datagrid-group-header.clickable {
+  cursor: pointer;
+}
+.Formio .datagrid-group-header.clickable .datagrid-group-label:before {
+  content: "▾";
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+.Formio
+  .datagrid-group-header.clickable.collapsed
+  .datagrid-group-label:before {
+  content: "▸";
+}
+.Formio .formio-component.alert-danger .help-block,
+.Formio .formio-component.alert-warning .help-block {
+  color: inherit;
+}
+.Formio .tree__node-content {
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+.Formio .tree__node-children {
+  margin: 0;
+}
+.Formio .formio-select-autocomplete-input {
+  border: none;
+  display: block;
+  height: 0;
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+}
+.Formio .has-error > .help-block {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.Formio .no-top-border-table > .table > tbody > tr:first-child > td {
+  border-top: none;
+}
+.Formio .table-responsive[ref="component"] {
+  overflow-x: visible;
+}
+.Formio .open-modal-button {
+  height: auto;
+  text-align: left;
+  white-space: normal;
+  width: 100%;
+}
+.Formio .address-autocomplete-container {
+  position: relative;
+}
+.Formio
+  .address-autocomplete-container
+  .address-autocomplete-remove-value-icon {
+  cursor: pointer;
+  margin-top: -9px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+.Formio
+  .address-autocomplete-container
+  .address-autocomplete-remove-value-icon--hidden {
+  display: none;
+}
+.Formio .autocomplete {
+  background: #fff;
+  border: 1px solid rgba(50, 50, 50, 0.6);
+  box-sizing: border-box;
+  font: 14px/22px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif;
+  overflow: auto;
+  z-index: 11000;
+}
+.Formio .autocomplete > div {
+  cursor: pointer;
+  padding: 6px 10px;
+}
+.Formio .autocomplete > div.selected,
+.Formio .autocomplete > div:hover:not(.group) {
+  background: #1e90ff;
+  color: #fff;
+}
+.Formio .field-wrapper {
+  display: flex;
+}
+.Formio .field-wrapper--reverse {
+  flex-direction: row-reverse;
+}
+.Formio .field-wrapper .field-label--right {
+  text-align: right;
+}
+.Formio .formio-component-modal-wrapper {
+  margin-bottom: 10px;
+}
+.Formio .formio-component-modal-wrapper .open-modal-button {
+  height: auto;
+}
+.Formio .formio-component-modal-wrapper .component-rendering-hidden {
+  visibility: hidden;
+}
+.Formio .formio-editor-read-only-content img {
+  max-width: 100%;
+}
+.Formio .formio-editor-read-only-content figure.table table {
+  border: 1px double #b3b3b3;
+  border-collapse: collapse;
+  border-spacing: 0;
+  height: 100%;
+  table-layout: fixed;
+  width: 100%;
+}
+.Formio .formio-editor-read-only-content figure.table table td,
+.Formio .formio-editor-read-only-content figure.table table th {
+  border: 1px solid #bfbfbf;
+  min-width: 2em;
+  padding: 0.4em;
+}
+.Formio .formio-form > div > nav > ul.pagination {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.Formio .formio-form > div > nav > ul.pagination .page-link {
+  color: #1c74d9;
+  cursor: pointer;
+}
+.Formio .formio-form > div > nav > ul.pagination .page-item.active .page-link {
+  background-color: #1c74d9;
+  border-color: #1c74d9;
+  color: #fff;
+}
+.Formio .classic-pagination {
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 1em;
+  padding: 0 15px 10px;
+}
+.Formio .classic-pagination-page {
+  padding: 0;
+  position: relative;
+}
+.Formio .classic-pagination-title {
+  color: #595959;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.Formio .classic-pagination-dot {
+  background: #fbe8aa;
+  border-radius: 50%;
+  display: block;
+  height: 30px;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  position: absolute;
+  top: 40px;
+  width: 30px;
+}
+.Formio .classic-pagination-dot:after {
+  background: #fbbd19;
+  border-radius: 50px;
+  content: " ";
+  height: 14px;
+  left: 8px;
+  position: absolute;
+  top: 8px;
+  width: 14px;
+}
+.Formio .classic-pagination .progress,
+.Formio .classic-pagination-progress {
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  height: 8px;
+  margin: 20px 0;
+  padding: 0;
+  position: relative;
+}
+.Formio .classic-pagination .progress-bar,
+.Formio .classic-pagination-progress-bar {
+  background: #fbe8aa;
+  box-shadow: none;
+  height: 10px;
+  width: 0;
+}
+.Formio .classic-pagination-page.complete .classic-pagination-progress-bar,
+.Formio .classic-pagination-page.complete .progress-bar {
+  width: 100%;
+}
+.Formio .classic-pagination-page.active .classic-pagination-progress-bar,
+.Formio .classic-pagination-page.active .progress-bar {
+  width: 50%;
+}
+.Formio .classic-pagination-page.disabled .classic-pagination-dot {
+  background-color: #f5f5f5;
+}
+.Formio .classic-pagination-page.disabled .classic-pagination-dot:after {
+  opacity: 0;
+}
+.Formio .classic-pagination-page:first-child .classic-pagination-progress,
+.Formio .classic-pagination-page:first-child .progress {
+  left: 50%;
+  width: 50%;
+}
+.Formio
+  .classic-pagination-page:first-child.active
+  .classic-pagination-progress-bar,
+.Formio .classic-pagination-page:first-child.active .progress-bar {
+  width: 0;
+}
+.Formio .classic-pagination-page:last-child .classic-pagination-progress,
+.Formio .classic-pagination-page:last-child .progress {
+  width: 50%;
+}
+.Formio
+  .classic-pagination-page:last-child.active
+  .classic-pagination-progress-bar,
+.Formio .classic-pagination-page:last-child.active .progress-bar {
+  width: 100%;
+}
+.Formio [ref="buttonMessageContainer"].has-error {
+  cursor: pointer;
+}
+.Formio [ref="passwordStrengthIndicator"] {
+  display: inline;
+}
+.Formio .formio-security-indicator {
+  display: flex;
+  height: 5px;
+}
+.Formio .formio-security-indicator [class^="security-"] {
+  height: 100%;
+  width: 100%;
+}
+.Formio .formio-component [ref="valueMaskInput"] {
+  display: none;
+}
+.Formio .formio-wizard-nav-container {
+  display: flex;
+}
+.Formio .formio-wizard-nav-container li {
+  margin-right: 0.5rem;
+}
+@media not all and (min-width: 30em) {
+  .Formio .formio-wizard-nav-container {
+    flex-direction: column;
+  }
+  .Formio .formio-wizard-nav-container li {
+    margin-right: 0;
+  }
+  .Formio .formio-wizard-nav-container li .btn {
+    margin-bottom: 0.25rem;
+    width: 100%;
+  }
+}
+.Formio span[role="link"] {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.Formio .hidden {
+  display: none !important;
+}

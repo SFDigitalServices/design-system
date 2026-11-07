@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconKeyboard = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path d="M8 16L16 16V14L8 14V16Z" /><path d="M5 8H7V10H5V8Z" /><path d="M7 11H5V13H7V11Z" /><path d="M5 14H7V16H5V14Z" /><path d="M10 8H8V10H10V8Z" /><path d="M8 11H10V13H8V11Z" /><path d="M13 8H11V10H13V8Z" /><path d="M11 11H13V13H11V11Z" /><path d="M16 8H14V10H16V8Z" /><path d="M14 11H16V13H14V11Z" /><path d="M19 8H17V10H19V8Z" /><path d="M17 11H19V13H17V11Z" /><path d="M19 14H17V16H19V14Z" /><path fillRule="evenodd" clipRule="evenodd" d="M2 19V5H22V19H2ZM4 7H20V17H4V7Z" /></svg>;
+export default IconKeyboard;

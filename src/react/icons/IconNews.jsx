@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconNews = props => <svg viewBox="0 0 20 20" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M19 10V20H4V18H17V10H19Z" /><path fillRule="evenodd" clipRule="evenodd" d="M14 4H4V15H14V4ZM2 2V17H16V2H2Z" /><path fillRule="evenodd" clipRule="evenodd" d="M7 4.8125L7 5.75L5 5.75L5 4.8125L7 4.8125Z" /><path fillRule="evenodd" clipRule="evenodd" d="M13 10.0625L5 10.0625L5 7.0625L13 7.0625L13 10.0625Z" /><path fillRule="evenodd" clipRule="evenodd" d="M13 11.875L5 11.875L5 10.875L13 10.875L13 11.875Z" /><path fillRule="evenodd" clipRule="evenodd" d="M13 13.75L5 13.75L5 12.75L13 12.75L13 13.75Z" /></svg>;
+export default IconNews;

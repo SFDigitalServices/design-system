@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconParking = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M9.66667 16.5L9.66667 7.5H12C13.933 7.5 15.5 9.01104 15.5 10.875C15.5 12.739 13.933 14.25 12 14.25L12 16.5H9.66667ZM12 12C12.6443 12 13.1667 11.4963 13.1667 10.875C13.1667 10.2537 12.6443 9.75 12 9.75V12Z" /><path fillRule="evenodd" clipRule="evenodd" d="M5 4.125L10.8333 4.125V3H13.1667V4.125L19 4.125L19 19.875L13.1667 19.875V21H10.8333V19.875H5V4.125ZM7.33333 6.375L7.33333 17.625H16.6667L16.6667 6.375L7.33333 6.375Z" /></svg>;
+export default IconParking;
