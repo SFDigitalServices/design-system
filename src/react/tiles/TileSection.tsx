@@ -1,6 +1,7 @@
 import { classed } from '../utils'
 import { HeadingXXl } from '../Text'
-import type { ComponentProps, ReactNode } from 'react'
+import { isValidElement, type ComponentProps, type ReactNode } from 'react'
+import { BrandedHeading } from '../BrandedHeading'
 
 const SectionContainer = classed('div', 'space-y-28')
 
@@ -8,6 +9,7 @@ const SectionContentWrapper = classed('div', 'space-y-40 lg:space-y-60')
 
 export type TileSectionProps = ComponentProps<typeof SectionContainer> & {
   heading?: ReactNode
+  branded?: boolean
 }
 
 /**
@@ -28,13 +30,23 @@ export type TileSectionProps = ComponentProps<typeof SectionContainer> & {
  * </TileSection>
  * ```
  */
-export function TileSection({ heading, children, ...rest }: TileSectionProps) {
+export function TileSection({
+  heading,
+  branded = false,
+  children,
+  ...rest
+}: TileSectionProps) {
+  if (heading && !isValidElement(heading)) {
+    heading = <HeadingXXl as="h2">{heading}</HeadingXXl>
+  }
   return (
-    <SectionContainer data-testid="tile-section" {...rest}>
+    <SectionContainer {...rest}>
       {heading ? (
-        <HeadingXXl as="h2" data-testid="tile-section-heading">
-          {heading}
-        </HeadingXXl>
+        branded ? (
+          <BrandedHeading level={2}>{heading}</BrandedHeading>
+        ) : (
+          heading
+        )
       ) : null}
       <SectionContentWrapper>{children}</SectionContentWrapper>
     </SectionContainer>
