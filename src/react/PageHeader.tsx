@@ -3,6 +3,7 @@ import { Grid } from './Grid'
 import { PageLabel } from './PageLabel'
 import { DisplayLg, DisplayXXXl } from './Text'
 import { classify, type ClassifiableElement } from './utils'
+import { BrandedHeading } from './BrandedHeading'
 
 export type PageHeaderProps = Omit<JSX.IntrinsicElements['div'], 'title'> & {
   title: string
@@ -51,9 +52,9 @@ export function PageHeader({
               label
             )}
             {logo ? classify(logo, 'max-w-1/4 lg:hidden') : null}
-            <DisplayXXXl as="h1" className="!m-0">
-              {title}
-            </DisplayXXXl>
+            <BrandedHeading level={1}>
+              <DisplayXXXl as="h1">{title}</DisplayXXXl>
+            </BrandedHeading>
             {description ? <DisplayLg as="p">{description}</DisplayLg> : null}
             {children}
           </div>
