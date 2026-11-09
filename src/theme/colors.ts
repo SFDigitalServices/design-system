@@ -91,5 +91,8 @@ export const colors = {
   neutral600: tokens.Neutral[600].value,
   neutral700: tokens.Neutral[700].value,
   neutral800: tokens.Neutral[800].value,
-  neutral900: tokens.Neutral[900].value
+  neutral900: tokens.Neutral[900].value,
+  'theme-accent': `var(--color-theme-accent, ${tokens.Accent[500].value})`,
+  'theme-calendar-primary': `var(--color-theme-calendar-primary, ${tokens.Secondary[600].value})`,
+  'theme-calendar-accent': `var(--color-theme-calendar-accent, ${tokens.Secondary[100].value})`
 }
