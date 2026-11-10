@@ -92,7 +92,18 @@ export const colors = {
   neutral700: tokens.Neutral[700].value,
   neutral800: tokens.Neutral[800].value,
   neutral900: tokens.Neutral[900].value,
+  greenDark: tokens.Green.Dark.value,
+  greenLight: tokens.Green.Light.value,
+  pinkDark: tokens.Pink.Dark.value,
+  pinkLight: tokens.Pink.Light.value,
+  brownDark: tokens.Brown.Dark.value,
+  brownLight: tokens.Brown.Light.value,
+  redDark: tokens.Red.Dark.value,
+  redLight: tokens.Red.Light.value,
+  'theme-primary': `var(--color-theme-primary, ${tokens.Primary[600].value})`,
+  'theme-secondary': `var(--color-theme-secondary, ${tokens.Primary[50].value})`,
   'theme-accent': `var(--color-theme-accent, ${tokens.Accent[500].value})`,
+  'theme-accent-secondary': `var(--color-theme-accent-secondary, ${tokens.Accent[50].value})`,
   'theme-calendar-primary': `var(--color-theme-calendar-primary, ${tokens.Secondary[600].value})`,
   'theme-calendar-accent': `var(--color-theme-calendar-accent, ${tokens.Secondary[100].value})`
 }

@@ -492,6 +492,46 @@ export default {
     value: '#0b0c0c',
     type: 'color'
   },
+  Green: {
+    Dark: {
+      value: '#357430',
+      type: 'color'
+    },
+    Light: {
+      value: '#E6F0DE',
+      type: 'color'
+    }
+  },
+  Pink: {
+    Dark: {
+      value: '#9E4273',
+      type: 'color'
+    },
+    Light: {
+      value: '#F6EBF1',
+      type: 'color'
+    }
+  },
+  Brown: {
+    Dark: {
+      value: '#564138',
+      type: 'color'
+    },
+    Light: {
+      value: '#EFE9E6',
+      type: 'color'
+    }
+  },
+  Red: {
+    Dark: {
+      value: '#8F0015',
+      type: 'color'
+    },
+    Light: {
+      value: '#FFEBEE',
+      type: 'color'
+    }
+  },
   'External Brands': {
     'X-Twitter': {
       value: '#000000',
