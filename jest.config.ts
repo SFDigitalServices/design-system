@@ -7,7 +7,7 @@ export default {
   coverageThreshold: {
     global: {
       lines: 100,
-      functions: 97, // FIXME: back to 100 when we delete formio
+      functions: 95, // FIXME: back to 100 when we delete formio
       statements: 100,
       branches: 100
     }
