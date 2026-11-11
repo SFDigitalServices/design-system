@@ -3,7 +3,7 @@ import { classed } from './utils'
 import { HeadingDivider } from './HeadingDivider'
 
 const Wrapper = classed('div', {
-  base: 'space-y-8',
+  base: '*:!mb-0 space-y-8',
   variants: {
     level: {
       1: 'space-y-12 lg:space-y-16',
@@ -37,12 +37,7 @@ export function BrandedHeading({
   ...rest
 }: BrandedHeadingProps) {
   return (
-    <Wrapper
-      className="*:!mb-0"
-      level={level}
-      data-testid="branded-heading"
-      {...rest}
-    >
+    <Wrapper level={level} data-testid="branded-heading" {...rest}>
       {children}
       <BrandedDivider level={level} />
     </Wrapper>
