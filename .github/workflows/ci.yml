@@ -15,8 +15,9 @@ jobs:
           node-version-file: .tool-versions
           cache: npm
 
-      - run: npm ci --ignore-scripts
+      - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npm run lint
       - run: npm run typecheck
+      - run: npm test
       - run: npm run build
       - run: npm run verify
