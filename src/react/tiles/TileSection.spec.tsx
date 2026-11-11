@@ -39,6 +39,7 @@ describe('TileSection', () => {
 
   it('uses a provided heading element as-is without wrapping it', () => {
     render(<TileSection heading={<h3>Custom heading</h3>} />)
+    // the element is rendered untouched: it stays an <h3>, not coerced to <h2>
     const heading = screen.getByRole('heading', { level: 3 })
     expect(heading).toHaveTextContent('Custom heading')
     expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument()
@@ -50,11 +51,20 @@ describe('TileSection', () => {
     expect(screen.queryByTestId('branded-heading')).not.toBeInTheDocument()
   })
 
-  it('wraps the heading in a branded heading when branded', () => {
+  it('wraps a string heading in a branded heading when branded', () => {
     render(<TileSection heading="Tile section" branded />)
     const branded = screen.getByTestId('branded-heading')
+    expect(branded).toBeInTheDocument()
     expect(
       within(branded).getByRole('heading', { level: 2 })
     ).toHaveTextContent('Tile section')
+  })
+
+  it('wraps a provided heading element in a branded heading when branded', () => {
+    render(<TileSection heading={<h3>Custom heading</h3>} branded />)
+    const branded = screen.getByTestId('branded-heading')
+    expect(
+      within(branded).getByRole('heading', { level: 3 })
+    ).toHaveTextContent('Custom heading')
   })
 })

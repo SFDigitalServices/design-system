@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { BrandedHeading } from './BrandedHeading'
 
 describe('BrandedHeading', () => {
-  it('renders its children inside the branded-heading wrapper', () => {
+  it('renders its children', () => {
     render(
       <BrandedHeading>
         <h2>A heading</h2>
@@ -12,10 +12,9 @@ describe('BrandedHeading', () => {
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(
       'A heading'
     )
-    expect(screen.getByTestId('branded-heading')).toHaveTextContent('A heading')
   })
 
-  it('renders a branded divider as the last child', () => {
+  it('renders inside the branded-heading wrapper', () => {
     render(
       <BrandedHeading>
         <h2>A heading</h2>
@@ -23,8 +22,22 @@ describe('BrandedHeading', () => {
     )
 
     const wrapper = screen.getByTestId('branded-heading')
+    expect(wrapper).toBeInTheDocument()
+    expect(wrapper).toHaveTextContent('A heading')
+  })
+
+  it('renders a branded divider alongside the heading', () => {
+    const { container } = render(
+      <BrandedHeading>
+        <h2>A heading</h2>
+      </BrandedHeading>
+    )
+
+    const wrapper = screen.getByTestId('branded-heading')
+    // the divider is rendered as the wrapper's last child
     // eslint-disable-next-line testing-library/no-node-access
     expect(wrapper.lastElementChild).toHaveClass('w-[46px]')
+    expect(container).toBeInTheDocument()
   })
 
   it('applies the default spacing when no level is provided', () => {
@@ -63,4 +76,15 @@ describe('BrandedHeading', () => {
       expect(wrapper.lastElementChild).toHaveClass(dividerClass)
     }
   )
+
+  it('forwards extra props to the wrapper', () => {
+    render(
+      <BrandedHeading aria-label="branded">
+        <h2>A heading</h2>
+      </BrandedHeading>
+    )
+
+    const wrapper = screen.getByTestId('branded-heading')
+    expect(wrapper).toHaveAttribute('aria-label', 'branded')
+  })
 })
