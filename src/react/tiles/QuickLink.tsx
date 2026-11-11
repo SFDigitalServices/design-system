@@ -23,9 +23,9 @@ const Heading = classed(
 // this component is static; it takes no props and always renders the same thing
 function Icon() {
   return (
-    <div className="shrink-0 flex items-center justify-center rounded-full bg-primary50 size-[30px] lg:size-[46px]">
+    <div className="shrink-0 flex items-center justify-center rounded-full bg-theme-secondary size-[30px] lg:size-[46px]">
       <IconArrowRight
-        className="text-primary600 size-[18px] lg:size-[24px]"
+        className="text-theme-primary size-[18px] lg:size-[24px]"
         aria-hidden="true"
       />
     </div>
