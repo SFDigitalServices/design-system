@@ -33,6 +33,18 @@ describe('classes()', () => {
     expect(classes('a', 'b')).toEqual('a b')
     expect(classes('a', 'b', ['c', 'd'])).toEqual('a b c d')
   })
+
+  it('merges tailwind utilities', () => {
+    expect(classes('bg-white', 'bg-black')).toEqual('bg-black')
+    expect(classes('text-white', 'text-black')).toEqual('text-black')
+  })
+
+  it('does not override typography text-* utilities', () => {
+    expect(classes('text-black', 'text-small')).toEqual('text-black text-small')
+    expect(classes('text-body', 'text-primary600')).toEqual(
+      'text-body text-primary600'
+    )
+  })
 })
 
 describe('classify()', () => {

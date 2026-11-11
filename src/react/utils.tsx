@@ -3,25 +3,20 @@ import type { ReactElement } from 'react'
 import { cloneElement } from 'react'
 import type { ClassNameValue } from 'tailwind-merge'
 import { extendTailwindMerge } from 'tailwind-merge'
+import { fontSize } from '../theme/typography'
 
 const twMerge = extendTailwindMerge({
   classGroups: {
     'font-size': [
       {
-        text: [
-          'heading-xs',
-          'heading-sm',
-          'heading-md',
-          'heading-lg',
-          'heading-lg-li',
-          'heading-xl',
-          'heading-xxl',
-          'display-lg',
-          'display-xxxl',
-          'label-xs',
-          'label-sm',
-          'label-md'
-        ]
+        /**
+         * This tells tailwind-merge to preserve (_not_ to merge) our `fontSize`
+         * theme identifiers, which share the `text-` utility class prefix with
+         * Tailwind's `text-{color}` utilities. Without this, tailwind-merge
+         * merges classes like `text-black` (color) with `text-small`
+         * (font-size), and whichever is specified last wins.
+         */
+        text: Object.keys(fontSize)
       }
     ]
   }
