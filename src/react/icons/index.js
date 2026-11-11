@@ -1,7 +1,6 @@
 export { default as IconBluesky } from './IconBluesky.jsx'
 export { default as IconYoutube } from './IconYoutube.jsx'
 export { default as IconTwitter } from './IconTwitter.jsx'
-export { default as IconMastodon } from './IconMastodon.jsx'
 export { default as IconBusiness } from './IconBusiness.jsx'
 export { default as IconThreads } from './IconThreads.jsx'
 export { default as IconLinkedin } from './IconLinkedin.jsx'
