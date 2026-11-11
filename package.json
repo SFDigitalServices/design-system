@@ -182,6 +182,7 @@
     "postcss-import-url": "^7.2.0",
     "postcss-prefix-selector": "^1.16.1",
     "prettier": "^2.8.8",
+    "prettier-plugin-organize-imports": "^4.3.0",
     "publint": "^0.3.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
