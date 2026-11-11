@@ -1,5 +1,6 @@
 import { Container } from './Container'
-import { classed, classes, classify, type ClassifiableElement } from './utils'
+import type { ClassifiableElement } from './utils'
+import { classed, classes, classify } from './utils'
 
 export type ImageHeaderProps = Omit<
   JSX.IntrinsicElements['div'],

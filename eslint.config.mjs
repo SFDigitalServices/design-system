@@ -30,7 +30,16 @@ export default defineConfig(
   },
   {
     files: ['**/*.{ts,cts,mts,tsx}'],
-    extends: [tseslint.configs.recommended, importX.flatConfigs.typescript]
+    extends: [tseslint.configs.recommended, importX.flatConfigs.typescript],
+    rules: {
+      // Flags imports only used as types and autofixes them to `import type`.
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports', fixStyle: 'separate-type-imports' }
+      ],
+      // Prefers `import type { A }` over `import { type A }`.
+      'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level']
+    }
   },
   {
     files: ['**/*.{jsx,tsx}'],

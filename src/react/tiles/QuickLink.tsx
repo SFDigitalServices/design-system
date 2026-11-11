@@ -1,7 +1,8 @@
 import { IconArrowRight } from '../icons'
 import { TEXT_CLASSES } from '../Text'
 import { classed } from '../utils'
-import { Tile, LINK_COLOR_CLASSES, type TileProps } from './Tile'
+import type { TileProps } from './Tile'
+import { LINK_COLOR_CLASSES, Tile } from './Tile'
 
 export type QuickLinkProps = Omit<
   TileProps,

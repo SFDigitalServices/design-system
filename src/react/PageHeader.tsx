@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react'
+import { BrandedHeading } from './BrandedHeading'
 import { Grid } from './Grid'
 import { PageLabel } from './PageLabel'
 import { DisplayLg, DisplayXXXl } from './Text'
-import { classify, type ClassifiableElement } from './utils'
-import { BrandedHeading } from './BrandedHeading'
+import type { ClassifiableElement } from './utils'
+import { classify } from './utils'
 
 export type PageHeaderProps = Omit<JSX.IntrinsicElements['div'], 'title'> & {
   title: string

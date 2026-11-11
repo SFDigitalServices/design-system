@@ -3,5 +3,7 @@ module.exports = {
   trailingComma: 'none',
   arrowParens: 'always',
   bracketSpacing: true,
-  semi: false
+  semi: false,
+  plugins: ['prettier-plugin-organize-imports'],
+  organizeImportsSkipDestructiveCodeActions: true
 }

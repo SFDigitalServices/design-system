@@ -1,4 +1,5 @@
-import { Formio, type Form } from 'formiojs'
+import type { Form } from 'formiojs'
+import { Formio } from 'formiojs'
 import moment from 'moment'
 import type { DataGridSchema } from '../types'
 import type {
@@ -11,9 +12,9 @@ import type {
 import {
   HoursOfOperation,
   HoursOfOperationOutput,
+  VALIDATE_DAY_GRID_ERROR_DEFAULTS,
   stringifyDayValues,
-  validateDayGrid,
-  VALIDATE_DAY_GRID_ERROR_DEFAULTS
+  validateDayGrid
 } from './HoursOfOperation'
 
 // FIXME: we should not need to do this!

@@ -1,7 +1,8 @@
-import { classed } from '../utils'
-import { HeadingXXl } from '../Text'
-import { isValidElement, type ComponentProps, type ReactNode } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
+import { isValidElement } from 'react'
 import { BrandedHeading } from '../BrandedHeading'
+import { HeadingXXl } from '../Text'
+import { classed } from '../utils'
 
 const SectionContainer = classed('div', 'space-y-28')
 
