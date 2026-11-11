@@ -102,7 +102,9 @@ export const colors = {
   redLight: tokens.Red.Light.value,
   'theme-primary': `var(--color-theme-primary, ${tokens.Primary[600].value})`,
   'theme-secondary': `var(--color-theme-secondary, ${tokens.Primary[50].value})`,
+  // FIXME: use tokens.Orange[500].value
   'theme-accent': `var(--color-theme-accent, ${tokens.Accent[500].value})`,
+  // FIXME: use tokens.Orange[50].value
   'theme-accent-secondary': `var(--color-theme-accent-secondary, ${tokens.Accent[50].value})`,
   'theme-calendar-primary': `var(--color-theme-calendar-primary, ${tokens.Secondary[600].value})`,
   'theme-calendar-accent': `var(--color-theme-calendar-accent, ${tokens.Secondary[100].value})`

@@ -18,6 +18,11 @@ it('generates utility values from the theme scales', async () => {
       'bg-theme-accent',
       'background-color',
       'var(--color-theme-accent, #b64a00)'
+    ],
+    [
+      'bg-theme-secondary',
+      'background-color',
+      'var(--color-theme-secondary, #e9f1fe)'
     ]
   ]
   const result = await postcss([
