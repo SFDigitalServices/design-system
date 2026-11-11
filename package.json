@@ -28,6 +28,7 @@
         "default": "./dist/index.js"
       }
     },
+    "./css/colors.css": "./dist/css/colors.css",
     "./react": {
       "import": {
         "types": "./dist/react/index.d.mts",
@@ -100,10 +101,10 @@
     }
   },
   "scripts": {
-    "build-css": "node scripts/build-formio-tailwind.mjs",
-    "build-formio-css": "./scripts/build-formio-css.mjs",
+    "build-css": "tsx node_modules/postcss-cli/index.js src/css/*.css -d dist/css",
+    "build-formio-css": "node scripts/build-formio-tailwind.mjs",
     "build-tokens": "style-dictionary build --config ./sd.config.js",
-    "build": "npm run clean && tsup && npm run build-css",
+    "build": "npm run clean && tsup && npm run build-css && npm run build-formio-css",
     "clean": "rm -rf dist/",
     "figma-export": "figma-export use-config",
     "lint:fix": "eslint . --fix",
@@ -112,7 +113,7 @@
     "prepublishOnly": "npm run build && npm run verify",
     "test": "jest --coverage",
     "typecheck": "tsc --noEmit --incremental false",
-    "verify": "publint --strict && attw --pack --exclude-entrypoints ./formio/formio.css",
+    "verify": "publint --strict && attw --pack --exclude-entrypoints ./formio/formio.css ./css/colors.css",
     "watch": "chokidar --initial src '*.config.*' -c 'npm run build'"
   },
   "dependencies": {

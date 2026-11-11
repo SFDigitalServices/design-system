@@ -1,0 +1,62 @@
+[data-theme='blue'] {
+  --color-theme-primary: theme(colors.primary600);
+  --color-theme-secondary: theme(colors.primary50);
+  --color-theme-accent: var(--color-theme-primary);
+  --color-theme-accent-secondary: var(--color-theme-secondary);
+  --color-theme-calendar-primary: var(--color-theme-primary);
+  --color-theme-calendar-accent: var(--color-theme-secondary);
+}
+
+[data-theme='teal'] {
+  --color-theme-primary: theme(colors.secondary600);
+  --color-theme-secondary: theme(colors.secondary50);
+  --color-theme-accent: var(--color-theme-primary);
+  --color-theme-accent-secondary: var(--color-theme-secondary);
+  --color-theme-calendar-primary: var(--color-theme-primary);
+  --color-theme-calendar-accent: var(--color-theme-secondary);
+}
+
+[data-theme='orange'] {
+  --color-theme-primary: theme(colors.accent600);
+  --color-theme-secondary: theme(colors.accent50);
+  --color-theme-accent: var(--color-theme-primary);
+  --color-theme-accent-secondary: var(--color-theme-secondary);
+  --color-theme-calendar-primary: var(--color-theme-primary);
+  --color-theme-calendar-accent: var(--color-theme-secondary);
+}
+
+[data-theme='green'] {
+  --color-theme-primary: theme(colors.greenDark);
+  --color-theme-secondary: theme(colors.greenLight);
+  --color-theme-accent: var(--color-theme-primary);
+  --color-theme-accent-secondary: var(--color-theme-secondary);
+  --color-theme-calendar-primary: var(--color-theme-primary);
+  --color-theme-calendar-accent: var(--color-theme-secondary);
+}
+
+[data-theme='pink'] {
+  --color-theme-primary: theme(colors.pinkDark);
+  --color-theme-secondary: theme(colors.pinkLight);
+  --color-theme-accent: var(--color-theme-primary);
+  --color-theme-accent-secondary: var(--color-theme-secondary);
+  --color-theme-calendar-primary: var(--color-theme-primary);
+  --color-theme-calendar-accent: var(--color-theme-secondary);
+}
+
+[data-theme='brown'] {
+  --color-theme-primary: theme(colors.brownDark);
+  --color-theme-secondary: theme(colors.brownLight);
+  --color-theme-accent: var(--color-theme-primary);
+  --color-theme-accent-secondary: var(--color-theme-secondary);
+  --color-theme-calendar-primary: var(--color-theme-primary);
+  --color-theme-calendar-accent: var(--color-theme-secondary);
+}
+
+[data-theme='red'] {
+  --color-theme-primary: theme(colors.redDark);
+  --color-theme-secondary: theme(colors.redLight);
+  --color-theme-accent: var(--color-theme-primary);
+  --color-theme-accent-secondary: var(--color-theme-secondary);
+  --color-theme-calendar-primary: var(--color-theme-primary);
+  --color-theme-calendar-accent: var(--color-theme-secondary);
+}
