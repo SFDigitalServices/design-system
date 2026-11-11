@@ -1,5 +1,6 @@
+import type { ComponentProps } from 'react'
+import type { AnyComponent } from './types'
 import { classed } from './utils'
-import type { AnyComponent, ComponentProps } from './types'
 
 /**
  * These are the Tailwind classes necessary for each of our distinct text styles

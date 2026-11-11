@@ -1,12 +1,12 @@
+import type { ComponentProps } from 'react'
+import type { AnyComponent } from './types'
 import { classed } from './utils'
-import type { AnyComponent, ComponentProps } from './types'
 
 export const StackedContainer = classed('div' as AnyComponent, {
-  base: 'flex flex-col md:flex-row w-full gap-16'
+  base: 'flex flex-col md:flex-row w-full gap-16',
+  defaultProps: {
+    'data-testid': 'stacked-content-container'
+  }
 })
-
-StackedContainer.defaultProps = {
-  'data-testid': 'stacked-content-container'
-}
 
 export type StackedContainerProps = ComponentProps<typeof StackedContainer>

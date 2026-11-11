@@ -6,6 +6,4 @@ export type { Classed }
 
 export { ComponentType, ElementType }
 
-export type ComponentProps<C> = Classed.ComponentProps<C>
-
 export type AnyComponent<P = unknown> = ElementType | ComponentType<P>
