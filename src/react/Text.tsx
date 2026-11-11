@@ -31,6 +31,9 @@ export const TEXT_CLASSES = Object.freeze({
   displayXXXl:
     'font-slab text-display-xxxl lg:text-desktop-display-xxxl text-neutral900 mb-space-body lg:mb-16',
   mono: 'font-monospace text-body',
+  /**
+   * TODO: delete this variant along with {@link Label}
+   */
   label: 'font-body text-label',
   labelXs: 'font-body text-label-xs mb-space-body',
   labelSm: 'font-body text-label-sm mb-space-body',
@@ -39,15 +42,19 @@ export const TEXT_CLASSES = Object.freeze({
 
 export type TextVariant = keyof typeof TEXT_CLASSES
 
-export const Text = classed('span' as AnyComponent, {
-  variants: {
-    variant: TEXT_CLASSES,
-    romanType: {
-      serif: 'font-slab',
-      sans: 'font-body'
+export const Text = classed(
+  // FIXME: this should render a div
+  'span' as AnyComponent,
+  {
+    variants: {
+      variant: TEXT_CLASSES,
+      romanType: {
+        serif: 'font-slab',
+        sans: 'font-body'
+      }
     }
   }
-})
+)
 
 export type TextProps = ComponentProps<typeof Text>
 
@@ -70,6 +77,10 @@ export const HeadingXXl = createVariant('headingXXl')
 export const DisplayLg = createVariant('displayLg')
 export const DisplayXXXl = createVariant('displayXXXl')
 export const Monospace = createVariant('mono')
+/**
+ * @deprecated This has the same exact style as {@link BodyText}, and will be
+ * removed in a future major version.
+ */
 export const Label = createVariant('label')
 export const LabelXs = createVariant('labelXs')
 export const LabelSm = createVariant('labelSm')
