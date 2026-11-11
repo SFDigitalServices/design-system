@@ -103,7 +103,6 @@
   "scripts": {
     "build-css": "tsx node_modules/postcss-cli/index.js src/css/*.css -d dist/css",
     "build-formio-css": "node scripts/build-formio-tailwind.mjs",
-    "build-tokens": "style-dictionary build --config ./sd.config.js",
     "build": "npm run clean && tsup && npm run build-css && npm run build-formio-css",
     "clean": "rm -rf dist/",
     "figma-export": "figma-export use-config",
@@ -187,7 +186,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "18.2.0",
-    "style-dictionary": "^3.7.2",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.2",
     "tsup": "^9.0.0",
