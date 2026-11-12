@@ -13,9 +13,10 @@ export default {
     }
   },
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts*',
-    // type declarations don't need coverage
-    '!**/*.d.ts',
+    '<rootDir>/src/**/*.{ts,tsx}',
+    // Ignore storybook stories for now
+    '!<rootDir>/src/stories/**',
+    '!/**/*.stories.*',
     // not covering the tailwind preset for now
     '!**/tailwind-preset.ts',
     '!**/tailwind-plugin.ts',
