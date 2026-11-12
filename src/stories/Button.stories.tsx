@@ -9,7 +9,7 @@ const ALL_VARIANTS: NonNullable<ButtonProps['variant']>[] = [
 ]
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: 'React/Button',
   component: Button,
   args: {
     children: 'Button'

@@ -1,12 +1,12 @@
-import React from 'react'
-import { Text, type TextProps } from '@/design-system'
-import type { Meta, StoryObj } from '@storybook/react'
-import { disableArgTypes } from '../utils'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { disableArgTypes } from '../../stories/utils'
+import type { TextProps } from '../react'
+import { Text } from '../react'
 
 type TextVariant = NonNullable<TextProps['variant']>
 
 // This type will throw red squigglies if the mapping is missing a variant
-const VARIANT_NAMES: { [K in TextVariant]: string } = {
+const VARIANT_NAMES: Record<TextVariant, string> = {
   displayXXXl: 'Display (XXXL)',
   displayLg: 'Display (L)',
   headingXXl: 'Heading (XXL)',
@@ -27,7 +27,7 @@ const VARIANT_NAMES: { [K in TextVariant]: string } = {
 }
 
 const meta: Meta<typeof Text> = {
-  title: 'Components/Text',
+  title: 'React/Text',
   component: Text,
   args: {
     children: 'The quick brown fox jumps over the lazy dog.'
@@ -59,10 +59,10 @@ export const AllVariants: TextStory = {
             </td>
             <td className={className}>
               <Text
+                key={name}
                 as="div"
                 variant={variant as TextVariant}
                 {...args}
-                key={name}
               />
             </td>
           </tr>
@@ -72,7 +72,7 @@ export const AllVariants: TextStory = {
   }
 }
 
-export const Variant: TextStory = {
+export const Text_: TextStory = {
   argTypes: {
     variant: {
       name: 'Variant',
