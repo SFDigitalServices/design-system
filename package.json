@@ -113,7 +113,9 @@
     "test": "jest --coverage",
     "typecheck": "tsc --noEmit --incremental false",
     "verify": "publint --strict && attw --pack --exclude-entrypoints ./formio/formio.css ./css/colors.css",
-    "watch": "chokidar --initial src '*.config.*' -c 'npm run build'"
+    "watch": "chokidar --initial src '*.config.*' -c 'npm run build'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@formio/react": "5.3.0",
@@ -192,6 +194,18 @@
     "tsup": "^9.0.0",
     "tsx": "^4.23.15",
     "typescript": "~5.4.5",
-    "typescript-eslint": "^8.72.1"
+    "typescript-eslint": "^8.72.1",
+    "storybook": "^10.6.7",
+    "@storybook/react-vite": "^10.6.7",
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-vitest": "^10.6.7",
+    "@storybook/addon-a11y": "^10.6.7",
+    "@storybook/addon-docs": "^10.6.7",
+    "@storybook/addon-mcp": "^10.6.7",
+    "eslint-plugin-storybook": "^10.6.7",
+    "vitest": "latest",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "playwright": "latest"
   }
 }
