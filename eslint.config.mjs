@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 import js from '@eslint/js'
 import react from '@eslint-react/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
@@ -66,6 +69,13 @@ export default defineConfig(
   {
     files: ['**/*.{spec,test}.{js,jsx,ts,tsx}'],
     extends: [testingLibrary.configs['flat/react']]
+  },
+  {
+    files: [
+      '.storybook/**/*.{js,mjs,mts,ts,tsx}',
+      '**/*.stories.{js,mjs,mts,ts,tsx}',
+    ],
+    extends: [storybook.configs["flat/recommended"]]
   },
   // Formatting remains Prettier's responsibility.
   prettier
