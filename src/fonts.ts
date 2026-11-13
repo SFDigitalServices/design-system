@@ -1,6 +1,10 @@
 import type { FontSpec } from './types'
-
 // istanbul ignore file
+
+/**
+ * TODO: derive weights to load by cross-referencing `fontWeight` values in
+ * `theme.fontSize` with the typography components that use each style.
+ */
 
 export const ROBOTO_FLEX: FontSpec = {
   name: 'Roboto Flex',

@@ -2,11 +2,9 @@ import type { ThemeConfig } from 'tailwindcss/types/config'
 import { pxMap } from './utils'
 
 /**
- * TODO: move the values to tokens
+ * TODO: move these values to tokens
  */
-
 const sansFontFamily = '"Roboto Flex", ui-sans, sans'
-
 export const fontFamily: ThemeConfig['fontFamily'] = {
   body: sansFontFamily,
   sans: sansFontFamily,
