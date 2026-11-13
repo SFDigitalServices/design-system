@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconTransportation = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M21 12.84L18.75 8.36H15.375V5H3V16.2L4.125 17.32H5.25C5.25 18.2478 6.00552 19 6.9375 19C7.86948 19 8.625 18.2478 8.625 17.32H15.375C15.375 18.2478 16.1305 19 17.0625 19C17.9945 19 18.75 18.2478 18.75 17.32H21V12.84ZM5.25 7.24L5.25 8.36L13.125 8.36V7.24L5.25 7.24ZM17.3594 10.6L15.375 10.6V15.08H18.75V13.3688L17.3594 10.6ZM13.125 10.6H5.25V15.08H13.125V10.6Z" /></svg>;
+export default IconTransportation;

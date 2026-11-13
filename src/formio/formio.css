@@ -1,0 +1,166 @@
+@import url('./bootstrap.css');
+
+.Formio {
+  a {
+    @apply underline text-primary500;
+  }
+
+  h2 {
+    @apply text-desktop-heading-xxl;
+  }
+
+  p + p {
+    margin-top: 1em;
+  }
+
+  [data-icon='pencil'] {
+    @apply inline-block shrink-0 !w-[24px] pencil-icon !translate-y-[3px];
+  }
+
+  [data-testid='formio-sfds-fieldset'] label {
+    @apply text-body;
+  }
+
+  .formio-component-introFormDuration strong {
+    @apply !font-normal;
+  }
+
+  .formio-component-introFormDuration:not(:has([data-icon='pencil'])) {
+    @apply inline-flex gap-8 !items-baseline before:!clock-icon before:!pl-[24px] before:translate-y-[6px];
+  }
+
+  [data-icon='document'] {
+    @apply inline-block size-20 document-icon shrink-0;
+  }
+
+  /* Overrides bootstrap styles for SFDS custom components to match design system */
+  .bg-blue-1 {
+    @apply w-full !inline-flex p-20 md:px-28 lg:p-28
+      bg-information50 border-1 border-information600
+      link:text-primary500 link:underline
+      before:!info-icon before:!pl-[24px];
+  }
+
+  .bg-green-1 {
+    @apply w-full !inline-flex p-20 md:px-28 lg:p-28
+      bg-success50 border-1 border-success600
+      link:text-primary500 link:underline
+      before:!success-icon before:!pl-[24px];
+  }
+
+  .bg-red-1 {
+    @apply w-full inline-flex p-20 md:px-28 lg:p-28
+      bg-danger50 border-1 border-danger600
+      link:text-primary500 link:underline
+      before:alert-icon before:pl-[24px];
+  }
+
+  .fg-blue-4 {
+    @apply text-information400;
+  }
+
+  .fg-green-4 {
+    @apply text-success400;
+  }
+
+  .fg-red-4 {
+    @apply text-danger400;
+  }
+
+  .btn-primary {
+    @apply items-center justify-center shrink-0 rounded-4 gap-8 p-16
+      border-current border-solid border-1
+      font-medium text-white text-label-xs text-center
+      bg-primary600 no-underline whitespace-nowrap w-fit transition-none
+      hover:!bg-primary800 hover:border-1 hover:cursor-pointer
+      focus:!bg-primary800 focus:outline-focus
+      !ring-0
+      disabled:text-neutral300 disabled:border-neutral100 disabled:bg-neutral100 disabled:cursor-not-allowed;
+  }
+
+  .btn-link {
+    @apply before:right-arrow-blue
+      text-primary600 transition-none
+      disabled:text-neutral200 disabled:bg-[transparent] disabled:before:right-arrow-disabled;
+  }
+
+  .progress-container {
+    @apply flex gap-28 px-4 py-2 border rounded-4;
+  }
+
+  .form-control.selection {
+    @apply appearance-none !h-[56px] w-full p-16 !border-none place-self-center;
+  }
+
+  .formio-choices {
+    @apply !h-[56px] !w-full place-self-center !border-1 !border-black !rounded-4;
+
+    &:focus,
+    &.is-focused {
+      @apply outline-focus;
+    }
+  }
+
+  .formio-component-htmlelement > .row {
+    @apply grid grid-cols-2 p-8 !ml-0 border-b-2 border-neutral200;
+  }
+
+  .table td.cell-align-left {
+    @apply !align-middle !space-y-8 xs:!px-[1px] sm:!px-4 !break-normal;
+  }
+
+  /**
+   * display:
+   * https://github.com/SFDigitalServices/formio-sfds/blob/164e19f4cbbb85c1c6b5c199eb5ede4c63998ab5/src/scss/utilities/_display.scss
+   */
+  .d-flex {
+    @apply flex;
+  }
+  .d-none {
+    @apply hidden;
+  }
+
+  /**
+   * flexbox:
+   * https://github.com/SFDigitalServices/formio-sfds/blob/164e19f4cbbb85c1c6b5c199eb5ede4c63998ab5/src/scss/flexbox/index.scss
+   */
+  .flex-items-center {
+    @apply items-start;
+  }
+  .flex-items-top {
+    @apply align-top;
+  }
+
+  /**
+   * spacing:
+   * 1 = 8
+   * 2 = 20
+   * 3 = 40
+   * 4 = 60
+   * 5 = 80
+   * https://github.com/SFDigitalServices/formio-sfds/blob/164e19f4cbbb85c1c6b5c199eb5ede4c63998ab5/src/scss/_tokens.scss#L32-L49
+   */
+  .mb-md-0 {
+    @apply md:mb-0;
+  }
+  .mr-2 {
+    @apply mr-20;
+  }
+  .mt-1 {
+    @apply mt-8;
+  }
+  .mt-100 {
+    @apply mt-96;
+  }
+  .p-2 {
+    @apply p-20;
+  }
+
+  /* Used only in BAN lookup */
+  .mt-5 {
+    @apply mt-space-md mb-space-md;
+  }
+  .p-3 {
+    @apply py-space-md px-space-lg;
+  }
+}

@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconSend = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M11.5 12.5L16 21L21 3L3 8L11.5 12.5ZM8.37509 8.58265L12.9796 11.0204L15.4174 15.6249L18.1259 5.87408L8.37509 8.58265Z" /><path fillRule="evenodd" clipRule="evenodd" d="M19.7071 5.70711L12.7071 12.7071L11.2929 11.2929L18.2929 4.29289L19.7071 5.70711Z" /><path fillRule="evenodd" clipRule="evenodd" d="M2.29291 15.2929L5.29291 12.2929L6.70712 13.7071L3.70712 16.7071L2.29291 15.2929ZM2.29291 20.2929L7.29291 15.2929L8.70712 16.7071L3.70712 21.7071L2.29291 20.2929ZM7.29291 20.2929L10.2929 17.2929L11.7071 18.7071L8.70712 21.7071L7.29291 20.2929Z" /></svg>;
+export default IconSend;

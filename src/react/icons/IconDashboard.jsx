@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconDashboard = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M2 4V11H22V4H2ZM20 6H4V9H20V6Z" /><path fillRule="evenodd" clipRule="evenodd" d="M2 13V20H10V13H2ZM8 15H4V18H8V15Z" /><path fillRule="evenodd" clipRule="evenodd" d="M12 20V13H22V20H12ZM14 15H20V18H14V15Z" /></svg>;
+export default IconDashboard;

@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconApplications = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path d="M11.5 11.6213L15.7071 7.41421L14.2929 6L11.5 8.79289L10.5 7.70709L9 9.20709L11.5 11.6213Z" /><path d="M8 15H16V13H8V15Z" /><path d="M15 18H9V16H15V18Z" /><path fillRule="evenodd" clipRule="evenodd" d="M4 22V2H20V22H4ZM6 4H18V20H6V4Z" /></svg>;
+export default IconApplications;

@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconWarning = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" /><path d="M11 11H13V15H11V11Z" /><path fillRule="evenodd" clipRule="evenodd" d="M2.47375 21L12 3L21.5263 21H2.47375ZM5.79505 19L12 7.27563L18.205 19H5.79505Z" /></svg>;
+export default IconWarning;

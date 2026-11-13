@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconAdditional = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path fillRule="evenodd" clipRule="evenodd" d="M13 21V7H15V21H13Z" /><path fillRule="evenodd" clipRule="evenodd" d="M7 13L21 13L21 15L7 15L7 13Z" /><path fillRule="evenodd" clipRule="evenodd" d="M6 11V3H8V11H6Z" /><path fillRule="evenodd" clipRule="evenodd" d="M3 6L11 6L11 8L3 8L3 6Z" /></svg>;
+export default IconAdditional;

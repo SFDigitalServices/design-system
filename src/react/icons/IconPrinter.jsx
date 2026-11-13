@@ -1,0 +1,3 @@
+import * as React from "react";
+const IconPrinter = props => <svg viewBox="0 0 24 24" fill="currentcolor" {...props}><path d="M13.5 15C12.6716 15 12 15.6716 12 16.5C12 17.3284 12.6716 18 13.5 18C14.3284 18 15 17.3284 15 16.5C15 15.6716 14.3284 15 13.5 15Z" /><path fillRule="evenodd" clipRule="evenodd" d="M6 8V3H18V8H21V17H18V21H6V17H3V8H6ZM8 5H16V8H8V5ZM5 10V15H6V12H18V15H19V10H5ZM16 14H8V19H16V14Z" /></svg>;
+export default IconPrinter;
