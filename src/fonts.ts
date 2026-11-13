@@ -9,14 +9,6 @@ export const ROBOTO_FLEX: FontSpec = {
     light: 300,
     normal: 400,
     bold: 700
-  },
-  googleFont: {
-    optical: true,
-    weights: {
-      light: [[8, 144], 300],
-      normal: [[8, 144], 400],
-      bold: [[8, 144], 700]
-    }
   }
 }
 
@@ -24,7 +16,6 @@ export const ROBOTO_SLAB: FontSpec = {
   name: 'Roboto Slab',
   fallbacks: ['ui-serif', 'serif'],
   weights: {
-    light: 300,
     normal: 400,
     bold: 700
   }
