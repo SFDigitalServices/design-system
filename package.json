@@ -149,6 +149,7 @@
     "@formio/choices.js": "^10.2.1",
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "@storybook/addon-a11y": "^10.6.7",
+    "@storybook/addon-designs": "^12.0.0",
     "@storybook/addon-docs": "^10.6.7",
     "@storybook/addon-mcp": "^10.6.7",
     "@storybook/addon-vitest": "^10.6.7",
