@@ -46,7 +46,7 @@ type ButtonStory = StoryObj<typeof meta>
 
 export const AllVariants: ButtonStory = {
   render: ({ children, ...args }) => (
-    <div className="flex gap-8">
+    <div className="flex flex-wrap gap-8">
       {ALL_VARIANTS.map((variant) => (
         <Button key={variant} {...args} variant={variant}>
           {children} ({variant})
