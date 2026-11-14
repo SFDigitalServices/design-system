@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { disableArgTypes } from '../../stories/utils'
-import type { TextProps } from '../react'
-import { Text } from '../react'
+import type { TextProps } from './Text'
+import { Text } from './Text'
 
 type TextVariant = NonNullable<TextProps['variant']>
 
@@ -18,6 +18,7 @@ const VARIANT_NAMES: Record<TextVariant, string> = {
   headingSm: 'Heading (S)',
   headingXs: 'Heading (XS)',
   body: 'Body',
+  // TODO: deprecate or rename ("label" is ambiguous, not always <label>)
   label: 'Label',
   labelXs: 'Label (XS)',
   labelSm: 'Label (S)',
