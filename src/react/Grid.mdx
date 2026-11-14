@@ -1,0 +1,61 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { Callout } from '../../.storybook/components/Callout'
+import * as GridStories from './Grid.stories'
+
+<Meta of={GridStories} />
+
+# Grid
+
+The Grid component establishes a [CSS grid] with 6 columns on small viewports
+and 12 on medium (`md`) widths and above.
+
+<Callout>
+  To ensure horizontal alignment with other elements, it's crucial that you wrap
+  Grid elements in a Container.
+</Callout>
+
+## Columns
+
+Direct children of the Grid element participate in the layout. The number of
+columns that each child spans is determined by its [`col-span-*`][col-span] classes:
+
+- `col-span-{1-12}` sets a numeric column span
+- `col-span-full` spans all available columns
+
+You can also use the [`col-start-*` and `col-end-*`][col-start-end] utility
+classes to define the start and end columns, or combine `col-start-*` with
+`col-span-*` to apply column offsets.
+
+## Responsiveness
+
+The 6-column grid is too narrow for content on smaller screens, so **in most
+cases** it's best to have grid elements span the full grid initially with
+`col-span-full` then snap to specific column widths on larger viewports with
+`md:col-span-*`. For instance, a two-column grid template might look like:
+
+```tsx
+<Grid>
+  <div className="col-span-full md:col-span-6">
+    Column 1
+  </div>
+  <div className="col-span-full md:col-span-6">
+    Column 2
+  </div>
+</Grid>
+```
+
+## Three columns
+
+<Canvas of={GridStories.ThreeColumnGrid} />
+
+## Two columns
+
+<Canvas of={GridStories.TwoColumnGrid} />
+
+## One column
+
+<Canvas of={GridStories.FullSpan} />
+
+[css grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout
+[col-span]: https://v3.tailwindcss.com/docs/grid-column#spanning-columns
+[col-start-end]: https://v3.tailwindcss.com/docs/grid-column#starting-and-ending-lines

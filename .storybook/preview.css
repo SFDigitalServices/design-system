@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind variants;
+
+@layer base {
+  @import '@/src/css/colors.css';
+}

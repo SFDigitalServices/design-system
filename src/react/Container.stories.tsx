@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Container as ContainerComponent } from '../react/Container'
+import { Container as ContainerComponent } from './Container'
 
 const meta: Meta<typeof ContainerComponent> = {
   title: 'React/Container',
