@@ -15,8 +15,8 @@ export default {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
     // Ignore storybook stories for now
-    '!<rootDir>/src/stories/**',
-    '!/**/*.stories.*',
+    '!<rootDir>/.storybook/**/*',
+    '!**/*.stories.*',
     // not covering the tailwind preset for now
     '!**/tailwind-preset.ts',
     '!**/tailwind-plugin.ts',
