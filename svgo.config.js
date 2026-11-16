@@ -1,4 +1,4 @@
-/** @type {import('svgo/lib/svgo').Config} */
+/** @type {import('svgo').Config} */
 module.exports = {
   multipass: true,
   js2svg: {
