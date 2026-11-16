@@ -112,7 +112,7 @@
     "prepublishOnly": "npm run build && npm run verify",
     "storybook": "storybook dev -p 6006",
     "test": "jest --coverage",
-    "typecheck": "tsc --noEmit --incremental false",
+    "typecheck": "tsc --noEmit --incremental false && tsc -p .storybook --noEmit --incremental false",
     "verify": "publint --strict && attw --pack --exclude-entrypoints ./formio/formio.css ./css/colors.css",
     "watch": "chokidar --initial src '*.config.*' -c 'npm run build'"
   },

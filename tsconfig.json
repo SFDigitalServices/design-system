@@ -19,7 +19,6 @@
     "resolveJsonModule": true,
   },
   "include": [
-    ".storybook/**/*",
     "lib/**/*",
     "src/**/*",
     "*.config.*"
