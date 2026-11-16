@@ -137,7 +137,7 @@
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@chromatic-com/storybook": "latest",
+    "@chromatic-com/storybook": "^5.6.0",
     "@eslint-react/eslint-plugin": "^5.28.8",
     "@eslint/js": "^10.0.1",
     "@formio/choices.js": "^10.2.1",
@@ -158,8 +158,8 @@
     "@types/testing-library__jest-dom": "^5.14.5",
     "@types/ungap__structured-clone": "^1.2.0",
     "@types/vhtml": "^2.2.9",
-    "@vitest/browser-playwright": "latest",
-    "@vitest/coverage-v8": "latest",
+    "@vitest/browser-playwright": "^5.1.0",
+    "@vitest/coverage-v8": "^5.1.0",
     "auto": "^11.3.6",
     "autoprefixer": "^10.6.2",
     "babel-jest": "^29.7.0",
@@ -182,7 +182,7 @@
     "jest-mock-console": "^2.0.0",
     "moment": "^2.31.0",
     "node-factory": "^0.4.2",
-    "playwright": "latest",
+    "playwright": "^1.65.1",
     "postcss": "^8.5.18",
     "postcss-cli": "^12.0.0",
     "postcss-filter-rules": "^0.8.0",
@@ -202,6 +202,6 @@
     "tsx": "^4.23.15",
     "typescript": "~5.4.5",
     "typescript-eslint": "^8.72.1",
-    "vitest": "latest"
+    "vitest": "^5.1.0"
   }
 }
