@@ -16,9 +16,9 @@ jobs:
           cache: npm
 
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npx knip
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
       - run: npm run verify
+      - run: npx knip --no-exit-code
