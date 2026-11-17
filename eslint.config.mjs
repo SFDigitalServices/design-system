@@ -16,7 +16,8 @@ export default defineConfig(
     '**/dist/**',
     '**/coverage/**',
     // Archived stories are not runnable yet; see stories/README.md.
-    'stories/**'
+    'stories/**',
+    'storybook-static/**'
   ]),
   {
     files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
