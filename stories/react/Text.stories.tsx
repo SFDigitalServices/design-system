@@ -1,7 +1,7 @@
+import type { TextProps } from '@/src/react/Text'
+import { Text } from '@/src/react/Text'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { disableArgTypes } from '../../stories/utils'
-import type { TextProps } from './Text'
-import { Text } from './Text'
 
 type TextVariant = NonNullable<TextProps['variant']>
 

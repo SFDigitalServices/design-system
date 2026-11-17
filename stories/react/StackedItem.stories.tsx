@@ -1,8 +1,8 @@
-import { IconArchive, StackedItem } from '@/design-system'
-import type { StoryObj, Meta } from '@storybook/react'
+import { IconArchive, StackedItem } from '@/src/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof StackedItem> = {
-  title: 'Components/Stacked Item',
+  title: 'React/StackedIItem',
   component: StackedItem,
   argTypes: {
     children: {

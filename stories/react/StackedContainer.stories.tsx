@@ -1,14 +1,14 @@
-import React from 'react'
-import type { StoryObj, Meta } from '@storybook/react'
 import {
   IconCash,
   StackedContainer,
   StackedItem,
   type StackedItemProps
-} from '@/design-system'
+} from '@/src/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
 const meta: Meta<typeof StackedContainer> = {
-  title: 'Components/Stacked Container',
+  title: 'React/StackedContainer',
   component: StackedContainer,
   args: {
     icon: IconCash,

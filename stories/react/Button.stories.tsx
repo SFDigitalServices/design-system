@@ -1,6 +1,6 @@
+import type { ButtonProps } from '@/src/react/Button'
+import { Button } from '@/src/react/Button'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import type { ButtonProps } from './Button'
-import { Button } from './Button'
 
 const ALL_VARIANTS: NonNullable<ButtonProps['variant']>[] = [
   'primary',

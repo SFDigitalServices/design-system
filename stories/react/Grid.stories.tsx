@@ -1,5 +1,5 @@
+import { Container, DisplayXXXl, Grid, HeadingLg } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Container, DisplayXXXl, Grid, HeadingLg } from './'
 
 const meta: Meta<typeof Grid> = {
   title: 'React/Grid',

@@ -6,6 +6,16 @@
 - Code changes that break the contract are either mistakes to be fixed or
   breaking changes that require documentation updates.
 
+## Storybook
+
+We use [Storybook] to publish both documentation and browser-ready renderings of
+components called [stories]. We put both docs (specifically [MDX] files,
+`*.mdx`) and stories (`*.stories.*`) in the [stories](./stories/) directory.
+
+Storybook builds are published to [Chromatic] in pull requests and merges to
+`main` via GitHub Actions in [chromatic.yml](./.github/workflows/chromatic.yml).
+Changes that produce a visual diff should be reviewed before merging.
+
 ## Linting and type checking
 
 Run `npm run lint` for ESLint's recommended JavaScript and TypeScript rules,
@@ -67,8 +77,12 @@ likely break automatic publishing.
 [are the types wrong]: https://www.npmjs.com/package/@arethetypeswrong/cli
 [auto]: https://intuit.github.io/auto/
 [canary]: https://intuit.github.io/auto/docs/generated/canary
+[chromatic]: http://chromatic.com/
 [conventional commits]: https://intuit.github.io/auto/docs/generated/conventional-commits
+[mdx]: https://storybook.js.org/docs/writing-docs/mdx
 [publint]: https://publint.dev/docs/
 [release labels]: https://intuit.github.io/auto/blog/using-shipit#release-labels
 [release workflow]: ./.github/workflows/release.yml
+[storybook]: https://storybook.js.org/
+[stories]: https://storybook.js.org/docs/writing-stories
 [trusted publishing]: https://docs.npmjs.com/trusted-publishers
