@@ -2,7 +2,7 @@ import { IconArchive, StackedItem } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof StackedItem> = {
-  title: 'React/StackedIItem',
+  title: 'React/StackedItem',
   component: StackedItem,
   argTypes: {
     children: {
