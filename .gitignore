@@ -2,8 +2,7 @@
 **/.DS_Store
 **/*.log
 **/node_modules/
+*storybook.log
 coverage/
 dist/
-
-*storybook.log
-storybook-static
+storybook-static/
