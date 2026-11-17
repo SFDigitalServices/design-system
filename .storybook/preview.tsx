@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/react-vite'
-import { GridOverlay } from './components/GridOverlay'
 import { viewports } from './viewports'
 
 import './preview.css'
@@ -25,15 +24,7 @@ const preview: Preview = {
     viewport: {
       options: viewports
     }
-  },
-  decorators: [
-    (Story, { parameters }) => (
-      <div className="font-body text-body">
-        <Story />
-        {parameters.gridOverlay ? <GridOverlay /> : null}
-      </div>
-    )
-  ]
+  }
 }
 
 export default preview

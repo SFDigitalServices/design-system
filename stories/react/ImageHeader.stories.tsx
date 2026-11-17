@@ -1,14 +1,14 @@
 import { Container, DisplayXXXl, ImageHeader } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { MockHeader } from '../../.storybook/components'
+import { MockHeader } from '../helpers/MockHeader'
 
-const images = {
+export const HEADER_IMAGES = {
   dph: 'https://media.api.sf.gov/original_images/sf_skyline_small.jpg',
   'assessor-recorder':
     'https://media.api.sf.gov/original_images/headerimage-Neighborhoods-1.jpg'
 } as const
 
-const meta: Meta<typeof ImageHeader> = {
+const meta = {
   title: 'React/ImageHeader',
   component: ImageHeader,
   argTypes: {
@@ -19,9 +19,9 @@ const meta: Meta<typeof ImageHeader> = {
       name: 'Image',
       type: 'string',
       control: 'select',
-      options: Object.keys(images),
+      options: Object.keys(HEADER_IMAGES),
       mapping: Object.fromEntries(
-        Object.entries(images).map(([key, src]) => [
+        Object.entries(HEADER_IMAGES).map(([key, src]) => [
           key,
           <img src={src} alt={key} />
         ])
@@ -42,6 +42,7 @@ const meta: Meta<typeof ImageHeader> = {
         <Story />
         <Container>
           <div className="py-20">
+            <p>This is content in a container.</p>
             <p>The quick brown fox jumps over the lazy dog.</p>
           </div>
         </Container>
@@ -51,7 +52,7 @@ const meta: Meta<typeof ImageHeader> = {
   parameters: {
     layout: 'fullscreen'
   }
-}
+} satisfies Meta<typeof ImageHeader>
 
 export default meta
 
@@ -62,5 +63,12 @@ export const WithImage: ImageHeaderStory = {
     children: 'Assessor-Recorder',
     // @ts-expect-error derp
     image: 'assessor-recorder'
+  }
+}
+
+export const NoImage: ImageHeaderStory = {
+  args: {
+    children: 'This is an ImageHeader without an image',
+    image: undefined
   }
 }

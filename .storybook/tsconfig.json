@@ -18,6 +18,7 @@
   },
   "include": [
     "./**/*",
-    "../stories/**/*.{ts,tsx}"
+    "../stories/**/*.{ts,tsx}",
+    "../stories/helpers/MockHeader.tsx"
   ]
 }

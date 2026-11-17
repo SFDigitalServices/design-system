@@ -17,7 +17,7 @@ export function GridOverlay() {
   )
 }
 
-export function GridColumns({ count }: { count: number }) {
+function GridColumns({ count }: { count: number }) {
   return (
     <>
       {Array.from({ length: count }).map((_, i) => (
