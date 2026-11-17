@@ -16,6 +16,16 @@ Storybook builds are published to [Chromatic] in pull requests and merges to
 `main` via GitHub Actions in [chromatic.yml](./.github/workflows/chromatic.yml).
 Changes that produce a visual diff should be reviewed before merging.
 
+Run the Storybook dev server to see and test components in your browser as you
+make changes in code:
+
+```sh
+npm run storybook
+```
+
+Then visit [localhost:6006](http://127.0.0.1:6006/) to see Storybook in action
+and review your work.
+
 ## Linting and type checking
 
 Run `npm run lint` for ESLint's recommended JavaScript and TypeScript rules,
