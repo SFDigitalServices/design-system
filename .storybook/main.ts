@@ -6,14 +6,15 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true
   },
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../stories/**/*.mdx', '../stories/**/*.stories.*'],
   addons: [
     '@chromatic-com/storybook',
     '@storybook/addon-vitest',
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
     '@storybook/addon-designs',
-    '@storybook/addon-mcp'
+    '@storybook/addon-mcp',
+    'storybook-addon-tag-badges'
   ],
   framework: '@storybook/react-vite',
   // Mirrors the `@/src` paths in .storybook/tsconfig.json.
@@ -21,7 +22,8 @@ const config: StorybookConfig = {
     mergeConfig(config, {
       resolve: {
         alias: {
-          '@/src': fileURLToPath(new URL('../src', import.meta.url))
+          '@/src': fileURLToPath(new URL('../src', import.meta.url)),
+          '@/lib': fileURLToPath(new URL('../lib', import.meta.url))
         }
       }
     })
