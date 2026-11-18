@@ -8,7 +8,10 @@ export const ROBOTO_FLEX: FontSpec = {
   weights: {
     light: 300,
     normal: 400,
-    bold: 700
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800
   },
   googleFont: {
     optical: true,
@@ -27,6 +30,7 @@ export const ROBOTO_SLAB: FontSpec = {
     light: 300,
     normal: 400,
     medium: 500,
+    semibold: 600,
     bold: 700
   }
 }
