@@ -1,0 +1,27 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { Callout } from '../helpers'
+import * as TileStories from './Tile.stories'
+import * as TileSetStories from './TileSet.stories'
+import * as TileSectionStories from './TileSection.stories'
+
+# Tiles
+
+Tiles are top-level links with an `href`, `heading`, optional `description`, and
+decorative `icon`.
+
+<Canvas of={TileStories.Default} />
+
+## Tile sets
+
+Tiles can be grouped into sets under a heading with [TileSet]:
+
+<Canvas of={TileSetStories.Default} />
+
+## Tile sections
+
+And tile sets can in turn be grouped under a heading with [TileSection]:
+
+<Canvas of={TileSectionStories.Default} />
+
+[TileSet]: ?path=/story/react-tiles-tileset--default
+[TileSection]: ?path=/story/react-tiles-tilesection--default

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import {
   HEADER_IMAGES,
   MockSiteHeader,
-  imageMapping,
+  mappingInput,
   renderImage
 } from '../helpers'
 
@@ -49,7 +49,7 @@ export const WithImage = {
   argTypes: {
     image: {
       name: 'Image',
-      ...imageMapping(HEADER_IMAGES)
+      ...mappingInput(HEADER_IMAGES)
     }
   }
 } satisfies ImageHeaderStory

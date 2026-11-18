@@ -5,7 +5,7 @@ import { withContainer } from '../helpers'
 type QuickLinkSetArgs = Pick<QuickLinkSetProps, 'children'>
 
 const meta: Meta<QuickLinkSetArgs> = {
-  title: 'React/QuickLinkSet',
+  title: 'React/Quick links/QuickLinkSet',
   component: QuickLinkSet,
   args: {
     children: (

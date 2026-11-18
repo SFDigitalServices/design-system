@@ -1,3 +1,4 @@
+import * as icons from '@/src/react/icons'
 import { ComponentProps, ReactElement } from 'react'
 import { InputType } from 'storybook/internal/csf'
 
@@ -22,14 +23,23 @@ export const DEPARTMENT_LOGOS = {
     'https://media-api-develop.dev.sf.gov/original_images/SFSodaTax_Logo_Bevel_Cyan.png'
 } as const
 
-export function imageMapping(
-  mapping: Record<string, string>
+export function mappingInput(
+  mapping: Record<string, unknown>
 ): Partial<InputType> {
   return {
     type: 'string',
     control: 'select',
     options: Object.keys(mapping),
     mapping
+  }
+}
+
+export function iconComponentInput(): Partial<InputType> {
+  return {
+    type: 'string',
+    control: 'select',
+    options: Object.keys(icons),
+    mapping: icons
   }
 }
 

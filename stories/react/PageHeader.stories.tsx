@@ -10,7 +10,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import {
   DEPARTMENT_LOGOS,
   MockSiteHeader,
-  imageMapping,
+  mappingInput,
   renderImage
 } from '../helpers'
 import { WithImage as ImageHeaderWithImage } from './ImageHeader.stories'
@@ -48,7 +48,7 @@ const meta: Meta<PageHeaderArgs> = {
     },
     logo: {
       name: 'Logo',
-      ...imageMapping(DEPARTMENT_LOGOS)
+      ...mappingInput(DEPARTMENT_LOGOS)
     }
   },
   render({ title, description, label, logo, image }) {

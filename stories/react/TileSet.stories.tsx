@@ -1,18 +1,33 @@
-import { Tile, TileSet, TileSetProps } from '@/src/react'
+import { Tile, TileProps, TileSet, TileSetProps } from '@/src/react'
+import * as icons from '@/src/react/icons'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { withContainer } from '../helpers'
+import { iconComponentInput, withContainer } from '../helpers'
 
-type TileSetArgs = Pick<TileSetProps, 'heading' | 'children'>
+type TileSetArgs = Pick<TileSetProps, 'heading'> &
+  Pick<TileProps, 'icon'> & {
+    count: number
+  }
 
 const meta: Meta<TileSetArgs> = {
-  title: 'React/TileSet',
-  component: TileSet,
+  title: 'React/Tiles/TileSet',
   args: {
-    children: (
-      <>
-        <Tile href="#1" heading="Tile 1" description="Tile 1 description" />
-        <Tile href="#2" heading="Tile 2" description="Tile 2 description" />
-      </>
+    heading: 'Tile set heading',
+    icon: undefined,
+    count: 3
+  },
+  argTypes: {
+    icon: {
+      name: 'Icon',
+      ...iconComponentInput()
+    }
+  },
+  render({ heading, icon, count }) {
+    return (
+      <TileSet heading={heading}>
+        {Array.from({ length: count }).map((_, i) => (
+          <Tile key={i} heading={`Tile ${i + 1}`} href="#" icon={icon} />
+        ))}
+      </TileSet>
     )
   },
   decorators: [withContainer()]

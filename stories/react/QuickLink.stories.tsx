@@ -5,7 +5,7 @@ import { withContainer } from '../helpers'
 type QuickLinkArgs = Pick<QuickLinkProps, 'href' | 'heading' | 'description'>
 
 const meta: Meta<QuickLinkArgs> = {
-  title: 'React/QuickLink',
+  title: 'React/Quick links/QuickLink',
   component: QuickLink,
   args: {
     href: '#',
