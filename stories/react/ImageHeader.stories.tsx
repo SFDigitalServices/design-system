@@ -24,22 +24,17 @@ const meta = {
   render({ children, image, ...rest }) {
     console.error('image:', image)
     return (
-      <ImageHeader image={renderImage(image)}>
-        <DisplayXXXl>{children}</DisplayXXXl>
-      </ImageHeader>
-    )
-  },
-  decorators: [
-    (Story) => (
       <>
         <MockSiteHeader />
-        <Story />
+        <ImageHeader image={renderImage(image)}>
+          <DisplayXXXl>{children}</DisplayXXXl>
+        </ImageHeader>
         <Container className="py-20">
           <p>This is content in a container after the ImageHeader.</p>
         </Container>
       </>
     )
-  ]
+  }
 } satisfies Meta<typeof ImageHeader>
 
 export default meta

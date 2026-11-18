@@ -53,27 +53,22 @@ const meta: Meta<PageHeaderArgs> = {
   },
   render({ title, description, label, logo, image, ...rest }) {
     return (
-      <ImageHeader image={renderImage(image)}>
-        <PageHeader
-          title={title}
-          description={description}
-          label={label}
-          logo={logo}
-        />
-      </ImageHeader>
-    )
-  },
-  decorators: [
-    (Story, context) => (
       <>
         <MockSiteHeader />
-        <Story />
+        <ImageHeader image={renderImage(image)}>
+          <PageHeader
+            title={title}
+            description={description}
+            label={label}
+            logo={logo}
+          />
+        </ImageHeader>
         <Container className="py-20">
           <p>This is content in a container after the PageHeader.</p>
         </Container>
       </>
     )
-  ]
+  }
 }
 
 export default meta
