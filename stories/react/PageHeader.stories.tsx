@@ -1,6 +1,5 @@
 import {
   Container,
-  DisplayXXXl,
   ImageHeader,
   ImageHeaderProps,
   PageHeader,
@@ -67,10 +66,7 @@ const meta: Meta<PageHeaderArgs> = {
         </Container>
       </>
     )
-  ],
-  parameters: {
-    layout: 'fullscreen'
-  }
+  ]
 }
 
 export default meta

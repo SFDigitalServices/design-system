@@ -41,10 +41,7 @@ const meta = {
         </Container>
       </>
     )
-  ],
-  parameters: {
-    layout: 'fullscreen'
-  }
+  ]
 } satisfies Meta<typeof ImageHeader>
 
 export default meta

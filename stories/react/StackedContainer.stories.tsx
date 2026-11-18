@@ -8,17 +8,12 @@ import {
   StackedItem
 } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
+import { withContainer } from '../helpers/decorators'
 
 const meta: Meta<typeof StackedContainer> = {
   title: 'React/StackedContainer',
   component: StackedContainer,
-  decorators: [
-    (Story) => (
-      <Container className="py-20">
-        <Story />
-      </Container>
-    )
-  ]
+  decorators: [withContainer()]
 }
 
 export default meta

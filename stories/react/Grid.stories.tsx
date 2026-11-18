@@ -1,19 +1,11 @@
 import { Container, DisplayXXXl, Grid, HeadingLg } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { withContainer } from '../helpers/decorators'
 
 const meta: Meta<typeof Grid> = {
   title: 'React/Grid',
   component: Grid,
-  parameters: {
-    layout: 'fullscreen'
-  },
-  decorators: [
-    (Story) => (
-      <Container className="py-20">
-        <Story />
-      </Container>
-    )
-  ]
+  decorators: [withContainer()]
 }
 
 export default meta

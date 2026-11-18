@@ -1,6 +1,7 @@
 import { Container, IconArchive, StackedItem } from '@/src/react'
 import * as icons from '@/src/react/icons'
 import type { Meta, StoryObj } from '@storybook/react'
+import { withContainer } from '../helpers/decorators'
 
 const meta: Meta<typeof StackedItem> = {
   title: 'React/StackedItem',
@@ -27,13 +28,7 @@ const meta: Meta<typeof StackedItem> = {
       options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     }
   },
-  decorators: [
-    (Story) => (
-      <Container className="py-20">
-        <Story />
-      </Container>
-    )
-  ]
+  decorators: [withContainer()]
 }
 
 export default meta

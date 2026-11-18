@@ -2,6 +2,7 @@ import { Container } from '@/src/react'
 import type { ButtonProps } from '@/src/react/Button'
 import { Button } from '@/src/react/Button'
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { withContainer } from '../helpers/decorators'
 
 const ALL_VARIANTS: NonNullable<ButtonProps['variant']>[] = [
   'primary',
@@ -25,7 +26,7 @@ const meta: Meta<typeof Button> = {
     }
   },
   render: (props) => (
-    <Container className="space-y-16">
+    <div className="space-y-16">
       <div>
         <Button {...props} />
       </div>
@@ -37,8 +38,9 @@ const meta: Meta<typeof Button> = {
         And a block button:
         <Button {...props} block />
       </div>
-    </Container>
-  )
+    </div>
+  ),
+  decorators: [withContainer()]
 }
 
 export default meta
