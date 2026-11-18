@@ -54,6 +54,12 @@ const preview: Preview = {
     },
     hideOverlay: false,
     layout: 'fullscreen',
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        order: ['Introduction', 'Changelog', '*']
+      }
+    },
     viewport: {
       options: viewports
     }
