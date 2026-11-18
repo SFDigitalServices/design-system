@@ -54,7 +54,7 @@ const meta: Meta<PageHeaderArgs> = {
             title={title}
             description={description}
             label={label}
-            logo={logo}
+            logo={renderImage(logo)}
           />
         </ImageHeader>
         <Container className="py-20">
@@ -69,19 +69,19 @@ export default meta
 
 type ImageHeaderStory = StoryObj<typeof meta>
 
-export const WithImage: ImageHeaderStory = {
+export const NoImage: ImageHeaderStory = {
+  args: {
+    title: 'PageHeader without an image',
+    logo: undefined
+  }
+}
+
+export const WithLogo: ImageHeaderStory = {
   args: {
     title: 'Assessor-Recorder',
     logo: <img src={DEPARTMENT_LOGOS.ASR} alt="Assessor-Recorder logo" />
   },
   argTypes: {
     image: ImageHeaderWithImage.argTypes.image
-  }
-}
-
-export const NoImage: ImageHeaderStory = {
-  args: {
-    title: 'PageHeader without an image',
-    logo: undefined
   }
 }
