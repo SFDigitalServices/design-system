@@ -1,10 +1,6 @@
 import type { FontSpec } from './types'
-// istanbul ignore file
 
-/**
- * TODO: derive weights to load by cross-referencing `fontWeight` values in
- * `theme.fontSize` with the typography components that use each style.
- */
+// istanbul ignore file
 
 export const ROBOTO_FLEX: FontSpec = {
   name: 'Roboto Flex',
@@ -13,6 +9,14 @@ export const ROBOTO_FLEX: FontSpec = {
     light: 300,
     normal: 400,
     bold: 700
+  },
+  googleFont: {
+    optical: true,
+    weights: {
+      light: [[8, 144], 300],
+      normal: [[8, 144], 400],
+      bold: [[8, 144], 700]
+    }
   }
 }
 
@@ -20,6 +24,7 @@ export const ROBOTO_SLAB: FontSpec = {
   name: 'Roboto Slab',
   fallbacks: ['ui-serif', 'serif'],
   weights: {
+    light: 300,
     normal: 400,
     bold: 700
   }
