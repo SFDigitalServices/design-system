@@ -144,7 +144,7 @@
     "@figma-export/transform-svg-with-svgo": "^6.0.2",
     "@figma-export/types": "^6.0.0",
     "@formio/choices.js": "^10.2.1",
-    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@fullhuman/postcss-purgecss": "^9.1.0",
     "@tailwindcss/container-queries": "^0.1.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "14.0.0",
@@ -162,10 +162,10 @@
     "chokidar-cli": "^3.0.0",
     "cssnano": "^7.0.6",
     "cssnano-preset-advanced": "^7.0.6",
-    "eslint": "^10.14.0",
+    "eslint": "^10.15.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-import-x": "^4.18.1",
     "eslint-plugin-testing-library": "^7.16.2",
     "formiojs": "^4.21.8",
     "globals": "^17.14.0",
@@ -192,6 +192,6 @@
     "tsup": "^9.0.0",
     "tsx": "^4.23.15",
     "typescript": "~5.4.5",
-    "typescript-eslint": "^8.72.1"
+    "typescript-eslint": "^8.73.0"
   }
 }
