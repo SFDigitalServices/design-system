@@ -7,31 +7,29 @@ import {
   renderImage
 } from '../helpers'
 
-const meta: Meta<typeof ImageHeader> = {
+export type ImageHeaderArgs = {
+  heading: string
+  image?: keyof typeof HEADER_IMAGES
+}
+
+const meta: Meta<ImageHeaderArgs> = {
   title: 'React/ImageHeader',
-  component: ImageHeader,
   argTypes: {
-    children: {
+    heading: {
       name: 'Heading',
       description: 'rendered as &lt;DisplayXXL&gt;{...}&lt;/DisplayXXL&gt;'
     },
-    className: {
-      table: {
-        disable: true
-      }
+    image: {
+      type: 'string',
+      ...mappingInput(HEADER_IMAGES)
     }
   },
-  parameters: {
-    controls: {
-      expanded: false
-    }
-  },
-  render({ children, image }) {
+  render({ heading, image }) {
     return (
       <>
         <MockSiteHeader />
         <ImageHeader image={renderImage(image)}>
-          <DisplayXXXl>{children}</DisplayXXXl>
+          <DisplayXXXl>{heading}</DisplayXXXl>
         </ImageHeader>
         <Container className="py-20">
           <p>This is content in a container after the ImageHeader.</p>
@@ -47,9 +45,8 @@ type ImageHeaderStory = StoryObj<typeof meta>
 
 export const WithImage = {
   args: {
-    children: 'Assessor-Recorder',
-    // @ts-expect-error derp
-    image: HEADER_IMAGES.ASR
+    heading: 'Assessor-Recorder',
+    image: 'ASR'
   },
   argTypes: {
     image: {
@@ -61,7 +58,7 @@ export const WithImage = {
 
 export const NoImage: ImageHeaderStory = {
   args: {
-    children: 'This is an ImageHeader without an image',
+    heading: 'This is an ImageHeader without an image',
     image: undefined
   },
   argTypes: {
