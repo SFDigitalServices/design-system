@@ -1,6 +1,6 @@
 import { Container, classed } from '@/src/react'
-import { Decorator } from '@storybook/react-vite'
-import { ComponentProps } from 'react'
+import type { Decorator } from '@storybook/react-vite'
+import type { ComponentProps } from 'react'
 
 const PaddedContainer = classed(Container, 'py-20')
 

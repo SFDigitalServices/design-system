@@ -1,4 +1,5 @@
-import { Tile, TileProps, TileSet } from '@/src/react'
+import type { TileProps} from '@/src/react';
+import { Tile, TileSet } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { iconComponentInput, withContainer } from '../helpers'
 

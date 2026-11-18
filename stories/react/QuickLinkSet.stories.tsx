@@ -1,44 +1,46 @@
-import { QuickLink, QuickLinkSet, QuickLinkSetProps } from '@/src/react'
+import { QuickLink, QuickLinkSet } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 
-type QuickLinkSetArgs = Pick<QuickLinkSetProps, 'children'>
+type QuickLinkSetArgs = {
+  count: number
+}
 
 const meta: Meta<QuickLinkSetArgs> = {
   title: 'React/Quick links/QuickLinkSet',
-  component: QuickLinkSet,
   args: {
-    children: (
-      <>
-        <QuickLink
-          href="#"
-          heading="Quick link 1"
-          description="This is the description"
-        />
-        <QuickLink
-          href="#"
-          heading="Quick link 2"
-          description="This is the description"
-        />
-        <QuickLink
-          href="#"
-          heading="Quick link 3"
-          description="This is the description"
-        />
-        <QuickLink
-          href="#"
-          heading="Quick link 4"
-          description="This is the description"
-        />
-        <QuickLink
-          href="#"
-          heading="Quick link 5"
-          description="This is the description"
-        />
-      </>
+    count: 4
+  },
+  argTypes: {
+    count: {
+      name: 'Number of links',
+      control: {
+        min: 0,
+        max: 10
+      }
+    }
+  },
+  render({ count }) {
+    return (
+      <QuickLinkSet>
+        {Array.from({ length: count }).map((_, i) => (
+          <QuickLink
+            // eslint-disable-next-line @eslint-react/no-array-index-key
+            key={i}
+            heading={`Tile ${i + 1}`}
+            href="#"
+            description="This is the description"
+          />
+        ))}
+      </QuickLinkSet>
     )
   },
-  decorators: [withContainer()]
+  decorators: [withContainer()],
+  parameters: {
+    controls: {
+      expanded: false
+    }
+  }
 }
 
 export default meta

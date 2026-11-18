@@ -1,5 +1,5 @@
-import { Tile, TileProps, TileSet, TileSetProps } from '@/src/react'
-import * as icons from '@/src/react/icons'
+import type { TileProps, TileSetProps } from '@/src/react'
+import { Tile, TileSet } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { iconComponentInput, withContainer } from '../helpers'
 
@@ -25,6 +25,7 @@ const meta: Meta<TileSetArgs> = {
     return (
       <TileSet heading={heading}>
         {Array.from({ length: count }).map((_, i) => (
+          // eslint-disable-next-line @eslint-react/no-array-index-key
           <Tile key={i} heading={`Tile ${i + 1}`} href="#" icon={icon} />
         ))}
       </TileSet>

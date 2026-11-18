@@ -1,5 +1,4 @@
 import {
-  Container,
   IconBuilding,
   IconCash,
   IconEmail,
@@ -7,7 +6,7 @@ import {
   StackedContainer,
   StackedItem
 } from '@/src/react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 
 const meta: Meta<typeof StackedContainer> = {

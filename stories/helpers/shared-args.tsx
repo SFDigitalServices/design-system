@@ -1,6 +1,6 @@
 import * as icons from '@/src/react/icons'
-import { ComponentProps, ReactElement } from 'react'
-import { InputType } from 'storybook/internal/csf'
+import type { ComponentProps, ReactElement } from 'react'
+import type { InputType } from 'storybook/internal/csf'
 
 export const HEADER_IMAGES = {
   ASR: 'https://media.api.sf.gov/original_images/headerimage-Neighborhoods-1.jpg',

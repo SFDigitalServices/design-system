@@ -1,5 +1,5 @@
 import { Container, DisplayXXXl, ImageHeader } from '@/src/react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   HEADER_IMAGES,
   MockSiteHeader,

@@ -1,6 +1,6 @@
 import { IconArchive, StackedItem } from '@/src/react'
 import * as icons from '@/src/react/icons'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 
 const meta: Meta<typeof StackedItem> = {
