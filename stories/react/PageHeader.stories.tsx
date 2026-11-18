@@ -87,3 +87,10 @@ export const WithImage: PageHeaderStory = {
     image: ImageHeaderWithImage.argTypes.image
   }
 }
+
+export const WithLabel: PageHeaderStory = {
+  args: {
+    label: 'News',
+    title: 'Something big is happening'
+  }
+}

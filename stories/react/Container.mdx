@@ -1,0 +1,28 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { breakpoints, widths } from '@/src/tokens'
+import { Callout } from '../helpers'
+import * as ContainerStories from './Container.stories'
+
+<Meta of={ContainerStories} />
+
+# Container
+
+The Container component establishes a consistent horizontal bounding box for
+content. On viewports below the `xl` breakpoint, it applies a responsive
+horizontal margin. At the `xl` viewport ({breakpoints.xl.value} or wider), the
+content snaps to a centered column with a width of {widths.xl.value}.
+
+<Canvas of={ContainerStories.Default} />
+
+<Callout variant='warning'>
+  Avoid adding horizontal padding to Container elements and their children,
+  since this will alter the bounding box and break vertical alignment with other
+  contained content.
+</Callout>
+
+## Full width backgrounds
+
+To fill the viewport with a background, wrap `<Container>` with an element and
+apply the background color or image to the wrapper:
+
+<Canvas of={ContainerStories.FullWidth} />
