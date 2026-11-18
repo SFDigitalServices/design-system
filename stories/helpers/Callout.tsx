@@ -1,5 +1,5 @@
 import { IconInfo, IconWarning, classed } from '@/src/react'
-import type { ComponentProps, ComponentType } from 'react'
+import type { ComponentProps } from 'react'
 
 const Wrapper = classed('div', {
   base: 'flex items-start gap-8 p-12 border-solid border-l-[8px] !my-20',
