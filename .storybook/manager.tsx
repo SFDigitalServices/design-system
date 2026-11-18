@@ -9,6 +9,17 @@ import {
   useStorybookApi
 } from 'storybook/manager-api'
 
+addons.setConfig({
+  toolbar: {
+    // there's no need for the remount ("Reload") button at this point
+    remount: { hidden: true },
+    // disable the light/dark background toggle
+    'storybook/background': { hidden: true },
+    // disable the background square grid (our layout grid is more useful)
+    'storybook/background-grid': { hidden: true }
+  }
+})
+
 const GRID_OVERLAY_ADDON_ID = 'sfgov/grid-overlay'
 const GRID_OVERLAY_TOOL_ID = `${GRID_OVERLAY_ADDON_ID}/tool`
 
