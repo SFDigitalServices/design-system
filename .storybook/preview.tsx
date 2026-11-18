@@ -13,10 +13,16 @@ const preview: Preview = {
           <GridOverlay />
         ) : null}
       </>
+    ),
+    (Story, { globals }) => (
+      <div data-theme={globals.sfgovTheme || undefined}>
+        <Story />
+      </div>
     )
   ],
   initialGlobals: {
-    gridOverlay: false
+    gridOverlay: false,
+    sfgovTheme: undefined
   },
   parameters: {
     a11y: {
