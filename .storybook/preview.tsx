@@ -26,6 +26,7 @@ const preview: Preview = {
       test: 'todo'
     },
     controls: {
+      expanded: true,
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i

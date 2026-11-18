@@ -8,19 +8,13 @@ const meta = {
   component: ImageHeader,
   argTypes: {
     children: {
-      name: 'Heading'
+      name: 'Heading',
+      description: 'rendered as &lt;DisplayXXL&gt;{...}&lt;/DisplayXXL&gt;'
     },
-    image: {
-      name: 'Image',
-      type: 'string',
-      control: 'select',
-      options: Object.keys(HEADER_IMAGES),
-      mapping: Object.fromEntries(
-        Object.entries(HEADER_IMAGES).map(([key, src]) => [
-          key,
-          <img src={src} alt={key} />
-        ])
-      )
+    className: {
+      table: {
+        disable: true
+      }
     }
   },
   render({ children, image, ...rest }) {
@@ -48,17 +42,38 @@ export default meta
 
 type ImageHeaderStory = StoryObj<typeof meta>
 
-export const WithImage: ImageHeaderStory = {
+export const WithImage = {
   args: {
     children: 'Assessor-Recorder',
     // @ts-expect-error derp
     image: 'assessor-recorder'
+  },
+  argTypes: {
+    image: {
+      name: 'Image',
+      type: 'string',
+      control: 'select',
+      options: Object.keys(HEADER_IMAGES),
+      mapping: Object.fromEntries(
+        Object.entries(HEADER_IMAGES).map(([key, src]) => [
+          key,
+          <img src={src} alt={key} />
+        ])
+      )
+    }
   }
-}
+} satisfies ImageHeaderStory
 
 export const NoImage: ImageHeaderStory = {
   args: {
     children: 'This is an ImageHeader without an image',
     image: undefined
+  },
+  argTypes: {
+    image: {
+      table: {
+        disable: true
+      }
+    }
   }
 }

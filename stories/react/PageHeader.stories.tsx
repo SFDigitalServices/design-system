@@ -3,12 +3,13 @@ import {
   ImageHeader,
   ImageHeaderProps,
   PageHeader,
-  PageHeaderProps
+  PageHeaderProps,
+  PageLabel
 } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { MockHeader } from '../helpers/MockHeader'
 import { DEPARTMENT_LOGOS } from '../helpers/shared-args'
-import ImageHeaderMeta from './ImageHeader.stories'
+import { WithImage as ImageHeaderWithImage } from './ImageHeader.stories'
 
 type PageHeaderArgs = Pick<
   PageHeaderProps,
@@ -19,6 +20,10 @@ type PageHeaderArgs = Pick<
 const meta: Meta<PageHeaderArgs> = {
   title: 'React/PageHeader',
   component: PageHeader,
+  args: {
+    title: 'This is the title',
+    description: 'And this is the description'
+  },
   argTypes: {
     title: {
       name: 'Title'
@@ -27,9 +32,16 @@ const meta: Meta<PageHeaderArgs> = {
       name: 'Description'
     },
     label: {
-      name: 'Label'
+      name: 'Label',
+      type: 'string',
+      control: 'select',
+      options: ['none', 'visible', 'hidden'],
+      mapping: {
+        none: undefined,
+        visible: <PageLabel>PAGE LABEL</PageLabel>,
+        hidden: <PageLabel isHidden>PAGE LABEL</PageLabel>
+      }
     },
-    image: ImageHeaderMeta.argTypes.image,
     logo: {
       name: 'Logo',
       type: 'string',
@@ -76,12 +88,10 @@ type ImageHeaderStory = StoryObj<typeof meta>
 export const WithImage: ImageHeaderStory = {
   args: {
     title: 'Assessor-Recorder',
-    logo: (
-      <img
-        src={DEPARTMENT_LOGOS['assessor-recorder']}
-        alt="Assessor-Recorder logo"
-      />
-    )
+    logo: <img src={DEPARTMENT_LOGOS['ASR']} alt="Assessor-Recorder logo" />
+  },
+  argTypes: {
+    image: ImageHeaderWithImage.argTypes.image
   }
 }
 
