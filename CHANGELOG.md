@@ -1,3 +1,21 @@
+# v3.0.2 (Wed Nov 18 2026)
+
+
+
+---
+
+# v3.0.1 (Wed Nov 18 2026)
+
+#### 🐛 Bug Fix
+
+- Bump uuid and formiojs [#173](https://github.com/SFDigitalServices/design-system/pull/173) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 1
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+
+---
+
 # v2.0.0 (Fri Nov 13 2026)
 
 #### 💥 Breaking Change
