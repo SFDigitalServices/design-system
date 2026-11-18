@@ -14,9 +14,7 @@ const Wrapper = classed('div', {
   }
 })
 
-type CalloutProps = ComponentProps<typeof Wrapper> & {
-  icon?: ComponentType<{ width?: number }>
-}
+type CalloutProps = ComponentProps<typeof Wrapper>
 
 const VARIANT_ICONS = {
   info: IconInfo,

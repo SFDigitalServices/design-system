@@ -32,7 +32,18 @@ const preview: Preview = {
       test: 'todo'
     },
     controls: {
-      expanded: true,
+      /**
+       * Set this to true to show the description column in the controls panel.
+       * This is cool, but noisy and sometimes confusing: prop types with
+       * multiline comments get turned into descriptions, but they don't render
+       * links for `{@link SomeSymbol}`.
+       *
+       * One way to solve this challenge is to more clearly distinguish
+       * component props from story args, which would keep doc comments out of
+       * control descriptions and force us to map them directly in story
+       * renderings.
+       */
+      expanded: false,
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i

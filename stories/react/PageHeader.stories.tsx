@@ -3,6 +3,7 @@ import { Container, ImageHeader, PageHeader, PageLabel } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   DEPARTMENT_LOGOS,
+  HEADER_IMAGES,
   MockSiteHeader,
   mappingInput,
   renderImage
@@ -36,7 +37,7 @@ const meta: Meta<PageHeaderArgs> = {
       options: ['none', 'visible', 'hidden'],
       mapping: {
         none: undefined,
-        visible: <PageLabel>LABEL</PageLabel>,
+        visible: 'LABEL',
         hidden: <PageLabel isHidden>LABEL</PageLabel>
       }
     },
@@ -67,19 +68,20 @@ const meta: Meta<PageHeaderArgs> = {
 
 export default meta
 
-type ImageHeaderStory = StoryObj<typeof meta>
+type PageHeaderStory = StoryObj<typeof meta>
 
-export const NoImage: ImageHeaderStory = {
+export const NoImage: PageHeaderStory = {
   args: {
-    title: 'PageHeader without an image',
+    title: 'PageHeader without a full-width image',
     logo: undefined
   }
 }
 
-export const WithLogo: ImageHeaderStory = {
+export const WithImage: PageHeaderStory = {
   args: {
-    title: 'Assessor-Recorder',
-    logo: <img src={DEPARTMENT_LOGOS.ASR} alt="Assessor-Recorder logo" />
+    title: 'PageHeader with a full-width image',
+    logo: renderImage(DEPARTMENT_LOGOS.ASR),
+    image: renderImage(HEADER_IMAGES.ASR)
   },
   argTypes: {
     image: ImageHeaderWithImage.argTypes.image

@@ -35,12 +35,7 @@ const meta: Meta<QuickLinkSetArgs> = {
       </QuickLinkSet>
     )
   },
-  decorators: [withContainer()],
-  parameters: {
-    controls: {
-      expanded: false
-    }
-  }
+  decorators: [withContainer()]
 }
 
 export default meta

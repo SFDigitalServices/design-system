@@ -11,9 +11,13 @@ const meta: Meta<typeof StackedItem> = {
   },
   argTypes: {
     title: {
-      name: 'Title (heading)',
       type: 'string',
-      description: 'The heading text, rendered with <HeadingLg>'
+      description: 'The heading text, rendered with &lt;HeadingLg&gt;'
+    },
+    headingAs: {
+      control: 'select',
+      description: 'The <code>as</code> prop of the &lt;HeadingLg&gt;',
+      options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     },
     children: {
       name: 'Content',
@@ -22,10 +26,6 @@ const meta: Meta<typeof StackedItem> = {
     icon: {
       options: Object.keys(icons),
       mapping: icons
-    },
-    headingAs: {
-      control: 'select',
-      options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     }
   },
   decorators: [withContainer()]

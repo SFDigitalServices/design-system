@@ -21,6 +21,11 @@ const meta: Meta<typeof ImageHeader> = {
       }
     }
   },
+  parameters: {
+    controls: {
+      expanded: false
+    }
+  },
   render({ children, image }) {
     return (
       <>
