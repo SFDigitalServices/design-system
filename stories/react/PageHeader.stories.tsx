@@ -51,7 +51,7 @@ const meta: Meta<PageHeaderArgs> = {
       ...imageMapping(DEPARTMENT_LOGOS)
     }
   },
-  render({ title, description, label, logo, image, ...rest }) {
+  render({ title, description, label, logo, image }) {
     return (
       <>
         <MockSiteHeader />
