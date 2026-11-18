@@ -1,4 +1,4 @@
-import { Container, IconArchive, StackedItem } from '@/src/react'
+import { IconArchive, StackedItem } from '@/src/react'
 import * as icons from '@/src/react/icons'
 import type { Meta, StoryObj } from '@storybook/react'
 import { withContainer } from '../helpers'
@@ -35,7 +35,7 @@ export default meta
 
 type StackedItemStory = StoryObj<typeof meta>
 
-export const _StackedItem: StackedItemStory = {
+export const Default: StackedItemStory = {
   args: {
     icon: IconArchive,
     title: 'Content title',

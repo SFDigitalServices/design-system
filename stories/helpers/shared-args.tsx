@@ -37,5 +37,9 @@ export function renderImage<P = Omit<ComponentProps<'img'>, 'src'>>(
   value: string | ReactElement | null | undefined,
   props?: P
 ) {
-  return typeof value === 'string' ? <img src={value} {...props} /> : value
+  return typeof value === 'string' ? (
+    <img src={value} alt="" {...props} />
+  ) : (
+    value
+  )
 }

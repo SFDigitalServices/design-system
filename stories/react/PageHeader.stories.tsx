@@ -42,8 +42,8 @@ const meta: Meta<PageHeaderArgs> = {
       options: ['none', 'visible', 'hidden'],
       mapping: {
         none: undefined,
-        visible: <PageLabel>PAGE LABEL</PageLabel>,
-        hidden: <PageLabel isHidden>PAGE LABEL</PageLabel>
+        visible: <PageLabel>LABEL</PageLabel>,
+        hidden: <PageLabel isHidden>LABEL</PageLabel>
       }
     },
     logo: {

@@ -6,12 +6,12 @@ import * as GridStories from './Grid.stories'
 
 # Grid
 
-The Grid component establishes a [CSS grid] with 6 columns on small viewports
-and 12 on medium (`md`) widths and above.
+The Grid component creates a [CSS grid] with 6 columns on small viewports and 12
+on medium (`md`) widths and above.
 
-<Callout>
-  To ensure horizontal alignment with other elements, always wrap Grid elements
-  in a [Container](?path=/story/react-container--default).
+<Callout variant='warning'>
+  To ensure vertical alignment with other elements, ensure that Grid elements
+  are nested in a [Container](?path=/story/react-container--default).
 </Callout>
 
 ## Columns
@@ -31,7 +31,7 @@ classes to define the start and end columns, or combine `col-start-*` with
 The 6-column grid is too narrow for content on smaller screens, so **in most
 cases** it's best to have grid elements span the full grid initially with
 `col-span-full` then snap to specific column widths on larger viewports with
-`md:col-span-*`. For instance, a two-column grid template might look like:
+`md:col-span-*`. For instance, here's a responsive two-column layout:
 
 ```tsx
 <Grid>

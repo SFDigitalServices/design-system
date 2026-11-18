@@ -7,7 +7,7 @@ import {
   renderImage
 } from '../helpers'
 
-const meta = {
+const meta: Meta<typeof ImageHeader> = {
   title: 'React/ImageHeader',
   component: ImageHeader,
   argTypes: {
@@ -21,8 +21,7 @@ const meta = {
       }
     }
   },
-  render({ children, image, ...rest }) {
-    console.error('image:', image)
+  render({ children, image }) {
     return (
       <>
         <MockSiteHeader />
@@ -35,7 +34,7 @@ const meta = {
       </>
     )
   }
-} satisfies Meta<typeof ImageHeader>
+}
 
 export default meta
 
