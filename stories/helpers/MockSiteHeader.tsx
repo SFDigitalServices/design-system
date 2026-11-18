@@ -1,8 +1,8 @@
 import { Container, DisplayLg } from '@/src/react'
 import type { PropsWithChildren } from 'react'
 
-export function MockHeader({
-  children = <DisplayLg>Mock header</DisplayLg>
+export function MockSiteHeader({
+  children = <DisplayLg>SiteHeader</DisplayLg>
 }: PropsWithChildren) {
   return (
     <div className="bg-primary700 text-white py-16">

@@ -1,6 +1,6 @@
 import { Container, DisplayXXXl, Grid, HeadingLg } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { withContainer } from '../helpers/decorators'
+import { withContainer } from '../helpers'
 
 const meta: Meta<typeof Grid> = {
   title: 'React/Grid',

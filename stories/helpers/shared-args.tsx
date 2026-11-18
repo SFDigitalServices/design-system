@@ -1,3 +1,6 @@
+import { ComponentProps, ReactElement } from 'react'
+import { InputType } from 'storybook/internal/csf'
+
 export const HEADER_IMAGES = {
   ASR: 'https://media.api.sf.gov/original_images/headerimage-Neighborhoods-1.jpg',
   DPH: 'https://media.api.sf.gov/original_images/sf_skyline_small.jpg',
@@ -18,3 +21,21 @@ export const DEPARTMENT_LOGOS = {
   SodaTax:
     'https://media-api-develop.dev.sf.gov/original_images/SFSodaTax_Logo_Bevel_Cyan.png'
 } as const
+
+export function imageMapping(
+  mapping: Record<string, string>
+): Partial<InputType> {
+  return {
+    type: 'string',
+    control: 'select',
+    options: Object.keys(mapping),
+    mapping
+  }
+}
+
+export function renderImage<P = Omit<ComponentProps<'img'>, 'src'>>(
+  value: string | ReactElement | null | undefined,
+  props?: P
+) {
+  return typeof value === 'string' ? <img src={value} {...props} /> : value
+}

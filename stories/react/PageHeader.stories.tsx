@@ -7,8 +7,12 @@ import {
   PageLabel
 } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { MockHeader } from '../helpers/MockHeader'
-import { DEPARTMENT_LOGOS } from '../helpers/shared-args'
+import {
+  DEPARTMENT_LOGOS,
+  MockSiteHeader,
+  imageMapping,
+  renderImage
+} from '../helpers'
 import { WithImage as ImageHeaderWithImage } from './ImageHeader.stories'
 
 type PageHeaderArgs = Pick<
@@ -44,20 +48,12 @@ const meta: Meta<PageHeaderArgs> = {
     },
     logo: {
       name: 'Logo',
-      type: 'string',
-      control: 'select',
-      options: Object.keys(DEPARTMENT_LOGOS),
-      mapping: Object.fromEntries(
-        Object.entries(DEPARTMENT_LOGOS).map(([key, src]) => [
-          key,
-          <img src={src} alt={key} />
-        ])
-      )
+      ...imageMapping(DEPARTMENT_LOGOS)
     }
   },
   render({ title, description, label, logo, image, ...rest }) {
     return (
-      <ImageHeader image={image}>
+      <ImageHeader image={renderImage(image)}>
         <PageHeader
           title={title}
           description={description}
@@ -70,11 +66,10 @@ const meta: Meta<PageHeaderArgs> = {
   decorators: [
     (Story, context) => (
       <>
-        <MockHeader />
+        <MockSiteHeader />
         <Story />
         <Container className="py-20">
-          <p>This is content in a container.</p>
-          <p>The quick brown fox jumps over the lazy dog.</p>
+          <p>This is content in a container after the PageHeader.</p>
         </Container>
       </>
     )
@@ -88,7 +83,7 @@ type ImageHeaderStory = StoryObj<typeof meta>
 export const WithImage: ImageHeaderStory = {
   args: {
     title: 'Assessor-Recorder',
-    logo: <img src={DEPARTMENT_LOGOS['ASR']} alt="Assessor-Recorder logo" />
+    logo: <img src={DEPARTMENT_LOGOS.ASR} alt="Assessor-Recorder logo" />
   },
   argTypes: {
     image: ImageHeaderWithImage.argTypes.image

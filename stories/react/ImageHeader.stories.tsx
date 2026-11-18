@@ -1,7 +1,11 @@
 import { Container, DisplayXXXl, ImageHeader } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { MockHeader } from '../helpers/MockHeader'
-import { HEADER_IMAGES } from '../helpers/shared-args'
+import {
+  HEADER_IMAGES,
+  MockSiteHeader,
+  imageMapping,
+  renderImage
+} from '../helpers'
 
 const meta = {
   title: 'React/ImageHeader',
@@ -18,8 +22,9 @@ const meta = {
     }
   },
   render({ children, image, ...rest }) {
+    console.error('image:', image)
     return (
-      <ImageHeader image={image}>
+      <ImageHeader image={renderImage(image)}>
         <DisplayXXXl>{children}</DisplayXXXl>
       </ImageHeader>
     )
@@ -27,11 +32,10 @@ const meta = {
   decorators: [
     (Story) => (
       <>
-        <MockHeader />
+        <MockSiteHeader />
         <Story />
         <Container className="py-20">
-          <p>This is content in a container.</p>
-          <p>The quick brown fox jumps over the lazy dog.</p>
+          <p>This is content in a container after the ImageHeader.</p>
         </Container>
       </>
     )
@@ -46,20 +50,12 @@ export const WithImage = {
   args: {
     children: 'Assessor-Recorder',
     // @ts-expect-error derp
-    image: 'assessor-recorder'
+    image: HEADER_IMAGES.ASR
   },
   argTypes: {
     image: {
       name: 'Image',
-      type: 'string',
-      control: 'select',
-      options: Object.keys(HEADER_IMAGES),
-      mapping: Object.fromEntries(
-        Object.entries(HEADER_IMAGES).map(([key, src]) => [
-          key,
-          <img src={src} alt={key} />
-        ])
-      )
+      ...imageMapping(HEADER_IMAGES)
     }
   }
 } satisfies ImageHeaderStory

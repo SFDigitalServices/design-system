@@ -2,7 +2,7 @@ import { Container } from '@/src/react'
 import type { ButtonProps } from '@/src/react/Button'
 import { Button } from '@/src/react/Button'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { withContainer } from '../helpers/decorators'
+import { withContainer } from '../helpers'
 
 const ALL_VARIANTS: NonNullable<ButtonProps['variant']>[] = [
   'primary',
