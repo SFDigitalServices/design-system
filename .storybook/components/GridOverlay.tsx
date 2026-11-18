@@ -5,7 +5,7 @@ const GridColumn = classed('div', 'bg-[#f0f] opacity-10 h-full')
 export function GridOverlay() {
   return (
     <div className="pointer-events-none absolute z-50 top-0 w-full h-full">
-      <Container className="relative h-full">
+      <Container className="relative h-full border-solid border-[#f0f] border-x-1">
         <Grid className="h-full md:hidden">
           <GridColumns count={6} />
         </Grid>
