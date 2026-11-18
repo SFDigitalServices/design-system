@@ -22,7 +22,7 @@ jobs:
         with:
           node-version-file: .tool-versions
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - uses: chromaui/action@v15
+      - uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
