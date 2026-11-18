@@ -1,4 +1,4 @@
-export type FontWeightName = 'light' | 'normal' | 'bold' | 'semibold'
+export type FontWeightName = 'light' | 'normal' | 'medium' | 'bold' | 'semibold'
 export type FixedFontWeightMap = Partial<Record<FontWeightName, number>>
 
 // "8..144,300;8..144,400;8..144,700"
