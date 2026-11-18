@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { GridIcon, PaintBrushIcon } from '@storybook/icons'
 // The manager bundler compiles JSX to React.createElement, so React must be in scope.
 import React, { useCallback, useEffect } from 'react'
@@ -8,8 +9,17 @@ import {
   useGlobals,
   useStorybookApi
 } from 'storybook/manager-api'
+import { create } from 'storybook/theming'
+import brandImage from './images/sfgov-lockup.png'
 
 addons.setConfig({
+  theme: create({
+    base: 'light',
+    brandTitle: 'sf.gov design system',
+    brandUrl: 'https://www.sf.gov',
+    brandImage,
+    textColor: 'black'
+  }),
   toolbar: {
     // there's no need for the remount ("Reload") button at this point
     remount: { hidden: true },
