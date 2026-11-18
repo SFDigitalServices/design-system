@@ -34,10 +34,11 @@ const preview: Preview = {
     docs: {
       codePanel: true
     },
+    hideOverlay: false,
+    layout: 'fullscreen',
     viewport: {
       options: viewports
-    },
-    hideOverlay: false
+    }
   }
 }
 
