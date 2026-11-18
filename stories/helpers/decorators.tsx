@@ -1,4 +1,4 @@
-import { Container, ContainerProps, classed } from '@/src/react'
+import { Container, classed } from '@/src/react'
 import { Decorator } from '@storybook/react-vite'
 import { ComponentProps } from 'react'
 
