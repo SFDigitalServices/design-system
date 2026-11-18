@@ -1,18 +1,39 @@
-import { IconArchive, StackedItem } from '@/src/react'
+import { Container, IconArchive, StackedItem } from '@/src/react'
+import * as icons from '@/src/react/icons'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof StackedItem> = {
   title: 'React/StackedItem',
   component: StackedItem,
+  args: {
+    headingAs: 'p'
+  },
   argTypes: {
+    title: {
+      name: 'Title (heading)',
+      type: 'string',
+      description: 'The heading text, rendered with <HeadingLg>'
+    },
     children: {
-      name: 'content',
+      name: 'Content',
       type: 'string'
     },
-    title: {
-      type: 'string'
+    icon: {
+      options: Object.keys(icons),
+      mapping: icons
+    },
+    headingAs: {
+      control: 'select',
+      options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <Container className="py-20">
+        <Story />
+      </Container>
+    )
+  ]
 }
 
 export default meta

@@ -8,13 +8,8 @@ import {
 } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { MockHeader } from '../helpers/MockHeader'
+import { DEPARTMENT_LOGOS } from '../helpers/shared-args'
 import ImageHeaderMeta from './ImageHeader.stories'
-
-const logos = {
-  dph: 'https://media.api.staging.dev.sf.gov/original_images/sfdph_logo_blue-01.png',
-  'assessor-recorder':
-    'https://media.api.staging.dev.sf.gov/original_images/ASR_Seal__Logo_Edited_0e6uAcG.jpg'
-} as const
 
 type PageHeaderArgs = Pick<
   PageHeaderProps,
@@ -40,9 +35,9 @@ const meta: Meta<PageHeaderArgs> = {
       name: 'Logo',
       type: 'string',
       control: 'select',
-      options: Object.keys(logos),
+      options: Object.keys(DEPARTMENT_LOGOS),
       mapping: Object.fromEntries(
-        Object.entries(logos).map(([key, src]) => [
+        Object.entries(DEPARTMENT_LOGOS).map(([key, src]) => [
           key,
           <img src={src} alt={key} />
         ])
@@ -66,11 +61,9 @@ const meta: Meta<PageHeaderArgs> = {
       <>
         <MockHeader />
         <Story />
-        <Container>
-          <div className="py-20">
-            <p>This is content in a container.</p>
-            <p>The quick brown fox jumps over the lazy dog.</p>
-          </div>
+        <Container className="py-20">
+          <p>This is content in a container.</p>
+          <p>The quick brown fox jumps over the lazy dog.</p>
         </Container>
       </>
     )
@@ -87,7 +80,12 @@ type ImageHeaderStory = StoryObj<typeof meta>
 export const WithImage: ImageHeaderStory = {
   args: {
     title: 'Assessor-Recorder',
-    logo: <img src={logos['assessor-recorder']} alt="Assessor-Recorder logo" />
+    logo: (
+      <img
+        src={DEPARTMENT_LOGOS['assessor-recorder']}
+        alt="Assessor-Recorder logo"
+      />
+    )
   }
 }
 

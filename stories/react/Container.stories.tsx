@@ -1,9 +1,9 @@
-import { Container as ContainerComponent } from '@/src/react/Container'
+import { Container } from '@/src/react/Container'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-const meta: Meta<typeof ContainerComponent> = {
+const meta: Meta<typeof Container> = {
   title: 'React/Container',
-  component: ContainerComponent,
+  component: Container,
   argTypes: {
     children: {
       name: 'content',
@@ -20,9 +20,9 @@ export default meta
 
 type ContainerStory = StoryObj<typeof meta>
 
-export const Container: ContainerStory = {
+export const Default: ContainerStory = {
   args: {
     children: 'Some text in a container!',
-    className: 'bg-pinkLight'
+    className: 'bg-neutral200'
   }
 }

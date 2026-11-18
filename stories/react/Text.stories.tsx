@@ -38,6 +38,9 @@ const meta: Meta<typeof Text> = {
       name: 'Text',
       type: 'string'
     }
+  },
+  parameters: {
+    hideOverlay: true
   }
 }
 

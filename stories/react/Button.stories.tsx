@@ -1,3 +1,4 @@
+import { Container } from '@/src/react'
 import type { ButtonProps } from '@/src/react/Button'
 import { Button } from '@/src/react/Button'
 import type { Meta, StoryObj } from '@storybook/react-vite'
@@ -24,7 +25,7 @@ const meta: Meta<typeof Button> = {
     }
   },
   render: (props) => (
-    <div className="space-y-16">
+    <Container className="space-y-16">
       <div>
         <Button {...props} />
       </div>
@@ -36,7 +37,7 @@ const meta: Meta<typeof Button> = {
         And a block button:
         <Button {...props} block />
       </div>
-    </div>
+    </Container>
   )
 }
 

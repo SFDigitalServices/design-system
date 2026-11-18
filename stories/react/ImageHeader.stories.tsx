@@ -1,12 +1,7 @@
 import { Container, DisplayXXXl, ImageHeader } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { MockHeader } from '../helpers/MockHeader'
-
-export const HEADER_IMAGES = {
-  dph: 'https://media.api.sf.gov/original_images/sf_skyline_small.jpg',
-  'assessor-recorder':
-    'https://media.api.sf.gov/original_images/headerimage-Neighborhoods-1.jpg'
-} as const
+import { HEADER_IMAGES } from '../helpers/shared-args'
 
 const meta = {
   title: 'React/ImageHeader',
@@ -40,11 +35,9 @@ const meta = {
       <>
         <MockHeader />
         <Story />
-        <Container>
-          <div className="py-20">
-            <p>This is content in a container.</p>
-            <p>The quick brown fox jumps over the lazy dog.</p>
-          </div>
+        <Container className="py-20">
+          <p>This is content in a container.</p>
+          <p>The quick brown fox jumps over the lazy dog.</p>
         </Container>
       </>
     )

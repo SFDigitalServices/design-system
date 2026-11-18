@@ -1,55 +1,81 @@
 import {
+  Container,
+  IconBuilding,
   IconCash,
+  IconEmail,
+  IconTrafficCone,
   StackedContainer,
-  StackedItem,
-  type StackedItemProps
+  StackedItem
 } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 
 const meta: Meta<typeof StackedContainer> = {
   title: 'React/StackedContainer',
   component: StackedContainer,
-  args: {
-    icon: IconCash,
-    titles: [],
-    content: [
-      'Some text!',
-      'Some other text',
-      'Yet another item with some longer text that might cause the thing to wrap'
-    ]
-  },
-  argTypes: {
-    titles: {
-      type: 'string',
-      control: {
-        type: 'array'
-      }
-    },
-    content: {
-      type: 'string',
-      control: {
-        type: 'array'
-      }
-    }
-  },
-  render: ({ content, titles, ...rest }) => (
-    <StackedContainer>
-      {[...Array(3)].map((text, i) => (
-        <StackedItem
-          key={`item-${i}`}
-          title={titles[i] || `Item ${i + 1} title`}
-          {...(rest as Partial<StackedItemProps>)}
-        >
-          {content[i] || `Content in item ${i + 1}`}
-        </StackedItem>
-      ))}
-    </StackedContainer>
-  )
+  decorators: [
+    (Story) => (
+      <Container className="py-20">
+        <Story />
+      </Container>
+    )
+  ]
 }
 
 export default meta
 
 type StackedContainerStory = StoryObj<typeof meta>
 
-export const _StackedContainer: StackedContainerStory = {}
+export const One: StackedContainerStory = {
+  render() {
+    return (
+      <StackedContainer>
+        <StackedItem icon={IconBuilding} title="Building">
+          <p>
+            The quick brown fox jumps over the lazy dog. The quick brown fox
+            jumps over the lazy dog. The quick brown fox jumps over the lazy
+            dog.
+          </p>
+        </StackedItem>
+      </StackedContainer>
+    )
+  }
+}
+
+export const Two: StackedContainerStory = {
+  render() {
+    return (
+      <StackedContainer>
+        <StackedItem icon={IconCash} title="Money">
+          <p>
+            The quick brown fox jumps over the lazy dog. The quick brown fox
+            jumps over the lazy dog.
+          </p>
+        </StackedItem>
+        <StackedItem icon={IconEmail} title="Mail">
+          <p>
+            The quick brown fox jumps over the lazy dog. The quick brown fox
+            jumps over the lazy dog.
+          </p>
+        </StackedItem>
+      </StackedContainer>
+    )
+  }
+}
+
+export const Three: StackedContainerStory = {
+  render() {
+    return (
+      <StackedContainer>
+        <StackedItem icon={IconCash} title="Money">
+          <p>The quick brown fox jumps over the lazy dog.</p>
+        </StackedItem>
+        <StackedItem icon={IconEmail} title="Mail">
+          <p>The quick brown fox jumps over the lazy dog.</p>
+        </StackedItem>
+        <StackedItem icon={IconTrafficCone} title="Look out!">
+          <p>The quick brown fox jumps over the lazy dog.</p>
+        </StackedItem>
+      </StackedContainer>
+    )
+  }
+}
