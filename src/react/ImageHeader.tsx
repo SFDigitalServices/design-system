@@ -74,7 +74,7 @@ export function ImageHeader({
           </ContentWrapper>
         </>
       ) : (
-        <Container className={className}>{children}</Container>
+        <NoImageContainer className={className}>{children}</NoImageContainer>
       )}
     </div>
   )
@@ -116,3 +116,7 @@ const imageClass = classes(
   'absolute w-full -z-10 object-cover object-top',
   imageHeights
 )
+
+// When there's no image, the container should include some space to offset it
+// from the site header
+const NoImageContainer = classed(Container, 'pt-[24px] md:pt-[32px]')
