@@ -152,7 +152,7 @@
     "@storybook/react-vite": "^10.6.7",
     "@tailwindcss/container-queries": "^0.1.1",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "14.0.0",
+    "@testing-library/react": "^16.3.3",
     "@thoughtbot/tailwindcss-aria-attributes": "^0.2.0",
     "@types/jest": "^29.4.0",
     "@types/react": "18.2.0",
