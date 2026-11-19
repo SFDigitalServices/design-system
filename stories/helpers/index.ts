@@ -1,4 +1,5 @@
 export * from './Callout'
 export * from './MockSiteHeader'
+export * from './RawHTML'
 export * from './decorators'
 export * from './shared-args'
