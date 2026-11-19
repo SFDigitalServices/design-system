@@ -1,16 +1,28 @@
-import type { Config } from 'tailwindcss'
-import plugin from 'tailwindcss/plugin'
 import containerQueries from '@tailwindcss/container-queries'
 import ariaAttributes from '@thoughtbot/tailwindcss-aria-attributes'
-import theme from './theme'
+import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 import formioPlugin from './formio/tailwind-plugin'
+import theme from './theme'
+
+// Keep in sync with the [data-theme] values in src/css/colors.css.
+const THEMES = [
+  'blue',
+  'teal',
+  'orange',
+  'green',
+  'pink',
+  'brown',
+  'red',
+  'black'
+]
 
 const preset: Partial<Config> = {
   theme,
   plugins: [
     containerQueries,
     ariaAttributes,
-    plugin(({ addVariant, addUtilities, theme }) => {
+    plugin(({ addUtilities, addVariant, matchVariant, theme }) => {
       addVariant('link', '& a')
       addUtilities({
         '.outline-focus': {
@@ -33,6 +45,14 @@ const preset: Partial<Config> = {
           )}`
         }
       })
+
+      matchVariant(
+        'theme',
+        (value) => [`&[data-theme="${value}"]`, `[data-theme="${value}"] &`],
+        {
+          values: Object.fromEntries(THEMES.map((name) => [name, name]))
+        }
+      )
     }),
     // TODO: remove
     formioPlugin
