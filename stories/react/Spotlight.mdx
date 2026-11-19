@@ -1,0 +1,72 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { Callout } from '../helpers'
+import * as SpotlightStories from './Spotlight.stories'
+
+<Meta of={SpotlightStories} />
+
+# Spotlight
+
+Spotlight displays a heading, text, and call to action with an optional image in
+a variety of layouts and color themes.
+
+Spotlight is a [compound component] with a minimal props API:
+
+```tsx
+import { Spotlight, Button } from '@sfgov/design-system/react'
+
+<Spotlight>
+  <Spotlight.Content>
+    <Spotlight.Heading>This is the heading</Spotlight.Heading>
+    <p>This is the content.</p>
+    <Button>Call to action</Button>
+  </Spotlight.Content>
+  <Spotlight.Image attribution="A cool image">
+    <img src="..." alt="" />
+  </Spotlight.Image>
+</Spotlight>
+```
+
+- `<Spotlight>` is the container component, which receives the `layout` and
+  `reverse` props, and any other HTML attributes, including `data-theme`
+- `<Spotlight.Content>` wraps the heading, text content, and call to action
+  button
+- `<Spotlight.Heading>` renders the spotlight heading styles as an `<h2>` by
+  default. You can modify the heading level with the `as` prop, e.g. `as="h3"`.
+- `<Spotlight.Image>` renders a `<figure>` element and `<figcaption>` containing
+  the `attribution` content. It takes a single child, which must render the
+  `className` prop to style it properly.
+
+
+## Horizontal layout
+
+The default `layout` prop value, `horizontal`, places the content and image side
+by side on medium viewports or wider:
+
+<Canvas of={SpotlightStories.Horizontal} />
+
+The order in which they're displayed is determined both by the order you render
+them and the `reverse` prop: If you render `<Spotlight.Content>` before
+`<Spotlight.Image>`, the content will display on the left and the image on the
+right, with their positioned swapped if you pass `reverse={true}`:
+
+<Canvas of={SpotlightStories.Reverse} />
+
+
+## Vertical layout
+
+`layout="vertical"` (referred to as "full" image alignment in the CMS) is better
+suited for wide images, and positions the content after the image (regardless of
+rendering order):
+
+<Canvas of={SpotlightStories.Vertical} />
+
+<Canvas of={SpotlightStories.VerticalReversed} />
+
+## Background layout
+
+With `layout="background"`, the image fills the spotlight bounding box and the
+content is rendered on top of it, and the attribution below:
+
+<Canvas of={SpotlightStories.Background} />
+
+[compound component]: https://vercel.com/academy/shadcn-ui/compound-components-and-advanced-composition
