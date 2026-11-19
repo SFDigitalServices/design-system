@@ -109,7 +109,14 @@ const ContentWrapper = classed(
 
 const ContentContainer = classed(
   Container,
-  ['pt-20 lg:p-40 lg:bg-white', containerHeights].join(' ')
+  [
+    'lg:bg-white pt-[24px] md:pt-[32px] relative',
+    // left outer border
+    'before:bg-white lg:before:w-40 before:content-[""] before:absolute before:inset-y-0 before:right-full',
+    // right outer border
+    'after:bg-white lg:after:w-40 after:content-[""] after:absolute after:inset-y-0 after:left-full',
+    containerHeights
+  ].join(' ')
 )
 
 const imageClass = classes(
