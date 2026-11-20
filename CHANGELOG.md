@@ -1,3 +1,15 @@
+# v3.1.0 (Fri Nov 20 2026)
+
+#### 🚀 Enhancement
+
+- feat: Storybook, Chromatic, knip, cleanup [#175](https://github.com/SFDigitalServices/design-system/pull/175) ([@shawnbot](https://github.com/shawnbot))
+
+#### Authors: 1
+
+- Shawn Allen ([@shawnbot](https://github.com/shawnbot))
+
+---
+
 # v3.0.2 (Wed Nov 18 2026)
 
 
