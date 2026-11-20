@@ -1,7 +1,7 @@
 # sf.gov design system
 
-This is the home of the design system for the City & County of San Francisco's
-web site, [sf.gov](https://www.sf.gov/).
+This is the design system for the City & County of San Francisco's web site,
+[sf.gov](https://www.sf.gov/).
 
 ## Install
 

@@ -1,0 +1,26 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { Callout } from '../helpers'
+import * as PageLabelStories from './PageLabel.stories'
+import * as PageHeaderStories from './PageHeader.stories'
+
+<Meta of={PageLabelStories} />
+
+# PageLabel
+
+Page labels are a visually distinctive way to identify the page type.
+
+<Canvas of={PageLabelStories.Default} />
+
+Labels are displayed before/above the page title, as in [PageHeader]:
+
+<Canvas of={PageHeaderStories.WithLabel} />
+
+## `isHidden` prop
+
+The `isHidden` prop toggles the [`sr-only` class][sr-only] class, which hides
+the element visually but not for screen readers.
+
+<Canvas of={PageLabelStories.Hidden} />
+
+[PageHeader]: ?path=/docs/react-pageheader--docs
+[sr-only]: https://v3.tailwindcss.com/docs/screen-readers#screen-reader-only-elements

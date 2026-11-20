@@ -1,20 +1,21 @@
-import { classed, classes } from './utils'
 import type { ComponentProps } from 'react'
+import { classed, classes } from './utils'
 
 export const BUTTON_VARIANTS = {
   base: classes(
     'items-center',
     'justify-center',
     'shrink-0',
-    'rounded-4', // FIXME: need 8px in theme.radii
+    'rounded-4',
     'gap-8',
     'px-16',
     'py-[15px]',
-    'border-[transparent]', // FIXME: need transparent in theme.colors
+    'border-[transparent]',
     'border-solid',
     'border-1',
     '!cursor-pointer',
     'font-medium',
+    // FIXME: this makes button text smaller than body text
     '!text-label-xs',
     'text-center',
     'no-underline',

@@ -1,0 +1,39 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { Callout } from '../helpers'
+import * as ImageHeaderStories from './ImageHeader.stories'
+
+<Meta of={ImageHeaderStories} />
+
+# ImageHeader
+
+The ImageHeader component optionally displays a full-width header image
+partially overlapped by its children.
+
+<Canvas of={ImageHeaderStories.WithImage} />
+
+## `image` prop
+
+The `image` prop is a JSX element, which must render its `className` prop so
+that it can be correctly positioned with Tailwind utilities. This means that you
+can render `<img>`, [next/image], `<svg>`, or even `<canvas>`—but that you're
+responsible for supplying accessibility attributes like `alt`, `aria-hidden`,
+etc.
+
+```tsx
+<ImageHeader
+  image={<img src="path/to/pretty-picture.jpg" aria-hidden="true" />}
+>
+  <PageHeader title="My cool page" />
+</ImageHeader>
+```
+
+This prop is optional so that you can unconditionally wrap your header content
+(e.g. a [PageHeader][]) in `<ImageHeader>`. Regardless of whether it receives an
+`image`, the content is always rendered in a [Container] so that it aligns with
+the site header and adjacent content:
+
+<Canvas of={ImageHeaderStories.NoImage} />
+
+[next/image]: https://nextjs.org/docs/pages/api-reference/components/image
+[PageHeader]: ?path=/docs/react-pageheader--docs
+[Container]: ?path=/docs/react-container--docs

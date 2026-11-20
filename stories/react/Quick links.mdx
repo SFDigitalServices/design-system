@@ -1,0 +1,15 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { Callout } from '../helpers'
+import * as QuickLinkSetStories from './QuickLinkSet.stories'
+
+# Quick links
+
+Quick links are built from the [QuickLink] and [QuickLinkSet] components.
+`<QuickLink>` renders a hyperlink (`<a>`) with an `href`, a `heading`, and
+optional `description`, while `<QuickLinkSet>` provides the responsive grid
+layout for consistent vertical and horizontal alignment.
+
+<Canvas of={QuickLinkSetStories.Default} />
+
+[QuickLink]: ?path=/story/react-quick-links-quicklink--default
+[QuickLinkSet]: ?path=/story/react-quick-links-quicklinkset--default

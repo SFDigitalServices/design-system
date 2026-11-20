@@ -1,0 +1,28 @@
+name: Chromatic publish
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    environment: chromatic
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # this is necessary for chromatic to figure out the commit history
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,10 @@
-export type FontWeightName = 'light' | 'normal' | 'bold' | 'semibold'
+export type FontWeightName =
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semibold'
+  | 'bold'
+  | 'extrabold'
 export type FixedFontWeightMap = Partial<Record<FontWeightName, number>>
 
 // "8..144,300;8..144,400;8..144,700"
@@ -20,8 +26,4 @@ export type FontSpec = {
   fallbacks: string[]
   weights: FixedFontWeightMap
   googleFont?: GoogleFontOptions
-}
-
-export type FIXMEAsableProps = {
-  as?: ComponentType | ElementType
 }
