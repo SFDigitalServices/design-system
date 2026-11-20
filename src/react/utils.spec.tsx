@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { classed, classes, classify } from './utils'
+import { classed, classes, classify, withDisplayName } from './utils'
 
 const H1 = classed('h1', 'foo bar', 'baz')
 const H2 = jest.fn((props) => <h2 {...props} />)
@@ -57,5 +57,14 @@ describe('classify()', () => {
   it('returns the element unchanged if no classes are provided', () => {
     const input = <hr className="m-0" />
     expect(classify(input, [''])).toEqual(input)
+  })
+})
+
+describe('withDisplayName()', () => {
+  it('sets the displayName property', () => {
+    const Component = () => <hr />
+    const Named = withDisplayName(Component, 'HR')
+    expect(Named).toBe(Component)
+    expect(Named.displayName).toBe('HR')
   })
 })

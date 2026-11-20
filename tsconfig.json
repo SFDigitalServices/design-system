@@ -21,7 +21,8 @@
   "include": [
     "lib/**/*",
     "src/**/*",
-    "*.config.*"
+    "*.config.*",
+    "jest.setup.ts"
   ],
   "exclude": [
     "node_modules",

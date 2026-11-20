@@ -72,3 +72,21 @@ export function classify(
     className: classes(element.props.className, ...classNames)
   })
 }
+
+/**
+ * Modify the `displayName` of a component and return it. This is helpful for
+ * `classed()` components, which default to `TwComponent(tag)`:
+ *
+ * ```tsx
+ * export const Button = withDisplayName(
+ *   classed('button', '...'),
+ *   'Button'
+ * )
+ * ```
+ */
+export function withDisplayName<T extends object>(
+  Component: T,
+  displayName: string
+) {
+  return Object.assign(Component, { displayName })
+}
