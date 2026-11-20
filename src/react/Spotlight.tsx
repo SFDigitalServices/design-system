@@ -43,6 +43,10 @@ const Wrapper = withContextVariant(
         true: 'md:flex-row-reverse',
         false: ''
       }
+    },
+    defaultProps: {
+      // @ts-expect-error data attributes are ok
+      'data-testid': 'spotlight'
     }
   })
 )
@@ -78,6 +82,10 @@ const Content = withContextVariant(
         true: '',
         false: ''
       }
+    },
+    defaultProps: {
+      // @ts-expect-error data attributes are ok
+      'data-testid': 'spotlight-content'
     }
   })
 )
@@ -89,6 +97,10 @@ const Figure = withContextVariant(
         // the image always comes first in vertical layouts
         vertical: 'order-1'
       }
+    },
+    defaultProps: {
+      // @ts-expect-error data attributes are ok
+      'data-testid': 'spotlight-figure'
     }
   })
 )
@@ -102,6 +114,10 @@ const Caption = withContextVariant(
         vertical: '',
         background: 'absolute z-0 top-full left-0'
       }
+    },
+    defaultProps: {
+      // @ts-expect-error data attributes are ok
+      'data-testid': 'spotlight-attribution'
     }
   })
 )
