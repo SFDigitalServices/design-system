@@ -14,6 +14,15 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "imports": {
+    "#src": "./src/index.ts",
+    "#src/react": "./src/react/index.ts",
+    "#src/react/icons": "./src/react/icons/index.js",
+    "#src/react/*": "./src/react/*.tsx",
+    "#src/theme/*": "./src/theme/*.ts",
+    "#src/tokens": "./src/tokens/index.ts",
+    "#src/css/*": "./src/css/*"
+  },
   "files": [
     "dist"
   ],
@@ -112,7 +121,7 @@
     "prepublishOnly": "npm run build && npm run verify",
     "storybook": "storybook dev -p 6006",
     "test": "jest --coverage",
-    "typecheck": "tsc --noEmit --incremental false && tsc -p .storybook --noEmit --incremental false",
+    "typecheck": "tsc --noEmit --incremental false",
     "verify": "publint --strict && attw --pack --exclude-entrypoints ./formio/formio.css ./css/colors.css",
     "watch": "chokidar --initial src '*.config.*' -c 'npm run build'"
   },

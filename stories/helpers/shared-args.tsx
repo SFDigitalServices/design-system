@@ -1,4 +1,4 @@
-import * as icons from '@/src/react/icons'
+import * as icons from '#src/react/icons'
 import type { ComponentProps, ReactElement } from 'react'
 import type { InputType } from 'storybook/internal/csf'
 

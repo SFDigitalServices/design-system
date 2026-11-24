@@ -5,7 +5,7 @@ import {
   IconTrafficCone,
   StackedContainer,
   StackedItem
-} from '@/src/react'
+} from '#src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 

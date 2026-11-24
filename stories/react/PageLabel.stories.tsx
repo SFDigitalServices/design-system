@@ -1,4 +1,4 @@
-import { PageLabel } from '@/src/react'
+import { PageLabel } from '#src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 

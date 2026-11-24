@@ -1,4 +1,4 @@
-import { QuickLink, QuickLinkSet } from '@/src/react'
+import { QuickLink, QuickLinkSet } from '#src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 

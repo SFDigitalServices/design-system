@@ -1,4 +1,4 @@
-import { Container, DisplayLg } from '@/src/react'
+import { Container, DisplayLg } from '#src/react'
 import type { PropsWithChildren } from 'react'
 
 export function MockSiteHeader({
