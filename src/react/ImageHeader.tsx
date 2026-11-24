@@ -104,7 +104,7 @@ const ImageWrapper = classed(
 // at the lg breakpoint to cover up the overflowing image
 const ContentWrapper = classed(
   'div',
-  'rounded-t-[8px] bg-white md:rounded-t-0 lg:bg-[transparent] relative z-10'
+  'bg-white rounded-t-[8px] lg:bg-[transparent] relative z-10'
 )
 
 const ContentContainer = classed(
