@@ -17,7 +17,7 @@
   "imports": {
     "#src": "./src/index.ts",
     "#src/react": "./src/react/index.ts",
-    "#src/react/icons": "./src/react/icons/index.js",
+    "#src/react/icons": "./src/react/icons/index.ts",
     "#src/react/*": "./src/react/*.tsx",
     "#src/theme/*": "./src/theme/*.ts",
     "#src/tokens": "./src/tokens/index.ts",
