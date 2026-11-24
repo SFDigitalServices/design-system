@@ -1,4 +1,4 @@
-import { Container, Grid, classed } from '@/src/react'
+import { Container, Grid, classed } from '#src/react'
 
 const GridColumn = classed('div', 'bg-[#f0f] opacity-10 h-full')
 

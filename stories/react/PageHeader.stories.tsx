@@ -1,5 +1,5 @@
-import type { ImageHeaderProps, PageHeaderProps } from '@/src/react'
-import { Container, ImageHeader, PageHeader, PageLabel } from '@/src/react'
+import type { ImageHeaderProps, PageHeaderProps } from '#src/react'
+import { Container, ImageHeader, PageHeader, PageLabel } from '#src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   DEPARTMENT_LOGOS,

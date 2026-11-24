@@ -1,5 +1,5 @@
-import type { TextProps } from '@/src/react/Text'
-import { Text } from '@/src/react/Text'
+import type { TextProps } from '#src/react/Text'
+import { Text } from '#src/react/Text'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { disableArgTypes } from '../../stories/utils'
 
