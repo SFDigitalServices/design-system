@@ -1,4 +1,4 @@
-import { Container, DisplayXXXl, ImageHeader } from '@/src/react'
+import { Container, DisplayXXXl, ImageHeader } from '#src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   ALL_MODES,

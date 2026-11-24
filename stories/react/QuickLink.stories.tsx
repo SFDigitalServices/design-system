@@ -1,5 +1,5 @@
-import type { QuickLinkProps } from '@/src/react'
-import { QuickLink } from '@/src/react'
+import type { QuickLinkProps } from '#src/react'
+import { QuickLink } from '#src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 

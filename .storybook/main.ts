@@ -1,6 +1,4 @@
 import type { StorybookConfig } from '@storybook/react-vite'
-import { fileURLToPath } from 'node:url'
-import { mergeConfig } from 'vite'
 
 const config: StorybookConfig = {
   core: {
@@ -16,17 +14,7 @@ const config: StorybookConfig = {
     '@storybook/addon-mcp',
     'storybook-addon-tag-badges'
   ],
-  framework: '@storybook/react-vite',
-  // Mirrors the `@/src` paths in .storybook/tsconfig.json.
-  viteFinal: (config) =>
-    mergeConfig(config, {
-      resolve: {
-        alias: {
-          '@/src': fileURLToPath(new URL('../src', import.meta.url)),
-          '@/lib': fileURLToPath(new URL('../lib', import.meta.url))
-        }
-      }
-    })
+  framework: '@storybook/react-vite'
 }
 
 export default config

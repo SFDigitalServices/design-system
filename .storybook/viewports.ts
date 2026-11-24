@@ -1,4 +1,4 @@
-import { screens } from '@/src/theme/screens'
+import { screens } from '#src/theme/screens'
 import type { Viewport, ViewportMap } from 'storybook/viewport'
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport'
 

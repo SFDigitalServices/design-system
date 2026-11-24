@@ -1,4 +1,4 @@
-import { IconInfo, IconWarning, classed } from '@/src/react'
+import { IconInfo, IconWarning, classed } from '#src/react'
 import type { ComponentProps } from 'react'
 
 const Wrapper = classed('div', {

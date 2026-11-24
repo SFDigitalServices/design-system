@@ -1,5 +1,5 @@
-import type { TileSectionProps} from '@/src/react';
-import { Tile, TileSection, TileSet } from '@/src/react'
+import type { TileSectionProps} from '#src/react';
+import { Tile, TileSection, TileSet } from '#src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withContainer } from '../helpers'
 

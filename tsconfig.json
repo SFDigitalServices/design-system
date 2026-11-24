@@ -17,11 +17,14 @@
     "moduleResolution": "bundler",
     "outDir": "dist",
     "resolveJsonModule": true,
+    "rootDir": "."
   },
   "include": [
+    ".storybook/**/*",
+    "*.config.*",
     "lib/**/*",
     "src/**/*",
-    "*.config.*"
+    "stories/**/*"
   ],
   "exclude": [
     "node_modules",
