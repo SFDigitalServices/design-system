@@ -46,6 +46,12 @@ const meta: Meta<PageHeaderArgs> = {
       ...mappingInput(DEPARTMENT_LOGOS)
     }
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/2sMxDPHy2gTjuCWAZhF3VQ/Components?node-id=7629-5030&t=NqivXdtyqehlFO6i-0'
+    }
+  },
   render({ title, description, label, logo, image }) {
     return (
       <>
