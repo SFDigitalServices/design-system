@@ -2,6 +2,7 @@ import type { ImageHeaderProps, PageHeaderProps } from '@/src/react'
 import { Container, ImageHeader, PageHeader, PageLabel } from '@/src/react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
+  ALL_MODES,
   DEPARTMENT_LOGOS,
   HEADER_IMAGES,
   MockSiteHeader,
@@ -47,6 +48,12 @@ const meta: Meta<PageHeaderArgs> = {
     }
   },
   parameters: {
+    chromatic: {
+      modes: {
+        mobile: ALL_MODES.mobile,
+        desktop: ALL_MODES.desktop
+      }
+    },
     design: {
       type: 'figma',
       url: 'https://www.figma.com/design/2sMxDPHy2gTjuCWAZhF3VQ/Components?node-id=7629-5030&t=NqivXdtyqehlFO6i-0'

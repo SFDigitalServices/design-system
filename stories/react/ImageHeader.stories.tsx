@@ -26,15 +26,15 @@ const meta: Meta<ImageHeaderArgs> = {
     }
   },
   parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/2sMxDPHy2gTjuCWAZhF3VQ/Components?node-id=7634-5238&t=NqivXdtyqehlFO6i-0'
-    },
     chromatic: {
       modes: {
         mobile: ALL_MODES.mobile,
         desktop: ALL_MODES.desktop
       }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/2sMxDPHy2gTjuCWAZhF3VQ/Components?node-id=7634-5238&t=NqivXdtyqehlFO6i-0'
     }
   },
   render({ heading, image }) {
