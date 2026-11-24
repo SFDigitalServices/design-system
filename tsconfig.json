@@ -20,6 +20,7 @@
     "rootDir": "."
   },
   "include": [
+    ".storybook/***/*",
     "*.config.*",
     "lib/**/*",
     "src/**/*",
