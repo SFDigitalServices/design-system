@@ -1,6 +1,7 @@
 /* eslint-disable import-x/namespace */
 import { render } from '@testing-library/react'
 import * as symbols from '.'
+import { EXPECTED_ICON_EXPORTS } from './icons/icons.spec'
 
 describe('/react exports', () => {
   describe('components', () => {
@@ -40,7 +41,7 @@ describe('/react exports', () => {
       'TileSet'
     ]
 
-    it.each(expectedComponents)('%s', name => {
+    it.each(expectedComponents)('%s', (name) => {
       const Component = symbols[name]
       // @ts-expect-error derp
       render(<Component />)
@@ -54,7 +55,7 @@ describe('/react exports', () => {
       'classify'
     ]
 
-    it.each(expectedFunctions)('%s', name => {
+    it.each(expectedFunctions)('%s', (name) => {
       expect(typeof symbols[name]).toBe('function')
     })
   })
@@ -70,7 +71,7 @@ describe('/react exports', () => {
               primary: expect.any(String),
               secondary: expect.any(String),
               tertiary: expect.any(String),
-              link: expect.any(String),
+              link: expect.any(String)
             },
             block: {
               true: expect.any(String),
@@ -94,6 +95,12 @@ describe('/react exports', () => {
           // etc.
         })
       )
+    })
+  })
+
+  describe('icons', () => {
+    it.each(EXPECTED_ICON_EXPORTS)('%s', (name) => {
+      expect(typeof symbols[name]).toBe('function')
     })
   })
 })
