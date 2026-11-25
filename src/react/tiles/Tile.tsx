@@ -1,7 +1,8 @@
 import type { ComponentProps, ComponentType, ReactNode } from 'react'
-import { IconArrowRight } from '../icons'
 import { TEXT_CLASSES } from '../Text'
-import { classed, classes } from '../utils'
+import { IconArrowRight } from '../icons'
+import { classed } from '../utils'
+import { LINK_COLOR_CLASSES } from './shared'
 
 // Tile links use a flex layout with 12px spacing between icons, text, and the
 // right arrow.
@@ -20,12 +21,6 @@ const Link = classed('a', {
     }
   }
 })
-
-// classes that style the link title and icons as links that darken on
-// group-hover
-export const LINK_COLOR_CLASSES = classes(
-  'text-primary600 group-hover:text-primary800'
-)
 
 // Tile content stretches to fill the flexbox and has consistent vertical
 // spacing between children.

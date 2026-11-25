@@ -1,5 +1,5 @@
-import { defineConfig } from 'tsup'
 import type { Options } from 'tsup'
+import { defineConfig } from 'tsup'
 
 const shared: Options = {
   format: ['esm', 'cjs'],
@@ -21,8 +21,6 @@ export default defineConfig([
     entry: {
       index: 'src/index.ts',
       'react/index': 'src/react/index.ts',
-      'formio/index': 'src/formio/index.tsx',
-      'formio/factories/index': 'src/formio/factories.ts',
       'tokens/index': 'src/tokens/index.ts'
     },
     outDir: 'dist'

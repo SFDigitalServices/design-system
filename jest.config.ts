@@ -7,7 +7,7 @@ export default {
   coverageThreshold: {
     global: {
       lines: 100,
-      functions: 95, // FIXME: back to 100 when we delete formio
+      functions: 100,
       statements: 100,
       branches: 100
     }
@@ -20,9 +20,6 @@ export default {
     // not covering the tailwind preset for now
     '!**/tailwind-preset.ts',
     '!**/tailwind-plugin.ts',
-    // FIXME: remove this when we bring back our formio templates
-    '!**/formio/templates/**/*.tsx',
-    '!**/formio/components/*.ts',
     // not covered
     '!**/theme/**/*.ts',
     '!**/tokens/**/*.ts'
@@ -31,12 +28,6 @@ export default {
   testEnvironment: 'jest-environment-jsdom',
   testPathIgnorePatterns: ['/browser/', '/dist/'],
   transform: {
-    '.*/formio/templates/.*\\.tsx$': [
-      'babel-jest',
-      {
-        extends: './babel.config.js'
-      }
-    ],
     '^.+\\.(t|j)sx?$': 'ts-jest',
     '.*\\.mjs$': 'babel-jest'
   }
