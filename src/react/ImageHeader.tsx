@@ -104,7 +104,7 @@ const ImageWrapper = classed(
 // at the lg breakpoint to cover up the overflowing image
 const ContentWrapper = classed(
   'div',
-  'bg-white rounded-t-[16px] lg:rounded-t-0 lg:bg-[transparent] relative z-10'
+  'relative z-10 rounded-t-[16px] bg-white lg:rounded-t-0 lg:bg-[transparent]'
 )
 
 const ContentContainer = classed(
@@ -115,16 +115,16 @@ const ContentContainer = classed(
      * 20px initial and 28px at md. On large viewports, the top padding should
      * match the width of the generated content blocks that simulate padding.
      */
-    'lg:bg-white pt-20 md:pt-28 lg:pt-40 relative',
+    'relative pt-20 md:pt-28 lg:bg-white lg:pt-40',
     // left outer border
-    'before:bg-white lg:before:w-40 before:rounded-tl-[16px] before:content-[""] before:absolute before:inset-y-0 before:right-full',
+    'before:absolute before:inset-y-0 before:right-full before:rounded-tl-[16px] before:bg-white before:content-[""] lg:before:w-40',
     // right outer border
-    'after:bg-white lg:after:w-40 after:rounded-tr-[16px] after:content-[""] after:absolute after:inset-y-0 after:left-full',
+    'after:absolute after:inset-y-0 after:left-full after:rounded-tr-[16px] after:bg-white after:content-[""] lg:after:w-40',
     containerHeights
   ].join(' ')
 )
 
 const imageClass = classes(
-  'absolute w-full -z-10 object-cover object-top',
+  'absolute -z-10 w-full object-cover object-top',
   imageHeights
 )
