@@ -32,10 +32,6 @@ The package provides the following entrypoints:
 - `@sfgov/design-system/tailwind-preset` is the [Tailwind preset](#tailwind).
 - `@sfgov/design-system/tokens` exports the design tokens: `breakpoints`,
   `colors`, `spacing`, and `widths`.
-- `@sfgov/design-system/formio` exports the `FormioForm` React component and
-  other support code.
-- `@sfgov/design-system/formio/factories` exports form.io-specific test
-  factories like `FormFactory` that are used by sf.gov's `FormPage` tests.
 
 ## React components
 

@@ -1,9 +1,8 @@
-import type { Config } from 'tailwindcss'
-import plugin from 'tailwindcss/plugin'
 import containerQueries from '@tailwindcss/container-queries'
 import ariaAttributes from '@thoughtbot/tailwindcss-aria-attributes'
+import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 import theme from './theme'
-import formioPlugin from './formio/tailwind-plugin'
 
 const preset: Partial<Config> = {
   theme,
@@ -33,9 +32,7 @@ const preset: Partial<Config> = {
           )}`
         }
       })
-    }),
-    // TODO: remove
-    formioPlugin
+    })
   ]
 }
 

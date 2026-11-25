@@ -27,7 +27,6 @@
     "stories/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "src/formio/**/*"
+    "node_modules"
   ]
 }
