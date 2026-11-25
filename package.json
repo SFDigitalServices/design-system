@@ -98,7 +98,6 @@
     "watch": "chokidar --initial src '*.config.*' -c 'npm run build'"
   },
   "dependencies": {
-    "@tw-classed/core": "^1.7.0",
     "@tw-classed/react": "^1.7.0",
     "tailwind-merge": "^1.13.0"
   },
