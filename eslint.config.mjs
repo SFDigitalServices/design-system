@@ -1,13 +1,11 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
-import js from '@eslint/js'
 import react from '@eslint-react/eslint-plugin'
-import { defineConfig, globalIgnores } from 'eslint/config'
+import js from '@eslint/js'
 import prettier from 'eslint-config-prettier/flat'
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import { importX } from 'eslint-plugin-import-x'
+import storybook from 'eslint-plugin-storybook'
 import testingLibrary from 'eslint-plugin-testing-library'
+import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
@@ -57,7 +55,10 @@ export default defineConfig(
     files: ['src/formio/templates/**/*.tsx'],
     rules: {
       // The @jsx h pragma implicitly uses vhtml's factory.
-      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^h$' }]
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { varsIgnorePattern: '^h$' }
+      ]
     }
   },
   {
@@ -76,9 +77,9 @@ export default defineConfig(
   {
     files: [
       '.storybook/**/*.{js,mjs,mts,ts,tsx}',
-      '**/*.stories.{js,mjs,mts,ts,tsx}',
+      '**/*.stories.{js,mjs,mts,ts,tsx}'
     ],
-    extends: [storybook.configs["flat/recommended"]]
+    extends: [storybook.configs['flat/recommended']]
   },
   // Formatting remains Prettier's responsibility.
   prettier
