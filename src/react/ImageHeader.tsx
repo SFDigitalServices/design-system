@@ -104,12 +104,24 @@ const ImageWrapper = classed(
 // at the lg breakpoint to cover up the overflowing image
 const ContentWrapper = classed(
   'div',
-  'rounded-t-[8px] bg-white md:rounded-t-0 lg:bg-[transparent] relative z-10'
+  'bg-white rounded-t-[16px] lg:rounded-t-0 lg:bg-[transparent] relative z-10'
 )
 
 const ContentContainer = classed(
   Container,
-  ['pt-20 lg:p-40 lg:bg-white', containerHeights].join(' ')
+  [
+    /**
+     * These top padding values should match Container's horizontal margins:
+     * 20px initial and 28px at md. On large viewports, the top padding should
+     * match the width of the generated content blocks that simulate padding.
+     */
+    'lg:bg-white pt-20 md:pt-28 lg:pt-40 relative',
+    // left outer border
+    'before:bg-white lg:before:w-40 before:rounded-tl-[16px] before:content-[""] before:absolute before:inset-y-0 before:right-full',
+    // right outer border
+    'after:bg-white lg:after:w-40 after:rounded-tr-[16px] after:content-[""] after:absolute after:inset-y-0 after:left-full',
+    containerHeights
+  ].join(' ')
 )
 
 const imageClass = classes(

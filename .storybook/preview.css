@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind variants;
+
+@layer base {
+  body {
+    @apply bg-white;
+  }
+}
